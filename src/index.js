@@ -369,6 +369,7 @@ import {FIND} from './FIND'
 import {GT} from './GT'
 import {GTE} from './GTE'
 import {IFNA} from './IFNA'
+import {IN} from './IN'
 import {INDEX2COL} from './INDEX2COL'
 import {INDEX2ROW} from './INDEX2ROW'
 import {INDIRECT} from './INDIRECT'
@@ -429,6 +430,7 @@ export default {
   GT,
   GTE,
   IFNA,
+  IN,
   INDEX2COL,
   INDEX2ROW,
   INDIRECT,
