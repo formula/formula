@@ -1,13 +1,11 @@
+import {ISBLANK} from './ISBLANK'
 import {ISARRAY} from './ISARRAY'
+import error from './ERROR'
 
 // Find a needle in a lookup
 export function IN(needle, lookup) {
 
-  if (arguments.length !== 2) {
-    return error.na;
-  }
-
-  if (!lookupValue && !lookupArray) {
+  if ( ISBLANK(needle) && ISBLANK(lookup) ) {
     return error.na;
   }
 
@@ -15,5 +13,5 @@ export function IN(needle, lookup) {
     return error.na;
   }
 
-  lookup.some(n => n === needle)
+  return lookup.some(n => n === needle)
 }
