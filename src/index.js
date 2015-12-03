@@ -19,6 +19,7 @@ import {FIND} from './FIND'
 import {FLATTEN} from './FLATTEN'
 import {GT} from './GT'
 import {GTE} from './GTE'
+import {HLOOKUP} from './HLOOKUP'
 import {IFNA} from './IFNA'
 import {IN} from './IN'
 import {INDEX2COL} from './INDEX2COL'
@@ -35,6 +36,7 @@ import {ISODD} from './ISODD'
 import {ISRANGE} from './ISRANGE'
 import {ISREF} from './ISREF'
 import {ISTEXT} from './ISTEXT'
+import {LOOKUP} from './LOOKUP'
 import {LOWER} from './LOWER'
 import {LT} from './LT'
 import {LTE} from './LTE'
@@ -58,6 +60,7 @@ import {TAU} from './TAU'
 import {TEXT} from './TEXT'
 import {UNIQUE} from './UNIQUE'
 import {UPPER} from './UPPER'
+import {VLOOKUP} from './VLOOKUP'
 
 export var logicalFunctions = [
   'if',
@@ -429,6 +432,7 @@ export default {
   FLATTEN,
   GT,
   GTE,
+  HLOOKUP,
   IFNA,
   IN,
   INDEX2COL,
@@ -445,6 +449,7 @@ export default {
   ISRANGE,
   ISREF,
   ISTEXT,
+  LOOKUP,
   LOWER,
   LT,
   LTE,
@@ -467,5 +472,6 @@ export default {
   TAU,
   TEXT,
   UNIQUE,
-  UPPER
+  UPPER,
+  VLOOKUP
 };
