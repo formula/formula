@@ -1,3 +1,64 @@
+import {ABS} from './ABS'
+import {ACOS} from './ACOS'
+import {ADD} from './ADD'
+import {AND} from './AND'
+import {BIN2DEC} from './BIN2DEC'
+import {CELL} from './CELL'
+import {CELLINDEX} from './CELLINDEX'
+import {CHOOSE} from './CHOOSE'
+import {CONCATENATE} from './CONCATENATE'
+import {COND} from './COND'
+import {COS} from './COS'
+import {DATE} from './DATE'
+import {DATEDIF} from './DATEDIF'
+import {DEC2BIN} from './DEC2BIN'
+import {DIVIDE} from './DIVIDE'
+import {EQ} from './EQ'
+import {FILTER} from './FILTER'
+import {FIND} from './FIND'
+import {FLATTEN} from './FLATTEN'
+import {GT} from './GT'
+import {GTE} from './GTE'
+import {IFNA} from './IFNA'
+import {IN} from './IN'
+import {INDEX2COL} from './INDEX2COL'
+import {INDEX2ROW} from './INDEX2ROW'
+import {INDIRECT} from './INDIRECT'
+import {ISARRAY} from './ISARRAY'
+import {ISBLANK} from './ISBLANK'
+import {ISEMAIL} from './ISEMAIL'
+import {ISERROR} from './ISERROR'
+import {ISEVEN} from './ISEVEN'
+import {ISNA} from './ISNA'
+import {ISNUMBER} from './ISNUMBER'
+import {ISODD} from './ISODD'
+import {ISRANGE} from './ISRANGE'
+import {ISREF} from './ISREF'
+import {ISTEXT} from './ISTEXT'
+import {LOWER} from './LOWER'
+import {LT} from './LT'
+import {LTE} from './LTE'
+import {MAX} from './MAX'
+import {MULTIPLY} from './MULTIPLY'
+import {N} from './N'
+import {NE} from './NE'
+import {OCT2DEC} from './OCT2DEC'
+import {OR} from './OR'
+import {PI} from './PI'
+import {PMT} from './PMT'
+import {POWER} from './POWER'
+import {RANGE} from './RANGE'
+import {REPT} from './REPT'
+import {SIN} from './SIN'
+import {SORT} from './SORT'
+import {SUM} from './SUM'
+import {SWITCH} from './SWITCH'
+import {TAN} from './TAN'
+import {TAU} from './TAU'
+import {TEXT} from './TEXT'
+import {UNIQUE} from './UNIQUE'
+import {UPPER} from './UPPER'
+
 export var logicalFunctions = [
   'if',
   'ifna',
@@ -333,8 +394,6 @@ export var engineeringFunctions = [
   'oct2hex'
 ];
 
-import {FLATTEN} from './FLATTEN';
-
 export var packages = FLATTEN([
   logicalFunctions,
   informationFunctions,
@@ -347,66 +406,6 @@ export var packages = FLATTEN([
   textFunctions,
   engineeringFunctions
 ]).sort();
-
-import {ABS} from './ABS'
-import {ACOS} from './ACOS'
-import {ADD} from './ADD'
-import {AND} from './AND'
-import {BIN2DEC} from './BIN2DEC'
-import {CELL} from './CELL'
-import {CELLINDEX} from './CELLINDEX'
-import {CHOOSE} from './CHOOSE'
-import {CONCATENATE} from './CONCATENATE'
-import {COND} from './COND'
-import {COS} from './COS'
-import {DATE} from './DATE'
-import {DATEDIF} from './DATEDIF'
-import {DEC2BIN} from './DEC2BIN'
-import {DIVIDE} from './DIVIDE'
-import {EQ} from './EQ'
-import {FILTER} from './FILTER'
-import {FIND} from './FIND'
-import {GT} from './GT'
-import {GTE} from './GTE'
-import {IFNA} from './IFNA'
-import {IN} from './IN'
-import {INDEX2COL} from './INDEX2COL'
-import {INDEX2ROW} from './INDEX2ROW'
-import {INDIRECT} from './INDIRECT'
-import {ISARRAY} from './ISARRAY'
-import {ISBLANK} from './ISBLANK'
-import {ISEMAIL} from './ISEMAIL'
-import {ISERROR} from './ISERROR'
-import {ISEVEN} from './ISEVEN'
-import {ISNA} from './ISNA'
-import {ISNUMBER} from './ISNUMBER'
-import {ISODD} from './ISODD'
-import {ISRANGE} from './ISRANGE'
-import {ISREF} from './ISREF'
-import {ISTEXT} from './ISTEXT'
-import {LOWER} from './LOWER'
-import {LT} from './LT'
-import {LTE} from './LTE'
-import {MAX} from './MAX'
-import {MULTIPLY} from './MULTIPLY'
-import {N} from './N'
-import {NE} from './NE'
-import {OCT2DEC} from './OCT2DEC'
-import {OR} from './OR'
-import {PI} from './PI'
-import {PMT} from './PMT'
-import {POWER} from './POWER'
-import {RANGE} from './RANGE'
-import {REPT} from './REPT'
-import {SIN} from './SIN'
-import {SORT} from './SORT'
-import {SUM} from './SUM'
-import {SWITCH} from './SWITCH'
-import {TAN} from './TAN'
-import {TAU} from './TAU'
-import {TEXT} from './TEXT'
-import {UNIQUE} from './UNIQUE'
-import {UPPER} from './UPPER'
 
 export default {
   ABS,
@@ -427,6 +426,7 @@ export default {
   EQ,
   FILTER,
   FIND,
+  FLATTEN,
   GT,
   GTE,
   IFNA,
