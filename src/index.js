@@ -389,6 +389,7 @@ import {LTE} from './LTE'
 import {MAX} from './MAX'
 import {MULTIPLY} from './MULTIPLY'
 import {N} from './N'
+import {NE} from './NE'
 import {OCT2DEC} from './OCT2DEC'
 import {OR} from './OR'
 import {PI} from './PI'
@@ -448,6 +449,7 @@ export default {
   MAX,
   MULTIPLY,
   N,
+  NE,
   OCT2DEC,
   OR,
   PI,
