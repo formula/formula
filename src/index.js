@@ -51,6 +51,7 @@ import {PMT} from './PMT'
 import {POWER} from './POWER'
 import {RANGE} from './RANGE'
 import {REPT} from './REPT'
+import {SEARCH} from './SEARCH'
 import {SIN} from './SIN'
 import {SORT} from './SORT'
 import {SUM} from './SUM'
@@ -464,6 +465,7 @@ export default {
   POWER,
   RANGE,
   REPT,
+  SEARCH,
   SIN,
   SORT,
   SUM,
