@@ -3,7 +3,7 @@ import Box from '../src/index'
 
 test('index', function(t) {
 
-  t.test( 62 )
+  t.test( 63 )
   t.ok( Box.ABS, 'ABS should be there')
   t.ok( Box.ACOS, 'ACOS should be there')
   t.ok( Box.ADD, 'ADD should be there')
@@ -57,6 +57,7 @@ test('index', function(t) {
   t.ok( Box.POWER, 'POWER should be there')
   t.ok( Box.RANGE, 'RANGE should be there')
   t.ok( Box.REPT, 'REPT should be there')
+  t.ok( Box.SEARCH, 'SEARCH should be there')
   t.ok( Box.SIN, 'SIN should be there')
   t.ok( Box.SORT, 'SORT should be there')
   t.ok( Box.SUM, 'SUM should be there')
