@@ -398,7 +398,7 @@ let engineeringFunctions = [
   'oct2hex'
 ];
 
-let packages = FLATTEN([
+let allFunctions = FLATTEN([
   logicalFunctions,
   informationFunctions,
   referenceFunctions,
