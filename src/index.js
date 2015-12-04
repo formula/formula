@@ -63,7 +63,7 @@ import {UNIQUE} from './UNIQUE'
 import {UPPER} from './UPPER'
 import {VLOOKUP} from './VLOOKUP'
 
-export var logicalFunctions = [
+let logicalFunctions = [
   'if',
   'ifna',
   'iferror',
@@ -82,7 +82,7 @@ export var logicalFunctions = [
   'cond'
 ];
 
-export var informationFunctions = [
+let informationFunctions = [
   'isarray',
   'isblank',
   'isemail',
@@ -106,7 +106,7 @@ export var informationFunctions = [
   'type'
 ]
 
-export var referenceFunctions = [
+let referenceFunctions = [
   'indirect',
   'isref',
   'rows',
@@ -119,13 +119,13 @@ export var referenceFunctions = [
   'index2row',
 ];
 
-export var dataFunctions = [
+let dataFunctions = [
   'sort',
   'filter',
   'unique',
 ];
 
-export var mathFunctions = [
+let mathFunctions = [
   'abs',
   'acos',
   'acosh',
@@ -199,7 +199,7 @@ export var mathFunctions = [
   'tan',
 ];
 
-export var dateTimeFunctions = [
+let dateTimeFunctions = [
   'date',
   'datevalue',
   'datedif',
@@ -225,7 +225,7 @@ export var dateTimeFunctions = [
   'yearfrac',
 ];
 
-export var financialFunctions = [
+let financialFunctions = [
   'accrintm',
   'amorlinc',
   'coupdays',
@@ -258,7 +258,7 @@ export var financialFunctions = [
   'pv',
 ];
 
-export var statisticFunctions = [
+let statisticFunctions = [
   'avedev',
   'average',
   'averagea',
@@ -311,7 +311,7 @@ export var statisticFunctions = [
   'varpa',
 ];
 
-export var textFunctions = [
+let textFunctions = [
   'asc',
   'bahttext',
   'clean',
@@ -344,7 +344,7 @@ export var textFunctions = [
   'value',
 ];
 
-export var engineeringFunctions = [
+let engineeringFunctions = [
   'besseli',
   'besselj',
   'besselk',
@@ -398,7 +398,7 @@ export var engineeringFunctions = [
   'oct2hex'
 ];
 
-export var packages = FLATTEN([
+let packages = FLATTEN([
   logicalFunctions,
   informationFunctions,
   referenceFunctions,
@@ -412,6 +412,17 @@ export var packages = FLATTEN([
 ]).sort();
 
 export default {
+  allFunctions,
+  logicalFunctions,
+  informationFunctions,
+  referenceFunctions,
+  dataFunctions,
+  mathFunctions,
+  dateTimeFunctions,
+  financialFunctions,
+  statisticFunctions,
+  textFunctions,
+  engineeringFunctions,
   ABS,
   ACOS,
   ADD,
