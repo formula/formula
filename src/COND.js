@@ -4,22 +4,16 @@
 export function COND(...cases) {
   return cases.reduce( function(a, b, i) {
 
-    // last case
-    if (i === cases.length - 1 ) {
-      if (typeof a !== 'undefined') {
-        return cases[a];
-      }
-
+    if (typeof a !== 'undefined') {
+      // return the previously found item
+      return a;
+    } else if (i === cases.length - 1 ) {
+      // return the last item
       return b;
+    } else if (i % 2 === 0 && b) {
+      // return the found item
+      return cases[i+1];
     }
-
-    // condition case
-    if (typeof a === 'undefined' &&
-        i % 2 === 0 && b) {
-          return i+1;
-        }
-
-    return a;
 
   }, undefined)
 
