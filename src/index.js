@@ -36,6 +36,7 @@ import {ISODD} from './ISODD'
 import {ISRANGE} from './ISRANGE'
 import {ISREF} from './ISREF'
 import {ISTEXT} from './ISTEXT'
+import {ISURL} from './ISURL'
 import {LOOKUP} from './LOOKUP'
 import {LOWER} from './LOWER'
 import {LT} from './LT'
@@ -461,6 +462,7 @@ export default {
   ISRANGE,
   ISREF,
   ISTEXT,
+  ISURL,
   LOOKUP,
   LOWER,
   LT,
