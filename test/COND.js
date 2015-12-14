@@ -4,9 +4,10 @@ import test from 'tape';
 import error from '../src/ERROR';
 
 test('COND', function(t) {
-  t.plan(9);
+  t.plan(10);
   t.equal( typeof COND, 'function' );
   t.equal( typeof SWITCH, 'function' );
+  t.equal( COND( false, 1), undefined );
   t.equal( COND( true, 1, false, 2, 3), 1 );
   t.equal( COND( false, 1, true, 2, 3), 2 );
   t.equal( COND( false, 1, false, 2, 3), 3 );
