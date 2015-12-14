@@ -7,7 +7,12 @@ export function COND(...cases) {
     if (typeof a !== 'undefined') {
       // return the previously found item
       return a;
-    } else if (i === cases.length - 1 ) {
+    } else if ( i === cases.length - 1 ) {
+
+      if (i % 2 === 1) {
+        return; // nothing found
+      }
+
       // return the last item
       return b;
     } else if (i % 2 === 0 && b) {
