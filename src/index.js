@@ -64,7 +64,7 @@ import {UNIQUE} from './UNIQUE'
 import {UPPER} from './UPPER'
 import {VLOOKUP} from './VLOOKUP'
 
-let logicalFunctions = [
+export let logicalFunctions = [
   'if',
   'ifna',
   'iferror',
@@ -83,7 +83,7 @@ let logicalFunctions = [
   'cond'
 ];
 
-let informationFunctions = [
+export let informationFunctions = [
   'isarray',
   'isblank',
   'isemail',
@@ -107,7 +107,7 @@ let informationFunctions = [
   'type'
 ]
 
-let referenceFunctions = [
+export let referenceFunctions = [
   'indirect',
   'isref',
   'rows',
@@ -120,13 +120,13 @@ let referenceFunctions = [
   'index2row',
 ];
 
-let dataFunctions = [
+export let dataFunctions = [
   'sort',
   'filter',
   'unique',
 ];
 
-let mathFunctions = [
+export let mathFunctions = [
   'abs',
   'acos',
   'acosh',
@@ -200,7 +200,7 @@ let mathFunctions = [
   'tan',
 ];
 
-let dateTimeFunctions = [
+export let dateTimeFunctions = [
   'date',
   'datevalue',
   'datedif',
@@ -226,7 +226,7 @@ let dateTimeFunctions = [
   'yearfrac',
 ];
 
-let financialFunctions = [
+export let financialFunctions = [
   'accrintm',
   'amorlinc',
   'coupdays',
@@ -259,7 +259,7 @@ let financialFunctions = [
   'pv',
 ];
 
-let statisticFunctions = [
+export let statisticFunctions = [
   'avedev',
   'average',
   'averagea',
@@ -312,7 +312,7 @@ let statisticFunctions = [
   'varpa',
 ];
 
-let textFunctions = [
+export let textFunctions = [
   'asc',
   'bahttext',
   'clean',
@@ -345,7 +345,7 @@ let textFunctions = [
   'value',
 ];
 
-let engineeringFunctions = [
+export let engineeringFunctions = [
   'besseli',
   'besselj',
   'besselk',
@@ -399,7 +399,7 @@ let engineeringFunctions = [
   'oct2hex'
 ];
 
-let allFunctions = FLATTEN([
+export let functions = FLATTEN([
   logicalFunctions,
   informationFunctions,
   referenceFunctions,
@@ -412,18 +412,8 @@ let allFunctions = FLATTEN([
   engineeringFunctions
 ]).sort();
 
+
 export default {
-  allFunctions,
-  logicalFunctions,
-  informationFunctions,
-  referenceFunctions,
-  dataFunctions,
-  mathFunctions,
-  dateTimeFunctions,
-  financialFunctions,
-  statisticFunctions,
-  textFunctions,
-  engineeringFunctions,
   ABS,
   ACOS,
   ADD,
