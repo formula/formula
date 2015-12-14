@@ -1,5 +1,6 @@
 // Author: Peter Moresi
 // based heavily on code from socialcalc
+'use strict';
 
 import { d1900, JulianOffset, MinutesInHour, MinutesInDay, SecondsInMinute,
          SecondsInDay, SecondsInHour, DaysInYear, MillisecondsInDay, AllowedDays, DayNames,
@@ -180,7 +181,7 @@ FormatNumber.formatNumberWithFormat = function(rawvalue, format_string, currency
         decimalscale = 1; // round appropriately depending if there is ss.0
         for (i=0; i<sectioninfo.fractiondigits; i++) {
             decimalscale *= 10;
-        } 
+        }
         secs = Math.floor(secs * decimalscale + 0.5);
         secs = secs / decimalscale;
         esecs = Math.floor(estartval * decimalscale + 0.5);
