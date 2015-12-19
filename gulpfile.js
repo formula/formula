@@ -1,8 +1,7 @@
-require('babel-core/register')
-var gulp = require('gulp');
-var babel = require('gulp-babel');
-var tape = require('gulp-tape');
-var tapColorize = require('tap-colorize');
+var gulp = require('gulp'),
+babel = require('gulp-babel'),
+tape = require('gulp-tape'),
+tapColorize = require('tap-colorize')
 
 gulp.task('build', function () {
   return gulp.src('src/*.js')
@@ -11,8 +10,13 @@ gulp.task('build', function () {
 });
 
 gulp.task('test', function() {
+  require('babel-core/register')
   return gulp.src('test/*.js')
     .pipe(tape({
       reporter: tapColorize()
     }));
+});
+
+gulp.task('watch', ['build'], function () {
+  gulp.watch('src/*.js', ['build'])
 });
