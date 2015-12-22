@@ -19,6 +19,7 @@ export {FIND} from './FIND'
 export {FLATTEN} from './FLATTEN'
 export {GT} from './GT'
 export {GTE} from './GTE'
+export {GUID} from './GUID'
 export {HLOOKUP} from './HLOOKUP'
 export {IFNA} from './IFNA'
 export {IN} from './IN'
@@ -420,6 +421,7 @@ import {FIND} from './FIND'
 import {FLATTEN} from './FLATTEN'
 import {GT} from './GT'
 import {GTE} from './GTE'
+import {GUID} from './GUID'
 import {HLOOKUP} from './HLOOKUP'
 import {IFNA} from './IFNA'
 import {IN} from './IN'
@@ -500,6 +502,7 @@ export default {
   FLATTEN,
   GT,
   GTE,
+  GUID,
   HLOOKUP,
   IFNA,
   IN,
