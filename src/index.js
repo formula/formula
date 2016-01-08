@@ -47,6 +47,7 @@ export {MAX} from './MAX'
 export {MULTIPLY} from './MULTIPLY'
 export {N} from './N'
 export {NE} from './NE'
+export {NOT} from './NOT'
 export {OCT2DEC} from './OCT2DEC'
 export {OR} from './OR'
 export {PI} from './PI'
@@ -451,6 +452,7 @@ import {MAX} from './MAX'
 import {MULTIPLY} from './MULTIPLY'
 import {N} from './N'
 import {NE} from './NE'
+import {NOT} from './NOT'
 import {OCT2DEC} from './OCT2DEC'
 import {OR} from './OR'
 import {PI} from './PI'
@@ -533,6 +535,7 @@ export default {
   MULTIPLY,
   N,
   NE,
+  NOT,
   OCT2DEC,
   OR,
   PI,
