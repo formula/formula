@@ -6,6 +6,7 @@ export {BIN2DEC} from './BIN2DEC'
 export {CELL} from './CELL'
 export {CELLINDEX} from './CELLINDEX'
 export {CHOOSE} from './CHOOSE'
+export {CLEAN} from './CLEAN'
 export {CONCATENATE} from './CONCATENATE'
 export {COND} from './COND'
 export {COS} from './COS'
@@ -122,6 +123,7 @@ export let referenceFunctions = [
 ];
 
 export let dataFunctions = [
+  'clean',
   'sort',
   'filter',
   'unique',
@@ -408,6 +410,7 @@ import {BIN2DEC} from './BIN2DEC'
 import {CELL} from './CELL'
 import {CELLINDEX} from './CELLINDEX'
 import {CHOOSE} from './CHOOSE'
+import {CLEAN} from './CLEAN'
 import {CONCATENATE} from './CONCATENATE'
 import {COND} from './COND'
 import {COS} from './COS'
@@ -489,6 +492,7 @@ export default {
   CELL,
   CELLINDEX,
   CHOOSE,
+  CLEAN,
   CONCATENATE,
   COND,
   COS,
