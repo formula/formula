@@ -1,6 +1,6 @@
 {
   "name": "functionfoundry",
-  "version": "0.6.11",
+  "version": "0.6.12",
   "description": "Functions inspired by the spreadsheets",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
