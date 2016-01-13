@@ -5,6 +5,7 @@ export {AND} from './AND'
 export {BIN2DEC} from './BIN2DEC'
 export {CELL} from './CELL'
 export {CELLINDEX} from './CELLINDEX'
+export {CHANGED} from './CHANGED'
 export {CHOOSE} from './CHOOSE'
 export {CLEAN} from './CLEAN'
 export {CONCATENATE} from './CONCATENATE'
@@ -13,6 +14,7 @@ export {COS} from './COS'
 export {DATE} from './DATE'
 export {DATEDIF} from './DATEDIF'
 export {DEC2BIN} from './DEC2BIN'
+export {DIFF} from './DIFF'
 export {DIVIDE} from './DIVIDE'
 export {EQ} from './EQ'
 export {FILTER} from './FILTER'
@@ -403,74 +405,7 @@ export let engineeringFunctions = [
   'oct2hex'
 ]
 
-import {ABS} from './ABS'
-import {ACOS} from './ACOS'
-import {ADD} from './ADD'
-import {AND} from './AND'
-import {BIN2DEC} from './BIN2DEC'
-import {CELL} from './CELL'
-import {CELLINDEX} from './CELLINDEX'
-import {CHOOSE} from './CHOOSE'
-import {CLEAN} from './CLEAN'
-import {CONCATENATE} from './CONCATENATE'
-import {COND} from './COND'
-import {COS} from './COS'
-import {DATE} from './DATE'
-import {DATEDIF} from './DATEDIF'
-import {DEC2BIN} from './DEC2BIN'
-import {DIVIDE} from './DIVIDE'
-import {EQ} from './EQ'
-import {FILTER} from './FILTER'
-import {FIND} from './FIND'
 import {FLATTEN} from './FLATTEN'
-import {GT} from './GT'
-import {GTE} from './GTE'
-import {GUID} from './GUID'
-import {HLOOKUP} from './HLOOKUP'
-import {IFNA} from './IFNA'
-import {IN} from './IN'
-import {INDEX2COL} from './INDEX2COL'
-import {INDEX2ROW} from './INDEX2ROW'
-import {INDIRECT} from './INDIRECT'
-import {ISARRAY} from './ISARRAY'
-import {ISBLANK} from './ISBLANK'
-import {ISEMAIL} from './ISEMAIL'
-import {ISERROR} from './ISERROR'
-import {ISEVEN} from './ISEVEN'
-import {ISNA} from './ISNA'
-import {ISNUMBER} from './ISNUMBER'
-import {ISODD} from './ISODD'
-import {ISRANGE} from './ISRANGE'
-import {ISREF} from './ISREF'
-import {ISTEXT} from './ISTEXT'
-import {ISURL} from './ISURL'
-import {LOOKUP} from './LOOKUP'
-import {LOWER} from './LOWER'
-import {LT} from './LT'
-import {LTE} from './LTE'
-import {MAX} from './MAX'
-import {MULTIPLY} from './MULTIPLY'
-import {N} from './N'
-import {NE} from './NE'
-import {NOT} from './NOT'
-import {OCT2DEC} from './OCT2DEC'
-import {OR} from './OR'
-import {PI} from './PI'
-import {PMT} from './PMT'
-import {POWER} from './POWER'
-import {RANGE} from './RANGE'
-import {REPT} from './REPT'
-import {SEARCH} from './SEARCH'
-import {SIN} from './SIN'
-import {SORT} from './SORT'
-import {SUM} from './SUM'
-import {SWITCH} from './SWITCH'
-import {TAN} from './TAN'
-import {TAU} from './TAU'
-import {TEXT} from './TEXT'
-import {UNIQUE} from './UNIQUE'
-import {UPPER} from './UPPER'
-import {VLOOKUP} from './VLOOKUP'
 
 export let functions = FLATTEN([
   logicalFunctions,
@@ -484,74 +419,3 @@ export let functions = FLATTEN([
   textFunctions,
   engineeringFunctions
 ]).sort()
-
-export default {
-  ABS,
-  ACOS,
-  ADD,
-  AND,
-  BIN2DEC,
-  CELL,
-  CELLINDEX,
-  CHOOSE,
-  CLEAN,
-  CONCATENATE,
-  COND,
-  COS,
-  DATE,
-  DATEDIF,
-  DEC2BIN,
-  DIVIDE,
-  EQ,
-  FILTER,
-  FIND,
-  FLATTEN,
-  GT,
-  GTE,
-  GUID,
-  HLOOKUP,
-  IFNA,
-  IN,
-  INDEX2COL,
-  INDEX2ROW,
-  INDIRECT,
-  ISARRAY,
-  ISBLANK,
-  ISEMAIL,
-  ISERROR,
-  ISEVEN,
-  ISNA,
-  ISNUMBER,
-  ISODD,
-  ISRANGE,
-  ISREF,
-  ISTEXT,
-  ISURL,
-  LOOKUP,
-  LOWER,
-  LT,
-  LTE,
-  MAX,
-  MULTIPLY,
-  N,
-  NE,
-  NOT,
-  OCT2DEC,
-  OR,
-  PI,
-  PMT,
-  POWER,
-  RANGE,
-  REPT,
-  SEARCH,
-  SIN,
-  SORT,
-  SUM,
-  SWITCH,
-  TAN,
-  TAU,
-  TEXT,
-  UNIQUE,
-  UPPER,
-  VLOOKUP
-}
