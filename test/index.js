@@ -1,5 +1,5 @@
 import test from 'tape'
-import {* as Box} from '../src/index'
+import * as Box from '../src/index'
 
 test('index', function(t) {
 
