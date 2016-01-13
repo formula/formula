@@ -1,7 +1,11 @@
+// Author: Peter Moresi
+import {FLATTEN} from './FLATTEN'
+import error from './ERROR'
 
-import {FLATTEN} from './FLATTEN';
-
-export function SUM() {
-    var numbers = FLATTEN(arguments);
-    return numbers.reduce((a, b) => a + b);
+export function SUM(...numbers) {
+    return FLATTEN(FLATTEN(numbers))
+    .reduce((a, b) => {
+      if (typeof b !== 'number') { return error.value }
+      return a + b
+    });
 }
