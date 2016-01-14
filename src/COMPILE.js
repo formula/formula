@@ -25,7 +25,7 @@ export function COMPILE(exp) {
       suppress = false,
       precedents = [],
       requires = [],
-      namespace='requires.';
+      namespace='this.';
 
   // convert to AST when string provided
   if (typeof ast === 'string') {
@@ -175,13 +175,11 @@ export function COMPILE(exp) {
     }
   }
 
-
   var id = compiledNumber++;
 
   var compiled = compiler(ast);
 
-  f = new Function('context', 'requires', `// ${exp}
-  if (!requires) { requires = this }
+  f = new Function('context', `// ${exp}
   return (${compiled});
   //@ sourceURL=formula_function_${id}.js'
   `);
