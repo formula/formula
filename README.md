@@ -4,7 +4,7 @@
 
 Functions inspired by the spreadsheet for the web.
 
-This project has 3 directories.
+This project has 4 directories.
 
 | name | purpose |
 | ------------- | ----------- |
