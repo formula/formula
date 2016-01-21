@@ -91,3 +91,65 @@ Return the trigometric value _acos_ of some value.
 * ADD
 
 Add one or more values with the JavaScript `+` operator.
+
+* BIN2DEC
+
+Convert a binary number to a decimal number.
+
+* CELL
+
+Returns an object that tracks a cell index and provides helper functions for:
+
+1. getColumn() -> computes column
+2. getRow() -> computes row
+3. topLeft() -> return index supplied as input
+
+
+* CELLINDEX
+
+Returns a cell index given a row and column.
+
+* CHANGED
+
+Returns a list of fields that have changed between two JS objects.
+
+#+BEGIN_SRC js
+  let a = { a: 1, b: 2 },
+      b = { a: 2, b: 2 },
+      changed = CHANGED(a,b) // => ['a]
+#+END_SRC
+
+* CHOOSE
+
+Choose a value from a range based on an index.
+
+#+BEGIN_SRC js
+  CHOOSE( 1, 'a', 'b', 'c' ) // => 'a'
+  CHOOSE( 2, 'a', 'b', 'c' ) // => 'b'
+  CHOOSE( 3, 'a', 'b', 'c' ) // => 'c'
+#+END_SRC
+
+* CLEAN
+
+Return a new object that eliminates blank keys.
+
+#+BEGIN_SRC js
+  CLEAN({ a: null, b: undefined, c: 'some value' }) // => { c: 'some value' }
+#+END_SRC
+
+* CONCATENATE
+
+Combine two strings.
+
+* COND
+
+Evaluate a condition table. The even value after the first true value is returned.
+
+#+BEGIN_SRC js
+  COND( true, 1, true, 2) // => 1
+  COND( false, 1, true, 2) // => 2 
+#+END_SRC
+
+* COS
+
+Return the trigometric value _acos_ of some value.
