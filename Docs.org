@@ -1,6 +1,6 @@
 #+TITLE: functionfoundry docs
 
-*DRAFT : WORK IN PROGRESS*
+*DRAFT : WORK IN PROGRESS *
 
 *functionfoundry* is a JavaScript library written in ES6.
 
@@ -268,121 +268,26 @@ Return the trigometric value _acos_ of some value.
   Tests if the value is an array.
    
   #+BEGIN_EXAMPLE
-  ISARRAY({1,2,3}) = TRUE
+  ISARRAY({1,2,3}) = true
   #+END_EXAMPLE
    
-  #+BEGIN_EXAMPLE
-  ISBLANK("FOO") = FALSE
-  #+END_EXAMPLE
-
 * ISBLANK
    
   Tests if the value is blank (empty).
    
-  #+BEGIN_SRC js
-    var wb = new workbook();
-    var ws = wb.sheet();
-
-    wb.set(0, "A1", null);
-    wb.set(0, "A2", undefined);
-    wb.set(0, "A3", "");
-    wb.set(0, "A4", "Hello");
-
-    assert(wb.run(0, 'ISBLANK(A1) = TRUE'), "A1 should be blank");
-    assert(wb.run(0, 'ISBLANK(A2) = TRUE'), "A2 should be blank");
-    assert(wb.run(0, 'ISBLANK(A3) = FALSE'), "A3 should not be blank"); // empty string is not blank
-    assert(wb.run(0, 'ISBLANK(A4) = FALSE'), "A4 should not be blank");
-  #+END_SRC
+  #+BEGIN_EXAMPLE
+  ISBLANK("FOO") = false
+  ISBLANK(null) = true 
+  #+END_EXAMPLE
 
 * ISEMAIL
 * ISERR
    
   Test for any error but #N/A.
    
-  #+BEGIN_SRC js
-    var wb = new workbook();
-    var ws = wb.sheet();
-    wb.set(ws, "A1", workbook.errors.na);
-    wb.set(ws, "A2", workbook.errors.div0);
-    wb.set(ws, "A3", Number.POSITIVE_INFINITY);
-
-    assert(
-        wb.run(ws, "ISERR(A1) = FALSE"),
-        "A1 should not be error"
-    );
-
-    assert(
-        wb.run(ws, "ISERR(A2) = TRUE"),
-        "A2 should be error"
-    );
-
-    assert(
-        wb.run(ws, "ISERR(A3) = TRUE"),
-        "A3 should be error"
-    );
-
-  #+END_SRC
-   
-* ISERROR
-   
-  Test for error.
-   
-  #+BEGIN_SRC js
-    var wb = new workbook();
-    var ws = wb.sheet();
-    wb.set(ws, "A1", workbook.errors.na);
-    wb.set(ws, "A2", workbook.errors.div0);
-    wb.set(ws, "A3", Number.POSITIVE_INFINITY);
-
-    assert(
-        wb.run(ws, "ISERROR(A1) = TRUE"),
-        "A1 should be error"
-    );
-
-    assert(
-        wb.run(ws, "ISERROR(A2) = TRUE"),
-        "A2 should be error"
-    );
-
-    assert(
-        wb.run(ws, "ISERROR(A3) = TRUE"),
-        "A3 should be error"
-    );
-
-  #+END_SRC
-   
-* ISEVEN
-   
-  Test for even number.
-   
-  #+BEGIN_SRC js
-     assert( workbook.run('ISEVEN(1) = FALSE'), "should be true");
-     assert( workbook.run('ISEVEN(2) = TRUE'), "should be true");
-  #+END_SRC
-   
-  Test values in a worksheet.
-   
-  #+BEGIN_SRC js
-    var wb = new workbook();
-    var ws = wb.sheet();
-    wb.set(ws, "A1", 1)
-    wb.set(ws, "A2", 2)
-    assert( wb.run(ws, "ISEVEN(A1) = FALSE"), "should be true" );
-    assert( wb.run(0, "ISEVEN(A2) = TRUE"), "should be true" );
-  #+END_SRC
-   
 * ISFORMULA
    
   Test if cell has formula.
-   
-  #+BEGIN_SRC js
-    var wb = new workbook();
-    var ws = wb.sheet();
-    wb.set(ws, "A1", 2);
-    wb.set(ws, "A2", "=A1^8");
-    assert( wb.run(0, "ISFORMULA(A1) = FALSE") );
-    assert( wb.run(0, "ISFORMULA(A2) = TRUE") );
-  #+END_SRC
    
 * ISLOGICAL
    
@@ -468,29 +373,9 @@ Return the trigometric value _acos_ of some value.
    
   Return TRUE when the value is a range or a cell reference.
    
-  #+BEGIN_SRC js
-    var wb = new workbook();
-    var ws = wb.sheet();
-
-    assert( wb.run(ws, "ISRANGE(A1:A3)"), "A1:A3 is not a range" );
-    assert( wb.run(ws, 'ISRANGE(OFFSET(A1,0,0,2,2))'), "OFFSET function not returning range" );
-        
-  #+END_SRC
-   
 * ISREF
    
    Return TRUE when the value is a range or a cell reference.
-   
-   #+BEGIN_SRC js
-      wb = new workbook();
-      ws = wb.sheet();
-
-      assert( ws.run('ISREF(A1) = TRUE') );
-      assert( ws.run('ISREF("FOO") = FALSE') );
-         
-   #+END_SRC
-   
-*
 
 * NOT
    
@@ -505,6 +390,7 @@ Return the trigometric value _acos_ of some value.
   #+END_EXAMPLE
    
 * OR
+
    
   Returns TRUE if any argument is true.
    
@@ -515,6 +401,10 @@ Return the trigometric value _acos_ of some value.
   #+BEGIN_EXAMPLE
   OR(FALSE, FALSE) = FALSE
   #+END_EXAMPLE
+  
+* RANGE
+
+  Accepts a topLeft and bottomRight index and returns a frozen range object.
 
 * PI
 
@@ -558,5 +448,4 @@ Return the trigometric value _acos_ of some value.
    #+BEGIN_EXAMPLE
     XOR(0, 1, 0) = TRUE
    #+END_EXAMPLE
-
-*
+   
