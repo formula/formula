@@ -1,6 +1,6 @@
 #+TITLE: functionfoundry docs
 
-_function foundry_ is a JavaScript library written in ES6.
+*functionfoundry* is a JavaScript library written in ES6.
 
 It includes ES5 code precompiled with babel in the lib folder.
 
@@ -104,7 +104,6 @@ Returns an object that tracks a cell index and provides helper functions for:
 2. getRow() -> computes row
 3. topLeft() -> return index supplied as input
 
-
 * CELLINDEX
 
 Returns a cell index given a row and column.
@@ -153,3 +152,291 @@ Evaluate a condition table. The even value after the first true value is returne
 * COS
 
 Return the trigometric value _acos_ of some value.
+
+* DATE
+    Returns a serial number that represents a date given a year, month and day.
+
+*** Syntax
+    DATE(year, month, day)
+*** Examples
+
+    #+BEGIN_EXAMPLE
+     DATE( 2014, 01, 01 ) = 41640
+    #+END_EXAMPLE
+    
+    #+BEGIN_EXAMPLE
+     DATE( 2015, 3, 4 ) = 42067  
+    #+END_EXAMPLE
+
+* DATEDIF
+  Calculates the number of days, months or years between two date.
+** Syntax
+   
+  DATEDIF(start_date, end_date, unit)
+   
+  Arguments:
+   
+  | start_date | The beginning of a period. Dates may be entered as text string, serial number or result of function (e.g. DATEVALUE("2015-01-01") |
+  | end_date   | The end of a period.                                                                                                              |
+  | unit       | The type of information you want to calculate.                                                                                    |
+   
+  Unit Types:
+   
+  | "Y"  | The number of complete years in the period                                                      |
+  | "M"  | The number of complete months in the period                                                     |
+  | "D"  | The number of days in the period                                                                |
+  | "MD" | The difference between the days in the start_date and end_date. The month and year are ignored  |
+  | "YM" | The difference between the months in the start_date and end_date. The days and year are ignored |
+  | "YD" | The difference between the days in the start_date and end_date. The years are ignored           |
+ 
+** Examples
+
+   #+BEGIN_EXAMPLE
+     DATEDIF(DATE(2015, 1, 15), DATE(2015, 1, 16), "D") = 1
+   #+END_EXAMPLE
+
+   #+BEGIN_EXAMPLE
+     DATEDIF("1/15/2015", "1/16/2015", "D") = 1
+   #+END_EXAMPLE
+
+   #+BEGIN_EXAMPLE
+     DATEDIF("1/15/2014", "1/16/2015", "Y") = 1
+   #+END_EXAMPLE
+
+   #+BEGIN_EXAMPLE
+     DATEDIF("12/15/2014", "1/16/2015", "M") = 1
+   #+END_EXAMPLE
+
+   #+BEGIN_EXAMPLE
+     DATEDIF("10/01/2014", "1/31/2015", "M") = 3
+   #+END_EXAMPLE
+
+* INDIRECT
+* ISARRAY
+   
+  Tests if the value is an array.
+   
+  #+BEGIN_EXAMPLE
+  ISARRAY({1,2,3}) = TRUE
+  #+END_EXAMPLE
+   
+  #+BEGIN_EXAMPLE
+  ISBLANK("FOO") = FALSE
+  #+END_EXAMPLE
+
+* ISBLANK
+   
+  Tests if the value is blank (empty).
+   
+  #+BEGIN_SRC js
+    var wb = new workbook();
+    var ws = wb.sheet();
+
+    wb.set(0, "A1", null);
+    wb.set(0, "A2", undefined);
+    wb.set(0, "A3", "");
+    wb.set(0, "A4", "Hello");
+
+    assert(wb.run(0, 'ISBLANK(A1) = TRUE'), "A1 should be blank");
+    assert(wb.run(0, 'ISBLANK(A2) = TRUE'), "A2 should be blank");
+    assert(wb.run(0, 'ISBLANK(A3) = FALSE'), "A3 should not be blank"); // empty string is not blank
+    assert(wb.run(0, 'ISBLANK(A4) = FALSE'), "A4 should not be blank");
+  #+END_SRC
+
+* ISEMAIL
+* ISERR
+   
+  Test for any error but #N/A.
+   
+  #+BEGIN_SRC js
+    var wb = new workbook();
+    var ws = wb.sheet();
+    wb.set(ws, "A1", workbook.errors.na);
+    wb.set(ws, "A2", workbook.errors.div0);
+    wb.set(ws, "A3", Number.POSITIVE_INFINITY);
+
+    assert(
+        wb.run(ws, "ISERR(A1) = FALSE"),
+        "A1 should not be error"
+    );
+
+    assert(
+        wb.run(ws, "ISERR(A2) = TRUE"),
+        "A2 should be error"
+    );
+
+    assert(
+        wb.run(ws, "ISERR(A3) = TRUE"),
+        "A3 should be error"
+    );
+
+  #+END_SRC
+   
+* ISERROR
+   
+  Test for error.
+   
+  #+BEGIN_SRC js
+    var wb = new workbook();
+    var ws = wb.sheet();
+    wb.set(ws, "A1", workbook.errors.na);
+    wb.set(ws, "A2", workbook.errors.div0);
+    wb.set(ws, "A3", Number.POSITIVE_INFINITY);
+
+    assert(
+        wb.run(ws, "ISERROR(A1) = TRUE"),
+        "A1 should be error"
+    );
+
+    assert(
+        wb.run(ws, "ISERROR(A2) = TRUE"),
+        "A2 should be error"
+    );
+
+    assert(
+        wb.run(ws, "ISERROR(A3) = TRUE"),
+        "A3 should be error"
+    );
+
+  #+END_SRC
+   
+* ISEVEN
+   
+  Test for even number.
+   
+  #+BEGIN_SRC js
+     assert( workbook.run('ISEVEN(1) = FALSE'), "should be true");
+     assert( workbook.run('ISEVEN(2) = TRUE'), "should be true");
+  #+END_SRC
+   
+  Test values in a worksheet.
+   
+  #+BEGIN_SRC js
+    var wb = new workbook();
+    var ws = wb.sheet();
+    wb.set(ws, "A1", 1)
+    wb.set(ws, "A2", 2)
+    assert( wb.run(ws, "ISEVEN(A1) = FALSE"), "should be true" );
+    assert( wb.run(0, "ISEVEN(A2) = TRUE"), "should be true" );
+  #+END_SRC
+   
+* ISFORMULA
+   
+  Test if cell has formula.
+   
+  #+BEGIN_SRC js
+    var wb = new workbook();
+    var ws = wb.sheet();
+    wb.set(ws, "A1", 2);
+    wb.set(ws, "A2", "=A1^8");
+    assert( wb.run(0, "ISFORMULA(A1) = FALSE") );
+    assert( wb.run(0, "ISFORMULA(A2) = TRUE") );
+  #+END_SRC
+   
+* ISLOGICAL
+   
+  Test for TRUE or FALSE
+   
+  #+BEGIN_EXAMPLE
+  ISLOGICAL(1) = FALSE
+  #+END_EXAMPLE
+   
+  #+BEGIN_EXAMPLE
+  ISLOGICAL("HELLO") = FALSE
+  #+END_EXAMPLE
+   
+  #+BEGIN_EXAMPLE
+  ISLOGICAL(TRUE) = TRUE
+  #+END_EXAMPLE
+   
+  #+BEGIN_EXAMPLE
+  ISLOGICAL(FALSE) = TRUE
+  #+END_EXAMPLE
+
+* ISNA
+   
+  Test for NA error.
+   
+  #+BEGIN_EXAMPLE
+  ISNA("foo") = FALSE
+  #+END_EXAMPLE
+   
+  #+BEGIN_EXAMPLE
+  ISNA(NA()) = TRUE
+  #+END_EXAMPLE
+
+* ISNONTEXT
+   
+  Test for non text
+   
+  #+BEGIN_EXAMPLE
+  ISNONTEXT("foo") = FALSE
+  #+END_EXAMPLE
+   
+  #+BEGIN_EXAMPLE
+  ISNONTEXT(NA()) = TRUE
+  #+END_EXAMPLE
+
+* ISNUMBER
+   
+  Returns TRUE if the *value_to_check* is a number.
+   
+  #+BEGIN_EXAMPLE
+  ISNUMBER("FOO") = FALSE
+  #+END_EXAMPLE
+   
+  #+BEGIN_EXAMPLE
+  ISNUMBER(1)
+  #+END_EXAMPLE
+
+* ISODD
+   
+  Returns true if the value is odd.
+   
+  #+BEGIN_EXAMPLE
+  ISODD(1) = TRUE
+  #+END_EXAMPLE
+   
+  #+BEGIN_EXAMPLE
+  ISODD(2) = FALSE
+  #+END_EXAMPLE
+
+* ISTEXT
+   
+  Returns TRUE if the value is text.
+   
+  #+BEGIN_EXAMPLE
+  ISTEXT("foo") = TRUE
+  #+END_EXAMPLE
+   
+  #+BEGIN_EXAMPLE
+  ISTEXT(2) = FALSE
+  #+END_EXAMPLE
+
+* ISRANGE
+   
+  Return TRUE when the value is a range or a cell reference.
+   
+  #+BEGIN_SRC js
+    var wb = new workbook();
+    var ws = wb.sheet();
+
+    assert( wb.run(ws, "ISRANGE(A1:A3)"), "A1:A3 is not a range" );
+    assert( wb.run(ws, 'ISRANGE(OFFSET(A1,0,0,2,2))'), "OFFSET function not returning range" );
+        
+  #+END_SRC
+   
+* ISREF
+   
+   Return TRUE when the value is a range or a cell reference.
+   
+   #+BEGIN_SRC js
+      wb = new workbook();
+      ws = wb.sheet();
+
+      assert( ws.run('ISREF(A1) = TRUE') );
+      assert( ws.run('ISREF("FOO") = FALSE') );
+         
+   #+END_SRC
+   
+*
