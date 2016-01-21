@@ -1,0 +1,93 @@
+#+TITLE: functionfoundry docs
+
+_function foundry_ is a JavaScript library written in ES6.
+
+It includes ES5 code precompiled with babel in the lib folder.
+
+If you want to load the entire library (72kb) then use functionfoundry.js in the dist folder. This file is generated with webpack.
+
+The library includes functions for:
+
+  1. [[*ABS][ABS]]
+  2. [[*ACOS][ACOS]]
+  3. [[*ADD][ADD]]
+  4. [[*AND][AND]]
+  5. [[*BIN2DEC][BIN2DEC]]
+  6. [[*CELL][CELL]]
+  7. [[*CELLINDEX][CELLINDEX]]
+  8. [[*CHANGED][CHANGED]]
+  9. [[*CHOOSE][CHOOSE]]
+  10. [[*CLEAN][CLEAN]]
+  11. [[*CONCATENATE][CONCATENATE]]
+  12. [[*COND][COND]]
+  13. [[*COS][COS]]
+  14. [[*DATE][DATE]]
+  15. [[*DATEDIF][DATEDIF]]
+  16. [[*DEC2BIN][DEC2BIN]]
+  17. [[*DIFF][DIFF]]
+  18. [[*DIVIDE][DIVIDE]]
+  19. [[*EQ][EQ]]
+  20. [[*FILTER][FILTER]]
+  21. [[*FIND][FIND]]
+  22. [[*FLATTEN][FLATTEN]]
+  23. [[*GT][GT]]
+  24. [[*GTE][GTE]]
+  25. [[*GUID][GUID]]
+  26. [[*HLOOKUP][HLOOKUP]]
+  27. [[*IFNA][IFNA]]
+  28. [[*IN][IN]]
+  29. [[*INDEX2COL][INDEX2COL]]
+  30. [[*INDEX2ROW][INDEX2ROW]]
+  31. [[*INDIRECT][INDIRECT]]
+  32. [[*ISARRAY][ISARRAY]]
+  33. [[*ISBLANK][ISBLANK]]
+  34. [[*ISEMAIL][ISEMAIL]]
+  35. [[*ISERROR][ISERROR]]
+  36. [[*ISEVEN][ISEVEN]]
+  37. [[*ISFUNCTION][ISFUNCTION]]
+  38. [[*ISNA][ISNA]]
+  39. [[*ISNUMBER][ISNUMBER]]
+  40. [[*ISODD][ISODD]]
+  41. [[*ISRANGE][ISRANGE]]
+  42. [[*ISREF][ISREF]]
+  43. [[*ISTEXT][ISTEXT]]
+  44. [[*ISURL][ISURL]]
+  45. [[*LOOKUP][LOOKUP]]
+  46. [[*LOWER][LOWER]]
+  47. [[*LT][LT]]
+  48. [[*LTE][LTE]]
+  49. [[*MAX][MAX]]
+  50. [[*MULTIPLY][MULTIPLY]]
+  51. [[*N][N]]
+  52. [[*NE][NE]]
+  53. [[*NOT][NOT]]
+  54. [[*OCT2DEC][OCT2DEC]]
+  55. [[*OR][OR]]
+  56. [[*PI][PI]]
+  57. [[*PMT][PMT]]
+  58. [[*POWER][POWER]]
+  59. [[*RANGE][RANGE]]
+  60. [[*REPT][REPT]]
+  61. [[*SEARCH][SEARCH]]
+  62. [[*SIN][SIN]]
+  63. [[*SORT][SORT]]
+  64. [[*SUM][SUM]]
+  65. [[*SWITCH][SWITCH]]
+  66. [[*TAN][TAN]]
+  67. [[*TAU][TAU]]
+  68. [[*TEXT][TEXT]]
+  69. [[*UNIQUE][UNIQUE]]
+  70. [[*UPPER][UPPER]]
+  71. [[*VLOOKUP][VLOOKUP]]
+
+* *ABS
+
+Return the absolute value.
+
+* *ACOS
+
+Return the trigometric value _acos_ of some value.
+
+* *ADD
+
+Add one or more values with the JavaScript `+` operator.
