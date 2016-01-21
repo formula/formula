@@ -2,9 +2,9 @@
 
 [![Circle CI](https://circleci.com/gh/FunctionFoundry/functionfoundry.svg?style=svg)](https://circleci.com/gh/FunctionFoundry)
 
-Functions inspired by the spreadsheet for the web.
+FunctionFoundry is spreadsheet-like functions in modern JavaScript.
 
-This project has 3 directories.
+This project has 4 directories.
 
 | name | purpose |
 | ------------- | ----------- |
