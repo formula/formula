@@ -4,7 +4,7 @@
 
 It includes ES5 code precompiled with babel in the lib folder.
 
-If you want to load the entire library (72kb) then use functionfoundry.js in the dist folder. This file is generated with webpack.
+If you want to load the entire library (72kb) then use functionfoundry.js in the dist folder. This file is generated with browserify.
 
 The library includes functions for:
 
@@ -79,6 +79,30 @@ The library includes functions for:
   + [[#unique][UNIQUE]]
   + [[#upper][UPPER]]
   + [[#vlookup][VLOOKUP]]
+
+* AND
+   
+  Returns TRUE if all arguments evaluate to TRUE; otherwise returns FALSE.
+   
+  #+BEGIN_EXAMPLE
+   AND(TRUE, FALSE) = FALSE
+  #+END_EXAMPLE
+   
+  #+BEGIN_EXAMPLE
+  AND(1, TRUE) = TRUE
+  #+END_EXAMPLE
+
+* CHOOSE
+   
+  Choose a value from a list.
+   
+  #+BEGIN_EXAMPLE
+  CHOOSE(2, "Hello", "World") = "World"
+  #+END_EXAMPLE
+   
+  #+BEGIN_EXAMPLE
+  CHOOSE(3, "One", "Two", "Three") = "Three"
+  #+END_EXAMPLE
 
 * ABS
 
@@ -211,6 +235,31 @@ Return the trigometric value _acos_ of some value.
      DATEDIF("10/01/2014", "1/31/2015", "M") = 3
    #+END_EXAMPLE
 
+* IF
+   
+  Returns true_value if a condition you specify evaluates to TRUE and false_value if it evaluates to FALSE.
+   
+  #+BEGIN_EXAMPLE
+  IF(1,"Yes", "No") = "Yes"
+  #+END_EXAMPLE
+   
+* IFNA
+   
+  Returns the value you specify if the formula returns the #N/A error value; otherwise returns the result of the formula.
+   
+  #+BEGIN_EXAMPLE
+  =IFNA(NA(), TRUE, FALSE)
+  #+END_EXAMPLE
+   
+* IFERROR
+   
+  Returns a value you specify if a formula evaluates to an error; otherwise, 
+  returns the result of the formula.
+   
+  #+BEGIN_EXAMPLE
+  IFERROR(1/0, "Error") = "Error"
+  #+END_EXAMPLE
+   
 * INDIRECT
 * ISARRAY
    
@@ -439,4 +488,73 @@ Return the trigometric value _acos_ of some value.
          
    #+END_SRC
    
+*
+
+* NOT
+   
+  Returns TRUE when FALSE and FALSE when TRUE;
+   
+  #+BEGIN_EXAMPLE
+  NOT(FALSE)
+  #+END_EXAMPLE
+   
+  #+BEGIN_EXAMPLE
+  NOT(TRUE) = FALSE
+  #+END_EXAMPLE
+   
+* OR
+   
+  Returns TRUE if any argument is true.
+   
+  #+BEGIN_EXAMPLE
+  OR(TRUE, FALSE)
+  #+END_EXAMPLE
+   
+  #+BEGIN_EXAMPLE
+  OR(FALSE, FALSE) = FALSE
+  #+END_EXAMPLE
+
+* PI
+
+  Returns the value for the univeral constant PI.
+
+  #+BEGIN_EXAMPLE
+  PI() = 3.141592653589793
+  #+END_EXAMPLE
+
+* POWER
+   
+  Returns the the nth power of a number.
+
+  #+BEGIN_EXAMPLE
+    POWER(16, 2) = 256
+  #+END_EXAMPLE
+
+* SWITCH
+   
+  Evaluates an expression against a list of values and returns the matching result.
+   
+  #+BEGIN_EXAMPLE
+  SWITCH(1, 1, "January", 2, "February", 3,
+  "March", 4, "April", 5, "May", 6, "June", 7, "July", 8,
+  "August", 9, "September", 10, "October", 11, "November", 12,
+  "December", "Unknown month number") = "January"
+  #+END_EXAMPLE
+   
+  #+BEGIN_EXAMPLE
+  SWITCH(1, 1, "Good", 2, "OK", 3, "Bad") = "Good"
+  #+END_EXAMPLE
+   
+  #+BEGIN_EXAMPLE
+  SWITCH(3, 1, "Good", 2, "OK", 3, "Bad") = "Bad"
+  #+END_EXAMPLE
+   
+* XOR
+   
+   Returns the exclusive OR for argument1, argument2...argumentN.
+   
+   #+BEGIN_EXAMPLE
+    XOR(0, 1, 0) = TRUE
+   #+END_EXAMPLE
+
 *
