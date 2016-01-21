@@ -60,6 +60,7 @@ test('index', function(t) {
   t.ok( Box.SEARCH, 'SEARCH should be there')
   t.ok( Box.SIN, 'SIN should be there')
   t.ok( Box.SORT, 'SORT should be there')
+  t.ok( Box.SUBTRACT, 'SUBTRACT should be there')
   t.ok( Box.SUM, 'SUM should be there')
   t.ok( Box.SWITCH, 'SWITCH should be there')
   t.ok( Box.TAN, 'TAN should be there')
@@ -68,4 +69,5 @@ test('index', function(t) {
   t.ok( Box.UNIQUE, 'UNIQUE should be there')
   t.ok( Box.UPPER, 'UPPER should be there')
   t.ok( Box.VLOOKUP, 'VLOOKUP should be there')
+  t.ok( Box.XOR, 'XOR should be there')
 })
