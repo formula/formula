@@ -15,3 +15,5 @@ export function IN(needle, lookup) {
 
   return lookup.some(n => n === needle)
 }
+
+export const CONTAINS = IN
