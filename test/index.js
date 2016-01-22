@@ -3,7 +3,7 @@ import * as Box from '../src/index'
 
 test('index', function(t) {
 
-  t.test( 63 )
+  t.test( 64 )
   t.ok( Box.ABS, 'ABS should be there')
   t.ok( Box.ACOS, 'ACOS should be there')
   t.ok( Box.ADD, 'ADD should be there')
@@ -14,6 +14,7 @@ test('index', function(t) {
   t.ok( Box.CHOOSE, 'CHOOSE should be there')
   t.ok( Box.CONCATENATE, 'CONCATENATE should be there')
   t.ok( Box.COND, 'COND should be there')
+  t.ok( Box.CONTAINS, 'CONTAINS should be there')
   t.ok( Box.COS, 'COS should be there')
   t.ok( Box.DATE, 'DATE should be there')
   t.ok( Box.DATEDIF, 'DATEDIF should be there')
