@@ -1,11 +1,11 @@
 import {FLATTEN} from './FLATTEN';
 
-export function MAX() {
+export function MIN() {
   FLATTEN( arguments ).reduce((max, next) => {
     if (typeof next !== 'number' || next !== next) {
       return max;
     }
 
-    return Math.max(max, next);
-  }, undefined );
+    return Math.min(max, next);
+  }, undefined);
 }

@@ -1,7 +1,8 @@
 import * as FF from './index'
+import {COMPILE} from './COMPILE'
 
 if (window) {
-  
+
   // This is a sham that makes Object.freeze work (insecurely) in ES3 environments
   // ES5 15.2.3.9
   // http://es5.github.com/#x15.2.3.9
@@ -16,6 +17,8 @@ if (window) {
           return object;
       };
   }
+
+  FF.COMPILE = COMPILE
 
   window.FunctionFoundry = Object.freeze(FF);
 }
