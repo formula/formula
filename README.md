@@ -13,4 +13,4 @@ This project has 4 directories.
 |test| Tests using the substack/tape framework |
 |dist| Holds bundle for browsers. Namespace is FunctionFoundry. |
 
-For more information see Docs.org.
+For more information see [Docs.org](./Docs.org).
