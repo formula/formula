@@ -8,9 +8,9 @@ This project has 4 directories.
 
 | name | purpose |
 | ------------- | ----------- |
-|src| Original JavaScript 2015 source code |
-|lib| CommonJS code created by Babel compiler |
-|test| Tests using the substack/tape framework |
-|dist| Holds bundle for browsers. Namespace is FunctionFoundry. |
+|src| Source code |
+|lib| Compiled files |
+|test| Test code |
+|dist| Bundle for browsers. Namespace variable is FunctionFoundry. |
 
-For more information see Docs.org.
+For more information see [Docs.org](./Docs.org).
