@@ -11,6 +11,6 @@ FunctionFoundry is a formula language and function library in JavaScript.
 |src| Source code |
 |lib| Compiled files |
 |test| Test code |
-|dist| Bundle for browsers. Namespace variable is FunctionFoundry. |
+|dist| Bundle for browsers. Namespace is FunctionFoundry. |
 
 For more information see [Docs.org](./Docs.org).
