@@ -4,34 +4,6 @@
 
 Formula language in JavaScript.
 
-#+BEGIN_SRC js
-  var parser = require('formula-ast');
-  parser.parse('IF(TRUE, "It works", "It is broke")');
-#+END_SRC
-
-* Usage
-
-  For the brower:
-
-  #+BEGIN_SRC html
-  <script src="dist/formulaParser.js"></script>
-  #+END_SRC
-
-  #+BEGIN_SRC js
-    parser.parse('IF(TRUE, "Yes", "No")');
-  #+END_SRC
-
-  If you use node, webpack or browserify:
-
-  #+BEGIN_SRC sh
-    npm install formula-ast
-  #+END_SRC
-
-  #+BEGIN_SRC js
-    var parser = require('formula-ast);
-    parser.parse('IF(TRUE, "Yes", "No")');
-  #+END_SRC
-
 * Syntax
   
   The formulas use the same syntax and functions found in most spreadsheet software. 
