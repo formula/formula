@@ -15,4 +15,4 @@ FunctionFoundry is a formula language and function library in JavaScript.
 
 For more information see [Docs](./Docs.org) or read the code.
 
-If you want a reduction-based Flux implementation on top of this then see [FoundryStore](https://github.com/FunctionFoundry/FoundryStore).
+If you want state management too then see [FoundryStore](https://github.com/FunctionFoundry/FoundryStore).
