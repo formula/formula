@@ -13,4 +13,6 @@ FunctionFoundry is a formula language and function library in JavaScript.
 |test| Test code |
 |dist| Bundle for browsers. Namespace is FunctionFoundry. |
 
-For more information see [Docs.org](./Docs.org).
+For more information see [Docs](./Docs.org) or read the code.
+
+If you want a reduction-based Flux implementation on top of this then see [FoundryStore](https://github.com/FunctionFoundry/FoundryStore).
