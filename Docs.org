@@ -1,4 +1,4 @@
-#+TITLE: functionfoundry docs
+#+TITLE: functionfoundry function library
 
 *DRAFT : WORK IN PROGRESS *
 
