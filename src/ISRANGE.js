@@ -1,3 +1,5 @@
+import {ISBLANK} from './ISBLANK'
+
 export function ISRANGE(v) {
-  return (v.constructor.name === 'RANGE'); 
+  return (!ISBLANK(v) && v.constructor.name === 'RANGE');
 }
