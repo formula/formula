@@ -4,7 +4,9 @@ import {LTE} from '../src/LTE';
 test('LTE : Should compare two values and return true or false', function(t) {
 
 
-  t.plan(4);
+  t.plan(6);
+  t.equal( LTE(undefined, 4), false );
+  t.equal( LTE(4, null), false );
   t.equal( LTE(2, 4), true );
   t.equal( LTE(200, 800), true );
   t.equal( LTE(20000000, 40000000), true );

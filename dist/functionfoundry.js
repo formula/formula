@@ -143,9 +143,9 @@
 "use strict";function ISODD(e){return!!(1&Math.floor(Math.abs(e)))}Object.defineProperty(exports,"__esModule",{value:!0}),exports.ISODD=ISODD;
 
 },{}],49:[function(require,module,exports){
-"use strict";function ISRANGE(e){return"RANGE"===e.constructor.name}Object.defineProperty(exports,"__esModule",{value:!0}),exports.ISRANGE=ISRANGE;
+"use strict";function ISRANGE(e){return!(0,_ISBLANK.ISBLANK)(e)&&"RANGE"===e.constructor.name}Object.defineProperty(exports,"__esModule",{value:!0}),exports.ISRANGE=ISRANGE;var _ISBLANK=require("./ISBLANK");
 
-},{}],50:[function(require,module,exports){
+},{"./ISBLANK":40}],50:[function(require,module,exports){
 "use strict";function ISREF(e){return e.hasOwnProperty("topLeft")}Object.defineProperty(exports,"__esModule",{value:!0}),exports.ISREF=ISREF;
 
 },{}],51:[function(require,module,exports){
