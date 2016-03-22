@@ -1,11 +1,13 @@
 import {FLATTEN} from './FLATTEN';
+import {ISNUMBER} from './ISNUMBER';
 
-export function MIN() {
-  FLATTEN( arguments ).reduce((max, next) => {
-    if (typeof next !== 'number' || next !== next) {
-      return max;
+export function MIN(...list) {
+  return FLATTEN( list ).reduce((min, next) => {
+    if (ISNUMBER(next)) {
+      return Math.min(min, next);
     }
 
-    return Math.min(max, next);
-  }, undefined);
+    return min;
+
+  }, Number.POSITIVE_INFINITY );
 }
