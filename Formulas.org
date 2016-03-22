@@ -1,0 +1,179 @@
+#+TITLE: Formulas
+#+AUTHOR: Peter W Moresi
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://orgmode.org/worg/style/worg.css" />
+
+Formula language in JavaScript.
+
+* Syntax
+  
+  The formulas use the same syntax and functions found in most spreadsheet software. 
+
+** Technical Notes						   :noexport:
+
+  Under the covers the formulas are compiled to JavaScript which depend on functions loaded
+  on the page. The library looks for functions in the workbook.fn namespace and if not found then
+  in the root object (e.g. window).
+  
+** Constants
+   
+   - TRUE
+   - FALSE
+     
+** Prefix Operators
+   
+   A prefix operator is immediately to the left of the operand.
+   
+   |----------+--------------+---------------------------------------------------------------+--------------|
+   | operator | Token Name   | Operation Performed                                           | Supported    |
+   |----------+--------------+---------------------------------------------------------------+--------------|
+   | -        | prefix-minus | Negates operand; converts positive to negative and vice versa | Yes          |
+   | +        | prefix-plus  | Converts operand to number                                    | Yes          |
+   | $        |              | Next component of an A1 reference is absolute                 | No / Ignores |
+   |----------+--------------+---------------------------------------------------------------+--------------|
+   
+** Inflix Operators
+   
+   An inflix operator is between two operands. The operands are called the rhs and lhs for right hand side and left hand side, respectively.
+   
+   |----------+----------------+-----------------------------------+-----------|
+   | Operator | Token Name     | Operation Performed               | Supported |
+   |----------+----------------+-----------------------------------+-----------|
+   | +        | infix-plus     | addition                          | Yes       |
+   | -        | infix-minus    | subtraction                       | Yes       |
+   | *        | infix-multiply | multiplication                    | Yes       |
+   | ^        | infix-power    | exponentiation                    | Yes       |
+   | =        | infix-eq       | is equal to                       | Yes       |
+   | <>       | infix-ne       | is not equal to                   | Yes       |
+   | >        | infix-gt       | is greater than                   | Yes       |
+   | <        | infix-lt       | is less than                      | Yes       |
+   | >=       | infix-gte      | is greater than or equal to       | Yes       |
+   | <=       | infix-lte      | is less than or equal to          | Yes       |
+   | &        | infix-concat   | concatentation of strings         | Yes       |
+   | \w       |                | reference intersection            | No        |
+   | ,        |                | reference union                   | Yes       |
+   | :        |                | reference range                   | Yes       |
+   | !        |                | separate worksheet from reference | Yes       |
+   |----------+----------------+-----------------------------------+-----------|
+   
+** Postfix Operators
+   
+   A postfix operator is immediate to the right side of the operand.
+   
+   |----------+------------------------+-----------|
+   | Operator | Operation              | Supported |
+   |----------+------------------------+-----------|
+   | %        | Divides operand by 100 | Yes       |
+   |----------+------------------------+-----------|
+   
+** Matchfix Operators
+   
+   A matchfix operator specifies the start and end of a logical grouping.
+   
+   |-----------+------+-------+-----------------------------------------------------------------|
+   | Supported | left | right | Operation                                                       |
+   |-----------+------+-------+-----------------------------------------------------------------|
+   | Yes       | "    | "     | string constant                                                 |
+   | Yes       | {    | }     | array constant                                                  |
+   | Yes       | (    | )     | arithmetic grouping or function arguments or reference grouping |
+   | Yes       | '    | '     | grouping worksheet name                                         |
+   | No        | [    | ]     | grouping workbook name (external reference)                     |
+   | No        | [    | ]     | Relative reference in R1C1 style                                |
+   |-----------+------+-------+-----------------------------------------------------------------|
+   
+** Operator Precedence
+   
+   If you combine several different operators into the same formula then the operations
+   are based on the precedence of each operator.
+   
+   This table describe the order in which the operation are performed with the operations
+   performed first on the top.
+   
+   |-------------------------------+---------------------|
+   | Operator                      | Description         |
+   |-------------------------------+---------------------|
+   | -                             | Negation (as in –1) |
+   | %                             | Percent             |
+   | ^                             | Power Function      |
+   | * and /                       | Multiply and Divide |
+   | + and -                       | Add and Subtract    |
+   | &                             | Combine two strings |
+   | < and > and <=  and >= and <> | Comparision         |
+   |-------------------------------+---------------------|
+   
+** Change Order with Grouping
+   
+   Parentheses can be used to change the order in which operation are performed. For example,
+   the formula below results in 15. 5*2 is multipled to result in 10. The result is then added
+   to 5.
+   
+   #+BEGIN_EXAMPLE
+     =5+5*2
+   #+END_EXAMPLE
+   
+   To override the default order you can group together expression. For example below the formula
+   results in 20 because 5+5 is added together and multipled by 2.
+   
+   #+BEGIN_EXAMPLE
+     =(5+5)*2   
+   #+END_EXAMPLE
+
+** Calculation Errors
+
+   The calculation errors categorize problem found in formulas.
+
+   The errors supported by the system are:
+   
+   #+NAME: ErrorTypes
+   |---------+---------------|
+   | code    | text          |
+   |---------+---------------|
+   | nil     | #NULL!        |
+   | div0    | #DIV/0!       |
+   | value   | #VALUE?       |
+   | ref     | #REF!         |
+   | name    | #NAME?        |
+   | num     | @NUM!         |
+   | na      | #N/A          |
+   | error   | #ERROR!       |
+   | data    | #GETTING_DATA |
+   | missing | #MISSING      |
+   | unknown | #UNKNOWN      |
+   |---------+---------------|
+
+    
+* Node Types / Subtypes
+  
+  1. value
+     1. boolean
+     2. number
+     3. string
+     4. variable
+     5. array
+  2. cell
+     1. local
+     2. remote
+     3. remote-named
+  3. operator
+     1. infix-add
+     2. infix-concat
+     3. infix-divide
+     4. infix-gt
+     5. infix-gte
+     6. infix-multiply
+     7. infix-ne
+     8. infix-eq
+     9. infix-lt
+     10. infix-lte
+     11. infix-power
+     12. infix-subtract
+     13. prefix-plus
+     14. prefix-minus
+  4. function
+  5. group
+  6. range
+  7. cell
+     1. local
+     2. remote
+
+
+
