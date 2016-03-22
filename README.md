@@ -2,15 +2,17 @@
 
 [![Circle CI](https://circleci.com/gh/FunctionFoundry/functionfoundry.svg?style=svg)](https://circleci.com/gh/FunctionFoundry)
 
-FunctionFoundry is spreadsheet-like functions in modern JavaScript.
+FunctionFoundry is a formula language and function library in JavaScript.
 
-This project has 4 directories.
+## directories.
 
 | name | purpose |
 | ------------- | ----------- |
-|src| Original JavaScript 2015 source code |
-|lib| CommonJS code created by Babel compiler |
-|test| Tests using the substack/tape framework |
-|dist| Holds bundle for browsers. Namespace is FunctionFoundry. |
+|src| Source code |
+|lib| Compiled files |
+|test| Test code |
+|dist| Bundle for browsers. Namespace is FunctionFoundry. |
 
-For more information see docs for [Function library](./Docs.org) and [Formula language](./Formulas.org).
+For more information see [Docs](./Docs.org) or read the code.
+
+If you want state management then see [FoundryStore](https://github.com/FunctionFoundry/FoundryStore).
