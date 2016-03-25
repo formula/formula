@@ -3,7 +3,7 @@ import * as ff from '../src/index'
 
 test('index', function(t) {
 
-  t.test( 72 )
+  t.test( 73 )
   t.ok( ff.ABS, 'ABS should be there')
   t.ok( ff.ACOS, 'ACOS should be there')
   t.ok( ff.ADD, 'ADD should be there')
@@ -36,6 +36,7 @@ test('index', function(t) {
   t.ok( ff.INDIRECT, 'INDIRECT should be there')
   t.ok( ff.ISARRAY, 'ISARRAY should be there')
   t.ok( ff.ISBLANK, 'ISBLANK should be there')
+  t.ok( ff.ISEMPTY, 'ISEMPTY should be there')
   t.ok( ff.ISEMAIL, 'ISEMAIL should be there')
   t.ok( ff.ISERROR, 'ISERROR should be there')
   t.ok( ff.ISEVEN, 'ISEVEN should be there')
