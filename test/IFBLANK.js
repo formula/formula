@@ -1,11 +1,11 @@
 import test from 'tape';
-import {ISBLANK} from '../src/ISBLANK';
+import {IFBLANK} from '../src/IFBLANK';
 
 test('IFBLANK', function(t) {
   t.plan(5)
-  t.is(ISBLANK(undefined, 'Yes'), 'Yes')
-  t.is(ISBLANK(null, 'Yes'), 'Yes')
-  t.is(ISBLANK('', 'Yes'), 'Yes')
-  t.is(ISBLANK('True', 'Yes'), 'True')
-  t.is(ISBLANK(false, 'Yes'), false)
+  t.is(IFBLANK(undefined, 'Yes'), 'Yes')
+  t.is(IFBLANK(null, 'Yes'), 'Yes')
+  t.is(IFBLANK('', 'Yes'), '')
+  t.is(IFBLANK('True', 'Yes'), 'True')
+  t.is(IFBLANK(false, 'Yes'), false)
 })
