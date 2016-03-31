@@ -3,7 +3,7 @@ import * as ff from '../src/index'
 
 test('index', function(t) {
 
-  t.test( 73 )
+  t.test( 76 )
   t.ok( ff.ABS, 'ABS should be there')
   t.ok( ff.ACOS, 'ACOS should be there')
   t.ok( ff.ADD, 'ADD should be there')
@@ -29,7 +29,10 @@ test('index', function(t) {
   t.ok( ff.GT, 'GT should be there')
   t.ok( ff.GTE, 'GTE should be there')
   t.ok( ff.HLOOKUP, 'HLOOKUP should be there')
+  t.ok( ff.IF, 'IF should be there')
   t.ok( ff.IFNA, 'IFNA should be there')
+  t.ok( ff.IFBLANK, 'IFBLANK should be there')
+  t.ok( ff.IFEMPTY, 'IFEMPTY should be there')
   t.ok( ff.IN, 'IN should be there')
   t.ok( ff.INDEX2COL, 'INDEX2COL should be there')
   t.ok( ff.INDEX2ROW, 'INDEX2ROW should be there')
