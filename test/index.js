@@ -3,7 +3,7 @@ import * as ff from '../src/index'
 
 test('index', function(t) {
 
-  t.test( 79 )
+  t.test( 81 )
   t.ok( ff.ABS, 'ABS should be there')
   t.ok( ff.ACOS, 'ACOS should be there')
   t.ok( ff.ADD, 'ADD should be there')
@@ -19,6 +19,8 @@ test('index', function(t) {
   t.ok( ff.COS, 'COS should be there')
   t.ok( ff.DATE, 'DATE should be there')
   t.ok( ff.DATEDIF, 'DATEDIF should be there')
+  t.ok( ff.DATEVALUE, 'DATEVALUE should be there')
+  t.ok( ff.DAYS360, 'DAYS360 should be there')
   t.ok( ff.DEC2BIN, 'DEC2BIN should be there')
   t.ok( ff.DIVIDE, 'DIVIDE should be there')
   t.ok( ff.EQ, 'EQ should be there')
