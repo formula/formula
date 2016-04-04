@@ -9,5 +9,5 @@ test('SERIAL', function(t) {
   t.equal( SERIAL(new Date(1900, 1, 1)), 32, 'Should be 33');
   t.equal( SERIAL(new Date(1900, 2, 1)), 60, 'Should be 61');
   t.equal( SERIAL(new Date(2000, 0, 1)), 36526, 'Should be 36526');
-  t.equal( SERIAL('foo'), 36526, error.na);
+  t.equal( SERIAL('foo'), error.na, 'Should be NA');
 });
