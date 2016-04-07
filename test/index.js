@@ -8,6 +8,7 @@ test('index', function(t) {
   t.ok( ff.ACOS, 'ACOS should be there')
   t.ok( ff.ADD, 'ADD should be there')
   t.ok( ff.AND, 'AND should be there')
+  t.ok( ff.AVERAGE, 'AVERAGE should be there')
   t.ok( ff.BIN2DEC, 'BIN2DEC should be there')
   t.ok( ff.CELL, 'CELL should be there')
   t.ok( ff.CELLINDEX, 'CELLINDEX should be there')
