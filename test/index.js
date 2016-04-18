@@ -3,7 +3,7 @@ import * as ff from '../src/index'
 
 test('index', function(t) {
 
-  t.test( 81 )
+  t.test( 82 )
   t.ok( ff.ABS, 'ABS should be there')
   t.ok( ff.ACOS, 'ACOS should be there')
   t.ok( ff.ADD, 'ADD should be there')
@@ -75,6 +75,7 @@ test('index', function(t) {
   t.ok( ff.REPLACE, 'REPLACE should be there')
   t.ok( ff.RIGHT, 'RIGHT should be there')
   t.ok( ff.SEARCH, 'SEARCH should be there')
+  t.ok( ff.SELECT, 'SELECT should be there')
   t.ok( ff.SPLIT, 'SPLIT should be there')
   t.ok( ff.SIN, 'SIN should be there')
   t.ok( ff.SORT, 'SORT should be there')
