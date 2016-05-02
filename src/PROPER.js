@@ -1,5 +1,8 @@
+// Copyright 2015 Peter W Moresi
+
 import error from './ERROR'
 
+// PROPER converts text into proper case.
 export function PROPER(text) {
     if (text === undefined || text.length === 0) {
         return error.value;

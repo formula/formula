@@ -1,7 +1,6 @@
-// Author: Peter Moresi
-// inspired by npm package koa-json-filter
-//
-// SELECT fields from body
+// Copyright 2015 Peter W Moresi
+
+// SELECT fields from object
 export function SELECT(fields, body) {
   // non-json
   if (!body || 'object' != typeof body) return;

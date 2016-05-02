@@ -1,12 +1,13 @@
 {
   "name": "functionfoundry",
-  "version": "0.7.13",
-  "description": "Modern JavaScript inspired by spreadsheets",
+  "version": "0.8.0",
+  "description": "Modern JavaScript inspired by the spreadsheet library",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
     "test": "gulp test",
-    "build": "gulp build && browserify -g uglifyify ./lib/browserify.js > dist/functionfoundry.js"
+    "build": "gulp build && browserify ./browserify.js > dist/functionfoundry.js && browserify -g uglifyify ./browserify.js > dist/functionfoundry.min.js",
+    "docs": "docco src/*.js"
   },
   "repository": {
     "type": "git",

@@ -1,3 +1,5 @@
+// Copyright 2015 Peter W Moresi
+
 export function DIFF(a, b) {
   let keysA = Object.keys(a),
   keysB = Object.keys(b),

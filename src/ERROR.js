@@ -1,3 +1,5 @@
+// Copyright 2015 Peter W Moresi
+
 // List of errors in the spreadsheet system
 
 let nil = new Error('#NULL!'),

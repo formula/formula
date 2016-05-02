@@ -1,3 +1,6 @@
+// Copyright 2015 Peter W Moresi
+
+// Shared constants
 export let d1900 = new Date(1900, 0, 1),
   JulianOffset = 2415019,
   MinutesInHour = 60,

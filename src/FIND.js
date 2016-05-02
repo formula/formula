@@ -1,8 +1,13 @@
+// Copyright 2015 Peter W Moresi
+
 import error from './ERROR';
 
-export function FIND(find_text, within_text, position) {
-  if (!within_text) { return null; }
-  position = (typeof position === 'undefined') ? 1 : position;
-  position = within_text.indexOf(find_text, position - 1) + 1;
-  return position === 0 ? error.value : position;
+// FIND searches for text within a string
+export function FIND(find_text, within_text='', position=1) {
+
+  // Find the position of the text
+  position = within_text.indexOf(find_text, position - 1)
+
+  // If found return the position as base 1.
+  return position === -1 ? error.value : position+1
 }

@@ -1,6 +1,9 @@
+// Copyright 2015 Peter W Moresi
+
 import {ISARRAY} from './ISARRAY'
 import error from './ERROR'
 
+// MATCH returns an index in `array_reference` by searching for `lookup_reference`.
 export function MATCH(lookup_reference, array_reference, matchType) {
 
   var lookupArray, lookupValue, index, indexValue;

@@ -1,4 +1,4 @@
-
+/* Copyright 2015 Peter W Moresi */
 /* description: Parses end executes spreadsheet formula expressions. */
 
 /* lexical grammar */

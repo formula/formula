@@ -1,8 +1,8 @@
-/* Returns a cell indirection
- */
-import {CELL} from './CELL';
+// Copyright 2015 Peter W Moresi
 
+import {REF} from './REF';
+
+// Returns a cell indirection
 export function INDIRECT(ref) {
-  console.log( this )
-  return new CELL(this, ref.index);
+  return REF(ref);
 }

@@ -1,18 +1,25 @@
+// Copyright 2015 Peter W Moresi
+
 import error from './ERROR';
 
-export function CHOOSE() {
-  if (arguments.length < 2) {
+// CHOOSE accepts an index and a list of items. It returns the item that corresponds to the index.
+export function CHOOSE(index, ...items) {
+
+  // Return `#NA!` if index or items are not provided.
+  if (!index || items.length === 0) {
     return error.na;
   }
 
-  var index = arguments[0];
+  // Return `#VALUE!` if index is less than 1 or greater than 254.
   if (index < 1 || index > 254) {
     return error.value;
   }
 
-  if (arguments.length < index + 1) {
+  // Return `#VALUE!` if number of items is less than index.
+  if (items.length < index) {
     return error.value;
   }
 
-  return arguments[index];
+  // Return the item.
+  return items[index-1];
 }

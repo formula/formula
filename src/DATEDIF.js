@@ -1,3 +1,6 @@
+// Copyright 2015 Peter W Moresi
+
+// DATEDIF return the difference between two dates given a start date, end date and unit.
 export function DATEDIF(start_date, end_date, unit) {
   var second=1000, minute=second*60, hour=minute*60, day=hour*24, week=day*7;
   start_date = new Date(start_date);
@@ -17,7 +20,7 @@ export function DATEDIF(start_date, end_date, unit) {
     case "D"   : return Math.floor(timediff / day);
     case "MD"   : return end_date.getDate() - start_date.getDate();
     case "YM" : return end_date.getMonth() - start_date.getMonth();
-    case "YD": return new Error("NOT IMPLEMENTED"); 
+    case "YD": return new Error("NOT IMPLEMENTED");
     default: return undefined;
   }
 

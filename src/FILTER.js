@@ -1,5 +1,6 @@
-/* The filter an array or a range by a set of filters */
+// Copyright 2015 Peter W Moresi
 
+// FILTER limits a range based on arrays of boolean values.
 export function FILTER(range, ...filters) {
 
   // A filter is an array of true/false values.

@@ -1,5 +1,8 @@
+// Copyright 2015 Peter W Moresi
+
 import error from './ERROR'
 
+// PARSEBOOL converts a truthy value into a boolean value.
 export function PARSEBOOL(val) {
 
   if (val instanceof Error) {

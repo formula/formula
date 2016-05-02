@@ -1,7 +1,11 @@
+// Copyright 2015 Peter W Moresi
+
 import error from './ERROR';
 import {ISBLANK} from './ISBLANK';
 import {ISERROR} from './ISERROR';
 
+
+// VLOOKUP find a needle in a table searching vertically.
 export function VLOOKUP(needle, table, index, exactmatch) {
 
     if ( ISERROR(needle) || ISBLANK(needle) ) {
