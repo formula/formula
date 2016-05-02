@@ -100,11 +100,6 @@
                 </a>
               
                 
-                <a class="source" href="COMPILE.html">
-                  COMPILE.js
-                </a>
-              
-                
                 <a class="source" href="CONCATENATE.html">
                   CONCATENATE.js
                 </a>
@@ -470,11 +465,6 @@
                 </a>
               
                 
-                <a class="source" href="RUN.html">
-                  RUN.js
-                </a>
-              
-                
                 <a class="source" href="SEARCH.html">
                   SEARCH.js
                 </a>
@@ -610,7 +600,7 @@
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">OR</span>(<span class="hljs-params">...criteria</span>) </span>{
   <span class="hljs-keyword">return</span> criteria.reduce( (acc, item) =&gt; {
     <span class="hljs-keyword">if</span> (acc === <span class="hljs-literal">true</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
-    <span class="hljs-keyword">return</span> item || item === <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">return</span> item === <span class="hljs-literal">true</span> || item === <span class="hljs-number">1</span>;
   }, <span class="hljs-literal">false</span>)
 }</pre></div></div>
             

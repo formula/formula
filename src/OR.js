@@ -4,6 +4,6 @@
 export function OR(...criteria) {
   return criteria.reduce( (acc, item) => {
     if (acc === true) return true;
-    return item || item === 1;
+    return item === true || item === 1;
   }, false)
 }
