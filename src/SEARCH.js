@@ -1,5 +1,8 @@
+// Copyright 2015 Peter W Moresi
+
 import error from './ERROR'
 
+// SEARCH finds text using wildcards ?, *, ~?, and ~*.
 export function SEARCH(find_text, within_text, position) {
     if (!within_text) { return null; }
     position = (typeof position === 'undefined') ? 1 : position;

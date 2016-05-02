@@ -1,3 +1,5 @@
+// Copyright 2015 Peter W Moresi
+
 import {na} from './ERROR'
 
 // merge two array of arrays

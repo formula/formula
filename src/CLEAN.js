@@ -1,8 +1,13 @@
-// Take an object with falsy values and return a clean object with no falsy values
-import {ISBLANK} from './ISBLANK'
+// Copyright 2015 Peter W Moresi
 
+import {ISBLANK} from './ISBLANK'
+import {SELECT} from './SELECT'
+
+// CLEAN accepts an object and remove properties that are blank.
 export function CLEAN(obj) {
-  return Object.keys(obj)
-  .reduce( (a, b) => ISBLANK(obj[b]) ? a : a.concat(b), [])
-  .reduce( (a, b) => { a[b] = obj[b]; return a } , {})
+  // Compute keys where value is non blank.
+  var keys = Object.keys(obj).filter( n => !ISBLANK(obj[n]) )
+
+  // Compute object with only non-blank keys.
+  return SELECT( keys, obj )
 }

@@ -1,6 +1,9 @@
+// Copyright 2015 Peter W Moresi
+
 import {ISNUMBER} from './ISNUMBER';
 import error from './ERROR';
 
+// PMT returns a loan payment
 export function PMT(rate, periods, present, future = 0, type = 0) {
 
   if (!ISNUMBER(rate) || !ISNUMBER(periods)) {

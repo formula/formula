@@ -1,5 +1,6 @@
 // Copyright 2015 Peter W Moresi
-import {parser} from './PARSER';
+
+import {parser} from '../lib/PARSER';
 import * as Box from './index';
 
 function wrapString(s) {

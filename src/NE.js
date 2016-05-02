@@ -1,7 +1,7 @@
+// Copyright 2015 Peter W Moresi
+
+import {EQ} from './EQ'
+// NE returns true when a is not equal to b.
 export function NE(a,b) {
-  if (typeof a === "string" && typeof b === "string") {
-    return a.toLowerCase() !== b.toLowerCase()
-  } else {
-    return a !== b;
-  }
+  return !EQ(a, b)
 }

@@ -1,3 +1,5 @@
+// Copyright 2015 Peter W Moresi
+
 import {REPT} from './REPT';
 import error from './ERROR';
 

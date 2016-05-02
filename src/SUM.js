@@ -1,7 +1,9 @@
-// Author: Peter Moresi
+// Copyright 2015 Peter W Moresi
+
 import {FLATTEN} from './FLATTEN'
 import error from './ERROR'
 
+// SUM a given list of `numbers`
 export function SUM(...numbers) {
     return FLATTEN(FLATTEN(numbers))
     .reduce((a, b) => {

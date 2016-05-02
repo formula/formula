@@ -1,3 +1,6 @@
+// Copyright 2015 Peter W Moresi
+
+// ISURL returns true when the value matches the regex for a uniform resource locator.
 export function ISURL(str){
   // credit: http://stackoverflow.com/questions/5717093/check-if-a-javascript-string-is-an-url
   var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol

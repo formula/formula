@@ -1,5 +1,8 @@
+// Copyright 2015 Peter W Moresi
+
 import error from './ERROR';
 
+// OCT2DEC converts a octal value into a decimal value.
 export function OCT2DEC(octalNumber) {
   // Credits: Based on implementation found in https://gist.github.com/ghalimi/4525876#file-oct2dec-js
   // Return error.when number passed in is not octal or has more than 10 digits

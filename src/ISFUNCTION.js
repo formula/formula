@@ -1,4 +1,6 @@
+// Copyright 2015 Peter W Moresi
 
-export function ISFUNCTION(f) {
-    return f && Object.prototype.toString.call(f) == '[object Function]';
+// ISFUNCTION returns true when `value` is a function.
+export function ISFUNCTION(value) {
+    return value && Object.prototype.toString.call(value) == '[object Function]';
 };

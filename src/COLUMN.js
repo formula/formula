@@ -1,34 +1,18 @@
+// Copyright 2015 Peter W Moresi
+
 import error from './ERROR'
-/* Convert index to column (e.g A -> 1) */
-function toColumnNumber(column) {
+import {ISTEXT} from './ISTEXT'
+import {ISREF} from './ISREF'
+import {COLUMNNUMBER} from './COLUMNNUMBER'
 
-  // convert the column name into the column index
+// COLUMN return the column number that corresponds to the reference.
+export function COLUMN(value) {
 
-  // see toColumn for rant on why this is sensible even though it is illogical.
-  var s = 0, secondPass;
-
-  if (column != null && column.length > 0) {
-
-    s = column.charCodeAt(0) - 'A'.charCodeAt(0);
-
-    // FIXME: Make me functional
-    for (var i = 1; i < column.length; i++) {
-      s+=1 // compensate for the weirdos that invented spreadsheet column naming
-      s *= 26;
-      s += column.charCodeAt(i) - 'A'.charCodeAt(0);
-      secondPass = true;
-    }
-
-  } else {
-    return error.val;
+  // Return `#VALUE!` when the value is not a reference.
+  if (!ISREF(value)) {
+    return error.value;
   }
 
-  return s;
-
-}
-
-export function COLUMN(cell_reference) {
-  if (ISREF(cell_reference)) {
-    return toColumnNumber(cell_reference.column);
-  }
+  // Run the COLUMNNUMBER and convert to base 1.
+  return COLUMNNUMBER(value.column) + 1;
 }

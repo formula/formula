@@ -1,5 +1,8 @@
+// Copyright 2015 Peter W Moresi
+
 import error from './ERROR';
 
+// BIN2DEC converts binary string into decimal value
 export function BIN2DEC(value) {
     var valueAsString;
 
