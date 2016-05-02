@@ -1,5 +1,5 @@
 import test from 'tape'
-import error from '../SRC/ERROR'
+import error from '../src/ERROR'
 import {REF} from '../src/REF'
 import {MaxCols} from '../src/CONSTANTS'
 
