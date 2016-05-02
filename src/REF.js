@@ -24,8 +24,7 @@ export function REF(top, bottom) {
   var getTop = () => ISFUNCTION(top) ? top() : top
   var getBottom = () => ISFUNCTION(bottom) ? bottom() : bottom
 
-  // References are frozen and immutable
-  return Object.freeze({
+  return {
 
     get isRef(){
       return true
@@ -116,5 +115,5 @@ export function REF(top, bottom) {
       )
     }
 
-  });
+  }
 }

@@ -1,6 +1,6 @@
 {
   "name": "functionfoundry",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Modern JavaScript inspired by the spreadsheet library",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
@@ -29,6 +29,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.1.3",
     "babel-preset-es2015": "^6.1.2",
     "browserify": "^13.0.0",
+    "docco": "^0.7.0",
     "eslint": "^1.8.0",
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.0",
