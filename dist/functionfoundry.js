@@ -1,30 +1,9 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var FF = require('./lib/index')
-var COMPILE = require('./lib/COMPILE').COMPILE
-
 if (window) {
-
-  // This is a sham that makes Object.freeze work (insecurely) in ES3 environments
-  // ES5 15.2.3.9
-  // http://es5.github.com/#x15.2.3.9
-  if (!Object.freeze) {
-      Object.freeze = function freeze(object) {
-          if (Object(object) !== object) {
-              throw new TypeError('Object.freeze can only be called on Objects.');
-          }
-          // this is misleading and breaks feature-detection, but
-          // allows "securable" code to "gracefully" degrade to working
-          // but insecure code.
-          return object;
-      };
-  }
-
-  FF.COMPILE = COMPILE
-
-  window.FunctionFoundry = Object.freeze(FF);
+  window.FunctionFoundry = require('./lib/index')
 }
 
-},{"./lib/COMPILE":16,"./lib/index":105}],2:[function(require,module,exports){
+},{"./lib/index":103}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -53,7 +32,7 @@ function ABS(value) {
   // Use built-in Math.abs
   return Math.abs(value);
 }
-},{"./ERROR":29,"./ISNUMBER":57}],3:[function(require,module,exports){
+},{"./ERROR":28,"./ISNUMBER":56}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -82,7 +61,7 @@ function ACOS(value) {
   // Use built-in Math.acos
   return Math.acos(value);
 }
-},{"./ERROR":29,"./ISNUMBER":57}],4:[function(require,module,exports){
+},{"./ERROR":28,"./ISNUMBER":56}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -124,7 +103,7 @@ function ADD() {
   // Return a + b.
   return a + b;
 }
-},{"./ERROR":29,"./ISNUMBER":57}],5:[function(require,module,exports){
+},{"./ERROR":28,"./ISNUMBER":56}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -162,7 +141,7 @@ function AND() {
     return item === true || item === 1;
   });
 } // Copyright 2015 Peter W Moresi
-},{"./ERROR":29}],6:[function(require,module,exports){
+},{"./ERROR":28}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -193,7 +172,7 @@ function AVERAGE() {
   // return sum divided by item count
   return sum / items.length;
 }
-},{"./ISERROR":53,"./SUM":95}],7:[function(require,module,exports){
+},{"./ISERROR":52,"./SUM":93}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -231,7 +210,7 @@ function BIN2DEC(value) {
 } // Copyright 2015 Peter W Moresi
 
 ;
-},{"./ERROR":29}],8:[function(require,module,exports){
+},{"./ERROR":28}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -246,7 +225,7 @@ function CELLINDEX(row, col) {
   // Multiple row by maximum columns plus the col.
   return Math.floor(row * _CONSTANTS.MaxCols + col);
 } // Copyright 2015 Peter W Moresi
-},{"./CONSTANTS":19}],9:[function(require,module,exports){
+},{"./CONSTANTS":18}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -270,7 +249,7 @@ function CHANGED(a, b) {
     return a[n] !== b[n];
   })));
 } // Copyright 2015 Peter W Moresi
-},{"./UNIQUE":101}],10:[function(require,module,exports){
+},{"./UNIQUE":99}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -308,7 +287,7 @@ function CHOOSE(index) {
   // Return the item.
   return items[index - 1];
 } // Copyright 2015 Peter W Moresi
-},{"./ERROR":29}],11:[function(require,module,exports){
+},{"./ERROR":28}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -332,7 +311,7 @@ function CLEAN(obj) {
   // Compute object with only non-blank keys.
   return (0, _SELECT.SELECT)(keys, obj);
 }
-},{"./ISBLANK":48,"./SELECT":88}],12:[function(require,module,exports){
+},{"./ISBLANK":47,"./SELECT":86}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -355,7 +334,7 @@ function CODE() {
   if (text.length < index) return _ERROR2.default.value;
   return text.charCodeAt(index - 1);
 } // Copyright 2015 Peter W Moresi
-},{"./ERROR":29}],13:[function(require,module,exports){
+},{"./ERROR":28}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -388,7 +367,7 @@ function COLUMN(value) {
   // Run the COLUMNNUMBER and convert to base 1.
   return (0, _COLUMNNUMBER.COLUMNNUMBER)(value.column) + 1;
 }
-},{"./COLUMNNUMBER":15,"./ERROR":29,"./ISREF":59,"./ISTEXT":60}],14:[function(require,module,exports){
+},{"./COLUMNNUMBER":15,"./ERROR":28,"./ISREF":58,"./ISTEXT":59}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -446,7 +425,7 @@ function COLUMNLETTER(index) {
 
   return converted;
 }
-},{"./ERROR":29,"./ISNUMBER":57}],15:[function(require,module,exports){
+},{"./ERROR":28,"./ISNUMBER":56}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -492,217 +471,7 @@ function COLUMNNUMBER(column) {
 
   return _ERROR2.default.value;
 }
-},{"./ERROR":29,"./ISTEXT":60}],16:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.COMPILE = COMPILE;
-
-var _PARSER = require('../lib/PARSER');
-
-var _index = require('./index');
-
-var Box = _interopRequireWildcard(_index);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-// Copyright 2015 Peter W Moresi
-
-function wrapString(s) {
-  if (s[0] == "'" && s[s.length - 1] === "'") {
-    return s;
-  }
-  return '\'' + s + '\'';
-}
-
-function printItems(items) {
-  return items.map(function (n) {
-    return compiler(n);
-  }).join(', ');
-}
-
-var compiledNumber = 0;
-
-function COMPILE(exp) {
-  var ast = exp,
-      jsCode,
-      functionCode,
-      f,
-      suppress = false,
-      precedents = [],
-      requires = [],
-      namespace = 'this.';
-
-  // convert to AST when string provided
-  if (typeof ast === 'string') {
-    ast = _PARSER.parser.parse(exp);
-  }
-
-  // define a compiler function to handle recurse the AST.
-  function compiler(node) {
-
-    var lhs = undefined,
-        rhs = undefined;
-
-    // The node is expected to be either an operator, function or a value.
-    switch (node.type) {
-      case 'operator':
-        switch (node.subtype) {
-          case 'prefix-plus':
-            return '+' + compiler(node.operands[0]);
-          case 'prefix-minus':
-            return '-' + compiler(node.operands[0]);
-          case 'infix-add':
-            requires.push('add');
-            return namespace + "ADD(" + compiler(node.operands[0]) + ', ' + compiler(node.operands[1]) + ")";
-          case 'infix-subtract':
-            requires.push('subtract');
-            return namespace + "SUBTRACT(" + compiler(node.operands[0]) + ', ' + compiler(node.operands[1]) + ")";
-          case 'infix-multiply':
-            requires.push('multiply');
-            return namespace + "MULTIPLY(" + compiler(node.operands[0]) + ', ' + compiler(node.operands[1]) + ")";
-          case 'infix-divide':
-            requires.push('divide');
-            return namespace + "DIVIDE(" + compiler(node.operands[0]) + ', ' + compiler(node.operands[1]) + ")";
-          case 'infix-power':
-            requires.push('power');
-            return namespace + 'POWER(' + compiler(node.operands[0]) + ', ' + compiler(node.operands[1]) + ')';
-          case 'infix-concat':
-            lhs = compiler(node.operands[0]);
-            rhs = compiler(node.operands[1]);
-            requires.push('concatenate');
-            return namespace + "CONCATENATE(" + wrapString(lhs) + ', ' + wrapString(rhs) + ")";
-          case 'infix-eq':
-            requires.push('eq');
-            return namespace + "EQ(" + compiler(node.operands[0]) + ', ' + compiler(node.operands[1]) + ")";
-          case 'infix-ne':
-            requires.push('ne');
-            return namespace + "NE(" + compiler(node.operands[0]) + ', ' + compiler(node.operands[1]) + ")";
-          case 'infix-gt':
-            requires.push('gt');
-            return namespace + "GT(" + compiler(node.operands[0]) + ', ' + compiler(node.operands[1]) + ")";
-          case 'infix-gte':
-            requires.push('gte');
-            return namespace + "GTE(" + compiler(node.operands[0]) + ', ' + compiler(node.operands[1]) + ")";
-          case 'infix-lt':
-            requires.push('lt');
-            return namespace + "LT(" + compiler(node.operands[0]) + ', ' + compiler(node.operands[1]) + ")";
-          case 'infix-lte':
-            requires.push('lte');
-            return namespace + "LTE(" + compiler(node.operands[0]) + ', ' + compiler(node.operands[1]) + ")";
-        }
-        throw TypeException("Unknown operator: " + node.subtype);
-      case 'group':
-        return '(' + compiler(node.exp) + ')';
-      case 'function':
-        switch (node.name.toUpperCase()) {
-          case 'IF':
-            requires.push('if');
-            if (node.args.length > 3) {
-              throw Error("IF sent too many arguments.");
-            }
-            if (node.args.length !== 3) {
-              throw Error("IF expects 3 arguments");
-            }
-            return '((' + compiler(node.args[0]) + ') ?' + compiler(node.args[1]) + ' : ' + compiler(node.args[2]) + ')';
-
-          case 'NOT':
-            requires.push('not');
-            if (node.args.length !== 1) {
-              throw Error("NOT only accepts one argument");
-            }
-            return namespace + "NOT(' + compiler( node.args[0] ) + ')";
-          case 'AND':
-            requires.push('and');
-            return namespace + 'AND(' + printItems(node.args) + ')';
-          case 'OR':
-            requires.push('or');
-            return namespace + 'OR(' + printItems(node.args) + ')';
-          case 'ABS':
-            requires.push('abs');
-            return 'ABS(' + compiler(node) + ')';
-          case 'MIN':
-            requires.push('min');
-            return 'Math.min(' + printItems(node.args) + ')';
-          case 'MAX':
-            requires.push('max');
-            return 'Math.max(' + printItems(node.args) + ')';
-          default:
-            requires.push(name);
-            return namespace + node.name + '( ' + printItems(node.args) + ' )';
-
-        }
-      case 'cell':
-        if (typeof precedents !== "undefined" && !suppress) {
-          precedents.push(node);
-        }
-
-        return 'context.get(\"' + node.addr + '\")';
-
-      case 'range':
-
-        if (typeof precedents !== "undefined") {
-          precedents.push(node);suppress = true;
-        }
-        lhs = compiler(node.topLeft);
-        rhs = compiler(node.bottomRight);
-        suppress = false;
-
-        // anonymous functions are the perfect solution for dynamic ranges but was not immediately obvious to me
-        if (node.topLeft.type === "function") {
-          lhs = "function() { return (" + lhs + "); }";
-        }
-
-        if (node.bottomRight.type === "function") {
-          rhs = "function() { return (" + rhs + "); }";
-        }
-
-        return 'context.range( ' + lhs + ', ' + rhs + ' )';
-
-      case 'value':
-        switch (node.subtype) {
-          case 'array':
-            return '[' + printItems(node.items) + ']';
-          case 'string':
-            return "'" + node.value.replace(/'/g, "''") + "'";
-          case 'variable':
-
-            if (precedents && !suppress) {
-              precedents.push(node);
-            }
-
-            return 'context.get(\"' + node.value + '\")';
-
-          default:
-            return node.value;
-        }
-    }
-  }
-
-  var id = compiledNumber++;
-
-  var compiled = compiler(ast);
-
-  f = new Function('context', '// ' + exp + '\n  return (' + compiled + ');\n  //@ sourceURL=formula_function_' + id + '.js\'\n  ');
-
-  f.id = id;
-  f.exp = exp;
-  f.ast = ast;
-  f.code = compiled;
-  f.precedents = precedents;
-  f.requires = requires.map(function (n) {
-    return n.toUpperCase();
-  }).reduce(function (out, name) {
-    out[name] = Box[name];
-    return out;
-  }, {});
-  f.run = f.bind(f.requires);
-
-  return f;
-}
-},{"../lib/PARSER":77,"./index":105}],17:[function(require,module,exports){
+},{"./ERROR":28,"./ISTEXT":59}],16:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -722,7 +491,7 @@ function CONCATENATE() {
     return "" + acc + item;
   });
 }
-},{}],18:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -768,7 +537,7 @@ function COND() {
     return acc;
   }, undefined);
 }
-},{}],19:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -821,7 +590,7 @@ AllowedColors = exports.AllowedColors = {
   WHITE: "#FFFFFF",
   YELLOW: "#FFFF00"
 };
-},{}],20:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -849,7 +618,7 @@ function COS(value) {
 
   return Math.cos(value);
 }
-},{"./ERROR":29,"./ISNUMBER":57}],21:[function(require,module,exports){
+},{"./ERROR":28,"./ISNUMBER":56}],20:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -863,7 +632,7 @@ var _SERIAL = require('./SERIAL');
 function DATE(year, month, day) {
   return (0, _SERIAL.SERIAL)(new Date(year, month - 1, day));
 } // Copyright 2015 Peter W Moresi
-},{"./SERIAL":89}],22:[function(require,module,exports){
+},{"./SERIAL":87}],21:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -904,7 +673,7 @@ function DATEDIF(start_date, end_date, unit) {
       return undefined;
   }
 }
-},{}],23:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -922,7 +691,7 @@ var _SERIAL = require('./SERIAL');
 function DATEVALUE(d) {
   return (0, _SERIAL.SERIAL)((0, _PARSEDATE.PARSEDATE)(d));
 }
-},{"./PARSEDATE":76,"./SERIAL":89}],24:[function(require,module,exports){
+},{"./PARSEDATE":75,"./SERIAL":87}],23:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -973,7 +742,7 @@ function DAYS360(start_date, end_date, method) {
     }
     return 360 * (end_date.getFullYear() - start_date.getFullYear()) + 30 * (em - sm) + (ed - sd);
 }
-},{"./PARSEBOOL":75,"./PARSEDATE":76}],25:[function(require,module,exports){
+},{"./PARSEBOOL":74,"./PARSEDATE":75}],24:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1040,7 +809,7 @@ function DEC2BIN(input, places) {
     return places >= result.length ? (0, _REPT.REPT)('0', places - result.length) + result : _ERROR2.default.num;
   }
 }
-},{"./ERROR":29,"./REPT":83}],26:[function(require,module,exports){
+},{"./ERROR":28,"./REPT":81}],25:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1077,7 +846,7 @@ function DIFF(a, b) {
     }, {})
   };
 }
-},{}],27:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1090,7 +859,7 @@ exports.DIVIDE = DIVIDE;
 function DIVIDE(a, b) {
   return a / b;
 }
-},{}],28:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1108,7 +877,7 @@ function EQ(a, b) {
     return a === b;
   }
 }
-},{}],29:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1143,7 +912,7 @@ exports.default = {
   missing: missing,
   unknown: unknown
 };
-},{}],30:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1161,7 +930,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var EXACT = exports.EXACT = function EXACT(a, b) {
   return a === b;
 }; // Copyright 2015 Peter W Moresi
-},{"./ERROR":29}],31:[function(require,module,exports){
+},{"./ERROR":28}],30:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1194,7 +963,7 @@ function FILTER(range) {
 
   return range.filter(makeFilter());
 }
-},{}],32:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1219,7 +988,7 @@ function FIND(find_text) {
   // If found return the position as base 1.
   return position === -1 ? _ERROR2.default.value : position + 1;
 } // Copyright 2015 Peter W Moresi
-},{"./ERROR":29}],33:[function(require,module,exports){
+},{"./ERROR":28}],32:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1235,7 +1004,7 @@ function FLATTEN(ref) {
     return a.concat(b);
   }, []);
 }
-},{}],34:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1270,7 +1039,7 @@ function GT(a, b) {
     return a > b;
   }
 } // Copyright 2015 Peter W Moresi
-},{"./ERROR":29,"./ISARRAY":47,"./ISREF":59}],35:[function(require,module,exports){
+},{"./ERROR":28,"./ISARRAY":46,"./ISREF":58}],34:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1301,7 +1070,7 @@ function GTE(a, b) {
     return a >= b;
   }
 }
-},{"./ISARRAY":47,"./ISREF":59}],36:[function(require,module,exports){
+},{"./ISARRAY":46,"./ISREF":58}],35:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1322,7 +1091,7 @@ function GUID() {
   });
   return guid;
 };
-},{}],37:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1350,7 +1119,7 @@ function HLOOKUP(needle, table, index, exactmatch) {
 
     return error.na;
 } // Copyright 2015 Peter W Moresi
-},{"./ISBLANK":48}],38:[function(require,module,exports){
+},{"./ISBLANK":47}],37:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1368,7 +1137,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function IF(value, value_if_true, value_if_false) {
   return value || typeof value === 'string' && value.toLowerCase() === 'true' ? value_if_true : value_if_false;
 } // Copyright 2015 Peter W Moresi
-},{"./ERROR":29}],39:[function(require,module,exports){
+},{"./ERROR":28}],38:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1382,7 +1151,7 @@ var _ISBLANK = require('./ISBLANK');
 function IFBLANK(value, value_if_blank) {
     return (0, _ISBLANK.ISBLANK)(value) ? value_if_blank : value;
 } // Copyright 2015 Peter W Moresi
-},{"./ISBLANK":48}],40:[function(require,module,exports){
+},{"./ISBLANK":47}],39:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1396,7 +1165,7 @@ var _ISEMPTY = require('./ISEMPTY');
 function IFEMPTY(value, value_if_empty) {
     return (0, _ISEMPTY.ISEMPTY)(value) ? value_if_empty : value;
 } // Copyright 2015 Peter W Moresi
-},{"./ISEMPTY":51}],41:[function(require,module,exports){
+},{"./ISEMPTY":50}],40:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1412,7 +1181,7 @@ function IFERROR(value) {
 
     return (0, _ISERROR.ISERROR)(value) ? value_if_error : value;
 } // Copyright 2015 Peter W Moresi
-},{"./ISERROR":53}],42:[function(require,module,exports){
+},{"./ISERROR":52}],41:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1430,7 +1199,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function IFNA(value, value_if_na) {
     return value === _ERROR2.default.na ? value_if_na : value;
 } // Copyright 2015 Peter W Moresi
-},{"./ERROR":29}],43:[function(require,module,exports){
+},{"./ERROR":28}],42:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1474,7 +1243,7 @@ function IN(needle, lookup) {
 
 // ALIAS CONTAINS
 var CONTAINS = exports.CONTAINS = IN;
-},{"./EQ":28,"./ERROR":29,"./ISARRAY":47,"./ISBLANK":48}],44:[function(require,module,exports){
+},{"./EQ":27,"./ERROR":28,"./ISARRAY":46,"./ISBLANK":47}],43:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1492,7 +1261,7 @@ var _INDEX2ROW = require('./INDEX2ROW');
 function INDEX2COL(index) {
   return index - (0, _INDEX2ROW.INDEX2ROW)(index) * _CONSTANTS.MaxCols;
 }
-},{"./CONSTANTS":19,"./INDEX2ROW":45}],45:[function(require,module,exports){
+},{"./CONSTANTS":18,"./INDEX2ROW":44}],44:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1506,7 +1275,7 @@ var _CONSTANTS = require('./CONSTANTS');
 function INDEX2ROW(index) {
   return Math.floor(index / _CONSTANTS.MaxCols);
 } // Copyright 2015 Peter W Moresi
-},{"./CONSTANTS":19}],46:[function(require,module,exports){
+},{"./CONSTANTS":18}],45:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1520,7 +1289,7 @@ var _REF = require('./REF');
 function INDIRECT(ref) {
   return (0, _REF.REF)(ref);
 } // Copyright 2015 Peter W Moresi
-},{"./REF":81}],47:[function(require,module,exports){
+},{"./REF":79}],46:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1533,7 +1302,7 @@ exports.ISARRAY = ISARRAY;
 function ISARRAY(value) {
   return Object.prototype.toString.call(value) === '[object Array]';
 }
-},{}],48:[function(require,module,exports){
+},{}],47:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1546,7 +1315,7 @@ exports.ISBLANK = ISBLANK;
 function ISBLANK(value) {
     return typeof value === 'undefined' || value === null;
 };
-},{}],49:[function(require,module,exports){
+},{}],48:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1559,7 +1328,7 @@ exports.ISDATE = ISDATE;
 function ISDATE(value) {
     return value && Object.prototype.toString.call(value) == '[object Date]';
 };
-},{}],50:[function(require,module,exports){
+},{}],49:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1574,7 +1343,7 @@ function ISEMAIL(value) {
   var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(value);
 };
-},{}],51:[function(require,module,exports){
+},{}],50:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1595,7 +1364,7 @@ function ISEMPTY(value) {
 } // Copyright 2015 Peter W Moresi
 
 ;
-},{"./ISARRAY":47,"./ISBLANK":48,"./ISTEXT":60}],52:[function(require,module,exports){
+},{"./ISARRAY":46,"./ISBLANK":47,"./ISTEXT":59}],51:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1614,7 +1383,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function ISERR(value) {
   return value !== _ERROR2.default.na && value.constructor.name === 'Error' || typeof value === 'number' && (Number.isNaN(value) || !Number.isFinite(value));
 } // Copyright 2015 Peter W Moresi
-},{"./ERROR":29}],53:[function(require,module,exports){
+},{"./ERROR":28}],52:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1636,7 +1405,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function ISERROR(value) {
     return (0, _ISERR.ISERR)(value) || value === _ERROR2.default.na;
 }
-},{"./ERROR":29,"./ISERR":52}],54:[function(require,module,exports){
+},{"./ERROR":28,"./ISERR":51}],53:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1649,7 +1418,7 @@ exports.ISEVEN = ISEVEN;
 function ISEVEN(value) {
     return !(Math.floor(Math.abs(value)) & 1);
 }
-},{}],55:[function(require,module,exports){
+},{}],54:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1662,7 +1431,7 @@ exports.ISFUNCTION = ISFUNCTION;
 function ISFUNCTION(value) {
     return value && Object.prototype.toString.call(value) == '[object Function]';
 };
-},{}],56:[function(require,module,exports){
+},{}],55:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1680,7 +1449,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function ISNA(value) {
   return value === _ERROR2.default.na;
 } // Copyright 2015 Peter W Moresi
-},{"./ERROR":29}],57:[function(require,module,exports){
+},{"./ERROR":28}],56:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1693,7 +1462,7 @@ exports.ISNUMBER = ISNUMBER;
 function ISNUMBER(value) {
     return typeof value === 'number' && !isNaN(value) && isFinite(value);
 }
-},{}],58:[function(require,module,exports){
+},{}],57:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1706,7 +1475,7 @@ exports.ISODD = ISODD;
 function ISODD(value) {
     return Math.floor(Math.abs(value)) & 1;
 }
-},{}],59:[function(require,module,exports){
+},{}],58:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1721,7 +1490,7 @@ function ISREF(value) {
   if (!value) return false;
   return value.isRef === true;
 } // Copyright 2015 Peter W Moresi
-},{"./ISBLANK":48}],60:[function(require,module,exports){
+},{"./ISBLANK":47}],59:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1734,7 +1503,7 @@ exports.ISTEXT = ISTEXT;
 function ISTEXT(value) {
     return 'string' === typeof value;
 };
-},{}],61:[function(require,module,exports){
+},{}],60:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1754,7 +1523,7 @@ function ISURL(str) {
   '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
   return pattern.test(str);
 }
-},{}],62:[function(require,module,exports){
+},{}],61:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1786,7 +1555,7 @@ function LEN(text) {
 } // Copyright 2015 Peter W Moresi
 
 ;
-},{"./ERROR":29}],63:[function(require,module,exports){
+},{"./ERROR":28}],62:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1825,7 +1594,7 @@ function LOOKUP() {
 
     return error.na;
 }
-},{}],64:[function(require,module,exports){
+},{}],63:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1848,7 +1617,7 @@ function LOWER(value) {
   if (!(0, _ISTEXT.ISTEXT)(value)) return _ERROR2.default.value;
   return str.toLowerCase();
 }
-},{"./ERROR":29,"./ISTEXT":60}],65:[function(require,module,exports){
+},{"./ERROR":28,"./ISTEXT":59}],64:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1880,7 +1649,7 @@ function LT(a, b) {
     return a < b;
   }
 }
-},{"./ISARRAY":47,"./ISREF":59}],66:[function(require,module,exports){
+},{"./ISARRAY":46,"./ISREF":58}],65:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1912,7 +1681,7 @@ function LTE(a, b) {
     return a <= b;
   }
 }
-},{"./ISARRAY":47,"./ISREF":59}],67:[function(require,module,exports){
+},{"./ISARRAY":46,"./ISREF":58}],66:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1940,7 +1709,7 @@ function MAX() {
     return max;
   }, Number.NEGATIVE_INFINITY);
 }
-},{"./FLATTEN":33,"./ISNUMBER":57}],68:[function(require,module,exports){
+},{"./FLATTEN":32,"./ISNUMBER":56}],67:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1968,7 +1737,7 @@ function MIN() {
     return min;
   }, Number.POSITIVE_INFINITY);
 }
-},{"./FLATTEN":33,"./ISNUMBER":57}],69:[function(require,module,exports){
+},{"./FLATTEN":32,"./ISNUMBER":56}],68:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1981,7 +1750,7 @@ exports.MULTIPLY = MULTIPLY;
 function MULTIPLY(a, b) {
   return a * b;
 }
-},{}],70:[function(require,module,exports){
+},{}],69:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2021,7 +1790,7 @@ function N(value) {
   // Return 0 in all other cases.
   return 0;
 } // Copyright 2015 Peter W Moresi
-},{"./ISERROR":53,"./ISNUMBER":57,"./SERIAL":89}],71:[function(require,module,exports){
+},{"./ISERROR":52,"./ISNUMBER":56,"./SERIAL":87}],70:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2035,7 +1804,7 @@ var _EQ = require('./EQ');
 function NE(a, b) {
   return !(0, _EQ.EQ)(a, b);
 } // Copyright 2015 Peter W Moresi
-},{"./EQ":28}],72:[function(require,module,exports){
+},{"./EQ":27}],71:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2048,7 +1817,7 @@ exports.NOT = NOT;
 function NOT(value) {
   return !value;
 }
-},{}],73:[function(require,module,exports){
+},{}],72:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2090,7 +1859,7 @@ function OCT2DEC(octalNumber) {
 
   return nonNegativeDecimalNumber >= 536870912 ? nonNegativeDecimalNumber - 1073741824 : nonNegativeDecimalNumber;
 } // Copyright 2015 Peter W Moresi
-},{"./ERROR":29}],74:[function(require,module,exports){
+},{"./ERROR":28}],73:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2107,10 +1876,10 @@ function OR() {
 
   return criteria.reduce(function (acc, item) {
     if (acc === true) return true;
-    return item || item === 1;
+    return item === true || item === 1;
   }, false);
 }
-},{}],75:[function(require,module,exports){
+},{}],74:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2142,7 +1911,7 @@ function PARSEBOOL(val) {
 
   return _ERROR2.default.value;
 } // Copyright 2015 Peter W Moresi
-},{"./ERROR":29}],76:[function(require,module,exports){
+},{"./ERROR":28}],75:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2207,774 +1976,7 @@ function PARSEDATE(val) {
 
   return _ERROR2.default.value;
 }
-},{"./CONSTANTS":19,"./ERROR":29}],77:[function(require,module,exports){
-(function (process){
-/* parser generated by jison 0.4.15 */
-/*
-  Returns a Parser object of the following structure:
-
-  Parser: {
-    yy: {}
-  }
-
-  Parser.prototype: {
-    yy: {},
-    trace: function(),
-    symbols_: {associative list: name ==> number},
-    terminals_: {associative list: number ==> name},
-    productions_: [...],
-    performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$),
-    table: [...],
-    defaultActions: {...},
-    parseError: function(str, hash),
-    parse: function(input),
-
-    lexer: {
-        EOF: 1,
-        parseError: function(str, hash),
-        setInput: function(input),
-        input: function(),
-        unput: function(str),
-        more: function(),
-        less: function(n),
-        pastInput: function(),
-        upcomingInput: function(),
-        showPosition: function(),
-        test_match: function(regex_match_array, rule_index),
-        next: function(),
-        lex: function(),
-        begin: function(condition),
-        popState: function(),
-        _currentRules: function(),
-        topState: function(),
-        pushState: function(condition),
-
-        options: {
-            ranges: boolean           (optional: true ==> token location info will include a .range[] member)
-            flex: boolean             (optional: true ==> flex-like lexing behaviour where the rules are tested exhaustively to find the longest match)
-            backtrack_lexer: boolean  (optional: true ==> lexer regexes are tested in order and for each matching regex the action code is invoked; the lexer terminates the scan when a token is returned by the action code)
-        },
-
-        performAction: function(yy, yy_, $avoiding_name_collisions, YY_START),
-        rules: [...],
-        conditions: {associative list: name ==> set},
-    }
-  }
-
-
-  token location info (@$, _$, etc.): {
-    first_line: n,
-    last_line: n,
-    first_column: n,
-    last_column: n,
-    range: [start_number, end_number]       (where the numbers are indexes into the input string, regular zero-based)
-  }
-
-
-  the parseError function receives a 'hash' object with these members for lexer and parser errors: {
-    text:        (matched text)
-    token:       (the produced terminal token, if any)
-    line:        (yylineno)
-  }
-  while parser (grammar) errors will also provide these members, i.e. parser errors deliver a superset of attributes: {
-    loc:         (yylloc)
-    expected:    (string describing the set of expected tokens)
-    recoverable: (boolean: TRUE when the parser has a error recovery rule available for this particular error)
-  }
-*/
-var parser = (function(){
-var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[1,4],$V1=[1,6],$V2=[1,7],$V3=[1,8],$V4=[1,9],$V5=[1,10],$V6=[1,12],$V7=[1,13],$V8=[1,14],$V9=[1,15],$Va=[1,16],$Vb=[1,17],$Vc=[1,25],$Vd=[1,19],$Ve=[1,20],$Vf=[1,21],$Vg=[1,22],$Vh=[1,23],$Vi=[1,24],$Vj=[1,26],$Vk=[1,27],$Vl=[1,28],$Vm=[1,29],$Vn=[1,30],$Vo=[1,31],$Vp=[5,6,7,8,9,10,11,12,13,14,15,16,17,20,21,33,34,37],$Vq=[5,6,7,8,12,13,14,15,16,17,20,33,34,37],$Vr=[1,62],$Vs=[1,63],$Vt=[20,33,34,37],$Vu=[5,6,7,8,9,10,12,13,14,15,16,17,20,33,34,37],$Vv=[5,6,12,13,14,15,16,20,33,34,37],$Vw=[5,6,12,13,14,15,16,17,20,33,34,37];
-var parser = {trace: function trace() { },
-yy: {},
-symbols_: {"error":2,"expressions":3,"e":4,"EOF":5,"=":6,"+":7,"-":8,"*":9,"/":10,"^":11,"<>":12,">":13,"<":14,">=":15,"<=":16,"&":17,"func":18,"(":19,")":20,":":21,"CELL":22,"SHEET":23,"IDENT":24,"array_literal":25,"TRUE":26,"FALSE":27,"STRING":28,"NUMBER":29,"%":30,"range":31,"param_list":32,",":33,";":34,"FUNC":35,"{":36,"}":37,"$accept":0,"$end":1},
-terminals_: {2:"error",5:"EOF",6:"=",7:"+",8:"-",9:"*",10:"/",11:"^",12:"<>",13:">",14:"<",15:">=",16:"<=",17:"&",19:"(",20:")",21:":",22:"CELL",23:"SHEET",24:"IDENT",26:"TRUE",27:"FALSE",28:"STRING",29:"NUMBER",30:"%",33:",",34:";",35:"FUNC",36:"{",37:"}"},
-productions_: [0,[3,2],[3,3],[4,3],[4,3],[4,3],[4,3],[4,3],[4,3],[4,3],[4,3],[4,3],[4,3],[4,3],[4,2],[4,3],[4,3],[4,2],[4,3],[4,3],[4,1],[4,2],[4,1],[4,2],[4,1],[4,1],[4,1],[4,1],[4,1],[4,2],[4,1],[31,3],[32,1],[32,3],[32,3],[18,4],[18,3],[25,3]],
-performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate /* action[1] */, $$ /* vstack */, _$ /* lstack */) {
-/* this == yyval */
-
-var $0 = $$.length - 1;
-switch (yystate) {
-case 1: case 2:
- return $$[$0-1]; 
-break;
-case 3:
-this.$ = { type: "operator", subtype: 'infix-add', operands:[$$[$0-2], $$[$0]]}; 
-break;
-case 4:
-this.$ = { type: "operator", subtype: 'infix-subtract', operands:[$$[$0-2], $$[$0]]}; 
-break;
-case 5:
-this.$ = { type: "operator", subtype: 'infix-multiply', operands:[$$[$0-2], $$[$0]]}; 
-break;
-case 6:
-this.$ = { type: "operator", subtype: 'infix-divide', operands:[$$[$0-2], $$[$0]] }; 
-break;
-case 7:
-this.$ = { type: "operator", subtype: 'infix-power', operands:[$$[$0-2], $$[$0]] }; 
-break;
-case 8:
-this.$ = { type: "operator", subtype: 'infix-ne', operands:[$$[$0-2], $$[$0]] }; 
-break;
-case 9:
-this.$ = { type: "operator", subtype: 'infix-eq', operands:[$$[$0-2], $$[$0]] }; 
-break;
-case 10:
-this.$ = { type: "operator", subtype: 'infix-gt', operands:[$$[$0-2], $$[$0]] }; 
-break;
-case 11:
-this.$ = { type: "operator", subtype: 'infix-lt', operands:[$$[$0-2], $$[$0]] }; 
-break;
-case 12:
-this.$ = { type: "operator", subtype: 'infix-gte', operands:[$$[$0-2], $$[$0]] }; 
-break;
-case 13:
-this.$ = { type: "operator", subtype: 'infix-lte', operands:[$$[$0-2], $$[$0]] }; 
-break;
-case 14:
-this.$ = { type: "operator", subtype: 'prefix-plus', operands:[$$[$0]] }; 
-break;
-case 15: case 16:
-this.$ = { type: "operator", subtype: 'infix-concat', operands:[$$[$0-2], $$[$0]] }; 
-break;
-case 17:
-this.$ = { type: "operator", subtype: 'prefix-minus', operands:[$$[$0]] }; 
-break;
-case 18:
-this.$ = { type: 'group', exp:$$[$0-1] }; 
-break;
-case 19:
-this.$ = { type: 'range', subtype: 'local', topLeft:$$[$0-2], bottomRight:$$[$0] }; 
-break;
-case 20:
-this.$ = { type: 'cell', subtype: 'local', addr:$$[$0] }; 
-break;
-case 21:
- this.$ = { type: 'cell', subtype: 'remote', worksheet: $$[$0-1], addr:$$[$0] }; 
-break;
-case 22:
- this.$ = { type: 'value', subtype: 'variable', value:$$[$0] }; 
-break;
-case 23:
- this.$ = { type: 'cell', subtype: 'remote-named', worksheet: $$[$0-1], addr:$$[$0] }; 
-break;
-case 24: case 25:
- this.$ = $$[$0]; 
-break;
-case 26:
-this.$ = { type: 'value', subtype: 'boolean', value: true }; 
-break;
-case 27:
-this.$ = { type: 'value', subtype: 'boolean', value: false }; 
-break;
-case 28:
-this.$ = { type: 'value', subtype: 'string', value:String(yytext)}; 
-break;
-case 29:
-this.$ = { type: 'value', subtype: 'number', value:$$[$0-1]/100 }; 
-break;
-case 30:
-this.$ = { type: 'value', subtype: 'number', value:Number(yytext) }; 
-break;
-case 32:
- this.$ = [$$[$0]]; 
-break;
-case 33:
- this.$ = $$[$0-2].concat([$$[$0]]); 
-break;
-case 34:
- this.$ = ($$[$0][0].subtype !== 'array') ? [{ type: 'value', subtype: 'array', items:$$[$0-2] }, { type: 'value', subtype: 'array', items:$$[$0] }] : [{ type: 'value', subtype: 'array', items:$$[$0-2] }].concat($$[$0]); 
-break;
-case 35:
- this.$ = { type: 'function', name: $$[$0-3], args:$$[$0-1] }; 
-break;
-case 36:
- this.$ = { type: 'function', name: $$[$0-2], args:[] }; 
-break;
-case 37:
- this.$ = { type: 'value', subtype: 'array', items:$$[$0-1] }; 
-break;
-}
-},
-table: [{3:1,4:2,6:[1,3],7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{1:[3]},{5:[1,18],6:$Vc,7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,12:$Vi,13:$Vj,14:$Vk,15:$Vl,16:$Vm,17:$Vn,21:$Vo},{4:32,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:33,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},o([5,6,7,8,9,10,11,12,13,14,15,16,20,21,33,34,37],[2,24],{17:[1,34]}),{4:35,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:36,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},o($Vp,[2,20]),{22:[1,37],24:[1,38]},o($Vp,[2,22]),o($Vp,[2,25]),o($Vp,[2,26]),o($Vp,[2,27]),o($Vp,[2,28]),o($Vp,[2,30],{30:[1,39]}),{19:[1,40]},{4:42,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,32:41,35:$Va,36:$Vb},{1:[2,1]},{4:43,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:44,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:45,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:46,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:47,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:48,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:49,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:50,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:51,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:52,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:53,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:54,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:55,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{5:[1,56],6:$Vc,7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,12:$Vi,13:$Vj,14:$Vk,15:$Vl,16:$Vm,17:$Vn,21:$Vo},o($Vq,[2,14],{9:$Vf,10:$Vg,11:$Vh,21:$Vo}),{4:57,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},o($Vp,[2,17]),{6:$Vc,7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,12:$Vi,13:$Vj,14:$Vk,15:$Vl,16:$Vm,17:$Vn,20:[1,58],21:$Vo},o($Vp,[2,21]),o($Vp,[2,23]),o($Vp,[2,29]),{4:42,7:$V0,8:$V1,18:5,19:$V2,20:[1,60],22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,32:59,35:$Va,36:$Vb},{33:$Vr,34:$Vs,37:[1,61]},o($Vt,[2,32],{6:$Vc,7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,12:$Vi,13:$Vj,14:$Vk,15:$Vl,16:$Vm,17:$Vn,21:$Vo}),o($Vq,[2,3],{9:$Vf,10:$Vg,11:$Vh,21:$Vo}),o($Vq,[2,4],{9:$Vf,10:$Vg,11:$Vh,21:$Vo}),o($Vu,[2,5],{11:$Vh,21:$Vo}),o($Vu,[2,6],{11:$Vh,21:$Vo}),o([5,6,7,8,9,10,11,12,13,14,15,16,17,20,33,34,37],[2,7],{21:$Vo}),o($Vv,[2,8],{7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,17:$Vn,21:$Vo}),o($Vv,[2,9],{7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,17:$Vn,21:$Vo}),o($Vv,[2,10],{7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,17:$Vn,21:$Vo}),o($Vv,[2,11],{7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,17:$Vn,21:$Vo}),o($Vv,[2,12],{7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,17:$Vn,21:$Vo}),o($Vv,[2,13],{7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,17:$Vn,21:$Vo}),o($Vw,[2,15],{7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,21:$Vo}),o($Vp,[2,19]),{1:[2,2]},o($Vw,[2,16],{7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,21:$Vo}),o($Vp,[2,18]),{20:[1,64],33:$Vr,34:$Vs},o($Vp,[2,36]),o($Vp,[2,37]),{4:65,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,35:$Va,36:$Vb},{4:42,7:$V0,8:$V1,18:5,19:$V2,22:$V3,23:$V4,24:$V5,25:11,26:$V6,27:$V7,28:$V8,29:$V9,32:66,35:$Va,36:$Vb},o($Vp,[2,35]),o($Vt,[2,33],{6:$Vc,7:$Vd,8:$Ve,9:$Vf,10:$Vg,11:$Vh,12:$Vi,13:$Vj,14:$Vk,15:$Vl,16:$Vm,17:$Vn,21:$Vo}),o([20,37],[2,34],{33:$Vr,34:$Vs})],
-defaultActions: {18:[2,1],56:[2,2]},
-parseError: function parseError(str, hash) {
-    if (hash.recoverable) {
-        this.trace(str);
-    } else {
-        throw new Error(str);
-    }
-},
-parse: function parse(input) {
-    var self = this, stack = [0], tstack = [], vstack = [null], lstack = [], table = this.table, yytext = '', yylineno = 0, yyleng = 0, recovering = 0, TERROR = 2, EOF = 1;
-    var args = lstack.slice.call(arguments, 1);
-    var lexer = Object.create(this.lexer);
-    var sharedState = { yy: {} };
-    for (var k in this.yy) {
-        if (Object.prototype.hasOwnProperty.call(this.yy, k)) {
-            sharedState.yy[k] = this.yy[k];
-        }
-    }
-    lexer.setInput(input, sharedState.yy);
-    sharedState.yy.lexer = lexer;
-    sharedState.yy.parser = this;
-    if (typeof lexer.yylloc == 'undefined') {
-        lexer.yylloc = {};
-    }
-    var yyloc = lexer.yylloc;
-    lstack.push(yyloc);
-    var ranges = lexer.options && lexer.options.ranges;
-    if (typeof sharedState.yy.parseError === 'function') {
-        this.parseError = sharedState.yy.parseError;
-    } else {
-        this.parseError = Object.getPrototypeOf(this).parseError;
-    }
-    function popStack(n) {
-        stack.length = stack.length - 2 * n;
-        vstack.length = vstack.length - n;
-        lstack.length = lstack.length - n;
-    }
-    _token_stack:
-        function lex() {
-            var token;
-            token = lexer.lex() || EOF;
-            if (typeof token !== 'number') {
-                token = self.symbols_[token] || token;
-            }
-            return token;
-        }
-    var symbol, preErrorSymbol, state, action, a, r, yyval = {}, p, len, newState, expected;
-    while (true) {
-        state = stack[stack.length - 1];
-        if (this.defaultActions[state]) {
-            action = this.defaultActions[state];
-        } else {
-            if (symbol === null || typeof symbol == 'undefined') {
-                symbol = lex();
-            }
-            action = table[state] && table[state][symbol];
-        }
-                    if (typeof action === 'undefined' || !action.length || !action[0]) {
-                var errStr = '';
-                expected = [];
-                for (p in table[state]) {
-                    if (this.terminals_[p] && p > TERROR) {
-                        expected.push('\'' + this.terminals_[p] + '\'');
-                    }
-                }
-                if (lexer.showPosition) {
-                    errStr = 'Parse error on line ' + (yylineno + 1) + ':\n' + lexer.showPosition() + '\nExpecting ' + expected.join(', ') + ', got \'' + (this.terminals_[symbol] || symbol) + '\'';
-                } else {
-                    errStr = 'Parse error on line ' + (yylineno + 1) + ': Unexpected ' + (symbol == EOF ? 'end of input' : '\'' + (this.terminals_[symbol] || symbol) + '\'');
-                }
-                this.parseError(errStr, {
-                    text: lexer.match,
-                    token: this.terminals_[symbol] || symbol,
-                    line: lexer.yylineno,
-                    loc: yyloc,
-                    expected: expected
-                });
-            }
-        if (action[0] instanceof Array && action.length > 1) {
-            throw new Error('Parse Error: multiple actions possible at state: ' + state + ', token: ' + symbol);
-        }
-        switch (action[0]) {
-        case 1:
-            stack.push(symbol);
-            vstack.push(lexer.yytext);
-            lstack.push(lexer.yylloc);
-            stack.push(action[1]);
-            symbol = null;
-            if (!preErrorSymbol) {
-                yyleng = lexer.yyleng;
-                yytext = lexer.yytext;
-                yylineno = lexer.yylineno;
-                yyloc = lexer.yylloc;
-                if (recovering > 0) {
-                    recovering--;
-                }
-            } else {
-                symbol = preErrorSymbol;
-                preErrorSymbol = null;
-            }
-            break;
-        case 2:
-            len = this.productions_[action[1]][1];
-            yyval.$ = vstack[vstack.length - len];
-            yyval._$ = {
-                first_line: lstack[lstack.length - (len || 1)].first_line,
-                last_line: lstack[lstack.length - 1].last_line,
-                first_column: lstack[lstack.length - (len || 1)].first_column,
-                last_column: lstack[lstack.length - 1].last_column
-            };
-            if (ranges) {
-                yyval._$.range = [
-                    lstack[lstack.length - (len || 1)].range[0],
-                    lstack[lstack.length - 1].range[1]
-                ];
-            }
-            r = this.performAction.apply(yyval, [
-                yytext,
-                yyleng,
-                yylineno,
-                sharedState.yy,
-                action[1],
-                vstack,
-                lstack
-            ].concat(args));
-            if (typeof r !== 'undefined') {
-                return r;
-            }
-            if (len) {
-                stack = stack.slice(0, -1 * len * 2);
-                vstack = vstack.slice(0, -1 * len);
-                lstack = lstack.slice(0, -1 * len);
-            }
-            stack.push(this.productions_[action[1]][0]);
-            vstack.push(yyval.$);
-            lstack.push(yyval._$);
-            newState = table[stack[stack.length - 2]][stack[stack.length - 1]];
-            stack.push(newState);
-            break;
-        case 3:
-            return true;
-        }
-    }
-    return true;
-}};
-/* generated by jison-lex 0.3.4 */
-var lexer = (function(){
-var lexer = ({
-
-EOF:1,
-
-parseError:function parseError(str, hash) {
-        if (this.yy.parser) {
-            this.yy.parser.parseError(str, hash);
-        } else {
-            throw new Error(str);
-        }
-    },
-
-// resets the lexer, sets new input
-setInput:function (input, yy) {
-        this.yy = yy || this.yy || {};
-        this._input = input;
-        this._more = this._backtrack = this.done = false;
-        this.yylineno = this.yyleng = 0;
-        this.yytext = this.matched = this.match = '';
-        this.conditionStack = ['INITIAL'];
-        this.yylloc = {
-            first_line: 1,
-            first_column: 0,
-            last_line: 1,
-            last_column: 0
-        };
-        if (this.options.ranges) {
-            this.yylloc.range = [0,0];
-        }
-        this.offset = 0;
-        return this;
-    },
-
-// consumes and returns one char from the input
-input:function () {
-        var ch = this._input[0];
-        this.yytext += ch;
-        this.yyleng++;
-        this.offset++;
-        this.match += ch;
-        this.matched += ch;
-        var lines = ch.match(/(?:\r\n?|\n).*/g);
-        if (lines) {
-            this.yylineno++;
-            this.yylloc.last_line++;
-        } else {
-            this.yylloc.last_column++;
-        }
-        if (this.options.ranges) {
-            this.yylloc.range[1]++;
-        }
-
-        this._input = this._input.slice(1);
-        return ch;
-    },
-
-// unshifts one char (or a string) into the input
-unput:function (ch) {
-        var len = ch.length;
-        var lines = ch.split(/(?:\r\n?|\n)/g);
-
-        this._input = ch + this._input;
-        this.yytext = this.yytext.substr(0, this.yytext.length - len);
-        //this.yyleng -= len;
-        this.offset -= len;
-        var oldLines = this.match.split(/(?:\r\n?|\n)/g);
-        this.match = this.match.substr(0, this.match.length - 1);
-        this.matched = this.matched.substr(0, this.matched.length - 1);
-
-        if (lines.length - 1) {
-            this.yylineno -= lines.length - 1;
-        }
-        var r = this.yylloc.range;
-
-        this.yylloc = {
-            first_line: this.yylloc.first_line,
-            last_line: this.yylineno + 1,
-            first_column: this.yylloc.first_column,
-            last_column: lines ?
-                (lines.length === oldLines.length ? this.yylloc.first_column : 0)
-                 + oldLines[oldLines.length - lines.length].length - lines[0].length :
-              this.yylloc.first_column - len
-        };
-
-        if (this.options.ranges) {
-            this.yylloc.range = [r[0], r[0] + this.yyleng - len];
-        }
-        this.yyleng = this.yytext.length;
-        return this;
-    },
-
-// When called from action, caches matched text and appends it on next action
-more:function () {
-        this._more = true;
-        return this;
-    },
-
-// When called from action, signals the lexer that this rule fails to match the input, so the next matching rule (regex) should be tested instead.
-reject:function () {
-        if (this.options.backtrack_lexer) {
-            this._backtrack = true;
-        } else {
-            return this.parseError('Lexical error on line ' + (this.yylineno + 1) + '. You can only invoke reject() in the lexer when the lexer is of the backtracking persuasion (options.backtrack_lexer = true).\n' + this.showPosition(), {
-                text: "",
-                token: null,
-                line: this.yylineno
-            });
-
-        }
-        return this;
-    },
-
-// retain first n characters of the match
-less:function (n) {
-        this.unput(this.match.slice(n));
-    },
-
-// displays already matched input, i.e. for error messages
-pastInput:function () {
-        var past = this.matched.substr(0, this.matched.length - this.match.length);
-        return (past.length > 20 ? '...':'') + past.substr(-20).replace(/\n/g, "");
-    },
-
-// displays upcoming input, i.e. for error messages
-upcomingInput:function () {
-        var next = this.match;
-        if (next.length < 20) {
-            next += this._input.substr(0, 20-next.length);
-        }
-        return (next.substr(0,20) + (next.length > 20 ? '...' : '')).replace(/\n/g, "");
-    },
-
-// displays the character position where the lexing error occurred, i.e. for error messages
-showPosition:function () {
-        var pre = this.pastInput();
-        var c = new Array(pre.length + 1).join("-");
-        return pre + this.upcomingInput() + "\n" + c + "^";
-    },
-
-// test the lexed token: return FALSE when not a match, otherwise return token
-test_match:function (match, indexed_rule) {
-        var token,
-            lines,
-            backup;
-
-        if (this.options.backtrack_lexer) {
-            // save context
-            backup = {
-                yylineno: this.yylineno,
-                yylloc: {
-                    first_line: this.yylloc.first_line,
-                    last_line: this.last_line,
-                    first_column: this.yylloc.first_column,
-                    last_column: this.yylloc.last_column
-                },
-                yytext: this.yytext,
-                match: this.match,
-                matches: this.matches,
-                matched: this.matched,
-                yyleng: this.yyleng,
-                offset: this.offset,
-                _more: this._more,
-                _input: this._input,
-                yy: this.yy,
-                conditionStack: this.conditionStack.slice(0),
-                done: this.done
-            };
-            if (this.options.ranges) {
-                backup.yylloc.range = this.yylloc.range.slice(0);
-            }
-        }
-
-        lines = match[0].match(/(?:\r\n?|\n).*/g);
-        if (lines) {
-            this.yylineno += lines.length;
-        }
-        this.yylloc = {
-            first_line: this.yylloc.last_line,
-            last_line: this.yylineno + 1,
-            first_column: this.yylloc.last_column,
-            last_column: lines ?
-                         lines[lines.length - 1].length - lines[lines.length - 1].match(/\r?\n?/)[0].length :
-                         this.yylloc.last_column + match[0].length
-        };
-        this.yytext += match[0];
-        this.match += match[0];
-        this.matches = match;
-        this.yyleng = this.yytext.length;
-        if (this.options.ranges) {
-            this.yylloc.range = [this.offset, this.offset += this.yyleng];
-        }
-        this._more = false;
-        this._backtrack = false;
-        this._input = this._input.slice(match[0].length);
-        this.matched += match[0];
-        token = this.performAction.call(this, this.yy, this, indexed_rule, this.conditionStack[this.conditionStack.length - 1]);
-        if (this.done && this._input) {
-            this.done = false;
-        }
-        if (token) {
-            return token;
-        } else if (this._backtrack) {
-            // recover context
-            for (var k in backup) {
-                this[k] = backup[k];
-            }
-            return false; // rule action called reject() implying the next rule should be tested instead.
-        }
-        return false;
-    },
-
-// return next match in input
-next:function () {
-        if (this.done) {
-            return this.EOF;
-        }
-        if (!this._input) {
-            this.done = true;
-        }
-
-        var token,
-            match,
-            tempMatch,
-            index;
-        if (!this._more) {
-            this.yytext = '';
-            this.match = '';
-        }
-        var rules = this._currentRules();
-        for (var i = 0; i < rules.length; i++) {
-            tempMatch = this._input.match(this.rules[rules[i]]);
-            if (tempMatch && (!match || tempMatch[0].length > match[0].length)) {
-                match = tempMatch;
-                index = i;
-                if (this.options.backtrack_lexer) {
-                    token = this.test_match(tempMatch, rules[i]);
-                    if (token !== false) {
-                        return token;
-                    } else if (this._backtrack) {
-                        match = false;
-                        continue; // rule action called reject() implying a rule MISmatch.
-                    } else {
-                        // else: this is a lexer rule which consumes input without producing a token (e.g. whitespace)
-                        return false;
-                    }
-                } else if (!this.options.flex) {
-                    break;
-                }
-            }
-        }
-        if (match) {
-            token = this.test_match(match, rules[index]);
-            if (token !== false) {
-                return token;
-            }
-            // else: this is a lexer rule which consumes input without producing a token (e.g. whitespace)
-            return false;
-        }
-        if (this._input === "") {
-            return this.EOF;
-        } else {
-            return this.parseError('Lexical error on line ' + (this.yylineno + 1) + '. Unrecognized text.\n' + this.showPosition(), {
-                text: "",
-                token: null,
-                line: this.yylineno
-            });
-        }
-    },
-
-// return next match that has a token
-lex:function lex() {
-        var r = this.next();
-        if (r) {
-            return r;
-        } else {
-            return this.lex();
-        }
-    },
-
-// activates a new lexer condition state (pushes the new lexer condition state onto the condition stack)
-begin:function begin(condition) {
-        this.conditionStack.push(condition);
-    },
-
-// pop the previously active lexer condition state off the condition stack
-popState:function popState() {
-        var n = this.conditionStack.length - 1;
-        if (n > 0) {
-            return this.conditionStack.pop();
-        } else {
-            return this.conditionStack[0];
-        }
-    },
-
-// produce the lexer rule set which is active for the currently active lexer condition state
-_currentRules:function _currentRules() {
-        if (this.conditionStack.length && this.conditionStack[this.conditionStack.length - 1]) {
-            return this.conditions[this.conditionStack[this.conditionStack.length - 1]].rules;
-        } else {
-            return this.conditions["INITIAL"].rules;
-        }
-    },
-
-// return the currently active lexer condition state; when an index argument is provided it produces the N-th previous condition state, if available
-topState:function topState(n) {
-        n = this.conditionStack.length - 1 - Math.abs(n || 0);
-        if (n >= 0) {
-            return this.conditionStack[n];
-        } else {
-            return "INITIAL";
-        }
-    },
-
-// alias for begin(condition)
-pushState:function pushState(condition) {
-        this.begin(condition);
-    },
-
-// return the number of states currently on the stack
-stateStackSize:function stateStackSize() {
-        return this.conditionStack.length;
-    },
-options: {},
-performAction: function anonymous(yy,yy_,$avoiding_name_collisions,YY_START) {
-var YYSTATE=YY_START;
-switch($avoiding_name_collisions) {
-case 0:/* skip whitespace */
-break;
-case 1:return 29
-break;
-case 2:return 26
-break;
-case 3:return 27
-break;
-case 4:return 9
-break;
-case 5:return 10
-break;
-case 6:return 8
-break;
-case 7:return 7
-break;
-case 8:return 17
-break;
-case 9:return 11
-break;
-case 10:return 19
-break;
-case 11:return 20
-break;
-case 12:return ">="
-break;
-case 13:return "<="
-break;
-case 14:return "<>"
-break;
-case 15:return "="
-break;
-case 16:return ">"
-break;
-case 17:return "<"
-break;
-case 18:return "{"
-break;
-case 19:return "}"
-break;
-case 20:return "!"
-break;
-case 21:return ","
-break;
-case 22:return ":"
-break;
-case 23:return ";"
-break;
-case 24:return "%"
-break;
-case 25:return 35;
-break;
-case 26:return 35;
-break;
-case 27:yy_.yytext = yy_.yytext.substr(2,yy_.yyleng-3).replace(/\"\"/g, "\""); return "SHEET";
-break;
-case 28:yy_.yytext = yy_.yytext.substr(1,yy_.yyleng-3).replace(/\"\"/g, "\""); return "SHEET";
-break;
-case 29:yy_.yytext = yy_.yytext.slice(0, -1); return "SHEET"
-break;
-case 30:yy_.yytext = yy_.yytext.slice(1, -1); return "SHEET"
-break;
-case 31:return "CELL";
-break;
-case 32:yy_.yytext = yy_.yytext.substr(1,yy_.yyleng-2).replace(/\"\"/g, "\""); return "STRING";
-break;
-case 33:return 24
-break;
-case 34:return 5
-break;
-case 35:return 'INVALID'
-break;
-}
-},
-rules: [/^(?:\s+)/,/^(?:[0-9]+(\.[0-9]+)?\b)/,/^(?:TRUE\b)/,/^(?:FALSE\b)/,/^(?:\*)/,/^(?:\/)/,/^(?:-)/,/^(?:\+)/,/^(?:&)/,/^(?:\^)/,/^(?:\()/,/^(?:\))/,/^(?:>=)/,/^(?:<=)/,/^(?:<>)/,/^(?:=)/,/^(?:>)/,/^(?:<)/,/^(?:\{)/,/^(?:\})/,/^(?:!)/,/^(?:,)/,/^(?::)/,/^(?:;)/,/^(?:%)/,/^(?:[A-Za-z](?=[(]))/,/^(?:[A-Za-z][A-Za-z0-9\.]+(?=[(]))/,/^(?:\$'(?:''|[^'])*'!)/,/^(?:'(?:''|[^'])*'!)/,/^(?:[a-zA-Z]([a-zA-Z0-9.$]+)?!)/,/^(?:\$([a-zA-Z])([a-zA-Z0-9.$]+)?!)/,/^(?:\$?([a-zA-Z]+)\$?([0-9]+))/,/^(?:"(?:""|[^"])*")/,/^(?:[a-zA-Z]([a-zA-Z0-9.$^\(]+)?)/,/^(?:$)/,/^(?:.)/],
-conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35],"inclusive":true}}
-});
-return lexer;
-})();
-parser.lexer = lexer;
-function Parser () {
-  this.yy = {};
-}
-Parser.prototype = parser;parser.Parser = Parser;
-return new Parser;
-})();
-
-
-if (typeof require !== 'undefined' && typeof exports !== 'undefined') {
-exports.parser = parser;
-exports.Parser = parser.Parser;
-exports.parse = function () { return parser.parse.apply(parser, arguments); };
-exports.main = function commonjsMain(args) {
-    if (!args[1]) {
-        console.log('Usage: '+args[0]+' FILE');
-        process.exit(1);
-    }
-    var source = require('fs').readFileSync(require('path').normalize(args[1]), "utf8");
-    return exports.parser.parse(source);
-};
-if (typeof module !== 'undefined' && require.main === module) {
-  exports.main(process.argv.slice(1));
-}
-}
-}).call(this,require('_process'))
-},{"_process":108,"fs":106,"path":107}],78:[function(require,module,exports){
+},{"./CONSTANTS":18,"./ERROR":28}],76:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2988,7 +1990,7 @@ var _CONSTANTS = require('./CONSTANTS');
 function PI() {
   return _CONSTANTS.τ / 2;
 } // Copyright 2015 Peter W Moresi
-},{"./CONSTANTS":19}],79:[function(require,module,exports){
+},{"./CONSTANTS":18}],77:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3026,7 +2028,7 @@ function PMT(rate, periods, present) {
     }
   }
 };
-},{"./ERROR":29,"./ISNUMBER":57}],80:[function(require,module,exports){
+},{"./ERROR":28,"./ISNUMBER":56}],78:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3039,7 +2041,7 @@ exports.POWER = POWER;
 function POWER(val, nth) {
   return Math.pow(val, nth);
 }
-},{}],81:[function(require,module,exports){
+},{}],79:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3088,8 +2090,7 @@ function REF(top, bottom) {
     return (0, _ISFUNCTION.ISFUNCTION)(bottom) ? bottom() : bottom;
   };
 
-  // References are frozen and immutable
-  return Object.freeze({
+  return {
 
     get isRef() {
       return true;
@@ -3171,9 +2172,9 @@ function REF(top, bottom) {
       }));
     }
 
-  });
+  };
 }
-},{"./COLUMNLETTER":14,"./ERROR":29,"./INDEX2COL":44,"./INDEX2ROW":45,"./ISBLANK":48,"./ISFUNCTION":55,"./ISNUMBER":57,"./UNIQUE":101}],82:[function(require,module,exports){
+},{"./COLUMNLETTER":14,"./ERROR":28,"./INDEX2COL":43,"./INDEX2ROW":44,"./ISBLANK":47,"./ISFUNCTION":54,"./ISNUMBER":56,"./UNIQUE":99}],80:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3199,7 +2200,7 @@ function REPLACE(text, position, length, new_text) {
   }
   return text.substr(0, position - 1) + new_text + text.substr(position - 1 + length);
 }
-},{"./ERROR":29,"./ISERROR":53}],83:[function(require,module,exports){
+},{"./ERROR":28,"./ISERROR":52}],81:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3216,7 +2217,7 @@ function REPT(text, number) {
   }
   return r;
 }
-},{}],84:[function(require,module,exports){
+},{}],82:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3247,7 +2248,7 @@ function RIGHT(text, number) {
 
   return text.substring(text.length - number);
 } // Copyright 2015 Peter W Moresi
-},{"./ERROR":29,"./ISBLANK":48,"./N":70}],85:[function(require,module,exports){
+},{"./ERROR":28,"./ISBLANK":47,"./N":69}],83:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3260,7 +2261,7 @@ exports.ROUND = ROUND;
 function ROUND(number, precision) {
   return +number.toFixed(precision);
 }
-},{}],86:[function(require,module,exports){
+},{}],84:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3279,7 +2280,7 @@ function ROUNDUP(number, precision) {
     return Math.floor(number * factor) / factor;
   }
 }
-},{}],87:[function(require,module,exports){
+},{}],85:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3313,7 +2314,7 @@ function SEARCH(find_text, within_text, position) {
     }
     return _ERROR2.default.value;
 } // Copyright 2015 Peter W Moresi
-},{"./ERROR":29}],88:[function(require,module,exports){
+},{"./ERROR":28}],86:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3354,7 +2355,7 @@ function SELECT(fields, body) {
     return ret;
   }, {});
 }
-},{}],89:[function(require,module,exports){
+},{}],87:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3381,7 +2382,7 @@ function SERIAL(date) {
   var diff = Math.ceil((date - _CONSTANTS.d1900) / _CONSTANTS.MilliSecondsInDay);
   return diff + (diff > 59 ? 2 : 1);
 } // Copyright 2015 Peter W Moresi
-},{"./CONSTANTS":19,"./ERROR":29,"./ISDATE":49}],90:[function(require,module,exports){
+},{"./CONSTANTS":18,"./ERROR":28,"./ISDATE":48}],88:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3408,7 +2409,7 @@ function SIN(value) {
 
   return Math.sin(value);
 }
-},{"./ERROR":29,"./ISNUMBER":57}],91:[function(require,module,exports){
+},{"./ERROR":28,"./ISNUMBER":56}],89:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3468,7 +2469,7 @@ function SORT(ref) {
 
   return _ERROR2.default.na;
 }
-},{"./ERROR":29,"./ISREF":59}],92:[function(require,module,exports){
+},{"./ERROR":28,"./ISREF":58}],90:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3481,7 +2482,7 @@ exports.SPLIT = SPLIT;
 function SPLIT(text, delimiter) {
   return text.split(delimiter);
 }
-},{}],93:[function(require,module,exports){
+},{}],91:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3508,7 +2509,7 @@ function SUBSTITUTE(text, old_text, new_text, occurrence) {
     }
   }
 }
-},{}],94:[function(require,module,exports){
+},{}],92:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3521,7 +2522,7 @@ exports.SUBTRACT = SUBTRACT;
 function SUBTRACT(a, b) {
   return a - b;
 }
-},{}],95:[function(require,module,exports){
+},{}],93:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3552,7 +2553,7 @@ function SUM() {
     return a + b;
   });
 }
-},{"./ERROR":29,"./FLATTEN":33}],96:[function(require,module,exports){
+},{"./ERROR":28,"./FLATTEN":32}],94:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3568,7 +2569,7 @@ function SWITCH() {
 } // Copyright 2015 Peter W Moresi
 
 ;
-},{"./COND":18}],97:[function(require,module,exports){
+},{"./COND":17}],95:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3595,7 +2596,7 @@ function TAN(value) {
 
   return Math.tan(value);
 }
-},{"./ERROR":29,"./ISNUMBER":57}],98:[function(require,module,exports){
+},{"./ERROR":28,"./ISNUMBER":56}],96:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3609,7 +2610,7 @@ var _CONSTANTS = require('./CONSTANTS');
 function TAU() {
   return _CONSTANTS.τ;
 } // Copyright 2015 Peter W Moresi
-},{"./CONSTANTS":19}],99:[function(require,module,exports){
+},{"./CONSTANTS":18}],97:[function(require,module,exports){
 // Copyright 2015 Peter W Moresi
 // based heavily on code from socialcalc
 'use strict';
@@ -4426,7 +3427,7 @@ FormatNumber.parse_format_bracket = function (bracketstr) {
 function TEXT(value, format, currency_char) {
   return FormatNumber.formatNumberWithFormat(value, format, currency_char);
 }
-},{"./CONSTANTS":19,"./PARSEDATE":76}],100:[function(require,module,exports){
+},{"./CONSTANTS":18,"./PARSEDATE":75}],98:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -4447,7 +3448,7 @@ function TRIM(text) {
     }
     return text.trim();
 } // Copyright 2015 Peter W Moresi
-},{"./ERROR":29}],101:[function(require,module,exports){
+},{"./ERROR":28}],99:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4463,7 +3464,7 @@ function UNIQUE(array) {
     return p;
   }, []);
 }
-},{}],102:[function(require,module,exports){
+},{}],100:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4476,7 +3477,7 @@ exports.UPPER = UPPER;
 function UPPER(string) {
   return string.toUpperCase();
 }
-},{}],103:[function(require,module,exports){
+},{}],101:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -4512,7 +3513,7 @@ function VLOOKUP(needle, table, index, exactmatch) {
 
     return _ERROR2.default.na;
 } // Copyright 2015 Peter W Moresi
-},{"./ERROR":29,"./ISBLANK":48,"./ISERROR":53}],104:[function(require,module,exports){
+},{"./ERROR":28,"./ISBLANK":47,"./ISERROR":52}],102:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -4535,7 +3536,7 @@ function XOR() {
     return a;
   }, 0) & 1;
 } // Copyright 2015 Peter W Moresi
-},{"./FLATTEN":33}],105:[function(require,module,exports){
+},{"./FLATTEN":32}],103:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5429,327 +4430,4 @@ Object.defineProperty(exports, 'XOR', {
     return _XOR.XOR;
   }
 });
-},{"./ABS":2,"./ACOS":3,"./ADD":4,"./AND":5,"./AVERAGE":6,"./BIN2DEC":7,"./CELLINDEX":8,"./CHANGED":9,"./CHOOSE":10,"./CLEAN":11,"./CODE":12,"./COLUMN":13,"./COLUMNLETTER":14,"./COLUMNNUMBER":15,"./CONCATENATE":17,"./COND":18,"./COS":20,"./DATE":21,"./DATEDIF":22,"./DATEVALUE":23,"./DAYS360":24,"./DEC2BIN":25,"./DIFF":26,"./DIVIDE":27,"./EQ":28,"./EXACT":30,"./FILTER":31,"./FIND":32,"./FLATTEN":33,"./GT":34,"./GTE":35,"./GUID":36,"./HLOOKUP":37,"./IF":38,"./IFBLANK":39,"./IFEMPTY":40,"./IFERROR":41,"./IFNA":42,"./IN":43,"./INDEX2COL":44,"./INDEX2ROW":45,"./INDIRECT":46,"./ISARRAY":47,"./ISBLANK":48,"./ISDATE":49,"./ISEMAIL":50,"./ISEMPTY":51,"./ISERROR":53,"./ISEVEN":54,"./ISFUNCTION":55,"./ISNA":56,"./ISNUMBER":57,"./ISODD":58,"./ISREF":59,"./ISTEXT":60,"./ISURL":61,"./LEN":62,"./LOOKUP":63,"./LOWER":64,"./LT":65,"./LTE":66,"./MAX":67,"./MIN":68,"./MULTIPLY":69,"./N":70,"./NE":71,"./NOT":72,"./OCT2DEC":73,"./OR":74,"./PARSEBOOL":75,"./PARSEDATE":76,"./PI":78,"./PMT":79,"./POWER":80,"./REF":81,"./REPLACE":82,"./REPT":83,"./RIGHT":84,"./ROUND":85,"./ROUNDUP":86,"./SEARCH":87,"./SELECT":88,"./SERIAL":89,"./SIN":90,"./SORT":91,"./SPLIT":92,"./SUBSTITUTE":93,"./SUBTRACT":94,"./SUM":95,"./SWITCH":96,"./TAN":97,"./TAU":98,"./TEXT":99,"./TRIM":100,"./UNIQUE":101,"./UPPER":102,"./VLOOKUP":103,"./XOR":104}],106:[function(require,module,exports){
-
-},{}],107:[function(require,module,exports){
-(function (process){
-// Copyright Joyent, Inc. and other Node contributors.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a
-// copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to permit
-// persons to whom the Software is furnished to do so, subject to the
-// following conditions:
-//
-// The above copyright notice and this permission notice shall be included
-// in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-// USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-// resolves . and .. elements in a path array with directory names there
-// must be no slashes, empty elements, or device names (c:\) in the array
-// (so also no leading and trailing slashes - it does not distinguish
-// relative and absolute paths)
-function normalizeArray(parts, allowAboveRoot) {
-  // if the path tries to go above the root, `up` ends up > 0
-  var up = 0;
-  for (var i = parts.length - 1; i >= 0; i--) {
-    var last = parts[i];
-    if (last === '.') {
-      parts.splice(i, 1);
-    } else if (last === '..') {
-      parts.splice(i, 1);
-      up++;
-    } else if (up) {
-      parts.splice(i, 1);
-      up--;
-    }
-  }
-
-  // if the path is allowed to go above the root, restore leading ..s
-  if (allowAboveRoot) {
-    for (; up--; up) {
-      parts.unshift('..');
-    }
-  }
-
-  return parts;
-}
-
-// Split a filename into [root, dir, basename, ext], unix version
-// 'root' is just a slash, or nothing.
-var splitPathRe =
-    /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
-var splitPath = function(filename) {
-  return splitPathRe.exec(filename).slice(1);
-};
-
-// path.resolve([from ...], to)
-// posix version
-exports.resolve = function() {
-  var resolvedPath = '',
-      resolvedAbsolute = false;
-
-  for (var i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
-    var path = (i >= 0) ? arguments[i] : process.cwd();
-
-    // Skip empty and invalid entries
-    if (typeof path !== 'string') {
-      throw new TypeError('Arguments to path.resolve must be strings');
-    } else if (!path) {
-      continue;
-    }
-
-    resolvedPath = path + '/' + resolvedPath;
-    resolvedAbsolute = path.charAt(0) === '/';
-  }
-
-  // At this point the path should be resolved to a full absolute path, but
-  // handle relative paths to be safe (might happen when process.cwd() fails)
-
-  // Normalize the path
-  resolvedPath = normalizeArray(filter(resolvedPath.split('/'), function(p) {
-    return !!p;
-  }), !resolvedAbsolute).join('/');
-
-  return ((resolvedAbsolute ? '/' : '') + resolvedPath) || '.';
-};
-
-// path.normalize(path)
-// posix version
-exports.normalize = function(path) {
-  var isAbsolute = exports.isAbsolute(path),
-      trailingSlash = substr(path, -1) === '/';
-
-  // Normalize the path
-  path = normalizeArray(filter(path.split('/'), function(p) {
-    return !!p;
-  }), !isAbsolute).join('/');
-
-  if (!path && !isAbsolute) {
-    path = '.';
-  }
-  if (path && trailingSlash) {
-    path += '/';
-  }
-
-  return (isAbsolute ? '/' : '') + path;
-};
-
-// posix version
-exports.isAbsolute = function(path) {
-  return path.charAt(0) === '/';
-};
-
-// posix version
-exports.join = function() {
-  var paths = Array.prototype.slice.call(arguments, 0);
-  return exports.normalize(filter(paths, function(p, index) {
-    if (typeof p !== 'string') {
-      throw new TypeError('Arguments to path.join must be strings');
-    }
-    return p;
-  }).join('/'));
-};
-
-
-// path.relative(from, to)
-// posix version
-exports.relative = function(from, to) {
-  from = exports.resolve(from).substr(1);
-  to = exports.resolve(to).substr(1);
-
-  function trim(arr) {
-    var start = 0;
-    for (; start < arr.length; start++) {
-      if (arr[start] !== '') break;
-    }
-
-    var end = arr.length - 1;
-    for (; end >= 0; end--) {
-      if (arr[end] !== '') break;
-    }
-
-    if (start > end) return [];
-    return arr.slice(start, end - start + 1);
-  }
-
-  var fromParts = trim(from.split('/'));
-  var toParts = trim(to.split('/'));
-
-  var length = Math.min(fromParts.length, toParts.length);
-  var samePartsLength = length;
-  for (var i = 0; i < length; i++) {
-    if (fromParts[i] !== toParts[i]) {
-      samePartsLength = i;
-      break;
-    }
-  }
-
-  var outputParts = [];
-  for (var i = samePartsLength; i < fromParts.length; i++) {
-    outputParts.push('..');
-  }
-
-  outputParts = outputParts.concat(toParts.slice(samePartsLength));
-
-  return outputParts.join('/');
-};
-
-exports.sep = '/';
-exports.delimiter = ':';
-
-exports.dirname = function(path) {
-  var result = splitPath(path),
-      root = result[0],
-      dir = result[1];
-
-  if (!root && !dir) {
-    // No dirname whatsoever
-    return '.';
-  }
-
-  if (dir) {
-    // It has a dirname, strip trailing slash
-    dir = dir.substr(0, dir.length - 1);
-  }
-
-  return root + dir;
-};
-
-
-exports.basename = function(path, ext) {
-  var f = splitPath(path)[2];
-  // TODO: make this comparison case-insensitive on windows?
-  if (ext && f.substr(-1 * ext.length) === ext) {
-    f = f.substr(0, f.length - ext.length);
-  }
-  return f;
-};
-
-
-exports.extname = function(path) {
-  return splitPath(path)[3];
-};
-
-function filter (xs, f) {
-    if (xs.filter) return xs.filter(f);
-    var res = [];
-    for (var i = 0; i < xs.length; i++) {
-        if (f(xs[i], i, xs)) res.push(xs[i]);
-    }
-    return res;
-}
-
-// String.prototype.substr - negative index don't work in IE8
-var substr = 'ab'.substr(-1) === 'b'
-    ? function (str, start, len) { return str.substr(start, len) }
-    : function (str, start, len) {
-        if (start < 0) start = str.length + start;
-        return str.substr(start, len);
-    }
-;
-
-}).call(this,require('_process'))
-},{"_process":108}],108:[function(require,module,exports){
-// shim for using process in browser
-
-var process = module.exports = {};
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
-    } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
-    }
-}
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = setTimeout(cleanUpNextTick);
-    draining = true;
-
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
-            }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    clearTimeout(timeout);
-}
-
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
-    }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        setTimeout(drainQueue, 0);
-    }
-};
-
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
-
-},{}]},{},[1]);
+},{"./ABS":2,"./ACOS":3,"./ADD":4,"./AND":5,"./AVERAGE":6,"./BIN2DEC":7,"./CELLINDEX":8,"./CHANGED":9,"./CHOOSE":10,"./CLEAN":11,"./CODE":12,"./COLUMN":13,"./COLUMNLETTER":14,"./COLUMNNUMBER":15,"./CONCATENATE":16,"./COND":17,"./COS":19,"./DATE":20,"./DATEDIF":21,"./DATEVALUE":22,"./DAYS360":23,"./DEC2BIN":24,"./DIFF":25,"./DIVIDE":26,"./EQ":27,"./EXACT":29,"./FILTER":30,"./FIND":31,"./FLATTEN":32,"./GT":33,"./GTE":34,"./GUID":35,"./HLOOKUP":36,"./IF":37,"./IFBLANK":38,"./IFEMPTY":39,"./IFERROR":40,"./IFNA":41,"./IN":42,"./INDEX2COL":43,"./INDEX2ROW":44,"./INDIRECT":45,"./ISARRAY":46,"./ISBLANK":47,"./ISDATE":48,"./ISEMAIL":49,"./ISEMPTY":50,"./ISERROR":52,"./ISEVEN":53,"./ISFUNCTION":54,"./ISNA":55,"./ISNUMBER":56,"./ISODD":57,"./ISREF":58,"./ISTEXT":59,"./ISURL":60,"./LEN":61,"./LOOKUP":62,"./LOWER":63,"./LT":64,"./LTE":65,"./MAX":66,"./MIN":67,"./MULTIPLY":68,"./N":69,"./NE":70,"./NOT":71,"./OCT2DEC":72,"./OR":73,"./PARSEBOOL":74,"./PARSEDATE":75,"./PI":76,"./PMT":77,"./POWER":78,"./REF":79,"./REPLACE":80,"./REPT":81,"./RIGHT":82,"./ROUND":83,"./ROUNDUP":84,"./SEARCH":85,"./SELECT":86,"./SERIAL":87,"./SIN":88,"./SORT":89,"./SPLIT":90,"./SUBSTITUTE":91,"./SUBTRACT":92,"./SUM":93,"./SWITCH":94,"./TAN":95,"./TAU":96,"./TEXT":97,"./TRIM":98,"./UNIQUE":99,"./UPPER":100,"./VLOOKUP":101,"./XOR":102}]},{},[1]);
