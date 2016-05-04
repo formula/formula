@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>UPPER.js</title>
+  <title>NUMBERVALUE.js</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" media="all" href="docco.css" />
@@ -573,7 +573,7 @@
         
           <li id="title">
               <div class="annotation">
-                  <h1>UPPER.js</h1>
+                  <h1>NUMBERVALUE.js</h1>
               </div>
           </li>
         
@@ -585,9 +585,11 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              <p>Copyright 2015 Peter W Moresi</p>
-
+              
             </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> {ISEMPTY} <span class="hljs-keyword">from</span> <span class="hljs-string">'./ISEMPTY'</span>;
+<span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'./ERROR'</span></pre></div></div>
             
         </li>
         
@@ -598,13 +600,58 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>UPPER converts a string to upper case</p>
+              <p>Convert a text value into a number value.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">UPPER</span>(<span class="hljs-params">string</span>) </span>{
-  <span class="hljs-keyword">return</span> string.toUpperCase()
-}</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">NUMBERVALUE</span>(<span class="hljs-params">text, decimal_separator, group_separator</span>)  </span>{
+  decimal_separator = decimal_separator || <span class="hljs-string">'.'</span>
+  group_separator = group_separator || <span class="hljs-string">','</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>define factor to be 1 so that it does nothing in most cases</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">var</span> factor = <span class="hljs-number">1</span>
+
+  <span class="hljs-keyword">if</span> (ISEMPTY(text)) {
+    <span class="hljs-keyword">return</span> error.value
+  }
+
+  <span class="hljs-keyword">if</span> (text[text.length<span class="hljs-number">-1</span>] === <span class="hljs-string">'%'</span>) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>set the factor to 100 to convert from percentage to decimal</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    factor = <span class="hljs-number">100</span>
+    text = text.substr(<span class="hljs-number">0</span>, text.length - <span class="hljs-number">1</span>)
+  }
+
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">Number</span>(
+    text
+    .replace(<span class="hljs-built_in">RegExp</span>(<span class="hljs-string">`[<span class="hljs-subst">${group_separator}</span>]`</span>, <span class="hljs-string">'g'</span>), <span class="hljs-string">''</span>)
+    .replace(decimal_separator, <span class="hljs-string">'.'</span>)
+  ) / factor
+};</pre></div></div>
             
         </li>
         
