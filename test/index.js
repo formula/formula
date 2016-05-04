@@ -3,7 +3,7 @@ import * as ff from '../src/index'
 
 test('index', function(t) {
 
-  t.test( 87 )
+  t.test( 88 )
   t.ok( ff.ABS, 'ABS should be there')
   t.ok( ff.ACOS, 'ACOS should be there')
   t.ok( ff.ADD, 'ADD should be there')
@@ -63,6 +63,7 @@ test('index', function(t) {
   t.ok( ff.MAX, 'MAX should be there')
   t.ok( ff.MULTIPLY, 'MULTIPLY should be there')
   t.ok( ff.N, 'N should be there')
+  t.ok( ff.NUMBERVALUE, 'NUMBERVALUE should be there')
   t.ok( ff.NE, 'NE should be there')
   t.ok( ff.OCT2DEC, 'OCT2DEC should be there')
   t.ok( ff.OR, 'OR should be there')
