@@ -1,6 +1,6 @@
 {
   "name": "functionfoundry",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Modern JavaScript inspired by the spreadsheet library",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
