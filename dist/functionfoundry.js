@@ -157,12 +157,9 @@ var _ISERROR = require('./ISERROR');
 // Copyright 2015 Peter W Moresi
 
 function AVERAGE() {
-  for (var _len = arguments.length, items = Array(_len), _key = 0; _key < _len; _key++) {
-    items[_key] = arguments[_key];
-  }
 
   // compute sum all of the items.
-  var sum = _SUM.SUM.apply(undefined, items);
+  var sum = _SUM.SUM.apply(undefined, arguments);
 
   // return sum when computed error.
   if ((0, _ISERROR.ISERROR)(sum)) {
@@ -170,7 +167,7 @@ function AVERAGE() {
   }
 
   // return sum divided by item count
-  return sum / items.length;
+  return sum / arguments.length;
 }
 },{"./ISERROR":52,"./SUM":93}],7:[function(require,module,exports){
 "use strict";
@@ -265,12 +262,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // CHOOSE accepts an index and a list of items. It returns the item that corresponds to the index.
 function CHOOSE(index) {
-  for (var _len = arguments.length, items = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-    items[_key - 1] = arguments[_key];
-  }
 
   // Return `#NA!` if index or items are not provided.
-  if (!index || items.length === 0) {
+  if (!index || arguments.length - 1 === 0) {
     return _ERROR2.default.na;
   }
 
@@ -280,12 +274,12 @@ function CHOOSE(index) {
   }
 
   // Return `#VALUE!` if number of items is less than index.
-  if (items.length < index) {
+  if (arguments.length - 1 < index) {
     return _ERROR2.default.value;
   }
 
   // Return the item.
-  return items[index - 1];
+  return arguments.length <= index - 1 + 1 ? undefined : arguments[index - 1 + 1];
 } // Copyright 2015 Peter W Moresi
 },{"./ERROR":28}],11:[function(require,module,exports){
 'use strict';
@@ -564,6 +558,7 @@ var d1900 = exports.d1900 = new Date(1900, 0, 1),
     AM1 = exports.AM1 = "A",
     PM = exports.PM = "PM",
     PM1 = exports.PM1 = "P",
+
 
 // Circle Constants
 τ = exports.τ = 6.28318530717958,
@@ -981,6 +976,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function FIND(find_text) {
   var within_text = arguments.length <= 1 || arguments[1] === undefined ? '' : arguments[1];
   var position = arguments.length <= 2 || arguments[2] === undefined ? 1 : arguments[2];
+
 
   // Find the position of the text
   position = within_text.indexOf(find_text, position - 1);
@@ -2013,6 +2009,7 @@ function PMT(rate, periods, present) {
   var future = arguments.length <= 3 || arguments[3] === undefined ? 0 : arguments[3];
   var type = arguments.length <= 4 || arguments[4] === undefined ? 0 : arguments[4];
 
+
   if (!(0, _ISNUMBER.ISNUMBER)(rate) || !(0, _ISNUMBER.ISNUMBER)(periods)) {
     return _ERROR2.default.value;
   }
@@ -2153,6 +2150,7 @@ function REF(top, bottom) {
       // Check if value is inside range from top to bottom, inclusive.
       return index >= getTop() && index <= getBottom();
     },
+
 
     get size() {
       return 1 + (getBottom() - getTop());
@@ -2320,10 +2318,10 @@ function SEARCH(find_text, within_text, position) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
 exports.SELECT = SELECT;
-
-function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
-
 // Copyright 2015 Peter W Moresi
 
 // SELECT fields from object
