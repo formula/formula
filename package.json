@@ -8,7 +8,7 @@
     "test": "babel-tape-runner test/*.js | faucet",
     "docs": "docco src/*.js",
     "clean": "rm -rf lib && rm -rf dist && mkdir lib && mkdir dist",
-    "postinstall": "mkdir lib && npm run jsnext && npm run js",
+    "postinstall": "mkdir lib && npm run build:jsnext && npm run build:js",
     "build:dist": "browserify ./browserify.js > dist/functionfoundry.js && browserify -g uglifyify ./browserify.js > dist/functionfoundry.min.js",
     "build:jsnext": "rollup -f cjs ./src/index.js > lib/functionfoundry.es6",
     "build:js": "babel lib/functionfoundry.es6 > lib/functionfoundry.js",
