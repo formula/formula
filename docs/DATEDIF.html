@@ -515,11 +515,6 @@
                 </a>
               
                 
-                <a class="source" href="SWITCH.html">
-                  SWITCH.js
-                </a>
-              
-                
                 <a class="source" href="TAN.html">
                   TAN.js
                 </a>
@@ -589,6 +584,8 @@
 
             </div>
             
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> {PARSEDATE} <span class="hljs-keyword">from</span> <span class="hljs-string">'./PARSEDATE'</span></pre></div></div>
+            
         </li>
         
         
@@ -604,8 +601,8 @@
             
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">DATEDIF</span>(<span class="hljs-params">start_date, end_date, unit</span>) </span>{
   <span class="hljs-keyword">var</span> second=<span class="hljs-number">1000</span>, minute=second*<span class="hljs-number">60</span>, hour=minute*<span class="hljs-number">60</span>, day=hour*<span class="hljs-number">24</span>, week=day*<span class="hljs-number">7</span>;
-  start_date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(start_date);
-  end_date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(end_date);
+  start_date = PARSEDATE(start_date),
+  end_date = PARSEDATE(end_date)
 
   <span class="hljs-keyword">var</span> timediff = end_date - start_date;
   <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isNaN</span>(timediff)) <span class="hljs-keyword">return</span> <span class="hljs-literal">NaN</span>;
