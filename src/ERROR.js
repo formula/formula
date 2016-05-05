@@ -2,17 +2,25 @@
 
 // List of errors in the spreadsheet system
 
-let nil = new Error('#NULL!'),
-    div0 = new Error('#DIV/0!'),
-    value = new Error('#VALUE?'),
-    ref = new Error('#REF!'),
-    name = new Error('#NAME?'),
-    num = new Error('#NUM!'),
-    na = new Error('#N/A'),
-    error = new Error('#Error('),
-    data = new Error('#GETTING_DATA'),
-    missing = new Error('#MISSING'),
-    unknown = new Error('#UNKNOWN');
+function FFError(message) {
+    this.name = "NotImplementedError";
+    this.message = (message || "");
+}
+
+FFError.prototype = Error.prototype;
+FFError.prototype.toString = function() { return this.message }
+
+let nil = new FFError('#NULL!'),
+    div0 = new FFError('#DIV/0!'),
+    value = new FFError('#VALUE!'),
+    ref = new FFError('#REF!'),
+    name = new FFError('#NAME?'),
+    num = new FFError('#NUM!'),
+    na = new FFError('#N/A!'),
+    error = new FFError('#ERROR!'),
+    data = new FFError('#GETTING_DATA!'),
+    missing = new FFError('#MISSING!'),
+    unknown = new FFError('#UNKNOWN!');
 
 export default {
   nil,

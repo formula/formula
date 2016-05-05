@@ -9,8 +9,6 @@ export function DIFF(a, b) {
   Diff = InA.filter( n => a[n] !== b[n])
 
   return {
-    left: a,
-    right: b,
     unique_left: NotInA,
     unique_right: NotInB,
     diff: Diff.reduce( (x, y) => {

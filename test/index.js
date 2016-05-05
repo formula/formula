@@ -1,9 +1,9 @@
 import test from 'tape'
-import * as ff from '../lib/functionfoundry'
+import * as ff from '../src/index'
 
 test('index', function(t) {
 
-  t.test( 88 )
+  t.test( 87 )
   t.ok( ff.ABS, 'ABS should be there')
   t.ok( ff.ACOS, 'ACOS should be there')
   t.ok( ff.ADD, 'ADD should be there')
@@ -84,7 +84,6 @@ test('index', function(t) {
   t.ok( ff.SUBTRACT, 'SUBTRACT should be there')
   t.ok( ff.SUBSTITUTE, 'SUBSTITUTE should be there')
   t.ok( ff.SUM, 'SUM should be there')
-  t.ok( ff.SWITCH, 'SWITCH should be there')
   t.ok( ff.TAN, 'TAN should be there')
   t.ok( ff.TAU, 'TAU should be there')
   t.ok( ff.TEXT, 'TEXT should be there')

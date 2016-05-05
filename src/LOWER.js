@@ -6,5 +6,5 @@ import error from './ERROR'
 // LOWER converts `value` to lower case
 export function LOWER(value) {
   if (!ISTEXT(value)) return error.value
-  return str.toLowerCase()
+  return value.toLowerCase()
 }

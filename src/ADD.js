@@ -19,6 +19,6 @@ export function ADD(...values) {
     return error.value
   }
 
-  // Return a + b.
+  // Return the sum.
   return a + b
 }

@@ -26,7 +26,7 @@
 //
 // The library currently is approaching 100 functions. The long term goal is to support the ~300 functions supported by modern spreadsheet software.
 //
-// The test suite includes over 500 assertions to ensure high quality and provide usage examples. 
+// The test suite includes over ~600 assertions to ensure high quality and provide usage examples.
 //
 export {ABS} from './ABS'
 export {ACOS} from './ACOS'
@@ -119,7 +119,6 @@ export {SPLIT} from './SPLIT'
 export {SUBSTITUTE} from './SUBSTITUTE'
 export {SUBTRACT} from './SUBTRACT'
 export {SUM} from './SUM'
-export {SWITCH} from './SWITCH'
 export {TAN} from './TAN'
 export {TAU} from './TAU'
 export {TEXT} from './TEXT'

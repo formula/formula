@@ -1,10 +1,11 @@
 // Copyright 2015 Peter W Moresi
+import {PARSEDATE} from './PARSEDATE'
 
 // DATEDIF return the difference between two dates given a start date, end date and unit.
 export function DATEDIF(start_date, end_date, unit) {
   var second=1000, minute=second*60, hour=minute*60, day=hour*24, week=day*7;
-  start_date = new Date(start_date);
-  end_date = new Date(end_date);
+  start_date = PARSEDATE(start_date),
+  end_date = PARSEDATE(end_date)
 
   var timediff = end_date - start_date;
   if (isNaN(timediff)) return NaN;
