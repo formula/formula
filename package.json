@@ -1,13 +1,17 @@
 {
   "name": "functionfoundry",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "Modern JavaScript inspired by the spreadsheet library",
-  "main": "lib/index.js",
-  "jsnext:main": "src/index.js",
+  "main": "lib/functionfoundry.js",
+  "jsnext:main": "lib/functionfoundry.es6",
   "scripts": {
-    "test": "gulp test",
-    "build": "gulp build && browserify ./browserify.js > dist/functionfoundry.js && browserify -g uglifyify ./browserify.js > dist/functionfoundry.min.js",
-    "docs": "docco src/*.js"
+    "test": "babel-tape-runner test/*.js | faucet",
+    "docs": "docco src/*.js",
+    "clean": "rm -rf lib && rm -rf dist && mkdir lib && mkdir dist",
+    "build:dist": "browserify ./browserify.js > dist/functionfoundry.js && browserify -g uglifyify ./browserify.js > dist/functionfoundry.min.js",
+    "build:jsnext": "rollup -f cjs ./src/index.js > lib/functionfoundry.es6",
+    "build:js": "babel lib/functionfoundry.es6 > lib/functionfoundry.js",
+    "build": "npm run clean && npm run build:jsnext && npm run build:js && npm run build:dist && npm run docs"
   },
   "repository": {
     "type": "git",
@@ -26,17 +30,12 @@
   "devDependencies": {
     "babel-cli": "^6.8.0",
     "babel-core": "^6.8.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.8.0",
     "babel-preset-es2015": "^6.6.0",
+    "babel-tape-runner": "^2.0.1",
     "browserify": "^13.0.0",
     "docco": "^0.7.0",
     "eslint": "^1.8.0",
-    "gulp": "^3.9.0",
-    "gulp-babel": "^6.1.0",
-    "gulp-tape": "0.0.5",
-    "gulp-uglify": "^1.5.1",
-    "tap-colorize": "^1.2.0",
-    "tape": "^4.2.2",
+    "faucet": "0.0.1",
     "uglifyify": "^3.0.1"
   }
 }
