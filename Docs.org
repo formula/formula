@@ -3,11 +3,7 @@
 
 *functionfoundry* is a JavaScript library written in ES6.
 
-It includes ES5 code precompiled with babel in the lib folder.
-
-If you want to load the entire library (72kb) then use functionfoundry.js in the dist folder. This file is generated with browserify.
-
-The library includes functions for:
+Includes functions for:
 
   + [[#abs][ABS]]
   + [[#acos][ACOS]]
