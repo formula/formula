@@ -1,14 +1,15 @@
 {
   "name": "functionfoundry",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Modern JavaScript inspired by the spreadsheet library",
   "main": "lib/functionfoundry.js",
   "jsnext:main": "lib/functionfoundry.es6",
   "scripts": {
+    "pretest": "mkdir lib && npm run build:jsnext && npm run build:js",
     "test": "babel-tape-runner test/*.js | faucet",
     "docs": "docco src/*.js",
+    "test:docs": "docco --output test_docs test/*.js",
     "clean": "rm -rf lib && rm -rf dist && mkdir lib && mkdir dist",
-    "postinstall": "mkdir lib && npm run build:jsnext && npm run build:js",
     "build:dist": "browserify ./browserify.js > dist/functionfoundry.js && browserify -g uglifyify ./browserify.js > dist/functionfoundry.min.js",
     "build:jsnext": "rollup -f cjs ./src/index.js > lib/functionfoundry.es6",
     "build:js": "babel lib/functionfoundry.es6 > lib/functionfoundry.js",
