@@ -1,5 +1,5 @@
 #+TITLE: functionfoundry docs
-#STATUS: DRAFT
+#+STATUS: DRAFT
 
 *functionfoundry* is a JavaScript library written in ES6.
 
