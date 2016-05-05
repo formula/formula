@@ -515,11 +515,6 @@
                 </a>
               
                 
-                <a class="source" href="SWITCH.html">
-                  SWITCH.js
-                </a>
-              
-                
                 <a class="source" href="TAN.html">
                   TAN.js
                 </a>
@@ -590,7 +585,8 @@
             </div>
             
             <div class="content"><div class='highlight'><pre>
-<span class="hljs-keyword">import</span> {ISBLANK} <span class="hljs-keyword">from</span> <span class="hljs-string">'./ISBLANK'</span>;</pre></div></div>
+<span class="hljs-keyword">import</span> {ISBLANK} <span class="hljs-keyword">from</span> <span class="hljs-string">'./ISBLANK'</span>;
+<span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'./ERROR'</span>;</pre></div></div>
             
         </li>
         
@@ -605,19 +601,24 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">HLOOKUP</span>(<span class="hljs-params">needle, table, index, exactmatch</span>) </span>{
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">HLOOKUP</span>(<span class="hljs-params">needle, table, index=1, exactmatch</span>) </span>{
     <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> needle === <span class="hljs-string">"undefined"</span> || ISBLANK(needle)) {
         <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
     }
 
-    <span class="hljs-keyword">var</span> index = index || <span class="hljs-number">0</span>,
-        row = table[<span class="hljs-number">0</span>];
+    <span class="hljs-keyword">if</span> (index &gt; table.length) {
+      <span class="hljs-keyword">return</span> error.ref
+    }
+
+    <span class="hljs-keyword">var</span> needleLower = (needle + <span class="hljs-string">''</span>).toLowerCase(),
+    row = table[<span class="hljs-number">0</span>];
 
     <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; row.length; i++){
 
-        <span class="hljs-keyword">if</span> ((exactmatch &amp;&amp; row[i]===needle) ||
-            row[i].toLowerCase().indexOf(needle.toLowerCase()) !== <span class="hljs-number">-1</span>) {
-            <span class="hljs-keyword">return</span> (index &lt; (table.length+<span class="hljs-number">1</span>) ? table[index<span class="hljs-number">-1</span>][i] : table[<span class="hljs-number">0</span>][i]);
+      <span class="hljs-keyword">if</span> ((exactmatch &amp;&amp; row[i]===needle) ||
+          ((row[i] == needle) ||
+           (<span class="hljs-keyword">typeof</span> row[i] === <span class="hljs-string">"string"</span> &amp;&amp; row[i].toLowerCase().indexOf(needleLower) != <span class="hljs-number">-1</span>) )) {
+            <span class="hljs-keyword">return</span> table[index<span class="hljs-number">-1</span>][i];
         }
     }
 

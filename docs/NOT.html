@@ -515,11 +515,6 @@
                 </a>
               
                 
-                <a class="source" href="SWITCH.html">
-                  SWITCH.js
-                </a>
-              
-                
                 <a class="source" href="TAN.html">
                   TAN.js
                 </a>
@@ -589,6 +584,8 @@
 
             </div>
             
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'./ERROR'</span></pre></div></div>
+            
         </li>
         
         
@@ -603,7 +600,9 @@
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">NOT</span>(<span class="hljs-params">value</span>) </span>{
-  <span class="hljs-keyword">return</span> !value
+  <span class="hljs-keyword">return</span> (value !== <span class="hljs-literal">true</span> &amp;&amp; value !== <span class="hljs-literal">false</span> &amp;&amp; value !== <span class="hljs-number">1</span> &amp;&amp; value !== <span class="hljs-number">0</span>) ? 
+  error.value :
+  !value
 }</pre></div></div>
             
         </li>
