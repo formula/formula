@@ -11,17 +11,25 @@ function ISNUMBER(value) {
 
 // List of errors in the spreadsheet system
 
-let nil = new Error('#NULL!');
-let div0 = new Error('#DIV/0!');
-let value = new Error('#VALUE?');
-let ref = new Error('#REF!');
-let name = new Error('#NAME?');
-let num = new Error('#NUM!');
-let na = new Error('#N/A');
-let error$1 = new Error('#Error(');
-let data = new Error('#GETTING_DATA');
-let missing = new Error('#MISSING');
-let unknown = new Error('#UNKNOWN');
+function FFError(message) {
+    this.name = "NotImplementedError";
+    this.message = (message || "");
+}
+
+FFError.prototype = Error.prototype;
+FFError.prototype.toString = function() { return this.message }
+
+let nil = new FFError('#NULL!');
+let div0 = new FFError('#DIV/0!');
+let value = new FFError('#VALUE!');
+let ref = new FFError('#REF!');
+let name = new FFError('#NAME?');
+let num = new FFError('#NUM!');
+let na = new FFError('#N/A!');
+let error$1 = new FFError('#ERROR!');
+let data = new FFError('#GETTING_DATA!');
+let missing = new FFError('#MISSING!');
+let unknown = new FFError('#UNKNOWN!');
 var error$2 = {
   nil,
   div0,
@@ -77,7 +85,7 @@ function ADD(...values) {
     return error$2.value
   }
 
-  // Return a + b.
+  // Return the sum.
   return a + b
 }
 
@@ -603,13 +611,11 @@ function DATEVALUE(d) {
   return SERIAL(PARSEDATE(d));
 }
 
-// Copyright 2015 Peter W Moresi
-
 // DATEDIF return the difference between two dates given a start date, end date and unit.
 function DATEDIF(start_date, end_date, unit) {
   var second=1000, minute=second*60, hour=minute*60, day=hour*24, week=day*7;
-  start_date = new Date(start_date);
-  end_date = new Date(end_date);
+  start_date = PARSEDATE(start_date),
+  end_date = PARSEDATE(end_date)
 
   var timediff = end_date - start_date;
   if (isNaN(timediff)) return NaN;
@@ -762,8 +768,6 @@ function DIFF(a, b) {
   Diff = InA.filter( n => a[n] !== b[n])
 
   return {
-    left: a,
-    right: b,
     unique_left: NotInA,
     unique_right: NotInB,
     diff: Diff.reduce( (x, y) => {
@@ -774,11 +778,29 @@ function DIFF(a, b) {
   }
 }
 
-// Copyright 2015 Peter W Moresi
+// DIVIDE calculates the product of two numbers.
+function DIVIDE(...values) {
 
-// DIVIDE returns the result of dividing a by b.
-function DIVIDE( a, b) {
-  return a / b;
+  // Return `#NA!` if 2 arguments are not provided.
+  if (values.length !== 2) {
+    return error$2.na;
+  }
+
+  // decompose values into a and b.
+  var [a, b] = values
+
+  // You cannot divide a number by 0.
+  if (b === 0) {
+    return error$2.div0
+  }
+
+  // Return `#VALUE!` if either a or b is not a number.
+  if (!ISNUMBER(a) || !ISNUMBER(b)) {
+    return error$2.value
+  }
+
+  // Return the product
+  return a / b
 }
 
 // Exact compares two values and only returns true if they meet strict equivalence.
@@ -862,23 +884,28 @@ function GUID(){
 };
 
 // HLOOKUP searches for a needle across the rows.
-function HLOOKUP(needle, table, index, exactmatch) {
+function HLOOKUP(needle, table, index=1, exactmatch) {
     if (typeof needle === "undefined" || ISBLANK(needle)) {
         return null;
     }
 
-    var index = index || 0,
-        row = table[0];
+    if (index > table.length) {
+      return error$2.ref
+    }
+
+    var needleLower = (needle + '').toLowerCase(),
+    row = table[0];
 
     for (var i = 0; i < row.length; i++){
 
-        if ((exactmatch && row[i]===needle) ||
-            row[i].toLowerCase().indexOf(needle.toLowerCase()) !== -1) {
-            return (index < (table.length+1) ? table[index-1][i] : table[0][i]);
+      if ((exactmatch && row[i]===needle) ||
+          ((row[i] == needle) ||
+           (typeof row[i] === "string" && row[i].toLowerCase().indexOf(needleLower) != -1) )) {
+            return table[index-1][i];
         }
     }
 
-    return error.na;
+    return error$2.na;
 }
 
 // IF returns second argument if true, other it returns the third argument.
@@ -1075,7 +1102,7 @@ function ISNA(value) {
 
 // ISODD returns true when the value is odd.
 function ISODD(value) {
-    return (Math.floor(Math.abs(value)) & 1);
+  return !!(Math.floor(Math.abs(value)) & 1);
 }
 
 // Copyright 2015 Peter W Moresi
@@ -1203,11 +1230,24 @@ function MAX(...list) {
   }, Number.NEGATIVE_INFINITY );
 }
 
-// Copyright 2015 Peter W Moresi
+// MULTIPLY calculates the product of two numbers.
+function MULTIPLY(...values) {
 
-// MULTIPLY returns the product of a and b.
-function MULTIPLY(a,b) {
-  return a * b;
+  // Return `#NA!` if 2 arguments are not provided.
+  if (values.length !== 2) {
+    return error$2.na;
+  }
+
+  // decompose values into a and b.
+  var [a, b] = values
+
+  // Return `#VALUE!` if either a or b is not a number.
+  if (!ISNUMBER(a) || !ISNUMBER(b)) {
+    return error$2.value
+  }
+
+  // Return the product
+  return a * b
 }
 
 // N converts a `value` to a number. It supports numbers, true, false and dates.
@@ -1268,11 +1308,11 @@ function NE(a,b) {
   return !EQ(a, b)
 }
 
-// Copyright 2015 Peter W Moresi
-
 // NOT negates a `value`
 function NOT(value) {
-  return !value
+  return (value !== true && value !== false && value !== 1 && value !== 0) ? 
+  error$2.value :
+  !value
 }
 
 // OCT2DEC converts a octal value into a decimal value.
@@ -1339,10 +1379,23 @@ function PMT(rate, periods, present, future = 0, type = 0) {
 
 };
 
-// Copyright 2015 Peter W Moresi
-
 // POWER computes the power of a value and nth degree.
-function POWER(val, nth) {
+function POWER(...values) {
+
+  // Return `#NA!` if 2 arguments are not provided.
+  if (values.length !== 2) {
+    return error$2.na;
+  }
+
+  // decompose values into a and b.
+  var [val, nth] = values
+
+  // Return `#VALUE!` if either a or b is not a number.
+  if (!ISNUMBER(val) || !ISNUMBER(nth)) {
+    return error$2.value
+  }
+
+  // Compute the power of val to the nth.
   return Math.pow(val, nth);
 }
 
@@ -1492,17 +1545,25 @@ function SUBSTITUTE(text, old_text, new_text, occurrence) {
   }
 }
 
-// Copyright 2015 Peter W Moresi
+// SUBTRACT calculates the difference of two numbers.
+function SUBTRACT(...values) {
 
-// SUBTRACT computes a minus b.
-function SUBTRACT(a,b) {
-  return a-b;
+  // Return `#NA!` if 2 arguments are not provided.
+  if (values.length !== 2) {
+    return error$2.na;
+  }
+
+  // decompose values into a and b.
+  var [a, b] = values
+
+  // Return `#VALUE!` if either a or b is not a number.
+  if (!ISNUMBER(a) || !ISNUMBER(b)) {
+    return error$2.value
+  }
+
+  // Return the difference.
+  return a - b
 }
-
-// SWITCH is alias for COND
-function SWITCH(...cases) {
-  return COND(...cases);
-};
 
 // TAN computes the tagent of a value.
 function TAN(value) {
@@ -2375,18 +2436,21 @@ function UPPER(string) {
 }
 
 // VLOOKUP find a needle in a table searching vertically.
-function VLOOKUP(needle, table, index, exactmatch) {
+function VLOOKUP(needle, table=[], index=1, exactmatch=false) {
 
     if ( ISERROR(needle) || ISBLANK(needle) ) {
         return needle;
     }
 
-    index = index || 0;
-    exactmatch = exactmatch || false;
     for (var i = 0; i < table.length; i++){
         var row = table[i];
+
+        if (index > row.length){
+          return error$2.ref
+        }
+
         if ((exactmatch && row[0]===needle) ||
-            ((row[0] === needle) ||
+            ((row[0] == needle) ||
              (typeof row[0] === "string" && row[0].toLowerCase().indexOf(needle.toLowerCase()) != -1) )) {
             return (index < (row.length+1) ? row[index-1] : row[0]);
         }
@@ -2398,7 +2462,7 @@ function VLOOKUP(needle, table, index, exactmatch) {
 
 // XOR computes the exclusive or for a given set of `values`.
 function XOR(...values) {
-    return (FLATTEN(values).reduce((a,b) => {
+    return !!(FLATTEN(values).reduce((a,b) => {
       if (b) {
         return a+1
       }
@@ -2497,7 +2561,6 @@ exports.SPLIT = SPLIT;
 exports.SUBSTITUTE = SUBSTITUTE;
 exports.SUBTRACT = SUBTRACT;
 exports.SUM = SUM;
-exports.SWITCH = SWITCH;
 exports.TAN = TAN;
 exports.TAU = TAU;
 exports.TEXT = TEXT;

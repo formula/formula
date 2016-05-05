@@ -29,14 +29,18 @@ if (process.argv[2] === '--fix') {
   missing.forEach(file => {
     var name = file.substr(0, file.length - 3)
 
-    var content = `import test from 'tape'
-    import error from '../src/ERROR'
-    import {${name}} from '../src/${name}'
+    // Skip test for CONSTANTS
+    if (name === 'CONSTANTS') return;
 
-    test('${name}', (t) => {
-      t.plan(1)
-      t.equal( ${name}( ? ), ?)
-    })`
+    var content =
+`import test from 'tape'
+import error from '../src/ERROR'
+import {${name}} from '../src/${name}'
+
+test('${name}', (t) => {
+  t.plan(1)
+  t.equal( ${name}( ? ), ?)
+})`
 
     //console.log('make file', __dirname + '/../test/' + file, content)
 
