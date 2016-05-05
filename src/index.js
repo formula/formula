@@ -25,7 +25,9 @@
 //   - SUM, AVERAGE, MIN, MAX
 //
 // The library currently is approaching 100 functions. The long term goal is to support the ~300 functions supported by modern spreadsheet software.
-
+//
+// The test suite includes over 500 assertions to ensure high quality and provide usage examples. 
+//
 export {ABS} from './ABS'
 export {ACOS} from './ACOS'
 export {ADD} from './ADD'
