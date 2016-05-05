@@ -1,5 +1,31 @@
 // Copyright 2015 Peter W Moresi
 
+// FunctionFoundry is a collection of pure functions.
+//
+// The functions accept input and produce output. They do not create side effects and are therefore composable.
+//
+// The library is organized several core compatibilities:
+//
+// 1. Logical functions
+//   - AND, OR, NOT, EQ, NE, GT, GTE, LT, LTE, SWITCH, COND and more...
+//
+// 2. Math functions
+//   - ADD, SUBTRACT, MULTIPLY, DIVIDE, SIN, COS, ect...
+//
+// 3. Text manipulation
+//   - TEXT, NUMBERVALUE, SPLIT and more...
+//
+// 4. Lookup and reference/
+//   - LOOKUP, VLOOKUP, HLOOKUP and more...
+//
+// 5. Date manipulation
+//   - Functions withsSupport for spreadsheet serial numbers like DATE, DATEDIF and more...
+//
+// 6. Aggregation
+//   - SUM, AVERAGE, MIN, MAX
+//
+// The library currently is approaching 100 functions. The long term goal is to support the ~300 functions supported by modern spreadsheet software.
+
 export {ABS} from './ABS'
 export {ACOS} from './ACOS'
 export {ADD} from './ADD'
