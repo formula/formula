@@ -6,6 +6,29 @@ FunctionFoundry is a JavaScript library with an interface similar to spreadsheet
 
 For more information see the [docs](./Docs.org) or read the [annotated code](http://functionfoundry.github.io/functionfoundry/docs/).
 
+## quickstart
+
+```sh
+npm install --save functionfoundry
+```
+
+```js
+var { AND, EQ, LEN, GT, LT, ISNUMBER, ISTEXT, ISEMAIL, ISEMPTY, LOWER } = require('functionfoundry')
+// Print `true`
+console.log(
+  AND(
+    ISTEXT('This is'),
+    ISNUMBER(1),
+    ISEMAIL('me@gmail.com'),
+    ISEMPTY(''),
+    GT(2, 1),
+    LT(1, 2),
+    EQ(LEN('foo'), 3),
+    EQ(LOWER('FOO'), 'foo')
+  )
+)
+```
+
 ## organization
 
 | name | purpose |
