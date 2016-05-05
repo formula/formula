@@ -1,3 +1,3 @@
 if (window) {
-  window.FunctionFoundry = require('./lib/index')
+  window.FunctionFoundry = require('./lib/functionfoundry')
 }
