@@ -584,6 +584,7 @@
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> {ISEMPTY} <span class="hljs-keyword">from</span> <span class="hljs-string">'./ISEMPTY'</span>;
+<span class="hljs-keyword">import</span> {ISNUMBER} <span class="hljs-keyword">from</span> <span class="hljs-string">'./ISNUMBER'</span>;
 <span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'./ERROR'</span></pre></div></div>
             
         </li>
@@ -616,13 +617,7 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">var</span> factor = <span class="hljs-number">1</span>
-
-  <span class="hljs-keyword">if</span> (ISEMPTY(text)) {
-    <span class="hljs-keyword">return</span> error.value
-  }
-
-  <span class="hljs-keyword">if</span> (text[text.length<span class="hljs-number">-1</span>] === <span class="hljs-string">'%'</span>) {</pre></div></div>
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">var</span> factor = <span class="hljs-number">1</span></pre></div></div>
             
         </li>
         
@@ -632,6 +627,42 @@
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Return <code>#VALUE!</code> when text is empty</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">if</span> (ISEMPTY(text)) {
+    <span class="hljs-keyword">return</span> error.value
+  }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Return the value when it is already a number.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">if</span> (ISNUMBER(text)) {
+    <span class="hljs-keyword">return</span> text
+  }
+
+  <span class="hljs-keyword">if</span> (text[text.length<span class="hljs-number">-1</span>] === <span class="hljs-string">'%'</span>) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
               <p>set the factor to 100 to convert from percentage to decimal</p>
 
