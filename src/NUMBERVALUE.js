@@ -1,4 +1,5 @@
 import {ISEMPTY} from './ISEMPTY';
+import {ISNUMBER} from './ISNUMBER';
 import error from './ERROR'
 
 // Convert a text value into a number value.
@@ -9,8 +10,14 @@ export function NUMBERVALUE(text, decimal_separator, group_separator)  {
   // define factor to be 1 so that it does nothing in most cases
   var factor = 1
 
+  // Return `#VALUE!` when text is empty
   if (ISEMPTY(text)) {
     return error.value
+  }
+
+  // Return the value when it is already a number.
+  if (ISNUMBER(text)) {
+    return text
   }
 
   if (text[text.length-1] === '%') {
