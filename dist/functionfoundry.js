@@ -1340,8 +1340,14 @@ function NUMBERVALUE(text, decimal_separator, group_separator) {
   // define factor to be 1 so that it does nothing in most cases
   var factor = 1;
 
+  // Return `#VALUE!` when text is empty
   if (ISEMPTY(text)) {
     return error$2.value;
+  }
+
+  // Return the value when it is already a number.
+  if (ISNUMBER(text)) {
+    return text;
   }
 
   if (text[text.length - 1] === '%') {
