@@ -4,14 +4,17 @@ if (window) {
 }
 
 },{"./lib/functionfoundry":2}],2:[function(require,module,exports){
-'use strict';
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
 // Copyright 2015 Peter W Moresi
 
 // Returns true when the value is a finite number.
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
-
 function ISNUMBER(value) {
   return typeof value === 'number' && !isNaN(value) && isFinite(value);
 }
@@ -299,7 +302,7 @@ function ISBLANK(value) {
 // SELECT fields from object
 function SELECT(fields, body) {
   // non-json
-  if (!body || 'object' != (typeof body === 'undefined' ? 'undefined' : _typeof(body))) return;
+  if (!body || 'object' != (typeof body === "undefined" ? "undefined" : _typeof(body))) return;
 
   // check for fields
   if (!fields) return;
@@ -452,7 +455,7 @@ function CONCATENATE() {
 
   // Combine into a single string value
   return values.reduce(function (acc, item) {
-    return '' + acc + item;
+    return "" + acc + item;
   });
 }
 
