@@ -613,21 +613,6 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
-              <p>define factor to be 1 so that it does nothing in most cases</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">var</span> factor = <span class="hljs-number">1</span></pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-4">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-4">&#182;</a>
-              </div>
               <p>Return <code>#VALUE!</code> when text is empty</p>
 
             </div>
@@ -639,11 +624,11 @@
         </li>
         
         
-        <li id="section-5">
+        <li id="section-4">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-5">&#182;</a>
+                <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
               <p>Return the value when it is already a number.</p>
 
@@ -653,30 +638,44 @@
     <span class="hljs-keyword">return</span> text
   }
 
-  <span class="hljs-keyword">if</span> (text[text.length<span class="hljs-number">-1</span>] === <span class="hljs-string">'%'</span>) {</pre></div></div>
+  <span class="hljs-keyword">var</span> foundDecimal = <span class="hljs-literal">false</span>,
+  len = text.length<span class="hljs-number">-1</span>
+
+  <span class="hljs-keyword">return</span> text.split(<span class="hljs-string">''</span>).reduce( (acc, item, index) =&gt; {
+    <span class="hljs-keyword">if</span> (acc === error.value) {
+      <span class="hljs-keyword">return</span> error.value;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (len === index) {
+      <span class="hljs-keyword">if</span> (item === <span class="hljs-string">'%'</span>) {
+        <span class="hljs-keyword">return</span> +acc / <span class="hljs-number">100</span>
+      }
+      <span class="hljs-keyword">return</span> +acc.concat(item)
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (item === decimal_separator) {
+      <span class="hljs-keyword">if</span> (foundDecimal) <span class="hljs-keyword">return</span> error.value;
+      foundDecimal = <span class="hljs-literal">true</span>
+      <span class="hljs-keyword">return</span> acc.concat(<span class="hljs-string">'.'</span>)
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>( item === group_separator ) {
+      <span class="hljs-keyword">return</span> acc</pre></div></div>
             
         </li>
         
         
-        <li id="section-6">
+        <li id="section-5">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-6">&#182;</a>
+                <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
-              <p>set the factor to 100 to convert from percentage to decimal</p>
+              <p>check if between 0 and 9 ascii codes</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    factor = <span class="hljs-number">100</span>
-    text = text.substr(<span class="hljs-number">0</span>, text.length - <span class="hljs-number">1</span>)
-  }
+            <div class="content"><div class='highlight'><pre>    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (item.charCodeAt(<span class="hljs-number">0</span>) &lt; <span class="hljs-number">48</span> ||  item.charCodeAt(<span class="hljs-number">0</span>) &gt; <span class="hljs-number">57</span>) {
+      <span class="hljs-keyword">return</span> error.value
+    }
 
-  <span class="hljs-keyword">return</span> <span class="hljs-built_in">Number</span>(
-    text
-    .replace(<span class="hljs-built_in">RegExp</span>(<span class="hljs-string">`[<span class="hljs-subst">${group_separator}</span>]`</span>, <span class="hljs-string">'g'</span>), <span class="hljs-string">''</span>)
-    .replace(decimal_separator, <span class="hljs-string">'.'</span>)
-  ) / factor
+    <span class="hljs-keyword">return</span> acc.concat(item);
+
+  })
 };</pre></div></div>
             
         </li>
