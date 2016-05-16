@@ -15,7 +15,7 @@ npm install --save functionfoundry
 ```
 
 ```js
-var { AND, EQ, LEN, GT, LT, ISNUMBER, ISTEXT, ISEMAIL, ISEMPTY, LOWER, TEXT, DATE} = require('functionfoundry')
+var { AND, EQ, LEN, GT, LT, ISNUMBER, ISTEXT, ISEMAIL, ISEMPTY, LOWER, PROPER, TEXT, DATE} = require('functionfoundry')
 // Print `true`
 console.log(
   AND(
@@ -26,8 +26,9 @@ console.log(
     GT(2, 1),
     LT(1, 2),
     EQ(LEN('foo'), 3),
-    EQ(LOWER('FOO'), 'foo'),
-    EQ(TEXT(1420, "$#,###.00"), '$1,420.00'),
+    EQ(LOWER('HAPPY'), 'happy'),
+    EQ(PROPER('HAPPY'), 'Happy'),
+    EQ(TEXT(4200.00, "$#,###.00"), '$4,200.00'),
     EQ(TEXT(DATE(2000, 2, 1), "m-d-yyyy"), '2-1-2000')
   )
 )

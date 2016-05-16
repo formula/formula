@@ -3,7 +3,9 @@ import test from 'tape'
 import {TEXT} from '../src/TEXT';
 
 test('TEXT', function(t) {
-  t.plan(6);
+  t.plan(8);
+  t.equal( TEXT(0, "$#,###"), "$" );
+  t.equal( TEXT(0, "$#,##0"), "$0" );
   t.equal( TEXT(1000000, "$#,###.00"), "$1,000,000.00" );
   t.equal( TEXT(1000000, "#,##0.00_);(#,##0.00)"), "1,000,000.00 " );
   t.equal( TEXT(-1000000, "#,##0.00_);(#,##0.00)"), "(1,000,000.00)" );
