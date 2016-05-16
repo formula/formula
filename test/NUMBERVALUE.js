@@ -3,8 +3,12 @@ import error from '../src/ERROR';
 import test from 'tape';
 
 test('NUMBERVALUE : should convert value to number', function(t) {
-  t.plan(7);
+  t.plan(11);
   t.equal( NUMBERVALUE(""), error.value, 'error.should pass through call');
+  t.equal( NUMBERVALUE("1.2.2"), error.value);
+  t.equal( NUMBERVALUE("1.2a.2"), error.value);
+  t.equal( NUMBERVALUE("1.2%.2"), error.value);
+  t.equal( NUMBERVALUE("1.2.2", ",", "."), 122);
   t.equal( NUMBERVALUE(1.2), 1.2);
   t.equal( NUMBERVALUE("1.2"), 1.2);
   t.equal( NUMBERVALUE("1.2%"), 0.012);

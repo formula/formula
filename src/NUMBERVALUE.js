@@ -7,9 +7,6 @@ export function NUMBERVALUE(text, decimal_separator, group_separator)  {
   decimal_separator = decimal_separator || '.'
   group_separator = group_separator || ','
 
-  // define factor to be 1 so that it does nothing in most cases
-  var factor = 1
-
   // Return `#VALUE!` when text is empty
   if (ISEMPTY(text)) {
     return error.value
@@ -20,15 +17,29 @@ export function NUMBERVALUE(text, decimal_separator, group_separator)  {
     return text
   }
 
-  if (text[text.length-1] === '%') {
-    // set the factor to 100 to convert from percentage to decimal
-    factor = 100
-    text = text.substr(0, text.length - 1)
-  }
+  var foundDecimal = false,
+  len = text.length-1
 
-  return Number(
-    text
-    .replace(RegExp(`[${group_separator}]`, 'g'), '')
-    .replace(decimal_separator, '.')
-  ) / factor
+  return text.split('').reduce( (acc, item, index) => {
+    if (acc === error.value) {
+      return error.value;
+    } else if (len === index) {
+      if (item === '%') {
+        return +acc / 100
+      }
+      return +acc.concat(item)
+    } else if (item === decimal_separator) {
+      if (foundDecimal) return error.value;
+      foundDecimal = true
+      return acc.concat('.')
+    } else if( item === group_separator ) {
+      return acc
+    // check if between 0 and 9 ascii codes
+    } else if (item.charCodeAt(0) < 48 ||  item.charCodeAt(0) > 57) {
+      return error.value
+    }
+
+    return acc.concat(item);
+
+  })
 };
