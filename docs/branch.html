@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>iserr.js</title>
+  <title>branch.js</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" media="all" href="docco.css" />
@@ -563,7 +563,7 @@
         
           <li id="title">
               <div class="annotation">
-                  <h1>iserr.js</h1>
+                  <h1>branch.js</h1>
               </div>
           </li>
         
@@ -579,9 +579,6 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>
-<span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'./error'</span>;</pre></div></div>
-            
         </li>
         
         
@@ -591,22 +588,128 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>ISERR returns true when the value is an error (except <code>#NA!</code>) or when then
-value is a number which is NaN or [-]Infinity.</p>
+              <p>branch is the function equivalent to <code>if-then-else</code></p>
+<p>syntax:
+branch( test, result_if_true, [test2, result_if_true,] false_result )</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">iserr</span>(<span class="hljs-params">value</span>) </span>{
-  <span class="hljs-keyword">return</span> (
-    (
-      value !== error.na &amp;&amp;
-      value.constructor.name === <span class="hljs-string">'Error'</span>
-    ) || (
-      <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">'number'</span> &amp;&amp; (
-        <span class="hljs-built_in">Number</span>.isNaN(value) || !<span class="hljs-built_in">Number</span>.isFinite(value)
-      )
-    )
-  );
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">branch</span>(<span class="hljs-params">...cases</span>) </span>{
+
+  <span class="hljs-keyword">var</span> found = <span class="hljs-literal">false</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Reduce all cases into a value.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">return</span> cases.reduce( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">acc, item, index</span>) </span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Return previously found result</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> (found === <span class="hljs-literal">true</span>) <span class="hljs-keyword">return</span> acc</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Handle last item</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> ( index === cases.length - <span class="hljs-number">1</span> ) {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>There is no last item.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">if</span> (index % <span class="hljs-number">2</span> === <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>return the last item</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">return</span> item;
+    }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>Check if condition is true</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> (index % <span class="hljs-number">2</span> === <span class="hljs-number">0</span> &amp;&amp; item === <span class="hljs-literal">true</span>) {
+      found = <span class="hljs-literal">true</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>return the found item</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">return</span> cases[index+<span class="hljs-number">1</span>];
+    }
+
+    <span class="hljs-keyword">return</span> acc;
+
+  }, <span class="hljs-literal">undefined</span>)
+
 }</pre></div></div>
             
         </li>
