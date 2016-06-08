@@ -2,7 +2,7 @@ import test from 'tape'
 import error from '../src/error'
 import {diff} from '../src/diff'
 
-test('DIFF', (t) => {
+test('diff', (t) => {
   t.plan(1)
   t.deepEqual( diff( { a: 1, c: 3 }, { a: 2, b: 2} ),
   {

@@ -1,7 +1,7 @@
 import test from 'tape';
 import {address} from '../src/address';
 
-test('ADDRESS', function(t) {
+test('address', function(t) {
 
   t.plan(7);
 

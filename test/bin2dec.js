@@ -1,7 +1,7 @@
 import test from 'tape';
 import {bin2dec} from '../src/bin2dec';
 
-test('BIN2DEC', function (t) {
+test('bin2dec', function (t) {
 
   t.plan(7)
   t.equal( bin2dec('00000000'), 0);

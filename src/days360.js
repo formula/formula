@@ -21,13 +21,13 @@ export function days360(start_date, end_date, method) {
     var em = end_date.getMonth();
     var sd, ed;
     if (method) {
-        sd = start_date.getdate() === 31 ? 30 : start_date.getdate();
-        ed = end_date.getdate() === 31 ? 30 : end_date.getdate();
+        sd = start_date.getDate() === 31 ? 30 : start_date.getDate();
+        ed = end_date.getDate() === 31 ? 30 : end_date.getDate();
     } else {
-        var smd = new date(start_date.getFullYear(), sm + 1, 0).getdate();
-        var emd = new date(end_date.getFullYear(), em + 1, 0).getdate();
-        sd = start_date.getdate() === smd ? 30 : start_date.getdate();
-        if (end_date.getdate() === emd) {
+        var smd = new Date(start_date.getFullYear(), sm + 1, 0).getDate();
+        var emd = new Date(end_date.getFullYear(), em + 1, 0).getDate();
+        sd = start_date.getDate() === smd ? 30 : start_date.getDate();
+        if (end_date.getDate() === emd) {
             if (sd < 30) {
                 em++;
                 ed = 1;
@@ -35,7 +35,7 @@ export function days360(start_date, end_date, method) {
                 ed = 30;
             }
         } else {
-            ed = end_date.getdate();
+            ed = end_date.getDate();
         }
     }
     return (

@@ -2,7 +2,7 @@ import {search} from '../src/search';
 import error from '../src/error';
 import test from 'tape';
 
-test('SEARCH', function(t) {
+test('search', function(t) {
   t.plan(4);
   t.equal( search('a', 'fooabar'), 4 );
   t.equal( search('bar', 'fooabar'), 5 );

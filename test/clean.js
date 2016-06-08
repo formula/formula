@@ -1,7 +1,7 @@
 import test from 'tape';
 import {clean} from '../src/clean';
 
-test('CLEAN', function (t) {
+test('clean', function (t) {
   t.plan(5)
   t.deepEqual( clean({ foo: 'test', bar: true }), { foo: 'test', bar: true });
   t.deepEqual( clean({ foo: 'test', bar: false }), { foo: 'test', bar: false });

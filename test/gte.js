@@ -1,7 +1,7 @@
 import test from 'tape';
 import {gte} from '../src/gte';
 
-test('GTE', function(t) {
+test('gte', function(t) {
 
   t.plan(4)
   t.equal( gte(2, 4), false );

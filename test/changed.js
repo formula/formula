@@ -2,7 +2,7 @@ import {changed} from '../src/changed';
 import error from '../src/error';
 import test from 'tape';
 
-test('CHANGED', function(t) {
+test('changed', function(t) {
   t.plan(5)
   t.deepEqual( changed({ foo: "a" }, { foo: "b" }), ['foo']);
   t.deepEqual( changed({ foo: "a" }, { bar: "b" }), ['foo', 'bar']);

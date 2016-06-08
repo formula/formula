@@ -2,7 +2,7 @@ import error from '../src/error'
 import test from 'tape'
 import {text} from '../src/text';
 
-test('TEXT', function(t) {
+test('text', function(t) {
   t.plan(8);
   t.equal( text(0, "$#,###"), "$" );
   t.equal( text(0, "$#,##0"), "$0" );

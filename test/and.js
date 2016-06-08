@@ -2,7 +2,7 @@ import test from 'tape'
 import error from '../src/error'
 import {and} from '../src/and'
 
-test('AND', (t) => {
+test('and', (t) => {
   t.plan(10)
   t.equal( and(true, true), true)
   t.equal( and(true, false), false)

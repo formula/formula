@@ -37,7 +37,7 @@ export function parsedate(val) {
     J = J+2-12*L;
     I = 100*(N-49)+I+L;
 
-    return new date(I, J-1, K);
+    return new Date(I, J-1, K);
 
   }
 
@@ -48,11 +48,11 @@ export function parsedate(val) {
     return convert_date_julian_to_gregorian( Math.floor(val+JulianOffset) );
   } else if (typeof val === 'string') {
     var timestamp=Date.parse(val)
-    if (isNan(timestamp))
+    if (Number.isNaN(timestamp))
     {
       return error.value;
     }
-    return new date(timestamp);
+    return new Date(timestamp);
   }
 
   return error.value;

@@ -2,7 +2,7 @@ import {find} from '../src/find';
 import error from '../src/error';
 import test from 'tape';
 
-test('FIND', function(t) {
+test('find', function(t) {
   t.plan(4);
   t.equal( find('a', 'fooabar'), 4 );
   t.equal( find('bar', 'fooabar'), 5 );

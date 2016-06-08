@@ -1,7 +1,7 @@
 import test from 'tape'
 import error from '../src/error'
 
-test('ERROR', (t) => {
+test('error', (t) => {
   t.plan(11)
   t.equal( error.nil.toString(), '#NULL!')
   t.equal( error.div0.toString(), '#DIV/0!')

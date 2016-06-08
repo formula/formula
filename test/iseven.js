@@ -2,7 +2,7 @@ import test from 'tape'
 import error from '../src/error'
 import {iseven} from '../src/iseven'
 
-test('ISEVEN', (t) => {
+test('iseven', (t) => {
   t.plan(5)
   t.equal( iseven( 2 ), true)
   t.equal( iseven( 3 ), false)

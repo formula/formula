@@ -1,6 +1,7 @@
 // Copyright 2015 Peter W Moresi
 
 import {isref} from './isref';
+import {isarray} from './isarray';
 import error from './error';
 
 // SORT a reference or an array.
@@ -39,7 +40,7 @@ export function sort(ref, ...criteria) {
 
   }
 
-  if (isref(ref) || Array.isarray(ref)) {
+  if (isref(ref) || isarray(ref)) {
     return ref.sort( makeComparer() );
   }
 

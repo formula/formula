@@ -1,7 +1,7 @@
 import test from 'tape';
 import {lt} from '../src/lt';
 
-test('LT', function(t) {
+test('lt', function(t) {
 
   t.plan(4)
   t.equal( lt(2, 4), true );

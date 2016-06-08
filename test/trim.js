@@ -1,7 +1,7 @@
 import test from 'tape';
 import {trim} from '../src/trim';
 
-test('TRIM', function(t) {
+test('trim', function(t) {
   t.plan(5);
 
   t.is(trim('   foo   '), 'foo')

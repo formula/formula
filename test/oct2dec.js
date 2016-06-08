@@ -2,7 +2,7 @@ import test from 'tape';
 import {oct2dec} from '../src/oct2dec';
 import error from '../src/error';
 
-test('OCT2DEC', function(t) {
+test('oct2dec', function(t) {
   t.plan(8)
   t.equal(oct2dec('8'), error.num);
   t.equal(oct2dec('60000000001'), error.num);

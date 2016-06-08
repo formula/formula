@@ -1,4 +1,5 @@
 // Copyright 2015 Peter W Moresi
+import {isarray} from './isarray'
 
 // SELECT fields from object
 export function select(fields, body) {
@@ -12,7 +13,7 @@ export function select(fields, body) {
   if ('string' == typeof fields) fields = fields.split(/ *, */);
 
   // fields array
-  if (Array.isarray(body)) {
+  if (isarray(body)) {
     return body.map(function(obj){
       return fields.reduce(function(ret, key){
         ret[key] = obj[key];

@@ -7,5 +7,5 @@ import {indirect} from '../src/indirect';
 
 test('INDIRECT : should return a cell reference', function(t) {
   t.plan(1)
-  t.equal(typeof INDIRECT, 'function')
+  t.equal(typeof indirect, 'function')
 });

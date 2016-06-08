@@ -1,7 +1,7 @@
 import test from 'tape';
 import {sort} from '../src/sort';
 
-test('SORT', function(t) {
+test('sort', function(t) {
   t.plan(5);
   var a1 = [4, 3, 2, 1].map( n => [n, -n*n, n*n*n]);
 

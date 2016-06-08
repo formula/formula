@@ -8,7 +8,7 @@ export function datedif(start_date, end_date, unit) {
   end_date = parsedate(end_date)
 
   var timediff = end_date - start_date;
-  if (isNan(timediff)) return NaN;
+  if (Number.isNaN(timediff)) return NaN;
 
   switch (unit) {
     case "Y": return end_date.getFullYear() - start_date.getFullYear();

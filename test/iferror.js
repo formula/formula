@@ -2,7 +2,7 @@ import test from 'tape';
 import {iferror} from '../src/iferror';
 import error from '../src/error';
 
-test('IFERROR', function(t) {
+test('iferror', function(t) {
   t.plan(6)
   t.is(iferror(error.na, 'Yes'), 'Yes')
   t.is(iferror(error.value, 'Yes'), 'Yes')

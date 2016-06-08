@@ -2,7 +2,7 @@ import test from 'tape'
 import error from '../src/error'
 import {not} from '../src/not'
 
-test('NOT', (t) => {
+test('not', (t) => {
   t.plan(5)
   t.equal( not( true ), false)
   t.equal( not( false ), true)

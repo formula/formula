@@ -2,7 +2,7 @@ import test from 'tape'
 import error from '../src/error'
 import {divide} from '../src/divide'
 
-test('DIVIDE', (t) => {
+test('divide', (t) => {
   t.plan(4)
   t.equal( divide( 10, 1 ), 10)
   t.equal( divide( 10, 2 ), 5)

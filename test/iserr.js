@@ -2,7 +2,7 @@ import {iserr} from '../src/iserr';
 import error from '../src/error';
 import test from 'tape';
 
-test('ISERR', function(t) {
+test('iserr', function(t) {
   t.plan(16)
   t.equal( iserr(0), false, '0 is not an error');
   t.equal( iserr(1), false, '1 is not an error');
