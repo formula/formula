@@ -2528,6 +2528,7 @@ exports.and = and;
 exports.average = average;
 exports.bin2dec = bin2dec;
 exports.branch = branch;
+exports.cond = branch;
 exports.cellindex = cellindex;
 exports.cellIndex = cellindex;
 exports.changed = changed;
