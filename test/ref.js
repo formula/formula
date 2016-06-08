@@ -1,7 +1,7 @@
 import test from 'tape'
 import error from '../src/error'
 import {ref} from '../src/ref'
-import {MaxCols} from '../src/CONSTANTS'
+import {MaxCols} from '../src/constants'
 
 test('ref', function(t) {
   t.plan( 33 )
