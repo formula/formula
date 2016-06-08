@@ -15,14 +15,14 @@ npm install --save functionfoundry
 ```
 
 ```js
-var { and, eq, len, gt, lt, isnumber, istext, isemail, isempty, lower, proper, text, date} = require('functionfoundry')
+var { and, eq, len, gt, lt, isnumber, isText, isEmail, isEmpty, lower, proper, text, date} = require('functionfoundry')
 // print `true`
 console.log(
   and(
-    istext('this is'),
     isnumber(1),
-    isemail('me@gmail.com'),
-    isempty(''),
+    isText('this is'),
+    isEmail('me@gmail.com'),
+    isEmpty(''),
     gt(2, 1),
     lt(1, 2),
     eq(len('foo'), 3),
@@ -33,6 +33,10 @@ console.log(
   )
 )
 ```
+
+## naming conventions
+
+All function names are lowercase by default. Select functions include camelCase aliases.
 
 ## organization
 
