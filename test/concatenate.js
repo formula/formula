@@ -1,7 +1,7 @@
 import test from 'tape';
 import {concatenate} from '../src/concatenate';
 
-test('CONCATENATE', function (t) {
+test('concatenate', function (t) {
 
   t.plan(3);
   t.equal( concatenate('a', 'b', 'c'), 'abc');

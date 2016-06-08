@@ -2,7 +2,7 @@ import test from 'tape'
 import error from '../src/error'
 import {isodd} from '../src/isodd'
 
-test('ISODD', (t) => {
+test('isodd', (t) => {
   t.plan(5)
   t.equal( isodd( 2 ), false)
   t.equal( isodd( 3 ), true)

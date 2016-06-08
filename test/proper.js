@@ -1,7 +1,7 @@
 import test from 'tape';
 import {proper} from '../src/proper';
 
-test('PROPER', function(t) {
+test('proper', function(t) {
   t.plan(3);
 
   t.is(proper('foo'), 'Foo')

@@ -2,7 +2,7 @@ import test from 'tape'
 import error from '../src/error'
 import {hlookup} from '../src/hlookup'
 
-test('HLOOKUP', (t) => {
+test('hlookup', (t) => {
   t.plan(5)
 
   t.equal( hlookup(

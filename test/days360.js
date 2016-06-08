@@ -2,7 +2,7 @@ import test from 'tape';
 import {days360} from '../src/days360';
 import error from '../src/error';
 
-test('DAYS360', function(t) {
+test('days360', function(t) {
   t.plan(12)
   t.equal( days360('1/1/1901', '1/2/1901', true), 1);
   t.equal( days360('1/1/1901', '12/31/1901', true), 359);

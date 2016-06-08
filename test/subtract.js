@@ -2,7 +2,7 @@ import test from 'tape'
 import error from '../src/error'
 import {subtract} from '../src/subtract'
 
-test('SUBTRACT', (t) => {
+test('subtract', (t) => {
   t.plan(5)
   t.equal( subtract(2), error.na)
   t.equal( subtract(2, 2, 2), error.na)

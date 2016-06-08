@@ -3,10 +3,10 @@ import error from '../src/error'
 import {ref} from '../src/ref'
 import {MaxCols} from '../src/CONSTANTS'
 
-test('REF', function(t) {
+test('ref', function(t) {
   t.plan( 33 )
 
-  var c = ref(0 )
+  var c = ref(0)
   t.equal( c.top, 0 )
   t.equal( c.bottom, 0 )
   t.equal( c.column, 'A' )

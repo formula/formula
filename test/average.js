@@ -2,7 +2,7 @@ import test from 'tape';
 import {average} from '../src/average';
 import error from '../src/error'
 
-test('AVERAGE', function(t) {
+test('average', function(t) {
 
   t.plan(3);
 

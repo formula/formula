@@ -1,7 +1,7 @@
 import test from 'tape';
 import {isurl} from '../src/isurl';
 
-test('ISURL', function(t) {
+test('isurl', function(t) {
   t.plan(8)
   t.equal( isurl( 'http://google.com' ), true );
   t.equal( isurl( 'http://www.google.com' ), true );

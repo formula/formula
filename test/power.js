@@ -2,7 +2,7 @@ import test from 'tape'
 import error from '../src/error'
 import {power} from '../src/power'
 
-test('POWER', (t) => {
+test('power', (t) => {
   t.plan(4)
   t.equal( power( 2, 8 ), 256)
   t.equal( power( 2, "foo" ), error.value)

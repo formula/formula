@@ -2,7 +2,7 @@ import test from 'tape'
 import {code} from '../src/code'
 import error from '../src/error'
 
-test('CODE', (t) => {
+test('code', (t) => {
   t.plan(5)
   t.equal( code( 'Aa'), 65)
   t.equal( code( 'Aa', 1), 65)

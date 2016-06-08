@@ -11,7 +11,7 @@ export function iserr(value) {
       value.constructor.name === 'Error'
     ) || (
       typeof value === 'number' && (
-        Number.isNan(value) || !Number.isFinite(value)
+        Number.isNaN(value) || !Number.isFinite(value)
       )
     )
   );

@@ -22,12 +22,13 @@ var lowerCaseContent = fileContent
 .map( d => upperKeyWords.reduce(
   (acc, item) =>
   acc
-  .replace( new RegExp( "{" + item + "}", 'gi'), '{' + item.toLowerCase() + '}' )
-  .replace( new RegExp( item + "[(]", 'gi'), item.toLowerCase() + '(' )
-  .replace( new RegExp( "'\.[/]" + item + "'", 'gi'), "'./" +item.toLowerCase() + "'")
-  .replace( new RegExp( "'\.\.[/]src[/]" + item + "'", 'gi'), "'../src/" +item.toLowerCase() + "'")
+  .replace( new RegExp( "test[(]'" +item + "'", 'gi'), 'test(\'' + item.toLowerCase() + "'" )
+  // .replace( new RegExp( "{" + item + "}", 'gi'), '{' + item.toLowerCase() + '}' )
+  // .replace( new RegExp( item + "[(]", 'gi'), item.toLowerCase() + '(' )
+  // .replace( new RegExp( "'\.[/]" + item + "'", 'gi'), "'./" +item.toLowerCase() + "'")
+  // .replace( new RegExp( "'\.\.[/]src[/]" + item + "'", 'gi'), "'../src/" +item.toLowerCase() + "'")
 , d))
 
-// console.log(lowerCaseContent)
+// console.log(lowerCaseContent[0])
 
 srcFiles.forEach( (d, i) => fs.writeFileSync(__dirname + '/../test/' + d, lowerCaseContent[i]))

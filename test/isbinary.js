@@ -2,7 +2,7 @@ import test from 'tape'
 import error from '../src/error'
 import {isbinary} from '../src/isbinary'
 
-test('ISBINARY', (t) => {
+test('isbinary', (t) => {
   t.plan(5)
   t.equal( isbinary( '0000000' ), true)
   t.equal( isbinary( '0101010101' ), true)

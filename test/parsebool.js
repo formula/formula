@@ -2,7 +2,7 @@ import test from 'tape';
 import {parsebool} from '../src/parsebool';
 import error from '../src/error';
 
-test('PARSEBOOL', function(t) {
+test('parsebool', function(t) {
   t.plan(13);
   t.is(parsebool(true), true)
   t.is(parsebool(false), false)
@@ -16,5 +16,5 @@ test('PARSEBOOL', function(t) {
   t.is(parsebool(200), true)
   t.is(parsebool(-200), true)
   t.is(parsebool(0), false)
-  t.is(parsebool(new date()), error.value)
+  t.is(parsebool(new Date()), error.value)
 });

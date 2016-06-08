@@ -13,7 +13,7 @@ export function proper(text) {
     if (text === false) {
         text = 'FALSE';
     }
-    if (isNan(text) && typeof text === 'number') {
+    if (Number.isNaN(text) && typeof text === 'number') {
         return error.value;
     }
     if (typeof text === 'number') {

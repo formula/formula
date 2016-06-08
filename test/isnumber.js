@@ -1,7 +1,7 @@
 import {isnumber} from '../src/isnumber';
 import test from 'tape';
 
-test('ISNUMBER', function(t) {
+test('isnumber', function(t) {
   t.plan(7)
   t.equal( isnumber(1), true );
   t.equal( isnumber(1.0), true );

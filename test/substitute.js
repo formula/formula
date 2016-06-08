@@ -1,7 +1,7 @@
 import test from 'tape';
 import {substitute} from '../src/substitute';
 
-test('SUBSTITUTE', function(t) {
+test('substitute', function(t) {
   t.plan(3);
   t.equal(
     substitute("Hello, <name>", "<name>", "Bob"),

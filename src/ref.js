@@ -26,7 +26,7 @@ export function ref(top, bottom) {
 
   return {
 
-    get isref(){
+    get _isref(){
       return true
     },
 
@@ -44,7 +44,7 @@ export function ref(top, bottom) {
     },
 
     // Returns rowIndex (base 0)
-    get rowindex() {
+    get rowIndex() {
       return index2row( getTop() )
     },
 
@@ -54,7 +54,7 @@ export function ref(top, bottom) {
     },
 
     // Returns column index
-    get columnindex() {
+    get columnIndex() {
       return index2col( getTop() )
     },
 
@@ -64,17 +64,17 @@ export function ref(top, bottom) {
     },
 
     // Returns rowIndex (base 0)
-    get bottomRowindex() {
+    get bottomRowIndex() {
       return index2row( getBottom() )
     },
 
     // Returns column letter
-    get bottomcolumn() {
+    get bottomColumn() {
       return columnletter( index2col( getBottom() ) )
     },
 
     // Returns column index
-    get bottomColumnindex() {
+    get bottomColumnIndex() {
       return index2col( getBottom() )
     },
 

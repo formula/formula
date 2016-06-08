@@ -242,7 +242,7 @@ FormatNumber.formatNumberWithFormat = function(rawvalue, format_string, currency
     ymd = {
       year: ymd.getFullYear(),
       month: ymd.getMonth() + 1,
-      day: ymd.getdate()
+      day: ymd.getDate()
     }
 
     minOK = 0; // says "m" can be minutes if true

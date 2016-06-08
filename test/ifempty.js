@@ -1,7 +1,7 @@
 import test from 'tape';
 import {ifempty} from '../src/ifempty';
 
-test('IFEMPTY', function(t) {
+test('ifempty', function(t) {
   t.plan(5)
   t.is(ifempty(undefined, 'Yes'), 'Yes')
   t.is(ifempty(null, 'Yes'), 'Yes')

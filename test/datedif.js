@@ -3,7 +3,7 @@ import error from '../src/error'
 import {datedif} from '../src/datedif'
 import {parsedate} from '../src/parsedate'
 
-test('DATEDIF', (t) => {
+test('datedif', (t) => {
   t.plan(4)
 
   // Accept serial dates

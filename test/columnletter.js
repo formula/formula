@@ -2,7 +2,7 @@ import {columnletter} from '../src/columnletter';
 import error from '../src/error';
 import test from 'tape';
 
-test('COLUMNLETTER', function(t) {
+test('columnletter', function(t) {
   t.plan(5);
   t.equal( columnletter(0), 'A' );
   t.equal( columnletter(25), 'Z' );

@@ -4,5 +4,5 @@ import {serial} from './serial';
 
 // DATE returns a serial number given a year, month and day.
 export function date(year, month, day) {
-  return serial(new date(year, month-1, day));
+  return serial(new Date(year, month-1, day));
 }

@@ -2,7 +2,7 @@ import {len} from '../src/len';
 import error from '../src/error';
 import test from 'tape';
 
-test('LEN', function(t) {
+test('len', function(t) {
   t.plan(4)
   t.equal( len("12345"), 5 );
   t.equal( len(["12345"]), 1 );

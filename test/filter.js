@@ -5,7 +5,7 @@
 import test from 'tape';
 import {filter} from '../src/filter'
 
-test('FILTER', function(t) {
+test('filter', function(t) {
   t.plan(4)
   t.deepEqual( filter( [[1], [2]], [true, false], [true, true] ), [[1]] )
   t.deepEqual( filter( [[1], [2]], [false, true], [true, true] ), [[2]] )

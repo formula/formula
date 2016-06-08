@@ -7,13 +7,13 @@ import {iserror} from './iserror';
 export function average(...items) {
 
   // compute sum all of the items.
-  var sum = sum(...items)
+  var v = sum(...items)
 
   // return sum when computed error.
-  if (iserror(sum)) {
-    return sum;
+  if (iserror(v)) {
+    return v;
   }
 
   // return sum divided by item count
-  return  sum / items.length;
+  return  v / items.length;
 }

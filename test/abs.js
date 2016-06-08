@@ -2,7 +2,7 @@ import {abs} from '../src/abs';
 import test from 'tape';
 import error from '../src/error';
 
-test('ABS', function(t) {
+test('abs', function(t) {
   t.plan(6)
   t.equal( abs(1), 1, 'Should still be 1');
   t.equal( abs(-1), 1, 'Should still be 1');

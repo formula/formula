@@ -14,12 +14,12 @@ export function dec2bin(input, places) {
   // cast input to number
   var number = parseInt(input);
 
-  if (Number.isNan(number)) {
+  if (!/^-?[0-9]{1,3}$/.test(number) || Number.isNaN(number)) {
     return error.value;
   }
 
   // Return error.if number is not decimal, is lower than -512, or is greater than 511
-  if (!/^-?[0-9]{1,3}$/.test(number) || number < -512 || number > 511) {
+  if (number < -512 || number > 511) {
     return error.num;
   }
 
@@ -36,7 +36,7 @@ export function dec2bin(input, places) {
     return result;
   } else {
     // Return error.if places is nonnumeric
-    if (isNan(places)) {
+    if (!/^-?[0-9]{1,3}$/.test(places) || Number.isNaN(places)) {
       return error.value;
     }
 
