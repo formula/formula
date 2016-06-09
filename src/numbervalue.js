@@ -20,6 +20,13 @@ export function numbervalue(text, decimal_separator, group_separator)  {
   var foundDecimal = false,
   len = text.length-1
 
+  if (text.length === 1) {
+    if (text.charCodeAt(0) < 48 ||  text.charCodeAt(0) > 57) {
+      return error.value
+    }
+    return +text
+  }
+
   return text.split('').reduce( (acc, item, index) => {
     if (acc === error.value) {
       return error.value;

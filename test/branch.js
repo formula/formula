@@ -3,7 +3,7 @@ import test from 'tape';
 import error from '../src/error';
 
 test('branch', function(t) {
-  t.plan(10);
+  t.plan(12);
   t.equal( typeof branch, 'function' );
   t.equal( branch( false, 1), undefined );
   t.equal( branch( true, undefined ), undefined );
@@ -14,4 +14,8 @@ test('branch', function(t) {
   t.equal( branch( true, false, false, 2, 3), false );
   t.equal( branch( true, false, true, 2, 3), false );
   t.equal( branch( false, false, true, true, 3), true );
+
+  t.equal( branch( () => true, () => 'Yes', () => 'No' ), 'Yes' );
+  t.equal( branch( () => false, () => 'Yes', () => 'No' ), 'No' );
+
 });

@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>numbervalue.js</title>
+  <title>and.js</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" media="all" href="docco.css" />
@@ -563,7 +563,7 @@
         
           <li id="title">
               <div class="annotation">
-                  <h1>numbervalue.js</h1>
+                  <h1>and.js</h1>
               </div>
           </li>
         
@@ -575,12 +575,14 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
+              <p>Copyright 2015 Peter W Moresi</p>
+
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> {isempty} <span class="hljs-keyword">from</span> <span class="hljs-string">'./isempty'</span>;
-<span class="hljs-keyword">import</span> {isnumber} <span class="hljs-keyword">from</span> <span class="hljs-string">'./isnumber'</span>;
-<span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'./error'</span></pre></div></div>
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">import</span> {iserror} <span class="hljs-keyword">from</span> <span class="hljs-string">'./iserror'</span>
+<span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'./error'</span>
+<span class="hljs-keyword">import</span> {isfunction} <span class="hljs-keyword">from</span> <span class="hljs-string">'./isfunction'</span></pre></div></div>
             
         </li>
         
@@ -591,13 +593,11 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>Convert a text value into a number value.</p>
+              <p>AND reduces list of truthy values into true or false value</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">numbervalue</span>(<span class="hljs-params">text, decimal_separator, group_separator</span>)  </span>{
-  decimal_separator = decimal_separator || <span class="hljs-string">'.'</span>
-  group_separator = group_separator || <span class="hljs-string">','</span></pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">and</span>(<span class="hljs-params">...criteria</span>) </span>{</pre></div></div>
             
         </li>
         
@@ -608,13 +608,13 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
-              <p>Return <code>#VALUE!</code> when text is empty</p>
+              <p>Reduce criteria into boolean value.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">if</span> (isempty(text)) {
-    <span class="hljs-keyword">return</span> error.value
-  }</pre></div></div>
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">return</span> criteria.reduce(
+
+    (acc, item) =&gt; {</pre></div></div>
             
         </li>
         
@@ -625,31 +625,11 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
-              <p>Return the value when it is already a number.</p>
+              <p>Once <code>false</code> or #error! is found always return previously value</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">if</span> (isnumber(text)) {
-    <span class="hljs-keyword">return</span> text
-  }
-
-  <span class="hljs-keyword">var</span> foundDecimal = <span class="hljs-literal">false</span>,
-  len = text.length<span class="hljs-number">-1</span>
-
-  <span class="hljs-keyword">return</span> text.split(<span class="hljs-string">''</span>).reduce( (acc, item, index) =&gt; {
-    <span class="hljs-keyword">if</span> (acc === error.value) {
-      <span class="hljs-keyword">return</span> error.value;
-    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (len === index) {
-      <span class="hljs-keyword">if</span> (item === <span class="hljs-string">'%'</span>) {
-        <span class="hljs-keyword">return</span> +acc / <span class="hljs-number">100</span>
-      }
-      <span class="hljs-keyword">return</span> +acc.concat(item)
-    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (item === decimal_separator) {
-      <span class="hljs-keyword">if</span> (foundDecimal) <span class="hljs-keyword">return</span> error.value;
-      foundDecimal = <span class="hljs-literal">true</span>
-      <span class="hljs-keyword">return</span> acc.concat(<span class="hljs-string">'.'</span>)
-    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>( item === group_separator ) {
-      <span class="hljs-keyword">return</span> acc</pre></div></div>
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">if</span> (acc === <span class="hljs-literal">false</span> || iserror(acc)) <span class="hljs-keyword">return</span> acc</pre></div></div>
             
         </li>
         
@@ -660,18 +640,45 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
-              <p>check if between 0 and 9 ascii codes</p>
+              <p>find the value if a literal or deferred value</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (item.charCodeAt(<span class="hljs-number">0</span>) &lt; <span class="hljs-number">48</span> ||  item.charCodeAt(<span class="hljs-number">0</span>) &gt; <span class="hljs-number">57</span>) {
-      <span class="hljs-keyword">return</span> error.value
-    }
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">let</span> val = isfunction(item) ? item() : item</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>return <code>#VALUE!</code> if not true, false, 1 or 0</p>
 
-    <span class="hljs-keyword">return</span> acc.concat(item);
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">if</span> (val !== <span class="hljs-literal">true</span> &amp;&amp; val !== <span class="hljs-literal">false</span> &amp;&amp; val !== <span class="hljs-number">1</span> &amp;&amp; val !== <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">return</span> error.value
+      }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Return true when value is true or 1</p>
 
-  })
-};</pre></div></div>
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">return</span> val === <span class="hljs-literal">true</span> || val === <span class="hljs-number">1</span>;
+    })
+}</pre></div></div>
             
         </li>
         

@@ -87,48 +87,6 @@ function add(...values) {
   return a + b
 }
 
-// AND reduces list of truthy values into true or false value
-function and(...criteria) {
-
-  // Reduce criteria into boolean value.
-  return criteria.reduce(
-    (acc, item) => {
-
-      // return `#VALUE!` if not true, false, 1 or 0
-      if (item !== true && item !== false && item !== 1 && item !== 0) {
-        return error$2.value
-      }
-
-      // Once `#VALUE!` is found then always return `#VALUE!`
-      if (acc === error$2.value) return error$2.value
-
-      // Once `false` is found always return `false`
-      if (acc === false) return false
-
-      // Return the current value whether true or false
-      return item === true || item === 1;
-    })
-  }
-
-// Copyright 2015 Peter W Moresi
-
-// FLATTEN converts a nested array into a flattened array. It only supports one
-// level of nesting.
-function flatten(ref){
-    return ref.reduce(function(a, b) {
-      return a.concat(b);
-    }, []);
-}
-
-// SUM a given list of `numbers`
-function sum(...numbers) {
-    return flatten(flatten(numbers))
-    .reduce((a, b) => {
-      if (typeof b !== 'number') { return error$2.value }
-      return a + b
-    });
-}
-
 // ISERR returns true when the value is an error (except `#NA!`) or when then
 // value is a number which is NaN or [-]Infinity.
 function iserr(value) {
@@ -147,6 +105,56 @@ function iserr(value) {
 // ISERROR returns true when the value is an error.
 function iserror(value) {
     return iserr(value) || value === error$2.na;
+}
+
+// Copyright 2015 Peter W Moresi
+
+// ISFUNCTION returns true when `value` is a function.
+function isfunction(value) {
+    return value && Object.prototype.toString.call(value) == '[object Function]';
+};
+
+// AND reduces list of truthy values into true or false value
+function and(...criteria) {
+
+  // Reduce criteria into boolean value.
+  return criteria.reduce(
+
+    (acc, item) => {
+
+      // Once `false` or #error! is found always return previously value
+      if (acc === false || iserror(acc)) return acc
+
+      // find the value if a literal or deferred value
+      let val = isfunction(item) ? item() : item
+
+      // return `#VALUE!` if not true, false, 1 or 0
+      if (val !== true && val !== false && val !== 1 && val !== 0) {
+        return error$2.value
+      }
+
+      // Return true when value is true or 1
+      return val === true || val === 1;
+    })
+}
+
+// Copyright 2015 Peter W Moresi
+
+// FLATTEN converts a nested array into a flattened array. It only supports one
+// level of nesting.
+function flatten(ref){
+    return ref.reduce(function(a, b) {
+      return a.concat(b);
+    }, []);
+}
+
+// SUM a given list of `numbers`
+function sum(...numbers) {
+    return flatten(flatten(numbers))
+    .reduce((a, b) => {
+      if (typeof b !== 'number') { return error$2.value }
+      return a + b
+    });
 }
 
 // AVERAGE computes sum of items divided by number of items
@@ -188,21 +196,20 @@ function bin2dec(value) {
 
 };
 
-// Copyright 2015 Peter W Moresi
-
 // branch is the function equivalent to `if-then-else`
 //
 // syntax:
 // branch( test, result_if_true, [test2, result_if_true,] false_result )
 function branch(...cases) {
 
-  var found = false
+  var resolved = false
 
   // Reduce all cases into a value.
   return cases.reduce( function(acc, item, index) {
+    let val;
 
-    // Return previously found result
-    if (found === true) return acc
+    // Return previously resolved result
+    if (resolved === true) return acc
 
     // Handle last item
     if ( index === cases.length - 1 ) {
@@ -210,14 +217,16 @@ function branch(...cases) {
       if (index % 2 === 1) return;
 
       // return the last item
-      return item;
+      return isfunction(item) ? item() : item;
     }
 
     // Check if condition is true
-    if (index % 2 === 0 && item === true) {
-      found = true
-      // return the found item
-      return cases[index+1];
+    if (index % 2 === 0 && (
+        (isfunction(item) && item() === true) ||
+        (item === true))) {
+      resolved = true
+      val = cases[index+1]
+      return isfunction(val) ? val() : val;
     }
 
     return acc;
@@ -923,13 +932,6 @@ function index2col(index) {
   return index - (index2row(index) * MaxCols);
 }
 
-// Copyright 2015 Peter W Moresi
-
-// ISFUNCTION returns true when `value` is a function.
-function isfunction(value) {
-    return value && Object.prototype.toString.call(value) == '[object Function]';
-};
-
 // REF accepts top and bottom and returns a reference object. It encapsulates a cell or a range.
 function ref$1(top, bottom) {
 
@@ -1263,6 +1265,13 @@ function numbervalue(text, decimal_separator, group_separator)  {
   var foundDecimal = false,
   len = text.length-1
 
+  if (text.length === 1) {
+    if (text.charCodeAt(0) < 48 ||  text.charCodeAt(0) > 57) {
+      return error$2.value
+    }
+    return +text
+  }
+
   return text.split('').reduce( (acc, item, index) => {
     if (acc === error$2.value) {
       return error$2.value;
@@ -1328,13 +1337,12 @@ function oct2dec(octalNumber) {
   return (nonNegativeDecimalNumber >= 536870912) ? nonNegativeDecimalNumber - 1073741824 : nonNegativeDecimalNumber;
 }
 
-// Copyright 2015 Peter W Moresi
-
 // OR returns true when any of the criter is true or 1.
 function or(...criteria) {
   return criteria.reduce( (acc, item) => {
     if (acc === true) return true;
-    return item === true || item === 1;
+    let value = isfunction(item) ? item() : item;
+    return value === true || value === 1;
   }, false)
 }
 
