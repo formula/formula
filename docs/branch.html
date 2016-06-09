@@ -579,6 +579,9 @@
 
             </div>
             
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">import</span> {isfunction} <span class="hljs-keyword">from</span> <span class="hljs-string">'./isfunction'</span></pre></div></div>
+            
         </li>
         
         
@@ -596,7 +599,7 @@ branch( test, result_if_true, [test2, result_if_true,] false_result )</p>
             
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">branch</span>(<span class="hljs-params">...cases</span>) </span>{
 
-  <span class="hljs-keyword">var</span> found = <span class="hljs-literal">false</span></pre></div></div>
+  <span class="hljs-keyword">var</span> resolved = <span class="hljs-literal">false</span></pre></div></div>
             
         </li>
         
@@ -611,7 +614,8 @@ branch( test, result_if_true, [test2, result_if_true,] false_result )</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">return</span> cases.reduce( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">acc, item, index</span>) </span>{</pre></div></div>
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">return</span> cases.reduce( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">acc, item, index</span>) </span>{
+    <span class="hljs-keyword">let</span> val;</pre></div></div>
             
         </li>
         
@@ -622,11 +626,11 @@ branch( test, result_if_true, [test2, result_if_true,] false_result )</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
-              <p>Return previously found result</p>
+              <p>Return previously resolved result</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> (found === <span class="hljs-literal">true</span>) <span class="hljs-keyword">return</span> acc</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> (resolved === <span class="hljs-literal">true</span>) <span class="hljs-keyword">return</span> acc</pre></div></div>
             
         </li>
         
@@ -671,7 +675,7 @@ branch( test, result_if_true, [test2, result_if_true,] false_result )</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">return</span> item;
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">return</span> isfunction(item) ? item() : item;
     }</pre></div></div>
             
         </li>
@@ -687,23 +691,12 @@ branch( test, result_if_true, [test2, result_if_true,] false_result )</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> (index % <span class="hljs-number">2</span> === <span class="hljs-number">0</span> &amp;&amp; item === <span class="hljs-literal">true</span>) {
-      found = <span class="hljs-literal">true</span></pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-9">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-9">&#182;</a>
-              </div>
-              <p>return the found item</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">return</span> cases[index+<span class="hljs-number">1</span>];
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> (index % <span class="hljs-number">2</span> === <span class="hljs-number">0</span> &amp;&amp; (
+        (isfunction(item) &amp;&amp; item() === <span class="hljs-literal">true</span>) ||
+        (item === <span class="hljs-literal">true</span>))) {
+      resolved = <span class="hljs-literal">true</span>
+      val = cases[index+<span class="hljs-number">1</span>]
+      <span class="hljs-keyword">return</span> isfunction(val) ? val() : val;
     }
 
     <span class="hljs-keyword">return</span> acc;

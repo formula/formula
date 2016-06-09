@@ -579,6 +579,9 @@
 
             </div>
             
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">import</span> {isfunction} <span class="hljs-keyword">from</span> <span class="hljs-string">'./isfunction'</span></pre></div></div>
+            
         </li>
         
         
@@ -595,7 +598,8 @@
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">or</span>(<span class="hljs-params">...criteria</span>) </span>{
   <span class="hljs-keyword">return</span> criteria.reduce( (acc, item) =&gt; {
     <span class="hljs-keyword">if</span> (acc === <span class="hljs-literal">true</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
-    <span class="hljs-keyword">return</span> item === <span class="hljs-literal">true</span> || item === <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">let</span> value = isfunction(item) ? item() : item;
+    <span class="hljs-keyword">return</span> value === <span class="hljs-literal">true</span> || value === <span class="hljs-number">1</span>;
   }, <span class="hljs-literal">false</span>)
 }</pre></div></div>
             
