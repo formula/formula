@@ -1235,13 +1235,11 @@ function min() {
     list[_key8] = arguments[_key8];
   }
 
-  return flatten(list).reduce(function (min, next) {
-    if (isnumber(next)) {
-      return Math.min(min, next);
-    }
+  if (list.length === 0) return;
 
-    return min;
-  }, Number.POSITIVE_INFINITY);
+  return flatten(list).reduce(function (min, next) {
+    if (isblank(min)) return next;else if (isnumber(next)) return Math.min(min, next);else return min;
+  });
 }
 
 // MAX returns the largest number from a `list`.
@@ -1250,13 +1248,11 @@ function max() {
     list[_key9] = arguments[_key9];
   }
 
-  return flatten(list).reduce(function (max, next) {
-    if (isnumber(next)) {
-      return Math.max(max, next);
-    }
+  if (list.length === 0) return;
 
-    return max;
-  }, Number.NEGATIVE_INFINITY);
+  return flatten(list).reduce(function (max, next) {
+    if (isblank(max)) return next;else if (isnumber(next)) return Math.max(max, next);else return max;
+  });
 }
 
 // MULTIPLY calculates the product of two numbers.
