@@ -1178,9 +1178,9 @@ function lte(a,b) {
 // MIN returns the smallest number from a `list`.
 function min(...list) {
 
-  if (list.length === 0) return;
-
-  return flatten( list ).reduce((min, next) => {
+  var values = flatten( list )
+  if (values.length === 0) return;
+  return values.reduce((min, next) => {
     if (isblank(min)) return next;
     else if (isnumber(next)) return Math.min(min, next);
     else return min;
@@ -1190,9 +1190,9 @@ function min(...list) {
 // MAX returns the largest number from a `list`.
 function max(...list) {
 
-  if (list.length === 0) return;
-
-  return flatten( list ).reduce((max, next) => {
+  var values = flatten( list )
+  if (values.length === 0) return;
+  return values.reduce((max, next) => {
     if (isblank(max)) return next;
     else if (isnumber(next)) return Math.max(max, next);
     else return max;

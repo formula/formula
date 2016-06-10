@@ -1235,9 +1235,9 @@ function min() {
     list[_key8] = arguments[_key8];
   }
 
-  if (list.length === 0) return;
-
-  return flatten(list).reduce(function (min, next) {
+  var values = flatten(list);
+  if (values.length === 0) return;
+  return values.reduce(function (min, next) {
     if (isblank(min)) return next;else if (isnumber(next)) return Math.min(min, next);else return min;
   });
 }
@@ -1248,9 +1248,9 @@ function max() {
     list[_key9] = arguments[_key9];
   }
 
-  if (list.length === 0) return;
-
-  return flatten(list).reduce(function (max, next) {
+  var values = flatten(list);
+  if (values.length === 0) return;
+  return values.reduce(function (max, next) {
     if (isblank(max)) return next;else if (isnumber(next)) return Math.max(max, next);else return max;
   });
 }
