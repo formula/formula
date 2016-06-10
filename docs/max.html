@@ -581,6 +581,7 @@
             
             <div class="content"><div class='highlight'><pre>
 <span class="hljs-keyword">import</span> {flatten} <span class="hljs-keyword">from</span> <span class="hljs-string">'./flatten'</span>;
+<span class="hljs-keyword">import</span> {isblank} <span class="hljs-keyword">from</span> <span class="hljs-string">'./isblank'</span>;
 <span class="hljs-keyword">import</span> {isnumber} <span class="hljs-keyword">from</span> <span class="hljs-string">'./isnumber'</span>;</pre></div></div>
             
         </li>
@@ -597,14 +598,14 @@
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">max</span>(<span class="hljs-params">...list</span>) </span>{
+
+  <span class="hljs-keyword">if</span> (list.length === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span>;
+
   <span class="hljs-keyword">return</span> flatten( list ).reduce((max, next) =&gt; {
-    <span class="hljs-keyword">if</span> (isnumber(next)) {
-      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.max(max, next);
-    }
-
-    <span class="hljs-keyword">return</span> max;
-
-  }, <span class="hljs-built_in">Number</span>.NEGATIVE_INFINITY );
+    <span class="hljs-keyword">if</span> (isblank(max)) <span class="hljs-keyword">return</span> next;
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (isnumber(next)) <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.max(max, next);
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> max;
+  });
 }</pre></div></div>
             
         </li>

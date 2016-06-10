@@ -1177,26 +1177,26 @@ function lte(a,b) {
 
 // MIN returns the smallest number from a `list`.
 function min(...list) {
+
+  if (list.length === 0) return;
+
   return flatten( list ).reduce((min, next) => {
-    if (isnumber(next)) {
-      return Math.min(min, next);
-    }
-
-    return min;
-
-  }, Number.POSITIVE_INFINITY );
+    if (isblank(min)) return next;
+    else if (isnumber(next)) return Math.min(min, next);
+    else return min;
+  });
 }
 
 // MAX returns the largest number from a `list`.
 function max(...list) {
+
+  if (list.length === 0) return;
+
   return flatten( list ).reduce((max, next) => {
-    if (isnumber(next)) {
-      return Math.max(max, next);
-    }
-
-    return max;
-
-  }, Number.NEGATIVE_INFINITY );
+    if (isblank(max)) return next;
+    else if (isnumber(next)) return Math.max(max, next);
+    else return max;
+  });
 }
 
 // MULTIPLY calculates the product of two numbers.
