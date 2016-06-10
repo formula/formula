@@ -599,9 +599,9 @@
             
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">min</span>(<span class="hljs-params">...list</span>) </span>{
 
-  <span class="hljs-keyword">if</span> (list.length === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span>;
-
-  <span class="hljs-keyword">return</span> flatten( list ).reduce((min, next) =&gt; {
+  <span class="hljs-keyword">var</span> values = flatten( list )
+  <span class="hljs-keyword">if</span> (values.length === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span>;
+  <span class="hljs-keyword">return</span> values.reduce((min, next) =&gt; {
     <span class="hljs-keyword">if</span> (isblank(min)) <span class="hljs-keyword">return</span> next;
     <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (isnumber(next)) <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.min(min, next);
     <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> min;

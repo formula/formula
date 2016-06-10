@@ -7,9 +7,9 @@ import {isnumber} from './isnumber';
 // MAX returns the largest number from a `list`.
 export function max(...list) {
 
-  if (list.length === 0) return;
-
-  return flatten( list ).reduce((max, next) => {
+  var values = flatten( list )
+  if (values.length === 0) return;
+  return values.reduce((max, next) => {
     if (isblank(max)) return next;
     else if (isnumber(next)) return Math.max(max, next);
     else return max;
