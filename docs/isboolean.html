@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>index2row.js</title>
+  <title>isboolean.js</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" media="all" href="docco.css" />
@@ -573,7 +573,7 @@
         
           <li id="title">
               <div class="annotation">
-                  <h1>index2row.js</h1>
+                  <h1>isboolean.js</h1>
               </div>
           </li>
         
@@ -589,9 +589,6 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>
-<span class="hljs-keyword">import</span> {MaxCols} <span class="hljs-keyword">from</span> <span class="hljs-string">'./constants'</span>;</pre></div></div>
-            
         </li>
         
         
@@ -601,13 +598,13 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>INDEX2COL computes the row given a cell index</p>
+              <p>returns true if true or false</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">index2row</span>(<span class="hljs-params">index</span>) </span>{
-  <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.floor(index / MaxCols);
-}</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isboolean</span>(<span class="hljs-params">val</span>) </span>{
+    <span class="hljs-keyword">return</span> val === <span class="hljs-literal">true</span> || val === <span class="hljs-literal">false</span>
+};</pre></div></div>
             
         </li>
         
