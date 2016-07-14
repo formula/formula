@@ -2,25 +2,25 @@
 
 // List of errors in the spreadsheet system
 
-function FFError(message) {
-    this.name = "NotImplementedError";
+function FFError(message, name) {
+    this.name = name || "NotImplementedError";
     this.message = (message || "");
 }
 
 FFError.prototype = Error.prototype;
 FFError.prototype.toString = function() { return this.message }
 
-let nil = new FFError('#NULL!'),
-    div0 = new FFError('#DIV/0!'),
-    value = new FFError('#VALUE!'),
-    ref = new FFError('#REF!'),
-    name = new FFError('#NAME?'),
-    num = new FFError('#NUM!'),
-    na = new FFError('#N/A!'),
-    error = new FFError('#ERROR!'),
-    data = new FFError('#GETTING_DATA!'),
-    missing = new FFError('#MISSING!'),
-    unknown = new FFError('#UNKNOWN!');
+let nil = new FFError('#NULL!', "Null reference"),
+    div0 = new FFError('#DIV/0!', "Divide by zero"),
+    value = new FFError('#VALUE!', "Invalid value"),
+    ref = new FFError('#REF!', "Invalid reference"),
+    name = new FFError('#NAME?', "Invalid name"),
+    num = new FFError('#NUM!', "Invalid number"),
+    na = new FFError('#N/A!', "Not applicable"),
+    error = new FFError('#ERROR!', "Error"),
+    data = new FFError('#GETTING_DATA!', "Error getting data"),
+    missing = new FFError('#MISSING!', "Missing"),
+    unknown = new FFError('#UNKNOWN!', "Unknown error");
 
 export default {
   nil,

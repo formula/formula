@@ -6,7 +6,6 @@ import error from './error'
 // PARSEDATE converts a value into a Date object.
 export function parsedate(val) {
 
-
   /* *******************
   Extracted from Social Calc
 
