@@ -1095,6 +1095,48 @@ function isurl(str){
   return pattern.test(str);
 }
 
+// N converts a `value` to a number. It supports numbers, true, false and dates.
+function n(value) {
+
+  // Pass numbers and errors back out.
+  if (isnumber(value) || iserror(value)) {
+    return value;
+  }
+
+  // Convert dates to serial number.
+  if (value instanceof Date) {
+    return serial(value);
+  }
+
+  // Convert true to 1
+  if (value === true) {
+    return 1;
+  }
+
+  // Convert false to 0
+  if (value === false) {
+    return 0;
+  }
+
+  // Return 0 in all other cases.
+  return 0;
+
+}
+
+function left(text, number) {
+
+  if (isblank(text)) {
+    return ''
+  }
+
+  if (!n(+number)) {
+    return text
+  }
+
+  return text.substring( 0, number )
+
+}
+
 // LEN returns the size of a string or array.
 function len(text) {
   if (arguments.length === 0) {
@@ -1224,34 +1266,6 @@ function multiply(...values) {
 
   // Return the product
   return a * b
-}
-
-// N converts a `value` to a number. It supports numbers, true, false and dates.
-function n(value) {
-
-  // Pass numbers and errors back out.
-  if (isnumber(value) || iserror(value)) {
-    return value;
-  }
-
-  // Convert dates to serial number.
-  if (value instanceof Date) {
-    return serial(value);
-  }
-
-  // Convert true to 1
-  if (value === true) {
-    return 1;
-  }
-
-  // Convert false to 0
-  if (value === false) {
-    return 0;
-  }
-
-  // Return 0 in all other cases.
-  return 0;
-
 }
 
 // Convert a text value into a number value.
@@ -2486,4 +2500,4 @@ function xor(...values) {
     }, 0) & 1)
 }
 
-export { abs, acos, add, and, average, bin2dec, branch, branch as cond, cellindex, cellindex as cellIndex, changed, choose, clean, code, column, columnletter, columnletter as columnLetter, columnnumber, concatenate, cos, date, datevalue, datevalue as dateValue, datedif, days360, dec2bin, diff, divide, eq, exact, filter, find, flatten, gt, gte, guid, hlookup, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, index2col, index2row, indirect, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, len, lookup, lower, lt, lte, min, max, multiply, n, numbervalue, numbervalue as numberValue, ne, not, oct2dec, or, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, pi, pmt, power, ref$1 as ref, replace, rept, right, round, roundup, search, select, serial, sin, some, sort, split, substitute, subtract, sum, tan, tau, text, trim, unique, upper, vlookup, xor };
+export { abs, acos, add, and, average, bin2dec, branch, branch as cond, cellindex, cellindex as cellIndex, changed, choose, clean, code, column, columnletter, columnletter as columnLetter, columnnumber, concatenate, cos, date, datevalue, datevalue as dateValue, datedif, days360, dec2bin, diff, divide, eq, exact, filter, find, flatten, gt, gte, guid, hlookup, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, index2col, index2row, indirect, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, left, len, lookup, lower, lt, lte, min, max, multiply, n, numbervalue, numbervalue as numberValue, ne, not, oct2dec, or, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, pi, pmt, power, ref$1 as ref, replace, rept, right, round, roundup, search, select, serial, sin, some, sort, split, substitute, subtract, sum, tan, tau, text, trim, unique, upper, vlookup, xor };

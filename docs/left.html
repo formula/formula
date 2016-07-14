@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>ne.js</title>
+  <title>left.js</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" media="all" href="docco.css" />
@@ -578,7 +578,7 @@
         
           <li id="title">
               <div class="annotation">
-                  <h1>ne.js</h1>
+                  <h1>left.js</h1>
               </div>
           </li>
         
@@ -595,23 +595,22 @@
             </div>
             
             <div class="content"><div class='highlight'><pre>
-<span class="hljs-keyword">import</span> {eq} <span class="hljs-keyword">from</span> <span class="hljs-string">'./eq'</span></pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-2">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-2">&#182;</a>
-              </div>
-              <p>NE returns true when a is not equal to b.</p>
+<span class="hljs-keyword">import</span> {isblank} <span class="hljs-keyword">from</span> <span class="hljs-string">'./isblank'</span>
+<span class="hljs-keyword">import</span> {n} <span class="hljs-keyword">from</span> <span class="hljs-string">'./n'</span>
+<span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'./error'</span>
 
-            </div>
-            
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ne</span>(<span class="hljs-params">a,b</span>) </span>{
-  <span class="hljs-keyword">return</span> !eq(a, b)
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">left</span>(<span class="hljs-params">text, number</span>) </span>{
+
+  <span class="hljs-keyword">if</span> (isblank(text)) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">''</span>
+  }
+
+  <span class="hljs-keyword">if</span> (!n(+number)) {
+    <span class="hljs-keyword">return</span> text
+  }
+
+  <span class="hljs-keyword">return</span> text.substring( <span class="hljs-number">0</span>, number )
+
 }</pre></div></div>
             
         </li>
