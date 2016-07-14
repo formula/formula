@@ -51,6 +51,7 @@ test('index', function(t) {
   t.ok( ff.isodd, 'isodd should be there')
   t.ok( ff.isref, 'isref should be there')
   t.ok( ff.istext, 'istext should be there')
+  t.ok( ff.left, 'left should be there')
   t.ok( ff.len, 'len should be there')
   t.ok( ff.lookup, 'lookup should be there')
   t.ok( ff.lower, 'lower should be there')
