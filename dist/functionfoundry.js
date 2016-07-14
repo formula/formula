@@ -1142,6 +1142,46 @@ function isurl(str) {
   return pattern.test(str);
 }
 
+// N converts a `value` to a number. It supports numbers, true, false and dates.
+function n(value) {
+
+  // Pass numbers and errors back out.
+  if (isnumber(value) || iserror(value)) {
+    return value;
+  }
+
+  // Convert dates to serial number.
+  if (value instanceof Date) {
+    return serial(value);
+  }
+
+  // Convert true to 1
+  if (value === true) {
+    return 1;
+  }
+
+  // Convert false to 0
+  if (value === false) {
+    return 0;
+  }
+
+  // Return 0 in all other cases.
+  return 0;
+}
+
+function left(text, number) {
+
+  if (isblank(text)) {
+    return '';
+  }
+
+  if (!n(+number)) {
+    return text;
+  }
+
+  return text.substring(0, number);
+}
+
 // LEN returns the size of a string or array.
 function len(text) {
   if (arguments.length === 0) {
@@ -1285,33 +1325,6 @@ function multiply() {
 
   // Return the product
   return a * b;
-}
-
-// N converts a `value` to a number. It supports numbers, true, false and dates.
-function n(value) {
-
-  // Pass numbers and errors back out.
-  if (isnumber(value) || iserror(value)) {
-    return value;
-  }
-
-  // Convert dates to serial number.
-  if (value instanceof Date) {
-    return serial(value);
-  }
-
-  // Convert true to 1
-  if (value === true) {
-    return 1;
-  }
-
-  // Convert false to 0
-  if (value === false) {
-    return 0;
-  }
-
-  // Return 0 in all other cases.
-  return 0;
 }
 
 // Convert a text value into a number value.
@@ -2609,6 +2622,7 @@ exports.istext = istext;
 exports.isText = istext;
 exports.isurl = isurl;
 exports.ISURL = isurl;
+exports.left = left;
 exports.len = len;
 exports.lookup = lookup;
 exports.lower = lower;
