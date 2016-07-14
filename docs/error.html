@@ -155,6 +155,11 @@
                 </a>
               
                 
+                <a class="source" href="eomonth.html">
+                  eomonth.js
+                </a>
+              
+                
                 <a class="source" href="eq.html">
                   eq.js
                 </a>
@@ -608,25 +613,25 @@
             </div>
             
             <div class="content"><div class='highlight'><pre>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">FFError</span>(<span class="hljs-params">message</span>) </span>{
-    <span class="hljs-keyword">this</span>.name = <span class="hljs-string">"NotImplementedError"</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">FFError</span>(<span class="hljs-params">message, name</span>) </span>{
+    <span class="hljs-keyword">this</span>.name = name || <span class="hljs-string">"NotImplementedError"</span>;
     <span class="hljs-keyword">this</span>.message = (message || <span class="hljs-string">""</span>);
 }
 
 FFError.prototype = <span class="hljs-built_in">Error</span>.prototype;
 FFError.prototype.toString = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.message }
 
-<span class="hljs-keyword">let</span> nil = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#NULL!'</span>),
-    div0 = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#DIV/0!'</span>),
-    value = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#VALUE!'</span>),
-    ref = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#REF!'</span>),
-    name = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#NAME?'</span>),
-    num = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#NUM!'</span>),
-    na = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#N/A!'</span>),
-    error = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#ERROR!'</span>),
-    data = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#GETTING_DATA!'</span>),
-    missing = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#MISSING!'</span>),
-    unknown = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#UNKNOWN!'</span>);
+<span class="hljs-keyword">let</span> nil = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#NULL!'</span>, <span class="hljs-string">"Null reference"</span>),
+    div0 = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#DIV/0!'</span>, <span class="hljs-string">"Divide by zero"</span>),
+    value = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#VALUE!'</span>, <span class="hljs-string">"Invalid value"</span>),
+    ref = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#REF!'</span>, <span class="hljs-string">"Invalid reference"</span>),
+    name = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#NAME?'</span>, <span class="hljs-string">"Invalid name"</span>),
+    num = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#NUM!'</span>, <span class="hljs-string">"Invalid number"</span>),
+    na = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#N/A!'</span>, <span class="hljs-string">"Not applicable"</span>),
+    error = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#ERROR!'</span>, <span class="hljs-string">"Error"</span>),
+    data = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#GETTING_DATA!'</span>, <span class="hljs-string">"Error getting data"</span>),
+    missing = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#MISSING!'</span>, <span class="hljs-string">"Missing"</span>),
+    unknown = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#UNKNOWN!'</span>, <span class="hljs-string">"Unknown error"</span>);
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
   nil,

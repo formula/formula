@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>isobject.js</title>
+  <title>eomonth.js</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" media="all" href="docco.css" />
@@ -583,7 +583,7 @@
         
           <li id="title">
               <div class="annotation">
-                  <h1>isobject.js</h1>
+                  <h1>eomonth.js</h1>
               </div>
           </li>
         
@@ -599,6 +599,10 @@
 
             </div>
             
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">import</span> {parsedate} <span class="hljs-keyword">from</span> <span class="hljs-string">'./parsedate'</span>;
+<span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'./error'</span></pre></div></div>
+            
         </li>
         
         
@@ -608,14 +612,22 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>isobject returns true when <code>value</code> is an object or function.</p>
+              <p>DIVIDE calculates the product of two numbers.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isobject</span>(<span class="hljs-params">value</span>) </span>{
-  <span class="hljs-keyword">var</span> type = <span class="hljs-keyword">typeof</span> value;
-  <span class="hljs-keyword">return</span> !!value &amp;&amp; (type == <span class="hljs-string">'object'</span> || type == <span class="hljs-string">'function'</span>);
-};</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">eomonth</span>(<span class="hljs-params">start_date, months</span>) </span>{
+  start_date = parsedate(start_date);
+
+  <span class="hljs-keyword">if</span> (start_date <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Error</span>) {
+    <span class="hljs-keyword">return</span> start_date;
+  }
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isNaN</span>(months)) {
+    <span class="hljs-keyword">return</span> error.value;
+  }
+  months = <span class="hljs-built_in">parseInt</span>(months, <span class="hljs-number">10</span>);
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(start_date.getFullYear(), start_date.getMonth() + months + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>);
+}</pre></div></div>
             
         </li>
         

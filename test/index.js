@@ -25,6 +25,7 @@ test('index', function(t) {
   t.ok( ff.days360, 'days360 should be there')
   t.ok( ff.dec2bin, 'dec2bin should be there')
   t.ok( ff.divide, 'divide should be there')
+  t.ok( ff.eomonth, 'eomonth should be there')
   t.ok( ff.eq, 'eq should be there')
   t.ok( ff.exact, 'exact should be there')
   t.ok( ff.filter, 'filter should be there')

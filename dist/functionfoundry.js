@@ -30,8 +30,8 @@ function isnumber(value) {
 
 // List of errors in the spreadsheet system
 
-function FFError(message) {
-  this.name = "NotImplementedError";
+function FFError(message, name) {
+  this.name = name || "NotImplementedError";
   this.message = message || "";
 }
 
@@ -40,17 +40,17 @@ FFError.prototype.toString = function () {
   return this.message;
 };
 
-var nil = new FFError('#NULL!');
-var div0 = new FFError('#DIV/0!');
-var value = new FFError('#VALUE!');
-var ref = new FFError('#REF!');
-var name = new FFError('#NAME?');
-var num = new FFError('#NUM!');
-var na = new FFError('#N/A!');
-var error$1 = new FFError('#ERROR!');
-var data = new FFError('#GETTING_DATA!');
-var missing = new FFError('#MISSING!');
-var unknown = new FFError('#UNKNOWN!');
+var nil = new FFError('#NULL!', "Null reference");
+var div0 = new FFError('#DIV/0!', "Divide by zero");
+var value = new FFError('#VALUE!', "Invalid value");
+var ref = new FFError('#REF!', "Invalid reference");
+var name = new FFError('#NAME?', "Invalid name");
+var num = new FFError('#NUM!', "Invalid number");
+var na = new FFError('#N/A!', "Not applicable");
+var error$1 = new FFError('#ERROR!', "Error");
+var data = new FFError('#GETTING_DATA!', "Error getting data");
+var missing = new FFError('#MISSING!', "Missing");
+var unknown = new FFError('#UNKNOWN!', "Unknown error");
 var error$2 = {
   nil: nil,
   div0: div0,
@@ -809,6 +809,20 @@ function divide() {
 
   // Return the product
   return a / b;
+}
+
+// DIVIDE calculates the product of two numbers.
+function eomonth(start_date, months) {
+  start_date = parsedate(start_date);
+
+  if (start_date instanceof Error) {
+    return start_date;
+  }
+  if (isNaN(months)) {
+    return error$2.value;
+  }
+  months = parseInt(months, 10);
+  return new Date(start_date.getFullYear(), start_date.getMonth() + months + 1, 0);
 }
 
 // Copyright 2015 Peter W Moresi
@@ -2570,6 +2584,7 @@ exports.days360 = days360;
 exports.dec2bin = dec2bin;
 exports.diff = diff;
 exports.divide = divide;
+exports.eomonth = eomonth;
 exports.eq = eq;
 exports.exact = exact;
 exports.filter = filter;
