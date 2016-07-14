@@ -2656,6 +2656,7 @@ exports.select = select;
 exports.serial = serial;
 exports.sin = sin;
 exports.some = some;
+exports.in = some;
 exports.sort = sort;
 exports.split = split;
 exports.substitute = substitute;
