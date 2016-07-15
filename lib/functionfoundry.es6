@@ -608,6 +608,11 @@ function datedif(start_date, end_date, unit) {
 
 }
 
+// DAY parses a date string and returns the day of the month.
+function day(d) {
+  return parsedate(d).getDate()
+}
+
 // PARSEBOOL converts a truthy value into a boolean value.
 function parsebool(val) {
 
@@ -1259,6 +1264,11 @@ function max(...list) {
     else if (isnumber(next)) return Math.max(max, next);
     else return max;
   });
+}
+
+// MONTH parses a date value and returns the month of the year.
+function month(d) {
+  return parsedate(d).getMonth() + 1
 }
 
 // MULTIPLY calculates the product of two numbers.
@@ -2513,4 +2523,9 @@ function xor(...values) {
     }, 0) & 1)
 }
 
-export { abs, acos, add, and, average, bin2dec, branch, branch as cond, cellindex, cellindex as cellIndex, changed, choose, clean, code, column, columnletter, columnletter as columnLetter, columnnumber, concatenate, cos, date, datevalue, datevalue as dateValue, datedif, days360, dec2bin, diff, divide, eomonth, eq, exact, filter, find, flatten, gt, gte, guid, hlookup, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, index2col, index2row, indirect, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, left, len, lookup, lower, lt, lte, min, max, multiply, n, numbervalue, numbervalue as numberValue, ne, not, oct2dec, or, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, pi, pmt, power, ref$1 as ref, replace, rept, right, round, roundup, search, select, serial, sin, some, some as in, sort, split, substitute, subtract, sum, tan, tau, text, trim, unique, upper, vlookup, xor };
+// YEAR parses a date value and returns the year of the year.
+function year(d) {
+  return parsedate(d).getFullYear()
+}
+
+export { abs, acos, add, and, average, bin2dec, branch, branch as cond, cellindex, cellindex as cellIndex, changed, choose, clean, code, column, columnletter, columnletter as columnLetter, columnnumber, concatenate, cos, date, datevalue, datevalue as dateValue, datedif, day, days360, dec2bin, diff, divide, eomonth, eq, exact, filter, find, flatten, gt, gte, guid, hlookup, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, index2col, index2row, indirect, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, left, len, lookup, lower, lt, lte, min, max, month, multiply, n, numbervalue, numbervalue as numberValue, ne, not, oct2dec, or, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, pi, pmt, power, ref$1 as ref, replace, rept, right, round, roundup, search, select, serial, sin, some, some as in, sort, split, substitute, subtract, sum, tan, tau, text, trim, unique, upper, vlookup, xor, year };

@@ -23,6 +23,7 @@ test('index', function(t) {
   t.ok( ff.datedif, 'datedif should be there')
   t.ok( ff.datevalue, 'datevalue should be there')
   t.ok( ff.days360, 'days360 should be there')
+  t.ok( ff.day, 'day should be there')
   t.ok( ff.dec2bin, 'dec2bin should be there')
   t.ok( ff.divide, 'divide should be there')
   t.ok( ff.eomonth, 'eomonth should be there')
@@ -91,4 +92,5 @@ test('index', function(t) {
   t.ok( ff.upper, 'upper should be there')
   t.ok( ff.vlookup, 'vlookup should be there')
   t.ok( ff.xor, 'xor should be there')
+  t.ok( ff.year, 'year should be there')
 })
