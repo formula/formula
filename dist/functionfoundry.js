@@ -634,6 +634,11 @@ function datedif(start_date, end_date, unit) {
   }
 }
 
+// DAY parses a date string and returns the day of the month.
+function day(d) {
+  return parsedate(d).getDate();
+}
+
 // PARSEBOOL converts a truthy value into a boolean value.
 function parsebool(val) {
 
@@ -1314,6 +1319,11 @@ function max() {
   return values.reduce(function (max, next) {
     if (isblank(max)) return next;else if (isnumber(next)) return Math.max(max, next);else return max;
   });
+}
+
+// MONTH parses a date value and returns the month of the year.
+function month(d) {
+  return parsedate(d).getMonth() + 1;
 }
 
 // MULTIPLY calculates the product of two numbers.
@@ -2556,6 +2566,11 @@ function xor() {
   }, 0) & 1);
 }
 
+// YEAR parses a date value and returns the year of the year.
+function year(d) {
+  return parsedate(d).getFullYear();
+}
+
 exports.abs = abs;
 exports.acos = acos;
 exports.add = add;
@@ -2580,6 +2595,7 @@ exports.date = date;
 exports.datevalue = datevalue;
 exports.dateValue = datevalue;
 exports.datedif = datedif;
+exports.day = day;
 exports.days360 = days360;
 exports.dec2bin = dec2bin;
 exports.diff = diff;
@@ -2645,6 +2661,7 @@ exports.lt = lt;
 exports.lte = lte;
 exports.min = min;
 exports.max = max;
+exports.month = month;
 exports.multiply = multiply;
 exports.n = n;
 exports.numbervalue = numbervalue;
@@ -2685,6 +2702,7 @@ exports.unique = unique;
 exports.upper = upper;
 exports.vlookup = vlookup;
 exports.xor = xor;
+exports.year = year;
 
 
 },{}]},{},[1]);
