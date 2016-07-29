@@ -3,7 +3,7 @@ import * as ff from '../src/index'
 
 test('index', function(t) {
 
-  t.plan( 97 )
+  t.plan( 99 )
   t.ok( ff.abs, 'abs should be there')
   t.ok( ff.acos, 'acos should be there')
   t.ok( ff.add, 'add should be there')
@@ -68,6 +68,8 @@ test('index', function(t) {
   t.ok( ff.n, 'n should be there')
   t.ok( ff.numbervalue, 'numbervalue should be there')
   t.ok( ff.ne, 'ne should be there')
+  t.ok( ff.npv, 'npv should be there')
+  t.ok( ff.nper, 'nper should be there')
   t.ok( ff.oct2dec, 'oct2dec should be there')
   t.ok( ff.or, 'or should be there')
   t.ok( ff.parsebool, 'parsebool should be there')

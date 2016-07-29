@@ -27,7 +27,13 @@
 // The library currently is approaching 100 functions. The long term goal is to support the ~300 functions supported by modern spreadsheet software.
 //
 // The test suite includes over ~600 assertions to ensure high quality and provide usage examples.
-//
+
+// Polyfill Number.isNaN
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
+Number.isNaN = Number.isNaN || function(value) {
+    return value !== value;
+}
+
 export {abs} from './abs'
 export {acos} from './acos'
 export {add} from './add'
@@ -102,6 +108,8 @@ export {n} from './n'
 export {numbervalue, numbervalue as numberValue} from './numbervalue'
 export {ne} from './ne'
 export {not} from './not'
+export {npv} from './npv'
+export {nper} from './nper'
 export {oct2dec} from './oct2dec'
 export {or} from './or'
 export {parsebool, parsebool as parseBool} from './parsebool'
