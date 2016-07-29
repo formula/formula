@@ -3,7 +3,8 @@ import test from 'tape';
 import error from '../src/error'
 
 test('serial', function(t) {
-  t.plan(6)
+  t.plan(7)
+  t.equal( serial(new Date(2016, 6, 28)), 42579, 'Should be 42579');
   t.equal( serial(new Date(2008, 6, 8)), 39637, 'Should be 39637');
   t.equal( serial(new Date(1900, 0, 1)), 1, 'Should be 1');
   t.equal( serial(new Date(1900, 1, 1)), 32, 'Should be 33');
