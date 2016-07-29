@@ -3,7 +3,7 @@ import * as ff from '../src/index'
 
 test('index', function(t) {
 
-  t.plan( 99 )
+  t.plan( 101 )
   t.ok( ff.abs, 'abs should be there')
   t.ok( ff.acos, 'acos should be there')
   t.ok( ff.add, 'add should be there')
@@ -32,6 +32,7 @@ test('index', function(t) {
   t.ok( ff.filter, 'filter should be there')
   t.ok( ff.find, 'find should be there')
   t.ok( ff.flatten, 'flatten should be there')
+  t.ok( ff.fv, 'fv should be there')
   t.ok( ff.gt, 'gt should be there')
   t.ok( ff.gte, 'gte should be there')
   t.ok( ff.hlookup, 'hlookup should be there')
@@ -78,6 +79,7 @@ test('index', function(t) {
   t.ok( ff.pi, 'pi should be there')
   t.ok( ff.pmt, 'pmt should be there')
   t.ok( ff.power, 'power should be there')
+  t.ok( ff.pv, 'pv should be there')
   t.ok( ff.ref, 'ref should be there')
   t.ok( ff.rept, 'rept should be there')
   t.ok( ff.replace, 'replace should be there')

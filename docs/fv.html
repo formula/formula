@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>and.js</title>
+  <title>fv.js</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" media="all" href="docco.css" />
@@ -658,7 +658,7 @@
         
           <li id="title">
               <div class="annotation">
-                  <h1>and.js</h1>
+                  <h1>fv.js</h1>
               </div>
           </li>
         
@@ -670,14 +670,13 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              <p>Copyright 2015 Peter W Moresi</p>
-
+              
             </div>
             
-            <div class="content"><div class='highlight'><pre>
-<span class="hljs-keyword">import</span> {iserror} <span class="hljs-keyword">from</span> <span class="hljs-string">'./iserror'</span>
-<span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'./error'</span>
-<span class="hljs-keyword">import</span> {isfunction} <span class="hljs-keyword">from</span> <span class="hljs-string">'./isfunction'</span></pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'./error'</span>
+<span class="hljs-keyword">import</span> {isblank} <span class="hljs-keyword">from</span> <span class="hljs-string">'./isblank'</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fv</span>(<span class="hljs-params">rate, periods, payment, value=0, type=0</span>) </span>{</pre></div></div>
             
         </li>
         
@@ -688,92 +687,27 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>AND reduces list of truthy values into true or false value</p>
+              <p>is this error code correct?</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">and</span>(<span class="hljs-params">...criteria</span>) </span>{</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-3">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-3">&#182;</a>
-              </div>
-              <p>Reduce criteria into boolean value.</p>
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">if</span> (isblank(rate)) <span class="hljs-keyword">return</span> error.na
+  <span class="hljs-keyword">if</span> (isblank(periods)) <span class="hljs-keyword">return</span> error.na
+  <span class="hljs-keyword">if</span> (isblank(payment)) <span class="hljs-keyword">return</span> error.na
 
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">return</span> criteria.reduce(
-
-    (acc, item) =&gt; {</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-4">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-4">&#182;</a>
-              </div>
-              <p>Once <code>false</code> or #error! is found always return previously value</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">if</span> (acc === <span class="hljs-literal">false</span> || iserror(acc)) <span class="hljs-keyword">return</span> acc</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-5">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-5">&#182;</a>
-              </div>
-              <p>find the value if a literal or deferred value</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">let</span> val = isfunction(item) ? item() : item</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-6">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-6">&#182;</a>
-              </div>
-              <p>return <code>#VALUE!</code> if not true, false, 1 or 0</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">if</span> (val !== <span class="hljs-literal">true</span> &amp;&amp; val !== <span class="hljs-literal">false</span> &amp;&amp; val !== <span class="hljs-number">1</span> &amp;&amp; val !== <span class="hljs-number">0</span>) {
-        <span class="hljs-keyword">return</span> error.value
-      }</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-7">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-7">&#182;</a>
-              </div>
-              <p>Return true when value is true or 1</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">return</span> val === <span class="hljs-literal">true</span> || val === <span class="hljs-number">1</span>;
-    })
-}</pre></div></div>
+  <span class="hljs-keyword">var</span> fv;
+  <span class="hljs-keyword">if</span> (rate === <span class="hljs-number">0</span>) {
+    fv = value + payment * periods;
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">var</span> term = <span class="hljs-built_in">Math</span>.pow(<span class="hljs-number">1</span> + rate, periods);
+    <span class="hljs-keyword">if</span> (type === <span class="hljs-number">1</span>) {
+      fv = value * term + payment * (<span class="hljs-number">1</span> + rate) * (term - <span class="hljs-number">1</span>) / rate;
+    } <span class="hljs-keyword">else</span> {
+      fv = value * term + payment * (term - <span class="hljs-number">1</span>) / rate;
+    }
+  }
+  <span class="hljs-keyword">return</span> -fv;
+};</pre></div></div>
             
         </li>
         
