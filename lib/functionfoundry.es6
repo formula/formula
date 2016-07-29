@@ -845,6 +845,27 @@ function find(find_text, within_text='', position=1) {
   return position === -1 ? error$2.value : position+1
 }
 
+function fv(rate, periods, payment, value=0, type=0) {
+
+  // is this error code correct?
+  if (isblank(rate)) return error$2.na
+  if (isblank(periods)) return error$2.na
+  if (isblank(payment)) return error$2.na
+
+  var fv;
+  if (rate === 0) {
+    fv = value + payment * periods;
+  } else {
+    var term = Math.pow(1 + rate, periods);
+    if (type === 1) {
+      fv = value * term + payment * (1 + rate) * (term - 1) / rate;
+    } else {
+      fv = value * term + payment * (term - 1) / rate;
+    }
+  }
+  return -fv;
+};
+
 function gt(a,b) {
   if ( isref(a) && isref(b) ) {
     return error$2.na;
@@ -1524,6 +1545,20 @@ function power(...values) {
   // Compute the power of val to the nth.
   return Math.pow(val, nth);
 }
+
+function pv(rate, periods, payment, future=0, type=0) {
+
+  // is this error code correct?
+  if (isblank(rate)) return error$2.na
+  if (isblank(periods)) return error$2.na
+  if (isblank(payment)) return error$2.na
+
+  if (rate === 0) {
+    return -payment * periods - future;
+  } else {
+    return (((1 - Math.pow(1 + rate, periods)) / rate) * payment * (1 + rate * type) - future) / Math.pow(1 + rate, periods);
+  }
+};
 
 // REPLACE returns a new string after replacing with `new_text`.
 function replace(text, position, length, new_text) {
@@ -2691,4 +2726,4 @@ Number.isNaN = Number.isNaN || function(value) {
     return value !== value;
 }
 
-export { abs, acos, add, and, average, bin2dec, branch, branch as cond, cellindex, cellindex as cellIndex, changed, choose, clean, code, column, columnletter, columnletter as columnLetter, columnnumber, concatenate, cos, date, datevalue, datevalue as dateValue, datedif, day, days360, dec2bin, diff, divide, eomonth, eq, exact, filter, find, flatten, gt, gte, guid, hlookup, hour, int, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, index2col, index2row, indirect, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, left, len, lookup, lower, lt, lte, min, minute, max, month, multiply, n, numbervalue, numbervalue as numberValue, ne, not, npv, nper, oct2dec, or, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, parsequery, parsequery as parseQuery, pi, pmt, power, ref$1 as ref, replace, rept, right, round, roundup, search, second, select, serial, sin, some, some as in, sort, split, substitute, subtract, sum, tan, tau, text, time, timevalue, trim, trunc, unique, upper, vlookup, xor, year };
+export { abs, acos, add, and, average, bin2dec, branch, branch as cond, cellindex, cellindex as cellIndex, changed, choose, clean, code, column, columnletter, columnletter as columnLetter, columnnumber, concatenate, cos, date, datevalue, datevalue as dateValue, datedif, day, days360, dec2bin, diff, divide, eomonth, eq, exact, filter, find, flatten, fv, gt, gte, guid, hlookup, hour, int, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, index2col, index2row, indirect, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, left, len, lookup, lower, lt, lte, min, minute, max, month, multiply, n, numbervalue, numbervalue as numberValue, ne, not, npv, nper, oct2dec, or, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, parsequery, parsequery as parseQuery, pi, pmt, power, pv, ref$1 as ref, replace, rept, right, round, roundup, search, second, select, serial, sin, some, some as in, sort, split, substitute, subtract, sum, tan, tau, text, time, timevalue, trim, trunc, unique, upper, vlookup, xor, year };

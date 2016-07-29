@@ -319,7 +319,7 @@ function changed(a, b) {
 function choose(index) {
 
   // Return `#NA!` if index or items are not provided.
-  if (!index || arguments.length - 1 === 0) {
+  if (!index || (arguments.length <= 1 ? 0 : arguments.length - 1) === 0) {
     return error$2.na;
   }
 
@@ -329,7 +329,7 @@ function choose(index) {
   }
 
   // Return `#VALUE!` if number of items is less than index.
-  if (arguments.length - 1 < index) {
+  if ((arguments.length <= 1 ? 0 : arguments.length - 1) < index) {
     return error$2.value;
   }
 
@@ -882,6 +882,30 @@ function find(find_text) {
   return position === -1 ? error$2.value : position + 1;
 }
 
+function fv(rate, periods, payment) {
+  var value = arguments.length <= 3 || arguments[3] === undefined ? 0 : arguments[3];
+  var type = arguments.length <= 4 || arguments[4] === undefined ? 0 : arguments[4];
+
+
+  // is this error code correct?
+  if (isblank(rate)) return error$2.na;
+  if (isblank(periods)) return error$2.na;
+  if (isblank(payment)) return error$2.na;
+
+  var fv;
+  if (rate === 0) {
+    fv = value + payment * periods;
+  } else {
+    var term = Math.pow(1 + rate, periods);
+    if (type === 1) {
+      fv = value * term + payment * (1 + rate) * (term - 1) / rate;
+    } else {
+      fv = value * term + payment * (term - 1) / rate;
+    }
+  }
+  return -fv;
+};
+
 function gt(a, b) {
   if (isref(a) && isref(b)) {
     return error$2.na;
@@ -1410,8 +1434,8 @@ function numbervalue(text, decimal_separator, group_separator) {
       return acc;
       // check if between 0 and 9 ascii codes
     } else if (item.charCodeAt(0) < 48 || item.charCodeAt(0) > 57) {
-        return error$2.value;
-      }
+      return error$2.value;
+    }
 
     return acc.concat(item);
   });
@@ -1588,6 +1612,23 @@ function power() {
   // Compute the power of val to the nth.
   return Math.pow(val, nth);
 }
+
+function pv(rate, periods, payment) {
+  var future = arguments.length <= 3 || arguments[3] === undefined ? 0 : arguments[3];
+  var type = arguments.length <= 4 || arguments[4] === undefined ? 0 : arguments[4];
+
+
+  // is this error code correct?
+  if (isblank(rate)) return error$2.na;
+  if (isblank(periods)) return error$2.na;
+  if (isblank(payment)) return error$2.na;
+
+  if (rate === 0) {
+    return -payment * periods - future;
+  } else {
+    return ((1 - Math.pow(1 + rate, periods)) / rate * payment * (1 + rate * type) - future) / Math.pow(1 + rate, periods);
+  }
+};
 
 // REPLACE returns a new string after replacing with `new_text`.
 function replace(text, position, length, new_text) {
@@ -1908,8 +1949,8 @@ FormatNumber.formatNumberWithFormat = function (rawvalue, format_string, currenc
           negativevalue = 0; // sign will provided by section, not automatically
           section = 1; // use second section for negative values
         } else {
-            section = 0; // use first for all others
-          }
+          section = 0; // use first for all others
+        }
       }
       // three sections
       else if (section == 2) {
@@ -1917,10 +1958,10 @@ FormatNumber.formatNumberWithFormat = function (rawvalue, format_string, currenc
             negativevalue = 0; // sign will provided by section, not automatically
             section = 1; // use second section for negative values
           } else if (zerovalue) {
-              section = 2; // use third section for zero values
-            } else {
-                section = 0; // use first for positive
-              }
+            section = 2; // use third section for zero values
+          } else {
+            section = 0; // use first for positive
+          }
         }
     }
 
@@ -2029,9 +2070,9 @@ FormatNumber.formatNumberWithFormat = function (rawvalue, format_string, currenc
             if (hrs > 12) hrs -= 12;
             ampmstr = operandstr.toLowerCase() == 'a/p' ? PM1 : PM$1; // "P" : "PM";
           } else {
-              if (hrs === 0) hrs = 12;
-              ampmstr = operandstr.toLowerCase() == 'a/p' ? AM1 : AM$1; // "A" : "AM";
-            }
+            if (hrs === 0) hrs = 12;
+            ampmstr = operandstr.toLowerCase() == 'a/p' ? AM1 : AM$1; // "A" : "AM";
+          }
           if (operandstr.indexOf(ampmstr) < 0) ampmstr = ampmstr.toLowerCase(); // have case match case in format
         }
         if (minOK && (operandstr == 'm' || operandstr == 'mm')) {
@@ -2040,8 +2081,8 @@ FormatNumber.formatNumberWithFormat = function (rawvalue, format_string, currenc
         if (operandstr.charAt(0) == 'h') {
           minOK = 1; // m following h or hh or [h] is minutes not months
         } else {
-            minOK = 0;
-          }
+          minOK = 0;
+        }
       } else if (op != scfn.commands.copy) {
         // copying chars can be between h and m
         minOK = 0;
@@ -2061,8 +2102,8 @@ FormatNumber.formatNumberWithFormat = function (rawvalue, format_string, currenc
         if (operandstr == 'ss') {
           minOK = 1; // m before ss is minutes not months
         } else {
-            minOK = 0;
-          }
+          minOK = 0;
+        }
       } else if (op != scfn.commands.copy) {
         // copying chars can be between ss and m
         minOK = 0;
@@ -2763,6 +2804,7 @@ exports.exact = exact;
 exports.filter = filter;
 exports.find = find;
 exports.flatten = flatten;
+exports.fv = fv;
 exports.gt = gt;
 exports.gte = gte;
 exports.guid = guid;
@@ -2841,6 +2883,7 @@ exports.parseQuery = parsequery;
 exports.pi = pi;
 exports.pmt = pmt;
 exports.power = power;
+exports.pv = pv;
 exports.ref = ref$1;
 exports.replace = replace;
 exports.rept = rept;
