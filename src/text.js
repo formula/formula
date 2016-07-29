@@ -12,6 +12,7 @@ import {
   DaysInYear,
   MillisecondsInDay,
   AllowedDays,
+  AllowedDates,
   DayNames,
   DayNames3,
   MonthNames,
@@ -74,9 +75,7 @@ FormatNumber.formatNumberWithFormat = function(rawvalue, format_string, currency
   currency_char = currency_char || DefaultCurrency;
 
   FormatNumber.parse_format_string(scfn.format_definitions, format_string); // make sure format is parsed
-  //console.log("format_string", format_string, format)
   format = scfn.format_definitions[format_string]; // Get format structure
-  //console.log("format", format)
 
   if (!format) throw 'Format not parsed error.';
 
@@ -186,8 +185,6 @@ FormatNumber.formatNumberWithFormat = function(rawvalue, format_string, currency
     negativevalue = 0; // no "-0" unless using multiple sections or General
   }
 
-  //console.log(rawvalue+'')
-
   // converted to scientific notation
   if (strvalue.indexOf('e')>=0) {
     return rawvalue+''; // Just return plain converted raw value
@@ -202,7 +199,6 @@ FormatNumber.formatNumberWithFormat = function(rawvalue, format_string, currency
 
   // there are date placeholders
   if (sectioninfo.hasdate) {
-    //console.log('hasdate')
     // bad date
     if (rawvalue < 0) {
       return '??-???-?? ??:??:??';
@@ -255,10 +251,11 @@ FormatNumber.formatNumberWithFormat = function(rawvalue, format_string, currency
       if (op==scfn.commands.date) {
         if ((operandstr.toLowerCase()=='am/pm' || operandstr.toLowerCase()=='a/p') && !ampmstr) {
           if (hrs >= 12) {
-            hrs -= 12;
+            if (hrs > 12) hrs -= 12;
             ampmstr = operandstr.toLowerCase()=='a/p' ? PM1 : PM; // "P" : "PM";
           }
           else {
+            if (hrs === 0) hrs = 12;
             ampmstr = operandstr.toLowerCase()=='a/p' ? AM1 : AM; // "A" : "AM";
           }
           if (operandstr.indexOf(ampmstr)<0)
@@ -685,7 +682,6 @@ FormatNumber.parse_format_string = function(format_defs, format_string) {
 
     // last char was part of a date placeholder
     if (indate) {
-      //console.log('foo')
       if (indate.charAt(0)==ch) { // another of the same char
         indate += ch; // accumulate it
         continue;
@@ -782,7 +778,6 @@ FormatNumber.parse_format_string = function(format_defs, format_string) {
     ampmstr = ch;
     lastwasinteger = 0;
   } else if ('dmyhHs'.indexOf(ch)>=0) {
-    //console.log('foo')
     indate = ch;
   } else {
     lastwasinteger = 0;

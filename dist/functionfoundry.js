@@ -262,16 +262,18 @@ function branch() {
 // Shared constants
 var d1900 = new Date(1900, 0, 1);
 var JulianOffset = 2415019;
+var SecondsInMinute = 60;
 var SecondsInHour = 3600;
 var SecondsInDay = 86400;
 var MilliSecondsInDay = 86400000;
+var AllowedDates = { H: "h]", M: "m]", MM: "mm]", S: "s]", SS: "ss]" };
 var DayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 var DayNames3 = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 var MonthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 var MonthNames3 = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-var AM = "AM";
+var AM$1 = "AM";
 var AM1 = "A";
-var PM = "PM";
+var PM$1 = "PM";
 var PM1 = "P";
 var τ = 6.28318530717958;
 var MaxCols = 16384;
@@ -964,6 +966,20 @@ function hlookup(needle, table) {
   return error$2.na;
 }
 
+// remove decimal part of number
+function trunc(val) {
+  return val | 0;
+}
+
+function hour(value) {
+  // remove numbers before decimal place and convert fraction to 24 hour scale.
+  return trunc((value - trunc(value)) * 24);
+}
+
+function int(value) {
+  return Math.floor(value);
+}
+
 // IFBLANK return the `value` if non-blank, otherwise it returns `value_if_blank`.
 function ifblank(value, value_if_blank) {
   return isblank(value) ? value_if_blank : value;
@@ -1308,6 +1324,15 @@ function min() {
   });
 }
 
+function minute(value) {
+  // calculate total seconds
+  var totalSeconds = (value - trunc(value)) * SecondsInDay;
+  // calculate number of seconds for hour components
+  var hourSeconds = trunc(totalSeconds / SecondsInHour) * SecondsInHour;
+  // calculate the number seconds after remove seconds from the hours and convert to minutes
+  return trunc((totalSeconds - hourSeconds) / SecondsInMinute);
+}
+
 // MAX returns the largest number from a `list`.
 function max() {
   for (var _len9 = arguments.length, list = Array(_len9), _key9 = 0; _key9 < _len9; _key9++) {
@@ -1587,6 +1612,21 @@ function search(find_text, within_text, position) {
   return error$2.value;
 }
 
+function second(value) {
+
+  // calculate total seconds
+  var totalSeconds = (value - trunc(value)) * SecondsInDay;
+
+  // calculate number of seconds for hour component
+  var hourSeconds = trunc(totalSeconds / SecondsInHour) * SecondsInHour;
+
+  // calculate number of seconds in minute component
+  var minuteSeconds = trunc((totalSeconds - hourSeconds) / SecondsInMinute) * SecondsInMinute;
+
+  // remove seconds for hours and minutes and round to nearest value
+  return Math.round(totalSeconds - hourSeconds - minuteSeconds);
+}
+
 // SIN calculates the sinine of a value.
 function sin(value) {
 
@@ -1771,9 +1811,7 @@ FormatNumber.formatNumberWithFormat = function (rawvalue, format_string, currenc
   currency_char = currency_char || DefaultCurrency;
 
   FormatNumber.parse_format_string(scfn.format_definitions, format_string); // make sure format is parsed
-  //console.log("format_string", format_string, format)
   format = scfn.format_definitions[format_string]; // Get format structure
-  //console.log("format", format)
 
   if (!format) throw 'Format not parsed error.';
 
@@ -1879,8 +1917,6 @@ FormatNumber.formatNumberWithFormat = function (rawvalue, format_string, currenc
     negativevalue = 0; // no "-0" unless using multiple sections or General
   }
 
-  //console.log(rawvalue+'')
-
   // converted to scientific notation
   if (strvalue.indexOf('e') >= 0) {
     return rawvalue + ''; // Just return plain converted raw value
@@ -1895,7 +1931,6 @@ FormatNumber.formatNumberWithFormat = function (rawvalue, format_string, currenc
 
   // there are date placeholders
   if (sectioninfo.hasdate) {
-    //console.log('hasdate')
     // bad date
     if (rawvalue < 0) {
       return '??-???-?? ??:??:??';
@@ -1950,10 +1985,11 @@ FormatNumber.formatNumberWithFormat = function (rawvalue, format_string, currenc
       if (op == scfn.commands.date) {
         if ((operandstr.toLowerCase() == 'am/pm' || operandstr.toLowerCase() == 'a/p') && !ampmstr) {
           if (hrs >= 12) {
-            hrs -= 12;
-            ampmstr = operandstr.toLowerCase() == 'a/p' ? PM1 : PM; // "P" : "PM";
+            if (hrs > 12) hrs -= 12;
+            ampmstr = operandstr.toLowerCase() == 'a/p' ? PM1 : PM$1; // "P" : "PM";
           } else {
-              ampmstr = operandstr.toLowerCase() == 'a/p' ? AM1 : AM; // "A" : "AM";
+              if (hrs === 0) hrs = 12;
+              ampmstr = operandstr.toLowerCase() == 'a/p' ? AM1 : AM$1; // "A" : "AM";
             }
           if (operandstr.indexOf(ampmstr) < 0) ampmstr = ampmstr.toLowerCase(); // have case match case in format
         }
@@ -2352,7 +2388,6 @@ FormatNumber.parse_format_string = function (format_defs, format_string) {
 
     // last char was part of a date placeholder
     if (indate) {
-      //console.log('foo')
       if (indate.charAt(0) == ch) {
         // another of the same char
         indate += ch; // accumulate it
@@ -2450,7 +2485,6 @@ FormatNumber.parse_format_string = function (format_defs, format_string) {
       ampmstr = ch;
       lastwasinteger = 0;
     } else if ('dmyhHs'.indexOf(ch) >= 0) {
-      //console.log('foo')
       indate = ch;
     } else {
       lastwasinteger = 0;
@@ -2530,6 +2564,32 @@ FormatNumber.parse_format_bracket = function (bracketstr) {
 function text(value, format, currency_char) {
   return FormatNumber.formatNumberWithFormat(value, format, currency_char);
 }
+
+function time(hour, minute, second) {
+  return +((hour * 3600 + minute * 60 + second) / SecondsInDay).toFixed(15);
+}
+
+function timevalue(time_text) {
+  // The JavaScript new Date() does not accept only time.
+  // To workaround the issue we put 1/1/1900 at the front.
+
+  var last2Characters = time_text.substr(-2).toUpperCase();
+  var date;
+
+  if (time_text.length === 7 && (last2Characters === AM || last2Characters === PM)) {
+    time_text = "1/1/1900 " + time_text.substr(0, 5) + " " + last2Characters;
+  } else if (time_text.length < 9) {
+    time_text = "1/1/1900 " + time_text;
+  }
+
+  date = new Date(time_text);
+
+  if (date instanceof Error) {
+    return date;
+  }
+
+  return (SecondsInHour * date.getHours() + SecondsInMinute * date.getMinutes() + date.getSeconds()) / SecondsInDay;
+};
 
 // TRIMS returns a string without whitespace at the beginning or end.
 function trim(text) {
@@ -2630,6 +2690,8 @@ exports.gt = gt;
 exports.gte = gte;
 exports.guid = guid;
 exports.hlookup = hlookup;
+exports.hour = hour;
+exports.int = int;
 exports.ifblank = ifblank;
 exports.ifBlank = ifblank;
 exports.ifempty = ifempty;
@@ -2680,6 +2742,7 @@ exports.lower = lower;
 exports.lt = lt;
 exports.lte = lte;
 exports.min = min;
+exports.minute = minute;
 exports.max = max;
 exports.month = month;
 exports.multiply = multiply;
@@ -2706,6 +2769,7 @@ exports.right = right;
 exports.round = round;
 exports.roundup = roundup;
 exports.search = search;
+exports.second = second;
 exports.select = select;
 exports.serial = serial;
 exports.sin = sin;
@@ -2719,7 +2783,10 @@ exports.sum = sum;
 exports.tan = tan;
 exports.tau = tau;
 exports.text = text;
+exports.time = time;
+exports.timevalue = timevalue;
 exports.trim = trim;
+exports.trunc = trunc;
 exports.unique = unique;
 exports.upper = upper;
 exports.vlookup = vlookup;

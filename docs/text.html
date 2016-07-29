@@ -215,6 +215,11 @@
                 </a>
               
                 
+                <a class="source" href="hour.html">
+                  hour.js
+                </a>
+              
+                
                 <a class="source" href="ifblank.html">
                   ifblank.js
                 </a>
@@ -252,6 +257,11 @@
                 
                 <a class="source" href="indirect.html">
                   indirect.js
+                </a>
+              
+                
+                <a class="source" href="int.html">
+                  int.js
                 </a>
               
                 
@@ -395,6 +405,11 @@
                 </a>
               
                 
+                <a class="source" href="minute.html">
+                  minute.js
+                </a>
+              
+                
                 <a class="source" href="month.html">
                   month.js
                 </a>
@@ -505,6 +520,11 @@
                 </a>
               
                 
+                <a class="source" href="second.html">
+                  second.js
+                </a>
+              
+                
                 <a class="source" href="select.html">
                   select.js
                 </a>
@@ -565,8 +585,23 @@
                 </a>
               
                 
+                <a class="source" href="time.html">
+                  time.js
+                </a>
+              
+                
+                <a class="source" href="timevalue.html">
+                  timevalue.js
+                </a>
+              
+                
                 <a class="source" href="trim.html">
                   trim.js
+                </a>
+              
+                
+                <a class="source" href="trunc.html">
+                  trunc.js
                 </a>
               
                 
@@ -632,6 +667,7 @@ based heavily on code from socialcalc</p>
   DaysInYear,
   MillisecondsInDay,
   AllowedDays,
+  AllowedDates,
   DayNames,
   DayNames3,
   MonthNames,
@@ -705,7 +741,12 @@ FormatNumber.formatNumberWithFormat = <span class="hljs-function"><span class="h
 
   currency_char = currency_char || DefaultCurrency;
 
-  FormatNumber.parse_format_string(scfn.format_definitions, format_string); <span class="hljs-comment">// make sure format is parsed</span></pre></div></div>
+  FormatNumber.parse_format_string(scfn.format_definitions, format_string); <span class="hljs-comment">// make sure format is parsed</span>
+  format = scfn.format_definitions[format_string]; <span class="hljs-comment">// Get format structure</span>
+
+  <span class="hljs-keyword">if</span> (!format) <span class="hljs-keyword">throw</span> <span class="hljs-string">'Format not parsed error.'</span>;
+
+  section = format.sectioninfo.length - <span class="hljs-number">1</span>; <span class="hljs-comment">// get number of sections - 1</span></pre></div></div>
             
         </li>
         
@@ -715,39 +756,6 @@ FormatNumber.formatNumberWithFormat = <span class="hljs-function"><span class="h
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
-              </div>
-              <p>console.log(“format_string”, format_string, format)</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>  format = scfn.format_definitions[format_string]; <span class="hljs-comment">// Get format structure</span></pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-4">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-4">&#182;</a>
-              </div>
-              <p>console.log(“format”, format)</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>
-  <span class="hljs-keyword">if</span> (!format) <span class="hljs-keyword">throw</span> <span class="hljs-string">'Format not parsed error.'</span>;
-
-  section = format.sectioninfo.length - <span class="hljs-number">1</span>; <span class="hljs-comment">// get number of sections - 1</span></pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-5">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
               <p>has comparisons - determine which section</p>
 
@@ -763,11 +771,11 @@ FormatNumber.formatNumberWithFormat = <span class="hljs-function"><span class="h
         </li>
         
         
-        <li id="section-6">
+        <li id="section-4">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-6">&#182;</a>
+                <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
               <p>at end with no match</p>
 
@@ -778,11 +786,11 @@ FormatNumber.formatNumberWithFormat = <span class="hljs-function"><span class="h
         </li>
         
         
-        <li id="section-7">
+        <li id="section-5">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-7">&#182;</a>
+                <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
               <p>if comparison but no match</p>
 
@@ -800,11 +808,11 @@ FormatNumber.formatNumberWithFormat = <span class="hljs-function"><span class="h
         </li>
         
         
-        <li id="section-8">
+        <li id="section-6">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-8">&#182;</a>
+                <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
               <p>end of section</p>
 
@@ -822,11 +830,11 @@ FormatNumber.formatNumberWithFormat = <span class="hljs-function"><span class="h
         </li>
         
         
-        <li id="section-9">
+        <li id="section-7">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-9">&#182;</a>
+                <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
               <p>found a comparison - do we meet it?</p>
 
@@ -852,11 +860,11 @@ FormatNumber.formatNumberWithFormat = <span class="hljs-function"><span class="h
         </li>
         
         
-        <li id="section-10">
+        <li id="section-8">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-10">&#182;</a>
+                <a class="pilcrow" href="#section-8">&#182;</a>
               </div>
               <p>more than one section (separated by “;”)</p>
 
@@ -867,11 +875,11 @@ FormatNumber.formatNumberWithFormat = <span class="hljs-function"><span class="h
         </li>
         
         
-        <li id="section-11">
+        <li id="section-9">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-11">&#182;</a>
+                <a class="pilcrow" href="#section-9">&#182;</a>
               </div>
               <p>two sections</p>
 
@@ -890,11 +898,11 @@ FormatNumber.formatNumberWithFormat = <span class="hljs-function"><span class="h
         </li>
         
         
-        <li id="section-12">
+        <li id="section-10">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-12">&#182;</a>
+                <a class="pilcrow" href="#section-10">&#182;</a>
               </div>
               <p>three sections</p>
 
@@ -942,11 +950,11 @@ FormatNumber.formatNumberWithFormat = <span class="hljs-function"><span class="h
         </li>
         
         
-        <li id="section-13">
+        <li id="section-11">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-13">&#182;</a>
+                <a class="pilcrow" href="#section-11">&#182;</a>
               </div>
               <p>  strvalue = value.toFixed(sectioninfo.fractiondigits); // cut down to required number of decimal digits
 and convert to string</p>
@@ -961,24 +969,11 @@ and convert to string</p>
         </li>
         
         
-        <li id="section-14">
+        <li id="section-12">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-14">&#182;</a>
-              </div>
-              <p>console.log(rawvalue+’’)</p>
-
-            </div>
-            
-        </li>
-        
-        
-        <li id="section-15">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-15">&#182;</a>
+                <a class="pilcrow" href="#section-12">&#182;</a>
               </div>
               <p>converted to scientific notation</p>
 
@@ -998,11 +993,11 @@ and convert to string</p>
         </li>
         
         
-        <li id="section-16">
+        <li id="section-13">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-16">&#182;</a>
+                <a class="pilcrow" href="#section-13">&#182;</a>
               </div>
               <p>there are date placeholders</p>
 
@@ -1013,14 +1008,13 @@ and convert to string</p>
         </li>
         
         
-        <li id="section-17">
+        <li id="section-14">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-17">&#182;</a>
+                <a class="pilcrow" href="#section-14">&#182;</a>
               </div>
-              <p>console.log(‘hasdate’)
-bad date</p>
+              <p>bad date</p>
 
             </div>
             
@@ -1075,10 +1069,11 @@ bad date</p>
       <span class="hljs-keyword">if</span> (op==scfn.commands.date) {
         <span class="hljs-keyword">if</span> ((operandstr.toLowerCase()==<span class="hljs-string">'am/pm'</span> || operandstr.toLowerCase()==<span class="hljs-string">'a/p'</span>) &amp;&amp; !ampmstr) {
           <span class="hljs-keyword">if</span> (hrs &gt;= <span class="hljs-number">12</span>) {
-            hrs -= <span class="hljs-number">12</span>;
+            <span class="hljs-keyword">if</span> (hrs &gt; <span class="hljs-number">12</span>) hrs -= <span class="hljs-number">12</span>;
             ampmstr = operandstr.toLowerCase()==<span class="hljs-string">'a/p'</span> ? PM1 : PM; <span class="hljs-comment">// "P" : "PM";</span>
           }
           <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">if</span> (hrs === <span class="hljs-number">0</span>) hrs = <span class="hljs-number">12</span>;
             ampmstr = operandstr.toLowerCase()==<span class="hljs-string">'a/p'</span> ? AM1 : AM; <span class="hljs-comment">// "A" : "AM";</span>
           }
           <span class="hljs-keyword">if</span> (operandstr.indexOf(ampmstr)&lt;<span class="hljs-number">0</span>)
@@ -1223,11 +1218,11 @@ bad date</p>
         </li>
         
         
-        <li id="section-18">
+        <li id="section-15">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-18">&#182;</a>
+                <a class="pilcrow" href="#section-15">&#182;</a>
               </div>
               <p><em>*</em> Cut down number of significant digits to avoid floating point artifacts:</p>
 
@@ -1371,11 +1366,11 @@ bad date</p>
         </li>
         
         
-        <li id="section-19">
+        <li id="section-16">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-19">&#182;</a>
+                <a class="pilcrow" href="#section-16">&#182;</a>
               </div>
               <p>end of section</p>
 
@@ -1389,11 +1384,11 @@ bad date</p>
         </li>
         
         
-        <li id="section-20">
+        <li id="section-17">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-20">&#182;</a>
+                <a class="pilcrow" href="#section-17">&#182;</a>
               </div>
               <p>ignore</p>
 
@@ -1417,11 +1412,11 @@ bad date</p>
         </li>
         
         
-        <li id="section-21">
+        <li id="section-18">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-21">&#182;</a>
+                <a class="pilcrow" href="#section-18">&#182;</a>
               </div>
               <p>console.log(result)</p>
 
@@ -1556,32 +1551,18 @@ FormatNumber.parse_format_string = <span class="hljs-function"><span class="hljs
         </li>
         
         
-        <li id="section-22">
+        <li id="section-19">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-22">&#182;</a>
+                <a class="pilcrow" href="#section-19">&#182;</a>
               </div>
               <p>last char was part of a date placeholder</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> (indate) {</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-23">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-23">&#182;</a>
-              </div>
-              <p>console.log(‘foo’)</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">if</span> (indate.charAt(<span class="hljs-number">0</span>)==ch) { <span class="hljs-comment">// another of the same char</span>
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> (indate) {
+      <span class="hljs-keyword">if</span> (indate.charAt(<span class="hljs-number">0</span>)==ch) { <span class="hljs-comment">// another of the same char</span>
         indate += ch; <span class="hljs-comment">// accumulate it</span>
         <span class="hljs-keyword">continue</span>;
       }
@@ -1676,22 +1657,8 @@ FormatNumber.parse_format_string = <span class="hljs-function"><span class="hljs
   } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ch.toLowerCase()==<span class="hljs-string">'a'</span>) {
     ampmstr = ch;
     lastwasinteger = <span class="hljs-number">0</span>;
-  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-string">'dmyhHs'</span>.indexOf(ch)&gt;=<span class="hljs-number">0</span>) {</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-24">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-24">&#182;</a>
-              </div>
-              <p>console.log(‘foo’)</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>    indate = ch;
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-string">'dmyhHs'</span>.indexOf(ch)&gt;=<span class="hljs-number">0</span>) {
+    indate = ch;
   } <span class="hljs-keyword">else</span> {
     lastwasinteger = <span class="hljs-number">0</span>;
     format.operators.push(scfn.commands.copy);
@@ -1702,11 +1669,11 @@ FormatNumber.parse_format_string = <span class="hljs-function"><span class="hljs
         </li>
         
         
-        <li id="section-25">
+        <li id="section-20">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-25">&#182;</a>
+                <a class="pilcrow" href="#section-20">&#182;</a>
               </div>
               <p>last char was part of unsaved date placeholder</p>
 
@@ -1745,11 +1712,11 @@ FormatNumber.parse_format_bracket = <span class="hljs-function"><span class="hlj
         </li>
         
         
-        <li id="section-26">
+        <li id="section-21">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-26">&#182;</a>
+                <a class="pilcrow" href="#section-21">&#182;</a>
               </div>
               <p>currency</p>
 
@@ -1774,11 +1741,11 @@ FormatNumber.parse_format_bracket = <span class="hljs-function"><span class="hlj
         </li>
         
         
-        <li id="section-27">
+        <li id="section-22">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-27">&#182;</a>
+                <a class="pilcrow" href="#section-22">&#182;</a>
               </div>
               <p>[style=…]</p>
 
