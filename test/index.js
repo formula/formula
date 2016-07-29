@@ -3,7 +3,7 @@ import * as ff from '../src/index'
 
 test('index', function(t) {
 
-  t.test( 88 )
+  t.plan( 97 )
   t.ok( ff.abs, 'abs should be there')
   t.ok( ff.acos, 'acos should be there')
   t.ok( ff.add, 'add should be there')
@@ -35,6 +35,8 @@ test('index', function(t) {
   t.ok( ff.gt, 'gt should be there')
   t.ok( ff.gte, 'gte should be there')
   t.ok( ff.hlookup, 'hlookup should be there')
+  t.ok( ff.hour, 'hour should be there')
+  t.ok( ff.int, 'int should be there')
   t.ok( ff.ifna, 'ifna should be there')
   t.ok( ff.ifblank, 'ifblank should be there')
   t.ok( ff.ifempty, 'ifempty should be there')
@@ -60,6 +62,7 @@ test('index', function(t) {
   t.ok( ff.lt, 'lt should be there')
   t.ok( ff.lte, 'lte should be there')
   t.ok( ff.min, 'min should be there')
+  t.ok( ff.minute, 'minute should be there')
   t.ok( ff.max, 'max should be there')
   t.ok( ff.multiply, 'multiply should be there')
   t.ok( ff.n, 'n should be there')
@@ -78,6 +81,7 @@ test('index', function(t) {
   t.ok( ff.replace, 'replace should be there')
   t.ok( ff.right, 'right should be there')
   t.ok( ff.search, 'search should be there')
+  t.ok( ff.second, 'second should be there')
   t.ok( ff.select, 'select should be there')
   t.ok( ff.split, 'split should be there')
   t.ok( ff.sin, 'sin should be there')
@@ -89,6 +93,9 @@ test('index', function(t) {
   t.ok( ff.tan, 'tan should be there')
   t.ok( ff.tau, 'tau should be there')
   t.ok( ff.text, 'text should be there')
+  t.ok( ff.time, 'time should be there')
+  t.ok( ff.timevalue, 'timevalue should be there')
+  t.ok( ff.trunc, 'trunc should be there')
   t.ok( ff.unique, 'unique should be there')
   t.ok( ff.upper, 'upper should be there')
   t.ok( ff.vlookup, 'vlookup should be there')
