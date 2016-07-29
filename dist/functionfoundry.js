@@ -264,9 +264,9 @@ var DayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
 var DayNames3 = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 var MonthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 var MonthNames3 = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-var AM$1 = "AM";
+var AM = "AM";
 var AM1 = "A";
-var PM$1 = "PM";
+var PM = "PM";
 var PM1 = "P";
 var τ = 6.28318530717958;
 var MaxCols = 16384;
@@ -811,6 +811,20 @@ function divide() {
   return a / b;
 }
 
+function edate(start_date, months) {
+  start_date = parsedate(start_date);
+
+  if (start_date instanceof Error) {
+    return start_date;
+  }
+  if (isNaN(months)) {
+    return error.value;
+  }
+  months = parseInt(months, 10);
+  start_date.setMonth(start_date.getMonth() + months);
+  return serial(start_date);
+};
+
 // DIVIDE calculates the product of two numbers.
 function eomonth(start_date, months) {
   start_date = parsedate(start_date);
@@ -1168,6 +1182,12 @@ function iseven(value) {
   return !(Math.floor(Math.abs(value)) & 1);
 }
 
+function isleapyear(val) {
+  var date = parsedate(val);
+  var year = date.getFullYear();
+  return year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
+}
+
 // ISNA returns true when the value is `#NA!`
 function isna(value) {
   return value === error$2.na;
@@ -1179,6 +1199,19 @@ function isna(value) {
 function isodd(value) {
   return !!(Math.floor(Math.abs(value)) & 1);
 }
+
+function isoweeknum(date) {
+  date = parsedate(date);
+
+  if (date instanceof Error) {
+    return date;
+  }
+
+  date.setHours(0, 0, 0);
+  date.setDate(date.getDate() + 4 - (date.getDay() || 7));
+  var yearStart = new Date(date.getFullYear(), 0, 1);
+  return Math.ceil(((date - yearStart) / MilliSecondsInDay + 1) / 7);
+};
 
 // Copyright 2015 Peter W Moresi
 
@@ -1450,6 +1483,24 @@ function ne(a, b) {
 function not(value) {
   return value !== true && value !== false && value !== 1 && value !== 0 ? error$2.value : !value;
 }
+
+function timevalue(time_text) {
+  // The JavaScript new Date() does not accept only time.
+  // To workaround the issue we put 1/1/1900 at the front.
+
+  var date = new Date("1/1/1900 " + time_text);
+
+  if (date instanceof Error) {
+    return date;
+  }
+
+  return (SecondsInHour * date.getHours() + SecondsInMinute * date.getMinutes() + date.getSeconds()) / SecondsInDay;
+};
+
+function now() {
+  var d = new Date();
+  return datevalue(d.toLocaleDateString()) + timevalue(d.toLocaleTimeString());
+};
 
 function npv(rate) {
   rate = rate * 1;
@@ -2068,10 +2119,10 @@ FormatNumber.formatNumberWithFormat = function (rawvalue, format_string, currenc
         if ((operandstr.toLowerCase() == 'am/pm' || operandstr.toLowerCase() == 'a/p') && !ampmstr) {
           if (hrs >= 12) {
             if (hrs > 12) hrs -= 12;
-            ampmstr = operandstr.toLowerCase() == 'a/p' ? PM1 : PM$1; // "P" : "PM";
+            ampmstr = operandstr.toLowerCase() == 'a/p' ? PM1 : PM; // "P" : "PM";
           } else {
             if (hrs === 0) hrs = 12;
-            ampmstr = operandstr.toLowerCase() == 'a/p' ? AM1 : AM$1; // "A" : "AM";
+            ampmstr = operandstr.toLowerCase() == 'a/p' ? AM1 : AM; // "A" : "AM";
           }
           if (operandstr.indexOf(ampmstr) < 0) ampmstr = ampmstr.toLowerCase(); // have case match case in format
         }
@@ -2651,26 +2702,9 @@ function time(hour, minute, second) {
   return +((hour * 3600 + minute * 60 + second) / SecondsInDay).toFixed(15);
 }
 
-function timevalue(time_text) {
-  // The JavaScript new Date() does not accept only time.
-  // To workaround the issue we put 1/1/1900 at the front.
-
-  var last2Characters = time_text.substr(-2).toUpperCase();
-  var date;
-
-  if (time_text.length === 7 && (last2Characters === AM || last2Characters === PM)) {
-    time_text = "1/1/1900 " + time_text.substr(0, 5) + " " + last2Characters;
-  } else if (time_text.length < 9) {
-    time_text = "1/1/1900 " + time_text;
-  }
-
-  date = new Date(time_text);
-
-  if (date instanceof Error) {
-    return date;
-  }
-
-  return (SecondsInHour * date.getHours() + SecondsInMinute * date.getMinutes() + date.getSeconds()) / SecondsInDay;
+function today() {
+  var d = new Date();
+  return datevalue(d.toLocaleDateString());
 };
 
 // TRIMS returns a string without whitespace at the beginning or end.
@@ -2732,6 +2766,78 @@ function xor() {
 function year(d) {
   return parsedate(d).getFullYear();
 }
+
+function yearfrac(start_date, end_date, basis) {
+  start_date = parsedate(start_date);
+  if (start_date instanceof Error) {
+    return start_date;
+  }
+  end_date = parsedate(end_date);
+  if (end_date instanceof Error) {
+    return end_date;
+  }
+
+  basis = basis || 0;
+  var sd = start_date.getDate();
+  var sm = start_date.getMonth() + 1;
+  var sy = start_date.getFullYear();
+  var ed = end_date.getDate();
+  var em = end_date.getMonth() + 1;
+  var ey = end_date.getFullYear();
+
+  function isLeapYear(year) {
+    return year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
+  }
+  function daysBetween(a, b) {
+    return serial(b) - serial(a);
+  }
+
+  switch (basis) {
+    case 0:
+      // US (NASD) 30/360
+      if (sd === 31 && ed === 31) {
+        sd = 30;
+        ed = 30;
+      } else if (sd === 31) {
+        sd = 30;
+      } else if (sd === 30 && ed === 31) {
+        ed = 30;
+      }
+      return (ed + em * 30 + ey * 360 - (sd + sm * 30 + sy * 360)) / 360;
+    case 1:
+      // Actual/actual
+      var feb29Between = function feb29Between(date1, date2) {
+        var year1 = date1.getFullYear();
+        var mar1year1 = new Date(year1, 2, 1);
+        if (isLeapYear(year1) && date1 < mar1year1 && date2 >= mar1year1) {
+          return true;
+        }
+        var year2 = date2.getFullYear();
+        var mar1year2 = new Date(year2, 2, 1);
+        return isLeapYear(year2) && date2 >= mar1year2 && date1 < mar1year2;
+      };
+      var ylength = 365;
+      if (sy === ey || sy + 1 === ey && (sm > em || sm === em && sd >= ed)) {
+        if (sy === ey && isLeapYear(sy) || feb29Between(start_date, end_date) || em === 1 && ed === 29) {
+          ylength = 366;
+        }
+        return daysBetween(start_date, end_date) / ylength;
+      }
+      var years = ey - sy + 1;
+      var days = (new Date(ey + 1, 0, 1) - new Date(sy, 0, 1)) / 1000 / 60 / 60 / 24;
+      var average = days / years;
+      return daysBetween(start_date, end_date) / average;
+    case 2:
+      // Actual/360
+      return daysBetween(start_date, end_date) / 360;
+    case 3:
+      // Actual/365
+      return daysBetween(start_date, end_date) / 365;
+    case 4:
+      // European 30/360
+      return (ed + em * 30 + ey * 360 - (sd + sm * 30 + sy * 360)) / 360;
+  }
+};
 
 // Copyright 2015 Peter W Moresi
 
@@ -2798,6 +2904,7 @@ exports.days360 = days360;
 exports.dec2bin = dec2bin;
 exports.diff = diff;
 exports.divide = divide;
+exports.edate = edate;
 exports.eomonth = eomonth;
 exports.eq = eq;
 exports.exact = exact;
@@ -2842,12 +2949,16 @@ exports.iseven = iseven;
 exports.isEven = iseven;
 exports.isfunction = isfunction;
 exports.isFunction = isfunction;
+exports.isleapyear = isleapyear;
+exports.isLeapYear = isleapyear;
 exports.isna = isna;
 exports.isNA = isna;
 exports.isnumber = isnumber;
 exports.isNumber = isnumber;
 exports.isodd = isodd;
 exports.isOdd = isodd;
+exports.isoweeknum = isoweeknum;
+exports.isoWeekNum = isoweeknum;
 exports.isref = isref;
 exports.isRef = isref;
 exports.istext = istext;
@@ -2870,6 +2981,7 @@ exports.numbervalue = numbervalue;
 exports.numberValue = numbervalue;
 exports.ne = ne;
 exports.not = not;
+exports.now = now;
 exports.npv = npv;
 exports.nper = nper;
 exports.oct2dec = oct2dec;
@@ -2907,6 +3019,7 @@ exports.tau = tau;
 exports.text = text;
 exports.time = time;
 exports.timevalue = timevalue;
+exports.today = today;
 exports.trim = trim;
 exports.trunc = trunc;
 exports.unique = unique;
@@ -2914,6 +3027,7 @@ exports.upper = upper;
 exports.vlookup = vlookup;
 exports.xor = xor;
 exports.year = year;
+exports.yearfrac = yearfrac;
 
 
 },{}]},{},[1]);

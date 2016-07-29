@@ -160,6 +160,11 @@
                 </a>
               
                 
+                <a class="source" href="edate.html">
+                  edate.js
+                </a>
+              
+                
                 <a class="source" href="eomonth.html">
                   eomonth.js
                 </a>
@@ -325,6 +330,11 @@
                 </a>
               
                 
+                <a class="source" href="isleapyear.html">
+                  isleapyear.js
+                </a>
+              
+                
                 <a class="source" href="isna.html">
                   isna.js
                 </a>
@@ -342,6 +352,11 @@
                 
                 <a class="source" href="isodd.html">
                   isodd.js
+                </a>
+              
+                
+                <a class="source" href="isoweeknum.html">
+                  isoweeknum.js
                 </a>
               
                 
@@ -437,6 +452,11 @@
                 
                 <a class="source" href="not.html">
                   not.js
+                </a>
+              
+                
+                <a class="source" href="now.html">
+                  now.js
                 </a>
               
                 
@@ -615,6 +635,11 @@
                 </a>
               
                 
+                <a class="source" href="today.html">
+                  today.js
+                </a>
+              
+                
                 <a class="source" href="trim.html">
                   trim.js
                 </a>
@@ -647,6 +672,11 @@
                 
                 <a class="source" href="year.html">
                   year.js
+                </a>
+              
+                
+                <a class="source" href="yearfrac.html">
+                  yearfrac.js
                 </a>
               
             </div>
@@ -692,16 +722,7 @@ To workaround the issue we put 1/1/1900 at the front.</p>
             </div>
             
             <div class="content"><div class='highlight'><pre>
-    <span class="hljs-keyword">var</span> last2Characters = time_text.substr(<span class="hljs-number">-2</span>).toUpperCase();
-    <span class="hljs-keyword">var</span> date;
-
-    <span class="hljs-keyword">if</span> (time_text.length === <span class="hljs-number">7</span> &amp;&amp; (last2Characters === AM || last2Characters === PM)) {
-        time_text = <span class="hljs-string">"1/1/1900 "</span> + time_text.substr(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>) + <span class="hljs-string">" "</span> + last2Characters;
-    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (time_text.length &lt; <span class="hljs-number">9</span>) {
-        time_text = <span class="hljs-string">"1/1/1900 "</span> + time_text;
-    }
-
-    date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(time_text);
+    <span class="hljs-keyword">var</span> date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">"1/1/1900 "</span> + time_text);
 
     <span class="hljs-keyword">if</span> (date <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Error</span>) {
         <span class="hljs-keyword">return</span> date;
