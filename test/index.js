@@ -3,7 +3,7 @@ import * as ff from '../src/index'
 
 test('index', function(t) {
 
-  t.test( 87 )
+  t.test( 88 )
   t.ok( ff.abs, 'abs should be there')
   t.ok( ff.acos, 'acos should be there')
   t.ok( ff.add, 'add should be there')
@@ -69,6 +69,7 @@ test('index', function(t) {
   t.ok( ff.or, 'or should be there')
   t.ok( ff.parsebool, 'parsebool should be there')
   t.ok( ff.parsedate, 'parsedate should be there')
+  t.ok( ff.parsequery, 'parsequery should be there')
   t.ok( ff.pi, 'pi should be there')
   t.ok( ff.pmt, 'pmt should be there')
   t.ok( ff.power, 'power should be there')
