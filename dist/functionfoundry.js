@@ -1,12 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 if (window) {
-
-  // Polyfill Number.isNaN
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
-  Number.isNaN = Number.isNaN || function(value) {
-      return value !== value;
-  }
-
   window.FunctionFoundry = require('./lib/functionfoundry')
 }
 
@@ -1434,6 +1427,54 @@ function not(value) {
   return value !== true && value !== false && value !== 1 && value !== 0 ? error$2.value : !value;
 }
 
+function npv(rate) {
+  rate = rate * 1;
+  var factor = 1,
+      sum = 0;
+
+  for (var _len11 = arguments.length, values = Array(_len11 > 1 ? _len11 - 1 : 0), _key11 = 1; _key11 < _len11; _key11++) {
+    values[_key11 - 1] = arguments[_key11];
+  }
+
+  for (var i = 0; i < values.length; i++) {
+    var factor = factor * (1 + rate);
+    sum += values[i] / factor;
+  }
+
+  return sum;
+}
+
+function nper(rate, pmt, pv, fv, type) {
+  var log, result;
+  rate = parseFloat(rate || 0);
+  pmt = parseFloat(pmt || 0);
+  pv = parseFloat(pv || 0);
+  fv = fv || 0;
+  type = type || 0;
+
+  log = function log(prim) {
+    if (Number.isNaN(prim)) {
+      return Math.log(0);
+    }
+    var num = Math.log(prim);
+    return num;
+  };
+
+  if (rate == 0.0) {
+    result = -(pv + fv) / pmt;
+  } else if (type > 0.0) {
+    result = log(-(rate * fv - pmt * (1.0 + rate)) / (rate * pv + pmt * (1.0 + rate))) / log(1.0 + rate);
+  } else {
+    result = log(-(rate * fv - pmt) / (rate * pv + pmt)) / log(1.0 + rate);
+  }
+
+  if (Number.isNaN(result)) {
+    result = 0;
+  }
+
+  return result;
+}
+
 // OCT2DEC converts a octal value into a decimal value.
 function oct2dec(octalNumber) {
   // Credits: Based on implementation found in https://gist.github.com/ghalimi/4525876#file-oct2dec-js
@@ -1465,8 +1506,8 @@ function oct2dec(octalNumber) {
 
 // OR returns true when any of the criter is true or 1.
 function or() {
-  for (var _len11 = arguments.length, criteria = Array(_len11), _key11 = 0; _key11 < _len11; _key11++) {
-    criteria[_key11] = arguments[_key11];
+  for (var _len12 = arguments.length, criteria = Array(_len12), _key12 = 0; _key12 < _len12; _key12++) {
+    criteria[_key12] = arguments[_key12];
   }
 
   return criteria.reduce(function (acc, item) {
@@ -1525,8 +1566,8 @@ function pmt(rate, periods, present) {
 
 // POWER computes the power of a value and nth degree.
 function power() {
-  for (var _len12 = arguments.length, values = Array(_len12), _key12 = 0; _key12 < _len12; _key12++) {
-    values[_key12] = arguments[_key12];
+  for (var _len13 = arguments.length, values = Array(_len13), _key13 = 0; _key13 < _len13; _key13++) {
+    values[_key13] = arguments[_key13];
   }
 
   // Return `#NA!` if 2 arguments are not provided.
@@ -1669,8 +1710,8 @@ function some(needle, list) {
 // interprets the strings as pairs. The odd items are fields and the
 // even ones are direction (ASC|DESC).
 function sort(ref) {
-  for (var _len13 = arguments.length, criteria = Array(_len13 > 1 ? _len13 - 1 : 0), _key13 = 1; _key13 < _len13; _key13++) {
-    criteria[_key13 - 1] = arguments[_key13];
+  for (var _len14 = arguments.length, criteria = Array(_len14 > 1 ? _len14 - 1 : 0), _key14 = 1; _key14 < _len14; _key14++) {
+    criteria[_key14 - 1] = arguments[_key14];
   }
 
   // reduce the criteria array into a function
@@ -1729,8 +1770,8 @@ function substitute(text, old_text, new_text, occurrence) {
 
 // SUBTRACT calculates the difference of two numbers.
 function subtract() {
-  for (var _len14 = arguments.length, values = Array(_len14), _key14 = 0; _key14 < _len14; _key14++) {
-    values[_key14] = arguments[_key14];
+  for (var _len15 = arguments.length, values = Array(_len15), _key15 = 0; _key15 < _len15; _key15++) {
+    values[_key15] = arguments[_key15];
   }
 
   // Return `#NA!` if 2 arguments are not provided.
@@ -2634,8 +2675,8 @@ function vlookup(needle) {
 
 // XOR computes the exclusive or for a given set of `values`.
 function xor() {
-  for (var _len15 = arguments.length, values = Array(_len15), _key15 = 0; _key15 < _len15; _key15++) {
-    values[_key15] = arguments[_key15];
+  for (var _len16 = arguments.length, values = Array(_len16), _key16 = 0; _key16 < _len16; _key16++) {
+    values[_key16] = arguments[_key16];
   }
 
   return !!(flatten(values).reduce(function (a, b) {
@@ -2650,6 +2691,42 @@ function xor() {
 function year(d) {
   return parsedate(d).getFullYear();
 }
+
+// Copyright 2015 Peter W Moresi
+
+// FunctionFoundry is a collection of pure functions.
+//
+// The functions accept input and produce output. They do not create side effects and are therefore composable.
+//
+// The library is organized several core compatibilities:
+//
+// 1. Logical functions
+//   - and, or, nor, eq, ne, gt, gte, lt, lte, branch and more...
+//
+// 2. Math functions
+//   - add, subtract, multiply, divide, sin, cos, ect...
+//
+// 3. Text manipulation
+//   - text, numbervalue, split and more...
+//
+// 4. Lookup and reference/
+//   - lookup, vlookup, hlookup and more...
+//
+// 5. Date manipulation
+//   - Functions withsSupport for spreadsheet serial numbers like date, datedif and more...
+//
+// 6. Aggregation
+//   - sum, average, min, max
+//
+// The library currently is approaching 100 functions. The long term goal is to support the ~300 functions supported by modern spreadsheet software.
+//
+// The test suite includes over ~600 assertions to ensure high quality and provide usage examples.
+
+// Polyfill Number.isNaN
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
+Number.isNaN = Number.isNaN || function (value) {
+  return value !== value;
+};
 
 exports.abs = abs;
 exports.acos = acos;
@@ -2751,6 +2828,8 @@ exports.numbervalue = numbervalue;
 exports.numberValue = numbervalue;
 exports.ne = ne;
 exports.not = not;
+exports.npv = npv;
+exports.nper = nper;
 exports.oct2dec = oct2dec;
 exports.or = or;
 exports.parsebool = parsebool;

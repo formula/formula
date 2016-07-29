@@ -1377,6 +1377,51 @@ function not(value) {
   !value
 }
 
+function npv(rate, ...values) {
+    rate = rate * 1;
+    var factor = 1,
+        sum = 0;
+
+    for(var i = 0; i < values.length; i++) {
+        var factor = factor * (1 + rate);
+        sum += values[i] / factor;
+    }
+
+    return sum;
+}
+
+function nper(rate, pmt, pv, fv, type) {
+  var log,
+  result;
+  rate = parseFloat(rate || 0);
+  pmt = parseFloat(pmt || 0);
+  pv = parseFloat(pv || 0);
+  fv = (fv || 0);
+  type = (type || 0);
+
+  log = function(prim) {
+    if (Number.isNaN(prim)) {
+      return Math.log(0);
+    }
+    var num = Math.log(prim);
+    return num;
+  }
+
+  if (rate == 0.0) {
+    result = (-(pv + fv)/pmt);
+  } else if (type > 0.0) {
+    result = (log(-(rate*fv-pmt*(1.0+rate))/(rate*pv+pmt*(1.0+rate)))/(log(1.0+rate)));
+  } else {
+    result = (log(-(rate*fv-pmt)/(rate*pv+pmt))/(log(1.0+rate)));
+  }
+
+  if (Number.isNaN(result)) {
+    result = 0;
+  }
+
+  return result;
+}
+
 // OCT2DEC converts a octal value into a decimal value.
 function oct2dec(octalNumber) {
   // Credits: Based on implementation found in https://gist.github.com/ghalimi/4525876#file-oct2dec-js
@@ -2610,4 +2655,40 @@ function year(d) {
   return parsedate(d).getFullYear()
 }
 
-export { abs, acos, add, and, average, bin2dec, branch, branch as cond, cellindex, cellindex as cellIndex, changed, choose, clean, code, column, columnletter, columnletter as columnLetter, columnnumber, concatenate, cos, date, datevalue, datevalue as dateValue, datedif, day, days360, dec2bin, diff, divide, eomonth, eq, exact, filter, find, flatten, gt, gte, guid, hlookup, hour, int, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, index2col, index2row, indirect, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, left, len, lookup, lower, lt, lte, min, minute, max, month, multiply, n, numbervalue, numbervalue as numberValue, ne, not, oct2dec, or, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, parsequery, parsequery as parseQuery, pi, pmt, power, ref$1 as ref, replace, rept, right, round, roundup, search, second, select, serial, sin, some, some as in, sort, split, substitute, subtract, sum, tan, tau, text, time, timevalue, trim, trunc, unique, upper, vlookup, xor, year };
+// Copyright 2015 Peter W Moresi
+
+// FunctionFoundry is a collection of pure functions.
+//
+// The functions accept input and produce output. They do not create side effects and are therefore composable.
+//
+// The library is organized several core compatibilities:
+//
+// 1. Logical functions
+//   - and, or, nor, eq, ne, gt, gte, lt, lte, branch and more...
+//
+// 2. Math functions
+//   - add, subtract, multiply, divide, sin, cos, ect...
+//
+// 3. Text manipulation
+//   - text, numbervalue, split and more...
+//
+// 4. Lookup and reference/
+//   - lookup, vlookup, hlookup and more...
+//
+// 5. Date manipulation
+//   - Functions withsSupport for spreadsheet serial numbers like date, datedif and more...
+//
+// 6. Aggregation
+//   - sum, average, min, max
+//
+// The library currently is approaching 100 functions. The long term goal is to support the ~300 functions supported by modern spreadsheet software.
+//
+// The test suite includes over ~600 assertions to ensure high quality and provide usage examples.
+
+// Polyfill Number.isNaN
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
+Number.isNaN = Number.isNaN || function(value) {
+    return value !== value;
+}
+
+export { abs, acos, add, and, average, bin2dec, branch, branch as cond, cellindex, cellindex as cellIndex, changed, choose, clean, code, column, columnletter, columnletter as columnLetter, columnnumber, concatenate, cos, date, datevalue, datevalue as dateValue, datedif, day, days360, dec2bin, diff, divide, eomonth, eq, exact, filter, find, flatten, gt, gte, guid, hlookup, hour, int, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, index2col, index2row, indirect, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, left, len, lookup, lower, lt, lte, min, minute, max, month, multiply, n, numbervalue, numbervalue as numberValue, ne, not, npv, nper, oct2dec, or, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, parsequery, parsequery as parseQuery, pi, pmt, power, ref$1 as ref, replace, rept, right, round, roundup, search, second, select, serial, sin, some, some as in, sort, split, substitute, subtract, sum, tan, tau, text, time, timevalue, trim, trunc, unique, upper, vlookup, xor, year };

@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>and.js</title>
+  <title>nper.js</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" media="all" href="docco.css" />
@@ -648,7 +648,7 @@
         
           <li id="title">
               <div class="annotation">
-                  <h1>and.js</h1>
+                  <h1>nper.js</h1>
               </div>
           </li>
         
@@ -660,109 +660,39 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              <p>Copyright 2015 Peter W Moresi</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>
-<span class="hljs-keyword">import</span> {iserror} <span class="hljs-keyword">from</span> <span class="hljs-string">'./iserror'</span>
-<span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'./error'</span>
-<span class="hljs-keyword">import</span> {isfunction} <span class="hljs-keyword">from</span> <span class="hljs-string">'./isfunction'</span></pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-2">
-            <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-2">&#182;</a>
-              </div>
-              <p>AND reduces list of truthy values into true or false value</p>
-
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">and</span>(<span class="hljs-params">...criteria</span>) </span>{</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-3">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-3">&#182;</a>
-              </div>
-              <p>Reduce criteria into boolean value.</p>
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">nper</span>(<span class="hljs-params">rate, pmt, pv, fv, type</span>) </span>{
+  <span class="hljs-keyword">var</span> log,
+  result;
+  rate = <span class="hljs-built_in">parseFloat</span>(rate || <span class="hljs-number">0</span>);
+  pmt = <span class="hljs-built_in">parseFloat</span>(pmt || <span class="hljs-number">0</span>);
+  pv = <span class="hljs-built_in">parseFloat</span>(pv || <span class="hljs-number">0</span>);
+  fv = (fv || <span class="hljs-number">0</span>);
+  type = (type || <span class="hljs-number">0</span>);
 
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">return</span> criteria.reduce(
+  log = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">prim</span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Number</span>.isNaN(prim)) {
+      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.log(<span class="hljs-number">0</span>);
+    }
+    <span class="hljs-keyword">var</span> num = <span class="hljs-built_in">Math</span>.log(prim);
+    <span class="hljs-keyword">return</span> num;
+  }
 
-    (acc, item) =&gt; {</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-4">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-4">&#182;</a>
-              </div>
-              <p>Once <code>false</code> or #error! is found always return previously value</p>
+  <span class="hljs-keyword">if</span> (rate == <span class="hljs-number">0.0</span>) {
+    result = (-(pv + fv)/pmt);
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (type &gt; <span class="hljs-number">0.0</span>) {
+    result = (log(-(rate*fv-pmt*(<span class="hljs-number">1.0</span>+rate))/(rate*pv+pmt*(<span class="hljs-number">1.0</span>+rate)))/(log(<span class="hljs-number">1.0</span>+rate)));
+  } <span class="hljs-keyword">else</span> {
+    result = (log(-(rate*fv-pmt)/(rate*pv+pmt))/(log(<span class="hljs-number">1.0</span>+rate)));
+  }
 
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">if</span> (acc === <span class="hljs-literal">false</span> || iserror(acc)) <span class="hljs-keyword">return</span> acc</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-5">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-5">&#182;</a>
-              </div>
-              <p>find the value if a literal or deferred value</p>
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Number</span>.isNaN(result)) {
+    result = <span class="hljs-number">0</span>;
+  }
 
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">let</span> val = isfunction(item) ? item() : item</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-6">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-6">&#182;</a>
-              </div>
-              <p>return <code>#VALUE!</code> if not true, false, 1 or 0</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">if</span> (val !== <span class="hljs-literal">true</span> &amp;&amp; val !== <span class="hljs-literal">false</span> &amp;&amp; val !== <span class="hljs-number">1</span> &amp;&amp; val !== <span class="hljs-number">0</span>) {
-        <span class="hljs-keyword">return</span> error.value
-      }</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-7">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-7">&#182;</a>
-              </div>
-              <p>Return true when value is true or 1</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">return</span> val === <span class="hljs-literal">true</span> || val === <span class="hljs-number">1</span>;
-    })
+  <span class="hljs-keyword">return</span> result;
 }</pre></div></div>
             
         </li>

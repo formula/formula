@@ -435,6 +435,16 @@
                 </a>
               
                 
+                <a class="source" href="nper.html">
+                  nper.js
+                </a>
+              
+                
+                <a class="source" href="npv.html">
+                  npv.js
+                </a>
+              
+                
                 <a class="source" href="numbervalue.html">
                   numbervalue.js
                 </a>
@@ -703,7 +713,25 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> {abs} <span class="hljs-keyword">from</span> <span class="hljs-string">'./abs'</span>
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Polyfill Number.isNaN
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN</a></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">Number</span>.isNaN = <span class="hljs-built_in">Number</span>.isNaN || <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{
+    <span class="hljs-keyword">return</span> value !== value;
+}
+
+<span class="hljs-keyword">export</span> {abs} <span class="hljs-keyword">from</span> <span class="hljs-string">'./abs'</span>
 <span class="hljs-keyword">export</span> {acos} <span class="hljs-keyword">from</span> <span class="hljs-string">'./acos'</span>
 <span class="hljs-keyword">export</span> {add} <span class="hljs-keyword">from</span> <span class="hljs-string">'./add'</span>
 <span class="hljs-keyword">export</span> {and} <span class="hljs-keyword">from</span> <span class="hljs-string">'./and'</span>
@@ -777,6 +805,8 @@
 <span class="hljs-keyword">export</span> {numbervalue, numbervalue <span class="hljs-keyword">as</span> numberValue} <span class="hljs-keyword">from</span> <span class="hljs-string">'./numbervalue'</span>
 <span class="hljs-keyword">export</span> {ne} <span class="hljs-keyword">from</span> <span class="hljs-string">'./ne'</span>
 <span class="hljs-keyword">export</span> {not} <span class="hljs-keyword">from</span> <span class="hljs-string">'./not'</span>
+<span class="hljs-keyword">export</span> {npv} <span class="hljs-keyword">from</span> <span class="hljs-string">'./npv'</span>
+<span class="hljs-keyword">export</span> {nper} <span class="hljs-keyword">from</span> <span class="hljs-string">'./nper'</span>
 <span class="hljs-keyword">export</span> {oct2dec} <span class="hljs-keyword">from</span> <span class="hljs-string">'./oct2dec'</span>
 <span class="hljs-keyword">export</span> {or} <span class="hljs-keyword">from</span> <span class="hljs-string">'./or'</span>
 <span class="hljs-keyword">export</span> {parsebool, parsebool <span class="hljs-keyword">as</span> parseBool} <span class="hljs-keyword">from</span> <span class="hljs-string">'./parsebool'</span>
