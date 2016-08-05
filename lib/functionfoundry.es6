@@ -1214,6 +1214,18 @@ function isurl(str){
   return pattern.test(str);
 }
 
+// combine a array of strings/numbers into a single string
+function join(list, delim=', ') {
+
+  // all values must be string or number
+  if (list.some(d => typeof d !== 'string' && typeof d !== 'number')) {
+    return error$2.value
+  }
+
+  // defer to JS implementation
+  return list.join(delim)
+}
+
 // N converts a `value` to a number. It supports numbers, true, false and dates.
 function n(value) {
 
@@ -1687,7 +1699,7 @@ function pi() {
 // pluck a property from a list of objects
 function pluck(prop, list) {
   if (!isarray(list)) {
-    return error.na
+    return error$2.na
   }
 
   return list.map(d => d[prop])
@@ -2969,4 +2981,4 @@ Number.isNaN = Number.isNaN || function(value) {
     return value !== value;
 }
 
-export { abs, acos, add, and, average, bin2dec, branch, branch as cond, cellindex, cellindex as cellIndex, changed, choose, clean, code, column, columnletter, columnletter as columnLetter, columnnumber, concatenate, cos, date, datevalue, datevalue as dateValue, datedif, day, days360, dec2bin, diff, divide, edate, eomonth, eq, exact, filter, find, flatten, fv, get, gt, gte, guid, hlookup, hour, int, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, index, index2col, index2row, indirect, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isleapyear, isleapyear as isLeapYear, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isoweeknum, isoweeknum as isoWeekNum, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, left, len, lookup, lower, lt, lte, match, min, minute, map, max, month, multiply, n, numbers, numbervalue, numbervalue as numberValue, ne, not, now, npv, nper, oct2dec, or, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, parsequery, parsequery as parseQuery, pi, pluck, pmt, power, pv, reduce, ref$1 as ref, replace, rept, right, round, roundup, search, second, select, serial, sin, some, some as in, sort, split, substitute, subtract, sum, tan, tau, text, time, timevalue, today, trim, trunc, unique, upper, vlookup, xor, year, yearfrac };
+export { abs, acos, add, and, average, bin2dec, branch, branch as cond, cellindex, cellindex as cellIndex, changed, choose, clean, code, column, columnletter, columnletter as columnLetter, columnnumber, concatenate, cos, date, datevalue, datevalue as dateValue, datedif, day, days360, dec2bin, diff, divide, edate, eomonth, eq, exact, filter, find, flatten, fv, get, gt, gte, guid, hlookup, hour, int, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, index, index2col, index2row, indirect, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isleapyear, isleapyear as isLeapYear, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isoweeknum, isoweeknum as isoWeekNum, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, join, left, len, lookup, lower, lt, lte, match, min, minute, map, max, month, multiply, n, numbers, numbervalue, numbervalue as numberValue, ne, not, now, npv, nper, oct2dec, or, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, parsequery, parsequery as parseQuery, pi, pluck, pmt, power, pv, reduce, ref$1 as ref, replace, rept, right, round, roundup, search, second, select, serial, sin, some, some as in, sort, split, substitute, subtract, sum, tan, tau, text, time, timevalue, today, trim, trunc, unique, upper, vlookup, xor, year, yearfrac };
