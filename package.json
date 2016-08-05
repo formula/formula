@@ -1,7 +1,7 @@
 {
   "name": "functionfoundry",
-  "version": "0.10.11",
-  "description": "Modern JavaScript inspired by the spreadsheet library",
+  "version": "0.10.15",
+  "description": "JavaScript functions like spreadsheet",
   "main": "lib/functionfoundry.js",
   "jsnext:main": "lib/functionfoundry.es6",
   "scripts": {
@@ -10,7 +10,7 @@
     "test:docs": "docco --output test_docs test/*.js",
     "clean": "rm -rf lib && rm -rf dist && mkdir lib && mkdir dist",
     "build:dist": "browserify ./browserify.js > dist/functionfoundry.js && browserify -g uglifyify ./browserify.js > dist/functionfoundry.min.js",
-    "build:jsnext": "rollup ./src/index.js > lib/functionfoundry.es6",
+    "build:jsnext": "rollup ./src/_index.js > lib/functionfoundry.es6",
     "build:js": "babel lib/functionfoundry.es6 > lib/functionfoundry.js",
     "build": "npm run clean && npm run build:jsnext && npm run build:js && npm run build:dist && npm run docs"
   },
