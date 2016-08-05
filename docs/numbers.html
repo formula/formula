@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>lookup.js</title>
+  <title>numbers.js</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" media="all" href="docco.css" />
@@ -698,7 +698,7 @@
         
           <li id="title">
               <div class="annotation">
-                  <h1>lookup.js</h1>
+                  <h1>numbers.js</h1>
               </div>
           </li>
         
@@ -710,52 +710,17 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              <p>Copyright 2015 Peter W Moresi</p>
-
-            </div>
-            
-        </li>
-        
-        
-        <li id="section-2">
-            <div class="annotation">
               
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-2">&#182;</a>
-              </div>
-              <p>LOOKUP find a value in an array.</p>
-
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">lookup</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">var</span> lookup_value, lookup_array, lookup_vector, results_vector;
-    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">arguments</span>.length === <span class="hljs-number">2</span>) { <span class="hljs-comment">// array form</span>
-        <span class="hljs-keyword">var</span> wide = <span class="hljs-literal">false</span>;
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> {isnumber} <span class="hljs-keyword">from</span> <span class="hljs-string">'./isnumber'</span>
 
-        lookup_value = <span class="hljs-built_in">arguments</span>[<span class="hljs-number">0</span>].valueOf();
-        lookup_array = <span class="hljs-built_in">arguments</span>[<span class="hljs-number">1</span>];
-
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; lookup_array.length; i++) {
-            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> lookup_array[i] !== <span class="hljs-string">'undefined'</span> &amp;&amp; lookup_value === lookup_array[i].valueOf()) {
-                <span class="hljs-keyword">return</span> lookup_array[i];
-            }
-        }
-
-    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">arguments</span>.length === <span class="hljs-number">3</span>) { <span class="hljs-comment">// vector form`</span>
-        lookup_value = <span class="hljs-built_in">arguments</span>[<span class="hljs-number">0</span>].valueOf();
-        lookup_vector = <span class="hljs-built_in">arguments</span>[<span class="hljs-number">1</span>];
-        results_vector = <span class="hljs-built_in">arguments</span>[<span class="hljs-number">2</span>];
-
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; lookup_vector.length; i++) {
-            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> lookup_vector[i] !== <span class="hljs-string">'undefined'</span> &amp;&amp; lookup_value === lookup_vector[i].valueOf()) {
-                <span class="hljs-keyword">return</span> results_vector[i];
-            }
-        }
-
-    }
-
-    <span class="hljs-keyword">return</span> error.na;
-
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">numbers</span>(<span class="hljs-params">...values</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(values)
+  <span class="hljs-keyword">return</span> values.reduce(
+    (p, v) =&gt; isnumber(v) ? p.concat(v) : p,
+    []
+  )
 }</pre></div></div>
             
         </li>
