@@ -1338,6 +1338,87 @@ function lte(a,b) {
   }
 }
 
+// MATCH returns an index in `array_reference` by searching for `lookup_reference`.
+function match(lookup_reference, array_reference, matchType) {
+
+  var lookupArray, lookupValue, index, indexValue;
+
+  // Gotta have only 2 arguments folks!
+  if (arguments.length === 2) {
+    matchType = 1;
+  }
+
+  // Find the lookup value inside a worksheet cell, if needed.
+  lookupValue = lookup_reference;
+
+
+  // Find the array inside a worksheet range, if needed.
+  if (isarray(array_reference)) {
+    lookupArray = array_reference;
+  } else {
+    return error$2.na;
+  }
+
+  // Gotta have both lookup value and array
+  if (!lookupValue && !lookupArray) {
+    return error$2.na;
+  }
+
+  // Bail on weird match types!
+  if (matchType !== -1 && matchType !== 0 && matchType !== 1) {
+    return error$2.na;
+  }
+
+  for (var idx = 0; idx < lookupArray.length; idx++) {
+    if (matchType === 1) {
+      if (lookupArray[idx] === lookupValue) {
+        return idx + 1;
+      } else if (lookupArray[idx] < lookupValue) {
+        if (!indexValue) {
+          index = idx + 1;
+          indexValue = lookupArray[idx];
+        } else if (lookupArray[idx] > indexValue) {
+          index = idx + 1;
+          indexValue = lookupArray[idx];
+        }
+      }
+    } else if (matchType === 0) {
+      if (typeof lookupValue === 'string') {
+        // '?' is mapped to the regex '.'
+        // '*' is mapped to the regex '.*'
+        // '~' is mapped to the regex '\?'
+        if (idx === 0) {
+          lookupValue = "^" + lookupValue.replace(/\?/g, '.').replace(/\*/g, '.*').replace(/~/g, '\\?') + "$";
+        }
+        if (typeof lookupArray[idx] !== "undefined") {
+          if (String(lookupArray[idx]).toLowerCase().match(String(lookupValue).toLowerCase())) {
+            return idx + 1;
+          }
+        }
+      } else {
+        if (typeof lookupArray[idx] !== "undefined" && lookupArray[idx] !== null && lookupArray[idx].valueOf() === lookupValue) {
+          return idx + 1;
+        }
+      }
+    } else if (matchType === -1) {
+      if (lookupArray[idx] === lookupValue) {
+        return idx + 1;
+      } else if (lookupArray[idx] > lookupValue) {
+        if (!indexValue) {
+          index = idx + 1;
+          indexValue = lookupArray[idx];
+        } else if (lookupArray[idx] < indexValue) {
+          index = idx + 1;
+          indexValue = lookupArray[idx];
+        }
+      }
+    }
+  }
+
+  return index ? index : error$2.na;
+
+};
+
 // MIN returns the smallest number from a `list`.
 function min(...list) {
 
@@ -2856,4 +2937,4 @@ Number.isNaN = Number.isNaN || function(value) {
     return value !== value;
 }
 
-export { abs, acos, add, and, average, bin2dec, branch, branch as cond, cellindex, cellindex as cellIndex, changed, choose, clean, code, column, columnletter, columnletter as columnLetter, columnnumber, concatenate, cos, date, datevalue, datevalue as dateValue, datedif, day, days360, dec2bin, diff, divide, edate, eomonth, eq, exact, filter, find, flatten, fv, gt, gte, guid, hlookup, hour, int, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, index, index2col, index2row, indirect, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isleapyear, isleapyear as isLeapYear, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isoweeknum, isoweeknum as isoWeekNum, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, left, len, lookup, lower, lt, lte, min, minute, max, month, multiply, n, numbervalue, numbervalue as numberValue, ne, not, now, npv, nper, oct2dec, or, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, parsequery, parsequery as parseQuery, pi, pmt, power, pv, ref$1 as ref, replace, rept, right, round, roundup, search, second, select, serial, sin, some, some as in, sort, split, substitute, subtract, sum, tan, tau, text, time, timevalue, today, trim, trunc, unique, upper, vlookup, xor, year, yearfrac };
+export { abs, acos, add, and, average, bin2dec, branch, branch as cond, cellindex, cellindex as cellIndex, changed, choose, clean, code, column, columnletter, columnletter as columnLetter, columnnumber, concatenate, cos, date, datevalue, datevalue as dateValue, datedif, day, days360, dec2bin, diff, divide, edate, eomonth, eq, exact, filter, find, flatten, fv, gt, gte, guid, hlookup, hour, int, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, index, index2col, index2row, indirect, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isleapyear, isleapyear as isLeapYear, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isoweeknum, isoweeknum as isoWeekNum, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, left, len, lookup, lower, lt, lte, match, min, minute, max, month, multiply, n, numbervalue, numbervalue as numberValue, ne, not, now, npv, nper, oct2dec, or, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, parsequery, parsequery as parseQuery, pi, pmt, power, pv, ref$1 as ref, replace, rept, right, round, roundup, search, second, select, serial, sin, some, some as in, sort, split, substitute, subtract, sum, tan, tau, text, time, timevalue, today, trim, trunc, unique, upper, vlookup, xor, year, yearfrac };
