@@ -2,7 +2,7 @@ import {n} from '../src/n';
 import error from '../src/error';
 import test from 'tape';
 
-test('N : should convert value to number', function(t) {
+test('n', function(t) {
   t.plan(6);
   t.equal( n(1), 1, 'Should still be 1');
   t.equal( n(100.5), 100.5, 'Should still be 100.5');

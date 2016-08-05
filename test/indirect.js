@@ -5,7 +5,7 @@
 import test from 'tape';
 import {indirect} from '../src/indirect';
 
-test('INDIRECT : should return a cell reference', function(t) {
+test('indirect', function(t) {
   t.plan(1)
   t.equal(typeof indirect, 'function')
 });
