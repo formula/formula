@@ -1039,6 +1039,33 @@ function ifna(value, value_if_na) {
   return value === error$2.na ? value_if_na : value;
 }
 
+// index returns the value in a row and column from a 2d array
+function index(reference, row_num) {
+  var column_num = arguments.length <= 2 || arguments[2] === undefined ? 1 : arguments[2];
+
+  var row;
+
+  if (!isarray(reference) || isblank(row_num)) {
+    return error$2.value;
+  }
+
+  if (reference.length < row_num) {
+    return error$2.ref;
+  }
+
+  row = reference[row_num - 1];
+
+  if (!isarray(row)) {
+    return error$2.value;
+  }
+
+  if (row.length < column_num) {
+    return error$2.ref;
+  }
+
+  return row[column_num - 1];
+}
+
 // INDEX2COL computes the row given a cell index
 function index2row(index) {
   return Math.floor(index / MaxCols);
@@ -2926,6 +2953,7 @@ exports.iferror = iferror;
 exports.ifError = iferror;
 exports.ifna = ifna;
 exports.ifNA = ifna;
+exports.index = index;
 exports.index2col = index2col;
 exports.index2row = index2row;
 exports.indirect = indirect;

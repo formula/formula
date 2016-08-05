@@ -991,6 +991,31 @@ function ifna(value, value_if_na) {
     return value === error$2.na ? value_if_na : value;
 }
 
+// index returns the value in a row and column from a 2d array
+function index(reference, row_num, column_num=1) {
+  var row;
+
+  if (!isarray(reference) || isblank(row_num)) {
+    return error$2.value
+  }
+
+  if (reference.length < row_num) {
+    return error$2.ref
+  }
+
+  row = reference[row_num-1];
+
+  if (!isarray(row)) {
+    return error$2.value
+  }
+
+  if (row.length < column_num) {
+    return error$2.ref
+  }
+
+  return row[column_num-1];
+}
+
 // INDEX2COL computes the row given a cell index
 function index2row(index) {
   return Math.floor(index / MaxCols);
@@ -2831,4 +2856,4 @@ Number.isNaN = Number.isNaN || function(value) {
     return value !== value;
 }
 
-export { abs, acos, add, and, average, bin2dec, branch, branch as cond, cellindex, cellindex as cellIndex, changed, choose, clean, code, column, columnletter, columnletter as columnLetter, columnnumber, concatenate, cos, date, datevalue, datevalue as dateValue, datedif, day, days360, dec2bin, diff, divide, edate, eomonth, eq, exact, filter, find, flatten, fv, gt, gte, guid, hlookup, hour, int, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, index2col, index2row, indirect, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isleapyear, isleapyear as isLeapYear, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isoweeknum, isoweeknum as isoWeekNum, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, left, len, lookup, lower, lt, lte, min, minute, max, month, multiply, n, numbervalue, numbervalue as numberValue, ne, not, now, npv, nper, oct2dec, or, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, parsequery, parsequery as parseQuery, pi, pmt, power, pv, ref$1 as ref, replace, rept, right, round, roundup, search, second, select, serial, sin, some, some as in, sort, split, substitute, subtract, sum, tan, tau, text, time, timevalue, today, trim, trunc, unique, upper, vlookup, xor, year, yearfrac };
+export { abs, acos, add, and, average, bin2dec, branch, branch as cond, cellindex, cellindex as cellIndex, changed, choose, clean, code, column, columnletter, columnletter as columnLetter, columnnumber, concatenate, cos, date, datevalue, datevalue as dateValue, datedif, day, days360, dec2bin, diff, divide, edate, eomonth, eq, exact, filter, find, flatten, fv, gt, gte, guid, hlookup, hour, int, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, index, index2col, index2row, indirect, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isleapyear, isleapyear as isLeapYear, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isoweeknum, isoweeknum as isoWeekNum, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, left, len, lookup, lower, lt, lte, min, minute, max, month, multiply, n, numbervalue, numbervalue as numberValue, ne, not, now, npv, nper, oct2dec, or, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, parsequery, parsequery as parseQuery, pi, pmt, power, pv, ref$1 as ref, replace, rept, right, round, roundup, search, second, select, serial, sin, some, some as in, sort, split, substitute, subtract, sum, tan, tau, text, time, timevalue, today, trim, trunc, unique, upper, vlookup, xor, year, yearfrac };
