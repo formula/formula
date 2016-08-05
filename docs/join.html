@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>match.js</title>
+  <title>join.js</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" media="all" href="docco.css" />
@@ -723,7 +723,7 @@
         
           <li id="title">
               <div class="annotation">
-                  <h1>match.js</h1>
+                  <h1>join.js</h1>
               </div>
           </li>
         
@@ -735,13 +735,10 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              <p>Copyright 2015 Peter W Moresi</p>
-
+              
             </div>
             
-            <div class="content"><div class='highlight'><pre>
-<span class="hljs-keyword">import</span> {isarray} <span class="hljs-keyword">from</span> <span class="hljs-string">'./isarray'</span>
-<span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'./error'</span></pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'./error'</span></pre></div></div>
             
         </li>
         
@@ -752,13 +749,11 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>MATCH returns an index in <code>array_reference</code> by searching for <code>lookup_reference</code>.</p>
+              <p>combine a array of strings/numbers into a single string</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">match</span>(<span class="hljs-params">lookup_reference, array_reference, matchType</span>) </span>{
-
-  <span class="hljs-keyword">var</span> lookupArray, lookupValue, index, indexValue;</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">join</span>(<span class="hljs-params">list, delim=', '</span>) </span>{</pre></div></div>
             
         </li>
         
@@ -769,12 +764,12 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
-              <p>Gotta have only 2 arguments folks!</p>
+              <p>all values must be string or number</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">arguments</span>.length === <span class="hljs-number">2</span>) {
-    matchType = <span class="hljs-number">1</span>;
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">if</span> (list.some(d =&gt; <span class="hljs-keyword">typeof</span> d !== <span class="hljs-string">'string'</span> &amp;&amp; <span class="hljs-keyword">typeof</span> d !== <span class="hljs-string">'number'</span>)) {
+    <span class="hljs-keyword">return</span> error.value
   }</pre></div></div>
             
         </li>
@@ -786,127 +781,12 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
-              <p>Find the lookup value inside a worksheet cell, if needed.</p>
+              <p>defer to JS implementation</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  lookupValue = lookup_reference;</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-5">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-5">&#182;</a>
-              </div>
-              <p>Find the array inside a worksheet range, if needed.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">if</span> (isarray(array_reference)) {
-    lookupArray = array_reference;
-  } <span class="hljs-keyword">else</span> {
-    <span class="hljs-keyword">return</span> error.na;
-  }</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-6">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-6">&#182;</a>
-              </div>
-              <p>Gotta have both lookup value and array</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">if</span> (!lookupValue &amp;&amp; !lookupArray) {
-    <span class="hljs-keyword">return</span> error.na;
-  }</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-7">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-7">&#182;</a>
-              </div>
-              <p>Bail on weird match types!</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">if</span> (matchType !== <span class="hljs-number">-1</span> &amp;&amp; matchType !== <span class="hljs-number">0</span> &amp;&amp; matchType !== <span class="hljs-number">1</span>) {
-    <span class="hljs-keyword">return</span> error.na;
-  }
-
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> idx = <span class="hljs-number">0</span>; idx &lt; lookupArray.length; idx++) {
-    <span class="hljs-keyword">if</span> (matchType === <span class="hljs-number">1</span>) {
-      <span class="hljs-keyword">if</span> (lookupArray[idx] === lookupValue) {
-        <span class="hljs-keyword">return</span> idx + <span class="hljs-number">1</span>;
-      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (lookupArray[idx] &lt; lookupValue) {
-        <span class="hljs-keyword">if</span> (!indexValue) {
-          index = idx + <span class="hljs-number">1</span>;
-          indexValue = lookupArray[idx];
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (lookupArray[idx] &gt; indexValue) {
-          index = idx + <span class="hljs-number">1</span>;
-          indexValue = lookupArray[idx];
-        }
-      }
-    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (matchType === <span class="hljs-number">0</span>) {
-      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> lookupValue === <span class="hljs-string">'string'</span>) {</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-8">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-8">&#182;</a>
-              </div>
-              <p>‘?’ is mapped to the regex ‘.’
-‘<em>‘ is mapped to the regex ‘.</em>‘
-‘~’ is mapped to the regex ‘\?’</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">if</span> (idx === <span class="hljs-number">0</span>) {
-          lookupValue = <span class="hljs-string">"^"</span> + lookupValue.replace(<span class="hljs-regexp">/\?/g</span>, <span class="hljs-string">'.'</span>).replace(<span class="hljs-regexp">/\*/g</span>, <span class="hljs-string">'.*'</span>).replace(<span class="hljs-regexp">/~/g</span>, <span class="hljs-string">'\\?'</span>) + <span class="hljs-string">"$"</span>;
-        }
-        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> lookupArray[idx] !== <span class="hljs-string">"undefined"</span>) {
-          <span class="hljs-keyword">if</span> (<span class="hljs-built_in">String</span>(lookupArray[idx]).toLowerCase().match(<span class="hljs-built_in">String</span>(lookupValue).toLowerCase())) {
-            <span class="hljs-keyword">return</span> idx + <span class="hljs-number">1</span>;
-          }
-        }
-      } <span class="hljs-keyword">else</span> {
-        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> lookupArray[idx] !== <span class="hljs-string">"undefined"</span> &amp;&amp; lookupArray[idx] !== <span class="hljs-literal">null</span> &amp;&amp; lookupArray[idx].valueOf() === lookupValue) {
-          <span class="hljs-keyword">return</span> idx + <span class="hljs-number">1</span>;
-        }
-      }
-    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (matchType === <span class="hljs-number">-1</span>) {
-      <span class="hljs-keyword">if</span> (lookupArray[idx] === lookupValue) {
-        <span class="hljs-keyword">return</span> idx + <span class="hljs-number">1</span>;
-      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (lookupArray[idx] &gt; lookupValue) {
-        <span class="hljs-keyword">if</span> (!indexValue) {
-          index = idx + <span class="hljs-number">1</span>;
-          indexValue = lookupArray[idx];
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (lookupArray[idx] &lt; indexValue) {
-          index = idx + <span class="hljs-number">1</span>;
-          indexValue = lookupArray[idx];
-        }
-      }
-    }
-  }
-
-  <span class="hljs-keyword">return</span> index ? index : error.na;
-
-};</pre></div></div>
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">return</span> list.join(delim)
+}</pre></div></div>
             
         </li>
         
