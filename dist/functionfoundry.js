@@ -920,6 +920,11 @@ function fv(rate, periods, payment) {
   return -fv;
 };
 
+// get a property (p) from an object (o)
+function get(p, o) {
+  return o[p];
+}
+
 function gt(a, b) {
   if (isref(a) && isref(b)) {
     return error$2.na;
@@ -1739,6 +1744,17 @@ function parsequery() {
 // PI returns half the universal circle constant
 function pi() {
   return τ / 2;
+}
+
+// pluck a property from a list of objects
+function pluck(prop, list) {
+  if (!isarray(list)) {
+    return error.na;
+  }
+
+  return list.map(function (d) {
+    return d[prop];
+  });
 }
 
 // PMT returns a loan payment
@@ -3043,6 +3059,7 @@ exports.filter = filter;
 exports.find = find;
 exports.flatten = flatten;
 exports.fv = fv;
+exports.get = get;
 exports.gt = gt;
 exports.gte = gte;
 exports.guid = guid;
@@ -3128,6 +3145,7 @@ exports.parseDate = parsedate;
 exports.parsequery = parsequery;
 exports.parseQuery = parsequery;
 exports.pi = pi;
+exports.pluck = pluck;
 exports.pmt = pmt;
 exports.power = power;
 exports.pv = pv;
