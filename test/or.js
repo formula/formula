@@ -1,7 +1,7 @@
 import test from 'tape';
 import {or} from '../src/or';
 
-test('it should be this or that', function(t) {
+test('or', function(t) {
   t.plan(9);
   t.equal( or( true, true), true);
   t.equal( or( true, false), true);

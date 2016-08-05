@@ -1,7 +1,7 @@
 import test from 'tape';
 import {min} from '../src/min';
 
-test('MIN : Should identify smallest value in set', function(t) {
+test('min', function(t) {
   t.plan(7);
   t.equal( min(), undefined );
   t.equal( min([]), undefined );

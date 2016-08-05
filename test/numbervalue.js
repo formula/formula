@@ -2,7 +2,7 @@ import {numbervalue} from '../src/numbervalue';
 import error from '../src/error';
 import test from 'tape';
 
-test('NUMBERVALUE : should convert value to number', function(t) {
+test('numbervalue', function(t) {
   t.plan(13);
   t.equal( numbervalue(""), error.value, 'error.should pass through call');
   t.equal( numbervalue("2"), 2);

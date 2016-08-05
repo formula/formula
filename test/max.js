@@ -1,7 +1,7 @@
 import test from 'tape';
 import {max} from '../src/max';
 
-test('MAX : Should identify largest value in set', function(t) {
+test('max', function(t) {
   t.plan(7);
   t.equal( max(), undefined );
   t.equal( max([]), undefined );

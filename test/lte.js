@@ -1,7 +1,7 @@
 import test from 'tape';
 import {lte} from '../src/lte';
 
-test('LTE : Should compare two values and return true or false', function(t) {
+test('lte', function(t) {
 
 
   t.plan(6);
