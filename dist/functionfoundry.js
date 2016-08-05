@@ -1259,6 +1259,22 @@ function isurl(str) {
   return pattern.test(str);
 }
 
+// combine a array of strings/numbers into a single string
+function join(list) {
+  var delim = arguments.length <= 1 || arguments[1] === undefined ? ', ' : arguments[1];
+
+
+  // all values must be string or number
+  if (list.some(function (d) {
+    return typeof d !== 'string' && typeof d !== 'number';
+  })) {
+    return error$2.value;
+  }
+
+  // defer to JS implementation
+  return list.join(delim);
+}
+
 // N converts a `value` to a number. It supports numbers, true, false and dates.
 function n(value) {
 
@@ -1749,7 +1765,7 @@ function pi() {
 // pluck a property from a list of objects
 function pluck(prop, list) {
   if (!isarray(list)) {
-    return error.na;
+    return error$2.na;
   }
 
   return list.map(function (d) {
@@ -3114,6 +3130,7 @@ exports.istext = istext;
 exports.isText = istext;
 exports.isurl = isurl;
 exports.ISURL = isurl;
+exports.join = join;
 exports.left = left;
 exports.len = len;
 exports.lookup = lookup;
