@@ -2,7 +2,7 @@ import test from 'tape';
 import {pmt} from '../src/pmt';
 import error from '../src/error';
 
-test('should calculate payments', function(t) {
+test('pmt', function(t) {
   t.plan(9)
   t.equal( typeof pmt, 'function')
   t.equal( pmt(0.06 / 12, 18 * 12, 0, 50000), -129.0811608679973);

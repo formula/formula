@@ -2,7 +2,7 @@ import {index2col} from '../src/index2col';
 import error from '../src/error';
 import test from 'tape';
 
-test('INDEX2COL : should convert row and column to number', function(t) {
+test('index2col', function(t) {
   t.plan(3)
   t.equal( index2col(0), 0, 'Should still be 0');
   t.equal( index2col(1), 1, 'Should be 1');
