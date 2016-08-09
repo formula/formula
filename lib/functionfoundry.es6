@@ -1,8 +1,44 @@
 // Copyright 2015 Peter W Moresi
 
-// Returns true when the value is a finite number.
-function isnumber(value) {
-    return typeof(value) === 'number' && !Number.isNaN(value) && isFinite(value);
+// ISFUNCTION returns true when `value` is a function.
+function isfunction(value) {
+    return value && Object.prototype.toString.call(value) == '[object Function]';
+};
+
+// branch( test, result_if_true, [test2, result_if_true,] false_result )
+function branch(...cases) {
+
+  var resolved = false
+
+  // Reduce all cases into a value.
+  return cases.reduce( function(acc, item, index) {
+    let val;
+
+    // Return previously resolved result
+    if (resolved === true) return acc
+
+    // Handle last item
+    if ( index === cases.length - 1 ) {
+      // There is no last item.
+      if (index % 2 === 1) return;
+
+      // return the last item
+      return isfunction(item) ? item() : item;
+    }
+
+    // Check if condition is true
+    if (index % 2 === 0 && (
+        (isfunction(item) && item() === true) ||
+        (item === true))) {
+      resolved = true
+      val = cases[index+1]
+      return isfunction(val) ? val() : val;
+    }
+
+    return acc;
+
+  }, undefined)
+
 }
 
 // Copyright 2015 Peter W Moresi
@@ -42,49 +78,26 @@ var error$2 = {
   unknown
 }
 
-// ABS computes absolute value of a number
-function abs(value) {
+// CHOOSE accepts an index and a list of items. It returns the item that corresponds to the index.
+function choose(index, ...items) {
 
-  // Return `#VALUE!` if not number
-  if (!isnumber(value)) {
-    return error$2.value;
-  }
-
-  // Use built-in Math.abs
-  return Math.abs(value);
-}
-
-// ACOS computes the inverse cosine of a number
-function acos(value) {
-
-  // Return `#VALUE!` if not number
-  if (!isnumber(value)) {
-    return error$2.value;
-  }
-
-  // Use built-in Math.acos
-  return Math.acos(value);
-
-}
-
-// ADD calculates the sum of two numbers.
-function add(...values) {
-
-  // Return `#NA!` if 2 arguments are not provided.
-  if (values.length !== 2) {
+  // Return `#NA!` if index or items are not provided.
+  if (!index || items.length === 0) {
     return error$2.na;
   }
 
-  // decompose values into a and b.
-  var [a, b] = values
-
-  // Return `#VALUE!` if either a or b is not a number.
-  if (!isnumber(a) || !isnumber(b)) {
-    return error$2.value
+  // Return `#VALUE!` if index is less than 1 or greater than 254.
+  if (index < 1 || index > 254) {
+    return error$2.value;
   }
 
-  // Return the sum.
-  return a + b
+  // Return `#VALUE!` if number of items is less than index.
+  if (items.length < index) {
+    return error$2.value;
+  }
+
+  // Return the item.
+  return items[index-1];
 }
 
 // ISERR returns true when the value is an error (except `#NA!`) or when then
@@ -106,13 +119,6 @@ function iserr(value) {
 function iserror(value) {
     return iserr(value) || value === error$2.na;
 }
-
-// Copyright 2015 Peter W Moresi
-
-// ISFUNCTION returns true when `value` is a function.
-function isfunction(value) {
-    return value && Object.prototype.toString.call(value) == '[object Function]';
-};
 
 // AND reduces list of truthy values into true or false value
 function and(...criteria) {
@@ -138,101 +144,182 @@ function and(...criteria) {
     })
 }
 
+// OR returns true when any of the criter is true or 1.
+function or(...criteria) {
+  return criteria.reduce( (acc, item) => {
+    if (acc === true) return true;
+    let value = isfunction(item) ? item() : item;
+    return value === true || value === 1;
+  }, false)
+}
+
+// NOT negates a `value`
+function not(value) {
+  return (value !== true && value !== false && value !== 1 && value !== 0) ? 
+  error$2.value :
+  !value
+}
+
 // Copyright 2015 Peter W Moresi
 
-// FLATTEN converts a nested array into a flattened array. It only supports one
-// level of nesting.
-function flatten(ref){
-    return ref.reduce(function(a, b) {
-      return a.concat(b);
-    }, []);
-}
-
-// SUM a given list of `numbers`
-function sum(...numbers) {
-    return flatten(flatten(numbers))
-    .reduce((a, b) => {
-      if (typeof b !== 'number') { return error$2.value }
-      return a + b
-    });
-}
-
-// AVERAGE computes sum of items divided by number of items
-function average(...items) {
-
-  // compute sum all of the items.
-  var v = sum(...items)
-
-  // return sum when computed error.
-  if (iserror(v)) {
-    return v;
+// EQ compares two values and returns a boolean value.
+function eq(a,b) {
+  // String comparisions are case-insensitive
+  if (typeof a === "string" && typeof b === "string") {
+    return a.toLowerCase() === b.toLowerCase()
+  } else {
+    return a === b;
   }
-
-  // return sum divided by item count
-  return  v / items.length;
 }
 
-// BIN2DEC converts binary string into decimal value
-function bin2dec(value) {
-    var valueAsString;
+// NE returns true when a is not equal to b.
+function ne(a,b) {
+  return !eq(a, b)
+}
 
-    if (typeof value === "string") {
-        valueAsString = value;
-    } else if (typeof value !== "undefined") {
-        valueAsString = value.toString();
-    } else {
-        return error$2.NA;
-    }
+// Copyright 2015 Peter W Moresi
 
-    if (valueAsString.length > 10) return error$2.NUM;
+// ISARRAY returns true when the value is an aray.
+function isarray(value) {
+  return Object.prototype.toString.call( value ) === '[object Array]'
+}
 
-    // we subtract 512 when the leading number is 0.
-    if (valueAsString.length === 10 && valueAsString[0] === '1') {
-        return parseInt(valueAsString.substring(1), 2) - 512;
-    }
+// Copyright 2015 Peter W Moresi
 
-    // Convert binary number to decimal with built-in facility
-    return parseInt(valueAsString, 2);
-
+// ISBLANK returns true when the value is undefined or null.
+function isblank(value) {
+    return typeof value === 'undefined' || value === null;
 };
 
-// branch is the function equivalent to `if-then-else`
-//
-// syntax:
-// branch( test, result_if_true, [test2, result_if_true,] false_result )
-function branch(...cases) {
+// ISREF returns true when the value is a reference.
+function isref(value) {
+  if (!value) return false
+  return value._isref === true
+}
 
-  var resolved = false
+function gt(a,b) {
+  if ( isref(a) && isref(b) ) {
+    return error$2.na;
+  } else if ( isarray(a) && isarray(b) ) {
+    return error$2.na;
+  } else if ( isref(a) || isarray(a) ) {
+    return a.map( (d) => d > b );
+  } else if ( isref(b) || isarray(b) ) {
+    return b.map( (d) => d > a );
+  } else {
+    return a > b;
+  }
+}
 
-  // Reduce all cases into a value.
-  return cases.reduce( function(acc, item, index) {
-    let val;
+function gte(a,b) {
+  if ( isref(a) && isref(b) ) {
+    return error.na;
+  } else if ( isarray(a) && isarray(b) ) {
+    return error.na;
+  } else if ( isref(a) || isarray(a) ) {
+    return a.map( (d) => d >= b );
+  } else if ( isref(b) || isarray(b) ) {
+    return b.map( (d) => d >= a );
+  } else {
+    return a >= b;
+  }
+}
 
-    // Return previously resolved result
-    if (resolved === true) return acc
+// LT compares two values and returns true when a is less than b.
+function lt(a,b) {
+  if ( isref(a) && isref(b) ) {
+    return error.na;
+  } else if ( isarray(a) && isarray(b) ) {
+    return error.na;
+  } else if ( isref(a) || isarray(a) ) {
+    return a.map( (d) => d < b );
+  } else if ( isref(b) || isarray(b) ) {
+    return b.map( (d) => d < a );
+  } else {
+    return a < b;
+  }
+}
 
-    // Handle last item
-    if ( index === cases.length - 1 ) {
-      // There is no last item.
-      if (index % 2 === 1) return;
+// LT compares two values and returns true when a is less than or equal to b.
+function lte(a,b) {
+  if ( isref(a) && isref(b) ) {
+    return error.na;
+  } else if ( isarray(a) && isarray(b) ) {
+    return error.na;
+  } else if ( isref(a) || isarray(a) ) {
+    return a.map( (d) => d <= b );
+  } else if ( isref(b) || isarray(b) ) {
+    return b.map( (d) => d <= a );
+  } else {
+    return a <= b;
+  }
+}
 
-      // return the last item
-      return isfunction(item) ? item() : item;
-    }
+// IFBLANK return the `value` if non-blank, otherwise it returns `value_if_blank`.
+function ifblank(value, value_if_blank) {
+    return isblank(value) ? value_if_blank : value;
+}
 
-    // Check if condition is true
-    if (index % 2 === 0 && (
-        (isfunction(item) && item() === true) ||
-        (item === true))) {
-      resolved = true
-      val = cases[index+1]
-      return isfunction(val) ? val() : val;
-    }
+// Copyright 2015 Peter W Moresi
 
-    return acc;
+// ISTEXT returns true when the value is a string.
+function istext(value) {
+    return 'string' === typeof(value);
+};
 
-  }, undefined)
+// ISEMPTY returns true when the value is blank, is an empty array or when it
+// is an empty string.
+function isempty(value) {
+    return (
+      isblank(value) ||
+      isarray(value) && value.length === 0 ||
+      istext(value) && value === ''
+    );
+};
 
+// IFBLANK return the `value` if empty, otherwise it returns `value_if_empty`.
+function ifempty(value, value_if_empty) {
+    return isempty(value) ? value_if_empty : value;
+}
+
+// IFBLANK return the `value` if error, otherwise it returns `value_if_error`.
+function iferror(value, value_if_error=null) {
+    return iserror(value) ? value_if_error : value;
+}
+
+// IFBLANK return the `value` if `#NA!`, otherwise it returns `value_if_na`.
+function ifna(value, value_if_na) {
+    return value === error$2.na ? value_if_na : value;
+}
+
+// Copyright 2015 Peter W Moresi
+
+// returns true if true or false
+function isboolean(val) {
+    return val === true || val === false
+};
+
+// Copyright 2015 Peter W Moresi
+
+// ISDATE returns true when the `value` is a JavaScript date object.
+function isdate(value) {
+    return value && Object.prototype.toString.call(value) == '[object Date]';
+};
+
+// Copyright 2015 Peter W Moresi
+
+// ISEMAIL returns true when the `value` matches the regex.
+function isemail(value) {
+  // credit to http://stackoverflow.com/questions/46155/validate-email-address-in-javascript
+  var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(value);
+};
+
+// Copyright 2015 Peter W Moresi
+
+// ISEVEN returns true when the value is even.
+function iseven(value) {
+    return !(Math.floor(Math.abs(value)) & 1);
 }
 
 // Copyright 2015 Peter W Moresi
@@ -268,261 +355,6 @@ let AllowedColors = {
     WHITE: "#FFFFFF",
     YELLOW: "#FFFF00"
   };
-
-// CELLINDEX computes the index for row and column in a 2 dimensional array.
-function cellindex(row, col) {
-  // Multiple row by maximum columns plus the col.
-  return Math.floor( (row * MaxCols) + col );
-}
-
-// Copyright 2015 Peter W Moresi
-
-// UNIQUE reduces an `array` into an array without duplicate values.
-function unique(array) {
-  return array.reduce(function(p, c) {
-    if (p.indexOf(c) < 0) p.push(c);
-    return p;
-  }, [])
-}
-
-// CHANGED computes the list of keys that are different between two objects.
-function changed(a, b) {
-
-  // Compute the keys in object a and b.
-  var keysA = Object.keys(a),
-  keysB = Object.keys(b)
-
-  // Find the unique set of properties comparing a to b and b to a.
-  return unique(
-    keysA
-    .filter( n => a[n] !== b[n])
-    .concat(
-      keysB
-      .filter( n => a[n] !== b[n])
-    )
-  )
-}
-
-// CHOOSE accepts an index and a list of items. It returns the item that corresponds to the index.
-function choose(index, ...items) {
-
-  // Return `#NA!` if index or items are not provided.
-  if (!index || items.length === 0) {
-    return error$2.na;
-  }
-
-  // Return `#VALUE!` if index is less than 1 or greater than 254.
-  if (index < 1 || index > 254) {
-    return error$2.value;
-  }
-
-  // Return `#VALUE!` if number of items is less than index.
-  if (items.length < index) {
-    return error$2.value;
-  }
-
-  // Return the item.
-  return items[index-1];
-}
-
-// Copyright 2015 Peter W Moresi
-
-// ISBLANK returns true when the value is undefined or null.
-function isblank(value) {
-    return typeof value === 'undefined' || value === null;
-};
-
-// Copyright 2015 Peter W Moresi
-
-// ISARRAY returns true when the value is an aray.
-function isarray(value) {
-  return Object.prototype.toString.call( value ) === '[object Array]'
-}
-
-// SELECT fields from object
-function select(fields, body) {
-  // non-json
-  if (!body || 'object' != typeof body) return;
-
-  // check for fields
-  if (!fields) return;
-
-  // split
-  if ('string' == typeof fields) fields = fields.split(/ *, */);
-
-  // fields array
-  if (isarray(body)) {
-    return body.map(function(obj){
-      return fields.reduce(function(ret, key){
-        ret[key] = obj[key];
-        return ret;
-      }, {});
-    });
-
-    return;
-  }
-
-  // fields object
-  return fields.reduce(function(ret, key){
-    ret[key] = body[key];
-    return ret;
-  }, {});
-}
-
-// CLEAN accepts an object and remove properties that are blank.
-function clean(obj) {
-  // Compute keys where value is non blank.
-  var keys = Object.keys(obj).filter( n => !isblank(obj[n]) )
-
-  // Compute object with only non-blank keys.
-  return select( keys, obj )
-}
-
-// CODE accepts text and optionally index (default 1) returning the character code.
-function code(text='', index=1) {
-  if (index < 1) return error$2.na
-  if (text.length < index) return error$2.value
-  return text.charCodeAt(index-1);
-}
-
-// Copyright 2015 Peter W Moresi
-
-// ISTEXT returns true when the value is a string.
-function istext(value) {
-    return 'string' === typeof(value);
-};
-
-// ISREF returns true when the value is a reference.
-function isref(value) {
-  if (!value) return false
-  return value._isref === true
-}
-
-// Convert letter to number (e.g A -> 0)
-function columnnumber(column) {
-
-  if (!istext(column)) {
-    return error$2.value
-  }
-
-  // see toColumn for rant on why this is sensible even though it is illogical.
-  var s = 0, secondPass;
-
-  if (column.length > 0) {
-
-    s = column.charCodeAt(0) - 'A'.charCodeAt(0);
-
-    for (var i = 1; i < column.length; i++) {
-      // compensate for spreadsheet column naming
-      s+=1
-      s *= 26;
-      s += column.charCodeAt(i) - 'A'.charCodeAt(0);
-      secondPass = true;
-    }
-
-    return s;
-
-  }
-
-  return error$2.value;
-
-}
-
-// COLUMN return the column number that corresponds to the reference.
-function column(value) {
-
-  // Return `#VALUE!` when the value is not a reference.
-  if (!isref(value)) {
-    return error$2.value;
-  }
-
-  // Run the COLUMNNUMBER and convert to base 1.
-  return columnnumber(value.column) + 1;
-}
-
-// Convert index to letter (e.g 0 -> A)
-function columnletter( index ) {
-
-  if (!isnumber(index)) {
-    return error$2.value
-  }
-
-  // The column is determined by applying a modified Hexavigesimal algorithm.
-  // Normally BA follows Z but spreadsheets count wrong and nobody cares.
-
-  // Instead they do it in a way that makes sense to most people but
-  // is mathmatically incorrect. So AA follows Z which in the base 10
-  // system is like saying 01 follows 9.
-
-  // In the least significant digit
-  // A..Z is 0..25
-
-  // For the second to nth significant digit
-  // A..Z is 1..26
-
-  var converted = ""
-  ,secondPass = false
-  ,remainder
-  ,value = Math.abs(index);
-
-  do {
-    remainder = value % 26;
-
-    if (secondPass) {
-      remainder--;
-    }
-
-    converted = String.fromCharCode((remainder + 'A'.charCodeAt(0))) + converted;
-    value = Math.floor((value - remainder) / 26);
-
-    secondPass = true;
-  } while (value > 0);
-
-  return converted;
-
-}
-
-// Copyright 2015 Peter W Moresi
-
-// CONCATENATE reduces a list of values into a single string.
-function concatenate(...values) {
-  // Combine into a single string value
-  return values.reduce(
-    (acc, item) => `${acc}${item}`
-  )
-}
-
-// COS returns the cosine of a value.
-function cos(value) {
-
-  // Return `#VALUE!` when value is not a number.
-  if (!isnumber(value)) {
-    return error$2.value;
-  }
-
-  return Math.cos(value);
-
-}
-
-// Copyright 2015 Peter W Moresi
-
-// ISDATE returns true when the `value` is a JavaScript date object.
-function isdate(value) {
-    return value && Object.prototype.toString.call(value) == '[object Date]';
-};
-
-// SERIAL convert a date object into a serial number.
-function serial(date) {
-  // Credit: https://github.com/sutoiku/formula.js/
-  if (!isdate(date)) { return error$2.na }
-  var diff = Math.ceil((date - d1900) / MilliSecondsInDay)
-  return diff + ( diff > 59 ? 2 : 1)
-}
-
-// DATE returns a serial number given a year, month and day.
-function date(year, month, day) {
-  return serial(new Date(year, month-1, day));
-}
 
 // PARSEDATE converts a value into a Date object.
 function parsedate(val) {
@@ -579,595 +411,6 @@ function parsedate(val) {
 
 }
 
-// DATEVALUE parses a date string and returns a serial number.
-function datevalue(d) {
-  return serial(parsedate(d));
-}
-
-// DATEDIF return the difference between two dates given a start date, end date and unit.
-function datedif(start_date, end_date, unit) {
-  var second=1000, minute=second*60, hour=minute*60, day=hour*24, week=day*7;
-  start_date = parsedate(start_date),
-  end_date = parsedate(end_date)
-
-  var timediff = end_date - start_date;
-  if (Number.isNaN(timediff)) return NaN;
-
-  switch (unit) {
-    case "Y": return end_date.getFullYear() - start_date.getFullYear();
-    case "M": return (
-      ( end_date.getFullYear() * 12 + end_date.getMonth() )
-        -
-      ( start_date.getFullYear() * 12 + start_date.getMonth() )
-    );
-    case "W"  : return Math.floor(timediff / week);
-    case "D"   : return Math.floor(timediff / day);
-    case "MD"   : return end_date.getdate() - start_date.getdate();
-    case "YM" : return end_date.getMonth() - start_date.getMonth();
-    case "YD": return new error("NOT IMPLEMENTED");
-    default: return undefined;
-  }
-
-}
-
-// DAY parses a date string and returns the day of the month.
-function day(d) {
-  return parsedate(d).getDate()
-}
-
-// PARSEBOOL converts a truthy value into a boolean value.
-function parsebool(val) {
-
-  if (val instanceof Error) {
-    return val;
-  } else if (typeof val === 'boolean') {
-    return val;
-  } else if (typeof val === 'number') {
-    return val !== 0;
-  } else if (typeof val === 'string') {
-    var up = val.toUpperCase();
-    if (up === 'TRUE' || up === 'FALSE') {
-      return up === 'TRUE';
-    }
-  }
-
-  return error$2.value;
-}
-
-function days360(start_date, end_date, method) {
-    method = parsebool(method);
-    start_date = parsedate(start_date);
-    end_date = parsedate(end_date);
-
-    if (start_date instanceof Error) {
-        return start_date;
-    }
-    if (end_date instanceof Error) {
-        return end_date;
-    }
-    if (method instanceof Error) {
-        return method;
-    }
-    var sm = start_date.getMonth();
-    var em = end_date.getMonth();
-    var sd, ed;
-    if (method) {
-        sd = start_date.getDate() === 31 ? 30 : start_date.getDate();
-        ed = end_date.getDate() === 31 ? 30 : end_date.getDate();
-    } else {
-        var smd = new Date(start_date.getFullYear(), sm + 1, 0).getDate();
-        var emd = new Date(end_date.getFullYear(), em + 1, 0).getDate();
-        sd = start_date.getDate() === smd ? 30 : start_date.getDate();
-        if (end_date.getDate() === emd) {
-            if (sd < 30) {
-                em++;
-                ed = 1;
-            } else {
-                ed = 30;
-            }
-        } else {
-            ed = end_date.getDate();
-        }
-    }
-    return (
-      360 * (end_date.getFullYear() - start_date.getFullYear()) + 30 * (em - sm) + (ed - sd)
-    );
-}
-
-// Copyright 2015 Peter W Moresi
-
-// REPT creates string by repeating text a given number of times.
-function rept(text, number) {
-  var r = '';
-  for (var i = 0; i < number; i++) {
-    r += text;
-  }
-  return r;
-}
-
-// based on https://github.com/sutoiku/formula.js/blob/mast../src/engineering.js
-function dec2bin(input, places) {
-
-  // exit if input is an error
-  if (input instanceof Error) {
-    return number;
-  }
-
-  // cast input to number
-  var number = parseInt(input);
-
-  if (!/^-?[0-9]{1,3}$/.test(number) || Number.isNaN(number)) {
-    return error$2.value;
-  }
-
-  // Return error.if number is not decimal, is lower than -512, or is greater than 511
-  if (number < -512 || number > 511) {
-    return error$2.num;
-  }
-
-  // Ignore places and return a 10-character binary number if number is negative
-  if (number < 0) {
-    return '1' + rept('0', 9 - (512 + number).toString(2).length) + (512 + number).toString(2);
-  }
-
-  // Convert decimal number to binary
-  var result = parseInt(number, 10).toString(2);
-
-  // Return binary number using the minimum number of characters necessary if places is undefined
-  if (typeof places === 'undefined') {
-    return result;
-  } else {
-    // Return error.if places is nonnumeric
-    if (!/^-?[0-9]{1,3}$/.test(places) || Number.isNaN(places)) {
-      return error$2.value;
-    }
-
-    // Return error.if places is negative
-    if (places < 0) {
-      return error$2.num;
-    }
-
-    // Truncate places in case it is not an integer
-    places = Math.floor(places);
-
-    // Pad return value with leading 0s (zeros) if necessary (using Underscore.string)
-    return (places >= result.length) ? rept('0', places - result.length) + result : error$2.num;
-  }
-}
-
-// Copyright 2015 Peter W Moresi
-
-function diff(a, b) {
-  let keysA = Object.keys(a),
-  keysB = Object.keys(b),
-  InA = keysB.filter(n => keysA.indexOf(n) > -1),
-  NotInA = keysB.filter(n => keysA.indexOf(n) === -1),
-  NotInB = keysA.filter(n => keysB.indexOf(n) === -1),
-  Diff = InA.filter( n => a[n] !== b[n])
-
-  return {
-    unique_left: NotInA,
-    unique_right: NotInB,
-    diff: Diff.reduce( (x, y) => {
-      var diff = { }
-      diff[y] = { left: a[y], right: b[y]}
-      return Object.assign({}, x, diff)
-    }, {})
-  }
-}
-
-// DIVIDE calculates the product of two numbers.
-function divide(...values) {
-
-  // Return `#NA!` if 2 arguments are not provided.
-  if (values.length !== 2) {
-    return error$2.na;
-  }
-
-  // decompose values into a and b.
-  var [a, b] = values
-
-  // You cannot divide a number by 0.
-  if (b === 0) {
-    return error$2.div0
-  }
-
-  // Return `#VALUE!` if either a or b is not a number.
-  if (!isnumber(a) || !isnumber(b)) {
-    return error$2.value
-  }
-
-  // Return the product
-  return a / b
-}
-
-function edate(start_date, months) {
-    start_date = parsedate(start_date);
-
-    if (start_date instanceof Error) {
-        return start_date;
-    }
-    if (isNaN(months)) {
-        return error.value;
-    }
-    months = parseInt(months, 10);
-    start_date.setMonth(start_date.getMonth() + months);
-    return serial(start_date);
-};
-
-// DIVIDE calculates the product of two numbers.
-function eomonth(start_date, months) {
-  start_date = parsedate(start_date);
-
-  if (start_date instanceof Error) {
-    return start_date;
-  }
-  if (isNaN(months)) {
-    return error$2.value;
-  }
-  months = parseInt(months, 10);
-  return new Date(start_date.getFullYear(), start_date.getMonth() + months + 1, 0);
-}
-
-// Copyright 2015 Peter W Moresi
-
-// EQ compares two values and returns a boolean value.
-function eq(a,b) {
-  // String comparisions are case-insensitive
-  if (typeof a === "string" && typeof b === "string") {
-    return a.toLowerCase() === b.toLowerCase()
-  } else {
-    return a === b;
-  }
-}
-
-// Exact compares two values and only returns true if they meet strict equivalence.
-const exact = (a, b) => a === b
-
-// Copyright 2015 Peter W Moresi
-
-// FILTER limits a range based on arrays of boolean values.
-function filter(range, ...filters) {
-
-  // A filter is an array of true/false values.
-  // The filter may be for rows or for columns but not both.
-  // A array filter may only filter a range that covers a single row or a single column.
-
-  function makefilter() {
-    return function(value, index) {
-      return filters.reduce( function( previousValue, currentValue ) {
-        if (previousValue === false ) {
-          return false;
-        } else {
-          return currentValue[index];
-        }
-      }, true);
-    }
-  }
-
-  return range.filter( makefilter() )
-
-}
-
-// FIND searches for text within a string
-function find(find_text, within_text='', position=1) {
-
-  // Find the position of the text
-  position = within_text.indexOf(find_text, position - 1)
-
-  // If found return the position as base 1.
-  return position === -1 ? error$2.value : position+1
-}
-
-function fv(rate, periods, payment, value=0, type=0) {
-
-  // is this error code correct?
-  if (isblank(rate)) return error$2.na
-  if (isblank(periods)) return error$2.na
-  if (isblank(payment)) return error$2.na
-
-  var fv;
-  if (rate === 0) {
-    fv = value + payment * periods;
-  } else {
-    var term = Math.pow(1 + rate, periods);
-    if (type === 1) {
-      fv = value * term + payment * (1 + rate) * (term - 1) / rate;
-    } else {
-      fv = value * term + payment * (term - 1) / rate;
-    }
-  }
-  return -fv;
-};
-
-// get a property (p) from an object (o)
-function get(p, o) {
-  return o[p]
-}
-
-function gt(a,b) {
-  if ( isref(a) && isref(b) ) {
-    return error$2.na;
-  } else if ( isarray(a) && isarray(b) ) {
-    return error$2.na;
-  } else if ( isref(a) || isarray(a) ) {
-    return a.map( (d) => d > b );
-  } else if ( isref(b) || isarray(b) ) {
-    return b.map( (d) => d > a );
-  } else {
-    return a > b;
-  }
-}
-
-function gte(a,b) {
-  if ( isref(a) && isref(b) ) {
-    return error.na;
-  } else if ( isarray(a) && isarray(b) ) {
-    return error.na;
-  } else if ( isref(a) || isarray(a) ) {
-    return a.map( (d) => d >= b );
-  } else if ( isref(b) || isarray(b) ) {
-    return b.map( (d) => d >= a );
-  } else {
-    return a >= b;
-  }
-}
-
-// Copyright 2015 Peter W Moresi
-
-// credit to http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
-// rfc4122 version 4 compliant solution
-
-// Generate a globally unique identifier
-function guid(){
-  var guid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-    var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
-    return v.toString(16);
-  });
-  return guid;
-};
-
-// HLOOKUP searches for a needle across the rows.
-function hlookup(needle, table, index=1, exactmatch) {
-    if (typeof needle === "undefined" || isblank(needle)) {
-        return null;
-    }
-
-    if (index > table.length) {
-      return error$2.ref
-    }
-
-    var needleLower = (needle + '').toLowerCase(),
-    row = table[0];
-
-    for (var i = 0; i < row.length; i++){
-
-      if ((exactmatch && row[i]===needle) ||
-          ((row[i] == needle) ||
-           (typeof row[i] === "string" && row[i].toLowerCase().indexOf(needleLower) != -1) )) {
-            return table[index-1][i];
-        }
-    }
-
-    return error$2.na;
-}
-
-// remove decimal part of number
-function trunc(val) {
-  return val|0;
-}
-
-function hour(value) {
-    // remove numbers before decimal place and convert fraction to 24 hour scale.
-    return trunc((value - trunc(value)) * 24);
-}
-
-function int(value) {
-  return Math.floor(value)
-}
-
-// IFBLANK return the `value` if non-blank, otherwise it returns `value_if_blank`.
-function ifblank(value, value_if_blank) {
-    return isblank(value) ? value_if_blank : value;
-}
-
-// ISEMPTY returns true when the value is blank, is an empty array or when it
-// is an empty string.
-function isempty(value) {
-    return (
-      isblank(value) ||
-      isarray(value) && value.length === 0 ||
-      istext(value) && value === ''
-    );
-};
-
-// IFBLANK return the `value` if empty, otherwise it returns `value_if_empty`.
-function ifempty(value, value_if_empty) {
-    return isempty(value) ? value_if_empty : value;
-}
-
-// IFBLANK return the `value` if error, otherwise it returns `value_if_error`.
-function iferror(value, value_if_error=null) {
-    return iserror(value) ? value_if_error : value;
-}
-
-// IFBLANK return the `value` if `#NA!`, otherwise it returns `value_if_na`.
-function ifna(value, value_if_na) {
-    return value === error$2.na ? value_if_na : value;
-}
-
-// index returns the value in a row and column from a 2d array
-function index(reference, row_num, column_num=1) {
-  var row;
-
-  if (!isarray(reference) || isblank(row_num)) {
-    return error$2.value
-  }
-
-  if (reference.length < row_num) {
-    return error$2.ref
-  }
-
-  row = reference[row_num-1];
-
-  if (!isarray(row)) {
-    return error$2.value
-  }
-
-  if (row.length < column_num) {
-    return error$2.ref
-  }
-
-  return row[column_num-1];
-}
-
-// INDEX2COL computes the row given a cell index
-function index2row(index) {
-  return Math.floor(index / MaxCols);
-}
-
-// INDEX2COL computes the column given a cell index
-function index2col(index) {
-  return index - (index2row(index) * MaxCols);
-}
-
-// REF accepts top and bottom and returns a reference object. It encapsulates a cell or a range.
-function ref$1(top, bottom) {
-
-  // The index must be a number
-  if (!isnumber(top) && !isfunction(top)) {
-    return error$2.value
-  }
-
-  if (isblank(bottom)) {
-    bottom = top
-  }
-
-  var getTop = () => isfunction(top) ? top() : top
-  var getBottom = () => isfunction(bottom) ? bottom() : bottom
-
-  return {
-
-    get _isref(){
-      return true
-    },
-
-    get top() {
-      return getTop()
-    },
-
-    get bottom() {
-      return getBottom()
-    },
-
-    // Returns row (rowIndex plus 1)
-    get row() {
-      return index2row( getTop() ) + 1;
-    },
-
-    // Returns rowIndex (base 0)
-    get rowIndex() {
-      return index2row( getTop() )
-    },
-
-    // Returns column letter
-    get column() {
-      return columnletter( index2col( getTop() ) )
-    },
-
-    // Returns column index
-    get columnIndex() {
-      return index2col( getTop() )
-    },
-
-    // Returns row (rowIndex plus 1)
-    get bottomRow() {
-      return index2row( getBottom() ) + 1;
-    },
-
-    // Returns rowIndex (base 0)
-    get bottomRowIndex() {
-      return index2row( getBottom() )
-    },
-
-    // Returns column letter
-    get bottomColumn() {
-      return columnletter( index2col( getBottom() ) )
-    },
-
-    // Returns column index
-    get bottomColumnIndex() {
-      return index2col( getBottom() )
-    },
-
-    // The cell id puts the whole table into a single dimension. It simply needs to be between the topLeft and the bottomRight to qualify.
-    hit(index) {
-
-      // Return `#NA!` when index is negative.
-      if (index < 0) return error$2.na
-
-      // Check if value is inside range from top to bottom, inclusive.
-      return (
-        ( index >= getTop() ) &&
-        ( index <= getBottom() )
-      );
-    },
-
-    get size() {
-      return 1 + (getBottom() - getTop())
-    },
-
-    // Return array with every cell index
-    get cells() {
-      return Array.apply(
-        getTop(),
-        Array( 1 + (getBottom() - getTop()) )
-      )
-      .map( (x, y) => y + getTop())
-    },
-
-    // Return array with every row
-    get rows() {
-      return unique(
-        Array.apply(
-          getTop(),
-          Array( 1 + (getBottom() - getTop()) )
-        )
-        .map( (x, y) => index2row(y + getTop()))
-      )
-    }
-
-  }
-}
-
-// Returns a cell indirection
-function indirect(ref) {
-  return ref(ref);
-}
-
-// Copyright 2015 Peter W Moresi
-
-// returns true if true or false
-function isboolean(val) {
-    return val === true || val === false
-};
-
-// Copyright 2015 Peter W Moresi
-
-// ISEMAIL returns true when the `value` matches the regex.
-function isemail(value) {
-  // credit to http://stackoverflow.com/questions/46155/validate-email-address-in-javascript
-  var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(value);
-};
-
-// Copyright 2015 Peter W Moresi
-
-// ISEVEN returns true when the value is even.
-function iseven(value) {
-    return !(Math.floor(Math.abs(value)) & 1);
-}
-
 function isleapyear(val) {
     var date = parsedate(val);
     var year = date.getFullYear();
@@ -1178,6 +421,13 @@ function isleapyear(val) {
 // ISNA returns true when the value is `#NA!`
 function isna(value) {
   return value === error$2.na;
+}
+
+// Copyright 2015 Peter W Moresi
+
+// Returns true when the value is a finite number.
+function isnumber(value) {
+    return typeof(value) === 'number' && !Number.isNaN(value) && isFinite(value);
 }
 
 // Copyright 2015 Peter W Moresi
@@ -1214,6 +464,255 @@ function isurl(str){
   return pattern.test(str);
 }
 
+// Copyright 2015 Peter W Moresi
+
+// FLATTEN converts a nested array into a flattened array. It only supports one
+// level of nesting.
+function flatten(ref){
+    return ref.reduce(function(a, b) {
+      return a.concat(b);
+    }, []);
+}
+
+// XOR computes the exclusive or for a given set of `values`.
+function xor(...values) {
+    return !!(flatten(values).reduce((a,b) => {
+      if (b) {
+        return a+1
+      }
+      return a
+    }, 0) & 1)
+}
+
+// ADD calculates the sum of two numbers.
+function add(...values) {
+
+  // Return `#NA!` if 2 arguments are not provided.
+  if (values.length !== 2) {
+    return error$2.na;
+  }
+
+  // decompose values into a and b.
+  var [a, b] = values
+
+  // Return `#VALUE!` if either a or b is not a number.
+  if (!isnumber(a) || !isnumber(b)) {
+    return error$2.value
+  }
+
+  // Return the sum.
+  return a + b
+}
+
+// SUBTRACT calculates the difference of two numbers.
+function subtract(...values) {
+
+  // Return `#NA!` if 2 arguments are not provided.
+  if (values.length !== 2) {
+    return error$2.na;
+  }
+
+  // decompose values into a and b.
+  var [a, b] = values
+
+  // Return `#VALUE!` if either a or b is not a number.
+  if (!isnumber(a) || !isnumber(b)) {
+    return error$2.value
+  }
+
+  // Return the difference.
+  return a - b
+}
+
+// MULTIPLY calculates the product of two numbers.
+function multiply(...values) {
+
+  // Return `#NA!` if 2 arguments are not provided.
+  if (values.length !== 2) {
+    return error$2.na;
+  }
+
+  // decompose values into a and b.
+  var [a, b] = values
+
+  // Return `#VALUE!` if either a or b is not a number.
+  if (!isnumber(a) || !isnumber(b)) {
+    return error$2.value
+  }
+
+  // Return the product
+  return a * b
+}
+
+// DIVIDE calculates the product of two numbers.
+function divide(...values) {
+
+  // Return `#NA!` if 2 arguments are not provided.
+  if (values.length !== 2) {
+    return error$2.na;
+  }
+
+  // decompose values into a and b.
+  var [a, b] = values
+
+  // You cannot divide a number by 0.
+  if (b === 0) {
+    return error$2.div0
+  }
+
+  // Return `#VALUE!` if either a or b is not a number.
+  if (!isnumber(a) || !isnumber(b)) {
+    return error$2.value
+  }
+
+  // Return the product
+  return a / b
+}
+
+// ABS computes absolute value of a number
+function abs(value) {
+
+  // Return `#VALUE!` if not number
+  if (!isnumber(value)) {
+    return error$2.value;
+  }
+
+  // Use built-in Math.abs
+  return Math.abs(value);
+}
+
+// ACOS computes the inverse cosine of a number
+function acos(value) {
+
+  // Return `#VALUE!` if not number
+  if (!isnumber(value)) {
+    return error$2.value;
+  }
+
+  // Use built-in Math.acos
+  return Math.acos(value);
+
+}
+
+// COS returns the cosine of a value.
+function cos(value) {
+
+  // Return `#VALUE!` when value is not a number.
+  if (!isnumber(value)) {
+    return error$2.value;
+  }
+
+  return Math.cos(value);
+
+}
+
+// PI returns half the universal circle constant
+function pi() {
+  return τ / 2;
+}
+
+// POWER computes the power of a value and nth degree.
+function power(...values) {
+
+  // Return `#NA!` if 2 arguments are not provided.
+  if (values.length !== 2) {
+    return error$2.na;
+  }
+
+  // decompose values into a and b.
+  var [val, nth] = values
+
+  // Return `#VALUE!` if either a or b is not a number.
+  if (!isnumber(val) || !isnumber(nth)) {
+    return error$2.value
+  }
+
+  // Compute the power of val to the nth.
+  return Math.pow(val, nth);
+}
+
+// Copyright 2015 Peter W Moresi
+
+// CONVERT a number to a fixed precision.
+function round(number, precision) {
+  return +number.toFixed(precision);
+}
+
+// Copyright 2015 Peter W Moresi
+
+// ROUNDUP converts a number to a fixed precision by rounding up.
+function roundup(number, precision) {
+  var factors = [1,10,100,1000,10000,100000,1000000,10000000,100000000,1000000000];
+  var factor = factors[precision];
+  if (number > 0) {
+    return Math.ceil(number * factor) / factor;
+  } else {
+    return Math.floor(number * factor) / factor;
+  }
+}
+
+// SIN calculates the sinine of a value.
+function sin(value) {
+
+  if (!isnumber(value)) {
+    return error$2.value;
+  }
+
+  return Math.sin(value);
+
+}
+
+// TAN computes the tagent of a value.
+function tan(value) {
+
+  if (!isnumber(value)) {
+    return error$2.value;
+  }
+
+  return Math.tan(value);
+
+}
+
+// TAU returns the universal circle constant
+function tau() {
+  return τ;
+}
+
+// remove decimal part of number
+function trunc(val) {
+  return val|0;
+}
+
+// CODE accepts text and optionally index (default 1) returning the character code.
+function code(text='', index=1) {
+  if (index < 1) return error$2.na
+  if (text.length < index) return error$2.value
+  return text.charCodeAt(index-1);
+}
+
+// Copyright 2015 Peter W Moresi
+
+// CONCATENATE reduces a list of values into a single string.
+function concatenate(...values) {
+  // Combine into a single string value
+  return values.reduce(
+    (acc, item) => `${acc}${item}`
+  )
+}
+
+// Exact compares two values and only returns true if they meet strict equivalence.
+const exact = (a, b) => a === b
+
+// FIND searches for text within a string
+function find(find_text, within_text='', position=1) {
+
+  // Find the position of the text
+  position = within_text.indexOf(find_text, position - 1)
+
+  // If found return the position as base 1.
+  return position === -1 ? error$2.value : position+1
+}
+
 // combine a array of strings/numbers into a single string
 function join(list, delim=', ') {
 
@@ -1224,6 +723,14 @@ function join(list, delim=', ') {
 
   // defer to JS implementation
   return list.join(delim)
+}
+
+// SERIAL convert a date object into a serial number.
+function serial(date) {
+  // Credit: https://github.com/sutoiku/formula.js/
+  if (!isdate(date)) { return error$2.na }
+  var diff = Math.ceil((date - d1900) / MilliSecondsInDay)
+  return diff + ( diff > 59 ? 2 : 1)
 }
 
 // N converts a `value` to a number. It supports numbers, true, false and dates.
@@ -1285,226 +792,10 @@ function len(text) {
   return error$2.value;
 };
 
-// Copyright 2015 Peter W Moresi
-
-// LOOKUP find a value in an array.
-function lookup() {
-    var lookup_value, lookup_array, lookup_vector, results_vector;
-    if (arguments.length === 2) { // array form
-        var wide = false;
-
-        lookup_value = arguments[0].valueOf();
-        lookup_array = arguments[1];
-
-        for (var i = 0; i < lookup_array.length; i++) {
-            if (typeof lookup_array[i] !== 'undefined' && lookup_value === lookup_array[i].valueOf()) {
-                return lookup_array[i];
-            }
-        }
-
-    } else if (arguments.length === 3) { // vector form`
-        lookup_value = arguments[0].valueOf();
-        lookup_vector = arguments[1];
-        results_vector = arguments[2];
-
-        for (var i = 0; i < lookup_vector.length; i++) {
-            if (typeof lookup_vector[i] !== 'undefined' && lookup_value === lookup_vector[i].valueOf()) {
-                return results_vector[i];
-            }
-        }
-
-    }
-
-    return error.na;
-
-}
-
 // LOWER converts `value` to lower case
 function lower(value) {
   if (!istext(value)) return error$2.value
   return value.toLowerCase()
-}
-
-// LT compares two values and returns true when a is less than b.
-function lt(a,b) {
-  if ( isref(a) && isref(b) ) {
-    return error.na;
-  } else if ( isarray(a) && isarray(b) ) {
-    return error.na;
-  } else if ( isref(a) || isarray(a) ) {
-    return a.map( (d) => d < b );
-  } else if ( isref(b) || isarray(b) ) {
-    return b.map( (d) => d < a );
-  } else {
-    return a < b;
-  }
-}
-
-// LT compares two values and returns true when a is less than or equal to b.
-function lte(a,b) {
-  if ( isref(a) && isref(b) ) {
-    return error.na;
-  } else if ( isarray(a) && isarray(b) ) {
-    return error.na;
-  } else if ( isref(a) || isarray(a) ) {
-    return a.map( (d) => d <= b );
-  } else if ( isref(b) || isarray(b) ) {
-    return b.map( (d) => d <= a );
-  } else {
-    return a <= b;
-  }
-}
-
-// MATCH returns an index in `array_reference` by searching for `lookup_reference`.
-function match(lookup_reference, array_reference, matchType) {
-
-  var lookupArray, lookupValue, index, indexValue;
-
-  // Gotta have only 2 arguments folks!
-  if (arguments.length === 2) {
-    matchType = 1;
-  }
-
-  // Find the lookup value inside a worksheet cell, if needed.
-  lookupValue = lookup_reference;
-
-
-  // Find the array inside a worksheet range, if needed.
-  if (isarray(array_reference)) {
-    lookupArray = array_reference;
-  } else {
-    return error$2.na;
-  }
-
-  // Gotta have both lookup value and array
-  if (!lookupValue && !lookupArray) {
-    return error$2.na;
-  }
-
-  // Bail on weird match types!
-  if (matchType !== -1 && matchType !== 0 && matchType !== 1) {
-    return error$2.na;
-  }
-
-  for (var idx = 0; idx < lookupArray.length; idx++) {
-    if (matchType === 1) {
-      if (lookupArray[idx] === lookupValue) {
-        return idx + 1;
-      } else if (lookupArray[idx] < lookupValue) {
-        if (!indexValue) {
-          index = idx + 1;
-          indexValue = lookupArray[idx];
-        } else if (lookupArray[idx] > indexValue) {
-          index = idx + 1;
-          indexValue = lookupArray[idx];
-        }
-      }
-    } else if (matchType === 0) {
-      if (typeof lookupValue === 'string') {
-        // '?' is mapped to the regex '.'
-        // '*' is mapped to the regex '.*'
-        // '~' is mapped to the regex '\?'
-        if (idx === 0) {
-          lookupValue = "^" + lookupValue.replace(/\?/g, '.').replace(/\*/g, '.*').replace(/~/g, '\\?') + "$";
-        }
-        if (typeof lookupArray[idx] !== "undefined") {
-          if (String(lookupArray[idx]).toLowerCase().match(String(lookupValue).toLowerCase())) {
-            return idx + 1;
-          }
-        }
-      } else {
-        if (typeof lookupArray[idx] !== "undefined" && lookupArray[idx] !== null && lookupArray[idx].valueOf() === lookupValue) {
-          return idx + 1;
-        }
-      }
-    } else if (matchType === -1) {
-      if (lookupArray[idx] === lookupValue) {
-        return idx + 1;
-      } else if (lookupArray[idx] > lookupValue) {
-        if (!indexValue) {
-          index = idx + 1;
-          indexValue = lookupArray[idx];
-        } else if (lookupArray[idx] < indexValue) {
-          index = idx + 1;
-          indexValue = lookupArray[idx];
-        }
-      }
-    }
-  }
-
-  return index ? index : error$2.na;
-
-};
-
-// MIN returns the smallest number from a `list`.
-function min(...list) {
-
-  var values = flatten( list )
-  if (values.length === 0) return;
-  return values.reduce((min, next) => {
-    if (isblank(min)) return next;
-    else if (isnumber(next)) return Math.min(min, next);
-    else return min;
-  });
-}
-
-function minute(value) {
-  // calculate total seconds
-  var totalSeconds = (value-trunc(value)) * SecondsInDay;
-  // calculate number of seconds for hour components
-  var hourSeconds = trunc(totalSeconds / SecondsInHour) * SecondsInHour;
-  // calculate the number seconds after remove seconds from the hours and convert to minutes
-  return trunc( (totalSeconds - hourSeconds) / SecondsInMinute);
-}
-
-// map an array to a new array
-function map(arr, f) {
-  return arr.map(d => f(d))
-}
-
-// MAX returns the largest number from a `list`.
-function max(...list) {
-
-  var values = flatten( list )
-  if (values.length === 0) return;
-  return values.reduce((max, next) => {
-    if (isblank(max)) return next;
-    else if (isnumber(next)) return Math.max(max, next);
-    else return max;
-  });
-}
-
-// MONTH parses a date value and returns the month of the year.
-function month(d) {
-  return parsedate(d).getMonth() + 1
-}
-
-// MULTIPLY calculates the product of two numbers.
-function multiply(...values) {
-
-  // Return `#NA!` if 2 arguments are not provided.
-  if (values.length !== 2) {
-    return error$2.na;
-  }
-
-  // decompose values into a and b.
-  var [a, b] = values
-
-  // Return `#VALUE!` if either a or b is not a number.
-  if (!isnumber(a) || !isnumber(b)) {
-    return error$2.value
-  }
-
-  // Return the product
-  return a * b
-}
-
-function numbers(...values) {
-  console.log(values)
-  return values.reduce(
-    (p, v) => isnumber(v) ? p.concat(v) : p,
-    []
-  )
 }
 
 // Convert a text value into a number value.
@@ -1556,119 +847,23 @@ function numbervalue(text, decimal_separator, group_separator)  {
   })
 };
 
-// NE returns true when a is not equal to b.
-function ne(a,b) {
-  return !eq(a, b)
-}
+// PARSEBOOL converts a truthy value into a boolean value.
+function parsebool(val) {
 
-// NOT negates a `value`
-function not(value) {
-  return (value !== true && value !== false && value !== 1 && value !== 0) ? 
-  error$2.value :
-  !value
-}
-
-function timevalue(time_text) {
-    // The JavaScript new Date() does not accept only time.
-    // To workaround the issue we put 1/1/1900 at the front.
-
-    var date = new Date("1/1/1900 " + time_text);
-
-    if (date instanceof Error) {
-        return date;
+  if (val instanceof Error) {
+    return val;
+  } else if (typeof val === 'boolean') {
+    return val;
+  } else if (typeof val === 'number') {
+    return val !== 0;
+  } else if (typeof val === 'string') {
+    var up = val.toUpperCase();
+    if (up === 'TRUE' || up === 'FALSE') {
+      return up === 'TRUE';
     }
-
-    return (SecondsInHour * date.getHours() +
-            SecondsInMinute * date.getMinutes() +
-            date.getSeconds()) / SecondsInDay;
-};
-
-function now() {
-  var d = new Date();
-  return datevalue(d.toLocaleDateString()) + timevalue(d.toLocaleTimeString());
-};
-
-function npv(rate, ...values) {
-    rate = rate * 1;
-    var factor = 1,
-        sum = 0;
-
-    for(var i = 0; i < values.length; i++) {
-        var factor = factor * (1 + rate);
-        sum += values[i] / factor;
-    }
-
-    return sum;
-}
-
-function nper(rate, pmt, pv, fv, type) {
-  var log,
-  result;
-  rate = parseFloat(rate || 0);
-  pmt = parseFloat(pmt || 0);
-  pv = parseFloat(pv || 0);
-  fv = (fv || 0);
-  type = (type || 0);
-
-  log = function(prim) {
-    if (Number.isNaN(prim)) {
-      return Math.log(0);
-    }
-    var num = Math.log(prim);
-    return num;
   }
 
-  if (rate == 0.0) {
-    result = (-(pv + fv)/pmt);
-  } else if (type > 0.0) {
-    result = (log(-(rate*fv-pmt*(1.0+rate))/(rate*pv+pmt*(1.0+rate)))/(log(1.0+rate)));
-  } else {
-    result = (log(-(rate*fv-pmt)/(rate*pv+pmt))/(log(1.0+rate)));
-  }
-
-  if (Number.isNaN(result)) {
-    result = 0;
-  }
-
-  return result;
-}
-
-// OCT2DEC converts a octal value into a decimal value.
-function oct2dec(octalNumber) {
-  // Credits: Based on implementation found in https://gist.github.com/ghalimi/4525876#file-oct2dec-js
-  // Return error.when number passed in is not octal or has more than 10 digits
-  if (!/^[0-7]{1,10}$/.test(octalNumber)) return error$2.num;
-
-  // Convert octal number to decimal number
-  var nonNegativeDecimalNumber = parseInt(octalNumber, 8);
-
-  // Returns the corresponding decimal number
-  // Two's Complement Decimal Range: -(2^N-1) to (2^N-1 - 1) where N=30 (N = number of bits) and ^ means raised to the power of
-  // 2^N-1 = 2^(30 - 1) = 2^29 = 536870912
-  // 2^N-1 - 1 = 536870912 - 1 = 536870911
-  // 2^N = 2^30 = 1073741824
-  // Two's Complement Decimal Range: [-536870912,536870911]
-  // Largest octal number allowed: 7777777777 which in decimal is 1073741823 = 2^N - 1
-  // Case 1: Negative Range
-  //  if nonNegativeDecimalNumber >= 2^N-1, then return (nonNegativeNumber - 2^N)
-  //  Smallest Number: 2^N-1 - 2^N = 2^N-1 - 2*2^N-1 = 2^N-1 * (1 - 2) = 2^N-1 * (-1) = -2^N-1
-  //  Largest Number: (2^N - 1) - (2^N) = (2^N - 2^N) - 1 = -1
-  //  Range: [-2^N-1, -1] = [-536870912, -1]
-  //
-  // Smallest octal number allowed: 0 which in decimal is 0
-  // Case 2: Non-Negative Range
-  //   Range: [0, 2^N-1 - 1] = [0, 536870911]
-
-  return (nonNegativeDecimalNumber >= 536870912) ? nonNegativeDecimalNumber - 1073741824 : nonNegativeDecimalNumber;
-}
-
-// OR returns true when any of the criter is true or 1.
-function or(...criteria) {
-  return criteria.reduce( (acc, item) => {
-    if (acc === true) return true;
-    let value = isfunction(item) ? item() : item;
-    return value === true || value === 1;
-  }, false)
+  return error$2.value;
 }
 
 // parse querystring into object
@@ -1689,79 +884,6 @@ function parsequery(query='') {
     acc[n[0]] = n[1] ? n[1] : '';
     return acc }, {}
   )
-}
-
-// PI returns half the universal circle constant
-function pi() {
-  return τ / 2;
-}
-
-// pluck a property from a list of objects
-function pluck(prop, list) {
-  if (!isarray(list)) {
-    return error$2.na
-  }
-
-  return list.map(d => d[prop])
-}
-
-// PMT returns a loan payment
-function pmt(rate, periods, present, future = 0, type = 0) {
-
-  if (!isnumber(rate) || !isnumber(periods)) {
-    return error$2.value;
-  }
-
-  if (rate === 0) {
-    return -((present + future) / periods);
-  } else {
-    var term = Math.pow(1 + rate, periods);
-    if (type === 1) {
-      return -((future * rate / (term - 1) + present * rate / (1 - 1 / term)) / (1 + rate));
-    } else {
-      return -(future * rate / (term - 1) + present * rate / (1 - 1 / term));
-    }
-  }
-
-};
-
-// POWER computes the power of a value and nth degree.
-function power(...values) {
-
-  // Return `#NA!` if 2 arguments are not provided.
-  if (values.length !== 2) {
-    return error$2.na;
-  }
-
-  // decompose values into a and b.
-  var [val, nth] = values
-
-  // Return `#VALUE!` if either a or b is not a number.
-  if (!isnumber(val) || !isnumber(nth)) {
-    return error$2.value
-  }
-
-  // Compute the power of val to the nth.
-  return Math.pow(val, nth);
-}
-
-function pv(rate, periods, payment, future=0, type=0) {
-
-  // is this error code correct?
-  if (isblank(rate)) return error$2.na
-  if (isblank(periods)) return error$2.na
-  if (isblank(payment)) return error$2.na
-
-  if (rate === 0) {
-    return -payment * periods - future;
-  } else {
-    return (((1 - Math.pow(1 + rate, periods)) / rate) * payment * (1 + rate * type) - future) / Math.pow(1 + rate, periods);
-  }
-};
-
-// reduce an array to a value
-function reduce(arr, f) {
-  return arr.reduce((p,v) => f(p,v))
 }
 
 // REPLACE returns a new string after replacing with `new_text`.
@@ -1791,22 +913,13 @@ function right(text, number) {
 
 // Copyright 2015 Peter W Moresi
 
-// CONVERT a number to a fixed precision.
-function round(number, precision) {
-  return +number.toFixed(precision);
-}
-
-// Copyright 2015 Peter W Moresi
-
-// ROUNDUP converts a number to a fixed precision by rounding up.
-function roundup(number, precision) {
-  var factors = [1,10,100,1000,10000,100000,1000000,10000000,100000000,1000000000];
-  var factor = factors[precision];
-  if (number > 0) {
-    return Math.ceil(number * factor) / factor;
-  } else {
-    return Math.floor(number * factor) / factor;
+// REPT creates string by repeating text a given number of times.
+function rept(text, number) {
+  var r = '';
+  for (var i = 0; i < number; i++) {
+    r += text;
   }
+  return r;
 }
 
 // SEARCH finds text using wildcards ?, *, ~?, and ~*.
@@ -1825,100 +938,6 @@ function search(find_text, within_text, position) {
 
     if (position) { return position.index + 1 }
     return error$2.value;
-}
-
-function second(value) {
-
-  // calculate total seconds
-  var totalSeconds = (value-trunc(value)) * SecondsInDay;
-
-  // calculate number of seconds for hour component
-  var hourSeconds = trunc(totalSeconds / SecondsInHour) * SecondsInHour;
-
-  // calculate number of seconds in minute component
-  var minuteSeconds = trunc((totalSeconds-hourSeconds) / SecondsInMinute) * SecondsInMinute;
-
-  // remove seconds for hours and minutes and round to nearest value
-  return Math.round(totalSeconds - hourSeconds - minuteSeconds);
-}
-
-// SIN calculates the sinine of a value.
-function sin(value) {
-
-  if (!isnumber(value)) {
-    return error$2.value;
-  }
-
-  return Math.sin(value);
-
-}
-
-// INT returns true when a needle is found in a list.
-function some(needle, list) {
-
-  // Return `#NA!` when the needle and list are blank.
-  if ( isblank(needle) && isblank(list) ) {
-    return error$2.na;
-  }
-
-  // Return `#NA!` when the list is not an array.
-  if (!isarray(list)) {
-    return error$2.na;
-  }
-
-  // Return true when some of the values match the needle.
-  return list.some(n => eq(n, needle) )
-}
-
-// SORT a reference or an array.
-//
-// The criteria may use 1 of several forms:
-//
-// sort(reference(reference: Array, ...criteria : List<string>)
-// sort(reference(reference: Range, ...criteria : List<string>)
-//
-// The List<function> will be reduced into a single function.
-//
-// The list<string> will also be reduced into a single function which
-// interprets the strings as pairs. The odd items are fields and the
-// even ones are direction (ASC|DESC).
-function sort(ref, ...criteria) {
-
-  // reduce the criteria array into a function
-  let makeComparer = () => {
-    return function(a, b) {
-      var result = 0;
-      for (var i = 0; i < criteria.length; i+2) {
-        let field = (typeof criteria[i] === 'string' ? criteria[i] : criteria[i] - 1),
-            order = criteria[i+1];
-
-        if (a[field] < b[field]) {
-          return order ? -1 : 1;
-        } else {
-          return order ? 1 : -1;
-        }
-
-      }
-
-      return result;
-
-    }
-
-  }
-
-  if (isref(ref) || isarray(ref)) {
-    return ref.sort( makeComparer() );
-  }
-
-  return error$2.na;
-
-}
-
-// Copyright 2015 Peter W Moresi
-
-// SPLIT `text` given a `delimiter`.
-function split(text, delimiter) {
-  return text.split(delimiter)
 }
 
 // Copyright 2015 Peter W Moresi
@@ -1942,40 +961,11 @@ function substitute(text, old_text, new_text, occurrence) {
   }
 }
 
-// SUBTRACT calculates the difference of two numbers.
-function subtract(...values) {
+// Copyright 2015 Peter W Moresi
 
-  // Return `#NA!` if 2 arguments are not provided.
-  if (values.length !== 2) {
-    return error$2.na;
-  }
-
-  // decompose values into a and b.
-  var [a, b] = values
-
-  // Return `#VALUE!` if either a or b is not a number.
-  if (!isnumber(a) || !isnumber(b)) {
-    return error$2.value
-  }
-
-  // Return the difference.
-  return a - b
-}
-
-// TAN computes the tagent of a value.
-function tan(value) {
-
-  if (!isnumber(value)) {
-    return error$2.value;
-  }
-
-  return Math.tan(value);
-
-}
-
-// TAU returns the universal circle constant
-function tau() {
-  return τ;
+// SPLIT `text` given a `delimiter`.
+function split(text, delimiter) {
+  return text.split(delimiter)
 }
 
 let FormatNumber = {};
@@ -2811,15 +1801,6 @@ function text(value, format, currency_char) {
   return FormatNumber.formatNumberWithFormat(value, format, currency_char);
 }
 
-function time(hour, minute, second) {
-  return +((hour*3600 + minute*60 + second) / SecondsInDay).toFixed(15);
-}
-
-function today() {
-  var d = new Date();
-  return datevalue(d.toLocaleDateString())
-};
-
 // TRIMS returns a string without whitespace at the beginning or end.
 function trim(text) {
     if (typeof text !== 'string') {
@@ -2834,6 +1815,171 @@ function trim(text) {
 function upper(string) {
   return string.toUpperCase()
 }
+
+// Find a needle in a table searching horizontally.
+function hlookup(needle, table, index=1, exactmatch) {
+    if (typeof needle === "undefined" || isblank(needle)) {
+        return null;
+    }
+
+    if (index > table.length) {
+      return error$2.ref
+    }
+
+    var needleLower = (needle + '').toLowerCase(),
+    row = table[0];
+
+    for (var i = 0; i < row.length; i++){
+
+      if ((exactmatch && row[i]===needle) ||
+          ((row[i] == needle) ||
+           (typeof row[i] === "string" && row[i].toLowerCase().indexOf(needleLower) != -1) )) {
+            return table[index-1][i];
+        }
+    }
+
+    return error$2.na;
+}
+
+// index returns the value in a row and column from a 2d array
+function index(reference, row_num, column_num=1) {
+  var row;
+
+  if (!isarray(reference) || isblank(row_num)) {
+    return error$2.value
+  }
+
+  if (reference.length < row_num) {
+    return error$2.ref
+  }
+
+  row = reference[row_num-1];
+
+  if (!isarray(row)) {
+    return error$2.value
+  }
+
+  if (row.length < column_num) {
+    return error$2.ref
+  }
+
+  return row[column_num-1];
+}
+
+// Copyright 2015 Peter W Moresi
+
+// LOOKUP find a value in an array.
+function lookup() {
+    var lookup_value, lookup_array, lookup_vector, results_vector;
+    if (arguments.length === 2) { // array form
+        var wide = false;
+
+        lookup_value = arguments[0].valueOf();
+        lookup_array = arguments[1];
+
+        for (var i = 0; i < lookup_array.length; i++) {
+            if (typeof lookup_array[i] !== 'undefined' && lookup_value === lookup_array[i].valueOf()) {
+                return lookup_array[i];
+            }
+        }
+
+    } else if (arguments.length === 3) { // vector form`
+        lookup_value = arguments[0].valueOf();
+        lookup_vector = arguments[1];
+        results_vector = arguments[2];
+
+        for (var i = 0; i < lookup_vector.length; i++) {
+            if (typeof lookup_vector[i] !== 'undefined' && lookup_value === lookup_vector[i].valueOf()) {
+                return results_vector[i];
+            }
+        }
+
+    }
+
+    return error.na;
+
+}
+
+// MATCH returns an index in `array_reference` by searching for `lookup_reference`.
+function match(lookup_reference, array_reference, matchType) {
+
+  var lookupArray, lookupValue, index, indexValue;
+
+  // Gotta have only 2 arguments folks!
+  if (arguments.length === 2) {
+    matchType = 1;
+  }
+
+  // Find the lookup value inside a worksheet cell, if needed.
+  lookupValue = lookup_reference;
+
+
+  // Find the array inside a worksheet range, if needed.
+  if (isarray(array_reference)) {
+    lookupArray = array_reference;
+  } else {
+    return error$2.na;
+  }
+
+  // Gotta have both lookup value and array
+  if (!lookupValue && !lookupArray) {
+    return error$2.na;
+  }
+
+  // Bail on weird match types!
+  if (matchType !== -1 && matchType !== 0 && matchType !== 1) {
+    return error$2.na;
+  }
+
+  for (var idx = 0; idx < lookupArray.length; idx++) {
+    if (matchType === 1) {
+      if (lookupArray[idx] === lookupValue) {
+        return idx + 1;
+      } else if (lookupArray[idx] < lookupValue) {
+        if (!indexValue) {
+          index = idx + 1;
+          indexValue = lookupArray[idx];
+        } else if (lookupArray[idx] > indexValue) {
+          index = idx + 1;
+          indexValue = lookupArray[idx];
+        }
+      }
+    } else if (matchType === 0) {
+      if (typeof lookupValue === 'string') {
+        // '?' is mapped to the regex '.'
+        // '*' is mapped to the regex '.*'
+        // '~' is mapped to the regex '\?'
+        if (idx === 0) {
+          lookupValue = "^" + lookupValue.replace(/\?/g, '.').replace(/\*/g, '.*').replace(/~/g, '\\?') + "$";
+        }
+        if (typeof lookupArray[idx] !== "undefined") {
+          if (String(lookupArray[idx]).toLowerCase().match(String(lookupValue).toLowerCase())) {
+            return idx + 1;
+          }
+        }
+      } else {
+        if (typeof lookupArray[idx] !== "undefined" && lookupArray[idx] !== null && lookupArray[idx].valueOf() === lookupValue) {
+          return idx + 1;
+        }
+      }
+    } else if (matchType === -1) {
+      if (lookupArray[idx] === lookupValue) {
+        return idx + 1;
+      } else if (lookupArray[idx] > lookupValue) {
+        if (!indexValue) {
+          index = idx + 1;
+          indexValue = lookupArray[idx];
+        } else if (lookupArray[idx] < indexValue) {
+          index = idx + 1;
+          indexValue = lookupArray[idx];
+        }
+      }
+    }
+  }
+
+  return index ? index : error$2.na;
+
+};
 
 // VLOOKUP find a needle in a table searching vertically.
 function vlookup(needle, table=[], index=1, exactmatch=false) {
@@ -2860,14 +2006,175 @@ function vlookup(needle, table=[], index=1, exactmatch=false) {
 
 }
 
-// XOR computes the exclusive or for a given set of `values`.
-function xor(...values) {
-    return !!(flatten(values).reduce((a,b) => {
-      if (b) {
-        return a+1
-      }
-      return a
-    }, 0) & 1)
+// DATE returns a serial number given a year, month and day.
+function date(year, month, day) {
+  return serial(new Date(year, month-1, day));
+}
+
+// DATEVALUE parses a date string and returns a serial number.
+function datevalue(d) {
+  return serial(parsedate(d));
+}
+
+// DATEDIF return the difference between two dates given a start date, end date and unit.
+function datedif(start_date, end_date, unit) {
+  var second=1000, minute=second*60, hour=minute*60, day=hour*24, week=day*7;
+  start_date = parsedate(start_date),
+  end_date = parsedate(end_date)
+
+  var timediff = end_date - start_date;
+  if (Number.isNaN(timediff)) return NaN;
+
+  switch (unit) {
+    case "Y": return end_date.getFullYear() - start_date.getFullYear();
+    case "M": return (
+      ( end_date.getFullYear() * 12 + end_date.getMonth() )
+        -
+      ( start_date.getFullYear() * 12 + start_date.getMonth() )
+    );
+    case "W"  : return Math.floor(timediff / week);
+    case "D"   : return Math.floor(timediff / day);
+    case "MD"   : return end_date.getdate() - start_date.getdate();
+    case "YM" : return end_date.getMonth() - start_date.getMonth();
+    case "YD": return new error("NOT IMPLEMENTED");
+    default: return undefined;
+  }
+
+}
+
+// DAY parses a date string and returns the day of the month.
+function day(d) {
+  return parsedate(d).getDate()
+}
+
+function days360(start_date, end_date, method) {
+    method = parsebool(method);
+    start_date = parsedate(start_date);
+    end_date = parsedate(end_date);
+
+    if (start_date instanceof Error) {
+        return start_date;
+    }
+    if (end_date instanceof Error) {
+        return end_date;
+    }
+    if (method instanceof Error) {
+        return method;
+    }
+    var sm = start_date.getMonth();
+    var em = end_date.getMonth();
+    var sd, ed;
+    if (method) {
+        sd = start_date.getDate() === 31 ? 30 : start_date.getDate();
+        ed = end_date.getDate() === 31 ? 30 : end_date.getDate();
+    } else {
+        var smd = new Date(start_date.getFullYear(), sm + 1, 0).getDate();
+        var emd = new Date(end_date.getFullYear(), em + 1, 0).getDate();
+        sd = start_date.getDate() === smd ? 30 : start_date.getDate();
+        if (end_date.getDate() === emd) {
+            if (sd < 30) {
+                em++;
+                ed = 1;
+            } else {
+                ed = 30;
+            }
+        } else {
+            ed = end_date.getDate();
+        }
+    }
+    return (
+      360 * (end_date.getFullYear() - start_date.getFullYear()) + 30 * (em - sm) + (ed - sd)
+    );
+}
+
+function edate(start_date, months) {
+    start_date = parsedate(start_date);
+
+    if (start_date instanceof Error) {
+        return start_date;
+    }
+    if (isNaN(months)) {
+        return error.value;
+    }
+    months = parseInt(months, 10);
+    start_date.setMonth(start_date.getMonth() + months);
+    return serial(start_date);
+};
+
+function eomonth(start_date, months) {
+  start_date = parsedate(start_date);
+
+  if (start_date instanceof Error) {
+    return start_date;
+  }
+  if (isNaN(months)) {
+    return error$2.value;
+  }
+  months = parseInt(months, 10);
+  return new Date(start_date.getFullYear(), start_date.getMonth() + months + 1, 0);
+}
+
+function hour(value) {
+    // remove numbers before decimal place and convert fraction to 24 hour scale.
+    return trunc((value - trunc(value)) * 24);
+}
+
+function minute(value) {
+  // calculate total seconds
+  var totalSeconds = (value-trunc(value)) * SecondsInDay;
+  // calculate number of seconds for hour components
+  var hourSeconds = trunc(totalSeconds / SecondsInHour) * SecondsInHour;
+  // calculate the number seconds after remove seconds from the hours and convert to minutes
+  return trunc( (totalSeconds - hourSeconds) / SecondsInMinute);
+}
+
+// MONTH parses a date value and returns the month of the year.
+function month(d) {
+  return parsedate(d).getMonth() + 1
+}
+
+function timevalue(time_text) {
+    // The JavaScript new Date() does not accept only time.
+    // To workaround the issue we put 1/1/1900 at the front.
+
+    var date = new Date("1/1/1900 " + time_text);
+
+    if (date instanceof Error) {
+        return date;
+    }
+
+    return (SecondsInHour * date.getHours() +
+            SecondsInMinute * date.getMinutes() +
+            date.getSeconds()) / SecondsInDay;
+};
+
+function now() {
+  var d = new Date();
+  return datevalue(d.toLocaleDateString()) + timevalue(d.toLocaleTimeString());
+};
+
+function second(value) {
+
+  // calculate total seconds
+  var totalSeconds = (value-trunc(value)) * SecondsInDay;
+
+  // calculate number of seconds for hour component
+  var hourSeconds = trunc(totalSeconds / SecondsInHour) * SecondsInHour;
+
+  // calculate number of seconds in minute component
+  var minuteSeconds = trunc((totalSeconds-hourSeconds) / SecondsInMinute) * SecondsInMinute;
+
+  // remove seconds for hours and minutes and round to nearest value
+  return Math.round(totalSeconds - hourSeconds - minuteSeconds);
+}
+
+function today() {
+  var d = new Date();
+  return datevalue(d.toLocaleDateString())
+};
+
+function time(hour, minute, second) {
+  return +((hour*3600 + minute*60 + second) / SecondsInDay).toFixed(15);
 }
 
 // YEAR parses a date value and returns the year of the year.
@@ -2945,40 +2252,707 @@ function yearfrac(start_date, end_date, basis) {
   }
 };
 
+// SUM a given list of `numbers`
+function sum(...numbers) {
+    return flatten(flatten(numbers))
+    .reduce((a, b) => {
+      if (typeof b !== 'number') { return error$2.value }
+      return a + b
+    });
+}
+
+// AVERAGE computes sum of items divided by number of items
+function average(...items) {
+
+  // compute sum all of the items.
+  var v = sum(...items)
+
+  // return sum when computed error.
+  if (iserror(v)) {
+    return v;
+  }
+
+  // return sum divided by item count
+  return  v / items.length;
+}
+
+// MIN returns the smallest number from a `list`.
+function min(...list) {
+
+  var values = flatten( list )
+  if (values.length === 0) return;
+  return values.reduce((min, next) => {
+    if (isblank(min)) return next;
+    else if (isnumber(next)) return Math.min(min, next);
+    else return min;
+  });
+}
+
+// MAX returns the largest number from a `list`.
+function max(...list) {
+
+  var values = flatten( list )
+  if (values.length === 0) return;
+  return values.reduce((max, next) => {
+    if (isblank(max)) return next;
+    else if (isnumber(next)) return Math.max(max, next);
+    else return max;
+  });
+}
+
+function fv(rate, periods, payment, value=0, type=0) {
+
+  // is this error code correct?
+  if (isblank(rate)) return error$2.na
+  if (isblank(periods)) return error$2.na
+  if (isblank(payment)) return error$2.na
+
+  var fv;
+  if (rate === 0) {
+    fv = value + payment * periods;
+  } else {
+    var term = Math.pow(1 + rate, periods);
+    if (type === 1) {
+      fv = value * term + payment * (1 + rate) * (term - 1) / rate;
+    } else {
+      fv = value * term + payment * (term - 1) / rate;
+    }
+  }
+  return -fv;
+};
+
+function nper(rate, pmt, pv, fv, type) {
+  var log,
+  result;
+  rate = parseFloat(rate || 0);
+  pmt = parseFloat(pmt || 0);
+  pv = parseFloat(pv || 0);
+  fv = (fv || 0);
+  type = (type || 0);
+
+  log = function(prim) {
+    if (Number.isNaN(prim)) {
+      return Math.log(0);
+    }
+    var num = Math.log(prim);
+    return num;
+  }
+
+  if (rate == 0.0) {
+    result = (-(pv + fv)/pmt);
+  } else if (type > 0.0) {
+    result = (log(-(rate*fv-pmt*(1.0+rate))/(rate*pv+pmt*(1.0+rate)))/(log(1.0+rate)));
+  } else {
+    result = (log(-(rate*fv-pmt)/(rate*pv+pmt))/(log(1.0+rate)));
+  }
+
+  if (Number.isNaN(result)) {
+    result = 0;
+  }
+
+  return result;
+}
+
+function npv(rate, ...values) {
+    rate = rate * 1;
+    var factor = 1,
+        sum = 0;
+
+    for(var i = 0; i < values.length; i++) {
+        var factor = factor * (1 + rate);
+        sum += values[i] / factor;
+    }
+
+    return sum;
+}
+
+// PMT returns a loan payment
+function pmt(rate, periods, present, future = 0, type = 0) {
+
+  if (!isnumber(rate) || !isnumber(periods)) {
+    return error$2.value;
+  }
+
+  if (rate === 0) {
+    return -((present + future) / periods);
+  } else {
+    var term = Math.pow(1 + rate, periods);
+    if (type === 1) {
+      return -((future * rate / (term - 1) + present * rate / (1 - 1 / term)) / (1 + rate));
+    } else {
+      return -(future * rate / (term - 1) + present * rate / (1 - 1 / term));
+    }
+  }
+
+};
+
+function pv(rate, periods, payment, future=0, type=0) {
+
+  // is this error code correct?
+  if (isblank(rate)) return error$2.na
+  if (isblank(periods)) return error$2.na
+  if (isblank(payment)) return error$2.na
+
+  if (rate === 0) {
+    return -payment * periods - future;
+  } else {
+    return (((1 - Math.pow(1 + rate, periods)) / rate) * payment * (1 + rate * type) - future) / Math.pow(1 + rate, periods);
+  }
+};
+
+// BIN2DEC converts binary string into decimal value
+function bin2dec(value) {
+    var valueAsString;
+
+    if (typeof value === "string") {
+        valueAsString = value;
+    } else if (typeof value !== "undefined") {
+        valueAsString = value.toString();
+    } else {
+        return error$2.NA;
+    }
+
+    if (valueAsString.length > 10) return error$2.NUM;
+
+    // we subtract 512 when the leading number is 0.
+    if (valueAsString.length === 10 && valueAsString[0] === '1') {
+        return parseInt(valueAsString.substring(1), 2) - 512;
+    }
+
+    // Convert binary number to decimal with built-in facility
+    return parseInt(valueAsString, 2);
+
+};
+
+// based on https://github.com/sutoiku/formula.js/blob/mast../src/engineering.js
+function dec2bin(input, places) {
+
+  // exit if input is an error
+  if (input instanceof Error) {
+    return number;
+  }
+
+  // cast input to number
+  var number = parseInt(input);
+
+  if (!/^-?[0-9]{1,3}$/.test(number) || Number.isNaN(number)) {
+    return error$2.value;
+  }
+
+  // Return error.if number is not decimal, is lower than -512, or is greater than 511
+  if (number < -512 || number > 511) {
+    return error$2.num;
+  }
+
+  // Ignore places and return a 10-character binary number if number is negative
+  if (number < 0) {
+    return '1' + rept('0', 9 - (512 + number).toString(2).length) + (512 + number).toString(2);
+  }
+
+  // Convert decimal number to binary
+  var result = parseInt(number, 10).toString(2);
+
+  // Return binary number using the minimum number of characters necessary if places is undefined
+  if (typeof places === 'undefined') {
+    return result;
+  } else {
+    // Return error.if places is nonnumeric
+    if (!/^-?[0-9]{1,3}$/.test(places) || Number.isNaN(places)) {
+      return error$2.value;
+    }
+
+    // Return error.if places is negative
+    if (places < 0) {
+      return error$2.num;
+    }
+
+    // Truncate places in case it is not an integer
+    places = Math.floor(places);
+
+    // Pad return value with leading 0s (zeros) if necessary (using Underscore.string)
+    return (places >= result.length) ? rept('0', places - result.length) + result : error$2.num;
+  }
+}
+
+// OCT2DEC converts a octal value into a decimal value.
+function oct2dec(octalNumber) {
+  // Credits: Based on implementation found in https://gist.github.com/ghalimi/4525876#file-oct2dec-js
+  // Return error.when number passed in is not octal or has more than 10 digits
+  if (!/^[0-7]{1,10}$/.test(octalNumber)) return error$2.num;
+
+  // Convert octal number to decimal number
+  var nonNegativeDecimalNumber = parseInt(octalNumber, 8);
+
+  // Returns the corresponding decimal number
+  // Two's Complement Decimal Range: -(2^N-1) to (2^N-1 - 1) where N=30 (N = number of bits) and ^ means raised to the power of
+  // 2^N-1 = 2^(30 - 1) = 2^29 = 536870912
+  // 2^N-1 - 1 = 536870912 - 1 = 536870911
+  // 2^N = 2^30 = 1073741824
+  // Two's Complement Decimal Range: [-536870912,536870911]
+  // Largest octal number allowed: 7777777777 which in decimal is 1073741823 = 2^N - 1
+  // Case 1: Negative Range
+  //  if nonNegativeDecimalNumber >= 2^N-1, then return (nonNegativeNumber - 2^N)
+  //  Smallest Number: 2^N-1 - 2^N = 2^N-1 - 2*2^N-1 = 2^N-1 * (1 - 2) = 2^N-1 * (-1) = -2^N-1
+  //  Largest Number: (2^N - 1) - (2^N) = (2^N - 2^N) - 1 = -1
+  //  Range: [-2^N-1, -1] = [-536870912, -1]
+  //
+  // Smallest octal number allowed: 0 which in decimal is 0
+  // Case 2: Non-Negative Range
+  //   Range: [0, 2^N-1 - 1] = [0, 536870911]
+
+  return (nonNegativeDecimalNumber >= 536870912) ? nonNegativeDecimalNumber - 1073741824 : nonNegativeDecimalNumber;
+}
+
 // Copyright 2015 Peter W Moresi
 
-// FunctionFoundry is a collection of pure functions.
-//
-// The functions accept input and produce output. They do not create side effects and are therefore composable.
-//
-// The library is organized several core compatibilities:
-//
-// 1. Logical functions
-//   - and, or, nor, eq, ne, gt, gte, lt, lte, branch and more...
-//
-// 2. Math functions
-//   - add, subtract, multiply, divide, sin, cos, ect...
-//
-// 3. Text manipulation
-//   - text, numbervalue, split and more...
-//
-// 4. Lookup and reference/
-//   - lookup, vlookup, hlookup and more...
-//
-// 5. Date manipulation
-//   - Functions withsSupport for spreadsheet serial numbers like date, datedif and more...
-//
-// 6. Aggregation
-//   - sum, average, min, max
-//
-// The library currently is approaching 100 functions. The long term goal is to support the ~300 functions supported by modern spreadsheet software.
-//
-// The test suite includes over ~600 assertions to ensure high quality and provide usage examples.
+// FILTER limits a range based on arrays of boolean values.
+function filter(range, ...filters) {
 
-// Polyfill Number.isNaN
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
+  // A filter is an array of true/false values.
+  // The filter may be for rows or for columns but not both.
+  // A array filter may only filter a range that covers a single row or a single column.
+
+  function makefilter() {
+    return function(value, index) {
+      return filters.reduce( function( previousValue, currentValue ) {
+        if (previousValue === false ) {
+          return false;
+        } else {
+          return currentValue[index];
+        }
+      }, true);
+    }
+  }
+
+  return range.filter( makefilter() )
+
+}
+
+// map an array to a new array
+function map(arr, f) {
+  return arr.map(d => f(d))
+}
+
+// pluck a property from a list of objects
+function pluck(prop, list) {
+  if (!isarray(list)) {
+    return error$2.na
+  }
+
+  return list.map(d => d[prop])
+}
+
+// reduce an array to a value
+function reduce(arr, f) {
+  return arr.reduce((p,v) => f(p,v))
+}
+
+// INT returns true when a needle is found in a list.
+function some(needle, list) {
+
+  // Return `#NA!` when the needle and list are blank.
+  if ( isblank(needle) && isblank(list) ) {
+    return error$2.na;
+  }
+
+  // Return `#NA!` when the list is not an array.
+  if (!isarray(list)) {
+    return error$2.na;
+  }
+
+  // Return true when some of the values match the needle.
+  return list.some(n => eq(n, needle) )
+}
+
+// SORT a reference or an array.
+//
+// The criteria may use 1 of several forms:
+//
+// sort(reference(reference: Array, ...criteria : List<string>)
+// sort(reference(reference: Range, ...criteria : List<string>)
+//
+// The List<function> will be reduced into a single function.
+//
+// The list<string> will also be reduced into a single function which
+// interprets the strings as pairs. The odd items are fields and the
+// even ones are direction (ASC|DESC).
+function sort(ref, ...criteria) {
+
+  // reduce the criteria array into a function
+  let makeComparer = () => {
+    return function(a, b) {
+      var result = 0;
+      for (var i = 0; i < criteria.length; i+2) {
+        let field = (typeof criteria[i] === 'string' ? criteria[i] : criteria[i] - 1),
+            order = criteria[i+1];
+
+        if (a[field] < b[field]) {
+          return order ? -1 : 1;
+        } else {
+          return order ? 1 : -1;
+        }
+
+      }
+
+      return result;
+
+    }
+
+  }
+
+  if (isref(ref) || isarray(ref)) {
+    return ref.sort( makeComparer() );
+  }
+
+  return error$2.na;
+
+}
+
+// Copyright 2015 Peter W Moresi
+
+// UNIQUE reduces an `array` into an array without duplicate values.
+function unique(array) {
+  return array.reduce(function(p, c) {
+    if (p.indexOf(c) < 0) p.push(c);
+    return p;
+  }, [])
+}
+
+// CHANGED computes the list of keys that are different between two objects.
+function changed(a, b) {
+
+  // Compute the keys in object a and b.
+  var keysA = Object.keys(a),
+  keysB = Object.keys(b)
+
+  // Find the unique set of properties comparing a to b and b to a.
+  return unique(
+    keysA
+    .filter( n => a[n] !== b[n])
+    .concat(
+      keysB
+      .filter( n => a[n] !== b[n])
+    )
+  )
+}
+
+// Copyright 2015 Peter W Moresi
+
+function diff(a, b) {
+  let keysA = Object.keys(a),
+  keysB = Object.keys(b),
+  InA = keysB.filter(n => keysA.indexOf(n) > -1),
+  NotInA = keysB.filter(n => keysA.indexOf(n) === -1),
+  NotInB = keysA.filter(n => keysB.indexOf(n) === -1),
+  Diff = InA.filter( n => a[n] !== b[n])
+
+  return {
+    unique_left: NotInA,
+    unique_right: NotInB,
+    diff: Diff.reduce( (x, y) => {
+      var diff = { }
+      diff[y] = { left: a[y], right: b[y]}
+      return Object.assign({}, x, diff)
+    }, {})
+  }
+}
+
+// SELECT fields from object
+function select(fields, body) {
+  // non-json
+  if (!body || 'object' != typeof body) return;
+
+  // check for fields
+  if (!fields) return;
+
+  // split
+  if ('string' == typeof fields) fields = fields.split(/ *, */);
+
+  // fields array
+  if (isarray(body)) {
+    return body.map(function(obj){
+      return fields.reduce(function(ret, key){
+        ret[key] = obj[key];
+        return ret;
+      }, {});
+    });
+
+    return;
+  }
+
+  // fields object
+  return fields.reduce(function(ret, key){
+    ret[key] = body[key];
+    return ret;
+  }, {});
+}
+
+// CLEAN accepts an object and remove properties that are blank.
+function clean(obj) {
+  // Compute keys where value is non blank.
+  var keys = Object.keys(obj).filter( n => !isblank(obj[n]) )
+
+  // Compute object with only non-blank keys.
+  return select( keys, obj )
+}
+
+// get a property (p) from an object (o)
+function get(p, o) {
+  return o[p]
+}
+
+// CELLINDEX computes the index for row and column in a 2 dimensional array.
+function cellindex(row, col) {
+  // Multiple row by maximum columns plus the col.
+  return Math.floor( (row * MaxCols) + col );
+}
+
+// Convert letter to number (e.g A -> 0)
+function columnnumber(column) {
+
+  if (!istext(column)) {
+    return error$2.value
+  }
+
+  // see toColumn for rant on why this is sensible even though it is illogical.
+  var s = 0, secondPass;
+
+  if (column.length > 0) {
+
+    s = column.charCodeAt(0) - 'A'.charCodeAt(0);
+
+    for (var i = 1; i < column.length; i++) {
+      // compensate for spreadsheet column naming
+      s+=1
+      s *= 26;
+      s += column.charCodeAt(i) - 'A'.charCodeAt(0);
+      secondPass = true;
+    }
+
+    return s;
+
+  }
+
+  return error$2.value;
+
+}
+
+// COLUMN return the column number that corresponds to the reference.
+function column(value) {
+
+  // Return `#VALUE!` when the value is not a reference.
+  if (!isref(value)) {
+    return error$2.value;
+  }
+
+  // Run the COLUMNNUMBER and convert to base 1.
+  return columnnumber(value.column) + 1;
+}
+
+// Convert index to letter (e.g 0 -> A)
+function columnletter( index ) {
+
+  if (!isnumber(index)) {
+    return error$2.value
+  }
+
+  // The column is determined by applying a modified Hexavigesimal algorithm.
+  // Normally BA follows Z but spreadsheets count wrong and nobody cares.
+
+  // Instead they do it in a way that makes sense to most people but
+  // is mathmatically incorrect. So AA follows Z which in the base 10
+  // system is like saying 01 follows 9.
+
+  // In the least significant digit
+  // A..Z is 0..25
+
+  // For the second to nth significant digit
+  // A..Z is 1..26
+
+  var converted = ""
+  ,secondPass = false
+  ,remainder
+  ,value = Math.abs(index);
+
+  do {
+    remainder = value % 26;
+
+    if (secondPass) {
+      remainder--;
+    }
+
+    converted = String.fromCharCode((remainder + 'A'.charCodeAt(0))) + converted;
+    value = Math.floor((value - remainder) / 26);
+
+    secondPass = true;
+  } while (value > 0);
+
+  return converted;
+
+}
+
+// Copyright 2015 Peter W Moresi
+
+// credit to http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
+// rfc4122 version 4 compliant solution
+
+// Generate a globally unique identifier
+function guid(){
+  var guid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+    return v.toString(16);
+  });
+  return guid;
+};
+
+function int(value) {
+  return Math.floor(value)
+}
+
+// INDEX2COL computes the row given a cell index
+function index2row(index) {
+  return Math.floor(index / MaxCols);
+}
+
+// INDEX2COL computes the column given a cell index
+function index2col(index) {
+  return index - (index2row(index) * MaxCols);
+}
+
+function numbers(...values) {
+  console.log(values)
+  return values.reduce(
+    (p, v) => isnumber(v) ? p.concat(v) : p,
+    []
+  )
+}
+
+// REF accepts top and bottom and returns a reference object. It encapsulates a cell or a range.
+function ref$1(top, bottom) {
+
+  // The index must be a number
+  if (!isnumber(top) && !isfunction(top)) {
+    return error$2.value
+  }
+
+  if (isblank(bottom)) {
+    bottom = top
+  }
+
+  var getTop = () => isfunction(top) ? top() : top
+  var getBottom = () => isfunction(bottom) ? bottom() : bottom
+
+  return {
+
+    get _isref(){
+      return true
+    },
+
+    get top() {
+      return getTop()
+    },
+
+    get bottom() {
+      return getBottom()
+    },
+
+    // Returns row (rowIndex plus 1)
+    get row() {
+      return index2row( getTop() ) + 1;
+    },
+
+    // Returns rowIndex (base 0)
+    get rowIndex() {
+      return index2row( getTop() )
+    },
+
+    // Returns column letter
+    get column() {
+      return columnletter( index2col( getTop() ) )
+    },
+
+    // Returns column index
+    get columnIndex() {
+      return index2col( getTop() )
+    },
+
+    // Returns row (rowIndex plus 1)
+    get bottomRow() {
+      return index2row( getBottom() ) + 1;
+    },
+
+    // Returns rowIndex (base 0)
+    get bottomRowIndex() {
+      return index2row( getBottom() )
+    },
+
+    // Returns column letter
+    get bottomColumn() {
+      return columnletter( index2col( getBottom() ) )
+    },
+
+    // Returns column index
+    get bottomColumnIndex() {
+      return index2col( getBottom() )
+    },
+
+    // The cell id puts the whole table into a single dimension. It simply needs to be between the topLeft and the bottomRight to qualify.
+    hit(index) {
+
+      // Return `#NA!` when index is negative.
+      if (index < 0) return error$2.na
+
+      // Check if value is inside range from top to bottom, inclusive.
+      return (
+        ( index >= getTop() ) &&
+        ( index <= getBottom() )
+      );
+    },
+
+    get size() {
+      return 1 + (getBottom() - getTop())
+    },
+
+    // Return array with every cell index
+    get cells() {
+      return Array.apply(
+        getTop(),
+        Array( 1 + (getBottom() - getTop()) )
+      )
+      .map( (x, y) => y + getTop())
+    },
+
+    // Return array with every row
+    get rows() {
+      return unique(
+        Array.apply(
+          getTop(),
+          Array( 1 + (getBottom() - getTop()) )
+        )
+        .map( (x, y) => index2row(y + getTop()))
+      )
+    }
+
+  }
+}
+
+// Copyright @ 2015-2016 Peter W Moresi
+
+// # FunctionFoundry
+// Library of functions distributed through npm.
+//
+// ## Install
+//   ```sh
+//   npm install --save functionfoundry
+//   ```
+
+// ## Polyfills
+// The library includes a polyfill for Number.isNaN.
+
+// ### Number.isNaN
+// credit: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
 Number.isNaN = Number.isNaN || function(value) {
     return value !== value;
 }
 
-export { abs, acos, add, and, average, bin2dec, branch, branch as cond, cellindex, cellindex as cellIndex, changed, choose, clean, code, column, columnletter, columnletter as columnLetter, columnnumber, concatenate, cos, date, datevalue, datevalue as dateValue, datedif, day, days360, dec2bin, diff, divide, edate, eomonth, eq, exact, filter, find, flatten, fv, get, gt, gte, guid, hlookup, hour, int, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, index, index2col, index2row, indirect, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isleapyear, isleapyear as isLeapYear, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isoweeknum, isoweeknum as isoWeekNum, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, join, left, len, lookup, lower, lt, lte, match, min, minute, map, max, month, multiply, n, numbers, numbervalue, numbervalue as numberValue, ne, not, now, npv, nper, oct2dec, or, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, parsequery, parsequery as parseQuery, pi, pluck, pmt, power, pv, reduce, ref$1 as ref, replace, rept, right, round, roundup, search, second, select, serial, sin, some, some as in, sort, split, substitute, subtract, sum, tan, tau, text, time, timevalue, today, trim, trunc, unique, upper, vlookup, xor, year, yearfrac };
+export { branch, branch as cond, choose, and, or, not, eq, ne, gt, gte, lt, lte, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isleapyear, isleapyear as isLeapYear, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isoweeknum, isoweeknum as isoWeekNum, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, xor, add, subtract, multiply, divide, abs, acos, cos, pi, power, round, roundup, sin, tan, tau, trunc, code, concatenate, exact, find, join, left, len, lower, numbervalue, numbervalue as numberValue, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, parsequery, parsequery as parseQuery, replace, right, rept, search, substitute, split, text, trim, upper, hlookup, index, lookup, match, vlookup, date, datevalue, datevalue as dateValue, datedif, day, days360, edate, eomonth, hour, minute, month, now, second, today, time, timevalue, year, yearfrac, average, min, max, sum, fv, nper, npv, pmt, pv, bin2dec, dec2bin, oct2dec, filter, flatten, map, pluck, reduce, some, some as in, sort, unique, changed, diff, clean, get, select, cellindex, cellindex as cellIndex, column, columnletter, columnletter as columnLetter, columnnumber, guid, int, index2col, index2row, n, numbers, ref$1 as ref, serial };
