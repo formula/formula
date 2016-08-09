@@ -2,9 +2,7 @@
 
 [![Circle CI](https://circleci.com/gh/FunctionFoundry/functionfoundry.svg?style=svg)](https://circleci.com/gh/FunctionFoundry)
 
-FunctionFoundry is a JavaScript library with an interface similar to the classic spreadsheet functions.
-
-The code runs in Node.js and browsers. The library provides ~100 functions but it is small (~30kb minified).
+FunctionFoundry is a modern ES6/JavaScript library with an interface similar to the classic spreadsheet functions.
 
 ## quickstart
 
