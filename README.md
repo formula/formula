@@ -30,7 +30,7 @@ console.log(
 )
 ```
 
-## naming conventions
+## naming convention
 
 All function names are lowercase by default. Select functions include camelCase aliases.
 
