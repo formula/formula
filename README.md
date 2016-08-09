@@ -1,5 +1,3 @@
-# functionfoundry
-
 [![Circle CI](https://circleci.com/gh/FunctionFoundry/functionfoundry.svg?style=svg)](https://circleci.com/gh/FunctionFoundry)
 
 FunctionFoundry is a modern ES6/JavaScript library with an interface similar to the classic spreadsheet functions.
