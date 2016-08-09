@@ -6,8 +6,6 @@ FunctionFoundry is a JavaScript library with an interface similar to the classic
 
 The code runs in Node.js and browsers. The library provides ~100 functions but it is small (~30kb minified).
 
-For more information see the [docs](./Docs.org) or read the [annotated code](http://functionfoundry.github.io/functionfoundry/docs/).
-
 ## quickstart
 
 ```sh
