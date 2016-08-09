@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="en"><head><title>test/numbervalue</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="test/numbervalue"><meta name="groc-project-path" content="test/numbervalue.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">test/numbervalue.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> {numbervalue} <span class="hljs-keyword">from</span> <span class="hljs-string">'../src/numbervalue'</span>;
+<span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'../src/error'</span>;
+<span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">'tape'</span>;
+
+test(<span class="hljs-string">'numbervalue'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
+  t.plan(<span class="hljs-number">13</span>);
+  t.equal( numbervalue(<span class="hljs-string">""</span>), error.value, <span class="hljs-string">'error.should pass through call'</span>);
+  t.equal( numbervalue(<span class="hljs-string">"2"</span>), <span class="hljs-number">2</span>);
+  t.equal( numbervalue(<span class="hljs-string">"20"</span>), <span class="hljs-number">20</span>);
+  t.equal( numbervalue(<span class="hljs-string">"1.2.2"</span>), error.value);
+  t.equal( numbervalue(<span class="hljs-string">"1.2a.2"</span>), error.value);
+  t.equal( numbervalue(<span class="hljs-string">"1.2%.2"</span>), error.value);
+  t.equal( numbervalue(<span class="hljs-string">"1.2.2"</span>, <span class="hljs-string">","</span>, <span class="hljs-string">"."</span>), <span class="hljs-number">122</span>);
+  t.equal( numbervalue(<span class="hljs-number">1.2</span>), <span class="hljs-number">1.2</span>);
+  t.equal( numbervalue(<span class="hljs-string">"1.2"</span>), <span class="hljs-number">1.2</span>);
+  t.equal( numbervalue(<span class="hljs-string">"1.2%"</span>), <span class="hljs-number">0.012</span>);
+  t.equal( numbervalue(<span class="hljs-string">"1,111.2"</span>), <span class="hljs-number">1111.2</span>);
+  t.equal( numbervalue(<span class="hljs-string">"1,111,111.2"</span>), <span class="hljs-number">1111111.2</span>);
+  t.equal( numbervalue(<span class="hljs-string">"1.111.111,2"</span>, <span class="hljs-string">','</span>, <span class="hljs-string">'.'</span>), <span class="hljs-number">1111111.2</span>);
+});</div></div></div></div></body></html>

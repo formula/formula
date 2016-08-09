@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="en"><head><title>src/edate</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/edate"><meta name="groc-project-path" content="src/edate.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/edate.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> {parsedate} <span class="hljs-keyword">from</span> <span class="hljs-string">'./parsedate'</span>
+<span class="hljs-keyword">import</span> {serial} <span class="hljs-keyword">from</span> <span class="hljs-string">'./serial'</span>
+
+export function edate(start_date, months) {
+    start_date = parsedate(start_date);
+
+    <span class="hljs-keyword">if</span> (start_date <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Error</span>) {
+        <span class="hljs-keyword">return</span> start_date;
+    }
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isNaN</span>(months)) {
+        <span class="hljs-keyword">return</span> error.value;
+    }
+    months = <span class="hljs-built_in">parseInt</span>(months, <span class="hljs-number">10</span>);
+    start_date.setMonth(start_date.getMonth() + months);
+    <span class="hljs-keyword">return</span> serial(start_date);
+};</div></div></div></div></body></html>

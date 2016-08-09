@@ -1,0 +1,10 @@
+<!DOCTYPE html><html lang="en"><head><title>test/year</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="test/year"><meta name="groc-project-path" content="test/year.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">test/year.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">'tape'</span>
+<span class="hljs-keyword">import</span> {year} <span class="hljs-keyword">from</span> <span class="hljs-string">'../src/year'</span>
+<span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'../src/error'</span>
+
+test(<span class="hljs-string">'year'</span>, (t) =&gt; {
+  t.plan(3)
+  t.equal( year(<span class="hljs-string">'1/1/2000'</span>), 2000)
+  t.equal( year(<span class="hljs-string">'5/15/2005'</span>), 2005)
+  t.equal( year(<span class="hljs-string">'12/31/2012'</span>), 2012)
+});</div></div></div></div></body></html>

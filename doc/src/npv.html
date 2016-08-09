@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="en"><head><title>src/npv</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/npv"><meta name="groc-project-path" content="src/npv.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/npv.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">npv</span>(<span class="hljs-params">rate, ...values</span>) </span>{
+    rate = rate * <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">var</span> factor = <span class="hljs-number">1</span>,
+        sum = <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; values.length; i++) {
+        <span class="hljs-keyword">var</span> factor = factor * (<span class="hljs-number">1</span> + rate);
+        sum += values[i] / factor;
+    }
+
+    <span class="hljs-keyword">return</span> sum;
+}</div></div></div></div></body></html>

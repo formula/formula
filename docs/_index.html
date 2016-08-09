@@ -751,22 +751,85 @@
               <p>FunctionFoundry is a collection of pure functions.</p>
 <p>The functions accept input and produce output. They do not create side effects and are therefore composable.</p>
 <p>The library is organized several core compatibilities:</p>
-<ol>
-<li><p>Logical functions</p>
-<ul>
-<li>and, or, nor, eq, ne, gt, gte, lt, lte, branch and more…</li>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <ol>
+<li>Logical functions<ul>
+<li>and, or, not, eq, ne, gt, gte, lt, lte, branch and more…</li>
 </ul>
 </li>
-<li><p>Math functions</p>
-<ul>
+</ol>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">export</span> {branch, branch <span class="hljs-keyword">as</span> cond} <span class="hljs-keyword">from</span> <span class="hljs-string">'./branch'</span>
+<span class="hljs-keyword">export</span> {and} <span class="hljs-keyword">from</span> <span class="hljs-string">'./and'</span>
+<span class="hljs-keyword">export</span> {or} <span class="hljs-keyword">from</span> <span class="hljs-string">'./or'</span>
+<span class="hljs-keyword">export</span> {not} <span class="hljs-keyword">from</span> <span class="hljs-string">'./not'</span>
+<span class="hljs-keyword">export</span> {eq} <span class="hljs-keyword">from</span> <span class="hljs-string">'./eq'</span>
+<span class="hljs-keyword">export</span> {ne} <span class="hljs-keyword">from</span> <span class="hljs-string">'./ne'</span>
+<span class="hljs-keyword">export</span> {gt} <span class="hljs-keyword">from</span> <span class="hljs-string">'./gt'</span>
+<span class="hljs-keyword">export</span> {gte} <span class="hljs-keyword">from</span> <span class="hljs-string">'./gte'</span>
+<span class="hljs-keyword">export</span> {lt} <span class="hljs-keyword">from</span> <span class="hljs-string">'./lt'</span>
+<span class="hljs-keyword">export</span> {lte} <span class="hljs-keyword">from</span> <span class="hljs-string">'./lte'</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <ol>
+<li>Math functions<ul>
 <li>add, subtract, multiply, divide, sin, cos, ect…</li>
 </ul>
 </li>
-<li><p>Text manipulation</p>
-<ul>
+</ol>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <ol>
+<li>Text manipulation<ul>
 <li>text, numbervalue, split and more…</li>
 </ul>
 </li>
+</ol>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <ol>
 <li><p>Lookup and reference/</p>
 <ul>
 <li>lookup, vlookup, hlookup and more…</li>
@@ -791,11 +854,11 @@
         </li>
         
         
-        <li id="section-3">
+        <li id="section-7">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-3">&#182;</a>
+                <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
               <p>Polyfill Number.isNaN
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN</a></p>
@@ -809,10 +872,8 @@
 <span class="hljs-keyword">export</span> {abs} <span class="hljs-keyword">from</span> <span class="hljs-string">'./abs'</span>
 <span class="hljs-keyword">export</span> {acos} <span class="hljs-keyword">from</span> <span class="hljs-string">'./acos'</span>
 <span class="hljs-keyword">export</span> {add} <span class="hljs-keyword">from</span> <span class="hljs-string">'./add'</span>
-<span class="hljs-keyword">export</span> {and} <span class="hljs-keyword">from</span> <span class="hljs-string">'./and'</span>
 <span class="hljs-keyword">export</span> {average} <span class="hljs-keyword">from</span> <span class="hljs-string">'./average'</span>
 <span class="hljs-keyword">export</span> {bin2dec} <span class="hljs-keyword">from</span> <span class="hljs-string">'./bin2dec'</span>
-<span class="hljs-keyword">export</span> {branch, branch <span class="hljs-keyword">as</span> cond} <span class="hljs-keyword">from</span> <span class="hljs-string">'./branch'</span>
 <span class="hljs-keyword">export</span> {cellindex, cellindex <span class="hljs-keyword">as</span> cellIndex} <span class="hljs-keyword">from</span> <span class="hljs-string">'./cellindex'</span>
 <span class="hljs-keyword">export</span> {changed} <span class="hljs-keyword">from</span> <span class="hljs-string">'./changed'</span>
 <span class="hljs-keyword">export</span> {choose} <span class="hljs-keyword">from</span> <span class="hljs-string">'./choose'</span>
@@ -833,15 +894,12 @@
 <span class="hljs-keyword">export</span> {divide} <span class="hljs-keyword">from</span> <span class="hljs-string">'./divide'</span>
 <span class="hljs-keyword">export</span> {edate} <span class="hljs-keyword">from</span> <span class="hljs-string">'./edate'</span>
 <span class="hljs-keyword">export</span> {eomonth} <span class="hljs-keyword">from</span> <span class="hljs-string">'./eomonth'</span>
-<span class="hljs-keyword">export</span> {eq} <span class="hljs-keyword">from</span> <span class="hljs-string">'./eq'</span>
 <span class="hljs-keyword">export</span> {exact} <span class="hljs-keyword">from</span> <span class="hljs-string">'./exact'</span>
 <span class="hljs-keyword">export</span> {filter} <span class="hljs-keyword">from</span> <span class="hljs-string">'./filter'</span>
 <span class="hljs-keyword">export</span> {find} <span class="hljs-keyword">from</span> <span class="hljs-string">'./find'</span>
 <span class="hljs-keyword">export</span> {flatten} <span class="hljs-keyword">from</span> <span class="hljs-string">'./flatten'</span>
 <span class="hljs-keyword">export</span> {fv} <span class="hljs-keyword">from</span> <span class="hljs-string">'./fv'</span>
 <span class="hljs-keyword">export</span> {get} <span class="hljs-keyword">from</span> <span class="hljs-string">'./get'</span>
-<span class="hljs-keyword">export</span> {gt} <span class="hljs-keyword">from</span> <span class="hljs-string">'./gt'</span>
-<span class="hljs-keyword">export</span> {gte} <span class="hljs-keyword">from</span> <span class="hljs-string">'./gte'</span>
 <span class="hljs-keyword">export</span> {guid} <span class="hljs-keyword">from</span> <span class="hljs-string">'./guid'</span>
 <span class="hljs-keyword">export</span> {hlookup} <span class="hljs-keyword">from</span> <span class="hljs-string">'./hlookup'</span>
 <span class="hljs-keyword">export</span> {hour} <span class="hljs-keyword">from</span> <span class="hljs-string">'./hour'</span>
@@ -876,8 +934,6 @@
 <span class="hljs-keyword">export</span> {len} <span class="hljs-keyword">from</span> <span class="hljs-string">'./len'</span>
 <span class="hljs-keyword">export</span> {lookup} <span class="hljs-keyword">from</span> <span class="hljs-string">'./lookup'</span>
 <span class="hljs-keyword">export</span> {lower} <span class="hljs-keyword">from</span> <span class="hljs-string">'./lower'</span>
-<span class="hljs-keyword">export</span> {lt} <span class="hljs-keyword">from</span> <span class="hljs-string">'./lt'</span>
-<span class="hljs-keyword">export</span> {lte} <span class="hljs-keyword">from</span> <span class="hljs-string">'./lte'</span>
 <span class="hljs-keyword">export</span> {match} <span class="hljs-keyword">from</span> <span class="hljs-string">'./match'</span>
 <span class="hljs-keyword">export</span> {min} <span class="hljs-keyword">from</span> <span class="hljs-string">'./min'</span>
 <span class="hljs-keyword">export</span> {minute} <span class="hljs-keyword">from</span> <span class="hljs-string">'./minute'</span>
@@ -888,13 +944,10 @@
 <span class="hljs-keyword">export</span> {n} <span class="hljs-keyword">from</span> <span class="hljs-string">'./n'</span>
 <span class="hljs-keyword">export</span> {numbers} <span class="hljs-keyword">from</span> <span class="hljs-string">'./numbers'</span>
 <span class="hljs-keyword">export</span> {numbervalue, numbervalue <span class="hljs-keyword">as</span> numberValue} <span class="hljs-keyword">from</span> <span class="hljs-string">'./numbervalue'</span>
-<span class="hljs-keyword">export</span> {ne} <span class="hljs-keyword">from</span> <span class="hljs-string">'./ne'</span>
-<span class="hljs-keyword">export</span> {not} <span class="hljs-keyword">from</span> <span class="hljs-string">'./not'</span>
 <span class="hljs-keyword">export</span> {now} <span class="hljs-keyword">from</span> <span class="hljs-string">'./now'</span>
 <span class="hljs-keyword">export</span> {npv} <span class="hljs-keyword">from</span> <span class="hljs-string">'./npv'</span>
 <span class="hljs-keyword">export</span> {nper} <span class="hljs-keyword">from</span> <span class="hljs-string">'./nper'</span>
 <span class="hljs-keyword">export</span> {oct2dec} <span class="hljs-keyword">from</span> <span class="hljs-string">'./oct2dec'</span>
-<span class="hljs-keyword">export</span> {or} <span class="hljs-keyword">from</span> <span class="hljs-string">'./or'</span>
 <span class="hljs-keyword">export</span> {parsebool, parsebool <span class="hljs-keyword">as</span> parseBool} <span class="hljs-keyword">from</span> <span class="hljs-string">'./parsebool'</span>
 <span class="hljs-keyword">export</span> {parsedate, parsedate <span class="hljs-keyword">as</span> parseDate} <span class="hljs-keyword">from</span> <span class="hljs-string">'./parsedate'</span>
 <span class="hljs-keyword">export</span> {parsequery, parsequery <span class="hljs-keyword">as</span> parseQuery} <span class="hljs-keyword">from</span> <span class="hljs-string">'./parsequery'</span>

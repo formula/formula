@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="en"><head><title>test/iserror</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="test/iserror"><meta name="groc-project-path" content="test/iserror.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">test/iserror.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> {iserror} <span class="hljs-keyword">from</span> <span class="hljs-string">'../src/iserror'</span>;
+<span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'../src/error'</span>;
+<span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">'tape'</span>;
+
+test(<span class="hljs-string">'iserror'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
+  t.plan(<span class="hljs-number">13</span>)
+  t.equal( iserror(<span class="hljs-number">0</span>), <span class="hljs-literal">false</span>, <span class="hljs-string">'0 is not an error'</span>);
+  t.equal( iserror(<span class="hljs-number">1</span>), <span class="hljs-literal">false</span>, <span class="hljs-string">'1 is not an error'</span>);
+  t.equal( iserror(<span class="hljs-string">'Hello'</span>), <span class="hljs-literal">false</span>, <span class="hljs-string">'"Hello" is not an error'</span>);
+  t.equal( iserror(error.nil), <span class="hljs-literal">true</span>, <span class="hljs-string">'Should be error'</span>);
+  t.equal( iserror(error.value), <span class="hljs-literal">true</span>, <span class="hljs-string">'Should be error'</span>);
+  t.equal( iserror(error.ref), <span class="hljs-literal">true</span>, <span class="hljs-string">'Should be error'</span>);
+  t.equal( iserror(error.name), <span class="hljs-literal">true</span>, <span class="hljs-string">'Should be error'</span>);
+  t.equal( iserror(error.num), <span class="hljs-literal">true</span>, <span class="hljs-string">'Should be error'</span>);
+  t.equal( iserror(error.na), <span class="hljs-literal">true</span>, <span class="hljs-string">'Should be error'</span>);
+  t.equal( iserror(error.error), <span class="hljs-literal">true</span>, <span class="hljs-string">'Should be error'</span>);
+  t.equal( iserror(error.data), <span class="hljs-literal">true</span>, <span class="hljs-string">'Should be error'</span>);
+  t.equal( iserror(error.missing), <span class="hljs-literal">true</span>, <span class="hljs-string">'Should be error'</span>);
+  t.equal( iserror(error.unknown), <span class="hljs-literal">true</span>, <span class="hljs-string">'Should be error'</span>);
+});</div></div></div></div></body></html>
