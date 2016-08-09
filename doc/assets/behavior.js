@@ -31,7 +31,147 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "pageTitle": "src/_index",
             "title": "_index"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": [
+            {
+              "type": "heading",
+              "data": {
+                "level": 1,
+                "title": "FunctionFoundry",
+                "slug": "functionfoundry"
+              },
+              "depth": 1,
+              "children": [
+                {
+                  "type": "heading",
+                  "data": {
+                    "level": 2,
+                    "title": "Install",
+                    "slug": "install"
+                  },
+                  "depth": 2
+                }, {
+                  "type": "heading",
+                  "data": {
+                    "level": 2,
+                    "title": "Polyfills",
+                    "slug": "polyfills"
+                  },
+                  "depth": 2,
+                  "children": [
+                    {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Number.isNaN",
+                        "slug": "numberisnan"
+                      },
+                      "depth": 3
+                    }
+                  ]
+                }, {
+                  "type": "heading",
+                  "data": {
+                    "level": 2,
+                    "title": "Functions",
+                    "slug": "functions"
+                  },
+                  "depth": 2,
+                  "children": [
+                    {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Logical",
+                        "slug": "logical"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Math functions",
+                        "slug": "math-functions"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Text",
+                        "slug": "text"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Lookup and reference",
+                        "slug": "lookup-and-reference"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Date manipulation",
+                        "slug": "date-manipulation"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Aggregation",
+                        "slug": "aggregation"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Finance",
+                        "slug": "finance"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Engineering",
+                        "slug": "engineering"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Arrays",
+                        "slug": "arrays"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Objects",
+                        "slug": "objects"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Utility",
+                        "slug": "utility"
+                      },
+                      "depth": 3
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }, {
           "type": "file",
           "data": {
@@ -240,7 +380,8 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "pageTitle": "src/char",
             "title": "char"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -410,44 +551,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "targetPath": "src/cos",
             "pageTitle": "src/cos",
             "title": "cos"
-          },
-          "depth": 2
-        }, {
-          "type": "file",
-          "data": {
-            "language": {
-              "nameMatchers": [".js"],
-              "pygmentsLexer": "javascript",
-              "multiLineComment": ["/*", "*", "*/"],
-              "singleLineComment": ["//"],
-              "ignorePrefix": "}",
-              "foldPrefix": "^",
-              "name": "JavaScript"
-            },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/countif.js",
-            "projectPath": "src/countif.js",
-            "targetPath": "src/countif",
-            "pageTitle": "src/countif",
-            "title": "countif"
-          },
-          "depth": 2
-        }, {
-          "type": "file",
-          "data": {
-            "language": {
-              "nameMatchers": [".js"],
-              "pygmentsLexer": "javascript",
-              "multiLineComment": ["/*", "*", "*/"],
-              "singleLineComment": ["//"],
-              "ignorePrefix": "}",
-              "foldPrefix": "^",
-              "name": "JavaScript"
-            },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/countifs.js",
-            "projectPath": "src/countifs.js",
-            "targetPath": "src/countifs",
-            "pageTitle": "src/countifs",
-            "title": "countifs"
           },
           "depth": 2
         }, {

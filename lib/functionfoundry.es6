@@ -886,6 +886,29 @@ function parsequery(query='') {
   )
 }
 
+// PROPER converts text into proper case.
+function proper(text) {
+    if (text === undefined || text.length === 0) {
+        return error$2.value;
+    }
+    if (text === true) {
+        text = 'TRUE';
+    }
+    if (text === false) {
+        text = 'FALSE';
+    }
+    if (Number.isNaN(text) && typeof text === 'number') {
+        return error$2.value;
+    }
+    if (typeof text === 'number') {
+        text = '' + text;
+    }
+
+    return text.replace(/\w\S*/g, function(txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+}
+
 // REPLACE returns a new string after replacing with `new_text`.
 function replace(text, position, length, new_text) {
 
@@ -2955,4 +2978,4 @@ Number.isNaN = Number.isNaN || function(value) {
     return value !== value;
 }
 
-export { branch, branch as cond, choose, and, or, not, eq, ne, gt, gte, lt, lte, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isleapyear, isleapyear as isLeapYear, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isoweeknum, isoweeknum as isoWeekNum, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, xor, add, subtract, multiply, divide, abs, acos, cos, pi, power, round, roundup, sin, tan, tau, trunc, code, concatenate, exact, find, join, left, len, lower, numbervalue, numbervalue as numberValue, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, parsequery, parsequery as parseQuery, replace, right, rept, search, substitute, split, text, trim, upper, hlookup, index, lookup, match, vlookup, date, datevalue, datevalue as dateValue, datedif, day, days360, edate, eomonth, hour, minute, month, now, second, today, time, timevalue, year, yearfrac, average, min, max, sum, fv, nper, npv, pmt, pv, bin2dec, dec2bin, oct2dec, filter, flatten, map, pluck, reduce, some, some as in, sort, unique, changed, diff, clean, get, select, cellindex, cellindex as cellIndex, column, columnletter, columnletter as columnLetter, columnnumber, guid, int, index2col, index2row, n, numbers, ref$1 as ref, serial };
+export { branch, branch as cond, choose, and, or, not, eq, ne, gt, gte, lt, lte, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isleapyear, isleapyear as isLeapYear, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isoweeknum, isoweeknum as isoWeekNum, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, xor, add, subtract, multiply, divide, abs, acos, cos, pi, power, round, roundup, sin, tan, tau, trunc, code, concatenate, exact, find, join, left, len, lower, numbervalue, numbervalue as numberValue, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, parsequery, parsequery as parseQuery, proper, replace, right, rept, search, substitute, split, text, trim, upper, hlookup, index, lookup, match, vlookup, date, datevalue, datevalue as dateValue, datedif, day, days360, edate, eomonth, hour, minute, month, now, second, today, time, timevalue, year, yearfrac, average, min, max, sum, fv, nper, npv, pmt, pv, bin2dec, dec2bin, oct2dec, filter, flatten, map, pluck, reduce, some, some as in, sort, unique, changed, diff, clean, get, select, cellindex, cellindex as cellIndex, column, columnletter, columnletter as columnLetter, columnnumber, guid, int, index2col, index2row, n, numbers, ref$1 as ref, serial };

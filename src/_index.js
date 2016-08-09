@@ -269,6 +269,10 @@ export {parsedate, parsedate as parseDate} from './parsedate'
 // `parsequery` returns a JSObject for a URL query string.
 export {parsequery, parsequery as parseQuery} from './parsequery'
 
+// #### [proper](./proper)
+// `proper` returns a string as a proper name. 
+export {proper} from './proper'
+
 // #### [replace](./replace)
 // `replace` returns a string where one value is replaced with a new value.
 export {replace} from './replace'

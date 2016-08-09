@@ -941,6 +941,29 @@ function parsequery() {
   }, {});
 }
 
+// PROPER converts text into proper case.
+function proper(text) {
+  if (text === undefined || text.length === 0) {
+    return error$2.value;
+  }
+  if (text === true) {
+    text = 'TRUE';
+  }
+  if (text === false) {
+    text = 'FALSE';
+  }
+  if (Number.isNaN(text) && typeof text === 'number') {
+    return error$2.value;
+  }
+  if (typeof text === 'number') {
+    text = '' + text;
+  }
+
+  return text.replace(/\w\S*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+}
+
 // REPLACE returns a new string after replacing with `new_text`.
 function replace(text, position, length, new_text) {
 
@@ -3100,6 +3123,7 @@ exports.parsedate = parsedate;
 exports.parseDate = parsedate;
 exports.parsequery = parsequery;
 exports.parseQuery = parsequery;
+exports.proper = proper;
 exports.replace = replace;
 exports.right = right;
 exports.rept = rept;
