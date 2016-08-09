@@ -6,7 +6,7 @@
   "jsnext:main": "lib/functionfoundry.es6",
   "scripts": {
     "test": "babel-tape-runner test/*.js | faucet",
-    "docs": "docco src/*.js",
+    "docs": "groc src/*.js",
     "test:docs": "docco --output test_docs test/*.js",
     "clean": "rm -rf lib && rm -rf dist && mkdir lib && mkdir dist",
     "build:dist": "browserify ./browserify.js > dist/functionfoundry.js && browserify -g uglifyify ./browserify.js > dist/functionfoundry.min.js",
@@ -37,6 +37,7 @@
     "docco": "^0.7.0",
     "eslint": "^1.8.0",
     "faucet": "0.0.1",
+    "groc": "^0.8.0",
     "rollup": "^0.26.2",
     "tape": "^4.5.1",
     "uglifyify": "^3.0.1"

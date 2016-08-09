@@ -1,87 +1,42 @@
-// Copyright 2015 Peter W Moresi
+// Copyright @ 2015-2016 Peter W Moresi
 
-// FunctionFoundry is a collection of pure functions.
+// # FunctionFoundry
+// Library of functions distributed through npm.
 //
-// The functions accept input and produce output. They do not create side effects and are therefore composable.
-//
-// The library is organized several core compatibilities:
-//
-// 1. Logical functions
-//   - and, or, nor, eq, ne, gt, gte, lt, lte, branch and more...
-//
-// 2. Math functions
-//   - add, subtract, multiply, divide, sin, cos, ect...
-//
-// 3. Text manipulation
-//   - text, numbervalue, split and more...
-//
-// 4. Lookup and reference/
-//   - lookup, vlookup, hlookup and more...
-//
-// 5. Date manipulation
-//   - Functions withsSupport for spreadsheet serial numbers like date, datedif and more...
-//
-// 6. Aggregation
-//   - sum, average, min, max
-//
-// The library currently is approaching 100 functions. The long term goal is to support the ~300 functions supported by modern spreadsheet software.
-//
-// The test suite includes over ~600 assertions to ensure high quality and provide usage examples.
+// ## Install
+//   ```sh
+//   npm install --save functionfoundry
+//   ```
 
-// Polyfill Number.isNaN
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
+// ## Polyfills
+// The library includes a polyfill for Number.isNaN.
+
+// ### Number.isNaN
+// credit: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
 Number.isNaN = Number.isNaN || function(value) {
     return value !== value;
 }
 
-export {abs} from './abs'
-export {acos} from './acos'
-export {add} from './add'
-export {and} from './and'
-export {average} from './average'
-export {bin2dec} from './bin2dec'
+
+// ## Functions
+// The library includes functions for logic, math, text, lookup, date/time, aggregation, arrays, objects, finance, statistics and other utilities.
+
+// ### Logical
 export {branch, branch as cond} from './branch'
-export {cellindex, cellindex as cellIndex} from './cellindex'
-export {changed} from './changed'
 export {choose} from './choose'
-export {clean} from './clean'
-export {code} from './code'
-export {column} from './column'
-export {columnletter, columnletter as columnLetter} from './columnletter'
-export {columnnumber} from './columnnumber'
-export {concatenate} from './concatenate'
-export {cos} from './cos'
-export {date} from './date'
-export {datevalue, datevalue as dateValue} from './datevalue'
-export {datedif} from './datedif'
-export {day} from './day'
-export {days360} from './days360'
-export {dec2bin} from './dec2bin'
-export {diff} from './diff'
-export {divide} from './divide'
-export {edate} from './edate'
-export {eomonth} from './eomonth'
+export {and} from './and'
+export {or} from './or'
+export {not} from './not'
 export {eq} from './eq'
-export {exact} from './exact'
-export {filter} from './filter'
-export {find} from './find'
-export {flatten} from './flatten'
-export {fv} from './fv'
-export {get} from './get'
+export {ne} from './ne'
 export {gt} from './gt'
 export {gte} from './gte'
-export {guid} from './guid'
-export {hlookup} from './hlookup'
-export {hour} from './hour'
-export {int} from './int'
+export {lt} from './lt'
+export {lte} from './lte'
 export {ifblank, ifblank as ifBlank} from './ifblank'
 export {ifempty, ifempty as ifEmpty} from './ifempty'
 export {iferror, iferror as ifError} from './iferror'
 export {ifna, ifna as ifNA } from './ifna'
-export {index} from './index'
-export {index2col} from './index2col'
-export {index2row} from './index2row'
-export {indirect} from './indirect'
 export {isarray, isarray as isArray} from './isarray'
 export {isblank, isblank as isBlank} from './isblank'
 export {isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool} from './isboolean'
@@ -99,67 +54,120 @@ export {isoweeknum, isoweeknum as isoWeekNum } from './isoweeknum'
 export {isref, isref as isRef } from './isref'
 export {istext, istext as isText} from './istext'
 export {isurl, isurl as ISURL} from './isurl'
+export {xor} from './xor'
+
+// ### Math functions
+export {add} from './add'
+export {subtract} from './subtract'
+export {multiply} from './multiply'
+export {divide} from './divide'
+export {abs} from './abs'
+export {acos} from './acos'
+export {cos} from './cos'
+export {pi} from './pi'
+export {power} from './power'
+export {round} from './round'
+export {roundup} from './roundup'
+export {sin} from './sin'
+export {tan} from './tan'
+export {tau} from './tau'
+export {trunc} from './trunc'
+
+// ### Text
+export {code} from './code'
+export {concatenate} from './concatenate'
+export {exact} from './exact'
+export {find} from './find'
 export {join} from './join'
 export {left} from './left'
 export {len} from './len'
-export {lookup} from './lookup'
 export {lower} from './lower'
-export {lt} from './lt'
-export {lte} from './lte'
-export {match} from './match'
-export {min} from './min'
-export {minute} from './minute'
-export {map} from './map'
-export {max} from './max'
-export {month} from './month'
-export {multiply} from './multiply'
-export {n} from './n'
-export {numbers} from './numbers'
 export {numbervalue, numbervalue as numberValue} from './numbervalue'
-export {ne} from './ne'
-export {not} from './not'
-export {now} from './now'
-export {npv} from './npv'
-export {nper} from './nper'
-export {oct2dec} from './oct2dec'
-export {or} from './or'
 export {parsebool, parsebool as parseBool} from './parsebool'
 export {parsedate, parsedate as parseDate} from './parsedate'
 export {parsequery, parsequery as parseQuery} from './parsequery'
-export {pi} from './pi'
-export {pluck} from './pluck'
-export {pmt} from './pmt'
-export {power} from './power'
-export {pv} from './pv'
-export {reduce} from './reduce'
-export {ref} from './ref'
 export {replace} from './replace'
-export {rept} from './rept'
 export {right} from './right'
-export {round} from './round'
-export {roundup} from './roundup'
+export {rept} from './rept'
 export {search} from './search'
-export {second} from './second'
-export {select} from './select'
-export {serial} from './serial'
-export {sin} from './sin'
-export {some, some as in} from './some'
-export {sort} from './sort'
-export {split} from './split'
 export {substitute} from './substitute'
-export {subtract} from './subtract'
-export {sum} from './sum'
-export {tan} from './tan'
-export {tau} from './tau'
+export {split} from './split'
 export {text} from './text'
+export {trim} from './trim'
+export {upper} from './upper'
+
+// ### Lookup and reference
+export {hlookup} from './hlookup'
+export {index} from './index'
+export {lookup} from './lookup'
+export {match} from './match'
+export {vlookup} from './vlookup'
+
+// ### Date manipulation
+export {date} from './date'
+export {datevalue, datevalue as dateValue} from './datevalue'
+export {datedif} from './datedif'
+export {day} from './day'
+export {days360} from './days360'
+export {edate} from './edate'
+export {eomonth} from './eomonth'
+export {hour} from './hour'
+export {minute} from './minute'
+export {month} from './month'
+export {now} from './now'
+export {second} from './second'
+export {today} from './today'
 export {time} from './time'
 export {timevalue} from './timevalue'
-export {today} from './today'
-export {trim} from './trim'
-export {trunc} from './trunc'
-export {unique} from './unique'
-export {upper} from './upper'
-export {vlookup} from './vlookup'
-export {xor} from './xor'
 export {year} from './year'
 export {yearfrac} from './yearfrac'
+
+// ### Aggregation
+export {average} from './average'
+export {min} from './min'
+export {max} from './max'
+export {sum} from './sum'
+
+// ### Finance
+export {fv} from './fv'
+export {nper} from './nper'
+export {npv} from './npv'
+export {pmt} from './pmt'
+export {pv} from './pv'
+
+// ### Engineering
+export {bin2dec} from './bin2dec'
+export {dec2bin} from './dec2bin'
+export {oct2dec} from './oct2dec'
+
+// ### Arrays
+export {filter} from './filter'
+export {flatten} from './flatten'
+export {map} from './map'
+export {pluck} from './pluck'
+export {reduce} from './reduce'
+export {some, some as in} from './some'
+export {sort} from './sort'
+export {unique} from './unique'
+
+// ### Objects
+export {changed} from './changed'
+export {diff} from './diff'
+export {clean} from './clean'
+export {get} from './get'
+export {select} from './select'
+
+// ### Utility
+export {cellindex, cellindex as cellIndex} from './cellindex'
+export {column} from './column'
+export {columnletter, columnletter as columnLetter} from './columnletter'
+export {columnnumber} from './columnnumber'
+export {guid} from './guid'
+export {int} from './int'
+export {index2col} from './index2col'
+export {index2row} from './index2row'
+export {indirect} from './indirect'
+export {n} from './n'
+export {numbers} from './numbers'
+export {ref} from './ref'
+export {serial} from './serial'

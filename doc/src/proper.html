@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="en"><head><title>src/proper</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/proper"><meta name="groc-project-path" content="src/proper.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/proper.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>Copyright 2015 Peter W Moresi</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'./error'</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>PROPER converts text into proper case.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">proper</span>(<span class="hljs-params">text</span>) </span>{
+    <span class="hljs-keyword">if</span> (text === <span class="hljs-literal">undefined</span> || text.length === <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">return</span> error.value;
+    }
+    <span class="hljs-keyword">if</span> (text === <span class="hljs-literal">true</span>) {
+        text = <span class="hljs-string">'TRUE'</span>;
+    }
+    <span class="hljs-keyword">if</span> (text === <span class="hljs-literal">false</span>) {
+        text = <span class="hljs-string">'FALSE'</span>;
+    }
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Number</span>.isNaN(text) &amp;&amp; <span class="hljs-keyword">typeof</span> text === <span class="hljs-string">'number'</span>) {
+        <span class="hljs-keyword">return</span> error.value;
+    }
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> text === <span class="hljs-string">'number'</span>) {
+        text = <span class="hljs-string">''</span> + text;
+    }
+
+    <span class="hljs-keyword">return</span> text.replace(<span class="hljs-regexp">/\w\S*/g</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">txt</span>) </span>{
+        <span class="hljs-keyword">return</span> txt.charAt(<span class="hljs-number">0</span>).toUpperCase() + txt.substr(<span class="hljs-number">1</span>).toLowerCase();
+    });
+}</div></div></div></div></body></html>
