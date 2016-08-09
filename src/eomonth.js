@@ -2,8 +2,7 @@
 
 import {parsedate} from './parsedate';
 import error from './error'
-
-// DIVIDE calculates the product of two numbers.
+ 
 export function eomonth(start_date, months) {
   start_date = parsedate(start_date);
 

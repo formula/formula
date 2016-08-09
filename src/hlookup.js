@@ -3,7 +3,7 @@
 import {isblank} from './isblank';
 import error from './error';
 
-// HLOOKUP searches for a needle across the rows.
+// Find a needle in a table searching horizontally.
 export function hlookup(needle, table, index=1, exactmatch) {
     if (typeof needle === "undefined" || isblank(needle)) {
         return null;

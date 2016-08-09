@@ -3,3 +3,7 @@ npm-debug.log
 
 test_docs
 src/.tern-port
+
+.#Docs.org
+
+src/.#vlookup.js
