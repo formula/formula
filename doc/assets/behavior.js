@@ -25,7 +25,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/_index.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/_index.js",
             "projectPath": "src/_index.js",
             "targetPath": "src/_index",
             "pageTitle": "src/_index",
@@ -184,13 +184,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/abs.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/abs.js",
             "projectPath": "src/abs.js",
             "targetPath": "src/abs",
             "pageTitle": "src/abs",
             "title": "abs"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -203,13 +204,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/acos.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/acos.js",
             "projectPath": "src/acos.js",
             "targetPath": "src/acos",
             "pageTitle": "src/acos",
             "title": "acos"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -222,13 +224,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/add.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/add.js",
             "projectPath": "src/add.js",
             "targetPath": "src/add",
             "pageTitle": "src/add",
             "title": "add"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -241,13 +244,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/address.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/address.js",
             "projectPath": "src/address.js",
             "targetPath": "src/address",
             "pageTitle": "src/address",
             "title": "address"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -260,13 +264,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/and.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/and.js",
             "projectPath": "src/and.js",
             "targetPath": "src/and",
             "pageTitle": "src/and",
             "title": "and"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -279,13 +284,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/average.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/average.js",
             "projectPath": "src/average.js",
             "targetPath": "src/average",
             "pageTitle": "src/average",
             "title": "average"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -298,13 +304,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/bin2dec.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/bin2dec.js",
             "projectPath": "src/bin2dec.js",
             "targetPath": "src/bin2dec",
             "pageTitle": "src/bin2dec",
             "title": "bin2dec"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -317,13 +324,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/branch.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/branch.js",
             "projectPath": "src/branch.js",
             "targetPath": "src/branch",
             "pageTitle": "src/branch",
             "title": "branch"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -336,13 +344,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/cellindex.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/cellindex.js",
             "projectPath": "src/cellindex.js",
             "targetPath": "src/cellindex",
             "pageTitle": "src/cellindex",
             "title": "cellindex"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -355,13 +364,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/changed.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/changed.js",
             "projectPath": "src/changed.js",
             "targetPath": "src/changed",
             "pageTitle": "src/changed",
             "title": "changed"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -374,7 +384,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/char.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/char.js",
             "projectPath": "src/char.js",
             "targetPath": "src/char",
             "pageTitle": "src/char",
@@ -394,13 +404,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/choose.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/choose.js",
             "projectPath": "src/choose.js",
             "targetPath": "src/choose",
             "pageTitle": "src/choose",
             "title": "choose"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -413,13 +424,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/clean.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/clean.js",
             "projectPath": "src/clean.js",
             "targetPath": "src/clean",
             "pageTitle": "src/clean",
             "title": "clean"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -432,13 +444,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/code.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/code.js",
             "projectPath": "src/code.js",
             "targetPath": "src/code",
             "pageTitle": "src/code",
             "title": "code"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -451,13 +464,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/column.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/column.js",
             "projectPath": "src/column.js",
             "targetPath": "src/column",
             "pageTitle": "src/column",
             "title": "column"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -470,13 +484,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/columnletter.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/columnletter.js",
             "projectPath": "src/columnletter.js",
             "targetPath": "src/columnletter",
             "pageTitle": "src/columnletter",
             "title": "columnletter"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -489,13 +504,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/columnnumber.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/columnnumber.js",
             "projectPath": "src/columnnumber.js",
             "targetPath": "src/columnnumber",
             "pageTitle": "src/columnnumber",
             "title": "columnnumber"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -508,13 +524,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/concatenate.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/concatenate.js",
             "projectPath": "src/concatenate.js",
             "targetPath": "src/concatenate",
             "pageTitle": "src/concatenate",
             "title": "concatenate"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -527,13 +544,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/constants.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/constants.js",
             "projectPath": "src/constants.js",
             "targetPath": "src/constants",
             "pageTitle": "src/constants",
             "title": "constants"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -546,13 +564,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/cos.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/cos.js",
             "projectPath": "src/cos.js",
             "targetPath": "src/cos",
             "pageTitle": "src/cos",
             "title": "cos"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -565,13 +584,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/date.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/date.js",
             "projectPath": "src/date.js",
             "targetPath": "src/date",
             "pageTitle": "src/date",
             "title": "date"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -584,13 +604,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/datedif.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/datedif.js",
             "projectPath": "src/datedif.js",
             "targetPath": "src/datedif",
             "pageTitle": "src/datedif",
             "title": "datedif"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -603,13 +624,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/datevalue.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/datevalue.js",
             "projectPath": "src/datevalue.js",
             "targetPath": "src/datevalue",
             "pageTitle": "src/datevalue",
             "title": "datevalue"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -622,13 +644,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/day.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/day.js",
             "projectPath": "src/day.js",
             "targetPath": "src/day",
             "pageTitle": "src/day",
             "title": "day"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -641,13 +664,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/days360.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/days360.js",
             "projectPath": "src/days360.js",
             "targetPath": "src/days360",
             "pageTitle": "src/days360",
             "title": "days360"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -660,13 +684,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/dec2bin.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/dec2bin.js",
             "projectPath": "src/dec2bin.js",
             "targetPath": "src/dec2bin",
             "pageTitle": "src/dec2bin",
             "title": "dec2bin"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -679,13 +704,34 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/diff.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/decodejwt.js",
+            "projectPath": "src/decodejwt.js",
+            "targetPath": "src/decodejwt",
+            "pageTitle": "src/decodejwt",
+            "title": "decodejwt"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/home/peter/src/functionfoundry/src/diff.js",
             "projectPath": "src/diff.js",
             "targetPath": "src/diff",
             "pageTitle": "src/diff",
             "title": "diff"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -698,13 +744,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/divide.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/divide.js",
             "projectPath": "src/divide.js",
             "targetPath": "src/divide",
             "pageTitle": "src/divide",
             "title": "divide"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -717,13 +764,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/edate.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/edate.js",
             "projectPath": "src/edate.js",
             "targetPath": "src/edate",
             "pageTitle": "src/edate",
             "title": "edate"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -736,13 +784,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/eomonth.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/eomonth.js",
             "projectPath": "src/eomonth.js",
             "targetPath": "src/eomonth",
             "pageTitle": "src/eomonth",
             "title": "eomonth"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -755,13 +804,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/eq.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/eq.js",
             "projectPath": "src/eq.js",
             "targetPath": "src/eq",
             "pageTitle": "src/eq",
             "title": "eq"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -774,13 +824,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/error.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/error.js",
             "projectPath": "src/error.js",
             "targetPath": "src/error",
             "pageTitle": "src/error",
             "title": "error"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -793,13 +844,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/exact.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/exact.js",
             "projectPath": "src/exact.js",
             "targetPath": "src/exact",
             "pageTitle": "src/exact",
             "title": "exact"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -812,13 +864,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/filter.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/filter.js",
             "projectPath": "src/filter.js",
             "targetPath": "src/filter",
             "pageTitle": "src/filter",
             "title": "filter"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -831,13 +884,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/find.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/find.js",
             "projectPath": "src/find.js",
             "targetPath": "src/find",
             "pageTitle": "src/find",
             "title": "find"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -850,13 +904,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/flatten.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/flatten.js",
             "projectPath": "src/flatten.js",
             "targetPath": "src/flatten",
             "pageTitle": "src/flatten",
             "title": "flatten"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -869,13 +924,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/fv.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/fv.js",
             "projectPath": "src/fv.js",
             "targetPath": "src/fv",
             "pageTitle": "src/fv",
             "title": "fv"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -888,13 +944,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/get.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/get.js",
             "projectPath": "src/get.js",
             "targetPath": "src/get",
             "pageTitle": "src/get",
             "title": "get"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -907,13 +964,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/gt.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/gt.js",
             "projectPath": "src/gt.js",
             "targetPath": "src/gt",
             "pageTitle": "src/gt",
             "title": "gt"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -926,13 +984,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/gte.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/gte.js",
             "projectPath": "src/gte.js",
             "targetPath": "src/gte",
             "pageTitle": "src/gte",
             "title": "gte"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -945,13 +1004,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/guid.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/guid.js",
             "projectPath": "src/guid.js",
             "targetPath": "src/guid",
             "pageTitle": "src/guid",
             "title": "guid"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -964,13 +1024,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/hlookup.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/hlookup.js",
             "projectPath": "src/hlookup.js",
             "targetPath": "src/hlookup",
             "pageTitle": "src/hlookup",
             "title": "hlookup"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -983,13 +1044,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/hour.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/hour.js",
             "projectPath": "src/hour.js",
             "targetPath": "src/hour",
             "pageTitle": "src/hour",
             "title": "hour"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1002,13 +1064,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/ifblank.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/ifblank.js",
             "projectPath": "src/ifblank.js",
             "targetPath": "src/ifblank",
             "pageTitle": "src/ifblank",
             "title": "ifblank"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1021,13 +1084,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/ifempty.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/ifempty.js",
             "projectPath": "src/ifempty.js",
             "targetPath": "src/ifempty",
             "pageTitle": "src/ifempty",
             "title": "ifempty"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1040,13 +1104,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/iferror.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/iferror.js",
             "projectPath": "src/iferror.js",
             "targetPath": "src/iferror",
             "pageTitle": "src/iferror",
             "title": "iferror"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1059,13 +1124,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/ifna.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/ifna.js",
             "projectPath": "src/ifna.js",
             "targetPath": "src/ifna",
             "pageTitle": "src/ifna",
             "title": "ifna"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1078,13 +1144,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/index.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/index.js",
             "projectPath": "src/index.js",
             "targetPath": "src/index",
             "pageTitle": "src/index",
             "title": "index"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1097,13 +1164,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/index2col.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/index2col.js",
             "projectPath": "src/index2col.js",
             "targetPath": "src/index2col",
             "pageTitle": "src/index2col",
             "title": "index2col"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1116,13 +1184,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/index2row.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/index2row.js",
             "projectPath": "src/index2row.js",
             "targetPath": "src/index2row",
             "pageTitle": "src/index2row",
             "title": "index2row"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1135,13 +1204,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/int.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/int.js",
             "projectPath": "src/int.js",
             "targetPath": "src/int",
             "pageTitle": "src/int",
             "title": "int"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1154,13 +1224,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/isarray.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/isarray.js",
             "projectPath": "src/isarray.js",
             "targetPath": "src/isarray",
             "pageTitle": "src/isarray",
             "title": "isarray"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1173,13 +1244,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/isbinary.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/isbinary.js",
             "projectPath": "src/isbinary.js",
             "targetPath": "src/isbinary",
             "pageTitle": "src/isbinary",
             "title": "isbinary"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1192,13 +1264,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/isblank.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/isblank.js",
             "projectPath": "src/isblank.js",
             "targetPath": "src/isblank",
             "pageTitle": "src/isblank",
             "title": "isblank"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1211,13 +1284,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/isboolean.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/isboolean.js",
             "projectPath": "src/isboolean.js",
             "targetPath": "src/isboolean",
             "pageTitle": "src/isboolean",
             "title": "isboolean"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1230,13 +1304,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/isdate.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/isdate.js",
             "projectPath": "src/isdate.js",
             "targetPath": "src/isdate",
             "pageTitle": "src/isdate",
             "title": "isdate"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1249,13 +1324,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/isemail.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/isemail.js",
             "projectPath": "src/isemail.js",
             "targetPath": "src/isemail",
             "pageTitle": "src/isemail",
             "title": "isemail"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1268,13 +1344,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/isempty.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/isempty.js",
             "projectPath": "src/isempty.js",
             "targetPath": "src/isempty",
             "pageTitle": "src/isempty",
             "title": "isempty"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1287,13 +1364,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/iserr.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/iserr.js",
             "projectPath": "src/iserr.js",
             "targetPath": "src/iserr",
             "pageTitle": "src/iserr",
             "title": "iserr"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1306,13 +1384,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/iserror.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/iserror.js",
             "projectPath": "src/iserror.js",
             "targetPath": "src/iserror",
             "pageTitle": "src/iserror",
             "title": "iserror"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1325,13 +1404,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/iseven.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/iseven.js",
             "projectPath": "src/iseven.js",
             "targetPath": "src/iseven",
             "pageTitle": "src/iseven",
             "title": "iseven"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1344,13 +1424,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/isfunction.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/isfunction.js",
             "projectPath": "src/isfunction.js",
             "targetPath": "src/isfunction",
             "pageTitle": "src/isfunction",
             "title": "isfunction"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1363,13 +1444,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/isleapyear.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/isleapyear.js",
             "projectPath": "src/isleapyear.js",
             "targetPath": "src/isleapyear",
             "pageTitle": "src/isleapyear",
             "title": "isleapyear"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1382,13 +1464,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/isna.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/isna.js",
             "projectPath": "src/isna.js",
             "targetPath": "src/isna",
             "pageTitle": "src/isna",
             "title": "isna"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1401,13 +1484,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/isnumber.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/isnumber.js",
             "projectPath": "src/isnumber.js",
             "targetPath": "src/isnumber",
             "pageTitle": "src/isnumber",
             "title": "isnumber"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1420,13 +1504,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/isobject.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/isobject.js",
             "projectPath": "src/isobject.js",
             "targetPath": "src/isobject",
             "pageTitle": "src/isobject",
             "title": "isobject"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1439,13 +1524,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/isodd.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/isodd.js",
             "projectPath": "src/isodd.js",
             "targetPath": "src/isodd",
             "pageTitle": "src/isodd",
             "title": "isodd"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1458,13 +1544,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/isoweeknum.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/isoweeknum.js",
             "projectPath": "src/isoweeknum.js",
             "targetPath": "src/isoweeknum",
             "pageTitle": "src/isoweeknum",
             "title": "isoweeknum"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1477,13 +1564,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/isref.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/isref.js",
             "projectPath": "src/isref.js",
             "targetPath": "src/isref",
             "pageTitle": "src/isref",
             "title": "isref"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1496,13 +1584,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/istext.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/istext.js",
             "projectPath": "src/istext.js",
             "targetPath": "src/istext",
             "pageTitle": "src/istext",
             "title": "istext"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1515,13 +1604,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/isurl.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/isurl.js",
             "projectPath": "src/isurl.js",
             "targetPath": "src/isurl",
             "pageTitle": "src/isurl",
             "title": "isurl"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1534,13 +1624,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/join.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/join.js",
             "projectPath": "src/join.js",
             "targetPath": "src/join",
             "pageTitle": "src/join",
             "title": "join"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1553,13 +1644,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/left.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/left.js",
             "projectPath": "src/left.js",
             "targetPath": "src/left",
             "pageTitle": "src/left",
             "title": "left"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1572,13 +1664,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/len.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/len.js",
             "projectPath": "src/len.js",
             "targetPath": "src/len",
             "pageTitle": "src/len",
             "title": "len"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1591,13 +1684,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/lookup.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/lookup.js",
             "projectPath": "src/lookup.js",
             "targetPath": "src/lookup",
             "pageTitle": "src/lookup",
             "title": "lookup"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1610,13 +1704,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/lower.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/lower.js",
             "projectPath": "src/lower.js",
             "targetPath": "src/lower",
             "pageTitle": "src/lower",
             "title": "lower"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1629,13 +1724,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/lt.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/lt.js",
             "projectPath": "src/lt.js",
             "targetPath": "src/lt",
             "pageTitle": "src/lt",
             "title": "lt"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1648,13 +1744,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/lte.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/lte.js",
             "projectPath": "src/lte.js",
             "targetPath": "src/lte",
             "pageTitle": "src/lte",
             "title": "lte"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1667,13 +1764,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/map.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/map.js",
             "projectPath": "src/map.js",
             "targetPath": "src/map",
             "pageTitle": "src/map",
             "title": "map"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1686,13 +1784,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/match.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/match.js",
             "projectPath": "src/match.js",
             "targetPath": "src/match",
             "pageTitle": "src/match",
             "title": "match"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1705,13 +1804,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/max.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/max.js",
             "projectPath": "src/max.js",
             "targetPath": "src/max",
             "pageTitle": "src/max",
             "title": "max"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1724,13 +1824,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/merge.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/merge.js",
             "projectPath": "src/merge.js",
             "targetPath": "src/merge",
             "pageTitle": "src/merge",
             "title": "merge"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1743,13 +1844,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/min.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/min.js",
             "projectPath": "src/min.js",
             "targetPath": "src/min",
             "pageTitle": "src/min",
             "title": "min"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1762,13 +1864,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/minute.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/minute.js",
             "projectPath": "src/minute.js",
             "targetPath": "src/minute",
             "pageTitle": "src/minute",
             "title": "minute"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1781,13 +1884,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/month.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/month.js",
             "projectPath": "src/month.js",
             "targetPath": "src/month",
             "pageTitle": "src/month",
             "title": "month"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1800,13 +1904,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/multiply.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/multiply.js",
             "projectPath": "src/multiply.js",
             "targetPath": "src/multiply",
             "pageTitle": "src/multiply",
             "title": "multiply"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1819,13 +1924,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/n.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/n.js",
             "projectPath": "src/n.js",
             "targetPath": "src/n",
             "pageTitle": "src/n",
             "title": "n"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1838,13 +1944,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/ne.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/ne.js",
             "projectPath": "src/ne.js",
             "targetPath": "src/ne",
             "pageTitle": "src/ne",
             "title": "ne"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1857,13 +1964,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/not.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/not.js",
             "projectPath": "src/not.js",
             "targetPath": "src/not",
             "pageTitle": "src/not",
             "title": "not"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1876,13 +1984,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/now.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/now.js",
             "projectPath": "src/now.js",
             "targetPath": "src/now",
             "pageTitle": "src/now",
             "title": "now"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1895,13 +2004,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/nper.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/nper.js",
             "projectPath": "src/nper.js",
             "targetPath": "src/nper",
             "pageTitle": "src/nper",
             "title": "nper"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1914,13 +2024,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/npv.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/npv.js",
             "projectPath": "src/npv.js",
             "targetPath": "src/npv",
             "pageTitle": "src/npv",
             "title": "npv"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1933,13 +2044,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/numbers.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/numbers.js",
             "projectPath": "src/numbers.js",
             "targetPath": "src/numbers",
             "pageTitle": "src/numbers",
             "title": "numbers"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1952,13 +2064,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/numbervalue.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/numbervalue.js",
             "projectPath": "src/numbervalue.js",
             "targetPath": "src/numbervalue",
             "pageTitle": "src/numbervalue",
             "title": "numbervalue"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1971,13 +2084,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/oct2dec.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/oct2dec.js",
             "projectPath": "src/oct2dec.js",
             "targetPath": "src/oct2dec",
             "pageTitle": "src/oct2dec",
             "title": "oct2dec"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1990,13 +2104,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/or.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/or.js",
             "projectPath": "src/or.js",
             "targetPath": "src/or",
             "pageTitle": "src/or",
             "title": "or"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2009,13 +2124,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/parsebool.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/parsebool.js",
             "projectPath": "src/parsebool.js",
             "targetPath": "src/parsebool",
             "pageTitle": "src/parsebool",
             "title": "parsebool"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2028,13 +2144,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/parsedate.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/parsedate.js",
             "projectPath": "src/parsedate.js",
             "targetPath": "src/parsedate",
             "pageTitle": "src/parsedate",
             "title": "parsedate"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2047,13 +2164,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/parsequery.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/parsequery.js",
             "projectPath": "src/parsequery.js",
             "targetPath": "src/parsequery",
             "pageTitle": "src/parsequery",
             "title": "parsequery"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2066,13 +2184,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/pi.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/pi.js",
             "projectPath": "src/pi.js",
             "targetPath": "src/pi",
             "pageTitle": "src/pi",
             "title": "pi"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2085,13 +2204,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/pluck.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/pluck.js",
             "projectPath": "src/pluck.js",
             "targetPath": "src/pluck",
             "pageTitle": "src/pluck",
             "title": "pluck"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2104,13 +2224,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/pmt.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/pmt.js",
             "projectPath": "src/pmt.js",
             "targetPath": "src/pmt",
             "pageTitle": "src/pmt",
             "title": "pmt"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2123,13 +2244,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/power.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/power.js",
             "projectPath": "src/power.js",
             "targetPath": "src/power",
             "pageTitle": "src/power",
             "title": "power"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2142,13 +2264,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/proper.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/proper.js",
             "projectPath": "src/proper.js",
             "targetPath": "src/proper",
             "pageTitle": "src/proper",
             "title": "proper"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2161,13 +2284,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/pv.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/pv.js",
             "projectPath": "src/pv.js",
             "targetPath": "src/pv",
             "pageTitle": "src/pv",
             "title": "pv"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2180,13 +2304,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/reduce.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/reduce.js",
             "projectPath": "src/reduce.js",
             "targetPath": "src/reduce",
             "pageTitle": "src/reduce",
             "title": "reduce"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2199,13 +2324,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/ref.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/ref.js",
             "projectPath": "src/ref.js",
             "targetPath": "src/ref",
             "pageTitle": "src/ref",
             "title": "ref"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2218,13 +2344,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/replace.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/replace.js",
             "projectPath": "src/replace.js",
             "targetPath": "src/replace",
             "pageTitle": "src/replace",
             "title": "replace"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2237,13 +2364,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/rept.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/rept.js",
             "projectPath": "src/rept.js",
             "targetPath": "src/rept",
             "pageTitle": "src/rept",
             "title": "rept"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2256,13 +2384,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/right.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/right.js",
             "projectPath": "src/right.js",
             "targetPath": "src/right",
             "pageTitle": "src/right",
             "title": "right"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2275,13 +2404,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/round.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/round.js",
             "projectPath": "src/round.js",
             "targetPath": "src/round",
             "pageTitle": "src/round",
             "title": "round"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2294,13 +2424,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/roundup.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/roundup.js",
             "projectPath": "src/roundup.js",
             "targetPath": "src/roundup",
             "pageTitle": "src/roundup",
             "title": "roundup"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2313,13 +2444,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/search.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/search.js",
             "projectPath": "src/search.js",
             "targetPath": "src/search",
             "pageTitle": "src/search",
             "title": "search"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2332,13 +2464,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/second.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/second.js",
             "projectPath": "src/second.js",
             "targetPath": "src/second",
             "pageTitle": "src/second",
             "title": "second"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2351,13 +2484,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/select.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/select.js",
             "projectPath": "src/select.js",
             "targetPath": "src/select",
             "pageTitle": "src/select",
             "title": "select"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2370,13 +2504,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/serial.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/serial.js",
             "projectPath": "src/serial.js",
             "targetPath": "src/serial",
             "pageTitle": "src/serial",
             "title": "serial"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2389,13 +2524,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/sin.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/sin.js",
             "projectPath": "src/sin.js",
             "targetPath": "src/sin",
             "pageTitle": "src/sin",
             "title": "sin"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2408,13 +2544,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/some.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/some.js",
             "projectPath": "src/some.js",
             "targetPath": "src/some",
             "pageTitle": "src/some",
             "title": "some"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2427,13 +2564,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/sort.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/sort.js",
             "projectPath": "src/sort.js",
             "targetPath": "src/sort",
             "pageTitle": "src/sort",
             "title": "sort"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2446,13 +2584,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/split.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/split.js",
             "projectPath": "src/split.js",
             "targetPath": "src/split",
             "pageTitle": "src/split",
             "title": "split"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2465,13 +2604,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/substitute.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/substitute.js",
             "projectPath": "src/substitute.js",
             "targetPath": "src/substitute",
             "pageTitle": "src/substitute",
             "title": "substitute"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2484,13 +2624,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/subtract.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/subtract.js",
             "projectPath": "src/subtract.js",
             "targetPath": "src/subtract",
             "pageTitle": "src/subtract",
             "title": "subtract"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2503,13 +2644,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/sum.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/sum.js",
             "projectPath": "src/sum.js",
             "targetPath": "src/sum",
             "pageTitle": "src/sum",
             "title": "sum"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2522,13 +2664,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/tan.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/tan.js",
             "projectPath": "src/tan.js",
             "targetPath": "src/tan",
             "pageTitle": "src/tan",
             "title": "tan"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2541,13 +2684,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/tau.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/tau.js",
             "projectPath": "src/tau.js",
             "targetPath": "src/tau",
             "pageTitle": "src/tau",
             "title": "tau"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2560,13 +2704,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/text.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/text.js",
             "projectPath": "src/text.js",
             "targetPath": "src/text",
             "pageTitle": "src/text",
             "title": "text"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2579,13 +2724,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/time.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/time.js",
             "projectPath": "src/time.js",
             "targetPath": "src/time",
             "pageTitle": "src/time",
             "title": "time"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2598,13 +2744,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/timevalue.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/timevalue.js",
             "projectPath": "src/timevalue.js",
             "targetPath": "src/timevalue",
             "pageTitle": "src/timevalue",
             "title": "timevalue"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2617,13 +2764,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/today.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/today.js",
             "projectPath": "src/today.js",
             "targetPath": "src/today",
             "pageTitle": "src/today",
             "title": "today"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2636,13 +2784,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/trim.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/trim.js",
             "projectPath": "src/trim.js",
             "targetPath": "src/trim",
             "pageTitle": "src/trim",
             "title": "trim"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2655,13 +2804,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/trunc.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/trunc.js",
             "projectPath": "src/trunc.js",
             "targetPath": "src/trunc",
             "pageTitle": "src/trunc",
             "title": "trunc"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2674,13 +2824,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/unique.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/unique.js",
             "projectPath": "src/unique.js",
             "targetPath": "src/unique",
             "pageTitle": "src/unique",
             "title": "unique"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2693,13 +2844,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/upper.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/upper.js",
             "projectPath": "src/upper.js",
             "targetPath": "src/upper",
             "pageTitle": "src/upper",
             "title": "upper"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2712,13 +2864,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/vlookup.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/vlookup.js",
             "projectPath": "src/vlookup.js",
             "targetPath": "src/vlookup",
             "pageTitle": "src/vlookup",
             "title": "vlookup"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2731,13 +2884,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/xor.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/xor.js",
             "projectPath": "src/xor.js",
             "targetPath": "src/xor",
             "pageTitle": "src/xor",
             "title": "xor"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2750,13 +2904,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/year.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/year.js",
             "projectPath": "src/year.js",
             "targetPath": "src/year",
             "pageTitle": "src/year",
             "title": "year"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2769,13 +2924,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/pmoresi/src/functionfoundry/src/yearfrac.js",
+            "sourcePath": "/home/peter/src/functionfoundry/src/yearfrac.js",
             "projectPath": "src/yearfrac.js",
             "targetPath": "src/yearfrac",
             "pageTitle": "src/yearfrac",
             "title": "yearfrac"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }
       ]
     }
