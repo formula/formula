@@ -2814,6 +2814,54 @@ function columnletter( index ) {
 
 }
 
+function decodejwt(token) {
+  var atob;
+
+  if (typeof window !== 'undefined' && typeof atob === 'undefined') {
+    atob = window.atob
+  } else if (typeof atob === 'undefined') {
+    var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+
+    function InvalidCharacterError(message) {
+      this.message = message;
+    }
+
+    InvalidCharacterError.prototype = new Error();
+    InvalidCharacterError.prototype.name = 'InvalidCharacterError';
+
+    atob = function(input) {
+
+      var str = String(input).replace(/=+$/, '');
+      if (str.length % 4 == 1) {
+        throw new InvalidCharacterError("'atob' failed: The string to be decoded is not correctly encoded.");
+      }
+      for (
+        // initialize result and counters
+        var bc = 0, bs, buffer, idx = 0, output = '';
+        // get next character
+        buffer = str.charAt(idx++);
+        // character found in table? initialize bit storage and add its ascii value;
+        ~buffer && (bs = bc % 4 ? bs * 64 + buffer : buffer,
+          // and if not first of each 4 characters,
+          // convert the first 8 bits to one ascii character
+          bc++ % 4) ? output += String.fromCharCode(255 & bs >> (-2 * bc & 6)) : 0
+      ) {
+        // try to find character in table (0-63, not found => -1)
+        buffer = chars.indexOf(buffer);
+      }
+      return output;
+    }
+  }
+
+  function b64DecodeUnicode(str) {
+      return decodeURIComponent(Array.prototype.map.call(atob(str), function(c) {
+          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
+  }
+
+  return JSON.parse( b64DecodeUnicode( token.split('.')[1] ) )
+}
+
 // Copyright 2015 Peter W Moresi
 
 // credit to http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
@@ -2978,4 +3026,4 @@ Number.isNaN = Number.isNaN || function(value) {
     return value !== value;
 }
 
-export { branch, branch as cond, choose, and, or, not, eq, ne, gt, gte, lt, lte, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isleapyear, isleapyear as isLeapYear, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isoweeknum, isoweeknum as isoWeekNum, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, xor, add, subtract, multiply, divide, abs, acos, cos, pi, power, round, roundup, sin, tan, tau, trunc, code, concatenate, exact, find, join, left, len, lower, numbervalue, numbervalue as numberValue, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, parsequery, parsequery as parseQuery, proper, replace, right, rept, search, substitute, split, text, trim, upper, hlookup, index, lookup, match, vlookup, date, datevalue, datevalue as dateValue, datedif, day, days360, edate, eomonth, hour, minute, month, now, second, today, time, timevalue, year, yearfrac, average, min, max, sum, fv, nper, npv, pmt, pv, bin2dec, dec2bin, oct2dec, filter, flatten, map, pluck, reduce, some, some as in, sort, unique, changed, diff, clean, get, select, cellindex, cellindex as cellIndex, column, columnletter, columnletter as columnLetter, columnnumber, guid, int, index2col, index2row, n, numbers, ref$1 as ref, serial };
+export { branch, branch as cond, choose, and, or, not, eq, ne, gt, gte, lt, lte, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isleapyear, isleapyear as isLeapYear, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isoweeknum, isoweeknum as isoWeekNum, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, xor, add, subtract, multiply, divide, abs, acos, cos, pi, power, round, roundup, sin, tan, tau, trunc, code, concatenate, exact, find, join, left, len, lower, numbervalue, numbervalue as numberValue, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, parsequery, parsequery as parseQuery, proper, replace, right, rept, search, substitute, split, text, trim, upper, hlookup, index, lookup, match, vlookup, date, datevalue, datevalue as dateValue, datedif, day, days360, edate, eomonth, hour, minute, month, now, second, today, time, timevalue, year, yearfrac, average, min, max, sum, fv, nper, npv, pmt, pv, bin2dec, dec2bin, oct2dec, filter, flatten, map, pluck, reduce, some, some as in, sort, unique, changed, diff, clean, get, select, cellindex, cellindex as cellIndex, column, columnletter, columnletter as columnLetter, columnnumber, decodejwt, decodejwt as decodeJWT, guid, int, index2col, index2row, n, numbers, ref$1 as ref, serial };

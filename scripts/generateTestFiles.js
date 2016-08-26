@@ -2,7 +2,7 @@
 // Use FunctionFoundry to identify src files without test files.
 
 var fs = require('fs')
-var {DIFF} = require('../lib/functionfoundry')
+var {diff} = require('../lib/functionfoundry')
 
 function arrayToObj(arr) {
   return arr.reduce((acc, item) => {
@@ -16,16 +16,16 @@ var testFiles = fs.readdirSync(__dirname + '/../test')
 
 console.log(
   'Missing test cases',
-  DIFF(arrayToObj(srcFiles), arrayToObj(testFiles) ).unique_right
+  diff(arrayToObj(srcFiles), arrayToObj(testFiles) ).unique_right
 )
 
 console.log(
   'Extra test cases?',
-  DIFF(arrayToObj(srcFiles), arrayToObj(testFiles) ).unique_left
+  diff(arrayToObj(srcFiles), arrayToObj(testFiles) ).unique_left
 )
 
 if (process.argv[2] === '--fix') {
-  var missing = DIFF(arrayToObj(srcFiles), arrayToObj(testFiles) ).unique_right
+  var missing = diff(arrayToObj(srcFiles), arrayToObj(testFiles) ).unique_right
   missing.forEach(file => {
     var name = file.substr(0, file.length - 3)
 

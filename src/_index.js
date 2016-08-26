@@ -44,11 +44,11 @@ export {or} from './or'
 export {not} from './not'
 
 // #### [eq](./eq)
-// `eq` returns true when the first and second arguments are equivalent. String comparision is _case insensitive_. 
+// `eq` returns true when the first and second arguments are equivalent. String comparision is _case insensitive_.
 export {eq} from './eq'
 
 // #### [ne](./ne)
-// `ne` returns true when the first and second arguments are not equivalent. String comparision is _case insensitive_. 
+// `ne` returns true when the first and second arguments are not equivalent. String comparision is _case insensitive_.
 export {ne} from './ne'
 
 // #### [gt](./gt)
@@ -270,7 +270,7 @@ export {parsedate, parsedate as parseDate} from './parsedate'
 export {parsequery, parsequery as parseQuery} from './parsequery'
 
 // #### [proper](./proper)
-// `proper` returns a string as a proper name. 
+// `proper` returns a string as a proper name.
 export {proper} from './proper'
 
 // #### [replace](./replace)
@@ -528,6 +528,10 @@ export {columnletter, columnletter as columnLetter} from './columnletter'
 // #### [columnnumber](./columnnumber)
 // `columnnumber` converts a column letter into a number.
 export {columnnumber} from './columnnumber'
+
+// #### [decodejwt](./decodejwt)
+// `decodeJWT` decodes the payload from a JSON Web Token
+export {decodejwt, decodejwt as decodeJWT} from './decodejwt'
 
 // #### [guid](./guid)
 // `guid` returns a new globally unique identifier (version 4).

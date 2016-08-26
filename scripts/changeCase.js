@@ -2,7 +2,6 @@
 // Use FunctionFoundry to identify src files without test files.
 
 var fs = require('fs')
-var {SUBSTITUTE} = require('../lib/functionfoundry')
 
 function arrayToObj(arr) {
   return arr.reduce((acc, item) => {
