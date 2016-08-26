@@ -2817,7 +2817,7 @@ function columnletter( index ) {
 function decodejwt(token) {
   var atob;
 
-  if (typeof window !== 'undefined' && typeof atob === 'undefined') {
+  if (typeof window !== 'undefined' && typeof atob !== 'undefined') {
     atob = window.atob
   } else if (typeof atob === 'undefined') {
     var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';

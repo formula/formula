@@ -1,6 +1,6 @@
 {
   "name": "functionfoundry",
-  "version": "0.10.23",
+  "version": "0.10.24",
   "description": "JavaScript functions like spreadsheet",
   "main": "lib/functionfoundry.js",
   "jsnext:main": "lib/functionfoundry.es6",
