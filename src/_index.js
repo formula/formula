@@ -221,13 +221,17 @@ export {trunc} from './trunc'
 
 // ### Text
 
+// #### [char](./char)
+// `char` returns a character given an ASCII code.
+export {char} from './char'
+
 // #### [code](./code)
 // `code` returns the ASCII code for a given character.
 export {code} from './code'
 
 // #### [concatenate](./concatenate)
 // `concatenate` combines multiple values into a string.
-export {concatenate} from './concatenate'
+export {concatenate, concatenate as concat} from './concatenate'
 
 // #### [exact](./exact)
 // `exact` compares two values for strict equivalence.
