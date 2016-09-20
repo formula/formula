@@ -297,6 +297,10 @@ export {search} from './search'
 // `substitute` returns a new string with every instance of value replaced.
 export {substitute} from './substitute'
 
+// #### [substituteAll](./substituteAll)
+// `substituteAll` returns a new string with every instance of set of values replaced.
+export {substituteAll, substituteAll as template} from './substituteAll'
+
 // #### [split](./split)
 // `split` returns an array of strings from a given string separated by a delimiter.
 export {split} from './split'

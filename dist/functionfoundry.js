@@ -1047,6 +1047,24 @@ function substitute(text, old_text, new_text, occurrence) {
   }
 }
 
+// substituteAll is a lightweight "substitution tags" engine that implement a global substitute for multiple items.
+//
+// The key values in your locals object are replaced. Unlike other templating systems it doesn't specify characters that surround your tokens.
+//
+// The function does not encode HTML entities. Don't use this to generate HTML. There are plently of alternative like underscore.js that do that already.
+//
+// It is equivalent to:
+// ```js
+// locals = { '-first-': 'Joe', '-last-': 'Smith' }
+// substitute( substitute("-first- -last", '-first', 'Joe', locals), '-last-', 'Smith', locals)
+// ```
+function substituteAll(content, locals) {
+  if (!locals) return content;
+  return Object.keys(locals).reduce(function (p, v) {
+    return substitute(p, "" + v, locals[v]);
+  }, content);
+}
+
 // Copyright 2015 Peter W Moresi
 
 // SPLIT `text` given a `delimiter`.
@@ -3190,6 +3208,8 @@ exports.right = right;
 exports.rept = rept;
 exports.search = search;
 exports.substitute = substitute;
+exports.substituteAll = substituteAll;
+exports.template = substituteAll;
 exports.split = split;
 exports.text = text;
 exports.trim = trim;
