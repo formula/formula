@@ -1059,10 +1059,27 @@ function substitute(text, old_text, new_text, occurrence) {
 // substitute( substitute("-first- -last", '-first', 'Joe', locals), '-last-', 'Smith', locals)
 // ```
 function substituteAll(content, locals) {
+  var start = arguments.length <= 2 || arguments[2] === undefined ? '-' : arguments[2];
+  var end = arguments[3];
+
   if (!locals) return content;
+  end = end || start;
   return Object.keys(locals).reduce(function (p, v) {
-    return substitute(p, "" + v, locals[v]);
+    return substitute(p, "" + start + v + end, locals[v]);
   }, content);
+}
+
+// Creates a new object where all of the keys are surrounded by
+// start and end delimiters.
+function surroundKeys(obj) {
+  var start = arguments.length <= 1 || arguments[1] === undefined ? '-' : arguments[1];
+  var end = arguments[2];
+
+  end = end || start;
+  return Object.keys(obj).reduce(function (p, v) {
+    p["" + start + v + end] = obj[v];
+    return p;
+  }, {});
 }
 
 // Copyright 2015 Peter W Moresi
@@ -3210,6 +3227,7 @@ exports.search = search;
 exports.substitute = substitute;
 exports.substituteAll = substituteAll;
 exports.template = substituteAll;
+exports.surroundKeys = surroundKeys;
 exports.split = split;
 exports.text = text;
 exports.trim = trim;

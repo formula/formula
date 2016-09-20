@@ -301,6 +301,10 @@ export {substitute} from './substitute'
 // `substituteAll` returns a new string with every instance of set of values replaced.
 export {substituteAll, substituteAll as template} from './substituteAll'
 
+// #### [surroundKeys](./surroundKeys)
+// `surroundKeys` returns a new object where the keys have been wrapped with start and end strings.
+export {surroundKeys} from './surroundKeys'
+
 // #### [split](./split)
 // `split` returns an array of strings from a given string separated by a delimiter.
 export {split} from './split'

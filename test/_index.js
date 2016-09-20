@@ -3,7 +3,7 @@ import * as ff from '../src/_index'
 
 test('index', function(t) {
 
-  t.plan( 118 )
+  t.plan( 119 )
   t.ok( ff.abs, 'abs should be there')
   t.ok( ff.acos, 'acos should be there')
   t.ok( ff.add, 'add should be there')
@@ -107,6 +107,7 @@ test('index', function(t) {
   t.ok( ff.subtract, 'subtract should be there')
   t.ok( ff.substitute, 'substitute should be there')
   t.ok( ff.substituteAll, 'substituteAll should be there')
+  t.ok( ff.surroundKeys, 'surroundKeys should be there')
   t.ok( ff.sum, 'sum should be there')
   t.ok( ff.tan, 'tan should be there')
   t.ok( ff.tau, 'tau should be there')

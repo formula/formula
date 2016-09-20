@@ -1002,9 +1002,20 @@ function substitute(text, old_text, new_text, occurrence) {
 // locals = { '-first-': 'Joe', '-last-': 'Smith' }
 // substitute( substitute("-first- -last", '-first', 'Joe', locals), '-last-', 'Smith', locals)
 // ```
-function substituteAll(content, locals) {
+function substituteAll(content, locals, start='-', end) {
   if (!locals) return content;
-  return Object.keys(locals).reduce( (p, v) => substitute(p, `${v}`, locals[v]), content)
+  end = end || start
+  return Object.keys(locals).reduce( (p, v) => substitute(p, `${start}${v}${end}`, locals[v]), content)
+}
+
+// Creates a new object where all of the keys are surrounded by
+// start and end delimiters.
+function surroundKeys(obj, start='-', end) {
+  end = end || start
+  return Object.keys(obj).reduce((p, v) => {
+    p[`${start}${v}${end}`] = obj[v];
+    return p;
+  }, {})
 }
 
 // Copyright 2015 Peter W Moresi
@@ -3049,4 +3060,4 @@ Number.isNaN = Number.isNaN || function(value) {
     return value !== value;
 }
 
-export { branch, branch as cond, choose, and, or, not, eq, ne, gt, gte, lt, lte, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isleapyear, isleapyear as isLeapYear, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isoweeknum, isoweeknum as isoWeekNum, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, xor, add, subtract, multiply, divide, abs, acos, cos, pi, power, round, roundup, sin, tan, tau, trunc, char, code, concatenate, concatenate as concat, exact, find, join, left, len, lower, numbervalue, numbervalue as numberValue, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, parsequery, parsequery as parseQuery, proper, replace, right, rept, search, substitute, substituteAll, substituteAll as template, split, text, trim, upper, hlookup, index, lookup, match, vlookup, date, datevalue, datevalue as dateValue, datedif, day, days360, edate, eomonth, hour, minute, month, now, second, today, time, timevalue, year, yearfrac, average, min, max, sum, fv, nper, npv, pmt, pv, bin2dec, dec2bin, oct2dec, filter, flatten, map, pluck, reduce, some, some as in, sort, unique, changed, diff, clean, get, select, cellindex, cellindex as cellIndex, column, columnletter, columnletter as columnLetter, columnnumber, decodejwt, decodejwt as decodeJWT, guid, int, index2col, index2row, n, numbers, ref$1 as ref, serial };
+export { branch, branch as cond, choose, and, or, not, eq, ne, gt, gte, lt, lte, ifblank, ifblank as ifBlank, ifempty, ifempty as ifEmpty, iferror, iferror as ifError, ifna, ifna as ifNA, isarray, isarray as isArray, isblank, isblank as isBlank, isboolean, isboolean as isbool, isboolean as isBoolean, isboolean as isBool, isdate, isdate as isDate, isemail, isemail as isEmail, isempty, isempty as isEmpty, iserror, iserror as isError, iseven, iseven as isEven, isfunction, isfunction as isFunction, isleapyear, isleapyear as isLeapYear, isna, isna as isNA, isnumber, isnumber as isNumber, isodd, isodd as isOdd, isoweeknum, isoweeknum as isoWeekNum, isref, isref as isRef, istext, istext as isText, isurl, isurl as ISURL, xor, add, subtract, multiply, divide, abs, acos, cos, pi, power, round, roundup, sin, tan, tau, trunc, char, code, concatenate, concatenate as concat, exact, find, join, left, len, lower, numbervalue, numbervalue as numberValue, parsebool, parsebool as parseBool, parsedate, parsedate as parseDate, parsequery, parsequery as parseQuery, proper, replace, right, rept, search, substitute, substituteAll, substituteAll as template, surroundKeys, split, text, trim, upper, hlookup, index, lookup, match, vlookup, date, datevalue, datevalue as dateValue, datedif, day, days360, edate, eomonth, hour, minute, month, now, second, today, time, timevalue, year, yearfrac, average, min, max, sum, fv, nper, npv, pmt, pv, bin2dec, dec2bin, oct2dec, filter, flatten, map, pluck, reduce, some, some as in, sort, unique, changed, diff, clean, get, select, cellindex, cellindex as cellIndex, column, columnletter, columnletter as columnLetter, columnnumber, decodejwt, decodejwt as decodeJWT, guid, int, index2col, index2row, n, numbers, ref$1 as ref, serial };
