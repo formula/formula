@@ -153,6 +153,10 @@ export {istext, istext as isText} from './istext'
 // `isurl` returns true when value matches a url pattern.
 export {isurl, isurl as ISURL} from './isurl'
 
+// #### [iswholenumber](./iswholenumber)
+// `iswholenumber` returns true when value is an integer.
+export {iswholenumber, iswholenumber as isWholeNumber, iswholenumber as isInteger} from './iswholenumber'
+
 // #### [xor](./xor)
 // `xor` returns the logical exclusive Or of all arguments.
 export {xor} from './xor'

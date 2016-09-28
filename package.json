@@ -1,7 +1,7 @@
 {
   "name": "functionfoundry",
-  "version": "0.10.27",
-  "description": "JavaScript functions like spreadsheet",
+  "version": "0.10.28",
+  "description": "Pure function JavaScript library",
   "main": "lib/functionfoundry.js",
   "jsnext:main": "lib/functionfoundry.es6",
   "scripts": {

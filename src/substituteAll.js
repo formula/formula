@@ -10,7 +10,7 @@ import {substitute} from './substitute'
 // It is equivalent to:
 // ```js
 // locals = { '-first-': 'Joe', '-last-': 'Smith' }
-// substitute( substitute("-first- -last", '-first', 'Joe', locals), '-last-', 'Smith', locals)
+// substitute( substitute("-first- -last", '-first-',  locals), '-last-', 'Smith', locals)
 // ```
 export function substituteAll(content, locals, start='-', end) {
   if (!locals) return content;
