@@ -3,7 +3,7 @@ import * as ff from '../src/_index'
 
 test('index', function(t) {
 
-  t.plan( 119 )
+  t.plan( 121 )
   t.ok( ff.abs, 'abs should be there')
   t.ok( ff.acos, 'acos should be there')
   t.ok( ff.add, 'add should be there')
@@ -61,6 +61,8 @@ test('index', function(t) {
   t.ok( ff.isref, 'isref should be there')
   t.ok( ff.istext, 'istext should be there')
   t.ok( ff.isoweeknum, 'isoweeknum should be there')
+  t.ok( ff.isurl, 'isurl should be there')
+  t.ok( ff.iswholenumber, 'iswholenumber should be there')
   t.ok( ff.join, 'join should be there')
   t.ok( ff.left, 'left should be there')
   t.ok( ff.len, 'len should be there')
