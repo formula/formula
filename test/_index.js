@@ -3,7 +3,7 @@ import * as ff from '../src/_index'
 
 test('index', function(t) {
 
-  t.plan( 121 )
+  t.plan( 123 )
   t.ok( ff.abs, 'abs should be there')
   t.ok( ff.acos, 'acos should be there')
   t.ok( ff.add, 'add should be there')
@@ -27,6 +27,8 @@ test('index', function(t) {
   t.ok( ff.day, 'day should be there')
   t.ok( ff.dec2bin, 'dec2bin should be there')
   t.ok( ff.divide, 'divide should be there')
+  t.ok( ff.decodebase64, 'decodebase64 should be there')
+  t.ok( ff.decodejwt, 'decodejwt should be there')
   t.ok( ff.edate, 'edate should be there')
   t.ok( ff.eomonth, 'eomonth should be there')
   t.ok( ff.eq, 'eq should be there')

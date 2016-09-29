@@ -545,6 +545,10 @@ export {columnletter, columnletter as columnLetter} from './columnletter'
 // `columnnumber` converts a column letter into a number.
 export {columnnumber} from './columnnumber'
 
+// #### [decodebase64](./decodebase64)
+// `decodeBase64` decodes the base 64 binary into string
+export {decodebase64, decodebase64 as decodeBase64, decodebase64 as atob} from './decodebase64'
+
 // #### [decodejwt](./decodejwt)
 // `decodeJWT` decodes the payload from a JSON Web Token
 export {decodejwt, decodejwt as decodeJWT} from './decodejwt'

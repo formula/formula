@@ -4,6 +4,7 @@ if (window) {
 }
 
 },{"./lib/functionfoundry":2}],2:[function(require,module,exports){
+(function (Buffer){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2918,51 +2919,56 @@ function columnletter(index) {
   return converted;
 }
 
+atob$1;
+
+if (typeof window !== 'undefined' && typeof atob !== 'undefined') {
+  exports.atob = exports.decodeBase64 = exports.decodebase64 = atob$1 = window.atob;
+} else if (typeof module !== 'undefined' && module.exports) {
+  exports.atob = exports.decodeBase64 = exports.decodebase64 = atob$1 = function atob$1(input) {
+    return new Buffer(input, 'base64').toString();
+  };
+} else {
+  var chars;
+
+  (function () {
+    var InvalidCharacterError = function InvalidCharacterError(message) {
+      this.message = message;
+    };
+
+    chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+
+
+    InvalidCharacterError.prototype = new Error();
+    InvalidCharacterError.prototype.name = 'InvalidCharacterError';
+
+    exports.atob = exports.decodeBase64 = exports.decodebase64 = atob$1 = function atob$1(input) {
+
+      var str = String(input).replace(/=+$/, '');
+      if (str.length % 4 == 1) {
+        throw new InvalidCharacterError("'atob' failed: The string to be decoded is not correctly encoded.");
+      }
+      for (
+      // initialize result and counters
+      var bc = 0, bs, buffer, idx = 0, output = '';
+      // get next character
+      buffer = str.charAt(idx++);
+      // character found in table? initialize bit storage and add its ascii value;
+      ~buffer && (bs = bc % 4 ? bs * 64 + buffer : buffer,
+      // and if not first of each 4 characters,
+      // convert the first 8 bits to one ascii character
+      bc++ % 4) ? output += String.fromCharCode(255 & bs >> (-2 * bc & 6)) : 0) {
+        // try to find character in table (0-63, not found => -1)
+        buffer = chars.indexOf(buffer);
+      }
+      return output;
+    };
+  })();
+}
+
 function decodejwt(token) {
-  var atob;
-
-  if (typeof window !== 'undefined' && typeof atob !== 'undefined') {
-    atob = window.atob;
-  } else if (typeof atob === 'undefined') {
-    var chars;
-
-    (function () {
-      var InvalidCharacterError = function InvalidCharacterError(message) {
-        this.message = message;
-      };
-
-      chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
-
-
-      InvalidCharacterError.prototype = new Error();
-      InvalidCharacterError.prototype.name = 'InvalidCharacterError';
-
-      atob = function atob(input) {
-
-        var str = String(input).replace(/=+$/, '');
-        if (str.length % 4 == 1) {
-          throw new InvalidCharacterError("'atob' failed: The string to be decoded is not correctly encoded.");
-        }
-        for (
-        // initialize result and counters
-        var bc = 0, bs, buffer, idx = 0, output = '';
-        // get next character
-        buffer = str.charAt(idx++);
-        // character found in table? initialize bit storage and add its ascii value;
-        ~buffer && (bs = bc % 4 ? bs * 64 + buffer : buffer,
-        // and if not first of each 4 characters,
-        // convert the first 8 bits to one ascii character
-        bc++ % 4) ? output += String.fromCharCode(255 & bs >> (-2 * bc & 6)) : 0) {
-          // try to find character in table (0-63, not found => -1)
-          buffer = chars.indexOf(buffer);
-        }
-        return output;
-      };
-    })();
-  }
 
   function b64DecodeUnicode(str) {
-    return decodeURIComponent(Array.prototype.map.call(atob(str), function (c) {
+    return decodeURIComponent(Array.prototype.map.call(atob$1(str), function (c) {
       return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
     }).join(''));
   }
@@ -3295,6 +3301,9 @@ exports.column = column;
 exports.columnletter = columnletter;
 exports.columnLetter = columnletter;
 exports.columnnumber = columnnumber;
+exports.decodebase64 = atob$1;
+exports.decodeBase64 = atob$1;
+exports.atob = atob$1;
 exports.decodejwt = decodejwt;
 exports.decodeJWT = decodejwt;
 exports.guid = guid;
@@ -3307,4 +3316,5 @@ exports.ref = ref$1;
 exports.serial = serial;
 
 
-},{}]},{},[1]);
+}).call(this,require("buffer").Buffer)
+},{"buffer":undefined}]},{},[1]);
