@@ -1,6 +1,6 @@
 {
   "name": "functionfoundry",
-  "version": "0.10.30",
+  "version": "0.10.31",
   "description": "Pure function JavaScript library",
   "main": "lib/functionfoundry.js",
   "jsnext:main": "lib/functionfoundry.es6",

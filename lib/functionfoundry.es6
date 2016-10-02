@@ -891,11 +891,13 @@ function parsequery(query='') {
 
   return (query[0] === '?' ? query.substr(1) : query)
   .split('&')
-  .reduce((acc, item) => {
+  .reduce( (acc, item) => {
     var n = item.split('=');
-    acc[n[0]] = n[1] ? n[1] : '';
-    return acc }, {}
-  )
+    var key = decodeURIComponent(n[0]);
+    var value = decodeURIComponent(n[1] || '');
+    acc[key] = value;
+    return acc
+  }, {} )
 }
 
 // PROPER converts text into proper case.

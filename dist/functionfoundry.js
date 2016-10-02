@@ -949,7 +949,9 @@ function parsequery() {
 
   return (query[0] === '?' ? query.substr(1) : query).split('&').reduce(function (acc, item) {
     var n = item.split('=');
-    acc[n[0]] = n[1] ? n[1] : '';
+    var key = decodeURIComponent(n[0]);
+    var value = decodeURIComponent(n[1] || '');
+    acc[key] = value;
     return acc;
   }, {});
 }
