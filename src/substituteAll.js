@@ -12,8 +12,7 @@ import {substitute} from './substitute'
 // locals = { '-first-': 'Joe', '-last-': 'Smith' }
 // substitute( substitute("-first- -last", '-first-',  locals), '-last-', 'Smith', locals)
 // ```
-export function substituteAll(content, locals, start='-', end) {
+export function substituteAll(content, locals, start='-', end=start) {
   if (!locals) return content;
-  end = end || start
   return Object.keys(locals).reduce( (p, v) => substitute(p, `${start}${v}${end}`, locals[v]), content)
 }
