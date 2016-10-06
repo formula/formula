@@ -1,10 +1,10 @@
 // Copyright 2015 Peter W Moresi
 
-import {isblank} from './isblank';
+import isblank from './isblank';
 import error from './error';
 
 // Find a needle in a table searching horizontally.
-export function hlookup(needle, table, index=1, exactmatch) {
+export default function hlookup(needle, table, index=1, exactmatch) {
     if (typeof needle === "undefined" || isblank(needle)) {
         return null;
     }

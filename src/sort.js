@@ -1,7 +1,7 @@
 // Copyright 2015 Peter W Moresi
 
-import {isref} from './isref';
-import {isarray} from './isarray';
+import isref from './isref';
+import isarray from './isarray';
 import error from './error';
 
 // SORT a reference or an array.
@@ -16,7 +16,7 @@ import error from './error';
 // The list<string> will also be reduced into a single function which
 // interprets the strings as pairs. The odd items are fields and the
 // even ones are direction (ASC|DESC).
-export function sort(ref, ...criteria) {
+export default function sort(ref, ...criteria) {
 
   // reduce the criteria array into a function
   let makeComparer = () => {

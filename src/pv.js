@@ -1,7 +1,7 @@
 import error from './error'
-import {isblank} from './isblank'
+import isblank from './isblank'
 
-export function pv(rate, periods, payment, future=0, type=0) {
+export default function pv(rate, periods, payment, future=0, type=0) {
 
   // is this error code correct?
   if (isblank(rate)) return error.na

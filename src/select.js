@@ -1,8 +1,8 @@
 // Copyright 2015 Peter W Moresi
-import {isarray} from './isarray'
+import isarray from './isarray'
 
 // SELECT fields from object
-export function select(fields, body) {
+export default function select(fields, body) {
   // non-json
   if (!body || 'object' != typeof body) return;
 

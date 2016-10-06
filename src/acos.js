@@ -1,10 +1,10 @@
 // Copyright 2015 Peter W Moresi
 
-import {isnumber} from './isnumber';
+import isnumber from './isnumber';
 import error from './error';
 
 // ACOS computes the inverse cosine of a number
-export function acos(value) {
+export default function acos(value) {
 
   // Return `#VALUE!` if not number
   if (!isnumber(value)) {

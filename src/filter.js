@@ -1,7 +1,7 @@
 // Copyright 2015 Peter W Moresi
 
 // FILTER limits a range based on arrays of boolean values.
-export function filter(range, ...filters) {
+export default function filter(range, ...filters) {
 
   // A filter is an array of true/false values.
   // The filter may be for rows or for columns but not both.

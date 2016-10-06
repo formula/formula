@@ -1,6 +1,6 @@
-import {parsequery} from '../src/parsequery';
+import parsequery from '../fn/parsequery';
 import test from 'tape';
-import error from '../src/error';
+import error from '../fn/error';
 
 test('parsequery', function(t) {
   t.plan(5)

@@ -3,7 +3,7 @@
 import error from './error';
 
 // OCT2DEC converts a octal value into a decimal value.
-export function oct2dec(octalNumber) {
+export default function oct2dec(octalNumber) {
   // Credits: Based on implementation found in https://gist.github.com/ghalimi/4525876#file-oct2dec-js
   // Return error.when number passed in is not octal or has more than 10 digits
   if (!/^[0-7]{1,10}$/.test(octalNumber)) return error.num;

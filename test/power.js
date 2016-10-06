@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../src/error'
-import {power} from '../src/power'
+import error from '../fn/error'
+import power from '../fn/power'
 
 test('power', (t) => {
   t.plan(4)

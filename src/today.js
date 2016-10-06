@@ -1,6 +1,6 @@
-import {datevalue} from './datevalue'
+import datevalue from './datevalue'
 
-export function today() {
+export default function today() {
   var d = new Date();
   return datevalue(d.toLocaleDateString())
 };

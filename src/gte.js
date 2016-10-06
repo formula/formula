@@ -1,9 +1,9 @@
 // Copyright 2015 Peter W Moresi
 
-import {isarray} from './isarray';
-import {isref} from './isref';
+import isarray from './isarray';
+import isref from './isref';
 
-export function gte(a,b) {
+export default function gte(a,b) {
   if ( isref(a) && isref(b) ) {
     return error.na;
   } else if ( isarray(a) && isarray(b) ) {

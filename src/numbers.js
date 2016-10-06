@@ -1,6 +1,6 @@
-import {isnumber} from './isnumber'
+import isnumber from './isnumber'
 
-export function numbers(...values) {
+export default function numbers(...values) {
   console.log(values)
   return values.reduce(
     (p, v) => isnumber(v) ? p.concat(v) : p,

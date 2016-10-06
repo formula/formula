@@ -1,6 +1,6 @@
 import test from 'tape'
-import {day} from '../src/day'
-import error from '../src/error'
+import day from '../fn/day'
+import error from '../fn/error'
 
 test('day', (t) => {
   t.plan(3)

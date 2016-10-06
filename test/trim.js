@@ -1,5 +1,5 @@
 import test from 'tape';
-import {trim} from '../src/trim';
+import trim from '../fn/trim';
 
 test('trim', function(t) {
   t.plan(5);

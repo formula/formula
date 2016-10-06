@@ -1,11 +1,11 @@
 // Copyright 2015 Peter W Moresi
 
-import {isnumber} from './isnumber';
-import {iserror} from './iserror';
-import {serial} from './serial';
+import isnumber from './isnumber';
+import iserror from './iserror';
+import serial from './serial';
 
 // N converts a `value` to a number. It supports numbers, true, false and dates.
-export function n(value) {
+export default function n(value) {
 
   // Pass numbers and errors back out.
   if (isnumber(value) || iserror(value)) {

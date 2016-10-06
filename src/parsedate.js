@@ -4,7 +4,7 @@ import {JulianOffset} from './constants'
 import error from './error'
 
 // PARSEDATE converts a value into a Date object.
-export function parsedate(val) {
+export default function parsedate(val) {
 
   /* *******************
   Extracted from Social Calc

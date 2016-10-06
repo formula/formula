@@ -1,8 +1,8 @@
 // Copyright 2015 Peter W Moresi
-import {parsedate} from './parsedate'
+import parsedate from './parsedate'
 
 // DATEDIF return the difference between two dates given a start date, end date and unit.
-export function datedif(start_date, end_date, unit) {
+export default function datedif(start_date, end_date, unit) {
   var second=1000, minute=second*60, hour=minute*60, day=hour*24, week=day*7;
   start_date = parsedate(start_date),
   end_date = parsedate(end_date)

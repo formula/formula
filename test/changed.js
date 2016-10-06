@@ -1,5 +1,5 @@
-import {changed} from '../src/changed';
-import error from '../src/error';
+import changed from '../fn/changed';
+import error from '../fn/error';
 import test from 'tape';
 
 test('changed', function(t) {

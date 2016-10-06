@@ -3,6 +3,6 @@
 import {τ} from './constants';
 
 // TAU returns the universal circle constant
-export function tau() {
+export default function tau() {
   return τ;
 }

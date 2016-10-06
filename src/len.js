@@ -3,7 +3,7 @@
 import error from './error'
 
 // LEN returns the size of a string or array.
-export function len(text) {
+export default function len(text) {
   if (arguments.length === 0) {
     return error.error;
   }

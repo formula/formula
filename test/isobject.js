@@ -1,5 +1,5 @@
 import test from 'tape'
-import {isobject} from '../src/isobject'
+import isobject from '../fn/isobject'
 
 test('isobject', (t) => {
   t.plan(3)

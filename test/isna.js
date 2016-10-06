@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../src/error'
-import {isna} from '../src/isna'
+import error from '../fn/error'
+import isna from '../fn/isna'
 
 test('isna', (t) => {
   t.plan(4)

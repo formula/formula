@@ -1,9 +1,9 @@
 // Copyright 2015 Peter W Moresi
 
-import {isfunction} from './isfunction'
+import isfunction from './isfunction'
 
 // branch( test, result_if_true, [test2, result_if_true,] false_result )
-export function branch(...cases) {
+export default function branch(...cases) {
 
   var resolved = false
 

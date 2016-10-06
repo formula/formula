@@ -1,4 +1,4 @@
-export function npv(rate, ...values) {
+export default function npv(rate, ...values) {
     rate = rate * 1;
     var factor = 1,
         sum = 0;

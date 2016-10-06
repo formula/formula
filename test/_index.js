@@ -1,9 +1,9 @@
 import test from 'tape'
-import * as ff from '../lib/functionfoundry'
+import * as ff from '../fn/_index'
 
 test('index', function(t) {
 
-  t.plan( 123 )
+  t.plan( 124 )
   t.ok( ff.abs, 'abs should be there')
   t.ok( ff.acos, 'acos should be there')
   t.ok( ff.add, 'add should be there')
@@ -15,6 +15,7 @@ test('index', function(t) {
   t.ok( ff.char, 'char should be there')
   t.ok( ff.choose, 'choose should be there')
   t.ok( ff.concatenate, 'concatenate should be there')
+  t.ok( ff.cond, 'cond should be there')
   t.ok( ff.code, 'code should be there')
   t.ok( ff.column, 'column should be there')
   t.ok( ff.columnletter, 'columnletter should be there')

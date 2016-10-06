@@ -1,10 +1,10 @@
 // Copyright 2015 Peter W Moresi
 
-import {columnletter} from './columnletter'
-import {iserror} from './iserror'
+import columnletter from './columnletter'
+import iserror from './iserror'
 
 // ADDRESS converts a row and column into an address (e.g A1)
-export function address(row, col, absolute_relative_mode, use_a1_notation, sheet) {
+export default function address(row, col, absolute_relative_mode, use_a1_notation, sheet) {
 
   // convert column number into letter
   var colLetter = columnletter(col-1)

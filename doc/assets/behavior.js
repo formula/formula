@@ -1988,8 +1988,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "pageTitle": "src/parsequery",
             "title": "parsequery"
           },
-          "depth": 2,
-          "outline": []
+          "depth": 2
         }, {
           "type": "file",
           "data": {

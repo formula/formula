@@ -1,12 +1,12 @@
 // Copyright 2015 Peter W Moresi
 
 import error from './error'
-import {istext} from './istext'
-import {isref} from './isref'
-import {columnnumber} from './columnnumber'
+import istext from './istext'
+import isref from './isref'
+import columnnumber from './columnnumber'
 
 // COLUMN return the column number that corresponds to the reference.
-export function column(value) {
+export default function column(value) {
 
   // Return `#VALUE!` when the value is not a reference.
   if (!isref(value)) {

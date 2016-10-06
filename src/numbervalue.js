@@ -1,9 +1,9 @@
-import {isempty} from './isempty';
-import {isnumber} from './isnumber';
+import isempty from './isempty';
+import isnumber from './isnumber';
 import error from './error'
 
 // Convert a text value into a number value.
-export function numbervalue(text, decimal_separator, group_separator)  {
+export default function numbervalue(text, decimal_separator, group_separator)  {
   decimal_separator = decimal_separator || '.'
   group_separator = group_separator || ','
 

@@ -1,6 +1,6 @@
-import error from '../src/error'
+import error from '../fn/error'
 import test from 'tape'
-import {tau} from '../src/tau';
+import tau from '../fn/tau';
 
 test('tau', function(t) {
   t.plan(1);

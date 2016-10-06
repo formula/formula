@@ -1,6 +1,6 @@
-import {serial} from '../src/serial';
+import serial from '../fn/serial';
 import test from 'tape';
-import error from '../src/error'
+import error from '../fn/error'
 
 test('serial', function(t) {
   t.plan(7)

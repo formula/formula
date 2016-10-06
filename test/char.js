@@ -1,5 +1,5 @@
 import test from 'tape'
-import {char} from '../src/char'
+import char from '../fn/char'
 
 test('char', (t) => {
   t.plan(2)

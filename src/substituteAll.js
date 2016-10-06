@@ -1,5 +1,5 @@
 // Copyright 2015 Peter W Moresi
-import {substitute} from './substitute'
+import substitute from './substitute'
 
 // substituteAll is a lightweight "substitution tags" engine that implement a global substitute for multiple items.
 //
@@ -12,7 +12,7 @@ import {substitute} from './substitute'
 // locals = { '-first-': 'Joe', '-last-': 'Smith' }
 // substitute( substitute("-first- -last", '-first-',  locals), '-last-', 'Smith', locals)
 // ```
-export function substituteAll(content, locals, start='-', end=start) {
+export default function substituteAll(content, locals, start='-', end=start) {
   if (!locals) return content;
   return Object.keys(locals).reduce( (p, v) => substitute(p, `${start}${v}${end}`, locals[v]), content)
 }

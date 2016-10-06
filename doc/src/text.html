@@ -27,7 +27,7 @@ based heavily on code from socialcalc</p></div></div><div class="code"><div clas
 }
 <span class="hljs-keyword">from</span> <span class="hljs-string">'./constants'</span>;
 
-<span class="hljs-keyword">import</span> {parsedate} <span class="hljs-keyword">from</span> <span class="hljs-string">'./parsedate'</span>
+<span class="hljs-keyword">import</span> parsedate <span class="hljs-keyword">from</span> <span class="hljs-string">'./parsedate'</span>
 
 let FormatNumber = {};
 
@@ -781,6 +781,6 @@ and convert to string</p></div></div><div class="code"><div class="wrapper">  <s
 
 }
 
-<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">text</span>(<span class="hljs-params">value, format, currency_char</span>) </span>{
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">text</span>(<span class="hljs-params">value, format, currency_char</span>) </span>{
   <span class="hljs-keyword">return</span> FormatNumber.formatNumberWithFormat(value, format, currency_char);
 }</div></div></div></div></body></html>

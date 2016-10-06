@@ -1,10 +1,10 @@
 // Copyright 2015 Peter W Moresi
 
-import {sum} from './sum';
-import {iserror} from './iserror';
+import sum from './sum';
+import iserror from './iserror';
 
 // AVERAGE computes sum of items divided by number of items
-export function average(...items) {
+export default function average(...items) {
 
   // compute sum all of the items.
   var v = sum(...items)

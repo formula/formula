@@ -1,9 +1,9 @@
 // Copyright 2015 Peter W Moresi
 
-import {na} from './error'
+import na from './error'
 
 // merge two array of arrays
-export function merge(setA, setB, fieldOrIndex) {
+export default function merge(setA, setB, fieldOrIndex) {
 
   if (setA.length !== setB.length) {
     return na;

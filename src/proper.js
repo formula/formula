@@ -3,7 +3,7 @@
 import error from './error'
 
 // PROPER converts text into proper case.
-export function proper(text) {
+export default function proper(text) {
     if (text === undefined || text.length === 0) {
         return error.value;
     }

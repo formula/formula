@@ -1,11 +1,11 @@
 // Copyright 2015 Peter W Moresi
 
 import error from './error';
-import {isarray} from './isarray';
-import {isblank} from './isblank';
+import isarray from './isarray';
+import isblank from './isblank';
 
 // index returns the value in a row and column from a 2d array
-export function index(reference, row_num, column_num=1) {
+export default function index(reference, row_num, column_num=1) {
   var row;
 
   if (!isarray(reference) || isblank(row_num)) {

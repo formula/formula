@@ -1,4 +1,4 @@
-import {iswholenumber} from '../src/iswholenumber';
+import iswholenumber from '../fn/iswholenumber';
 import test from 'tape';
 
 test('iswholenumber', function(t) {

@@ -1,9 +1,9 @@
 // Copyright 2015 Peter W Moresi
 
-import {parsebool} from './parsebool';
-import {parsedate} from './parsedate';
+import parsebool from './parsebool';
+import parsedate from './parsedate';
 
-export function days360(start_date, end_date, method) {
+export default function days360(start_date, end_date, method) {
     method = parsebool(method);
     start_date = parsedate(start_date);
     end_date = parsedate(end_date);

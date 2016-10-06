@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../src/error'
-import {yearfrac} from '../src/yearfrac'
+import error from '../fn/error'
+import yearfrac from '../fn/yearfrac'
 
 test('yearfrac', (t) => {
   t.plan(3)

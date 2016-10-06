@@ -1,5 +1,5 @@
 
-export function decodebase64(str) {
+export default function decodebase64(str) {
 
   if (typeof window !== 'undefined' && typeof atob !== 'undefined') {
     return window.atob(str)

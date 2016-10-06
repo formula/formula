@@ -1,10 +1,10 @@
 // Copyright 2015 Peter W Moresi
 
 import error from './error'
-import {istext} from './istext'
+import istext from './istext'
 
 // Convert letter to number (e.g A -> 0)
-export function columnnumber(column) {
+export default function columnnumber(column) {
 
   if (!istext(column)) {
     return error.value

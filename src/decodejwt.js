@@ -1,6 +1,6 @@
-import {decodebase64} from './decodebase64'
+import decodebase64 from './decodebase64'
 
-export function decodejwt(token) {
+export default function decodejwt(token) {
 
   function b64DecodeUnicode(str) {
       return decodeURIComponent(Array.prototype.map.call(decodebase64(str), function(c) {

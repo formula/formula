@@ -3,7 +3,7 @@
 import error from './error';
 
 // CHOOSE accepts an index and a list of items. It returns the item that corresponds to the index.
-export function choose(index, ...items) {
+export default function choose(index, ...items) {
 
   // Return `#NA!` if index or items are not provided.
   if (!index || items.length === 0) {

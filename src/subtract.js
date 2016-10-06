@@ -1,10 +1,10 @@
 // Copyright 2015 Peter W Moresi
 
-import {isnumber} from './isnumber';
+import isnumber from './isnumber';
 import error from './error'
 
 // SUBTRACT calculates the difference of two numbers.
-export function subtract(...values) {
+export default function subtract(...values) {
 
   // Return `#NA!` if 2 arguments are not provided.
   if (values.length !== 2) {

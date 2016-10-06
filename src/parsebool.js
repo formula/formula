@@ -3,7 +3,7 @@
 import error from './error'
 
 // PARSEBOOL converts a truthy value into a boolean value.
-export function parsebool(val) {
+export default function parsebool(val) {
 
   if (val instanceof Error) {
     return val;

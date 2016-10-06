@@ -1,10 +1,10 @@
 // Copyright 2015 Peter W Moresi
 
-import {rept} from './rept';
+import rept from './rept';
 import error from './error';
 
 // based on https://github.com/sutoiku/formula.js/blob/mast../src/engineering.js
-export function dec2bin(input, places) {
+export default function dec2bin(input, places) {
 
   // exit if input is an error
   if (input instanceof Error) {

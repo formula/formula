@@ -1,7 +1,7 @@
 import {SecondsInDay, SecondsInHour, SecondsInMinute} from './constants'
-import {trunc} from './trunc'
+import trunc from './trunc'
 
-export function second(value) {
+export default function second(value) {
 
   // calculate total seconds
   var totalSeconds = (value-trunc(value)) * SecondsInDay;

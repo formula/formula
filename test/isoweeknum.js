@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../src/error'
-import {isoweeknum} from '../src/isoweeknum'
+import error from '../fn/error'
+import isoweeknum from '../fn/isoweeknum'
 
 test('isoweeknum', (t) => {
   t.plan(1)

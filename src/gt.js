@@ -1,10 +1,10 @@
 // Copyright 2015 Peter W Moresi
 
-import {isarray} from './isarray';
-import {isref} from './isref';
+import isarray from './isarray';
+import isref from './isref';
 import error from './error';
 
-export function gt(a,b) {
+export default function gt(a,b) {
   if ( isref(a) && isref(b) ) {
     return error.na;
   } else if ( isarray(a) && isarray(b) ) {

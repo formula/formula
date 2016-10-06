@@ -1,4 +1,4 @@
-export function nper(rate, pmt, pv, fv, type) {
+export default function nper(rate, pmt, pv, fv, type) {
   var log,
   result;
   rate = parseFloat(rate || 0);

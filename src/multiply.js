@@ -1,10 +1,10 @@
 // Copyright 2015 Peter W Moresi
 
-import {isnumber} from './isnumber';
+import isnumber from './isnumber';
 import error from './error'
 
 // MULTIPLY calculates the product of two numbers.
-export function multiply(...values) {
+export default function multiply(...values) {
 
   // Return `#NA!` if 2 arguments are not provided.
   if (values.length !== 2) {

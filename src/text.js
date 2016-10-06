@@ -28,7 +28,7 @@ import {
 }
 from './constants';
 
-import {parsedate} from './parsedate'
+import parsedate from './parsedate'
 
 let FormatNumber = {};
 
@@ -859,6 +859,6 @@ FormatNumber.parse_format_bracket = function(bracketstr) {
 
 }
 
-export function text(value, format, currency_char) {
+export default function text(value, format, currency_char) {
   return FormatNumber.formatNumberWithFormat(value, format, currency_char);
 }

@@ -1,4 +1,4 @@
-import {date} from '../src/date';
+import date from '../fn/date';
 import test from 'tape';
 
 test('date', function(t) {

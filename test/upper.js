@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../src/error'
-import {upper} from '../src/upper'
+import error from '../fn/error'
+import upper from '../fn/upper'
 
 test('upper', (t) => {
   t.plan(1)

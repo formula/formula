@@ -1,7 +1,7 @@
 import error from './error'
 
 // parse querystring into object
-export function parsequery(query='') {
+export default function parsequery(query='') {
 
   if (typeof query !== 'string') {
     return error.na;

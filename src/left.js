@@ -1,10 +1,10 @@
 // Copyright 2015 Peter W Moresi
 
-import {isblank} from './isblank'
-import {n} from './n'
+import isblank from './isblank'
+import n from './n'
 import error from './error'
 
-export function left(text, number) {
+export default function left(text, number) {
 
   if (isblank(text)) {
     return ''

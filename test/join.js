@@ -1,5 +1,5 @@
 import test from 'tape'
-import {join} from '../src/join'
+import join from '../fn/join'
 
 test('join', (t) => {
   t.plan(1)

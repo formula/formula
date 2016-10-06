@@ -1,6 +1,6 @@
-import {index} from '../src/index';
+import index from '../fn/index';
 import test from 'tape';
-import error from '../src/error';
+import error from '../fn/error';
 
 test('index', function(t) {
   t.plan(5)

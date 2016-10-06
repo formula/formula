@@ -1,4 +1,4 @@
-import {isempty} from '../src/isempty';
+import isempty from '../fn/isempty';
 import test from 'tape';
 
 test('isempty', function(t) {

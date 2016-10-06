@@ -1,5 +1,5 @@
-import {acos} from '../src/acos';
-import error from '../src/error';
+import acos from '../fn/acos';
+import error from '../fn/error';
 import test from 'tape';
 
 test('acos', function(t) {

@@ -1,6 +1,6 @@
-import error from '../src/error'
+import error from '../fn/error'
 import test from 'tape'
-import {tan} from '../src/tan'
+import tan from '../fn/tan'
 
 test('tan', function(t) {
   t.plan(4)

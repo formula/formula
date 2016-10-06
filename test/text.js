@@ -1,6 +1,6 @@
-import error from '../src/error'
+import error from '../fn/error'
 import test from 'tape'
-import {text} from '../src/text';
+import text from '../fn/text';
 
 test('text', function(t) {
   t.plan(14);

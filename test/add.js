@@ -1,6 +1,6 @@
 import test from 'tape'
-import {add} from '../src/add'
-import error from '../src/error'
+import add from '../fn/add'
+import error from '../fn/error'
 
 test('and', (t) => {
   t.plan(5)

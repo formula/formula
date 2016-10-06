@@ -1,11 +1,11 @@
 // Copyright 2015 Peter W Moresi
 
-import {flatten} from './flatten';
-import {isblank} from './isblank';
-import {isnumber} from './isnumber';
+import flatten from './flatten';
+import isblank from './isblank';
+import isnumber from './isnumber';
 
 // MAX returns the largest number from a `list`.
-export function max(...list) {
+export default function max(...list) {
 
   var values = flatten( list )
   if (values.length === 0) return;

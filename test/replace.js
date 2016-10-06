@@ -1,4 +1,4 @@
-import {replace} from '../src/replace';
+import replace from '../fn/replace';
 import test from 'tape';
 
 test('replace', function(t) {

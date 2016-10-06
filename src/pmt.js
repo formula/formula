@@ -1,10 +1,10 @@
 // Copyright 2015 Peter W Moresi
 
-import {isnumber} from './isnumber';
+import isnumber from './isnumber';
 import error from './error';
 
 // PMT returns a loan payment
-export function pmt(rate, periods, present, future = 0, type = 0) {
+export default function pmt(rate, periods, present, future = 0, type = 0) {
 
   if (!isnumber(rate) || !isnumber(periods)) {
     return error.value;

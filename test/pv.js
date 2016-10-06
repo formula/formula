@@ -1,5 +1,5 @@
 import test from 'tape';
-import {pv} from '../src/pv';
+import pv from '../fn/pv';
 
 test('pv', function(t) {
   t.plan(1);

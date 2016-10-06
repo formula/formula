@@ -1,5 +1,5 @@
 import test from 'tape'
-import {int} from '../src/int'
+import int from '../fn/int'
 
 test( 'int', (t) => {
   t.plan(3)

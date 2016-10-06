@@ -1,7 +1,7 @@
 // Copyright 2015 Peter W Moresi
 
 // LOOKUP find a value in an array.
-export function lookup() {
+export default function lookup() {
     var lookup_value, lookup_array, lookup_vector, results_vector;
     if (arguments.length === 2) { // array form
         var wide = false;

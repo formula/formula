@@ -3,7 +3,7 @@
 import error from './error';
 
 // BIN2DEC converts binary string into decimal value
-export function bin2dec(value) {
+export default function bin2dec(value) {
     var valueAsString;
 
     if (typeof value === "string") {

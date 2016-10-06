@@ -1,8 +1,8 @@
-import {parsedate} from './parsedate'
-import {isleapyear} from './isleapyear'
-import {serial} from './serial'
+import parsedate from './parsedate'
+import isleapyear from './isleapyear'
+import serial from './serial'
 
-export function yearfrac(start_date, end_date, basis) {
+export default function yearfrac(start_date, end_date, basis) {
   start_date = parsedate(start_date);
   if (start_date instanceof Error) {
     return start_date;

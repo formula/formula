@@ -1,5 +1,5 @@
-import {len} from '../src/len';
-import error from '../src/error';
+import len from '../fn/len';
+import error from '../fn/error';
 import test from 'tape';
 
 test('len', function(t) {

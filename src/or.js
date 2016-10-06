@@ -1,9 +1,9 @@
 // Copyright 2015 Peter W Moresi
 
-import {isfunction} from './isfunction'
+import isfunction from './isfunction'
 
 // OR returns true when any of the criter is true or 1.
-export function or(...criteria) {
+export default function or(...criteria) {
   return criteria.reduce( (acc, item) => {
     if (acc === true) return true;
     let value = isfunction(item) ? item() : item;

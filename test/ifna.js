@@ -1,6 +1,6 @@
 import test from 'tape';
-import {ifna} from '../src/ifna';
-import error from '../src/error';
+import ifna from '../fn/ifna';
+import error from '../fn/error';
 
 test('ifna', function(t) {
   t.plan(3)

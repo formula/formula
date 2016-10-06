@@ -1,10 +1,10 @@
 // Copyright 2015 Peter W Moresi
 
-import {flatten} from './flatten'
+import flatten from './flatten'
 import error from './error'
 
 // SUM a given list of `numbers`
-export function sum(...numbers) {
+export default function sum(...numbers) {
     return flatten(flatten(numbers))
     .reduce((a, b) => {
       if (typeof b !== 'number') { return error.value }

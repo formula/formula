@@ -1,5 +1,5 @@
 import test from 'tape';
-import {ifblank} from '../src/ifblank';
+import ifblank from '../fn/ifblank';
 
 test('ifblank', function(t) {
   t.plan(5)

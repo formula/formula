@@ -1,11 +1,11 @@
 // Copyright 2015 Peter W Moresi
 
-import {iserror} from './iserror'
+import iserror from './iserror'
 import error from './error'
-import {isfunction} from './isfunction'
+import isfunction from './isfunction'
 
 // AND reduces list of truthy values into true or false value
-export function and(...criteria) {
+export default function and(...criteria) {
 
   // Reduce criteria into boolean value.
   return criteria.reduce(

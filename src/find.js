@@ -3,7 +3,7 @@
 import error from './error';
 
 // FIND searches for text within a string
-export function find(find_text, within_text='', position=1) {
+export default function find(find_text, within_text='', position=1) {
 
   // Find the position of the text
   position = within_text.indexOf(find_text, position - 1)

@@ -4,7 +4,7 @@ import error from './error';
 
 // ISERR returns true when the value is an error (except `#NA!`) or when then
 // value is a number which is NaN or [-]Infinity.
-export function iserr(value) {
+export default function iserr(value) {
   return (
     (
       value !== error.na &&

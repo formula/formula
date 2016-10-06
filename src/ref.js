@@ -1,16 +1,16 @@
 // Copyright 2015 Peter W Moresi
 
-import {isblank} from './isblank'
-import {isfunction} from './isfunction'
-import {isnumber} from './isnumber'
-import {index2col} from './index2col'
-import {index2row} from './index2row'
-import {unique} from './unique'
-import {columnletter} from './columnletter'
+import isblank from './isblank'
+import isfunction from './isfunction'
+import isnumber from './isnumber'
+import index2col from './index2col'
+import index2row from './index2row'
+import unique from './unique'
+import columnletter from './columnletter'
 import error from './error'
 
 // REF accepts top and bottom and returns a reference object. It encapsulates a cell or a range.
-export function ref(top, bottom) {
+export default function ref(top, bottom) {
 
   // The index must be a number
   if (!isnumber(top) && !isfunction(top)) {

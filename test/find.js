@@ -1,5 +1,5 @@
-import {find} from '../src/find';
-import error from '../src/error';
+import find from '../fn/find';
+import error from '../fn/error';
 import test from 'tape';
 
 test('find', function(t) {

@@ -1,9 +1,9 @@
 // Copyright 2015 Peter W Moresi
 
-import {unique} from './unique'
+import unique from './unique'
 
 // CHANGED computes the list of keys that are different between two objects.
-export function changed(a, b) {
+export default function changed(a, b) {
 
   // Compute the keys in object a and b.
   var keysA = Object.keys(a),

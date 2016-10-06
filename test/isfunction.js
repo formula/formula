@@ -1,5 +1,5 @@
 import test from 'tape';
-import {isfunction} from '../src/isfunction';
+import isfunction from '../fn/isfunction';
 
 test('isfunction', function(t) {
   t.plan(5);

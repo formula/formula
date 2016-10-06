@@ -1,7 +1,7 @@
 // Copyright 2015 Peter W Moresi
 
 // SUBSTITUTE `old_text` with `new_text` a given number of occurrences in `text`.
-export function substitute(text, old_text, new_text, occurrence) {
+export default function substitute(text, old_text, new_text, occurrence) {
   if (!text || !old_text || !new_text) {
     return text;
   } else if (occurrence === undefined) {

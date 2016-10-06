@@ -1,5 +1,5 @@
-import {columnletter} from '../src/columnletter';
-import error from '../src/error';
+import columnletter from '../fn/columnletter';
+import error from '../fn/error';
 import test from 'tape';
 
 test('columnletter', function(t) {

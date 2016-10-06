@@ -1,7 +1,7 @@
-import {parsedate} from './parsedate'
+import parsedate from './parsedate'
 import {MilliSecondsInDay} from './constants'
 
-export function isoweeknum(date) {
+export default function isoweeknum(date) {
     date = parsedate(date);
 
     if (date instanceof Error) {

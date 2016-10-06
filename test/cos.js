@@ -1,5 +1,5 @@
-import {cos} from '../src/cos';
-import error from '../src/error';
+import cos from '../fn/cos';
+import error from '../fn/error';
 import test from 'tape';
 
 test('cos', function(t) {

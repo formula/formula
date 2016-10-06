@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../src/error'
-import {multiply} from '../src/multiply'
+import error from '../fn/error'
+import multiply from '../fn/multiply'
 
 test('multiply', (t) => {
   t.plan(4)

@@ -1,12 +1,12 @@
 // Copyright 2015 Peter W Moresi
 
 import error from './error';
-import {isblank} from './isblank';
-import {iserror} from './iserror';
+import isblank from './isblank';
+import iserror from './iserror';
 
 
 // VLOOKUP find a needle in a table searching vertically.
-export function vlookup(needle, table=[], index=1, exactmatch=false) {
+export default function vlookup(needle, table=[], index=1, exactmatch=false) {
 
     if ( iserror(needle) || isblank(needle) ) {
         return needle;

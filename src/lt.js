@@ -1,10 +1,10 @@
 // Copyright 2015 Peter W Moresi
 
-import {isarray} from './isarray';
-import {isref} from './isref';
+import isarray from './isarray';
+import isref from './isref';
 
 // LT compares two values and returns true when a is less than b.
-export function lt(a,b) {
+export default function lt(a,b) {
   if ( isref(a) && isref(b) ) {
     return error.na;
   } else if ( isarray(a) && isarray(b) ) {

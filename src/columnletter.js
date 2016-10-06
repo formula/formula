@@ -1,10 +1,10 @@
 // Copyright 2015 Peter W Moresi
 
 import error from './error'
-import {isnumber} from './isnumber'
+import isnumber from './isnumber'
 
 // Convert index to letter (e.g 0 -> A)
-export function columnletter( index ) {
+export default function columnletter( index ) {
 
   if (!isnumber(index)) {
     return error.value

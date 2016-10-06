@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../src/error'
-import {xor} from '../src/xor'
+import error from '../fn/error'
+import xor from '../fn/xor'
 
 test('xor', (t) => {
   t.plan(3)

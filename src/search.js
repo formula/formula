@@ -3,7 +3,7 @@
 import error from './error'
 
 // SEARCH finds text using wildcards ?, *, ~?, and ~*.
-export function search(find_text, within_text, position) {
+export default function search(find_text, within_text, position) {
     if (!within_text) { return null; }
     position = (typeof position === 'undefined') ? 1 : position;
 

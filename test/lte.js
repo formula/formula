@@ -1,5 +1,5 @@
 import test from 'tape';
-import {lte} from '../src/lte';
+import lte from '../fn/lte';
 
 test('lte', function(t) {
 

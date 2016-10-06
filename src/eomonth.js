@@ -1,9 +1,9 @@
 // Copyright 2015 Peter W Moresi
 
-import {parsedate} from './parsedate';
+import parsedate from './parsedate';
 import error from './error'
  
-export function eomonth(start_date, months) {
+export default function eomonth(start_date, months) {
   start_date = parsedate(start_date);
 
   if (start_date instanceof Error) {

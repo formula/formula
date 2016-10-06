@@ -1,7 +1,7 @@
-import {parsedate} from './parsedate'
-import {serial} from './serial'
+import parsedate from './parsedate'
+import serial from './serial'
 
-export function edate(start_date, months) {
+export default function edate(start_date, months) {
     start_date = parsedate(start_date);
 
     if (start_date instanceof Error) {

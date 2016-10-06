@@ -1,7 +1,7 @@
 import test from 'tape'
-import error from '../src/error'
-import {datedif} from '../src/datedif'
-import {parsedate} from '../src/parsedate'
+import error from '../fn/error'
+import datedif from '../fn/datedif'
+import parsedate from '../fn/parsedate'
 
 test('datedif', (t) => {
   t.plan(4)

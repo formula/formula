@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../src/error'
-import {pluck} from '../src/pluck'
+import error from '../fn/error'
+import pluck from '../fn/pluck'
 
 test('pluck', (t) => {
   t.plan(1)

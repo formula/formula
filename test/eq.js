@@ -1,5 +1,5 @@
 import test from 'tape'
-import {eq} from '../src/eq'
+import eq from '../fn/eq'
 
 test('eq', (t) => {
   t.plan(3)

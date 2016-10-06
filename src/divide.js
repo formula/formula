@@ -1,10 +1,10 @@
 // Copyright 2015 Peter W Moresi
 
-import {isnumber} from './isnumber';
+import isnumber from './isnumber';
 import error from './error'
 
 // DIVIDE calculates the product of two numbers.
-export function divide(...values) {
+export default function divide(...values) {
 
   // Return `#NA!` if 2 arguments are not provided.
   if (values.length !== 2) {

@@ -1,10 +1,10 @@
 // Copyright 2015 Peter W Moresi
 
-import {iserror} from './iserror'
+import iserror from './iserror'
 import error from './error'
 
 // REPLACE returns a new string after replacing with `new_text`.
-export function replace(text, position, length, new_text) {
+export default function replace(text, position, length, new_text) {
 
   if (iserror(position) || iserror(length) ||
   typeof text !== 'string' || typeof new_text !== 'string') {

@@ -1,18 +1,15 @@
 {
   "name": "functionfoundry",
-  "version": "0.10.31",
+  "version": "0.11.0",
   "description": "Pure function JavaScript library",
-  "main": "lib/functionfoundry.js",
-  "jsnext:main": "lib/functionfoundry.es6",
+  "main": "fn/_index.js",
   "scripts": {
     "test": "babel-tape-runner test/*.js | faucet",
     "docs": "groc src/*.js",
     "test:docs": "docco --output test_docs test/*.js",
-    "clean": "rm -rf lib && rm -rf dist && mkdir lib && mkdir dist",
-    "build:dist": "browserify --no-builtins ./browserify.js > dist/functionfoundry.js && browserify --no-builtins -g uglifyify ./browserify.js > dist/functionfoundry.min.js",
-    "build:jsnext": "rollup ./src/_index.js > lib/functionfoundry.es6",
-    "build:js": "babel lib/functionfoundry.es6 > lib/functionfoundry.js",
-    "build": "npm run clean && npm run build:jsnext && npm run build:js && npm run build:dist && npm run docs"
+    "clean": "rm -rf fn",
+    "build:js": "gulp",
+    "build": "npm run clean && npm run build:js && npm run docs"
   },
   "repository": {
     "type": "git",
@@ -31,13 +28,15 @@
   "devDependencies": {
     "babel-cli": "^6.8.0",
     "babel-core": "^6.8.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-es2015": "^6.6.0",
     "babel-tape-runner": "^2.0.1",
-    "browserify": "^13.0.0",
     "docco": "^0.7.0",
     "eslint": "^1.8.0",
     "faucet": "0.0.1",
     "groc": "^0.8.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
     "rollup": "^0.26.2",
     "tape": "^4.5.1",
     "uglifyify": "^3.0.1"

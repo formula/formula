@@ -1,6 +1,6 @@
 // Copyright 2015 Peter W Moresi
 
-export function diff(a, b) {
+export default function diff(a, b) {
   let keysA = Object.keys(a),
   keysB = Object.keys(b),
   InA = keysB.filter(n => keysA.indexOf(n) > -1),

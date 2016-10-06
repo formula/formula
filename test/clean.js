@@ -1,5 +1,5 @@
 import test from 'tape';
-import {clean} from '../src/clean';
+import clean from '../fn/clean';
 
 test('clean', function (t) {
   t.plan(5)
