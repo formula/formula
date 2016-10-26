@@ -1,6 +1,6 @@
 {
   "name": "functionfoundry",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "description": "Pure function JavaScript library",
   "main": "fn/_index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FunctionFoundry/functionfoundry.git"
+    "url": "git+https://github.com/WebsiteHQ/functionfoundry.git"
   },
   "keywords": [
     "Spreadsheets",
@@ -22,9 +22,9 @@
   "author": "Peter Moresi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FunctionFoundry/functionfoundry/issues"
+    "url": "https://github.com/WebsiteHQ/functionfoundry/issues"
   },
-  "homepage": "https://github.com/FunctionFoundry/functionfoundry#readme",
+  "homepage": "https://github.com/WebsiteHQ/functionfoundry#readme",
   "devDependencies": {
     "babel-cli": "^6.8.0",
     "babel-core": "^6.8.0",
