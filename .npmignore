@@ -1,3 +1,5 @@
 build
 src
+scripts
+doc
 node_modules
