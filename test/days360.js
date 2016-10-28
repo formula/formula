@@ -1,6 +1,6 @@
 import test from 'tape';
-import days360 from '../fn/days360';
-import error from '../fn/error';
+import days360 from '../src/days360';
+import error from '../src/error';
 
 test('days360', function(t) {
   t.plan(12)

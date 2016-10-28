@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../fn/error'
-import not from '../fn/not'
+import error from '../src/error'
+import not from '../src/not'
 
 test('not', (t) => {
   t.plan(5)

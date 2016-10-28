@@ -1,6 +1,6 @@
 // FIXME: Write tests for MATCH
 import test from 'tape';
-import map from '../fn/map';
+import map from '../src/map';
 
 test('map', function(t) {
   t.plan(1);

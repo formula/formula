@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../fn/error'
-import istext from '../fn/istext'
+import error from '../src/error'
+import istext from '../src/istext'
 
 test('istext', (t) => {
   t.plan(4)

@@ -1,4 +1,4 @@
-// Copyright 2015 Peter W Moresi
+// Copyright 2015 WebsiteHQ LLC
 
 // REPT creates string by repeating text a given number of times.
 export default function rept(text, number) {

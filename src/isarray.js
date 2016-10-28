@@ -1,4 +1,4 @@
-// Copyright 2015 Peter W Moresi
+// Copyright 2015 WebsiteHQ LLC
 
 // ISARRAY returns true when the value is an aray.
 export default function isarray(value) {

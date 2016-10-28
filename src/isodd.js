@@ -1,4 +1,4 @@
-// Copyright 2015 Peter W Moresi
+// Copyright 2015 WebsiteHQ LLC
 
 // ISODD returns true when the value is odd.
 export default function isodd(value) {

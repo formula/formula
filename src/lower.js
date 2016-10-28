@@ -1,4 +1,4 @@
-// Copyright 2015 Peter W Moresi
+// Copyright 2015 WebsiteHQ LLC
 
 import istext from './istext'
 import error from './error'

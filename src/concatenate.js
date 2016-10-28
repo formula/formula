@@ -1,4 +1,4 @@
-// Copyright 2015 Peter W Moresi
+// Copyright 2015 WebsiteHQ LLC
 
 // CONCATENATE reduces a list of values into a single string.
 export default function concatenate(...values) {

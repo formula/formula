@@ -3,7 +3,7 @@
  */
 
 import test from 'tape';
-import filter from '../fn/filter'
+import filter from '../src/filter'
 
 test('filter', function(t) {
   t.plan(4)

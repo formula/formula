@@ -1,6 +1,6 @@
-import branch from '../fn/branch';
+import branch from '../src/branch';
 import test from 'tape';
-import error from '../fn/error';
+import error from '../src/error';
 
 test('branch', function(t) {
   t.plan(12);

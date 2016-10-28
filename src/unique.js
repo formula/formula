@@ -1,4 +1,4 @@
-// Copyright 2015 Peter W Moresi
+// Copyright 2015 WebsiteHQ LLC
 
 // UNIQUE reduces an `array` into an array without duplicate values.
 export default function unique(array) {

@@ -1,4 +1,4 @@
-import round from '../fn/round';
+import round from '../src/round';
 import test from 'tape';
 
 test('round', function(t) {

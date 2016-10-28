@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../fn/error'
-import divide from '../fn/divide'
+import error from '../src/error'
+import divide from '../src/divide'
 
 test('divide', (t) => {
   t.plan(4)

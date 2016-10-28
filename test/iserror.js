@@ -1,5 +1,5 @@
-import iserror from '../fn/iserror';
-import error from '../fn/error';
+import iserror from '../src/iserror';
+import error from '../src/error';
 import test from 'tape';
 
 test('iserror', function(t) {

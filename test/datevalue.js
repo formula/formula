@@ -1,6 +1,6 @@
-import datevalue from '../fn/datevalue'
+import datevalue from '../src/datevalue'
 import test from 'tape'
-import error from '../fn/error'
+import error from '../src/error'
 
 test('datevalue', function(t) {
   t.plan(3)

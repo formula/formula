@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../fn/error'
-import pi from '../fn/pi'
+import error from '../src/error'
+import pi from '../src/pi'
 
 test('pi', (t) => {
   t.plan(1)

@@ -1,6 +1,6 @@
 import test from 'tape';
-import parsebool from '../fn/parsebool';
-import error from '../fn/error';
+import parsebool from '../src/parsebool';
+import error from '../src/error';
 
 test('parsebool', function(t) {
   t.plan(13);

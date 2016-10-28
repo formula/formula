@@ -1,5 +1,5 @@
-import columnnumber from '../fn/columnnumber';
-import error from '../fn/error';
+import columnnumber from '../src/columnnumber';
+import error from '../src/error';
 import test from 'tape';
 
 test('columnnumber', function(t) {

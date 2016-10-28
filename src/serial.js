@@ -1,4 +1,4 @@
-// Copyright 2015 Peter W Moresi
+// Copyright 2015 WebsiteHQ LLC
 
 import {d1900, MilliSecondsInDay} from './constants'
 import isdate from './isdate'

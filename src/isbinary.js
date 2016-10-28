@@ -1,4 +1,4 @@
-// Copyright 2015 Peter W Moresi
+// Copyright 2015 WebsiteHQ LLC
 
 // ISBINARY returns true when the string is 1 to 10 characters in length and
 // only contains 1 or 0s.

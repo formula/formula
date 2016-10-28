@@ -1,4 +1,4 @@
-// Copyright 2015 Peter W Moresi
+// Copyright 2015 WebsiteHQ LLC
 
 // FLATTEN converts a nested array into a flattened array. It only supports one
 // level of nesting.

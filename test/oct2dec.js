@@ -1,6 +1,6 @@
 import test from 'tape';
-import oct2dec from '../fn/oct2dec';
-import error from '../fn/error';
+import oct2dec from '../src/oct2dec';
+import error from '../src/error';
 
 test('oct2dec', function(t) {
   t.plan(8)

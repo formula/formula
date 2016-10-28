@@ -1,4 +1,4 @@
-// Copyright 2015 Peter W Moresi
+// Copyright 2015 WebsiteHQ LLC
 
 // isobject returns true when `value` is an object or function.
 export default function isobject(value) {

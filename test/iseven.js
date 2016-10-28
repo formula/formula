@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../fn/error'
-import iseven from '../fn/iseven'
+import error from '../src/error'
+import iseven from '../src/iseven'
 
 test('iseven', (t) => {
   t.plan(5)

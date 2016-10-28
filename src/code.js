@@ -1,4 +1,4 @@
-// Copyright 2015 Peter W Moresi
+// Copyright 2015 WebsiteHQ LLC
 
 import error from './error'
 // CODE accepts text and optionally index (default 1) returning the character code.

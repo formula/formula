@@ -1,7 +1,7 @@
 // FIXME: Write tests for MATCH
 import test from 'tape';
-import match from '../fn/match';
-import error from '../fn/error';
+import match from '../src/match';
+import error from '../src/error';
 
 test('match', function(t) {
   t.plan(6);

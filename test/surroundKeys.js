@@ -1,5 +1,5 @@
 import test from 'tape';
-import surroundKeys from '../fn/surroundKeys';
+import surroundKeys from '../src/surroundKeys';
 
 test('surroundKeys', function(t) {
   t.plan(2);

@@ -1,5 +1,5 @@
 import test from 'tape';
-import bin2dec from '../fn/bin2dec';
+import bin2dec from '../src/bin2dec';
 
 test('bin2dec', function (t) {
 

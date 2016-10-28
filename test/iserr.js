@@ -1,5 +1,5 @@
-import iserr from '../fn/iserr';
-import error from '../fn/error';
+import iserr from '../src/iserr';
+import error from '../src/error';
 import test from 'tape';
 
 test('iserr', function(t) {

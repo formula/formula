@@ -1,4 +1,4 @@
-// Copyright 2015 Peter W Moresi
+// Copyright 2015 WebsiteHQ LLC
 
 export default function diff(a, b) {
   let keysA = Object.keys(a),

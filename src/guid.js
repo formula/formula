@@ -1,4 +1,4 @@
-// Copyright 2015 Peter W Moresi
+// Copyright 2015 WebsiteHQ LLC
 
 // credit to http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
 // rfc4122 version 4 compliant solution

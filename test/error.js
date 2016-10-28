@@ -1,5 +1,5 @@
 import test from 'tape'
-import error from '../fn/error'
+import error from '../src/error'
 
 test('error', (t) => {
   t.plan(11)

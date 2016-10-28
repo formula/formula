@@ -1,5 +1,5 @@
-import numbervalue from '../fn/numbervalue';
-import error from '../fn/error';
+import numbervalue from '../src/numbervalue';
+import error from '../src/error';
 import test from 'tape';
 
 test('numbervalue', function(t) {

@@ -1,5 +1,5 @@
-import select from '../fn/select';
-import error from '../fn/error';
+import select from '../src/select';
+import error from '../src/error';
 import test from 'tape';
 
 test('select', function(t) {

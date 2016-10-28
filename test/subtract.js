@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../fn/error'
-import subtract from '../fn/subtract'
+import error from '../src/error'
+import subtract from '../src/subtract'
 
 test('subtract', (t) => {
   t.plan(5)

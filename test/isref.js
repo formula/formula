@@ -1,6 +1,6 @@
 import test from 'tape';
-import ref from '../fn/ref';
-import isref from '../fn/isref';
+import ref from '../src/ref';
+import isref from '../src/isref';
 
 test('isref', function(t) {
   t.plan(5)

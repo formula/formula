@@ -1,4 +1,4 @@
-// Copyright 2015 Peter W Moresi
+// Copyright 2015 WebsiteHQ LLC
 import isnumber from './isnumber'
 
 // Returns true when the value is a whole number

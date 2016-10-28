@@ -1,5 +1,5 @@
 import test from 'tape'
-import nper from '../fn/nper'
+import nper from '../src/nper'
 
 test('nper', (t) => {
   t.plan(1)

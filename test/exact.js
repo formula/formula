@@ -1,5 +1,5 @@
 import test from 'tape'
-import exact from '../fn/exact'
+import exact from '../src/exact'
 
 test('exact', (t) => {
   t.plan(2)

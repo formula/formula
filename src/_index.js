@@ -1,4 +1,4 @@
-// Copyright @ 2015-2016 Peter W Moresi
+// Copyright @ 2015-2016 WebsiteHQ LLC
 
 // # FunctionFoundry
 // Library of functions distributed through npm.
