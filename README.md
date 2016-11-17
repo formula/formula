@@ -1,8 +1,8 @@
 [![Circle CI](https://circleci.com/gh/WebsiteHQ/functionfoundry.svg?style=svg)](https://circleci.com/gh/WebsiteHQ)
 
-FunctionFoundry is a JavaScript function library for `Node.js` and module bundles like [webpack](https://webpack.github.io/) and [browserify](http://browserify.org/).
+FunctionFoundry is function library written in ES6 and distributed as ES5 on npm.
 
-It is the foundation for [formula](https://github.com/WebsiteHQ/formula).
+It is for [formula](https://github.com/WebsiteHQ/formula).
 
 ## Install
 
