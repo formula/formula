@@ -1,6 +1,6 @@
 [![Circle CI](https://circleci.com/gh/WebsiteHQ/functionfoundry.svg?style=svg)](https://circleci.com/gh/WebsiteHQ)
 
-FunctionFoundry is function library written in ES6 and distributed as ES5 on npm.
+FunctionFoundry is JavaScript function library without side effects.
 
 It is for [formula](https://github.com/WebsiteHQ/formula).
 
