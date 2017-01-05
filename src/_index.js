@@ -133,6 +133,11 @@ const isError = iserror
 import iseven from './iseven'
 const isEven = iseven
 
+// #### [isfalsy](./isfalsy)
+// `isfalsy` returns true when value is a string.
+import isfalsy from './isfalsy'
+const isFalsy = isfalsy
+
 // #### [isfunction](./isfunction)
 // `isfunction` returns true when the value is a JavaScript function.
 import isfunction from './isfunction'
@@ -172,6 +177,11 @@ const isRef = isref
 // `istext` returns true when value is a string.
 import istext from './istext'
 const isText = istext
+
+// #### [istruthy](./istruthy)
+// `istruthy` returns true when value is a string.
+import istruthy from './istruthy'
+const isTruthy = istruthy
 
 // #### [isurl](./isurl)
 // `isurl` returns true when value matches a url pattern.
@@ -714,6 +724,7 @@ export default {
   isempty,
   iserror,
   iseven,
+  isfalsy,
   isfunction,
   isleapyear,
   isna,
@@ -723,6 +734,7 @@ export default {
   isoweeknum,
   isref,
   istext,
+  istruthy,
   isurl,
   iswholenumber,
   join,

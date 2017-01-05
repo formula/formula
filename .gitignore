@@ -7,3 +7,4 @@ doc
 .#Docs.org
 
 src/.#vlookup.js
+deploy-docs.sh
