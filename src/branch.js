@@ -1,6 +1,7 @@
 // Copyright 2015 WebsiteHQ LLC
 
 import isfunction from './isfunction'
+import istruthy from './istruthy'
 
 // branch( test, result_if_true, [test2, result_if_true,] false_result )
 export default function branch(...cases) {
@@ -25,8 +26,8 @@ export default function branch(...cases) {
 
     // Check if condition is true
     if (index % 2 === 0 && (
-        (isfunction(item) && item() === true) ||
-        (item === true))) {
+        (isfunction(item) && istruthy(item()) ) ||
+        (!isfunction(item) && istruthy(item)))) {
       resolved = true
       val = cases[index+1]
       return isfunction(val) ? val() : val;
