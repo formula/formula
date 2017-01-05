@@ -2,7 +2,7 @@
 
 // Returns true when the value is a falsy value.
 // https://developer.mozilla.org/en-US/docs/Glossary/Falsy
-export default function isblank(value) {
+export default function isfalsy(value) {
     return (
       value === false ||
       value === 0 ||

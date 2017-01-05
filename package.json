@@ -1,6 +1,6 @@
 {
   "name": "functionfoundry",
-  "version": "0.12.1",
+  "version": "0.12.2",
   "description": "Pure function JavaScript library",
   "main": "fn/_index.js",
   "scripts": {
