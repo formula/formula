@@ -2,7 +2,7 @@
 // Use FunctionFoundry to identify src files without test files.
 
 var fs = require('fs')
-var {diff} = require('../lib/functionfoundry')
+var {diff} = require('../fn/_index')
 
 function arrayToObj(arr) {
   return arr.reduce((acc, item) => {
@@ -34,8 +34,8 @@ if (process.argv[2] === '--fix') {
 
     var content =
 `import test from 'tape'
-import error from '../src/ERROR'
-import {${name}} from '../src/${name}'
+import error from '../src/error'
+import ${name} from '../src/${name}'
 
 test('${name}', (t) => {
   t.plan(1)

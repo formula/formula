@@ -29,6 +29,9 @@ import branch from './branch'
 // define `cond` alias for branch
 const cond = branch
 
+// define `cond` alias for branch
+const ifs = branch
+
 // #### [choose](./choose)
 // `choose` is equivalent to `switch case`.
 import choose from './choose'
@@ -224,6 +227,14 @@ import abs from './abs'
 // `acos` returns the inverse cosine of a number.
 import acos from './acos'
 
+// #### [acosh](./acosh)
+// `acosh` returns the hyperbolic inverse cosine of a number.
+import acosh from './acosh'
+
+// #### [acot](./acot)
+/// `acot` returns the arccotangent of a given number.
+import acot from './acot'
+
 // #### [cos](./cos)
 /// `cos` returns the cosine of a number
 import cos from './cos'
@@ -345,7 +356,8 @@ import substitute from './substitute'
 
 // #### [substituteAll](./substituteAll)
 // `substituteAll` returns a new string with every instance of set of values replaced.
-import substituteAll from './substituteAll'
+import substituteall from './substituteall'
+const substituteAll = substituteall
 const template = substituteAll
 
 // #### [surroundKeys](./surroundKeys)
@@ -480,6 +492,10 @@ import max from './max'
 import sum from './sum'
 
 // ### Finance
+
+// #### [accrint](./accrint)
+// `accrint` returns the accrued interest for a security that pays periodic interest.
+import accrint from './accrint'
 
 // #### [fv](./fv)
 // `fv` returns the future value of an investment.
@@ -636,7 +652,10 @@ import serial from './serial'
 
 export default {
   abs,
+  accrint,
   acos,
+  acosh,
+  acot,
   add,
   and,
   atob,
@@ -693,6 +712,7 @@ export default {
   ifempty,
   iferror,
   ifna,
+  ifs,
   index,
   index2col,
   index2row,
@@ -790,6 +810,7 @@ export default {
   sort,
   split,
   substitute,
+  substituteall,
   substituteAll,
   subtract,
   sum,
