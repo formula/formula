@@ -1,4 +1,5 @@
 import isempty from './isempty';
+import iserror from './iserror';
 import isnumber from './isnumber';
 import error from './error'
 
@@ -6,6 +7,11 @@ import error from './error'
 export default function numbervalue(text, decimal_separator, group_separator)  {
   decimal_separator = decimal_separator || '.'
   group_separator = group_separator || ','
+
+  // Return error when text is error
+  if (iserror(text)) {
+    return text
+  }
 
   // Return `#VALUE!` when text is empty
   if (isempty(text)) {
