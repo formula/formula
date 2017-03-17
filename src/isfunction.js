@@ -1,4 +1,4 @@
-// Copyright 2015 WebsiteHQ LLC
+// Copyright 2015 JC Fisher
 
 // ISFUNCTION returns true when `value` is a function.
 export default function isfunction(value) {

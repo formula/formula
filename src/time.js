@@ -1,3 +1,5 @@
+// Copyright 2015 JC Fisher
+
 import {SecondsInDay} from './constants'
 
 export default function time(hour, minute, second) {

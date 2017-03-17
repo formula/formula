@@ -1,4 +1,4 @@
-// Copyright 2015 WebsiteHQ LLC
+// Copyright 2015 JC Fisher
 
 // Shared constants
 export let d1900 = new Date(1900, 0, 1),

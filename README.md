@@ -1,8 +1,8 @@
-[![Circle CI](https://circleci.com/gh/WebsiteHQ/functionfoundry.svg?style=svg)](https://circleci.com/gh/WebsiteHQ)
+[![Circle CI](https://circleci.com/gh/FunctionFoundry/functionfoundry.svg?style=svg)](https://circleci.com/gh/FunctionFoundry)
 
 FunctionFoundry is JavaScript function library without side effects.
 
-It is for [formula](https://github.com/WebsiteHQ/formula).
+It is for [formula](https://github.com/FunctionFoundry/formula).
 
 ## Install
 

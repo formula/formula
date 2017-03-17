@@ -1,4 +1,4 @@
-// Copyright 2015 WebsiteHQ LLC
+// Copyright 2015 JC Fisher
 
 // ISEMAIL returns true when the `value` matches the regex.
 export default function isemail(value) {

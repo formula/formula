@@ -1,3 +1,5 @@
+// Copyright 2015 JC Fisher
+
 export default function npv(rate, ...values) {
     rate = rate * 1;
     var factor = 1,

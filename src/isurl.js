@@ -1,4 +1,4 @@
-// Copyright 2015 WebsiteHQ LLC
+// Copyright 2015 JC Fisher
 
 // ISURL returns true when the value matches the regex for a uniform resource locator.
 export default function isurl(str){

@@ -1,3 +1,5 @@
+// Copyright 2015 JC Fisher
+
 export default function nper(rate, pmt, pv, fv, type) {
   var log,
   result;

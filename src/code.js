@@ -1,4 +1,4 @@
-// Copyright 2015 WebsiteHQ LLC
+// Copyright 2015 JC Fisher
 
 import error from './error'
 // CODE accepts text and optionally index (default 1) returning the character code.

@@ -1,4 +1,4 @@
-// Copyright @ 2015-2016 WebsiteHQ LLC
+// Copyright @ 2015-2016 JC Fisher
 
 // # FunctionFoundry
 // Library of functions distributed through npm.

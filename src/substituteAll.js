@@ -1,4 +1,4 @@
-// Copyright 2015 WebsiteHQ LLC
+// Copyright 2015 JC Fisher
 import substitute from './substitute'
 
 // substituteAll is a lightweight "substitution tags" engine that implement a global substitute for multiple items.

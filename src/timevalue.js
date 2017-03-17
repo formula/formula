@@ -1,3 +1,5 @@
+// Copyright 2015 JC Fisher
+
 import {SecondsInHour, SecondsInMinute, SecondsInDay} from './constants'
 
 export default function timevalue(time_text) {

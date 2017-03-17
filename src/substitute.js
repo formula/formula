@@ -1,4 +1,4 @@
-// Copyright 2015 WebsiteHQ LLC
+// Copyright 2015 JC Fisher
 
 // SUBSTITUTE `old_text` with `new_text` a given number of occurrences in `text`.
 export default function substitute(text, old_text, new_text, occurrence) {
