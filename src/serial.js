@@ -1,4 +1,4 @@
-// Copyright 2015 WebsiteHQ LLC
+// Copyright 2015 JC Fisher
 
 import {d1900, MilliSecondsInDay} from './constants'
 import isdate from './isdate'

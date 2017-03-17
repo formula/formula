@@ -1,4 +1,4 @@
-// Copyright 2015 WebsiteHQ LLC
+// Copyright 2015 JC Fisher
 
 // LOOKUP find a value in an array.
 export default function lookup() {

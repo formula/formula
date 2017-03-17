@@ -1,3 +1,5 @@
+// Copyright 2015 JC Fisher
+
 // Creates a new object where all of the keys are surrounded by
 // start and end delimiters.
 export default function surroundKeys(obj, start='-', end) {

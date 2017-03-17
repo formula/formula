@@ -1,4 +1,4 @@
-// Copyright 2015 WebsiteHQ LLC
+// Copyright 2015 JC Fisher
 
 // ISEVEN returns true when the value is even.
 export default function iseven(value) {

@@ -1,4 +1,4 @@
-// Copyright 2015 WebsiteHQ LLC
+// Copyright 2015 JC Fisher
 
 // EQ compares two values and returns a boolean value.
 export default function eq(a,b) {

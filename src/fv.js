@@ -1,3 +1,5 @@
+// Copyright 2015 JC Fisher
+
 import error from './error'
 import isblank from './isblank'
 

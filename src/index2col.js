@@ -1,4 +1,4 @@
-// Copyright 2015 WebsiteHQ LLC
+// Copyright 2015 JC Fisher
 
 import {MaxCols} from './constants';
 import index2row from './index2row';

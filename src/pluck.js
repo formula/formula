@@ -1,3 +1,5 @@
+// Copyright 2015 JC Fisher
+
 import isarray from './isarray'
 import error from './error'
 

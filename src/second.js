@@ -1,3 +1,5 @@
+// Copyright 2015 JC Fisher
+
 import {SecondsInDay, SecondsInHour, SecondsInMinute} from './constants'
 import trunc from './trunc'
 

@@ -1,3 +1,5 @@
+// Copyright 2015 JC Fisher
+
 import isempty from './isempty';
 import iserror from './iserror';
 import isnumber from './isnumber';

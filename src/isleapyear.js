@@ -1,3 +1,5 @@
+// Copyright 2015 JC Fisher
+
 import parsedate from './parsedate'
 
 export default function isleapyear(val) {

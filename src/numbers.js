@@ -1,3 +1,5 @@
+// Copyright 2015 JC Fisher
+
 import isnumber from './isnumber'
 
 export default function numbers(...values) {

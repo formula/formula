@@ -1,3 +1,5 @@
+// Copyright 2015 JC Fisher
+
 import parsedate from './parsedate'
 import serial from './serial'
 

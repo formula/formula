@@ -1,4 +1,4 @@
-// Copyright 2015 WebsiteHQ LLC
+// Copyright 2015 JC Fisher
 
 // ISDATE returns true when the `value` is a JavaScript date object.
 export default function isdate(value) {

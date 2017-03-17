@@ -1,3 +1,5 @@
+// Copyright 2015 JC Fisher
+
 import decodebase64 from './decodebase64'
 
 export default function decodejwt(token) {

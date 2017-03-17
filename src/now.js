@@ -1,3 +1,5 @@
+// Copyright 2015 JC Fisher
+
 import datevalue from './datevalue'
 import timevalue from './timevalue'
 

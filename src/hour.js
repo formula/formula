@@ -1,3 +1,5 @@
+// Copyright 2015 JC Fisher
+
 import trunc from './trunc'
 
 export default function hour(value) {

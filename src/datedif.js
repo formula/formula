@@ -1,4 +1,4 @@
-// Copyright 2015 WebsiteHQ LLC
+// Copyright 2015 JC Fisher
 import parsedate from './parsedate'
 
 // DATEDIF return the difference between two dates given a start date, end date and unit.

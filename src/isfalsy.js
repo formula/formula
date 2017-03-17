@@ -1,4 +1,4 @@
-// Copyright 2015 WebsiteHQ LLC
+// Copyright 2015 JC Fisher
 
 // Returns true when the value is a falsy value.
 // https://developer.mozilla.org/en-US/docs/Glossary/Falsy

@@ -1,4 +1,4 @@
-// Copyright 2015 WebsiteHQ LLC
+// Copyright 2015 JC Fisher
 
 // FILTER limits a range based on arrays of boolean values.
 export default function filter(range, ...filters) {

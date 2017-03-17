@@ -1,3 +1,4 @@
+// Copyright 2015 JC Fisher
 
 export default function decodebase64(str) {
 
