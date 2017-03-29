@@ -1,6 +1,6 @@
-import column from '../src/column';
-import ref from '../src/ref';
-import error from '../src/error';
+import column from '../fn/column';
+import ref from '../fn/ref';
+import error from '../fn/error';
 import test from 'tape';
 
 test('column', function(t) {

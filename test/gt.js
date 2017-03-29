@@ -1,5 +1,5 @@
 import test from 'tape';
-import gt from '../src/gt';
+import gt from '../fn/gt';
 
 test('gt', function(t) {
 

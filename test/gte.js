@@ -1,5 +1,5 @@
 import test from 'tape';
-import gte from '../src/gte';
+import gte from '../fn/gte';
 
 test('gte', function(t) {
 

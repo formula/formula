@@ -1,5 +1,5 @@
-import roundup from '../src/roundup';
-import error from '../src/error';
+import roundup from '../fn/roundup';
+import error from '../fn/error';
 import test from 'tape';
 
 test('roundup', function(t) {

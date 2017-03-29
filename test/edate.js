@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../src/error'
-import edate from '../src/edate'
+import error from '../fn/error'
+import edate from '../fn/edate'
 
 test('edate', (t) => {
   t.plan(3)

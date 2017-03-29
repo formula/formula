@@ -1,5 +1,5 @@
 import test from 'tape';
-import ifempty from '../src/ifempty';
+import ifempty from '../fn/ifempty';
 
 test('ifempty', function(t) {
   t.plan(5)

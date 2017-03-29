@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../src/error'
-import guid from '../src/guid'
+import error from '../fn/error'
+import guid from '../fn/guid'
 
 test('guid', (t) => {
   t.plan(1)

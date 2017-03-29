@@ -1,5 +1,5 @@
 import test from 'tape';
-import concatenate from '../src/concatenate';
+import concatenate from '../fn/concatenate';
 
 test('concatenate', function (t) {
 

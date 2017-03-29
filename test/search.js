@@ -1,5 +1,5 @@
-import search from '../src/search';
-import error from '../src/error';
+import search from '../fn/search';
+import error from '../fn/error';
 import test from 'tape';
 
 test('search', function(t) {

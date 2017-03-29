@@ -1,6 +1,6 @@
 import test from 'tape';
-import pmt from '../src/pmt';
-import error from '../src/error';
+import pmt from '../fn/pmt';
+import error from '../fn/error';
 
 test('pmt', function(t) {
   t.plan(9)

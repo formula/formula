@@ -1,5 +1,5 @@
 import test from 'tape';
-import trunc from '../src/trunc';
+import trunc from '../fn/trunc';
 
 test('trunc', function(t) {
   t.plan(6);

@@ -3,7 +3,7 @@
  */
 
 import test from 'tape';
-import query from '../src/query'
+import query from '../fn/query'
 
 test('query', function(t) {
   t.plan(19)

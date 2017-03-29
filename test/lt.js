@@ -1,5 +1,5 @@
 import test from 'tape';
-import lt from '../src/lt';
+import lt from '../fn/lt';
 
 test('lt', function(t) {
 

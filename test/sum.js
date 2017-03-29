@@ -1,5 +1,5 @@
-import sum from '../src/sum'
-import error from '../src/error'
+import sum from '../fn/sum'
+import error from '../fn/error'
 import test from 'tape'
 
 test('sum', function(t) {

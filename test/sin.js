@@ -1,5 +1,5 @@
-import sin from '../src/sin'
-import error from '../src/error'
+import sin from '../fn/sin'
+import error from '../fn/error'
 import test from 'tape'
 
 test('sin', function(t) {

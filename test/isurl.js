@@ -1,5 +1,5 @@
 import test from 'tape';
-import isurl from '../src/isurl';
+import isurl from '../fn/isurl';
 
 test('isurl', function(t) {
   t.plan(8)

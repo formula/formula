@@ -1,5 +1,5 @@
 import test from 'tape';
-import flatten from '../src/flatten';
+import flatten from '../fn/flatten';
 
 test('flatten', (t) => {
   t.plan(2)

@@ -1,5 +1,5 @@
 import test from 'tape'
-import * as ff from '../src/_index'
+import * as ff from '../fn/functions'
 
 test('index', function(t) {
 

@@ -1,4 +1,4 @@
-import isnumber from '../src/isnumber';
+import isnumber from '../fn/isnumber';
 import test from 'tape';
 
 test('isnumber', function(t) {

@@ -1,5 +1,5 @@
 import test from 'tape';
-import sort from '../src/sort';
+import sort from '../fn/sort';
 
 test('sort', function(t) {
   t.plan(5);

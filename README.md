@@ -1,42 +1,30 @@
-[![Circle CI](https://circleci.com/gh/FunctionFoundry/functionfoundry.svg?style=svg)](https://circleci.com/gh/FunctionFoundry)
+[![Circle CI](https://circleci.com/gh/formula/formula.svg?style=svg)](https://circleci.com/gh/formula/formula)
 
-FunctionFoundry is JavaScript function library without side effects.
+# formula
 
-It is for [formula](https://github.com/FunctionFoundry/formula).
+A formula parser and function library for browsers and Node.js.
 
 ## Install
 
 ```sh
-npm install --save functionfoundry
+npm install --save formula
 ```
 
 ```js
 // import the the entire library
-var ff = require('functionfoundry')
+var f = require('formula')
 
 // import specific files
-var isArray = require('functionfoundry/fn/isarray')
+var isArray = require('formula/fn/isarray')
 ```
 
-## Required Polyfills
-
-The library depends on a modern JavaScript runtime. Load a polyfill like in [core-js](https://github.com/zloirock/core-js#commonjs) or [babel-polyfill](http://babeljs.io/docs/usage/polyfill/) to support old browsers.
-
-Install required polyfills with [core-js](https://github.com/zloirock/core-js):
+## Usage
 
 ```js
-require('core-js/fn/object/assign');
-require('core-js/fn/object/keys');
-require('core-js/fn/array/map');
-require('core-js/fn/array/reduce');
-```
+var { run, and, eq, len, gt, lt, isnumber, isText, isEmail, isEmpty, lower, proper, text, date}
+= require('formula')
 
-## Examples
-
-```js
-var { and, eq, len, gt, lt, isnumber, isText, isEmail, isEmpty, lower, proper, text, date}
-= require('functionfoundry')
-
+run("a + b", { a: 2, b: 2})
 isnumber(1),
 isText('this is'),
 isEmail('me@gmail.com'),
@@ -54,6 +42,22 @@ eq(text(date(2000, 2, 1), "m-d-yyyy"), '2-1-2000')
 Optionally, may load specific functions to reduce bundle size.
 
 ```
-var isNumber = require('functionfoundry/fn/isnumber')
-var proper = require('functionfoundry/fn/proper')
+var isNumber = require('formula/fn/isnumber')
+var proper = require('formula/fn/proper')
+```
+
+
+## Runtime Dependencies
+
+**formula** depends on a modern JavaScript runtime.
+
+Load [polyfills](https://github.com/zloirock/core-js#commonjs) for old browsers:
+
+```js
+require('core-js/fn/array/filter');
+require('core-js/fn/array/map');
+require('core-js/fn/array/reduce');
+require('core-js/fn/object/assign');
+require('core-js/fn/object/keys');
+require('core-js/fn/number/is-nan');
 ```

@@ -1,5 +1,5 @@
 import test from 'tape';
-import lower from '../src/lower';
+import lower from '../fn/lower';
 
 test('lower', function(t) {
 

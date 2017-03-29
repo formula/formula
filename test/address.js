@@ -1,5 +1,5 @@
 import test from 'tape';
-import address from '../src/address';
+import address from '../fn/address';
 
 test('address', function(t) {
 

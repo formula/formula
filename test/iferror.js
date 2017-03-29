@@ -1,6 +1,6 @@
 import test from 'tape';
-import iferror from '../src/iferror';
-import error from '../src/error';
+import iferror from '../fn/iferror';
+import error from '../fn/error';
 
 test('iferror', function(t) {
   t.plan(6)

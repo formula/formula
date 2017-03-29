@@ -1,5 +1,5 @@
 import test from 'tape';
-import max from '../src/max';
+import max from '../fn/max';
 
 test('max', function(t) {
   t.plan(7);

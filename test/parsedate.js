@@ -1,6 +1,6 @@
 import test from 'tape';
-import parsedate from '../src/parsedate';
-import error from '../src/error';
+import parsedate from '../fn/parsedate';
+import error from '../fn/error';
 
 test('parsedate', function(t) {
   t.plan(4);

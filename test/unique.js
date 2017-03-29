@@ -1,6 +1,6 @@
-import unique from '../src/unique';
+import unique from '../fn/unique';
 import test from 'tape';
-import error from '../src/error';
+import error from '../fn/error';
 
 test('unique', function(t) {
   t.plan(1)

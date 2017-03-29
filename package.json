@@ -1,30 +1,31 @@
 {
-  "name": "functionfoundry",
-  "version": "0.12.7",
-  "description": "Pure function JavaScript library",
-  "main": "fn/_index.js",
+  "name": "formula",
+  "version": "2.0.0",
+  "description": "Formula compiler and function library",
+  "main": "index.js",
   "scripts": {
     "test": "babel-tape-runner test/*.js | faucet",
     "docs": "groc src/*.js",
     "test:docs": "docco --output test_docs test/*.js",
     "clean": "rm -rf fn",
+    "build:parser": "jison src/parser.jison -m commonjs -o fn/parser.js",
     "build:js": "gulp",
-    "build": "npm run clean && npm run build:js && npm run docs"
+    "build": "npm run clean && mkdir fn && npm run build:parser && npm run build:js && npm run docs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FunctionFoundry/functionfoundry.git"
+    "url": "git+https://github.com/formula/formula.git"
   },
   "keywords": [
     "Spreadsheets",
     "JavaScript"
   ],
-  "author": "Peter Moresi",
+  "author": "JC Fisher",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FunctionFoundry/functionfoundry/issues"
+    "url": "https://github.com/formula/formula/issues"
   },
-  "homepage": "https://github.com/FunctionFoundry/functionfoundry#readme",
+  "homepage": "https://github.com/formula/formula#readme",
   "devDependencies": {
     "babel-cli": "^6.8.0",
     "babel-core": "^6.8.0",

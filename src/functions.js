@@ -1,24 +1,19 @@
 // Copyright @ 2015-2016 JC Fisher
 
-// # FunctionFoundry
-// Library of functions distributed through npm.
-//
-// ## Install
-//   ```sh
-//   npm install --save functionfoundry
-//   ```
-
-// ## Polyfills
-// The library includes a polyfill for Number.isNaN.
-
-// ### Number.isNaN
-// credit: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
-Number.isNaN = Number.isNaN || function(value) {
-    return value !== value;
-}
+// # Formula's Functions
 
 // ## Functions
 // The library includes functions for logic, math, text, lookup, date/time, aggregation, arrays, objects, finance, statistics and other utilities.
+
+// ### Formula
+
+// #### [compile](./compile)
+// `compile` converts a formula into a function.
+import compile from './compile'
+
+// #### [run](./run)
+// `run` execute a formula once.
+import run from './run'
 
 // ### Logical
 
@@ -639,6 +634,8 @@ import ref from './ref'
 import serial from './serial'
 
 export default {
+  run,
+  compile,
   abs,
   acos,
   add,
