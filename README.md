@@ -10,14 +10,6 @@ A formula parser and function library for browsers and Node.js.
 npm install --save formula
 ```
 
-```js
-// import the the entire library
-var f = require('formula')
-
-// import specific files
-var isArray = require('formula/fn/isarray')
-```
-
 ## Usage
 
 ```js
