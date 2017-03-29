@@ -475,6 +475,10 @@ import min from './min'
 // `min` returns the largest value in an array.
 import max from './max'
 
+// #### [query](./query)
+// `min` returns the largest value in an array.
+import query from './query'
+
 // #### [sum](./sum)
 // `sum` returns the value of all items in an array added together.
 import sum from './sum'
@@ -774,6 +778,7 @@ export default {
   power,
   proper,
   pv,
+  query,
   reduce,
   ref,
   replace,

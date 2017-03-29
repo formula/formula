@@ -3,7 +3,7 @@ import * as ff from '../src/_index'
 
 test('index', function(t) {
 
-  t.plan( 127 )
+  t.plan( 128 )
   t.ok( ff.abs, 'abs should be there')
   t.ok( ff.acos, 'acos should be there')
   t.ok( ff.add, 'add should be there')
@@ -100,6 +100,7 @@ test('index', function(t) {
   t.ok( ff.power, 'power should be there')
   t.ok( ff.proper, 'proper should be there')
   t.ok( ff.pv, 'pv should be there')
+  t.ok( ff.query, 'query should be there')
   t.ok( ff.reduce, 'reduce should be there')
   t.ok( ff.ref, 'ref should be there')
   t.ok( ff.rept, 'rept should be there')

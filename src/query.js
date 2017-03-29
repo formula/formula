@@ -6,18 +6,24 @@
 // query([{ foo: 1}, {foo: 2}], { foo: { $ne: 1 } })
 //
 // Supported operators:
+//  - $and
+//  - $or
 //  - $eq
 //  - $ne
 //  - $gt
 //  - $gte
 //  - $lt
 //  - $lte
+//  - $exists
+//  - $nin
 //  - $in
 //  - $text
 
 import filter from './filter';
-import search from './search'
 import branch from './branch'
+import and from './and'
+import or from './or'
+import not from './not'
 import eq from './eq'
 import ne from './ne'
 import gt from './gt'
@@ -25,42 +31,76 @@ import gte from './gte'
 import lt from './lt'
 import lte from './lte'
 import match from './match'
-import and from './and'
+import search from './search'
+import isarray from './isarray'
 import isobject from './isobject'
+import istruthy from './istruthy'
 
 // Functions for each operator.
 let filterTypes = {
-  $eq: (value, filterValue) => eq(value, filterValue),
-  $ne: (value, filterValue) => ne(value, filterValue),
-  $gt: (value, filterValue) => gt(value, filterValue),
-  $gte: (value, filterValue) => gte(value, filterValue),
-  $lt: (value, filterValue) => lt(value, filterValue),
-  $lte: (value, filterValue) => lte(value, filterValue),
-  $in: (value, filterValue) => match(value, filterValue, 1) > 0,
-  $text: (value, filterValue) => search(filterValue, value) > 0
+
+  $noop: () => () => false,
+  $eq: (queryVal) => (row, field) => eq(row[field], queryVal),
+  $ne: (queryVal) => (row, field) => ne(row[field], queryVal),
+  $gt: (queryVal) => (row, field) => gt(row[field], queryVal),
+  $gte: (queryVal) => (row, field) => gte(row[field], queryVal),
+  $lt: (queryVal) => (row, field) => lt(row[field], queryVal),
+  $lte: (queryVal) => (row, field) => lte(row[field], queryVal),
+  $in: (queryVal) => (row, field) => match(row[field], queryVal, 1) > 0,
+  $nin: (queryVal) => (row, field) => not( match(row[field], queryVal, 1) > 0 ),
+  $text: (queryVal) => (row, field) => search(queryVal, row[field]) > 0,
+  $exists: (queryVal) => (row, field) => istruthy(queryVal) ? row.hasOwnProperty(field) : !row.hasOwnProperty(field),
+
+  $and: (queryVal) => (row, field) => true,
+  $or: (queryVal) => (row, field) => true
+
 }
 
-// Run the filter against the table with the settings.
-export default function query(table, q) {
+// Run the filter against the data with the settings.
+export default function query(data, query) {
 
-  // Compose a list of functions to filter each field.
-  let funcs = Object.keys(q).reduce(
-    (acc, field) => acc.concat((row) => branch(
-      isobject(q[field]),
-      () => and(
-        ...Object.keys(q[field]).map( (d) => {
-          return filterTypes[d](row[field], q[field][d])
-        })
-      ),
-      () => eq(row[field], q[field])
-    )),
-    []
+  let comparison = (field, op, value) => row => (filterTypes[op] || filterTypes['$noop'])(value)(row, field)
+
+  let comparator = (list, key) => row => branch(
+    isobject(list[key]),
+    () => and(
+      ...Object.keys(list[key]).map( (d) => {
+        return comparison( key, d, list[key][d] )(row)
+      })
+    ),
+    () => comparison( key, '$eq', list[key])(row)
   )
 
-  // Execute the filter on the table.
+  let comparisonGroup = (row, list, key, op=and) => {
+
+    if (!isarray(list[key])) {
+      throw new Error(`$${op.name} expects array!`)
+    }
+
+    return op( ...list[key].map( d => op( ...Object.keys(d).map( e => comparator(d, e)(row) )) ) )
+
+  }
+
+  let composeQuery = (list) => Object.keys(list).reduce(
+    (funcs, key) => funcs.concat(
+      (row) =>
+      branch(
+        key === '$and',
+        () => comparisonGroup(row, list, key, and),
+        key === '$or',
+        () => comparisonGroup(row, list, key, or),
+        () => comparator(list, key)(row)),
+      ),
+      []
+  )
+
+  // Compose a list of functions to filter each field.
+  let funcs = composeQuery(query)
+
+  // Execute the filter on the data.
   return filter(
-    table,
+    data,
     // map each filter function to true/false values for each row.
-    ...funcs.map( filter => table.map( row => filter(row) ) )
+    ...funcs.map( filter => data.map( row => filter(row) ) )
   )
 }
