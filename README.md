@@ -2,7 +2,7 @@
 
 # formula
 
-A formula parser and function library for browsers and Node.js.
+A formula language and function library for JavaScript.
 
 ## Install
 
