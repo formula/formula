@@ -320,6 +320,10 @@ var _hlookup = require('./hlookup');
 
 var _hlookup2 = _interopRequireDefault(_hlookup);
 
+var _includes = require('./includes');
+
+var _includes2 = _interopRequireDefault(_includes);
+
 var _index = require('./index');
 
 var _index2 = _interopRequireDefault(_index);
@@ -933,6 +937,10 @@ var template = _substituteAll2.default;
 // `hlookup` searches the first row and returns the value from the found column at a given row.
 
 
+// #### [includes](./matcincludesh)
+// `includes` searches an array and returns the true or false for exact matches.
+
+
 // #### [index](./index)
 // `index` returns the value for a given row and column.
 
@@ -1256,6 +1264,7 @@ exports.default = {
   ifempty: _ifempty2.default,
   iferror: _iferror2.default,
   ifna: _ifna2.default,
+  includes: _includes2.default,
   index: _index2.default,
   index2col: _index2col2.default,
   index2row: _index2row2.default,

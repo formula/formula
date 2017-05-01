@@ -30,7 +30,7 @@ import gt from './gt'
 import gte from './gte'
 import lt from './lt'
 import lte from './lte'
-import match from './match'
+import includes from './includes'
 import search from './search'
 import isarray from './isarray'
 import isobject from './isobject'
@@ -46,8 +46,8 @@ let filterTypes = {
   $gte: (queryVal) => (row, field) => gte(row[field], queryVal),
   $lt: (queryVal) => (row, field) => lt(row[field], queryVal),
   $lte: (queryVal) => (row, field) => lte(row[field], queryVal),
-  $in: (queryVal) => (row, field) => match(row[field], queryVal, 1) > 0,
-  $nin: (queryVal) => (row, field) => not( match(row[field], queryVal, 1) > 0 ),
+  $in: (queryVal) => (row, field) => isarray(queryVal) && includes(row[field], queryVal),
+  $nin: (queryVal) => (row, field) => isarray(queryVal) && !includes(row[field], queryVal),
   $text: (queryVal) => (row, field) => search(queryVal, row[field]) > 0,
   $exists: (queryVal) => (row, field) => istruthy(queryVal) ? row.hasOwnProperty(field) : !row.hasOwnProperty(field),
 

@@ -49,9 +49,9 @@ var _lte = require('./lte');
 
 var _lte2 = _interopRequireDefault(_lte);
 
-var _match = require('./match');
+var _includes = require('./includes');
 
-var _match2 = _interopRequireDefault(_match);
+var _includes2 = _interopRequireDefault(_includes);
 
 var _search = require('./search');
 
@@ -132,12 +132,12 @@ var filterTypes = {
   },
   $in: function $in(queryVal) {
     return function (row, field) {
-      return (0, _match2.default)(row[field], queryVal, 1) > 0;
+      return (0, _isarray2.default)(queryVal) && (0, _includes2.default)(row[field], queryVal);
     };
   },
   $nin: function $nin(queryVal) {
     return function (row, field) {
-      return (0, _not2.default)((0, _match2.default)(row[field], queryVal, 1) > 0);
+      return (0, _isarray2.default)(queryVal) && !(0, _includes2.default)(row[field], queryVal);
     };
   },
   $text: function $text(queryVal) {

@@ -369,6 +369,10 @@ import upper from './upper'
 // `hlookup` searches the first row and returns the value from the found column at a given row.
 import hlookup from './hlookup'
 
+// #### [includes](./matcincludesh)
+// `includes` searches an array and returns the true or false for exact matches.
+import includes from './includes'
+
 // #### [index](./index)
 // `index` returns the value for a given row and column.
 import index from './index'
@@ -694,6 +698,7 @@ export default {
   ifempty,
   iferror,
   ifna,
+  includes,
   index,
   index2col,
   index2row,

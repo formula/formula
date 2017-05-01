@@ -6,13 +6,20 @@ import test from 'tape';
 import query from '../fn/query'
 
 test('query', function(t) {
-  t.plan(19)
+  t.plan(22)
 
   let table = [
     { id: 1 },
     { id: 2 },
     { id: 'abc' }
   ]
+
+  let table2 = [
+    { foo: 'a' },
+    { foo: 'b' },
+    { foo: 'b' }
+  ]
+
 
   t.deepEqual( query( table, { } ), table )
   t.deepEqual( query( table, { id: 1 } ), [{ id: 1 }] )
@@ -25,6 +32,12 @@ test('query', function(t) {
   t.deepEqual( query( table, { id: { $text: 'ab?' } } ), [{ id: 'abc' }] )
   t.deepEqual( query( table, { id: { $in: [1, 2] } } ), [{ id: 1 }, { id: 2 }] )
   t.deepEqual( query( table, { id: { $nin: [1, 2] } } ), [{ id: 'abc' }] )
+
+
+  t.deepEqual( query( table2, { foo: { $in: ['a'] } } ), table2.filter( d => d.foo == 'a' ) )
+  t.deepEqual( query( table2, { foo: { $in: ['b'] } } ), table2.filter( d => d.foo == 'b' ) )
+  t.deepEqual( query( table2, { foo: { $in: ['a', 'b'] } } ), table2 )
+
 
   t.deepEqual( query( table, { $and: [{ id: 1}, { id: { $ne: 'abc' }}] } ), [{ id: 1}] )
   t.deepEqual( query( table, { $or: [{ id: 1}, { id: 2}] } ), [{ id: 1 }, { id: 2 }] )

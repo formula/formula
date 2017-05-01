@@ -3,7 +3,7 @@ import * as ff from '../fn/functions'
 
 test('index', function(t) {
 
-  t.plan( 128 )
+  t.plan( 129 )
   t.ok( ff.abs, 'abs should be there')
   t.ok( ff.acos, 'acos should be there')
   t.ok( ff.add, 'add should be there')
@@ -43,6 +43,7 @@ test('index', function(t) {
   t.ok( ff.gte, 'gte should be there')
   t.ok( ff.hlookup, 'hlookup should be there')
   t.ok( ff.hour, 'hour should be there')
+  t.ok( ff.includes, 'includes should be there')
   t.ok( ff.int, 'int should be there')
   t.ok( ff.ifna, 'ifna should be there')
   t.ok( ff.ifblank, 'ifblank should be there')
