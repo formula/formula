@@ -6,7 +6,7 @@
 npm install --save formula
 ```
 
-## Install wih yarn
+## Install with yarn
 
 ```sh
 yarn add formula
@@ -43,7 +43,7 @@ var proper = require('formula/fn/proper')
 
 ## Runtime Dependencies
 
-**formula** depends on a modern JavaScript runtime.
+**formula** depends on a certain ES5/ES6 standard functions.
 
 Load [polyfills](https://github.com/zloirock/core-js#commonjs) for old browsers:
 
