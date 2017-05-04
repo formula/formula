@@ -1,15 +1,17 @@
 [![Circle CI](https://circleci.com/gh/formula/formula.svg?style=svg)](https://circleci.com/gh/formula/formula)
 
-# formula
-
-A formula language and function library for JavaScript.
-
-## Install
+## Install with npm
 
 ```sh
 npm install --save formula
 ```
 
+## Install wih yarn
+
+```sh
+yarn add formula
+```
+ 
 ## Usage
 
 ```js
