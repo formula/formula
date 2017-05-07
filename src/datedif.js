@@ -1,5 +1,6 @@
 // Copyright 2015 JC Fisher
 import parsedate from './parsedate'
+import isNaN from './isnan'
 
 // DATEDIF return the difference between two dates given a start date, end date and unit.
 export default function datedif(start_date, end_date, unit) {
@@ -8,7 +9,7 @@ export default function datedif(start_date, end_date, unit) {
   end_date = parsedate(end_date)
 
   var timediff = end_date - start_date;
-  if (Number.isNaN(timediff)) return NaN;
+  if (isNaN(timediff)) return NaN;
 
   switch (unit) {
     case "Y": return end_date.getFullYear() - start_date.getFullYear();

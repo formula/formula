@@ -9,9 +9,15 @@ var _error = require('./error');
 
 var _error2 = _interopRequireDefault(_error);
 
+var _reduce = require('./reduce');
+
+var _reduce2 = _interopRequireDefault(_reduce);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // parse querystring into object
+// Copyright 2015 JC Fisher
+
 function parsequery() {
   var query = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
 
@@ -24,13 +30,12 @@ function parsequery() {
     return {};
   }
 
-  return (query[0] === '?' ? query.substr(1) : query).split('&').reduce(function (acc, item) {
+  return (0, _reduce2.default)((query[0] === '?' ? query.substr(1) : query).split('&'), function (acc, item) {
     var n = item.split('=');
     var key = decodeURIComponent(n[0]);
     var value = decodeURIComponent(n[1] || '');
     acc[key] = value;
     return acc;
   }, {});
-} // Copyright 2015 JC Fisher
-
+}
 module.exports = exports['default'];

@@ -2,6 +2,7 @@
 
 import isfunction from './isfunction'
 import istruthy from './istruthy'
+import reduce from './reduce'
 
 // branch( test, result_if_true, [test2, result_if_true,] false_result )
 export default function branch(...cases) {
@@ -9,7 +10,7 @@ export default function branch(...cases) {
   var resolved = false
 
   // Reduce all cases into a value.
-  return cases.reduce( function(acc, item, index) {
+  return reduce( cases, function(acc, item, index) {
     let val;
 
     // Return previously resolved result

@@ -1,10 +1,15 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = nper;
-// Copyright 2015 JC Fisher
+
+var _isnan = require('./isnan');
+
+var _isnan2 = _interopRequireDefault(_isnan);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function nper(rate, pmt, pv, fv, type) {
   var log, result;
@@ -15,7 +20,7 @@ function nper(rate, pmt, pv, fv, type) {
   type = type || 0;
 
   log = function log(prim) {
-    if (Number.isNaN(prim)) {
+    if ((0, _isnan2.default)(prim)) {
       return Math.log(0);
     }
     var num = Math.log(prim);
@@ -30,10 +35,10 @@ function nper(rate, pmt, pv, fv, type) {
     result = log(-(rate * fv - pmt) / (rate * pv + pmt)) / log(1.0 + rate);
   }
 
-  if (Number.isNaN(result)) {
+  if ((0, _isnan2.default)(result)) {
     result = 0;
   }
 
   return result;
-}
-module.exports = exports["default"];
+} // Copyright 2015 JC Fisher
+module.exports = exports['default'];

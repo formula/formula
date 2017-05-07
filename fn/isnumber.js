@@ -8,6 +8,6 @@ exports.default = isnumber;
 
 // Returns true when the value is a finite number.
 function isnumber(value) {
-    return typeof value === 'number' && !Number.isNaN(value) && isFinite(value);
+    return typeof value === 'number' && !isNaN(value) && isFinite(value);
 }
 module.exports = exports['default'];

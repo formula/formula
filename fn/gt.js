@@ -17,7 +17,13 @@ var _error = require('./error');
 
 var _error2 = _interopRequireDefault(_error);
 
+var _map = require('./map');
+
+var _map2 = _interopRequireDefault(_map);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Copyright 2015 JC Fisher
 
 function gt(a, b) {
   if ((0, _isref2.default)(a) && (0, _isref2.default)(b)) {
@@ -25,16 +31,15 @@ function gt(a, b) {
   } else if ((0, _isarray2.default)(a) && (0, _isarray2.default)(b)) {
     return _error2.default.na;
   } else if ((0, _isref2.default)(a) || (0, _isarray2.default)(a)) {
-    return a.map(function (d) {
+    return (0, _map2.default)(a, function (d) {
       return d > b;
     });
   } else if ((0, _isref2.default)(b) || (0, _isarray2.default)(b)) {
-    return b.map(function (d) {
+    return (0, _map2.default)(a, function (d) {
       return d > a;
     });
   } else {
     return a > b;
   }
-} // Copyright 2015 JC Fisher
-
+}
 module.exports = exports['default'];

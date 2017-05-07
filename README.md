@@ -1,5 +1,7 @@
 [![Circle CI](https://circleci.com/gh/formula/formula.svg?style=svg)](https://circleci.com/gh/formula/formula)
 
+Written in ES6, published as ES5.
+
 ## Install with npm
 
 ```sh
@@ -11,7 +13,7 @@ npm install --save formula
 ```sh
 yarn add formula
 ```
- 
+
 ## Usage
 
 ```js
@@ -40,18 +42,3 @@ var isNumber = require('formula/fn/isnumber')
 var proper = require('formula/fn/proper')
 ```
 
-
-## Runtime Dependencies
-
-**formula** depends on a certain ES5/ES6 standard functions.
-
-Load [polyfills](https://github.com/zloirock/core-js#commonjs) for old browsers:
-
-```js
-require('core-js/fn/array/filter');
-require('core-js/fn/array/map');
-require('core-js/fn/array/reduce');
-require('core-js/fn/object/assign');
-require('core-js/fn/object/keys');
-require('core-js/fn/number/is-nan');
-```

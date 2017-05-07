@@ -1,5 +1,7 @@
 // Copyright 2015 JC Fisher
 import substitute from './substitute'
+import keys from './keys'
+import reduce from './reduce'
 
 // substituteAll is a lightweight "substitution tags" engine that implement a global substitute for multiple items.
 //
@@ -14,5 +16,5 @@ import substitute from './substitute'
 // ```
 export default function substituteAll(content, locals, start='-', end=start) {
   if (!locals) return content;
-  return Object.keys(locals).reduce( (p, v) => substitute(p, `${start}${v}${end}`, locals[v]), content)
+  return reduce( keys(locals), (p, v) => substitute(p, `${start}${v}${end}`, locals[v]), content)
 }

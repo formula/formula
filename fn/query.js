@@ -5,6 +5,18 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = query;
 
+var _map = require('./map');
+
+var _map2 = _interopRequireDefault(_map);
+
+var _reduce = require('./reduce');
+
+var _reduce2 = _interopRequireDefault(_reduce);
+
+var _keys = require('./keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
 var _filter = require('./filter');
 
 var _filter2 = _interopRequireDefault(_filter);
@@ -176,7 +188,7 @@ function query(data, query) {
   var comparator = function comparator(list, key) {
     return function (row) {
       return (0, _branch2.default)((0, _isobject2.default)(list[key]), function () {
-        return _and2.default.apply(undefined, _toConsumableArray(Object.keys(list[key]).map(function (d) {
+        return _and2.default.apply(undefined, _toConsumableArray((0, _map2.default)((0, _keys2.default)(list[key]), function (d) {
           return comparison(key, d, list[key][d])(row);
         })));
       }, function () {
@@ -193,15 +205,15 @@ function query(data, query) {
       throw new Error('$' + op.name + ' expects array!');
     }
 
-    return op.apply(undefined, _toConsumableArray(list[key].map(function (d) {
-      return op.apply(undefined, _toConsumableArray(Object.keys(d).map(function (e) {
+    return op.apply(undefined, _toConsumableArray((0, _map2.default)(list[key], function (d) {
+      return op.apply(undefined, _toConsumableArray((0, _map2.default)((0, _keys2.default)(d), function (e) {
         return comparator(d, e)(row);
       })));
     })));
   };
 
   var composeQuery = function composeQuery(list) {
-    return Object.keys(list).reduce(function (funcs, key) {
+    return (0, _reduce2.default)((0, _keys2.default)(list), function (funcs, key) {
       return funcs.concat(function (row) {
         return (0, _branch2.default)(key === '$and', function () {
           return comparisonGroup(row, list, key, _and2.default);
@@ -218,8 +230,8 @@ function query(data, query) {
   var funcs = composeQuery(query);
 
   // Execute the filter on the data.
-  return _filter2.default.apply(undefined, [data].concat(_toConsumableArray(funcs.map(function (filter) {
-    return data.map(function (row) {
+  return _filter2.default.apply(undefined, [data].concat(_toConsumableArray((0, _map2.default)(funcs, function (filter) {
+    return (0, _map2.default)(data, function (row) {
       return filter(row);
     });
   }))));

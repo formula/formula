@@ -1,6 +1,7 @@
 // Copyright 2015 JC Fisher
 
 import error from './error'
+import isNaN from './isnan'
 
 // PROPER converts text into proper case.
 export default function proper(text) {
@@ -13,7 +14,7 @@ export default function proper(text) {
     if (text === false) {
         text = 'FALSE';
     }
-    if (Number.isNaN(text) && typeof text === 'number') {
+    if (isNaN(text) && typeof text === 'number') {
         return error.value;
     }
     if (typeof text === 'number') {

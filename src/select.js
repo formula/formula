@@ -1,5 +1,6 @@
 // Copyright 2015 JC Fisher
 import isarray from './isarray'
+import reduce from './reduce'
 
 // SELECT fields from object
 export default function select(fields, body) {
@@ -15,7 +16,7 @@ export default function select(fields, body) {
   // fields array
   if (isarray(body)) {
     return body.map(function(obj){
-      return fields.reduce(function(ret, key){
+      return reduce( fields, function(ret, key){
         ret[key] = obj[key];
         return ret;
       }, {});
@@ -25,7 +26,7 @@ export default function select(fields, body) {
   }
 
   // fields object
-  return fields.reduce(function(ret, key){
+  return reduce( fields, function(ret, key){
     ret[key] = body[key];
     return ret;
   }, {});

@@ -1,5 +1,6 @@
 // Copyright 2015 JC Fisher
-
+import isNaN from './isnan'
+ 
 export default function nper(rate, pmt, pv, fv, type) {
   var log,
   result;
@@ -10,7 +11,7 @@ export default function nper(rate, pmt, pv, fv, type) {
   type = (type || 0);
 
   log = function(prim) {
-    if (Number.isNaN(prim)) {
+    if (isNaN(prim)) {
       return Math.log(0);
     }
     var num = Math.log(prim);
@@ -25,7 +26,7 @@ export default function nper(rate, pmt, pv, fv, type) {
     result = (log(-(rate*fv-pmt)/(rate*pv+pmt))/(log(1.0+rate)));
   }
 
-  if (Number.isNaN(result)) {
+  if (isNaN(result)) {
     result = 0;
   }
 

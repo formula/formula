@@ -13,11 +13,13 @@ var _istruthy = require('./istruthy');
 
 var _istruthy2 = _interopRequireDefault(_istruthy);
 
+var _reduce = require('./reduce');
+
+var _reduce2 = _interopRequireDefault(_reduce);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // branch( test, result_if_true, [test2, result_if_true,] false_result )
-// Copyright 2015 JC Fisher
-
 function branch() {
   for (var _len = arguments.length, cases = Array(_len), _key = 0; _key < _len; _key++) {
     cases[_key] = arguments[_key];
@@ -26,7 +28,7 @@ function branch() {
   var resolved = false;
 
   // Reduce all cases into a value.
-  return cases.reduce(function (acc, item, index) {
+  return (0, _reduce2.default)(cases, function (acc, item, index) {
     var val = void 0;
 
     // Return previously resolved result
@@ -50,5 +52,6 @@ function branch() {
 
     return acc;
   }, undefined);
-}
+} // Copyright 2015 JC Fisher
+
 module.exports = exports['default'];

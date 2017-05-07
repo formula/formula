@@ -1,6 +1,7 @@
 // Copyright 2015 JC Fisher
 
 import error from './error'
+import reduce from './reduce'
 
 // parse querystring into object
 export default function parsequery(query='') {
@@ -13,13 +14,14 @@ export default function parsequery(query='') {
     return {}
   }
 
-  return (query[0] === '?' ? query.substr(1) : query)
-  .split('&')
-  .reduce( (acc, item) => {
-    var n = item.split('=');
-    var key = decodeURIComponent(n[0]);
-    var value = decodeURIComponent(n[1] || '');
-    acc[key] = value;
-    return acc
-  }, {} )
+  return reduce(
+    (query[0] === '?' ? query.substr(1) : query)
+    .split('&'),
+    (acc, item) => {
+      var n = item.split('=');
+      var key = decodeURIComponent(n[0]);
+      var value = decodeURIComponent(n[1] || '');
+      acc[key] = value;
+      return acc
+    }, {} )
 }

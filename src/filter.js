@@ -1,4 +1,11 @@
 // Copyright 2015 JC Fisher
+import error from './error'
+import branch from './branch'
+import reduce from './reduce'
+import isarray from './isarray'
+import isfunction from './isfunction'
+import istext from './istext'
+import run from './run'
 
 // FILTER limits a range based on arrays of boolean values.
 export default function filter(range, ...filters) {
@@ -9,11 +16,19 @@ export default function filter(range, ...filters) {
 
   function makefilter() {
     return function(value, index) {
-      return filters.reduce( function( previousValue, currentValue ) {
+      return reduce( filters, function( previousValue, currentValue ) {
         if (previousValue === false ) {
           return false;
         } else {
-          return currentValue[index];
+          return branch(
+            isarray(currentValue),
+            () => currentValue[index],
+            isfunction(currentValue),
+            () => currentValue( value, index ),
+            istext(currentValue),
+            () => run(currentValue, value),
+            error.na
+          )
         }
       }, true);
     }

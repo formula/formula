@@ -13,6 +13,10 @@ var _isarray = require('./isarray');
 
 var _isarray2 = _interopRequireDefault(_isarray);
 
+var _reduce = require('./reduce');
+
+var _reduce2 = _interopRequireDefault(_reduce);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // SELECT fields from object
@@ -29,7 +33,7 @@ function select(fields, body) {
   // fields array
   if ((0, _isarray2.default)(body)) {
     return body.map(function (obj) {
-      return fields.reduce(function (ret, key) {
+      return (0, _reduce2.default)(fields, function (ret, key) {
         ret[key] = obj[key];
         return ret;
       }, {});
@@ -39,7 +43,7 @@ function select(fields, body) {
   }
 
   // fields object
-  return fields.reduce(function (ret, key) {
+  return (0, _reduce2.default)(fields, function (ret, key) {
     ret[key] = body[key];
     return ret;
   }, {});

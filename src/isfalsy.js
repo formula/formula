@@ -1,5 +1,5 @@
 // Copyright 2015 JC Fisher
-
+import isnan from './isnan'
 // Returns true when the value is a falsy value.
 // https://developer.mozilla.org/en-US/docs/Glossary/Falsy
 export default function isfalsy(value) {
@@ -9,6 +9,6 @@ export default function isfalsy(value) {
       value === '' ||
       typeof value === 'undefined' ||
       value === null ||
-      Number.isNaN(value)
+      isnan(value)
     )
 };

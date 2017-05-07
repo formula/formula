@@ -1,10 +1,10 @@
 // Copyright 2015 JC Fisher
-
+import reduce from './reduce'
 import flatten from './flatten'
 
 // XOR computes the exclusive or for a given set of `values`.
 export default function xor(...values) {
-    return !!(flatten(values).reduce((a,b) => {
+    return !!( reduce( flatten(values), (a,b) => {
       if (b) {
         return a+1
       }

@@ -13,11 +13,13 @@ var _error = require('./error');
 
 var _error2 = _interopRequireDefault(_error);
 
+var _isnan = require('./isnan');
+
+var _isnan2 = _interopRequireDefault(_isnan);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // based on https://github.com/sutoiku/formula.js/blob/mast../src/engineering.js
-// Copyright 2015 JC Fisher
-
 function dec2bin(input, places) {
 
   // exit if input is an error
@@ -28,7 +30,7 @@ function dec2bin(input, places) {
   // cast input to number
   var number = parseInt(input);
 
-  if (!/^-?[0-9]{1,3}$/.test(number) || Number.isNaN(number)) {
+  if (!/^-?[0-9]{1,3}$/.test(number) || (0, _isnan2.default)(number)) {
     return _error2.default.value;
   }
 
@@ -50,7 +52,7 @@ function dec2bin(input, places) {
     return result;
   } else {
     // Return error.if places is nonnumeric
-    if (!/^-?[0-9]{1,3}$/.test(places) || Number.isNaN(places)) {
+    if (!/^-?[0-9]{1,3}$/.test(places) || (0, _isnan2.default)(places)) {
       return _error2.default.value;
     }
 
@@ -65,5 +67,6 @@ function dec2bin(input, places) {
     // Pad return value with leading 0s (zeros) if necessary (using Underscore.string)
     return places >= result.length ? (0, _rept2.default)('0', places - result.length) + result : _error2.default.num;
   }
-}
+} // Copyright 2015 JC Fisher
+
 module.exports = exports['default'];
