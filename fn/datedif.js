@@ -1,17 +1,22 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = datedif;
 
-var _parsedate = require("./parsedate");
+var _parsedate = require('./parsedate');
 
 var _parsedate2 = _interopRequireDefault(_parsedate);
+
+var _isnan = require('./isnan');
+
+var _isnan2 = _interopRequireDefault(_isnan);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // DATEDIF return the difference between two dates given a start date, end date and unit.
+// Copyright 2015 JC Fisher
 function datedif(start_date, end_date, unit) {
   var second = 1000,
       minute = second * 60,
@@ -21,7 +26,7 @@ function datedif(start_date, end_date, unit) {
   start_date = (0, _parsedate2.default)(start_date), end_date = (0, _parsedate2.default)(end_date);
 
   var timediff = end_date - start_date;
-  if (Number.isNaN(timediff)) return NaN;
+  if ((0, _isnan2.default)(timediff)) return NaN;
 
   switch (unit) {
     case "Y":
@@ -41,5 +46,5 @@ function datedif(start_date, end_date, unit) {
     default:
       return undefined;
   }
-} // Copyright 2015 JC Fisher
-module.exports = exports["default"];
+}
+module.exports = exports['default'];

@@ -1,6 +1,7 @@
 // Copyright 2015 Peter W Moresi
 
-import {parser} from './parser'
+import map from './map';
+import parse from './parser';
 
 var compiledNumber = 0;
 
@@ -16,7 +17,7 @@ export default function compile(exp) {
 
   // convert to AST when string provided
   if (typeof ast === 'string') {
-    ast = parser.parse(exp);
+    ast = parse(exp);
   }
 
   function wrapString(s) {
@@ -27,15 +28,15 @@ export default function compile(exp) {
   }
 
   function printFuncs(items) {
-    return items.map(function(n){
+    return map( items, function(n){
       return 'function() { return (' + compiler( n ) + ') }';
-    }).join(', ')
+    }).join(', ');
   }
 
   function printItems(items) {
-    return items.map(function(n){
+    return map( items, function(n){
       return compiler( n );
-    }).join(', ')
+    }).join(', ');
   }
 
   // define a compiler function to handle recurse the AST.

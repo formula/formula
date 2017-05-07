@@ -148,6 +148,11 @@ const isLeapYear = isleapyear
 import isna from './isna'
 const isNA = isna
 
+// #### [isnan](./isnan)
+// `isnan` returns true when the value is NaN.
+import isnan from './isnan'
+const isNaN = isnan
+
 // #### [isnumber](./isnumber)
 // `isnumber` returns true when the value is JavaScript number type and not NaN and not infinite.
 import isnumber from './isnumber'
@@ -369,7 +374,7 @@ import upper from './upper'
 // `hlookup` searches the first row and returns the value from the found column at a given row.
 import hlookup from './hlookup'
 
-// #### [includes](./matcincludesh)
+// #### [includes](./includes)
 // `includes` searches an array and returns the true or false for exact matches.
 import includes from './includes'
 
@@ -734,6 +739,7 @@ export default {
   isfunction,
   isleapyear,
   isna,
+  isnan,
   isnumber,
   isoWeekNum,
   isodd,

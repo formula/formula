@@ -13,18 +13,24 @@ var _error = require('./error');
 
 var _error2 = _interopRequireDefault(_error);
 
+var _map = require('./map');
+
+var _map2 = _interopRequireDefault(_map);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// pluck a property from a list of objects
-// Copyright 2015 JC Fisher
-
+// pluck a property from a list of objects.
 function pluck(prop, list) {
+
+  // Ensure that the list is an array.
   if (!(0, _isarray2.default)(list)) {
     return _error2.default.na;
   }
 
-  return list.map(function (d) {
+  // Map the list to the property.
+  return (0, _map2.default)(list, function (d) {
     return d[prop];
   });
-}
+} // Copyright 2015 JC Fisher
+
 module.exports = exports['default'];

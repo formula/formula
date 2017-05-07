@@ -13,9 +13,11 @@ var _isref = require('./isref');
 
 var _isref2 = _interopRequireDefault(_isref);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _map = require('./map');
 
-// Copyright 2015 JC Fisher
+var _map2 = _interopRequireDefault(_map);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function gte(a, b) {
   if ((0, _isref2.default)(a) && (0, _isref2.default)(b)) {
@@ -23,15 +25,16 @@ function gte(a, b) {
   } else if ((0, _isarray2.default)(a) && (0, _isarray2.default)(b)) {
     return error.na;
   } else if ((0, _isref2.default)(a) || (0, _isarray2.default)(a)) {
-    return a.map(function (d) {
+    return (0, _map2.default)(a, function (d) {
       return d >= b;
     });
   } else if ((0, _isref2.default)(b) || (0, _isarray2.default)(b)) {
-    return b.map(function (d) {
+    return (0, _map2.default)(a, function (d) {
       return d >= a;
     });
   } else {
     return a >= b;
   }
-}
+} // Copyright 2015 JC Fisher
+
 module.exports = exports['default'];

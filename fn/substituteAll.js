@@ -9,6 +9,14 @@ var _substitute = require('./substitute');
 
 var _substitute2 = _interopRequireDefault(_substitute);
 
+var _keys = require('./keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
+var _reduce = require('./reduce');
+
+var _reduce2 = _interopRequireDefault(_reduce);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // substituteAll is a lightweight "substitution tags" engine that implement a global substitute for multiple items.
@@ -27,7 +35,7 @@ function substituteAll(content, locals) {
   var end = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : start;
 
   if (!locals) return content;
-  return Object.keys(locals).reduce(function (p, v) {
+  return (0, _reduce2.default)((0, _keys2.default)(locals), function (p, v) {
     return (0, _substitute2.default)(p, '' + start + v + end, locals[v]);
   }, content);
 } // Copyright 2015 JC Fisher

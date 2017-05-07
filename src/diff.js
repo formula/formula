@@ -1,8 +1,11 @@
 // Copyright 2015 JC Fisher
+import reduce from './reduce'
+import keys from './keys'
+import assign from './assign'
 
 export default function diff(a, b) {
-  let keysA = Object.keys(a),
-  keysB = Object.keys(b),
+  let keysA = keys(a),
+  keysB = keys(b),
   InA = keysB.filter(n => keysA.indexOf(n) > -1),
   NotInA = keysB.filter(n => keysA.indexOf(n) === -1),
   NotInB = keysA.filter(n => keysB.indexOf(n) === -1),
@@ -11,10 +14,10 @@ export default function diff(a, b) {
   return {
     unique_left: NotInA,
     unique_right: NotInB,
-    diff: Diff.reduce( (x, y) => {
+    diff: reduce( Diff, (x, y) => {
       var diff = { }
       diff[y] = { left: a[y], right: b[y]}
-      return Object.assign({}, x, diff)
+      return assign({}, x, diff)
     }, {})
   }
 }

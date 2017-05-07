@@ -120,6 +120,10 @@ var _isna = require('./isna');
 
 var _isna2 = _interopRequireDefault(_isna);
 
+var _isnan = require('./isnan');
+
+var _isnan2 = _interopRequireDefault(_isnan);
+
 var _isnumber = require('./isnumber');
 
 var _isnumber2 = _interopRequireDefault(_isnumber);
@@ -716,6 +720,11 @@ var isLeapYear = _isleapyear2.default;
 
 var isNA = _isna2.default;
 
+// #### [isnan](./isnan)
+// `isnan` returns true when the value is NaN.
+
+var isNaN = _isnan2.default;
+
 // #### [isnumber](./isnumber)
 // `isnumber` returns true when the value is JavaScript number type and not NaN and not infinite.
 
@@ -937,7 +946,7 @@ var template = _substituteAll2.default;
 // `hlookup` searches the first row and returns the value from the found column at a given row.
 
 
-// #### [includes](./matcincludesh)
+// #### [includes](./includes)
 // `includes` searches an array and returns the true or false for exact matches.
 
 
@@ -1300,6 +1309,7 @@ exports.default = {
   isfunction: _isfunction2.default,
   isleapyear: _isleapyear2.default,
   isna: _isna2.default,
+  isnan: _isnan2.default,
   isnumber: _isnumber2.default,
   isoWeekNum: isoWeekNum,
   isodd: _isodd2.default,

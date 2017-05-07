@@ -19,6 +19,9 @@
 //  - $in
 //  - $text
 
+import map from './map';
+import reduce from './reduce'
+import keys from './keys'
 import filter from './filter';
 import branch from './branch'
 import and from './and'
@@ -64,7 +67,7 @@ export default function query(data, query) {
   let comparator = (list, key) => row => branch(
     isobject(list[key]),
     () => and(
-      ...Object.keys(list[key]).map( (d) => {
+      ...map( keys(list[key]), (d) => {
         return comparison( key, d, list[key][d] )(row)
       })
     ),
@@ -77,11 +80,17 @@ export default function query(data, query) {
       throw new Error(`$${op.name} expects array!`)
     }
 
-    return op( ...list[key].map( d => op( ...Object.keys(d).map( e => comparator(d, e)(row) )) ) )
+    return op(
+      ...map(
+        list[key],
+        d => op( ...map( keys(d), e => comparator(d, e)(row) ))
+      )
+    )
 
   }
 
-  let composeQuery = (list) => Object.keys(list).reduce(
+  let composeQuery = (list) => reduce(
+    keys(list),
     (funcs, key) => funcs.concat(
       (row) =>
       branch(
@@ -101,6 +110,6 @@ export default function query(data, query) {
   return filter(
     data,
     // map each filter function to true/false values for each row.
-    ...funcs.map( filter => data.map( row => filter(row) ) )
+    ...map( funcs, filter => map( data, row => filter(row) ) )
   )
 }

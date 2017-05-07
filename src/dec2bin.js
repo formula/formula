@@ -2,6 +2,7 @@
 
 import rept from './rept';
 import error from './error';
+import isNaN from './isnan'
 
 // based on https://github.com/sutoiku/formula.js/blob/mast../src/engineering.js
 export default function dec2bin(input, places) {
@@ -14,7 +15,7 @@ export default function dec2bin(input, places) {
   // cast input to number
   var number = parseInt(input);
 
-  if (!/^-?[0-9]{1,3}$/.test(number) || Number.isNaN(number)) {
+  if (!/^-?[0-9]{1,3}$/.test(number) || isNaN(number)) {
     return error.value;
   }
 
@@ -36,7 +37,7 @@ export default function dec2bin(input, places) {
     return result;
   } else {
     // Return error.if places is nonnumeric
-    if (!/^-?[0-9]{1,3}$/.test(places) || Number.isNaN(places)) {
+    if (!/^-?[0-9]{1,3}$/.test(places) || isNaN(places)) {
       return error.value;
     }
 

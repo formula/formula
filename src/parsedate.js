@@ -2,6 +2,7 @@
 
 import {JulianOffset} from './constants'
 import error from './error'
+import isNaN from './isnan'
 
 // PARSEDATE converts a value into a Date object.
 export default function parsedate(val) {
@@ -47,7 +48,7 @@ export default function parsedate(val) {
     return convert_date_julian_to_gregorian( Math.floor(val+JulianOffset) );
   } else if (typeof val === 'string') {
     var timestamp=Date.parse(val)
-    if (Number.isNaN(timestamp))
+    if (isNaN(timestamp))
     {
       return error.value;
     }

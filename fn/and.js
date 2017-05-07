@@ -17,16 +17,22 @@ var _isfunction = require('./isfunction');
 
 var _isfunction2 = _interopRequireDefault(_isfunction);
 
+var _reduce = require('./reduce');
+
+var _reduce2 = _interopRequireDefault(_reduce);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // AND reduces list of truthy values into true or false value
+// Copyright 2015 JC Fisher
+
 function and() {
   for (var _len = arguments.length, criteria = Array(_len), _key = 0; _key < _len; _key++) {
     criteria[_key] = arguments[_key];
   }
 
   // Reduce criteria into boolean value.
-  return criteria.reduce(function (acc, item) {
+  return (0, _reduce2.default)(criteria, function (acc, item) {
 
     // Once `false` or #error! is found always return previously value
     if (acc === false || (0, _iserror2.default)(acc)) return acc;
@@ -42,6 +48,5 @@ function and() {
     // Return true when value is true or 1
     return val === true || val === 1;
   });
-} // Copyright 2015 JC Fisher
-
+}
 module.exports = exports['default'];

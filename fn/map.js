@@ -7,9 +7,7 @@ exports.default = map;
 // Copyright 2015 JC Fisher
 
 // map an array to a new array
-function map(arr, f) {
-  return arr.map(function (d) {
-    return f(d);
-  });
+function map(array, func) {
+  return array.map(func);
 }
 module.exports = exports["default"];

@@ -3,7 +3,7 @@ import * as ff from '../fn/functions'
 
 test('index', function(t) {
 
-  t.plan( 129 )
+  t.plan( 130 )
   t.ok( ff.abs, 'abs should be there')
   t.ok( ff.acos, 'acos should be there')
   t.ok( ff.add, 'add should be there')
@@ -62,6 +62,7 @@ test('index', function(t) {
   t.ok( ff.isfunction, 'isfunction should be there')
   t.ok( ff.isleapyear, 'isleapyear should be there')
   t.ok( ff.isna, 'isna should be there')
+  t.ok( ff.isnan, 'isnan should be there')
   t.ok( ff.isnumber, 'isnumber should be there')
   t.ok( ff.isodd, 'isodd should be there')
   t.ok( ff.isref, 'isref should be there')

@@ -3,13 +3,13 @@
 import iserror from './iserror'
 import error from './error'
 import isfunction from './isfunction'
-
+import reduce from './reduce'
 // AND reduces list of truthy values into true or false value
 export default function and(...criteria) {
 
   // Reduce criteria into boolean value.
-  return criteria.reduce(
-
+  return reduce(
+    criteria,
     (acc, item) => {
 
       // Once `false` or #error! is found always return previously value

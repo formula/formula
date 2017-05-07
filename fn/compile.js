@@ -5,9 +5,19 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = compile;
 
+var _map = require('./map');
+
+var _map2 = _interopRequireDefault(_map);
+
 var _parser = require('./parser');
 
-var compiledNumber = 0; // Copyright 2015 Peter W Moresi
+var _parser2 = _interopRequireDefault(_parser);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Copyright 2015 Peter W Moresi
+
+var compiledNumber = 0;
 
 function compile(exp) {
   var ast = exp,
@@ -21,7 +31,7 @@ function compile(exp) {
 
   // convert to AST when string provided
   if (typeof ast === 'string') {
-    ast = _parser.parser.parse(exp);
+    ast = (0, _parser2.default)(exp);
   }
 
   function wrapString(s) {
@@ -32,13 +42,13 @@ function compile(exp) {
   }
 
   function printFuncs(items) {
-    return items.map(function (n) {
+    return (0, _map2.default)(items, function (n) {
       return 'function() { return (' + compiler(n) + ') }';
     }).join(', ');
   }
 
   function printItems(items) {
-    return items.map(function (n) {
+    return (0, _map2.default)(items, function (n) {
       return compiler(n);
     }).join(', ');
   }

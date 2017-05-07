@@ -1,9 +1,12 @@
 // Copyright 2015 JC Fisher
 
+import reduce from './reduce'
 import isempty from './isempty';
 import iserror from './iserror';
 import isnumber from './isnumber';
 import error from './error'
+import split from './split'
+import code from './code'
 
 // Convert a text value into a number value.
 export default function numbervalue(text, decimal_separator, group_separator)  {
@@ -29,13 +32,13 @@ export default function numbervalue(text, decimal_separator, group_separator)  {
   len = text.length-1
 
   if (text.length === 1) {
-    if (text.charCodeAt(0) < 48 ||  text.charCodeAt(0) > 57) {
+    if ( code( text, 0 ) < 48 ||  code( text, 0 ) > 57 ) {
       return error.value
     }
     return +text
   }
 
-  return text.split('').reduce( (acc, item, index) => {
+  return reduce( split(text, ''), (acc, item, index) => {
     if (acc === error.value) {
       return error.value;
     } else if (len === index) {

@@ -11,11 +11,13 @@ var _error = require('./error');
 
 var _error2 = _interopRequireDefault(_error);
 
+var _isnan = require('./isnan');
+
+var _isnan2 = _interopRequireDefault(_isnan);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // PARSEDATE converts a value into a Date object.
-// Copyright 2015 JC Fisher
-
 function parsedate(val) {
 
   /* *******************
@@ -54,12 +56,13 @@ function parsedate(val) {
     return convert_date_julian_to_gregorian(Math.floor(val + _constants.JulianOffset));
   } else if (typeof val === 'string') {
     var timestamp = Date.parse(val);
-    if (Number.isNaN(timestamp)) {
+    if ((0, _isnan2.default)(timestamp)) {
       return _error2.default.value;
     }
     return new Date(timestamp);
   }
 
   return _error2.default.value;
-}
+} // Copyright 2015 JC Fisher
+
 module.exports = exports['default'];
