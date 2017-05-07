@@ -1,6 +1,6 @@
 {
   "name": "formula",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Formula compiler and function library",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "build:parser": "jison src/parser.jison -m commonjs -o src/parser.js",
     "build:js": "gulp",
     "build": "npm run clean && mkdir fn && npm run build:js && npm run docs",
-    "dist": "rm -rf dist; mkdir dist; webpack --output-library formula --output-library-target umd fn/functions.js dist/formula.js"
+    "dist": "rm -rf dist; mkdir dist; rollup src/functions.js > dist/f.es6; babel dist/f.es6 > dist/f.js"
   },
   "repository": {
     "type": "git",
