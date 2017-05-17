@@ -224,6 +224,11 @@ parse: function parse(input) {
     } else {
         this.parseError = Object.getPrototypeOf(this).parseError;
     }
+    function popStack(n) {
+        stack.length = stack.length - 2 * n;
+        vstack.length = vstack.length - n;
+        lstack.length = lstack.length - n;
+    }
     _token_stack:
         var lex = function () {
             var token;
@@ -753,9 +758,7 @@ Parser.prototype = parser;parser.Parser = Parser;
 return new Parser;
 })();
 
-var parse = function () { return parser.parse.apply(parser, arguments); };
-
-// Copyright 2015 Peter W Moresi
+function parse () { return parser.parse.apply(parser, arguments); };
 
 var compiledNumber = 0;
 
@@ -772,6 +775,13 @@ function compile(exp) {
   // convert to AST when string provided
   if (typeof ast === 'string') {
     ast = parse(exp);
+  }
+
+  function wrapString(s) {
+    if (s[0] == "'" && s[s.length-1] === "'") {
+      return s;
+    }
+    return '\'' + s + '\'';
   }
 
   function printFuncs(items) {
@@ -864,11 +874,11 @@ function compile(exp) {
 
         // anonymous functions are the perfect solution for dynamic ranges but was not immediately obvious to me
         if ( node.topLeft.type === "function" ) {
-          lhs = "function() { return (" + lhs + "); }";
+          lhs = "function() { return (" + lhs + "); }"
         }
 
         if ( node.bottomRight.type === "function" ) {
-          rhs = "function() { return (" + rhs + "); }";
+          rhs = "function() { return (" + rhs + "); }"
         }
 
         requires.push('ref');
@@ -920,12 +930,7 @@ return (${compiled});
 // ISFUNCTION returns true when `value` is a function.
 function isfunction(value) {
     return value && Object.prototype.toString.call(value) == '[object Function]';
-}
-
-// Copyright 2015 JC Fisher
-
-// assign from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
-
+};
 
 // Ponyfill or Object.assign
 function assign(initial, ...list) {
@@ -937,15 +942,15 @@ function assign(initial, ...list) {
 function run(exp, params={}) {
   var compiled = isfunction(exp) ? exp : compile(exp);
 
-  let funcs = functions;
-  let locals = assign({}, params);
+  let funcs = functions
+  let locals = assign({}, params)
 
   // Default get for plain object.
   if (locals.get !== 'function') {
     locals.get = (name, scope) => {
       if (typeof scope !== 'undefined') return locals[scope] ? locals[scope][name] : undefined
       return locals[name]
-    };
+    }
   }
 
   return compiled(locals, funcs)
@@ -959,7 +964,6 @@ function isnan(value) {
   return typeof value === 'number' && isNaN(value);
 }
 
-// Copyright 2015 JC Fisher
 // Returns true when the value is a falsy value.
 // https://developer.mozilla.org/en-US/docs/Glossary/Falsy
 function isfalsy(value) {
@@ -971,15 +975,13 @@ function isfalsy(value) {
       value === null ||
       isnan(value)
     )
-}
-
-// Copyright 2015 JC Fisher
+};
 
 // Returns true when the value is not falsey
 // https://developer.mozilla.org/en-US/docs/Glossary/Truthy
 function istruthy(value) {
     return !isfalsy(value)
-}
+};
 
 // Copyright 2015 JC Fisher
 
@@ -988,12 +990,10 @@ function reduce(arr, func, ...rest) {
   return arr.reduce(func, ...rest)
 }
 
-// Copyright 2015 JC Fisher
-
 // branch( test, result_if_true, [test2, result_if_true,] false_result )
 function branch(...cases) {
 
-  var resolved = false;
+  var resolved = false
 
   // Reduce all cases into a value.
   return reduce( cases, function(acc, item, index) {
@@ -1015,8 +1015,8 @@ function branch(...cases) {
     if (index % 2 === 0 && (
         (isfunction(item) && istruthy(item()) ) ||
         (!isfunction(item) && istruthy(item)))) {
-      resolved = true;
-      val = cases[index+1];
+      resolved = true
+      val = cases[index+1]
       return isfunction(val) ? val() : val;
     }
 
@@ -1036,7 +1036,7 @@ function FFError(message, name) {
 }
 
 FFError.prototype = Error.prototype;
-FFError.prototype.toString = function() { return this.message };
+FFError.prototype.toString = function() { return this.message }
 
 let nil = new FFError('#NULL!', "Null reference");
 let div0 = new FFError('#DIV/0!', "Divide by zero");
@@ -1049,7 +1049,6 @@ let error$1 = new FFError('#ERROR!', "Error");
 let data = new FFError('#GETTING_DATA!', "Error getting data");
 let missing = new FFError('#MISSING!', "Missing");
 let unknown = new FFError('#UNKNOWN!', "Unknown error");
-
 var error$2 = {
   nil,
   div0,
@@ -1062,9 +1061,7 @@ var error$2 = {
   data,
   missing,
   unknown
-};
-
-// Copyright 2015 JC Fisher
+}
 
 // CHOOSE accepts an index and a list of items. It returns the item that corresponds to the index.
 function choose(index, ...items) {
@@ -1088,8 +1085,6 @@ function choose(index, ...items) {
   return items[index-1];
 }
 
-// Copyright 2015 JC Fisher
-
 // ISERR returns true when the value is an error (except `#NA!`) or when then
 // value is a number which is NaN or [-]Infinity.
 function iserr(value) {
@@ -1106,14 +1101,10 @@ function iserr(value) {
   );
 }
 
-// Copyright 2015 JC Fisher
-
 // ISERROR returns true when the value is an error.
 function iserror(value) {
     return iserr(value) || value === error$2.na;
 }
-
-// Copyright 2015 JC Fisher
 
 // AND reduces list of truthy values into true or false value
 function and(...criteria) {
@@ -1127,7 +1118,7 @@ function and(...criteria) {
       if (acc === false || iserror(acc)) return acc
 
       // find the value if a literal or deferred value
-      let val = isfunction(item) ? item() : item;
+      let val = isfunction(item) ? item() : item
 
       // return `#VALUE!` if not true, false, 1 or 0
       if (val !== true && val !== false && val !== 1 && val !== 0) {
@@ -1139,8 +1130,6 @@ function and(...criteria) {
     })
 }
 
-// Copyright 2015 JC Fisher
-
 // OR returns true when any of the criter is true or 1.
 function or(...criteria) {
   return reduce( criteria, (acc, item) => {
@@ -1150,7 +1139,6 @@ function or(...criteria) {
   }, false)
 }
 
-// Copyright 2015 JC Fisher
 // NOT negates a `value`
 function not(value) {
   return (value !== true && value !== false && value !== 1 && value !== 0) ? 
@@ -1170,8 +1158,6 @@ function eq(a,b) {
   }
 }
 
-// Copyright 2015 JC Fisher
-
 // NE returns true when a is not equal to b.
 function ne(a,b) {
   return !eq(a, b)
@@ -1189,17 +1175,13 @@ function isarray(value) {
 // ISBLANK returns true when the value is undefined or null.
 function isblank(value) {
     return typeof value === 'undefined' || value === null;
-}
-
-// Copyright 2015 JC Fisher
+};
 
 // ISREF returns true when the value is a reference.
 function isref(value) {
   if (!value) return false
   return value._isref === true
 }
-
-// Copyright 2015 JC Fisher
 
 function gt(a,b) {
   if ( isref(a) && isref(b) ) {
@@ -1215,8 +1197,6 @@ function gt(a,b) {
   }
 }
 
-// Copyright 2015 JC Fisher
-
 function gte(a,b) {
   if ( isref(a) && isref(b) ) {
     return error.na;
@@ -1230,8 +1210,6 @@ function gte(a,b) {
     return a >= b;
   }
 }
-
-// Copyright 2015 JC Fisher
 
 // LT compares two values and returns true when a is less than b.
 function lt(a,b) {
@@ -1248,8 +1226,6 @@ function lt(a,b) {
   }
 }
 
-// Copyright 2015 JC Fisher
-
 // LT compares two values and returns true when a is less than or equal to b.
 function lte(a,b) {
   if ( isref(a) && isref(b) ) {
@@ -1265,8 +1241,6 @@ function lte(a,b) {
   }
 }
 
-// Copyright 2015 JC Fisher
-
 // IFBLANK return the `value` if non-blank, otherwise it returns `value_if_blank`.
 function ifblank(value, value_if_blank) {
     return isblank(value) ? value_if_blank : value;
@@ -1277,9 +1251,7 @@ function ifblank(value, value_if_blank) {
 // ISTEXT returns true when the value is a string.
 function istext(value) {
     return 'string' === typeof(value);
-}
-
-// Copyright 2015 JC Fisher
+};
 
 // ISEMPTY returns true when the value is blank, is an empty array or when it
 // is an empty string.
@@ -1289,23 +1261,17 @@ function isempty(value) {
       isarray(value) && value.length === 0 ||
       istext(value) && value === ''
     );
-}
-
-// Copyright 2015 JC Fisher
+};
 
 // IFBLANK return the `value` if empty, otherwise it returns `value_if_empty`.
 function ifempty(value, value_if_empty) {
     return isempty(value) ? value_if_empty : value;
 }
 
-// Copyright 2015 JC Fisher
-
 // IFBLANK return the `value` if error, otherwise it returns `value_if_error`.
 function iferror(value, value_if_error=null) {
     return iserror(value) ? value_if_error : value;
 }
-
-// Copyright 2015 JC Fisher
 
 // IFBLANK return the `value` if `#NA!`, otherwise it returns `value_if_na`.
 function ifna(value, value_if_na) {
@@ -1317,14 +1283,14 @@ function ifna(value, value_if_na) {
 // returns true if true or false
 function isboolean(val) {
     return val === true || val === false
-}
+};
 
 // Copyright 2015 JC Fisher
 
 // ISDATE returns true when the `value` is a JavaScript date object.
 function isdate(value) {
     return value && Object.prototype.toString.call(value) == '[object Date]';
-}
+};
 
 // Copyright 2015 JC Fisher
 
@@ -1333,7 +1299,7 @@ function isemail(value) {
   // credit to http://stackoverflow.com/questions/46155/validate-email-address-in-javascript
   var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(value);
-}
+};
 
 // Copyright 2015 JC Fisher
 
@@ -1375,8 +1341,6 @@ let AllowedColors = {
     WHITE: "#FFFFFF",
     YELLOW: "#FFFF00"
   };
-
-// Copyright 2015 JC Fisher
 
 // PARSEDATE converts a value into a Date object.
 function parsedate(val) {
@@ -1421,7 +1385,7 @@ function parsedate(val) {
     // val is assumed to be serial number.
     return convert_date_julian_to_gregorian( Math.floor(val+JulianOffset) );
   } else if (typeof val === 'string') {
-    var timestamp=Date.parse(val);
+    var timestamp=Date.parse(val)
     if (isnan(timestamp))
     {
       return error$2.value;
@@ -1433,16 +1397,12 @@ function parsedate(val) {
 
 }
 
-// Copyright 2015 JC Fisher
-
 function isleapyear(val) {
     var date = parsedate(val);
     var year = date.getFullYear();
     return (((year % 4 === 0) && (year % 100 !== 0)) ||
             (year % 400 === 0));
 }
-
-// Copyright 2015 JC Fisher
 
 // ISNA returns true when the value is `#NA!`
 function isna(value) {
@@ -1463,8 +1423,6 @@ function isodd(value) {
   return !!(Math.floor(Math.abs(value)) & 1);
 }
 
-// Copyright 2015 JC Fisher
-
 function isoweeknum(date) {
     date = parsedate(date);
 
@@ -1476,7 +1434,7 @@ function isoweeknum(date) {
     date.setDate(date.getDate() + 4 - (date.getDay() || 7));
     var yearStart = new Date(date.getFullYear(), 0, 1);
     return Math.ceil((((date - yearStart) / MilliSecondsInDay) + 1) / 7);
-}
+};
 
 // Copyright 2015 JC Fisher
 
@@ -1492,13 +1450,11 @@ function isurl(str){
   return pattern.test(str);
 }
 
-// Copyright 2015 JC Fisher
 // Returns true when the value is a whole number
 function iswholenumber(value) {
     return isnumber(value) && (value % 1 === 0);
 }
 
-// Copyright 2015 JC Fisher
 // FLATTEN converts a nested array into a flattened array. It only supports one
 // level of nesting.
 function flatten(ref){
@@ -1512,7 +1468,6 @@ function flatten(ref){
   }, []);
 }
 
-// Copyright 2015 JC Fisher
 // XOR computes the exclusive or for a given set of `values`.
 function xor(...values) {
     return !!( reduce( flatten(values), (a,b) => {
@@ -1523,8 +1478,6 @@ function xor(...values) {
     }, 0) & 1)
 }
 
-// Copyright 2015 JC Fisher
-
 // ADD calculates the sum of two numbers.
 function add(...values) {
 
@@ -1534,7 +1487,7 @@ function add(...values) {
   }
 
   // decompose values into a and b.
-  var [a, b] = values;
+  var [a, b] = values
 
   // Return `#VALUE!` if either a or b is not a number.
   if (!isnumber(a) || !isnumber(b)) {
@@ -1545,8 +1498,6 @@ function add(...values) {
   return a + b
 }
 
-// Copyright 2015 JC Fisher
-
 // SUBTRACT calculates the difference of two numbers.
 function subtract(...values) {
 
@@ -1556,7 +1507,7 @@ function subtract(...values) {
   }
 
   // decompose values into a and b.
-  var [a, b] = values;
+  var [a, b] = values
 
   // Return `#VALUE!` if either a or b is not a number.
   if (!isnumber(a) || !isnumber(b)) {
@@ -1567,8 +1518,6 @@ function subtract(...values) {
   return a - b
 }
 
-// Copyright 2015 JC Fisher
-
 // MULTIPLY calculates the product of two numbers.
 function multiply(...values) {
 
@@ -1578,7 +1527,7 @@ function multiply(...values) {
   }
 
   // decompose values into a and b.
-  var [a, b] = values;
+  var [a, b] = values
 
   // Return `#VALUE!` if either a or b is not a number.
   if (!isnumber(a) || !isnumber(b)) {
@@ -1589,8 +1538,6 @@ function multiply(...values) {
   return a * b
 }
 
-// Copyright 2015 JC Fisher
-
 // DIVIDE calculates the product of two numbers.
 function divide(...values) {
 
@@ -1600,7 +1547,7 @@ function divide(...values) {
   }
 
   // decompose values into a and b.
-  var [a, b] = values;
+  var [a, b] = values
 
   // You cannot divide a number by 0.
   if (b === 0) {
@@ -1616,8 +1563,6 @@ function divide(...values) {
   return a / b
 }
 
-// Copyright 2015 JC Fisher
-
 // ABS computes absolute value of a number
 function abs(value) {
 
@@ -1629,8 +1574,6 @@ function abs(value) {
   // Use built-in Math.abs
   return Math.abs(value);
 }
-
-// Copyright 2015 JC Fisher
 
 // ACOS computes the inverse cosine of a number
 function acos(value) {
@@ -1645,8 +1588,6 @@ function acos(value) {
 
 }
 
-// Copyright 2015 JC Fisher
-
 // COS returns the cosine of a value.
 function cos(value) {
 
@@ -1659,14 +1600,10 @@ function cos(value) {
 
 }
 
-// Copyright 2015 JC Fisher
-
 // PI returns half the universal circle constant
 function pi() {
   return τ / 2;
 }
-
-// Copyright 2015 JC Fisher
 
 // POWER computes the power of a value and nth degree.
 function power(...values) {
@@ -1677,7 +1614,7 @@ function power(...values) {
   }
 
   // decompose values into a and b.
-  var [val, nth] = values;
+  var [val, nth] = values
 
   // Return `#VALUE!` if either a or b is not a number.
   if (!isnumber(val) || !isnumber(nth)) {
@@ -1708,8 +1645,6 @@ function roundup(number, precision) {
   }
 }
 
-// Copyright 2015 JC Fisher
-
 // SIN calculates the sinine of a value.
 function sin(value) {
 
@@ -1721,8 +1656,6 @@ function sin(value) {
 
 }
 
-// Copyright 2015 JC Fisher
-
 // TAN computes the tagent of a value.
 function tan(value) {
 
@@ -1733,8 +1666,6 @@ function tan(value) {
   return Math.tan(value);
 
 }
-
-// Copyright 2015 JC Fisher
 
 // TAU returns the universal circle constant
 function tau() {
@@ -1755,8 +1686,6 @@ function char(number) {
   return String.fromCharCode(number);
 }
 
-// Copyright 2015 JC Fisher
-
 // CODE accepts text and optionally index (default 1) returning the character code.
 function code(text='', index=1) {
   if (index < 1) return error$2.na
@@ -1764,33 +1693,26 @@ function code(text='', index=1) {
   return text.charCodeAt(index-1);
 }
 
-// Copyright 2015 JC Fisher
 // CONCATENATE reduces a list of values into a single string.
 function concatenate(...values) {
   // Combine into a single string value
   return reduce( values, (acc, item) => `${acc}${item}`, '' )
 }
 
-// Copyright 2015 JC Fisher
-
 // Exact compares two values and only returns true if they meet strict equivalence.
 function exact(a, b) {
   return a === b
 }
 
-// Copyright 2015 JC Fisher
-
 // FIND searches for text within a string
 function find(find_text, within_text='', position=1) {
 
   // Find the position of the text
-  position = within_text.indexOf(find_text, position - 1);
+  position = within_text.indexOf(find_text, position - 1)
 
   // If found return the position as base 1.
   return position === -1 ? error$2.value : position+1
 }
-
-// Copyright 2015 JC Fisher
 
 // combine a array of strings/numbers into a single string
 function join(list, delim=', ') {
@@ -1804,17 +1726,13 @@ function join(list, delim=', ') {
   return list.join(delim)
 }
 
-// Copyright 2015 JC Fisher
-
 // SERIAL convert a date object into a serial number.
 function serial(date) {
   // Credit: https://github.com/sutoiku/formula.js/
   if (!isdate(date)) { return error$2.na }
-  var diff = Math.ceil((date - d1900) / MilliSecondsInDay);
+  var diff = Math.ceil((date - d1900) / MilliSecondsInDay)
   return diff + ( diff > 59 ? 2 : 1)
 }
-
-// Copyright 2015 JC Fisher
 
 // N converts a `value` to a number. It supports numbers, true, false and dates.
 function n(value) {
@@ -1844,8 +1762,6 @@ function n(value) {
 
 }
 
-// Copyright 2015 JC Fisher
-
 function left(text, number) {
 
   if (isblank(text)) {
@@ -1859,8 +1775,6 @@ function left(text, number) {
   return text.substring( 0, number )
 
 }
-
-// Copyright 2015 JC Fisher
 
 // LEN returns the size of a string or array.
 function len(text) {
@@ -1877,9 +1791,7 @@ function len(text) {
   }
 
   return error$2.value;
-}
-
-// Copyright 2015 JC Fisher
+};
 
 // LOWER converts `value` to lower case
 function lower(value) {
@@ -1894,12 +1806,10 @@ function split(text, delimiter) {
   return text.split(delimiter)
 }
 
-// Copyright 2015 JC Fisher
-
 // Convert a text value into a number value.
 function numbervalue(text, decimal_separator, group_separator)  {
-  decimal_separator = decimal_separator || '.';
-  group_separator = group_separator || ',';
+  decimal_separator = decimal_separator || '.'
+  group_separator = group_separator || ','
 
   // Return error when text is error
   if (iserror(text)) {
@@ -1917,7 +1827,7 @@ function numbervalue(text, decimal_separator, group_separator)  {
   }
 
   var foundDecimal = false,
-  len = text.length-1;
+  len = text.length-1
 
   if (text.length === 1) {
     if ( code( text, 0 ) < 48 ||  code( text, 0 ) > 57 ) {
@@ -1936,7 +1846,7 @@ function numbervalue(text, decimal_separator, group_separator)  {
       return +acc.concat(item)
     } else if (item === decimal_separator) {
       if (foundDecimal) return error$2.value;
-      foundDecimal = true;
+      foundDecimal = true
       return acc.concat('.')
     } else if( item === group_separator ) {
       return acc
@@ -1948,9 +1858,7 @@ function numbervalue(text, decimal_separator, group_separator)  {
     return acc.concat(item);
 
   })
-}
-
-// Copyright 2015 JC Fisher
+};
 
 // PARSEBOOL converts a truthy value into a boolean value.
 function parsebool(val) {
@@ -1970,8 +1878,6 @@ function parsebool(val) {
 
   return error$2.value;
 }
-
-// Copyright 2015 JC Fisher
 
 // parse querystring into object
 function parsequery(query='') {
@@ -1996,8 +1902,6 @@ function parsequery(query='') {
     }, {} )
 }
 
-// Copyright 2015 JC Fisher
-
 // PROPER converts text into proper case.
 function proper(text) {
     if (text === undefined || text.length === 0) {
@@ -2021,8 +1925,6 @@ function proper(text) {
     });
 }
 
-// Copyright 2015 JC Fisher
-
 // REPLACE returns a new string after replacing with `new_text`.
 function replace(text, position, length, new_text) {
 
@@ -2032,8 +1934,6 @@ function replace(text, position, length, new_text) {
   }
   return text.substr(0, position - 1) + new_text + text.substr(position - 1 + length);
 }
-
-// Copyright 2015 JC Fisher
 
 // RIGHT pulls a given number of character from the right side of `text`.
 function right(text, number) {
@@ -2060,8 +1960,6 @@ function rept(text, number) {
   }
   return r;
 }
-
-// Copyright 2015 JC Fisher
 
 // SEARCH finds text using wildcards ?, *, ~?, and ~*.
 function search(find_text, within_text, position) {
@@ -2109,7 +2007,6 @@ function keys(subject) {
   return Object.keys(subject)
 }
 
-// Copyright 2015 JC Fisher
 // substituteAll is a lightweight "substitution tags" engine that implement a global substitute for multiple items.
 //
 // The key values in your locals object are replaced. Unlike other templating systems it doesn't specify characters that surround your tokens.
@@ -2126,19 +2023,16 @@ function substituteAll(content, locals, start='-', end=start) {
   return reduce( keys(locals), (p, v) => substitute(p, `${start}${v}${end}`, locals[v]), content)
 }
 
-// Copyright 2015 JC Fisher
 // Creates a new object where all of the keys are surrounded by
 // start and end delimiters.
 function surroundKeys(obj, start='-', end) {
-  end = end || start;
+  end = end || start
   return reduce( keys(obj), (p, v) => {
     p[`${start}${v}${end}`] = obj[v];
     return p;
   }, {})
 }
 
-// Copyright 2015 JC Fisher
-// based heavily on code from socialcalc
 let FormatNumber = {};
 
 FormatNumber.format_definitions = {}; // Parsed formats are stored here globally
@@ -2348,7 +2242,7 @@ FormatNumber.formatNumberWithFormat = function(rawvalue, format_string, currency
       year: ymd.getFullYear(),
       month: ymd.getMonth() + 1,
       day: ymd.getDate()
-    };
+    }
 
     minOK = 0; // says "m" can be minutes if true
     mspos = sectioninfo.sectionstart; // m scan position in ops
@@ -2904,7 +2798,7 @@ if (indate) {
 
 return;
 
-};
+}
 
 
 /* *******************
@@ -2966,13 +2860,11 @@ FormatNumber.parse_format_bracket = function(bracketstr) {
 
   return bracketdata;
 
-};
+}
 
 function text(value, format, currency_char) {
   return FormatNumber.formatNumberWithFormat(value, format, currency_char);
 }
-
-// Copyright 2015 JC Fisher
 
 // TRIMS returns a string without whitespace at the beginning or end.
 function trim(text) {
@@ -2988,8 +2880,6 @@ function trim(text) {
 function upper(string) {
   return string.toUpperCase()
 }
-
-// Copyright 2015 JC Fisher
 
 // Find a needle in a table searching horizontally.
 function hlookup(needle, table, index=1, exactmatch) {
@@ -3064,8 +2954,6 @@ function includes(searchElement, searchList, fromIndex) {
   return false;
 }
 
-// Copyright 2015 JC Fisher
-
 // index returns the value in a row and column from a 2d array
 function index(reference, row_num, column_num=1) {
   var row;
@@ -3124,8 +3012,6 @@ function lookup() {
     return error.na;
 
 }
-
-// Copyright 2015 JC Fisher
 
 // MATCH returns an index in `array_reference` by searching for `lookup_reference`.
 function match(lookup_reference, array_reference, matchType) {
@@ -3206,9 +3092,7 @@ function match(lookup_reference, array_reference, matchType) {
 
   return index ? index : error$2.na;
 
-}
-
-// Copyright 2015 JC Fisher
+};
 
 // VLOOKUP find a needle in a table searching vertically.
 function vlookup(needle, table=[], index=1, exactmatch=false) {
@@ -3235,26 +3119,21 @@ function vlookup(needle, table=[], index=1, exactmatch=false) {
 
 }
 
-// Copyright 2015 JC Fisher
-
 // date returns a serial number given a year, month and day.
 function date(year, month, day) {
   return serial(new Date(year, month-1, day));
 }
-
-// Copyright 2015 JC Fisher
 
 // DATEVALUE parses a date string and returns a serial number.
 function datevalue(d) {
   return serial(parsedate(d));
 }
 
-// Copyright 2015 JC Fisher
 // DATEDIF return the difference between two dates given a start date, end date and unit.
 function datedif(start_date, end_date, unit) {
   var second=1000, minute=second*60, hour=minute*60, day=hour*24, week=day*7;
   start_date = parsedate(start_date),
-  end_date = parsedate(end_date);
+  end_date = parsedate(end_date)
 
   var timediff = end_date - start_date;
   if (isnan(timediff)) return NaN;
@@ -3276,14 +3155,10 @@ function datedif(start_date, end_date, unit) {
 
 }
 
-// Copyright 2015 JC Fisher
-
 // DAY parses a date string and returns the day of the month.
 function day(d) {
   return parsedate(d).getDate()
 }
-
-// Copyright 2015 JC Fisher
 
 function days360(start_date, end_date, method) {
     method = parsebool(method);
@@ -3325,8 +3200,6 @@ function days360(start_date, end_date, method) {
     );
 }
 
-// Copyright 2015 JC Fisher
-
 function edate(start_date, months) {
     start_date = parsedate(start_date);
 
@@ -3339,9 +3212,7 @@ function edate(start_date, months) {
     months = parseInt(months, 10);
     start_date.setMonth(start_date.getMonth() + months);
     return serial(start_date);
-}
-
-// Copyright 2015 JC Fisher
+};
 
 function eomonth(start_date, months) {
   start_date = parsedate(start_date);
@@ -3356,14 +3227,10 @@ function eomonth(start_date, months) {
   return new Date(start_date.getFullYear(), start_date.getMonth() + months + 1, 0);
 }
 
-// Copyright 2015 JC Fisher
-
 function hour(value) {
     // remove numbers before decimal place and convert fraction to 24 hour scale.
     return trunc((value - trunc(value)) * 24);
 }
-
-// Copyright 2015 JC Fisher
 
 function minute(value) {
   // calculate total seconds
@@ -3374,14 +3241,10 @@ function minute(value) {
   return trunc( (totalSeconds - hourSeconds) / SecondsInMinute);
 }
 
-// Copyright 2015 JC Fisher
-
 // MONTH parses a date value and returns the month of the year.
 function month(d) {
   return parsedate(d).getMonth() + 1
 }
-
-// Copyright 2015 JC Fisher
 
 function timevalue(time_text) {
     // The JavaScript new Date() does not accept only time.
@@ -3396,16 +3259,12 @@ function timevalue(time_text) {
     return (SecondsInHour * date.getHours() +
             SecondsInMinute * date.getMinutes() +
             date.getSeconds()) / SecondsInDay;
-}
-
-// Copyright 2015 JC Fisher
+};
 
 function now() {
   var d = new Date();
   return datevalue(d.toLocaleDateString()) + timevalue(d.toLocaleTimeString());
-}
-
-// Copyright 2015 JC Fisher
+};
 
 function second(value) {
 
@@ -3422,27 +3281,19 @@ function second(value) {
   return Math.round(totalSeconds - hourSeconds - minuteSeconds);
 }
 
-// Copyright 2015 JC Fisher
-
 function today() {
   var d = new Date();
   return datevalue(d.toLocaleDateString())
-}
-
-// Copyright 2015 JC Fisher
+};
 
 function time(hour, minute, second) {
   return +((hour*3600 + minute*60 + second) / SecondsInDay).toFixed(15);
 }
 
-// Copyright 2015 JC Fisher
-
 // YEAR parses a date value and returns the year of the year.
 function year(d) {
   return parsedate(d).getFullYear()
 }
-
-// Copyright 2015 JC Fisher
 
 function yearfrac(start_date, end_date, basis) {
   start_date = parsedate(start_date);
@@ -3512,9 +3363,7 @@ function yearfrac(start_date, end_date, basis) {
     // European 30/360
     return ((ed + em * 30 + ey * 360) - (sd + sm * 30 + sy * 360)) / 360;
   }
-}
-
-// Copyright 2015 JC Fisher
+};
 
 // SUM a given list of `numbers`
 function sum(...numbers) {
@@ -3524,13 +3373,11 @@ function sum(...numbers) {
     });
 }
 
-// Copyright 2015 JC Fisher
-
 // AVERAGE computes sum of items divided by number of items
 function average(...items) {
 
   // compute sum all of the items.
-  var v = sum(...items);
+  var v = sum(...items)
 
   // return sum when computed error.
   if (iserror(v)) {
@@ -3541,12 +3388,10 @@ function average(...items) {
   return  v / items.length;
 }
 
-// Copyright 2015 JC Fisher
-
 // MIN returns the smallest number from a `list`.
 function min(...list) {
 
-  var values = flatten( list );
+  var values = flatten( list )
   if (values.length === 0) return;
   return reduce( values, (min, next) => {
     if (isblank(min)) return next;
@@ -3555,12 +3400,10 @@ function min(...list) {
   });
 }
 
-// Copyright 2015 JC Fisher
-
 // MAX returns the largest number from a `list`.
 function max(...list) {
 
-  var values = flatten( list );
+  var values = flatten( list )
   if (values.length === 0) return;
   return reduce( values, (max, next) => {
     if (isblank(max)) return next;
@@ -3569,7 +3412,6 @@ function max(...list) {
   });
 }
 
-// Copyright 2015 JC Fisher
 // FILTER limits a range based on arrays of boolean values.
 function filter(range, ...filters) {
 
@@ -3607,28 +3449,7 @@ function filter(range, ...filters) {
 function isobject(value) {
   var type = typeof value;
   return !!value && (type == 'object' || type == 'function');
-}
-
-// Copyright 2015 JC Fisher
-//
-// A minimal query engine with a mongodb like syntax.
-//
-// query([{ foo: 1}, {foo: 2}], { foo: 1 })
-// query([{ foo: 1}, {foo: 2}], { foo: { $ne: 1 } })
-//
-// Supported operators:
-//  - $and
-//  - $or
-//  - $eq
-//  - $ne
-//  - $gt
-//  - $gte
-//  - $lt
-//  - $lte
-//  - $exists
-//  - $nin
-//  - $in
-//  - $text
+};
 
 // Functions for each operator.
 let filterTypes = {
@@ -3648,12 +3469,12 @@ let filterTypes = {
   $and: (queryVal) => (row, field) => true,
   $or: (queryVal) => (row, field) => true
 
-};
+}
 
 // Run the filter against the data with the settings.
 function query(data, query) {
 
-  let comparison = (field, op, value) => row => (filterTypes[op] || filterTypes['$noop'])(value)(row, field);
+  let comparison = (field, op, value) => row => (filterTypes[op] || filterTypes['$noop'])(value)(row, field)
 
   let comparator = (list, key) => row => branch(
     isobject(list[key]),
@@ -3663,12 +3484,12 @@ function query(data, query) {
       })
     ),
     () => comparison( key, '$eq', list[key])(row)
-  );
+  )
 
   let comparisonGroup = (row, list, key, op=and) => {
 
     if (!isarray(list[key])) {
-      throw new Error(`$${op.name} expects array!`)
+      throw new Error(`$${op.name} expects array!`);
     }
 
     return op(
@@ -3678,20 +3499,21 @@ function query(data, query) {
       )
     )
 
-  };
+  }
 
   let composeQuery = (list) => reduce(
     keys(list),
     (funcs, key) => funcs.concat(
       (row) =>
-      branch(
-        key === '$and',
-        () => comparisonGroup(row, list, key, and),
-        key === '$or',
-        () => comparisonGroup(row, list, key, or),
-        () => comparator(list, key)(row)),
-      ),
-      []
+        branch(
+          key === '$and',
+          () => comparisonGroup(row, list, key, and),
+          key === '$or',
+          () => comparisonGroup(row, list, key, or),
+          () => comparator(list, key)(row)
+        )
+    ),
+    []
   );
 
   // Compose a list of functions to filter each field.
@@ -3701,11 +3523,9 @@ function query(data, query) {
   return filter(
     data,
     // map each filter function to true/false values for each row.
-    ...map( funcs, filter$$1 => map( data, row => filter$$1(row) ) )
+    ...map( funcs, filter => map( data, row => filter(row) ) )
   )
 }
-
-// Copyright 2015 JC Fisher
 
 function fv(rate, periods, payment, value=0, type=0) {
 
@@ -3726,9 +3546,8 @@ function fv(rate, periods, payment, value=0, type=0) {
     }
   }
   return -fv;
-}
+};
 
-// Copyright 2015 JC Fisher
 function nper(rate, pmt, pv, fv, type) {
   var log,
   result;
@@ -3744,7 +3563,7 @@ function nper(rate, pmt, pv, fv, type) {
     }
     var num = Math.log(prim);
     return num;
-  };
+  }
 
   if (rate == 0.0) {
     result = (-(pv + fv)/pmt);
@@ -3776,8 +3595,6 @@ function npv(rate, ...values) {
     return sum;
 }
 
-// Copyright 2015 JC Fisher
-
 // PMT returns a loan payment
 function pmt(rate, periods, present, future = 0, type = 0) {
 
@@ -3796,9 +3613,7 @@ function pmt(rate, periods, present, future = 0, type = 0) {
     }
   }
 
-}
-
-// Copyright 2015 JC Fisher
+};
 
 function pv(rate, periods, payment, future=0, type=0) {
 
@@ -3812,9 +3627,7 @@ function pv(rate, periods, payment, future=0, type=0) {
   } else {
     return (((1 - Math.pow(1 + rate, periods)) / rate) * payment * (1 + rate * type) - future) / Math.pow(1 + rate, periods);
   }
-}
-
-// Copyright 2015 JC Fisher
+};
 
 // BIN2DEC converts binary string into decimal value
 function bin2dec(value) {
@@ -3838,9 +3651,7 @@ function bin2dec(value) {
     // Convert binary number to decimal with built-in facility
     return parseInt(valueAsString, 2);
 
-}
-
-// Copyright 2015 JC Fisher
+};
 
 // based on https://github.com/sutoiku/formula.js/blob/mast../src/engineering.js
 function dec2bin(input, places) {
@@ -3892,8 +3703,6 @@ function dec2bin(input, places) {
   }
 }
 
-// Copyright 2015 JC Fisher
-
 // OCT2DEC converts a octal value into a decimal value.
 function oct2dec(octalNumber) {
   // Credits: Based on implementation found in https://gist.github.com/ghalimi/4525876#file-oct2dec-js
@@ -3923,8 +3732,6 @@ function oct2dec(octalNumber) {
   return (nonNegativeDecimalNumber >= 536870912) ? nonNegativeDecimalNumber - 1073741824 : nonNegativeDecimalNumber;
 }
 
-// Copyright 2015 JC Fisher
-
 // pluck a property from a list of objects.
 function pluck(prop, list) {
 
@@ -3936,8 +3743,6 @@ function pluck(prop, list) {
   // Map the list to the property.
   return map( list, d => d[prop] )
 }
-
-// Copyright 2015 JC Fisher
 
 // INT returns true when a needle is found in a list.
 function some(needle, list) {
@@ -3955,8 +3760,6 @@ function some(needle, list) {
   // Return true when some of the values match the needle.
   return list.some(n => eq(n, needle) )
 }
-
-// Copyright 2015 JC Fisher
 
 // SORT a reference or an array.
 //
@@ -3992,7 +3795,7 @@ function sort(ref, ...criteria) {
 
     }
 
-  };
+  }
 
   if (isref(ref) || isarray(ref)) {
     return ref.sort( makeComparer() );
@@ -4002,7 +3805,6 @@ function sort(ref, ...criteria) {
 
 }
 
-// Copyright 2015 JC Fisher
 // UNIQUE reduces an `array` into an array without duplicate values.
 function unique(array) {
   return reduce( array, function(p, c) {
@@ -4011,14 +3813,12 @@ function unique(array) {
   }, [])
 }
 
-// Copyright 2015 JC Fisher
-
 // CHANGED computes the list of keys that are different between two objects.
 function changed(a, b) {
 
   // Compute the keys in object a and b.
   var keysA = keys(a),
-  keysB = keys(b);
+  keysB = keys(b)
 
   // Find the unique set of properties comparing a to b and b to a.
   return unique(
@@ -4031,27 +3831,25 @@ function changed(a, b) {
   )
 }
 
-// Copyright 2015 JC Fisher
 function diff(a, b) {
   let keysA = keys(a),
   keysB = keys(b),
   InA = keysB.filter(n => keysA.indexOf(n) > -1),
   NotInA = keysB.filter(n => keysA.indexOf(n) === -1),
   NotInB = keysA.filter(n => keysB.indexOf(n) === -1),
-  Diff = InA.filter( n => a[n] !== b[n]);
+  Diff = InA.filter( n => a[n] !== b[n])
 
   return {
     unique_left: NotInA,
     unique_right: NotInB,
     diff: reduce( Diff, (x, y) => {
-      var diff = { };
-      diff[y] = { left: a[y], right: b[y]};
+      var diff = { }
+      diff[y] = { left: a[y], right: b[y]}
       return assign({}, x, diff)
     }, {})
   }
 }
 
-// Copyright 2015 JC Fisher
 // SELECT fields from object
 function select(fields, body) {
   // non-json
@@ -4082,33 +3880,25 @@ function select(fields, body) {
   }, {});
 }
 
-// Copyright 2015 JC Fisher
-
 // CLEAN accepts an object and remove properties that are blank.
 function clean(obj) {
   // Compute keys where value is non blank.
-  let keys$$1 = keys(obj).filter( n => !isblank(obj[n]) );
+  let keys$$ = keys(obj).filter( n => !isblank(obj[n]) )
 
   // Compute object with only non-blank keys.
-  return select( keys$$1, obj )
+  return select( keys$$, obj )
 }
-
-// Copyright 2015 JC Fisher
 
 // get a property (p) from an object (o)
 function get(p, o) {
   return o[p]
 }
 
-// Copyright 2015 JC Fisher
-
 // CELLINDEX computes the index for row and column in a 2 dimensional array.
 function cellindex(row, col) {
   // Multiple row by maximum columns plus the col.
   return Math.floor( (row * MaxCols) + col );
 }
-
-// Copyright 2015 JC Fisher
 
 // Convert letter to number (e.g A -> 0)
 function columnnumber(column) {
@@ -4126,7 +3916,7 @@ function columnnumber(column) {
 
     for (var i = 1; i < column.length; i++) {
       // compensate for spreadsheet column naming
-      s+=1;
+      s+=1
       s *= 26;
       s += column.charCodeAt(i) - 'A'.charCodeAt(0);
       secondPass = true;
@@ -4140,8 +3930,6 @@ function columnnumber(column) {
 
 }
 
-// Copyright 2015 JC Fisher
-
 // COLUMN return the column number that corresponds to the reference.
 function column(value) {
 
@@ -4153,8 +3941,6 @@ function column(value) {
   // Run the COLUMNNUMBER and convert to base 1.
   return columnnumber(value.column) + 1;
 }
-
-// Copyright 2015 JC Fisher
 
 // Convert index to letter (e.g 0 -> A)
 function columnletter( index ) {
@@ -4244,8 +4030,6 @@ function decodebase64(str) {
   }
 }
 
-// Copyright 2015 JC Fisher
-
 function decodejwt(token) {
 
   function b64DecodeUnicode(str) {
@@ -4269,7 +4053,7 @@ function guid(){
     return v.toString(16);
   });
   return guid;
-}
+};
 
 // Copyright 2015 JC Fisher
 
@@ -4277,21 +4061,15 @@ function int(value) {
   return Math.floor(value)
 }
 
-// Copyright 2015 JC Fisher
-
 // INDEX2COL computes the row given a cell index
 function index2row(index) {
   return Math.floor(index / MaxCols);
 }
 
-// Copyright 2015 JC Fisher
-
 // INDEX2COL computes the column given a cell index
 function index2col(index) {
   return index - (index2row(index) * MaxCols);
 }
-
-// Copyright 2015 JC Fisher
 
 function numbers(...values) {
   return reduce(
@@ -4300,8 +4078,6 @@ function numbers(...values) {
     []
   )
 }
-
-// Copyright 2015 JC Fisher
 
 // REF accepts top and bottom and returns a reference object. It encapsulates a cell or a range.
 function ref$1(top, bottom) {
@@ -4312,11 +4088,11 @@ function ref$1(top, bottom) {
   }
 
   if (isblank(bottom)) {
-    bottom = top;
+    bottom = top
   }
 
-  var getTop = () => isfunction(top) ? top() : top;
-  var getBottom = () => isfunction(bottom) ? bottom() : bottom;
+  var getTop = () => isfunction(top) ? top() : top
+  var getBottom = () => isfunction(bottom) ? bottom() : bottom
 
   return {
 
@@ -4412,392 +4188,85 @@ function ref$1(top, bottom) {
   }
 }
 
-// Copyright @ 2015-2016 JC Fisher
-
-// # Formula's Functions
-
-// ## Functions
-// The library includes functions for logic, math, text, lookup, date/time, aggregation, arrays, objects, finance, statistics and other utilities.
-
-// ### Formula
-
-// #### [compile](./compile)
-// `compile` converts a formula into a function.
-// #### [run](./run)
-// `run` execute a formula once.
-// ### Logical
-
-// #### [branch](./branch)
-// `branch` is equivalent to `if-elseif-else`.
 // define `cond` alias for branch
-const cond = branch;
+const cond = branch
 
-// #### [choose](./choose)
-// `choose` is equivalent to `switch case`.
-// #### [and](./and)
-// `and` returns true when all arguments are true or evaluates to true.
-// #### [or](./or)
-// `or` returns true when any argument is true or evaluates to true.
-// #### [not](./not)
-// `not` returns the inverse.
-// #### [eq](./eq)
-// `eq` returns true when the first and second arguments are equivalent. String comparision is _case insensitive_.
-// #### [ne](./ne)
-// `ne` returns true when the first and second arguments are not equivalent. String comparision is _case insensitive_.
-// #### [gt](./gt)
-// `gt` returns true when first argument is greater than the second.
-// #### [gte](./gte)
-// `gte` returns true when first argument is greater than or equal to the second.
-// #### [lt](./lt)
-// `lt` returns true when first argument is less than the second.
-// #### [lte](./lte)
-// `lte` returns true when first argument is less than or equal to the second.
-// #### [ifblank](./ifblank)
-// `ifempty` returns the second argument when the first argument is blank or the third argument
-const ifBlank = ifblank;
+const ifBlank = ifblank
 
-// #### [ifempty](./ifempty)
-// `ifempty` returns the second argument when the first argument is empty or the third argument
-const ifEmpty = ifempty;
+const ifEmpty = ifempty
 
-// #### [iferror](./iferror)
-// `ifempty` returns the second argument when the first argument is an error or the third argument
-const ifError = iferror;
+const ifError = iferror
 
-// #### [ifna](./ifna)
-// `ifempty` returns the second argument when the first argument is #NA! or the third argument
-const ifNA = ifna;
+const ifNA = ifna
 
-// #### [isarray](./isarray)
-// `isarray` returns true when the value is an array.
-const isArray = isarray;
+const isArray = isarray
 
-// #### [isblank](./isblank)
-// `isblank` returns true when the value is undefined or null.
-const isBlank = isblank;
+const isBlank = isblank
 
-// #### [isboolean](./isboolean)
-// `isboolean` returns true when the value is true or false.
-const isbool = isboolean;
-const isBoolean = isboolean;
-const isBool = isboolean;
+const isbool = isboolean
+const isBoolean = isboolean
+const isBool = isboolean
 
-// #### [isdate](./isdate)
-// `isdate` returns true when the value is a JavaScript Date object.
-const isDate = isdate;
+const isDate = isdate
 
-// #### [isemail](./isemail)
-// `isdate` returns true when the value matches the pattern for a valid email address.
-const isEmail = isemail;
+const isEmail = isemail
 
-// #### [isempty](./isempty)
-// `isempty` returns true when the value is blank or empty string.
-const isEmpty = isempty;
+const isEmpty = isempty
 
-// #### [iserror](./iserror)
-// `iserror` returns true when the value is an error value.
-const isError = iserror;
+const isError = iserror
 
-// #### [iseven](./iseven)
-// `iseven` returns true when the value is an even number.
-const isEven = iseven;
+const isEven = iseven
 
-// #### [isfalsy](./isfalsy)
-// `isfalsy` returns true when value is a string.
-// #### [isfunction](./isfunction)
-// `isfunction` returns true when the value is a JavaScript function.
-const isFunction = isfunction;
+const isFalsy = isfalsy
 
-// #### [isleapyear](./isleapyear)
-// `isfunction` returns true when the value is a leap year.
-const isLeapYear = isleapyear;
+const isFunction = isfunction
 
-// #### [isna](./isna)
-// `isna` returns true when the value is #NA!.
-const isNA = isna;
+const isLeapYear = isleapyear
 
-// #### [isnan](./isnan)
-// `isnan` returns true when the value is NaN.
-// #### [isnumber](./isnumber)
-// `isnumber` returns true when the value is JavaScript number type and not NaN and not infinite.
-const isNumber = isnumber;
+const isNA = isna
 
-// #### [isodd](./isodd)
-// `isodd` returns true when the value is an odd number.
-const isOdd = isodd;
+const isNaN$1 = isnan
 
-// #### [isoweeknum](./isoweeknum)
-// `isoweeknum` returns number of the ISO week number of the year for a given date.
-const isoWeekNum = isoweeknum;
+const isNumber = isnumber
 
-// #### [isref](./isref)
-// `isref` returns true when value is a ref object.
-const isRef = isref;
+const isOdd = isodd
 
-// #### [istext](./istext)
-// `istext` returns true when value is a string.
-const isText = istext;
+const isoWeekNum = isoweeknum
 
-// #### [istruthy](./istruthy)
-// `istruthy` returns true when value is a string.
-// #### [isurl](./isurl)
-// `isurl` returns true when value matches a url pattern.
-// #### [iswholenumber](./iswholenumber)
-// `iswholenumber` returns true when value is an integer.
-const isWholeNumber = iswholenumber;
-const isInteger = iswholenumber;
+const isRef = isref
 
-// #### [xor](./xor)
-// `xor` returns the logical exclusive Or of all arguments.
-// ### Math functions
+const isText = istext
 
-// #### [add](./add)
-// `add` sums the first and second arguments.
-// #### [subtract](./subtract)
-// `subtract` returns the difference between the first and second arguments.
-// #### [multiply](./multiply)
-// `multiply` returns the product of the first and second arguments.
-// #### [divide](./divide)
-// `divide` returns the result of the first argument divided by the second.
-// #### [abs](./abs)
-// `abs` returns the absolute value of the first argument.
-// #### [acos](./acos)
-// `acos` returns the inverse cosine of a number.
-// #### [cos](./cos)
-/// `cos` returns the cosine of a number
-// #### [pi](./pi)
-/// `pi` returns the circle constant 3.14...
-// #### [power](./power)
-// `power` returns the nth power of a number.
-// #### [round](./round)
-// `round` returns a number rounded to a precision.
-// #### [roundup](./roundup)
-// `roundup` returns a number rounded up to a precision.
-// #### [sin](./sin)
-// `sin` return the sinine of a number.
-// #### [tan](./tan)
-// `tan` returns the tangent of a number.
-// #### [tau](./tau)
-// `tau` returns the circle constant 6.28...
-// #### [trunc](./trunc)
-// `trunc` returns a number truncated to a given precision.
-// ### Text
+const isTruthy = istruthy
 
-// #### [char](./char)
-// `char` returns a character given an ASCII code.
-// #### [code](./code)
-// `code` returns the ASCII code for a given character.
-// #### [concatenate](./concatenate)
-// `concatenate` combines multiple values into a string.
-const concat = concatenate;
+const isURL = isurl
 
-// #### [exact](./exact)
-// `exact` compares two values for strict equivalence.
-// #### [find](./find)
-// `find` searches a string for a value and returns the index.
-// #### [join](./join)
-// `join` combines an array of values into a string with a given delimiter.
-// #### [left](./left)
-// `left` returns a given number of characters from the left side of a string.
-// #### [len](./len)
-// `len` returns the size of a string of array.
-// #### [lower](./lower)
-// `lower` converts text to lower case.
-// #### [numbervalue](./numbervalue)
-// `numbervalue` converts text into a number.
-const numberValue = numbervalue;
+const isWholeNumber = iswholenumber
+const isInteger = iswholenumber
 
-// #### [parsebool](./parsebool)
-// `parsebool` converts text into a boolean value.
-const parseBool = parsebool;
+const concat = concatenate
 
-// #### [parsedate](./parsedate)
-// `parsedate` converts text into a JavaScript date object
-const parseDate = parsedate;
+const numberValue = numbervalue
 
-// #### [parsequery](./parsequery)
-// `parsequery` returns a JSObject for a URL query string.
-const parseQuery = parsequery;
+const parseBool = parsebool
 
-// #### [proper](./proper)
-// `proper` returns a string as a proper name.
-// #### [replace](./replace)
-// `replace` returns a string where one value is replaced with a new value.
-// #### [right](./right)
-// `right` returns a given number of characters from the right of a string.
-// #### [rept](./rept)
-// `rept` returns a string with a given value repeated `n` times.
-// #### [search](./search)
-// `search` returns the index of a value inside a string with wildcard support for single characters (?) and multiple characters (*).
-// #### [substitute](./substitute)
-// `substitute` returns a new string with every instance of value replaced.
-// #### [substituteAll](./substituteAll)
-// `substituteAll` returns a new string with every instance of set of values replaced.
-const template = substituteAll;
+const parseDate = parsedate
 
-// #### [surroundKeys](./surroundKeys)
-// `surroundKeys` returns a new object where the keys have been wrapped with start and end strings.
-// #### [split](./split)
-// `split` returns an array of strings from a given string separated by a delimiter.
-// #### [text](./text)
-// `text` formats numbers and dates using a format code.
-// #### [trim](./trim)
-// `trim` returns a value with the whitespace removed from the left and right.
-// #### [upper](./upper)
-// `upper` returns a value in all upper case.
-// ### Lookup and reference
+const parseQuery = parsequery
 
-// #### [hlookup](./hlookup)
-// `hlookup` searches the first row and returns the value from the found column at a given row.
-// #### [includes](./includes)
-// `includes` searches an array and returns the true or false for exact matches.
-// #### [index](./index)
-// `index` returns the value for a given row and column.
-// #### [lookup](./lookup)
-// `lookup` searches an array and returns the value found or (optionally) the value at the same index in a second array.
-// #### [match](./match)
-// `match` searches an array and returns the found index with support for wildcard and range queries.
-// #### [vlookup](./vlookup)
-// `vlookup` searches the first column and returns the value from the found row at a given column.
-// ### Date manipulation
+const template = substituteAll
 
-// #### [date](./date)
-// `date` returns a serial number for a given year, month and day.
-// #### [datevalue](./datevalue)
-// `datevalue` returns a serial number for a given date string.
-const dateValue = datevalue;
+const dateValue = datevalue
 
-// #### [datedif](./datedif)
-// `datedif` returns the difference between two dates with support for multiple units.
-// #### [day](./day)
-// `day` returns the day part from a date or date string.
-// #### [days360](./days360)
-// `days360` returns the days behind two dates using a 360 day year.
-// #### [edate](./edate)
-// `edate` returns the serial number for a date that is a given number of months before or after a given date.
-// #### [eomonth](./eomonth)
-// `eomonth` returns the last day of the month in future or past months.
-// #### [hour](./hour)
-// `hour` returns the hour part of a time fraction value.
-// #### [minute](./minute)
-// `minute` returns the minute part of a time fraction value.
-// #### [month](./month)
-// `month` returns the month for a given date.
-// #### [now](./now)
-// `now` returns the current date time in a serial number and time fraction.
-// #### [second](./second)
-// `second` return the second part of a time fraction
-// #### [today](./today)
-// `today` returns a serial number for the current date.
-// #### [time](./time)
-// `time` returns a time fraction for an hour, minute and second.
-// #### [timevalue](./timevalue)
-// `timevalue` returns a time fraction given a text value.
-// #### [year](./year)
-// `year` return the year for a given date.
-// #### [yearfrac](./yearfrac)
-// `yearfrac` calculates the fraction of a year between two dates.
-// ### Aggregation
+const cellIndex = cellindex
 
-// #### [average](./average)
-// `average` returns the sum divided by the number of items.
-// #### [min](./min)
-// `min` returns the smallest value in an array.
-// #### [max](./max)
-// `min` returns the largest value in an array.
-// #### [query](./query)
-// `min` returns the largest value in an array.
-// #### [sum](./sum)
-// `sum` returns the value of all items in an array added together.
-// ### Finance
+const columnLetter = columnletter
 
-// #### [fv](./fv)
-// `fv` returns the future value of an investment.
-// #### [nper](./nper)
-// `nper` returns the number of periods for an investment.
-// #### [npv](./npv)
-// `npv` returns the net present value of an investment.
-// #### [pmt](./pmt)
-// `pmt` returns the amortized payment for a loan.
-// #### [pv](./pv)
-// `pv` returns the present value of an investment.
-// ### Engineering
+const decodeBase64 = decodebase64
+const atob = decodebase64
 
-// #### [bin2dec](./bin2dec)
-// `bin2dec` converts a binary number into a decimal value.
-// #### [dec2bin](./dec2bin)
-// `dec2bin` converts a decimal value to a binary string.
-// #### [oct2dec](./oct2dec)
-// `oct2dec` converts an octal string to a decimal value.
-// ### Arrays
+const decodeJWT = decodejwt
 
-// #### [filter](./filter)
-// `filter` limits a range based on arrays of true/false values.
-// #### [flatten](./flatten)
-// `flatten` returns an array with values flatten into a single dimension.
-// #### [map](./map)
-// `map` returns an array mapped to new values with a given function.
-// #### [pluck](./pluck)
-// `pluck` returns an array with a property plucked from an array of objects.
-// #### [reduce](./reduce)
-// `reduce` converts an array into a value.
-// #### [some](./some)
-// `some` returns true if some of the values in an array match the criteria.
-// #### [sort](./sort)
-// `sort` returns an array sorted by criteria.
-// #### [unique](./unique)
-// `unique` returns the list of unique values from an array.
-// ### Objects
-
-// #### [changed](./changed)
-// `changed` computes the list of keys that are different between two objects.
-// #### [diff](./diff)
-// `diff` computes the unique left, unique right and changed properties of two objects.
-// #### [clean](./clean)
-// `clean` returns an object skipping properties with empty values.
-// #### [get](./get)
-// `get` returns the value of a property from an object.
-// #### [select](./select)
-// `select` returns an object with keys limited to a given set.
-// ### Utility
-
-// #### [cellindex](./cellindex)
-// `cellindex` computes the index of a row/column in a fixed size 1 dimensional space.
-const cellIndex = cellindex;
-
-// #### [column](./column)
-// `column` returns the column index from a cell index.
-// #### [columnletter](./columnletter)
-// `column` returns the column letter from a cell index.
-const columnLetter = columnletter;
-
-// #### [columnnumber](./columnnumber)
-// `columnnumber` converts a column letter into a number.
-// #### [decodebase64](./decodebase64)
-// `decodeBase64` decodes the base 64 binary into string
-const decodeBase64 = decodebase64;
-const atob$1 = decodebase64;
-
-// #### [decodejwt](./decodejwt)
-// `decodeJWT` decodes the payload from a JSON Web Token
-const decodeJWT = decodejwt;
-
-// #### [guid](./guid)
-// `guid` returns a new globally unique identifier (version 4).
-// #### [int](./int)
-// `int` return the floor of a number.
-// #### [index2col](./index2col)
-// `index2col` computes the column given a cell index.
-// #### [index2row](./index2row)
-// `index2row` computes the row given a cell index.
-// #### [n](./n)
-// `n` converts a `value` to a number. It supports numbers, true, false and dates.
-// #### [numbers](./numbers)
-// `numbers` returns the numbers from an array.
-// #### [ref](./ref)
-// `ref` returns a ref object that represents a range.
-// #### [serial](./serial)
-// `serial` converts a JS date into the number of days from 1/1/1900.
 var functions = {
   run,
   compile,
@@ -4805,7 +4274,7 @@ var functions = {
   acos,
   add,
   and,
-  atob: atob$1,
+  atob,
   average,
   bin2dec,
   branch,
@@ -4978,6 +4447,6 @@ var functions = {
   xor,
   year,
   yearfrac,
-};
+}
 
 export default functions;

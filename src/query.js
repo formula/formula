@@ -77,7 +77,7 @@ export default function query(data, query) {
   let comparisonGroup = (row, list, key, op=and) => {
 
     if (!isarray(list[key])) {
-      throw new Error(`$${op.name} expects array!`)
+      throw new Error(`$${op.name} expects array!`);
     }
 
     return op(
@@ -93,18 +93,19 @@ export default function query(data, query) {
     keys(list),
     (funcs, key) => funcs.concat(
       (row) =>
-      branch(
-        key === '$and',
-        () => comparisonGroup(row, list, key, and),
-        key === '$or',
-        () => comparisonGroup(row, list, key, or),
-        () => comparator(list, key)(row)),
-      ),
-      []
-  )
+        branch(
+          key === '$and',
+          () => comparisonGroup(row, list, key, and),
+          key === '$or',
+          () => comparisonGroup(row, list, key, or),
+          () => comparator(list, key)(row)
+        )
+    ),
+    []
+  );
 
   // Compose a list of functions to filter each field.
-  let funcs = composeQuery(query)
+  let funcs = composeQuery(query);
 
   // Execute the filter on the data.
   return filter(
