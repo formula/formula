@@ -34,8 +34,10 @@ function and() {
   // Reduce criteria into boolean value.
   return (0, _reduce2.default)(criteria, function (acc, item) {
 
+    if ((0, _iserror2.default)(acc)) return acc;
+
     // Once `false` or #error! is found always return previously value
-    if (acc === false || (0, _iserror2.default)(acc)) return acc;
+    if (acc === 0 || acc === false) return false;
 
     // find the value if a literal or deferred value
     var val = (0, _isfunction2.default)(item) ? item() : item;
