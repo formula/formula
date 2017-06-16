@@ -3,8 +3,8 @@
 import isfunction from './isfunction'
 import istruthy from './istruthy'
 import reduce from './reduce'
-
-// branch( test, result_if_true, [test2, result_if_true,] false_result )
+// This function provides if-elseif-else.
+// branch( test, result_if_true, [test2, result_if_true, default_result] ).
 export default function branch(...cases) {
 
   var resolved = false
@@ -13,19 +13,19 @@ export default function branch(...cases) {
   return reduce( cases, function(acc, item, index) {
     let val;
 
-    // Return previously resolved result
+    // Return previously resolved result.
     if (resolved === true) return acc
 
-    // Handle last item
+    // Handle default case.
     if ( index === cases.length - 1 ) {
       // There is no last item.
       if (index % 2 === 1) return;
 
-      // return the last item
+      // return the last item.
       return isfunction(item) ? item() : item;
     }
 
-    // Check if condition is true
+    // Check if condition is true.
     if (index % 2 === 0 && (
         (isfunction(item) && istruthy(item()) ) ||
         (!isfunction(item) && istruthy(item)))) {
