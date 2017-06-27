@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "babel-tape-runner test/*.js | faucet",
-    "docs": "groc src/*.js",
+      "docs": "groc src/*.js -o ./docs",
     "test:docs": "docco --output test_docs test/*.js",
     "clean": "rm -rf fn",
     "build:parser": "jison src/parser.jison -m commonjs -o src/parser.js",
