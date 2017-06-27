@@ -1078,7 +1078,8 @@ function reduce(arr, func) {
   return arr.reduce.apply(arr, [func].concat(rest));
 }
 
-// branch( test, result_if_true, [test2, result_if_true,] false_result )
+// This function provides if-elseif-else.
+// branch( test, result_if_true, [test2, result_if_true, default_result] ).
 function branch() {
   for (var _len3 = arguments.length, cases = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
     cases[_key3] = arguments[_key3];
@@ -1090,19 +1091,19 @@ function branch() {
   return reduce(cases, function (acc, item, index) {
     var val = void 0;
 
-    // Return previously resolved result
+    // Return previously resolved result.
     if (resolved === true) return acc;
 
-    // Handle last item
+    // Handle default case.
     if (index === cases.length - 1) {
       // There is no last item.
       if (index % 2 === 1) return;
 
-      // return the last item
+      // return the last item.
       return isfunction(item) ? item() : item;
     }
 
-    // Check if condition is true
+    // Check if condition is true.
     if (index % 2 === 0 && (isfunction(item) && istruthy(item()) || !isfunction(item) && istruthy(item))) {
       resolved = true;
       val = cases[index + 1];
@@ -1185,7 +1186,7 @@ function iserror(value) {
   return iserr(value) || value === error$2.na;
 }
 
-// AND reduces list of truthy values into true or false value
+// AND reduces list of truthy values into true or false value.
 function and() {
   for (var _len4 = arguments.length, criteria = Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
     criteria[_key4] = arguments[_key4];
@@ -1194,31 +1195,39 @@ function and() {
   // Reduce criteria into boolean value.
   return reduce(criteria, function (acc, item) {
 
-    // Once `false` or #error! is found always return previously value
-    if (acc === false || iserror(acc)) return acc;
+    if (iserror(acc)) return acc;
 
-    // find the value if a literal or deferred value
+    // Once `false` or #error! is found always return previously value.
+    if (acc === 0 || acc === false) return false;
+
+    // find the value if a literal or deferred value.
     var val = isfunction(item) ? item() : item;
 
-    // return `#VALUE!` if not true, false, 1 or 0
+    // return `#VALUE!` if not true, false, 1 or 0.
     if (val !== true && val !== false && val !== 1 && val !== 0) {
       return error$2.value;
     }
 
-    // Return true when value is true or 1
+    // Return true when value is true or 1.
     return val === true || val === 1;
   });
 }
 
-// OR returns true when any of the criter is true or 1.
+// Returns true when any of the criteria are true or 1, defaults to false.
 function or() {
   for (var _len5 = arguments.length, criteria = Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
     criteria[_key5] = arguments[_key5];
   }
 
   return reduce(criteria, function (acc, item) {
+
+    // If accumulator is already true then it's still true.
     if (acc === true) return true;
+
+    // Determine the value by resolving thunks if needed.
     var value = isfunction(item) ? item() : item;
+
+    // Return true when value is true or 1.
     return value === true || value === 1;
   }, false);
 }
@@ -1232,10 +1241,12 @@ function not(value) {
 
 // EQ compares two values and returns a boolean value.
 function eq(a, b) {
-  // String comparisions are case-insensitive
+
   if (typeof a === "string" && typeof b === "string") {
+    // String comparisions are case-insensitive when both are string values.
     return a.toLowerCase() === b.toLowerCase();
   } else {
+    // Strict equivalence as the default when non-string values are present.
     return a === b;
   }
 }
@@ -1893,15 +1904,15 @@ function n(value) {
 }
 
 function left(text, number) {
-
+  // For blank text value, return empty string.
   if (isblank(text)) {
     return '';
   }
-
+  // When number is invalid, return original value.
   if (!n(+number)) {
     return text;
   }
-
+  // Return truncated string value.
   return text.substring(0, number);
 }
 
@@ -2064,14 +2075,16 @@ function replace(text, position, length, new_text) {
 // RIGHT pulls a given number of character from the right side of `text`.
 function right(text, number) {
 
+  // For blank text value, return empty string.  
   if (isblank(text)) {
     return '';
   }
 
+  // When number is invalid, return original value.
   if (!n(+number)) {
     return text;
   }
-
+  // Return truncated string value.
   return text.substring(text.length - number);
 }
 
@@ -4635,6 +4648,5 @@ var functions = {
   yearfrac: yearfrac
 };
 
-exports.default = functions;
-module.exports = exports["default"];
+window.formula = functions;
 
