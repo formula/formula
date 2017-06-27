@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="en"><head><title>src/run</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/run"><meta name="groc-project-path" content="src/run.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/run.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> functions <span class="hljs-keyword">from</span> <span class="hljs-string">'./functions'</span>
+<span class="hljs-keyword">import</span> compile <span class="hljs-keyword">from</span> <span class="hljs-string">'./compile'</span>
+<span class="hljs-keyword">import</span> isFunction <span class="hljs-keyword">from</span> <span class="hljs-string">'./isfunction'</span>
+<span class="hljs-keyword">import</span> assign <span class="hljs-keyword">from</span> <span class="hljs-string">'./assign'</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Execute a formula expression</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params">exp, params={}</span>) </span>{
+  <span class="hljs-keyword">var</span> compiled = isFunction(exp) ? exp : compile(exp);
+
+  <span class="hljs-keyword">let</span> funcs = functions.default
+  <span class="hljs-keyword">let</span> locals = assign({}, params)</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Default get for plain object.</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">if</span> (locals.get !== <span class="hljs-string">'function'</span>) {
+    locals.get = (name, scope) =&gt; {
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> scope !== <span class="hljs-string">'undefined'</span>) <span class="hljs-keyword">return</span> locals[scope] ? locals[scope][name] : <span class="hljs-literal">undefined</span>
+      <span class="hljs-keyword">return</span> locals[name]
+    }
+  }
+
+  <span class="hljs-keyword">return</span> compiled(locals, funcs)
+}</div></div></div></div></body></html>
