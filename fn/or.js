@@ -15,7 +15,7 @@ var _reduce2 = _interopRequireDefault(_reduce);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// OR returns true when any of the criter is true or 1.
+// Returns true when any of the criteria are true or 1, defaults to false.
 // Copyright 2015 JC Fisher
 
 function or() {
@@ -24,8 +24,14 @@ function or() {
   }
 
   return (0, _reduce2.default)(criteria, function (acc, item) {
+
+    // If accumulator is already true then it's still true.
     if (acc === true) return true;
+
+    // Determine the value by resolving thunks if needed.
     var value = (0, _isfunction2.default)(item) ? item() : item;
+
+    // Return true when value is true or 1.
     return value === true || value === 1;
   }, false);
 }

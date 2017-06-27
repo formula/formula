@@ -23,7 +23,7 @@ var _reduce2 = _interopRequireDefault(_reduce);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// AND reduces list of truthy values into true or false value
+// AND reduces list of truthy values into true or false value.
 // Copyright 2015 JC Fisher
 
 function and() {
@@ -36,18 +36,18 @@ function and() {
 
     if ((0, _iserror2.default)(acc)) return acc;
 
-    // Once `false` or #error! is found always return previously value
+    // Once `false` or #error! is found always return previously value.
     if (acc === 0 || acc === false) return false;
 
-    // find the value if a literal or deferred value
+    // find the value if a literal or deferred value.
     var val = (0, _isfunction2.default)(item) ? item() : item;
 
-    // return `#VALUE!` if not true, false, 1 or 0
+    // return `#VALUE!` if not true, false, 1 or 0.
     if (val !== true && val !== false && val !== 1 && val !== 0) {
       return _error2.default.value;
     }
 
-    // Return true when value is true or 1
+    // Return true when value is true or 1.
     return val === true || val === 1;
   });
 }
