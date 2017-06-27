@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="en"><head><title>src/query</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/query"><meta name="groc-project-path" content="src/query.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/query.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>Copyright 2015 JC Fisher</p>
+<p>A minimal query engine with a mongodb like syntax.</p>
+<p>query([{ foo: 1}, {foo: 2}], { foo: 1 })
+query([{ foo: 1}, {foo: 2}], { foo: { $ne: 1 } })</p>
+<p>Supported operators:</p>
+<ul>
+<li>$and</li>
+<li>$or</li>
+<li>$eq</li>
+<li>$ne</li>
+<li>$gt</li>
+<li>$gte</li>
+<li>$lt</li>
+<li>$lte</li>
+<li>$exists</li>
+<li>$nin</li>
+<li>$in</li>
+<li>$text</li>
+</ul></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> map <span class="hljs-keyword">from</span> <span class="hljs-string">'./map'</span>;
+<span class="hljs-keyword">import</span> reduce <span class="hljs-keyword">from</span> <span class="hljs-string">'./reduce'</span>
+<span class="hljs-keyword">import</span> keys <span class="hljs-keyword">from</span> <span class="hljs-string">'./keys'</span>
+<span class="hljs-keyword">import</span> filter <span class="hljs-keyword">from</span> <span class="hljs-string">'./filter'</span>;
+<span class="hljs-keyword">import</span> branch <span class="hljs-keyword">from</span> <span class="hljs-string">'./branch'</span>
+<span class="hljs-keyword">import</span> and <span class="hljs-keyword">from</span> <span class="hljs-string">'./and'</span>
+<span class="hljs-keyword">import</span> or <span class="hljs-keyword">from</span> <span class="hljs-string">'./or'</span>
+<span class="hljs-keyword">import</span> not <span class="hljs-keyword">from</span> <span class="hljs-string">'./not'</span>
+<span class="hljs-keyword">import</span> eq <span class="hljs-keyword">from</span> <span class="hljs-string">'./eq'</span>
+<span class="hljs-keyword">import</span> ne <span class="hljs-keyword">from</span> <span class="hljs-string">'./ne'</span>
+<span class="hljs-keyword">import</span> gt <span class="hljs-keyword">from</span> <span class="hljs-string">'./gt'</span>
+<span class="hljs-keyword">import</span> gte <span class="hljs-keyword">from</span> <span class="hljs-string">'./gte'</span>
+<span class="hljs-keyword">import</span> lt <span class="hljs-keyword">from</span> <span class="hljs-string">'./lt'</span>
+<span class="hljs-keyword">import</span> lte <span class="hljs-keyword">from</span> <span class="hljs-string">'./lte'</span>
+<span class="hljs-keyword">import</span> includes <span class="hljs-keyword">from</span> <span class="hljs-string">'./includes'</span>
+<span class="hljs-keyword">import</span> search <span class="hljs-keyword">from</span> <span class="hljs-string">'./search'</span>
+<span class="hljs-keyword">import</span> isarray <span class="hljs-keyword">from</span> <span class="hljs-string">'./isarray'</span>
+<span class="hljs-keyword">import</span> isobject <span class="hljs-keyword">from</span> <span class="hljs-string">'./isobject'</span>
+<span class="hljs-keyword">import</span> istruthy <span class="hljs-keyword">from</span> <span class="hljs-string">'./istruthy'</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Functions for each operator.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">let</span> filterTypes = {
+
+  $noop: () =&gt; () =&gt; <span class="hljs-literal">false</span>,
+  $eq: (queryVal) =&gt; (row, field) =&gt; eq(row[field], queryVal),
+  $ne: (queryVal) =&gt; (row, field) =&gt; ne(row[field], queryVal),
+  $gt: (queryVal) =&gt; (row, field) =&gt; gt(row[field], queryVal),
+  $gte: (queryVal) =&gt; (row, field) =&gt; gte(row[field], queryVal),
+  $lt: (queryVal) =&gt; (row, field) =&gt; lt(row[field], queryVal),
+  $lte: (queryVal) =&gt; (row, field) =&gt; lte(row[field], queryVal),
+  $<span class="hljs-keyword">in</span>: (queryVal) =&gt; (row, field) =&gt; isarray(queryVal) &amp;&amp; includes(row[field], queryVal),
+  $nin: (queryVal) =&gt; (row, field) =&gt; isarray(queryVal) &amp;&amp; !includes(row[field], queryVal),
+  $text: (queryVal) =&gt; (row, field) =&gt; search(queryVal, row[field]) &gt; <span class="hljs-number">0</span>,
+  $exists: (queryVal) =&gt; (row, field) =&gt; istruthy(queryVal) ? row.hasOwnProperty(field) : !row.hasOwnProperty(field),
+
+  $and: (queryVal) =&gt; (row, field) =&gt; <span class="hljs-literal">true</span>,
+  $or: (queryVal) =&gt; (row, field) =&gt; <span class="hljs-literal">true</span>
+
+}</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Run the filter against the data with the settings.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">query</span>(<span class="hljs-params">data, query</span>) </span>{
+
+  <span class="hljs-keyword">let</span> comparison = (field, op, value) =&gt; row =&gt; (filterTypes[op] || filterTypes[<span class="hljs-string">'$noop'</span>])(value)(row, field)
+
+  <span class="hljs-keyword">let</span> comparator = (list, key) =&gt; row =&gt; branch(
+    isobject(list[key]),
+    () =&gt; and(
+      ...map( keys(list[key]), (d) =&gt; {
+        <span class="hljs-keyword">return</span> comparison( key, d, list[key][d] )(row)
+      })
+    ),
+    () =&gt; comparison( key, <span class="hljs-string">'$eq'</span>, list[key])(row)
+  )
+
+  <span class="hljs-keyword">let</span> comparisonGroup = (row, list, key, op=and) =&gt; {
+
+    <span class="hljs-keyword">if</span> (!isarray(list[key])) {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`$<span class="hljs-subst">${op.name}</span> expects array!`</span>);
+    }
+
+    <span class="hljs-keyword">return</span> op(
+      ...map(
+        list[key],
+        d =&gt; op( ...map( keys(d), e =&gt; comparator(d, e)(row) ))
+      )
+    )
+
+  }
+
+  <span class="hljs-keyword">let</span> composeQuery = (list) =&gt; reduce(
+    keys(list),
+    (funcs, key) =&gt; funcs.concat(
+      (row) =&gt;
+        branch(
+          key === <span class="hljs-string">'$and'</span>,
+          () =&gt; comparisonGroup(row, list, key, and),
+          key === <span class="hljs-string">'$or'</span>,
+          () =&gt; comparisonGroup(row, list, key, or),
+          () =&gt; comparator(list, key)(row)
+        )
+    ),
+    []
+  );</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Compose a list of functions to filter each field.</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">let</span> funcs = composeQuery(query);</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Execute the filter on the data.</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">return</span> filter(
+    data,</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>map each filter function to true/false values for each row.</p></div></div><div class="code"><div class="wrapper">    ...map( funcs, filter =&gt; map( data, row =&gt; filter(row) ) )
+  )
+}</div></div></div></div></body></html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="en"><head><title>src/columnletter</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/columnletter"><meta name="groc-project-path" content="src/columnletter.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/columnletter.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>Copyright 2015 JC Fisher</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'./error'</span>
+<span class="hljs-keyword">import</span> isnumber <span class="hljs-keyword">from</span> <span class="hljs-string">'./isnumber'</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Convert index to letter (e.g 0 -&gt; A)</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">columnletter</span>(<span class="hljs-params"> index </span>) </span>{
+
+  <span class="hljs-keyword">if</span> (!isnumber(index)) {
+    <span class="hljs-keyword">return</span> error.value
+  }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The column is determined by applying a modified Hexavigesimal algorithm.
+Normally BA follows Z but spreadsheets count wrong and nobody cares.</p></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Instead they do it in a way that makes sense to most people but
+is mathmatically incorrect. So AA follows Z which in the base 10
+system is like saying 01 follows 9.</p></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>In the least significant digit
+A..Z is 0..25</p></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>For the second to nth significant digit
+A..Z is 1..26</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">var</span> converted = <span class="hljs-string">""</span>
+  ,secondPass = <span class="hljs-literal">false</span>
+  ,remainder
+  ,value = <span class="hljs-built_in">Math</span>.abs(index);
+
+  <span class="hljs-keyword">do</span> {
+    remainder = value % <span class="hljs-number">26</span>;
+
+    <span class="hljs-keyword">if</span> (secondPass) {
+      remainder--;
+    }
+
+    converted = <span class="hljs-built_in">String</span>.fromCharCode((remainder + <span class="hljs-string">'A'</span>.charCodeAt(<span class="hljs-number">0</span>))) + converted;
+    value = <span class="hljs-built_in">Math</span>.floor((value - remainder) / <span class="hljs-number">26</span>);
+
+    secondPass = <span class="hljs-literal">true</span>;
+  } <span class="hljs-keyword">while</span> (value &gt; <span class="hljs-number">0</span>);
+
+  <span class="hljs-keyword">return</span> converted;
+
+}</div></div></div></div></body></html>

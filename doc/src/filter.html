@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="en"><head><title>src/filter</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/filter"><meta name="groc-project-path" content="src/filter.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/filter.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>Copyright 2015 JC Fisher</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'./error'</span>
+<span class="hljs-keyword">import</span> branch <span class="hljs-keyword">from</span> <span class="hljs-string">'./branch'</span>
+<span class="hljs-keyword">import</span> reduce <span class="hljs-keyword">from</span> <span class="hljs-string">'./reduce'</span>
+<span class="hljs-keyword">import</span> isarray <span class="hljs-keyword">from</span> <span class="hljs-string">'./isarray'</span>
+<span class="hljs-keyword">import</span> isfunction <span class="hljs-keyword">from</span> <span class="hljs-string">'./isfunction'</span>
+<span class="hljs-keyword">import</span> istext <span class="hljs-keyword">from</span> <span class="hljs-string">'./istext'</span>
+<span class="hljs-keyword">import</span> run <span class="hljs-keyword">from</span> <span class="hljs-string">'./run'</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>FILTER limits a range based on arrays of boolean values.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">filter</span>(<span class="hljs-params">range, ...filters</span>) </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>A filter is an array of true/false values.
+The filter may be for rows or for columns but not both.
+A array filter may only filter a range that covers a single row or a single column.</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makefilter</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value, index</span>) </span>{
+      <span class="hljs-keyword">return</span> reduce( filters, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> previousValue, currentValue </span>) </span>{
+        <span class="hljs-keyword">if</span> (previousValue === <span class="hljs-literal">false</span> ) {
+          <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        } <span class="hljs-keyword">else</span> {
+          <span class="hljs-keyword">return</span> branch(
+            isarray(currentValue),
+            () =&gt; currentValue[index],
+            isfunction(currentValue),
+            () =&gt; currentValue( value, index ),
+            istext(currentValue),
+            () =&gt; run(currentValue, value),
+            error.na
+          )
+        }
+      }, <span class="hljs-literal">true</span>);
+    }
+  }
+
+  <span class="hljs-keyword">return</span> range.filter( makefilter() )
+
+}</div></div></div></div></body></html>
