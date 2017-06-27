@@ -14,10 +14,14 @@ npm install --save formula
 yarn add formula
 ```
 
-## Usage
+## General Usage
 
 ```js
-var { run, and, eq, len, gt, lt, isnumber, isText, isEmail, isEmpty, lower, proper, text, date}
+// ES6 import statements
+import { run } from 'formula'
+
+// CommonJS
+var { and, eq, len, gt, lt, isnumber, isText, isEmail, isEmpty, lower, proper, text, date}
 = require('formula')
 
 run("a + b", { a: 2, b: 2})
@@ -35,9 +39,11 @@ eq(text(4200.00, "$#,###.00"), '$4,200.00'),
 eq(text(date(2000, 2, 1), "m-d-yyyy"), '2-1-2000')
 ```
 
-Optionally, may load specific functions to reduce bundle size.
+## Reduce bundle sizes
 
-```
+Require specific functions to reduce bundle size with tools like webpack.
+
+```js
 var isNumber = require('formula/fn/isnumber')
 var proper = require('formula/fn/proper')
 ```
