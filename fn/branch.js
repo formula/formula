@@ -19,7 +19,8 @@ var _reduce2 = _interopRequireDefault(_reduce);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// branch( test, result_if_true, [test2, result_if_true,] false_result )
+// This function provides if-elseif-else.
+// branch( test, result_if_true, [test2, result_if_true, default_result] ).
 function branch() {
   for (var _len = arguments.length, cases = Array(_len), _key = 0; _key < _len; _key++) {
     cases[_key] = arguments[_key];
@@ -31,19 +32,19 @@ function branch() {
   return (0, _reduce2.default)(cases, function (acc, item, index) {
     var val = void 0;
 
-    // Return previously resolved result
+    // Return previously resolved result.
     if (resolved === true) return acc;
 
-    // Handle last item
+    // Handle default case.
     if (index === cases.length - 1) {
       // There is no last item.
       if (index % 2 === 1) return;
 
-      // return the last item
+      // return the last item.
       return (0, _isfunction2.default)(item) ? item() : item;
     }
 
-    // Check if condition is true
+    // Check if condition is true.
     if (index % 2 === 0 && ((0, _isfunction2.default)(item) && (0, _istruthy2.default)(item()) || !(0, _isfunction2.default)(item) && (0, _istruthy2.default)(item))) {
       resolved = true;
       val = cases[index + 1];

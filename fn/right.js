@@ -22,14 +22,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // RIGHT pulls a given number of character from the right side of `text`.
 function right(text, number) {
 
+  // For blank text value, return empty string.  
   if ((0, _isblank2.default)(text)) {
     return '';
   }
 
+  // When number is invalid, return original value.
   if (!(0, _n2.default)(+number)) {
     return text;
   }
-
+  // Return truncated string value.
   return text.substring(text.length - number);
 } // Copyright 2015 JC Fisher
 
