@@ -5,12 +5,10 @@ Formula expressions and functions for JavaScript.
 ## Install with npm
 
 ```sh
+# install with npm
 npm install --save formula
-```
 
-## Install with yarn
-
-```sh
+# install with yarn
 yarn add formula
 ```
 
@@ -48,3 +46,6 @@ var isNumber = require('formula/fn/isnumber')
 var proper = require('formula/fn/proper')
 ```
 
+## Browser ready build
+
+There is a browser ready build in the dist folder. You can include with a <script> tag. It uses `formula` as the namespace.
