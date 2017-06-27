@@ -1,6 +1,6 @@
 [![Circle CI](https://circleci.com/gh/formula/formula.svg?style=svg)](https://circleci.com/gh/formula/formula)
 
-Written in ES6, published as ES5.
+Formula expressions and functions for JavaScript.
 
 ## Install with npm
 
