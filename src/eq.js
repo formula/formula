@@ -2,10 +2,12 @@
 
 // EQ compares two values and returns a boolean value.
 export default function eq(a,b) {
-  // String comparisions are case-insensitive
+  
   if (typeof a === "string" && typeof b === "string") {
+    // String comparisions are case-insensitive when both are string values.
     return a.toLowerCase() === b.toLowerCase()
   } else {
+    // Strict equivalence as the default when non-string values are present.
     return a === b;
   }
 }
