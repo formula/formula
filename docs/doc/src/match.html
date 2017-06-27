@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head><title>src/match</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/match"><meta name="groc-project-path" content="src/match.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/match.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>Copyright 2015 JC Fisher</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> isarray <span class="hljs-keyword">from</span> <span class="hljs-string">'./isarray'</span>
+<span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'./error'</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>MATCH returns an index in <code>array_reference</code> by searching for <code>lookup_reference</code>.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">match</span>(<span class="hljs-params">lookup_reference, array_reference, matchType</span>) </span>{
+
+  <span class="hljs-keyword">var</span> lookupArray, lookupValue, index, indexValue;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Gotta have only 2 arguments folks!</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">arguments</span>.length === <span class="hljs-number">2</span>) {
+    matchType = <span class="hljs-number">1</span>;
+  }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Find the lookup value inside a worksheet cell, if needed.</p></div></div><div class="code"><div class="wrapper">  lookupValue = lookup_reference;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Find the array inside a worksheet range, if needed.</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">if</span> (isarray(array_reference)) {
+    lookupArray = array_reference;
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> error.na;
+  }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Gotta have both lookup value and array</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">if</span> (!lookupValue &amp;&amp; !lookupArray) {
+    <span class="hljs-keyword">return</span> error.na;
+  }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Bail on weird match types!</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">if</span> (matchType !== -<span class="hljs-number">1</span> &amp;&amp; matchType !== <span class="hljs-number">0</span> &amp;&amp; matchType !== <span class="hljs-number">1</span>) {
+    <span class="hljs-keyword">return</span> error.na;
+  }
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> idx = <span class="hljs-number">0</span>; idx &lt; lookupArray.length; idx++) {
+    <span class="hljs-keyword">if</span> (matchType === <span class="hljs-number">1</span>) {
+      <span class="hljs-keyword">if</span> (lookupArray[idx] === lookupValue) {
+        <span class="hljs-keyword">return</span> idx + <span class="hljs-number">1</span>;
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (lookupArray[idx] &lt; lookupValue) {
+        <span class="hljs-keyword">if</span> (!indexValue) {
+          index = idx + <span class="hljs-number">1</span>;
+          indexValue = lookupArray[idx];
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (lookupArray[idx] &gt; indexValue) {
+          index = idx + <span class="hljs-number">1</span>;
+          indexValue = lookupArray[idx];
+        }
+      }
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (matchType === <span class="hljs-number">0</span>) {
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> lookupValue === <span class="hljs-string">'string'</span>) {</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>&#39;?&#39; is mapped to the regex &#39;.&#39;
+&#39;<em>&#39; is mapped to the regex &#39;.</em>&#39;
+&#39;~&#39; is mapped to the regex &#39;\?&#39;</p></div></div><div class="code"><div class="wrapper">        <span class="hljs-keyword">if</span> (idx === <span class="hljs-number">0</span>) {
+          lookupValue = <span class="hljs-string">"^"</span> + lookupValue.replace(<span class="hljs-regexp">/\?/g</span>, <span class="hljs-string">'.'</span>).replace(<span class="hljs-regexp">/\*/g</span>, <span class="hljs-string">'.*'</span>).replace(<span class="hljs-regexp">/~/g</span>, <span class="hljs-string">'\\?'</span>) + <span class="hljs-string">"$"</span>;
+        }
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> lookupArray[idx] !== <span class="hljs-string">"undefined"</span>) {
+          <span class="hljs-keyword">if</span> (<span class="hljs-built_in">String</span>(lookupArray[idx]).toLowerCase().match(<span class="hljs-built_in">String</span>(lookupValue).toLowerCase())) {
+            <span class="hljs-keyword">return</span> idx + <span class="hljs-number">1</span>;
+          }
+        }
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> lookupArray[idx] !== <span class="hljs-string">"undefined"</span> &amp;&amp; lookupArray[idx] !== <span class="hljs-literal">null</span> &amp;&amp; lookupArray[idx].valueOf() === lookupValue) {
+          <span class="hljs-keyword">return</span> idx + <span class="hljs-number">1</span>;
+        }
+      }
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (matchType === -<span class="hljs-number">1</span>) {
+      <span class="hljs-keyword">if</span> (lookupArray[idx] === lookupValue) {
+        <span class="hljs-keyword">return</span> idx + <span class="hljs-number">1</span>;
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (lookupArray[idx] &gt; lookupValue) {
+        <span class="hljs-keyword">if</span> (!indexValue) {
+          index = idx + <span class="hljs-number">1</span>;
+          indexValue = lookupArray[idx];
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (lookupArray[idx] &lt; indexValue) {
+          index = idx + <span class="hljs-number">1</span>;
+          indexValue = lookupArray[idx];
+        }
+      }
+    }
+  }
+
+  <span class="hljs-keyword">return</span> index ? index : error.na;
+
+};</div></div></div></div></body></html>
