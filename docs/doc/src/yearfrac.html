@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="en"><head><title>src/yearfrac</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/yearfrac"><meta name="groc-project-path" content="src/yearfrac.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/yearfrac.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>Copyright 2015 JC Fisher</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> parsedate <span class="hljs-keyword">from</span> <span class="hljs-string">'./parsedate'</span>
+<span class="hljs-keyword">import</span> isleapyear <span class="hljs-keyword">from</span> <span class="hljs-string">'./isleapyear'</span>
+<span class="hljs-keyword">import</span> serial <span class="hljs-keyword">from</span> <span class="hljs-string">'./serial'</span>
+
+export default function yearfrac(start_date, end_date, basis) {
+  start_date = parsedate(start_date);
+  <span class="hljs-keyword">if</span> (start_date <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Error</span>) {
+    <span class="hljs-keyword">return</span> start_date;
+  }
+  end_date = parsedate(end_date);
+  <span class="hljs-keyword">if</span> (end_date <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Error</span>) {
+    <span class="hljs-keyword">return</span> end_date;
+  }
+
+  basis = basis || <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">var</span> sd = start_date.getDate();
+  <span class="hljs-keyword">var</span> sm = start_date.getMonth() + <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">var</span> sy = start_date.getFullYear();
+  <span class="hljs-keyword">var</span> ed = end_date.getDate();
+  <span class="hljs-keyword">var</span> em = end_date.getMonth() + <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">var</span> ey = end_date.getFullYear();
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isLeapYear</span>(<span class="hljs-params">year</span>) </span>{ <span class="hljs-keyword">return</span> (((year % <span class="hljs-number">4</span> === <span class="hljs-number">0</span>) &amp;&amp; (year % <span class="hljs-number">100</span> !== <span class="hljs-number">0</span>)) || (year % <span class="hljs-number">400</span> === <span class="hljs-number">0</span>)); }
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">daysBetween</span>(<span class="hljs-params">a, b</span>) </span>{ <span class="hljs-keyword">return</span> serial(b) - serial(a) }
+
+  <span class="hljs-keyword">switch</span> (basis) {
+    <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>US (NASD) 30/360</p></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">if</span> (sd === <span class="hljs-number">31</span> &amp;&amp; ed === <span class="hljs-number">31</span>) {
+      sd = <span class="hljs-number">30</span>;
+      ed = <span class="hljs-number">30</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (sd === <span class="hljs-number">31</span>) {
+      sd = <span class="hljs-number">30</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (sd === <span class="hljs-number">30</span> &amp;&amp; ed === <span class="hljs-number">31</span>) {
+      ed = <span class="hljs-number">30</span>;
+    }
+    <span class="hljs-keyword">return</span> ((ed + em * <span class="hljs-number">30</span> + ey * <span class="hljs-number">360</span>) - (sd + sm * <span class="hljs-number">30</span> + sy * <span class="hljs-number">360</span>)) / <span class="hljs-number">360</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Actual/actual</p></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">var</span> feb29Between = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">date1, date2</span>) </span>{
+      <span class="hljs-keyword">var</span> year1 = date1.getFullYear();
+      <span class="hljs-keyword">var</span> mar1year1 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(year1, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>);
+      <span class="hljs-keyword">if</span> (isLeapYear(year1) &amp;&amp; date1 &lt; mar1year1 &amp;&amp; date2 &gt;= mar1year1) {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+      }
+      <span class="hljs-keyword">var</span> year2 = date2.getFullYear();
+      <span class="hljs-keyword">var</span> mar1year2 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(year2, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>);
+      <span class="hljs-keyword">return</span> (isLeapYear(year2) &amp;&amp; date2 &gt;= mar1year2 &amp;&amp; date1 &lt; mar1year2);
+    };
+    <span class="hljs-keyword">var</span> ylength = <span class="hljs-number">365</span>;
+    <span class="hljs-keyword">if</span> (sy === ey || ((sy + <span class="hljs-number">1</span>) === ey) &amp;&amp; ((sm &gt; em) || ((sm === em) &amp;&amp; (sd &gt;= ed)))) {
+      <span class="hljs-keyword">if</span> ((sy === ey &amp;&amp; isLeapYear(sy)) ||
+      feb29Between(start_date, end_date) ||
+      (em === <span class="hljs-number">1</span> &amp;&amp; ed === <span class="hljs-number">29</span>)) {
+        ylength = <span class="hljs-number">366</span>;
+      }
+      <span class="hljs-keyword">return</span> daysBetween(start_date, end_date) / ylength;
+    }
+    <span class="hljs-keyword">var</span> years = (ey - sy) + <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">var</span> days = (<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(ey + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>) - <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(sy, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>)) / <span class="hljs-number">1000</span> / <span class="hljs-number">60</span> / <span class="hljs-number">60</span> / <span class="hljs-number">24</span>;
+    <span class="hljs-keyword">var</span> average = days / years;
+    <span class="hljs-keyword">return</span> daysBetween(start_date, end_date) / average;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Actual/360</p></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">return</span> daysBetween(start_date, end_date) / <span class="hljs-number">360</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Actual/365</p></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">return</span> daysBetween(start_date, end_date) / <span class="hljs-number">365</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>European 30/360</p></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">return</span> ((ed + em * <span class="hljs-number">30</span> + ey * <span class="hljs-number">360</span>) - (sd + sm * <span class="hljs-number">30</span> + sy * <span class="hljs-number">360</span>)) / <span class="hljs-number">360</span>;
+  }
+};</div></div></div></div></body></html>

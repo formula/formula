@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="en"><head><title>src/error</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/error"><meta name="groc-project-path" content="src/error.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/error.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>Copyright 2015 JC Fisher</p></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>List of errors in the spreadsheet system</p></div></div><div class="code"><div class="wrapper"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">FFError</span>(<span class="hljs-params">message, name</span>) </span>{
+    <span class="hljs-keyword">this</span>.name = name || <span class="hljs-string">"NotImplementedError"</span>;
+    <span class="hljs-keyword">this</span>.message = (message || <span class="hljs-string">""</span>);
+}
+
+FFError.prototype = <span class="hljs-built_in">Error</span>.prototype;
+FFError.prototype.toString = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.message }
+
+<span class="hljs-keyword">let</span> nil = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#NULL!'</span>, <span class="hljs-string">"Null reference"</span>),
+    div0 = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#DIV/0!'</span>, <span class="hljs-string">"Divide by zero"</span>),
+    value = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#VALUE!'</span>, <span class="hljs-string">"Invalid value"</span>),
+    ref = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#REF!'</span>, <span class="hljs-string">"Invalid reference"</span>),
+    name = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#NAME?'</span>, <span class="hljs-string">"Invalid name"</span>),
+    num = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#NUM!'</span>, <span class="hljs-string">"Invalid number"</span>),
+    na = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#N/A!'</span>, <span class="hljs-string">"Not applicable"</span>),
+    error = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#ERROR!'</span>, <span class="hljs-string">"Error"</span>),
+    data = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#GETTING_DATA!'</span>, <span class="hljs-string">"Error getting data"</span>),
+    missing = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#MISSING!'</span>, <span class="hljs-string">"Missing"</span>),
+    unknown = <span class="hljs-keyword">new</span> FFError(<span class="hljs-string">'#UNKNOWN!'</span>, <span class="hljs-string">"Unknown error"</span>);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  nil,
+  div0,
+  value,
+  ref,
+  name,
+  num,
+  na,
+  error,
+  data,
+  missing,
+  unknown
+}</div></div></div></div></body></html>

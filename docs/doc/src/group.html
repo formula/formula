@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="en"><head><title>src/group</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/group"><meta name="groc-project-path" content="src/group.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/group.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> reduce <span class="hljs-keyword">from</span> <span class="hljs-string">'./reduce'</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Group a list of objects by one or more fields.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">group</span>(<span class="hljs-params"> list, ...fields </span>) </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Reduce the list into an object.</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">return</span> reduce( list, (acc, item) =&gt; {
+
+    <span class="hljs-keyword">let</span> parent = <span class="hljs-literal">undefined</span>,
+        key;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Walk through each field and update the accumulator.</p></div></div><div class="code"><div class="wrapper">    fields.forEach((currentField, index) =&gt; {</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The key is the value of the current item.</p></div></div><div class="code"><div class="wrapper">      key = item[currentField];</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Handle the last field used to group.</p></div></div><div class="code"><div class="wrapper">      <span class="hljs-keyword">if</span> (index === fields.length -<span class="hljs-number">1</span>) {
+
+        <span class="hljs-keyword">if</span> (!parent) {
+          acc[key] = (acc[key] || []).concat(item);
+        } <span class="hljs-keyword">else</span> {
+          parent[key] = (parent[key] || []).concat(item);
+        }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Handle the first k fields before the last field</p></div></div><div class="code"><div class="wrapper">      } <span class="hljs-keyword">else</span> {
+
+        <span class="hljs-keyword">if</span> (!parent) {
+          acc[key] = acc[key] || {};
+          parent = acc[key];
+        } <span class="hljs-keyword">else</span> {
+          parent[key] = parent[key] || {};
+          parent = parent[key];
+        }
+      }
+
+    });
+
+    <span class="hljs-keyword">return</span> acc;
+
+  }, {});
+}</div></div></div></div></body></html>
