@@ -614,6 +614,10 @@ const atob = decodebase64
 import decodejwt from './decodejwt'
 const decodeJWT = decodejwt
 
+// #### [group](./group)
+// `group` returns data group by one or more fields.
+import group from './group'
+
 // #### [guid](./guid)
 // `guid` returns a new globally unique identifier (version 4).
 import guid from './guid'
@@ -695,6 +699,7 @@ export default {
   flatten,
   fv,
   get,
+  group,
   gt,
   gte,
   guid,

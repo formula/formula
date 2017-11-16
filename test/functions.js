@@ -3,7 +3,7 @@ import * as ff from '../fn/functions'
 
 test('index', function(t) {
 
-  t.plan( 131 )
+  t.plan( 133 )
   t.ok( ff.abs, 'abs should be there')
   t.ok( ff.accrint, 'accrint should be there')
   t.ok( ff.acos, 'acos should be there')
@@ -42,6 +42,8 @@ test('index', function(t) {
   t.ok( ff.get, 'get should be there')
   t.ok( ff.gt, 'gt should be there')
   t.ok( ff.gte, 'gte should be there')
+  t.ok( ff.group, 'group should be there')
+  t.ok( ff.guid, 'guid should be there')
   t.ok( ff.hlookup, 'hlookup should be there')
   t.ok( ff.hour, 'hour should be there')
   t.ok( ff.includes, 'includes should be there')

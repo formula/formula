@@ -432,6 +432,10 @@ var _sum = require('./sum');
 
 var _sum2 = _interopRequireDefault(_sum);
 
+var _accrint = require('./accrint');
+
+var _accrint2 = _interopRequireDefault(_accrint);
+
 var _fv = require('./fv');
 
 var _fv2 = _interopRequireDefault(_fv);
@@ -539,6 +543,10 @@ var _decodebase2 = _interopRequireDefault(_decodebase);
 var _decodejwt = require('./decodejwt');
 
 var _decodejwt2 = _interopRequireDefault(_decodejwt);
+
+var _group = require('./group');
+
+var _group2 = _interopRequireDefault(_group);
 
 var _guid = require('./guid');
 
@@ -1061,6 +1069,10 @@ var dateValue = _datevalue2.default;
 
 // ### Finance
 
+// #### [accrint](./accrint)
+// `accrint` teturns the accrued interest for a security that pays periodic interest.
+
+
 // #### [fv](./fv)
 // `fv` returns the future value of an investment.
 
@@ -1182,6 +1194,10 @@ var atob = _decodebase2.default;
 
 var decodeJWT = _decodejwt2.default;
 
+// #### [group](./group)
+// `group` returns data group by one or more fields.
+
+
 // #### [guid](./guid)
 // `guid` returns a new globally unique identifier (version 4).
 
@@ -1216,6 +1232,7 @@ exports.default = {
   run: _run2.default,
   compile: _compile2.default,
   abs: _abs2.default,
+  accrint: _accrint2.default,
   acos: _acos2.default,
   add: _add2.default,
   and: _and2.default,
@@ -1260,6 +1277,7 @@ exports.default = {
   flatten: _flatten2.default,
   fv: _fv2.default,
   get: _get2.default,
+  group: _group2.default,
   gt: _gt2.default,
   gte: _gte2.default,
   guid: _guid2.default,
