@@ -239,6 +239,10 @@ import acot from './acot'
 /// `acot` returns the hyperbolic arccotangent of a given number.
 import acoth from './acoth'
 
+// #### [asin](./asin)
+/// `asin` returns the arccosin of a given number.
+import asin from './asin'
+
 // #### [cos](./cos)
 /// `cos` returns the cosine of a number
 import cos from './cos'
@@ -674,6 +678,7 @@ export default {
   acosh,
   acot,
   acoth,
+  asin,
   add,
   and,
   atob,
