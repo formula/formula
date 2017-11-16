@@ -200,6 +200,10 @@ var _asin = require('./asin');
 
 var _asin2 = _interopRequireDefault(_asin);
 
+var _asinh = require('./asinh');
+
+var _asinh2 = _interopRequireDefault(_asinh);
+
 var _cos = require('./cos');
 
 var _cos2 = _interopRequireDefault(_cos);
@@ -847,6 +851,10 @@ var isInteger = _iswholenumber2.default;
 /// `asin` returns the arccosin of a given number.
 
 
+// #### [asinh](./asinh)
+/// `asinh` returns the hyperbolic arccosin of a given number.
+
+
 // #### [cos](./cos)
 /// `cos` returns the cosine of a number
 
@@ -1289,6 +1297,7 @@ exports.default = {
   acot: _acot2.default,
   acoth: _acoth2.default,
   asin: _asin2.default,
+  asinh: _asinh2.default,
   add: _add2.default,
   and: _and2.default,
   atob: atob,
