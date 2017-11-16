@@ -188,6 +188,10 @@ var _acosh = require('./acosh');
 
 var _acosh2 = _interopRequireDefault(_acosh);
 
+var _acot = require('./acot');
+
+var _acot2 = _interopRequireDefault(_acot);
+
 var _cos = require('./cos');
 
 var _cos2 = _interopRequireDefault(_cos);
@@ -815,6 +819,10 @@ var isInteger = _iswholenumber2.default;
 // `acosh` returns the hyperbolic inverse cosine of a number.
 
 
+// #### [acot](./acot)
+/// `acot` returns the arccotangent of a given number.
+
+
 // #### [cos](./cos)
 /// `cos` returns the cosine of a number
 
@@ -1246,6 +1254,7 @@ exports.default = {
   accrint: _accrint2.default,
   acos: _acos2.default,
   acosh: _acosh2.default,
+  acot: _acot2.default,
   add: _add2.default,
   and: _and2.default,
   atob: atob,

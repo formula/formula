@@ -3,11 +3,12 @@ import * as ff from '../fn/functions'
 
 test('index', function(t) {
 
-  t.plan( 135 )
+  t.plan( 136 )
   t.ok( ff.abs, 'abs should be there')
   t.ok( ff.accrint, 'accrint should be there')
   t.ok( ff.acos, 'acos should be there')
   t.ok( ff.acosh, 'acosh should be there')
+  t.ok( ff.acot, 'acot should be there')
   t.ok( ff.add, 'add should be there')
   t.ok( ff.and, 'and should be there')
   t.ok( ff.average, 'average should be there')
