@@ -227,6 +227,10 @@ import abs from './abs'
 // `acos` returns the inverse cosine of a number.
 import acos from './acos'
 
+// #### [acosh](./acosh)
+// `acosh` returns the hyperbolic inverse cosine of a number.
+import acosh from './acosh'
+
 // #### [cos](./cos)
 /// `cos` returns the cosine of a number
 import cos from './cos'
@@ -659,6 +663,7 @@ export default {
   abs,
   accrint,
   acos,
+  acosh,
   add,
   and,
   atob,
