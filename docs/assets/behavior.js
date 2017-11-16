@@ -202,8 +202,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "pageTitle": "src/asin",
             "title": "asin"
           },
-          "depth": 2,
-          "outline": []
+          "depth": 2
         }, {
           "type": "file",
           "data": {
@@ -278,6 +277,25 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "targetPath": "src/branch",
             "pageTitle": "src/branch",
             "title": "branch"
+          },
+          "depth": 2
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/home/jcfisher007/formula/src/ceiling.js",
+            "projectPath": "src/ceiling.js",
+            "targetPath": "src/ceiling",
+            "pageTitle": "src/ceiling",
+            "title": "ceiling"
           },
           "depth": 2
         }, {
@@ -791,6 +809,25 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "targetPath": "src/error",
             "pageTitle": "src/error",
             "title": "error"
+          },
+          "depth": 2
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/home/jcfisher007/formula/src/even.js",
+            "projectPath": "src/even.js",
+            "targetPath": "src/even",
+            "pageTitle": "src/even",
+            "title": "even"
           },
           "depth": 2
         }, {

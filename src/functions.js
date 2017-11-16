@@ -609,6 +609,10 @@ import select from './select'
 import cellindex from './cellindex'
 const cellIndex = cellindex
 
+// #### [ceiling](./ceiling)
+// `ceiling` returns a number rounded up to a specified multiple.
+import ceiling from './ceiling'
+
 // #### [column](./column)
 // `column` returns the column index from a cell index.
 import column from './column'
@@ -632,6 +636,10 @@ const atob = decodebase64
 // `decodeJWT` decodes the payload from a JSON Web Token
 import decodejwt from './decodejwt'
 const decodeJWT = decodejwt
+
+// #### [even](./even)
+// `even` returns a number rounded up the nearest even integer.
+import even from './even'
 
 // #### [group](./group)
 // `group` returns data group by one or more fields.
@@ -685,6 +693,7 @@ export default {
   average,
   bin2dec,
   branch,
+  ceiling,
   cellIndex,
   cellindex,
   changed,
@@ -716,6 +725,7 @@ export default {
   edate,
   eomonth,
   eq,
+  even,
   exact,
   filter,
   find,

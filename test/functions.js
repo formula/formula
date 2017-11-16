@@ -3,7 +3,7 @@ import * as ff from '../fn/functions'
 
 test('index', function(t) {
 
-  t.plan( 138 )
+  t.plan( 140 )
   t.ok( ff.abs, 'abs should be there')
   t.ok( ff.accrint, 'accrint should be there')
   t.ok( ff.acos, 'acos should be there')
@@ -16,6 +16,7 @@ test('index', function(t) {
   t.ok( ff.average, 'average should be there')
   t.ok( ff.bin2dec, 'bin2dec should be there')
   t.ok( ff.branch, 'branch should be there')
+  t.ok( ff.ceiling, 'ceiling should be there')
   t.ok( ff.cellindex, 'cellindex should be there')
   t.ok( ff.char, 'char should be there')
   t.ok( ff.choose, 'choose should be there')
@@ -38,6 +39,7 @@ test('index', function(t) {
   t.ok( ff.edate, 'edate should be there')
   t.ok( ff.eomonth, 'eomonth should be there')
   t.ok( ff.eq, 'eq should be there')
+  t.ok( ff.even, 'even should be there')
   t.ok( ff.exact, 'exact should be there')
   t.ok( ff.filter, 'filter should be there')
   t.ok( ff.find, 'find should be there')

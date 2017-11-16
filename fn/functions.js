@@ -540,6 +540,10 @@ var _cellindex = require('./cellindex');
 
 var _cellindex2 = _interopRequireDefault(_cellindex);
 
+var _ceiling = require('./ceiling');
+
+var _ceiling2 = _interopRequireDefault(_ceiling);
+
 var _column = require('./column');
 
 var _column2 = _interopRequireDefault(_column);
@@ -559,6 +563,10 @@ var _decodebase2 = _interopRequireDefault(_decodebase);
 var _decodejwt = require('./decodejwt');
 
 var _decodejwt2 = _interopRequireDefault(_decodejwt);
+
+var _even = require('./even');
+
+var _even2 = _interopRequireDefault(_even);
 
 var _group = require('./group');
 
@@ -1205,6 +1213,10 @@ var dateValue = _datevalue2.default;
 
 var cellIndex = _cellindex2.default;
 
+// #### [ceiling](./ceiling)
+// `ceiling` returns a number rounded up to a specified multiple.
+
+
 // #### [column](./column)
 // `column` returns the column index from a cell index.
 
@@ -1228,6 +1240,10 @@ var atob = _decodebase2.default;
 // `decodeJWT` decodes the payload from a JSON Web Token
 
 var decodeJWT = _decodejwt2.default;
+
+// #### [even](./even)
+// `even` returns a number rounded up the nearest even integer.
+
 
 // #### [group](./group)
 // `group` returns data group by one or more fields.
@@ -1279,6 +1295,7 @@ exports.default = {
   average: _average2.default,
   bin2dec: _bin2dec2.default,
   branch: _branch2.default,
+  ceiling: _ceiling2.default,
   cellIndex: cellIndex,
   cellindex: _cellindex2.default,
   changed: _changed2.default,
@@ -1310,6 +1327,7 @@ exports.default = {
   edate: _edate2.default,
   eomonth: _eomonth2.default,
   eq: _eq2.default,
+  even: _even2.default,
   exact: _exact2.default,
   filter: _filter2.default,
   find: _find2.default,
