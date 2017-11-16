@@ -589,8 +589,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // `run` execute a formula once.
 var cond = _branch2.default;
 
-// #### [choose](./choose)
-// `choose` is equivalent to `switch case`.
+// define `ifs` alias for branch
 
 
 // ### Logical
@@ -608,6 +607,10 @@ var cond = _branch2.default;
 
 // #### [compile](./compile)
 // `compile` converts a formula into a function.
+var ifs = _branch2.default;
+
+// #### [choose](./choose)
+// `choose` is equivalent to `switch case`.
 
 
 // #### [and](./and)
@@ -1291,6 +1294,7 @@ exports.default = {
   ifempty: _ifempty2.default,
   iferror: _iferror2.default,
   ifna: _ifna2.default,
+  ifs: ifs,
   includes: _includes2.default,
   index: _index2.default,
   index2col: _index2col2.default,

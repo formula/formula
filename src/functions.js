@@ -24,6 +24,9 @@ import branch from './branch'
 // define `cond` alias for branch
 const cond = branch
 
+// define `ifs` alias for branch
+const ifs = branch
+
 // #### [choose](./choose)
 // `choose` is equivalent to `switch case`.
 import choose from './choose'
@@ -713,6 +716,7 @@ export default {
   ifempty,
   iferror,
   ifna,
+  ifs,
   includes,
   index,
   index2col,
