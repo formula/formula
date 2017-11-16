@@ -489,6 +489,10 @@ import sum from './sum'
 
 // ### Finance
 
+// #### [accrint](./accrint)
+// `accrint` teturns the accrued interest for a security that pays periodic interest.
+import accrint from './accrint'
+
 // #### [fv](./fv)
 // `fv` returns the future value of an investment.
 import fv from './fv'
@@ -646,6 +650,7 @@ export default {
   run,
   compile,
   abs,
+  accrint,
   acos,
   add,
   and,
