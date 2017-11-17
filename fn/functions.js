@@ -552,6 +552,10 @@ var _select = require('./select');
 
 var _select2 = _interopRequireDefault(_select);
 
+var _base = require('./base');
+
+var _base2 = _interopRequireDefault(_base);
+
 var _cellindex = require('./cellindex');
 
 var _cellindex2 = _interopRequireDefault(_cellindex);
@@ -1240,6 +1244,10 @@ var dateValue = _datevalue2.default;
 
 // ### Utility
 
+// #### [base](./base)
+// `base` returns a number into a text representation with the given radix.
+
+
 // #### [cellindex](./cellindex)
 // `cellindex` computes the index of a row/column in a fixed size 1 dimensional space.
 
@@ -1329,6 +1337,7 @@ exports.default = {
   and: _and2.default,
   atob: atob,
   average: _average2.default,
+  base: _base2.default,
   bin2dec: _bin2dec2.default,
   branch: _branch2.default,
   ceiling: _ceiling2.default,

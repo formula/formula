@@ -620,6 +620,10 @@ import select from './select'
 
 // ### Utility
 
+// #### [base](./base)
+// `base` returns a number into a text representation with the given radix.
+import base from './base'
+
 // #### [cellindex](./cellindex)
 // `cellindex` computes the index of a row/column in a fixed size 1 dimensional space.
 import cellindex from './cellindex'
@@ -711,6 +715,7 @@ export default {
   and,
   atob,
   average,
+  base,
   bin2dec,
   branch,
   ceiling,

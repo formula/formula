@@ -329,6 +329,25 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
+            "sourcePath": "/home/jcfisher007/formula/src/base.js",
+            "projectPath": "src/base.js",
+            "targetPath": "src/base",
+            "pageTitle": "src/base",
+            "title": "base"
+          },
+          "depth": 2
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
             "sourcePath": "/home/jcfisher007/formula/src/bin2dec.js",
             "projectPath": "src/bin2dec.js",
             "targetPath": "src/bin2dec",
