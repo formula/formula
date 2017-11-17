@@ -220,6 +220,10 @@ var _cos = require('./cos');
 
 var _cos2 = _interopRequireDefault(_cos);
 
+var _degrees = require('./degrees');
+
+var _degrees2 = _interopRequireDefault(_degrees);
+
 var _pi = require('./pi');
 
 var _pi2 = _interopRequireDefault(_pi);
@@ -891,6 +895,10 @@ var isInteger = _iswholenumber2.default;
 /// `cos` returns the cosine of a number
 
 
+// #### [degrees](./degrees)
+/// `degrees` returns radians converted to degrees.
+
+
 // #### [pi](./pi)
 /// `pi` returns the circle constant 3.14...
 
@@ -1375,6 +1383,7 @@ exports.default = {
   decodeJWT: decodeJWT,
   decodebase64: _decodebase2.default,
   decodejwt: _decodejwt2.default,
+  degrees: _degrees2.default,
   diff: _diff2.default,
   divide: _divide2.default,
   edate: _edate2.default,

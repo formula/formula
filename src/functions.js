@@ -263,6 +263,10 @@ import atanh from './atanh'
 /// `cos` returns the cosine of a number
 import cos from './cos'
 
+// #### [degrees](./degrees)
+/// `degrees` returns radians converted to degrees.
+import degrees from './degrees'
+
 // #### [pi](./pi)
 /// `pi` returns the circle constant 3.14...
 import pi from './pi'
@@ -749,6 +753,7 @@ export default {
   decodeJWT,
   decodebase64,
   decodejwt,
+  degrees,
   diff,
   divide,
   edate,

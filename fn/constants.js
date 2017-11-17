@@ -29,6 +29,8 @@ var d1900 = exports.d1900 = new Date(1900, 0, 1),
 // Circle Constants
 τ = exports.τ = 6.28318530717958,
     // http://tauday.com/tau-manifesto
+pi = exports.pi = 3.14159265358979,
+
 
 // Address System Constants
 MaxCols = exports.MaxCols = 16384,

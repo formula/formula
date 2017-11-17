@@ -22,6 +22,7 @@ export let d1900 = new Date(1900, 0, 1),
 
   // Circle Constants
   τ = 6.28318530717958, // http://tauday.com/tau-manifesto
+  pi = 3.14159265358979,
 
   // Address System Constants
   MaxCols = 16384,    // 14 bits, 2^14
