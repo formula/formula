@@ -588,6 +588,10 @@ var _even = require('./even');
 
 var _even2 = _interopRequireDefault(_even);
 
+var _floor = require('./floor');
+
+var _floor2 = _interopRequireDefault(_floor);
+
 var _group = require('./group');
 
 var _group2 = _interopRequireDefault(_group);
@@ -1285,6 +1289,10 @@ var decodeJWT = _decodejwt2.default;
 // `even` returns a number rounded up the nearest even integer.
 
 
+// #### [floor](./floor)
+// `floor` returns a number rounded down to a specified multiple.
+
+
 // #### [group](./group)
 // `group` returns data group by one or more fields.
 
@@ -1377,6 +1385,7 @@ exports.default = {
   filter: _filter2.default,
   find: _find2.default,
   flatten: _flatten2.default,
+  floor: _floor2.default,
   fv: _fv2.default,
   get: _get2.default,
   group: _group2.default,

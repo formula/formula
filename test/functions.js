@@ -3,7 +3,7 @@ import * as ff from '../fn/functions'
 
 test('index', function(t) {
 
-  t.plan( 144 )
+  t.plan( 145 )
   t.ok( ff.abs, 'abs should be there')
   t.ok( ff.accrint, 'accrint should be there')
   t.ok( ff.acos, 'acos should be there')
@@ -48,6 +48,7 @@ test('index', function(t) {
   t.ok( ff.filter, 'filter should be there')
   t.ok( ff.find, 'find should be there')
   t.ok( ff.flatten, 'flatten should be there')
+  t.ok( ff.floor, 'floor should be there')
   t.ok( ff.fv, 'fv should be there')
   t.ok( ff.get, 'get should be there')
   t.ok( ff.gt, 'gt should be there')

@@ -661,6 +661,10 @@ const decodeJWT = decodejwt
 // `even` returns a number rounded up the nearest even integer.
 import even from './even'
 
+// #### [floor](./floor)
+// `floor` returns a number rounded down to a specified multiple.
+import floor from './floor'
+
 // #### [group](./group)
 // `group` returns data group by one or more fields.
 import group from './group'
@@ -755,6 +759,7 @@ export default {
   filter,
   find,
   flatten,
+  floor,
   fv,
   get,
   group,

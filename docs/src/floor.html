@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="en"><head><title>src/floor</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/floor"><meta name="groc-project-path" content="src/floor.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/floor.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'./error'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">floor</span>(<span class="hljs-params">value, significance</span>) </span>{
+  significance = significance || <span class="hljs-number">1</span>;
+
+  <span class="hljs-keyword">if</span> (value &gt; <span class="hljs-number">0</span> &amp;&amp; significance &lt; <span class="hljs-number">0</span> ) {
+    <span class="hljs-keyword">return</span> error.num;
+  }
+
+  <span class="hljs-keyword">if</span> (value &gt;= <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.floor(value / significance) * significance;
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.ceil(value / significance) * significance;
+  }
+
+}</div></div></div></div></body></html>
