@@ -212,6 +212,10 @@ var _atan3 = require('./atan2');
 
 var _atan4 = _interopRequireDefault(_atan3);
 
+var _atanh = require('./atanh');
+
+var _atanh2 = _interopRequireDefault(_atanh);
+
 var _cos = require('./cos');
 
 var _cos2 = _interopRequireDefault(_cos);
@@ -867,8 +871,12 @@ var isInteger = _iswholenumber2.default;
 /// `atan` returns the arctangent of a given number.
 
 
-// #### [atan](./atan)
+// #### [atan2](./atan2)
 /// `atan2` returns the arctangent, or inverse tangent, of the specified x- and y-coordinates.
+
+
+// #### [atanh](./atanh)
+/// `atanh` returns the arctangent (in radians) of the given number.
 
 
 // #### [cos](./cos)
@@ -1316,6 +1324,7 @@ exports.default = {
   asinh: _asinh2.default,
   atan: _atan2.default,
   atan2: _atan4.default,
+  atanh: _atanh2.default,
   add: _add2.default,
   and: _and2.default,
   atob: atob,
