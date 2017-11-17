@@ -251,6 +251,10 @@ import asinh from './asinh'
 /// `atan` returns the arctangent of a given number.
 import atan from './atan'
 
+// #### [atan](./atan)
+/// `atan2` returns the arctangent, or inverse tangent, of the specified x- and y-coordinates.
+import atan2 from './atan2'
+
 // #### [cos](./cos)
 /// `cos` returns the cosine of a number
 import cos from './cos'
@@ -697,6 +701,7 @@ export default {
   asin,
   asinh,
   atan,
+  atan2,
   add,
   and,
   atob,

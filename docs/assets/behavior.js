@@ -259,8 +259,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "pageTitle": "src/atan",
             "title": "atan"
           },
-          "depth": 2,
-          "outline": []
+          "depth": 2
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/home/jcfisher007/formula/src/atan2.js",
+            "projectPath": "src/atan2.js",
+            "targetPath": "src/atan2",
+            "pageTitle": "src/atan2",
+            "title": "atan2"
+          },
+          "depth": 2
         }, {
           "type": "file",
           "data": {
