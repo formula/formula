@@ -1,17 +1,19 @@
 {
   "name": "formula",
-  "version": "2.1.8",
+  "version": "2.2.0",
   "description": "Formula compiler and function library",
   "main": "index.js",
   "scripts": {
     "test": "babel-tape-runner test/*.js | faucet",
-      "docs": "groc src/*.js -o ./docs",
+    "docs": "groc src/*.js -o ./docs",
     "test:docs": "docco --output test_docs test/*.js",
     "clean": "rm -rf fn",
-    "build:parser": "jison src/parser.jison -m commonjs -o src/parser.js",
+    "build": "npm run clean && mkdir fn && npm run build:js && npm run docs && npm run dist",
     "build:js": "gulp",
-    "build": "npm run clean && mkdir fn && npm run build:js && npm run docs",
-    "dist": "rm -rf dist; mkdir dist; rollup src/functions.js > dist/formula.es6; babel dist/formula.es6 > dist/formula.js"
+    "build:parser": "jison src/parser.jison -m commonjs -o src/parser.js",
+    "dist": "npm run dist:cjs && npm run dist:umd",
+    "dist:cjs": "rm -rf cjs; mkdir cjs; rollup -f=cjs src/functions.js > cjs/formula.es; babel cjs/formula.es > cjs/formula.js; uglifyjs cjs/formula.js > cjs/formula.min.js",
+    "dist:umd": "rm -rf umd; mkdir umd; rollup -f=umd -n=formula src/functions.js > umd/formula.es; babel umd/formula.es > umd/formula.js; uglifyjs umd/formula.js > umd/formula.min.js"
   },
   "repository": {
     "type": "git",
@@ -43,9 +45,9 @@
     "rollup": "^0.26.2",
     "rollup-plugin-babel": "^2.7.1",
     "tape": "^4.5.1",
+    "uglify-js": "^3.1.10",
     "uglify-loader": "^2.0.0",
     "uglifyify": "^3.0.1"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

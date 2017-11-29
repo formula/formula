@@ -2,3 +2,4 @@ build
 src
 scripts
 node_modules
+yarn.lock

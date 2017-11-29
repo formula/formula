@@ -1,3 +1,5 @@
+'use strict';
+
 // Copyright 2015 JC Fisher
 
 // map an array to a new array
@@ -1600,6 +1602,100 @@ function acos(value) {
 
 }
 
+// Returns the hyperbolic inverser cosine of a value.
+function acosh(value) {
+
+  if (!isnumber(value)) {
+    return error$2.value;
+  }
+
+  return Math.log(value + Math.sqrt(value * value - 1));
+};
+
+// Return the arccotangent of a given number.
+function acot(number) {
+
+  // Ensure value is a number
+  if (!isnumber(number)) {
+    return error$2.value;
+  }
+
+  // Compute value
+  return Math.atan(1 / number);
+}
+
+// Return the arccotangent of a given number
+function acoth(number) {
+
+  // Ensure value is a number
+  if (!isnumber(number)) {
+    return error$2.value;
+  }
+
+  // Compute value
+  return 0.5 * Math.log((number + 1) / (number - 1));
+}
+
+// Return the inverse sin of a given number
+function asin(number) {
+
+  // Ensure value is a number
+  if (!isnumber(number)) {
+    return error$2.value;
+  }
+
+  // Compute value
+  return Math.asin(number);
+}
+
+// Return the inverse hyperbolic sin of a given number
+function asinh(number) {
+
+  // Ensure value is a number
+  if (!isnumber(number)) {
+    return error$2.value;
+  }
+
+  // Compute value
+  return Math.log(number + Math.sqrt(number * number + 1));
+}
+
+// Return the arctangent (in radians) of the given number
+function atan(number) {
+
+  // Ensure value is a number
+  if (!isnumber(number)) {
+    return error$2.value;
+  }
+
+  // Compute value
+  return Math.atan(number);
+}
+
+// Return the arctangent (in radians) of the given number
+function atan$1(x, y) {
+
+  // Ensure value is a number
+  if (!isnumber(x) || !isnumber(y) ) {
+    return error$2.value;
+  }
+
+  // Compute value
+  return Math.atan2(x, y);
+}
+
+// Return the arctangent (in radians) of the given number
+function atan$2(x) {
+
+  // Ensure value is a number
+  if (!isnumber(x)) {
+    return error$2.value;
+  }
+
+  // Compute value
+  return Math.log((1+x)/(1-x)) / 2;
+}
+
 // COS returns the cosine of a value.
 function cos(value) {
 
@@ -1612,8 +1708,20 @@ function cos(value) {
 
 }
 
+// Converts radians into degrees.
+function degrees(number) {
+
+  // Ensure value is a number
+  if (!isnumber(number)) {
+    return error$2.value;
+  }
+
+  // Compute value
+  return number * 180 / Math.PI;
+}
+
 // PI returns half the universal circle constant
-function pi() {
+function pi$1() {
   return τ / 2;
 }
 
@@ -3541,6 +3649,43 @@ function query(data, query) {
   )
 }
 
+// Returns the accrued interest for a security that pays periodic interest.
+function accrint(issue, first, settlement, rate, par, frequency, basis=0) {
+
+  // Return error if either date is invalid
+  var issueDate      = parsedate(issue);
+  var firstDate      = parsedate(first);
+  var settlementDate = parsedate(settlement);
+
+  if (!isdate(issueDate) || !isdate(firstDate) || !isdate(settlementDate) || !isnumber(par)) {
+    return error$2.value;
+  }
+
+  // Return error if either rate or par are lower than or equal to zero
+  if (rate <= 0 || par <= 0) {
+    return error$2.num;
+  }
+
+  // Return error if frequency is neither 1, 2, or 4
+  if ([1, 2, 4].indexOf(frequency) === -1) {
+    return error$2.num;
+  }
+
+  // Return error if basis is neither 0, 1, 2, 3, or 4
+  if ([0, 1, 2, 3, 4].indexOf(basis) === -1) {
+    return error$2.num;
+  }
+
+  // Return error if settlement is before or equal to issue
+  if (settlementDate <= issueDate) {
+    return error$2.num;
+  }
+
+  // Compute accrued interest
+  return par * rate * yearfrac(issue, settlement, basis);
+
+};
+
 function fv(rate, periods, payment, value=0, type=0) {
 
   // is this error code correct?
@@ -3908,10 +4053,59 @@ function get(p, o) {
   return o[p]
 }
 
+// Return a number into a text representation with the given radix
+function base(number, radix, min_length=0) {
+
+  number = numbervalue(number);
+  radix = numbervalue(radix);
+  min_length = numbervalue(min_length);
+
+  // if (fn.isAnyError(number, radix, min_length)) {
+  //   return error.value;
+  // }
+
+  min_length = (min_length === undefined) ? 0 : min_length;
+  var result = number.toString(radix);
+  return new Array(Math.max(min_length + 1 - result.length, 0)).join('0') + result;
+
+}
+
 // CELLINDEX computes the index for row and column in a 2 dimensional array.
 function cellindex(row, col) {
   // Multiple row by maximum columns plus the col.
   return Math.floor( (row * MaxCols) + col );
+}
+
+// Returns number rounded up, away from zero, to the nearest multiple of significance.
+function ceiling(number, significance, mode) {
+
+  significance = (significance === undefined) ? 1 : Math.abs(significance);
+  mode = mode || 0;
+
+  number = numbervalue(number);
+  significance = numbervalue(significance);
+  mode = numbervalue(mode);
+
+  // if (utils.isAnyError(number, significance, mode)) {
+  //   return error.value;
+  // }
+
+  if (significance === 0) {
+    return 0;
+  }
+
+  var precision = -Math.floor(Math.log(significance) / Math.log(10));
+
+  if (number >= 0) {
+    return round(Math.ceil(number / significance) * significance, precision);
+  } else {
+    if (mode === 0) {
+      return -round(Math.floor(Math.abs(number) / significance) * significance, precision);
+    } else {
+      return -round(Math.ceil(Math.abs(number) / significance) * significance, precision);
+    }
+  }
+
 }
 
 // Convert letter to number (e.g A -> 0)
@@ -4053,6 +4247,70 @@ function decodejwt(token) {
   }
 
   return JSON.parse( b64DecodeUnicode( token.split('.')[1] ) )
+}
+
+// Returns number rounded up to the nearest even integer.
+function even(number) {
+  // TBD: error cases
+  return ceiling(number, -2, -1);
+}
+
+function floor(value, significance) {
+  significance = significance || 1;
+
+  if (value > 0 && significance < 0 ) {
+    return error$2.num;
+  }
+
+  if (value >= 0) {
+    return Math.floor(value / significance) * significance;
+  } else {
+    return Math.ceil(value / significance) * significance;
+  }
+
+}
+
+// Group a list of objects by one or more fields.
+function group( list, ...fields ) {
+
+  // Reduce the list into an object.
+  return reduce( list, (acc, item) => {
+
+    let parent = undefined,
+        key;
+
+    // Walk through each field and update the accumulator.
+    fields.forEach((currentField, index) => {
+
+      // The key is the value of the current item.
+      key = item[currentField];
+
+      // Handle the last field used to group.
+      if (index === fields.length -1) {
+
+        if (!parent) {
+          acc[key] = (acc[key] || []).concat(item);
+        } else {
+          parent[key] = (parent[key] || []).concat(item);
+        }
+
+      // Handle the first k fields before the last field
+      } else {
+
+        if (!parent) {
+          acc[key] = acc[key] || {};
+          parent = acc[key];
+        } else {
+          parent[key] = parent[key] || {};
+          parent = parent[key];
+        }
+      }
+
+    });
+
+    return acc;
+
+  }, {});
 }
 
 // Copyright 2015 JC Fisher
@@ -4205,6 +4463,9 @@ function ref$1(top, bottom) {
 // define `cond` alias for branch
 const cond = branch
 
+// define `ifs` alias for branch
+const ifs = branch
+
 const ifBlank = ifblank
 
 const ifEmpty = ifempty
@@ -4285,13 +4546,24 @@ var functions = {
   run,
   compile,
   abs,
+  accrint,
   acos,
+  acosh,
+  acot,
+  acoth,
+  asin,
+  asinh,
+  atan,
+  atan2: atan$1,
+  atanh: atan$2,
   add,
   and,
   atob,
   average,
+  base,
   bin2dec,
   branch,
+  ceiling,
   cellIndex,
   cellindex,
   changed,
@@ -4318,17 +4590,21 @@ var functions = {
   decodeJWT,
   decodebase64,
   decodejwt,
+  degrees,
   diff,
   divide,
   edate,
   eomonth,
   eq,
+  even,
   exact,
   filter,
   find,
   flatten,
+  floor,
   fv,
   get,
+  group,
   gt,
   gte,
   guid,
@@ -4342,6 +4618,7 @@ var functions = {
   ifempty,
   iferror,
   ifna,
+  ifs,
   includes,
   index,
   index2col,
@@ -4419,7 +4696,7 @@ var functions = {
   parsebool,
   parsedate,
   parsequery,
-  pi,
+  pi: pi$1,
   pluck,
   pmt,
   power,
@@ -4463,4 +4740,4 @@ var functions = {
   yearfrac,
 }
 
-export default functions;
+module.exports = functions;

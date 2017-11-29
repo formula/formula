@@ -1,16 +1,13 @@
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+// Copyright 2015 JC Fisher
+
+// map an array to a new array
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-// Copyright 2015 JC Fisher
-
-// map an array to a new array
 function map(array, func) {
   return array.map(func);
 }
@@ -1710,6 +1707,100 @@ function acos(value) {
   return Math.acos(value);
 }
 
+// Returns the hyperbolic inverser cosine of a value.
+function acosh(value) {
+
+  if (!isnumber(value)) {
+    return error$2.value;
+  }
+
+  return Math.log(value + Math.sqrt(value * value - 1));
+};
+
+// Return the arccotangent of a given number.
+function acot(number) {
+
+  // Ensure value is a number
+  if (!isnumber(number)) {
+    return error$2.value;
+  }
+
+  // Compute value
+  return Math.atan(1 / number);
+}
+
+// Return the arccotangent of a given number
+function acoth(number) {
+
+  // Ensure value is a number
+  if (!isnumber(number)) {
+    return error$2.value;
+  }
+
+  // Compute value
+  return 0.5 * Math.log((number + 1) / (number - 1));
+}
+
+// Return the inverse sin of a given number
+function asin(number) {
+
+  // Ensure value is a number
+  if (!isnumber(number)) {
+    return error$2.value;
+  }
+
+  // Compute value
+  return Math.asin(number);
+}
+
+// Return the inverse hyperbolic sin of a given number
+function asinh(number) {
+
+  // Ensure value is a number
+  if (!isnumber(number)) {
+    return error$2.value;
+  }
+
+  // Compute value
+  return Math.log(number + Math.sqrt(number * number + 1));
+}
+
+// Return the arctangent (in radians) of the given number
+function atan(number) {
+
+  // Ensure value is a number
+  if (!isnumber(number)) {
+    return error$2.value;
+  }
+
+  // Compute value
+  return Math.atan(number);
+}
+
+// Return the arctangent (in radians) of the given number
+function atan$1(x, y) {
+
+  // Ensure value is a number
+  if (!isnumber(x) || !isnumber(y)) {
+    return error$2.value;
+  }
+
+  // Compute value
+  return Math.atan2(x, y);
+}
+
+// Return the arctangent (in radians) of the given number
+function atan$2(x) {
+
+  // Ensure value is a number
+  if (!isnumber(x)) {
+    return error$2.value;
+  }
+
+  // Compute value
+  return Math.log((1 + x) / (1 - x)) / 2;
+}
+
 // COS returns the cosine of a value.
 function cos(value) {
 
@@ -1721,8 +1812,20 @@ function cos(value) {
   return Math.cos(value);
 }
 
+// Converts radians into degrees.
+function degrees(number) {
+
+  // Ensure value is a number
+  if (!isnumber(number)) {
+    return error$2.value;
+  }
+
+  // Compute value
+  return number * 180 / Math.PI;
+}
+
 // PI returns half the universal circle constant
-function pi() {
+function pi$1() {
   return τ / 2;
 }
 
@@ -3711,6 +3814,44 @@ function query(data, query) {
   }))));
 }
 
+// Returns the accrued interest for a security that pays periodic interest.
+function accrint(issue, first, settlement, rate, par, frequency) {
+  var basis = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : 0;
+
+
+  // Return error if either date is invalid
+  var issueDate = parsedate(issue);
+  var firstDate = parsedate(first);
+  var settlementDate = parsedate(settlement);
+
+  if (!isdate(issueDate) || !isdate(firstDate) || !isdate(settlementDate) || !isnumber(par)) {
+    return error$2.value;
+  }
+
+  // Return error if either rate or par are lower than or equal to zero
+  if (rate <= 0 || par <= 0) {
+    return error$2.num;
+  }
+
+  // Return error if frequency is neither 1, 2, or 4
+  if ([1, 2, 4].indexOf(frequency) === -1) {
+    return error$2.num;
+  }
+
+  // Return error if basis is neither 0, 1, 2, 3, or 4
+  if ([0, 1, 2, 3, 4].indexOf(basis) === -1) {
+    return error$2.num;
+  }
+
+  // Return error if settlement is before or equal to issue
+  if (settlementDate <= issueDate) {
+    return error$2.num;
+  }
+
+  // Compute accrued interest
+  return par * rate * yearfrac(issue, settlement, basis);
+};
+
 function fv(rate, periods, payment) {
   var value = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 0;
   var type = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 0;
@@ -4098,10 +4239,59 @@ function get(p, o) {
   return o[p];
 }
 
+// Return a number into a text representation with the given radix
+function base(number, radix) {
+  var min_length = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+
+
+  number = numbervalue(number);
+  radix = numbervalue(radix);
+  min_length = numbervalue(min_length);
+
+  // if (fn.isAnyError(number, radix, min_length)) {
+  //   return error.value;
+  // }
+
+  min_length = min_length === undefined ? 0 : min_length;
+  var result = number.toString(radix);
+  return new Array(Math.max(min_length + 1 - result.length, 0)).join('0') + result;
+}
+
 // CELLINDEX computes the index for row and column in a 2 dimensional array.
 function cellindex(row, col) {
   // Multiple row by maximum columns plus the col.
   return Math.floor(row * MaxCols + col);
+}
+
+// Returns number rounded up, away from zero, to the nearest multiple of significance.
+function ceiling(number, significance, mode) {
+
+  significance = significance === undefined ? 1 : Math.abs(significance);
+  mode = mode || 0;
+
+  number = numbervalue(number);
+  significance = numbervalue(significance);
+  mode = numbervalue(mode);
+
+  // if (utils.isAnyError(number, significance, mode)) {
+  //   return error.value;
+  // }
+
+  if (significance === 0) {
+    return 0;
+  }
+
+  var precision = -Math.floor(Math.log(significance) / Math.log(10));
+
+  if (number >= 0) {
+    return round(Math.ceil(number / significance) * significance, precision);
+  } else {
+    if (mode === 0) {
+      return -round(Math.floor(Math.abs(number) / significance) * significance, precision);
+    } else {
+      return -round(Math.ceil(Math.abs(number) / significance) * significance, precision);
+    }
+  }
 }
 
 // Convert letter to number (e.g A -> 0)
@@ -4241,6 +4431,70 @@ function decodejwt(token) {
   return JSON.parse(b64DecodeUnicode(token.split('.')[1]));
 }
 
+// Returns number rounded up to the nearest even integer.
+function even(number) {
+  // TBD: error cases
+  return ceiling(number, -2, -1);
+}
+
+function floor(value, significance) {
+  significance = significance || 1;
+
+  if (value > 0 && significance < 0) {
+    return error$2.num;
+  }
+
+  if (value >= 0) {
+    return Math.floor(value / significance) * significance;
+  } else {
+    return Math.ceil(value / significance) * significance;
+  }
+}
+
+// Group a list of objects by one or more fields.
+function group(list) {
+  for (var _len19 = arguments.length, fields = Array(_len19 > 1 ? _len19 - 1 : 0), _key19 = 1; _key19 < _len19; _key19++) {
+    fields[_key19 - 1] = arguments[_key19];
+  }
+
+  // Reduce the list into an object.
+  return reduce(list, function (acc, item) {
+
+    var parent = undefined,
+        key = void 0;
+
+    // Walk through each field and update the accumulator.
+    fields.forEach(function (currentField, index) {
+
+      // The key is the value of the current item.
+      key = item[currentField];
+
+      // Handle the last field used to group.
+      if (index === fields.length - 1) {
+
+        if (!parent) {
+          acc[key] = (acc[key] || []).concat(item);
+        } else {
+          parent[key] = (parent[key] || []).concat(item);
+        }
+
+        // Handle the first k fields before the last field
+      } else {
+
+        if (!parent) {
+          acc[key] = acc[key] || {};
+          parent = acc[key];
+        } else {
+          parent[key] = parent[key] || {};
+          parent = parent[key];
+        }
+      }
+    });
+
+    return acc;
+  }, {});
+}
+
 // Copyright 2015 JC Fisher
 
 // credit to http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
@@ -4273,8 +4527,8 @@ function index2col(index) {
 }
 
 function numbers() {
-  for (var _len19 = arguments.length, values = Array(_len19), _key19 = 0; _key19 < _len19; _key19++) {
-    values[_key19] = arguments[_key19];
+  for (var _len20 = arguments.length, values = Array(_len20), _key20 = 0; _key20 < _len20; _key20++) {
+    values[_key20] = arguments[_key20];
   }
 
   return reduce(values, function (p, v) {
@@ -4390,6 +4644,9 @@ function ref$1(top, bottom) {
 // define `cond` alias for branch
 var cond = branch;
 
+// define `ifs` alias for branch
+var ifs = branch;
+
 var ifBlank = ifblank;
 
 var ifEmpty = ifempty;
@@ -4470,13 +4727,24 @@ var functions = {
   run: run,
   compile: compile,
   abs: abs,
+  accrint: accrint,
   acos: acos,
+  acosh: acosh,
+  acot: acot,
+  acoth: acoth,
+  asin: asin,
+  asinh: asinh,
+  atan: atan,
+  atan2: atan$1,
+  atanh: atan$2,
   add: add,
   and: and,
   atob: atob,
   average: average,
+  base: base,
   bin2dec: bin2dec,
   branch: branch,
+  ceiling: ceiling,
   cellIndex: cellIndex,
   cellindex: cellindex,
   changed: changed,
@@ -4503,17 +4771,21 @@ var functions = {
   decodeJWT: decodeJWT,
   decodebase64: decodebase64,
   decodejwt: decodejwt,
+  degrees: degrees,
   diff: diff,
   divide: divide,
   edate: edate,
   eomonth: eomonth,
   eq: eq,
+  even: even,
   exact: exact,
   filter: filter,
   find: find,
   flatten: flatten,
+  floor: floor,
   fv: fv,
   get: get,
+  group: group,
   gt: gt,
   gte: gte,
   guid: guid,
@@ -4527,6 +4799,7 @@ var functions = {
   ifempty: ifempty,
   iferror: iferror,
   ifna: ifna,
+  ifs: ifs,
   includes: includes,
   index: index,
   index2col: index2col,
@@ -4604,7 +4877,7 @@ var functions = {
   parsebool: parsebool,
   parsedate: parsedate,
   parsequery: parsequery,
-  pi: pi,
+  pi: pi$1,
   pluck: pluck,
   pmt: pmt,
   power: power,
@@ -4648,6 +4921,5 @@ var functions = {
   yearfrac: yearfrac
 };
 
-exports.default = functions;
-module.exports = exports["default"];
+module.exports = functions;
 
