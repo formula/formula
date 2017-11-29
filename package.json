@@ -13,7 +13,7 @@
     "build:parser": "jison src/parser.jison -m commonjs -o src/parser.js",
     "dist": "npm run dist:cjs && npm run dist:umd",
     "dist:cjs": "rm -rf cjs; mkdir cjs; rollup -f=cjs src/functions.js > cjs/formula.es; babel cjs/formula.es > cjs/formula.js; uglifyjs cjs/formula.js > cjs/formula.min.js",
-    "dist:umd": "rm -rf umd; mkdir umd; rollup -f=umd -n=formula src/functions.js > umd/formula.es; babel umd/formula.es > umd/formula.js; uglifyjs umd/formula.js > umd/formula.min.js"
+    "dist:umd": "rm -rf umd; mkdir umd; rollup -f=umd -n=Formula src/functions.js > umd/formula.es; babel umd/formula.es > umd/formula.js; uglifyjs umd/formula.js > umd/formula.min.js"
   },
   "repository": {
     "type": "git",
