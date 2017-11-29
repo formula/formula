@@ -209,15 +209,14 @@ parse: <span class="hljs-function"><span class="hljs-keyword">function</span> <s
         vstack.length = vstack.length - n;
         lstack.length = lstack.length - n;
     }
-    _token_stack:
-        <span class="hljs-keyword">var</span> lex = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-            <span class="hljs-keyword">var</span> token;
-            token = lexer.lex() || EOF;
-            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> token !== <span class="hljs-string">'number'</span>) {
-                token = self.symbols_[token] || token;
-            }
-            <span class="hljs-keyword">return</span> token;
-        };
+    <span class="hljs-keyword">var</span> lex = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">var</span> token;
+        token = lexer.lex() || EOF;
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> token !== <span class="hljs-string">'number'</span>) {
+            token = self.symbols_[token] || token;
+        }
+        <span class="hljs-keyword">return</span> token;
+    };
     <span class="hljs-keyword">var</span> symbol, preErrorSymbol, state, action, a, r, yyval = {}, p, len, newState, expected;
     <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
         state = stack[stack.length - <span class="hljs-number">1</span>];
@@ -674,4 +673,20 @@ Parser.prototype = parser;parser.Parser = Parser;
 <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Parser;
 })();
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> parser.parse.apply(parser, <span class="hljs-built_in">arguments</span>); };</div></div></div></div></body></html>
+
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">require</span> !== <span class="hljs-string">'undefined'</span> &amp;&amp; <span class="hljs-keyword">typeof</span> exports !== <span class="hljs-string">'undefined'</span>) {
+exports.parser = parser;
+exports.Parser = parser.Parser;
+exports.parse = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> parser.parse.apply(parser, <span class="hljs-built_in">arguments</span>); };
+exports.main = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">commonjsMain</span>(<span class="hljs-params">args</span>) </span>{
+    <span class="hljs-keyword">if</span> (!args[<span class="hljs-number">1</span>]) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Usage: '</span>+args[<span class="hljs-number">0</span>]+<span class="hljs-string">' FILE'</span>);
+        process.exit(<span class="hljs-number">1</span>);
+    }
+    <span class="hljs-keyword">var</span> source = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).readFileSync(<span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>).normalize(args[<span class="hljs-number">1</span>]), <span class="hljs-string">"utf8"</span>);
+    <span class="hljs-keyword">return</span> exports.parser.parse(source);
+};
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> !== <span class="hljs-string">'undefined'</span> &amp;&amp; <span class="hljs-built_in">require</span>.main === <span class="hljs-built_in">module</span>) {
+  exports.main(process.argv.slice(<span class="hljs-number">1</span>));
+}
+}</div></div></div></div></body></html>

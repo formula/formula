@@ -2,6 +2,14 @@
 # yarn lockfile v1
 
 
+JSONSelect@0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/JSONSelect/-/JSONSelect-0.4.0.tgz#a08edcc67eb3fcbe99ed630855344a0cf282bb8d"
+
+"JSV@>= 4.0.x":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/JSV/-/JSV-4.0.2.tgz#d077f6825571f82132f9dffaed587b4029feff57"
+
 abbrev@1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.0.tgz#d0554c2256636e2f56e7c2e5ad183f859428d81f"
@@ -36,6 +44,10 @@ ansi-regex@^2.0.0:
 ansi-styles@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-2.2.1.tgz#b432dd3358b634cf75e1e4664368240533c1ddbe"
+
+ansi-styles@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-1.0.0.tgz#cb102df1c56f5123eab8b67cd7b98027a0279178"
 
 anymatch@^1.3.0:
   version "1.3.0"
@@ -656,6 +668,14 @@ chalk@^1.0.0, chalk@^1.1.0, chalk@^1.1.1:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
+chalk@~0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-0.4.0.tgz#5199a3ddcd0c1efe23bc08c1b027b06176e0c64f"
+  dependencies:
+    ansi-styles "~1.0.0"
+    has-color "~0.1.0"
+    strip-ansi "~0.1.0"
+
 character-parser@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/character-parser/-/character-parser-1.2.0.tgz#94134d6e5d870a39be359f7d22460935184ddef6"
@@ -678,6 +698,12 @@ chokidar@^1.6.1:
 circular-json@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/circular-json/-/circular-json-0.3.1.tgz#be8b36aefccde8b3ca7aa2d6afc07a37242c0d2d"
+
+cjson@0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/cjson/-/cjson-0.3.0.tgz#e6439b90703d312ff6e2224097bea92ce3d02a14"
+  dependencies:
+    jsonlint "1.6.0"
 
 cli-cursor@^1.0.1:
   version "1.0.2"
@@ -720,6 +746,10 @@ code-point-at@^1.0.0:
 coffee-script@^1.6.3:
   version "1.12.5"
   resolved "https://registry.yarnpkg.com/coffee-script/-/coffee-script-1.12.5.tgz#809f4585419112bbfe46a073ad7543af18c27346"
+
+colors@0.5.x:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/colors/-/colors-0.5.1.tgz#7d0023eaeb154e8ee9fce75dcb923d0ed1667774"
 
 colors@^0.6.2:
   version "0.6.2"
@@ -930,6 +960,10 @@ duplexer@~0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/duplexer/-/duplexer-0.1.1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"
 
+ebnf-parser@0.1.10:
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/ebnf-parser/-/ebnf-parser-0.1.10.tgz#cd1f6ba477c5638c40c97ed9b572db5bab5d8331"
+
 ecc-jsbn@~0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz#0fc73a9ed5f0d53c38193398523ef7e543777505"
@@ -1019,6 +1053,16 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
+escodegen@1.3.x:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/escodegen/-/escodegen-1.3.3.tgz#f024016f5a88e046fd12005055e939802e6c5f23"
+  dependencies:
+    esprima "~1.1.1"
+    estraverse "~1.5.0"
+    esutils "~1.0.0"
+  optionalDependencies:
+    source-map "~0.1.33"
+
 escope@^3.3.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/escope/-/escope-3.6.0.tgz#e01975e812781a163a6dadfdd80398dc64c889c3"
@@ -1070,6 +1114,10 @@ espree@^2.2.4:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/espree/-/espree-2.2.5.tgz#df691b9310889402aeb29cc066708c56690b854b"
 
+esprima@1.1.x, esprima@~1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/esprima/-/esprima-1.1.1.tgz#5b6f1547f4d102e670e140c509be6771d6aeb549"
+
 esprima@^2.6.0:
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-2.7.3.tgz#96e3b70d5779f6ad49cd032673d1c312767ba581"
@@ -1089,6 +1137,10 @@ estraverse@^4.1.1:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-4.2.0.tgz#0dee3fed31fcd469618ce7342099fc1afa0bdb13"
 
+estraverse@~1.5.0:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-1.5.1.tgz#867a3e8e58a9f84618afb6c2ddbcd916b7cbaf71"
+
 estraverse@~4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-4.1.1.tgz#f6caca728933a850ef90661d0e17982ba47111a2"
@@ -1104,6 +1156,10 @@ esutils@^1.1.6:
 esutils@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
+
+esutils@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/esutils/-/esutils-1.0.0.tgz#8151d358e20c8acc7fb745e7472c0025fe496570"
 
 event-emitter@~0.3.5:
   version "0.3.5"
@@ -1627,6 +1683,10 @@ has-ansi@^2.0.0:
   dependencies:
     ansi-regex "^2.0.0"
 
+has-color@~0.1.0:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/has-color/-/has-color-0.1.7.tgz#67144a5260c34fc3cca677d041daf52fe7b78b2f"
+
 has-gulplog@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/has-gulplog/-/has-gulplog-0.1.0.tgz#6414c82913697da51590397dafb12f22967811ce"
@@ -1918,6 +1978,26 @@ jade@^0.35.0:
     transformers "2.1.0"
     with "~1.1.0"
 
+jison-lex@0.3.x:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/jison-lex/-/jison-lex-0.3.4.tgz#81ca28d84f84499dfa8c594dcde3d8a3f26ec7a5"
+  dependencies:
+    lex-parser "0.1.x"
+    nomnom "1.5.2"
+
+jison@^0.4.18:
+  version "0.4.18"
+  resolved "https://registry.yarnpkg.com/jison/-/jison-0.4.18.tgz#c68a6a54bfe7028fa40bcfc6cc8bbd9ed291f502"
+  dependencies:
+    JSONSelect "0.4.0"
+    cjson "0.3.0"
+    ebnf-parser "0.1.10"
+    escodegen "1.3.x"
+    esprima "1.1.x"
+    jison-lex "0.3.x"
+    lex-parser "~0.1.3"
+    nomnom "1.5.2"
+
 jodid25519@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/jodid25519/-/jodid25519-1.0.2.tgz#06d4912255093419477d425633606e0e90782967"
@@ -1975,6 +2055,13 @@ jsonify@~0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
 
+jsonlint@1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/jsonlint/-/jsonlint-1.6.0.tgz#88aa46bc289a7ac93bb46cae2d58a187a9bb494a"
+  dependencies:
+    JSV ">= 4.0.x"
+    nomnom ">= 1.5.x"
+
 jsonpointer@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/jsonpointer/-/jsonpointer-4.0.1.tgz#4fd92cb34e0e9db3c89c8622ecf51f9b978c6cb9"
@@ -2004,6 +2091,10 @@ levn@~0.2.5:
   dependencies:
     prelude-ls "~1.1.0"
     type-check "~0.3.1"
+
+lex-parser@0.1.x, lex-parser@~0.1.3:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/lex-parser/-/lex-parser-0.1.4.tgz#64c4f025f17fd53bfb45763faeb16f015a747550"
 
 liftoff@^2.1.0:
   version "2.3.0"
@@ -2441,6 +2532,20 @@ node-pre-gyp@^0.6.29:
     semver "^5.3.0"
     tar "^2.2.1"
     tar-pack "^3.4.0"
+
+nomnom@1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/nomnom/-/nomnom-1.5.2.tgz#f4345448a853cfbd5c0d26320f2477ab0526fe2f"
+  dependencies:
+    colors "0.5.x"
+    underscore "1.1.x"
+
+"nomnom@>= 1.5.x":
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/nomnom/-/nomnom-1.8.1.tgz#2151f722472ba79e50a76fc125bb8c8f2e4dc2a7"
+  dependencies:
+    chalk "~0.4.0"
+    underscore "~1.6.0"
 
 nopt@^4.0.1:
   version "4.0.1"
@@ -2966,7 +3071,7 @@ source-map@^0.5.0, source-map@^0.5.1, source-map@^0.5.6, source-map@~0.5.1:
   version "0.5.6"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
 
-source-map@~0.1.7:
+source-map@~0.1.33, source-map@~0.1.7:
   version "0.1.43"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.1.43.tgz#c24bc146ca517c1471f5dacbe2571b2b7f9e3346"
   dependencies:
@@ -3046,6 +3151,10 @@ strip-ansi@^3.0.0, strip-ansi@^3.0.1:
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-3.0.1.tgz#6a385fb8853d952d5ff05d0e8aaf94278dc63dcf"
   dependencies:
     ansi-regex "^2.0.0"
+
+strip-ansi@~0.1.0:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-0.1.1.tgz#39e8a98d044d150660abe4a6808acf70bb7bc991"
 
 strip-bom@^1.0.0:
   version "1.0.0"
@@ -3269,9 +3378,17 @@ unc-path-regex@^0.1.0:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/unc-path-regex/-/unc-path-regex-0.1.2.tgz#e73dd3d7b0d7c5ed86fbac6b0ae7d8c6a69d50fa"
 
+underscore@1.1.x:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.1.7.tgz#40bab84bad19d230096e8d6ef628bff055d83db0"
+
 "underscore@>= 1.0.0", underscore@^1.6.0:
   version "1.8.3"
   resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.8.3.tgz#4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022"
+
+underscore@~1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.6.0.tgz#8b38b10cacdef63337b8b24e4ff86d45aea529a8"
 
 unique-stream@^1.0.0:
   version "1.0.0"
