@@ -1143,10 +1143,9 @@ var error$2 = {
   data: data,
   missing: missing,
   unknown: unknown
-};
 
-// CHOOSE accepts an index and a list of items. It returns the item that corresponds to the index.
-function choose(index) {
+  // CHOOSE accepts an index and a list of items. It returns the item that corresponds to the index.
+};function choose(index) {
 
   // Return `#NA!` if index or items are not provided.
   if (!index || (arguments.length <= 1 ? 0 : arguments.length - 1) === 0) {
@@ -3746,10 +3745,8 @@ var filterTypes = {
     };
   }
 
-};
-
-// Run the filter against the data with the settings.
-function query(data, query) {
+  // Run the filter against the data with the settings.
+};function query(data, query) {
 
   var comparison = function comparison(field, op, value) {
     return function (row) {

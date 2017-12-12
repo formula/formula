@@ -2,5 +2,12 @@
   "presets": [
     ["es2015", { "modules": false }]
   ],
-  "plugins": ["add-module-exports"]
+  "plugins": ["add-module-exports"],
+  "env": {
+    "test": {
+      "presets": [
+        ["es2015"]
+      ]
+    }
+  }
 }

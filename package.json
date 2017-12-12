@@ -1,14 +1,14 @@
 {
   "name": "formula",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "Formula compiler and function library",
   "main": "index.js",
   "scripts": {
-    "test": "babel-tape-runner test/*.js | faucet",
+    "test": "BABEL_ENV=test babel-tape-runner test/*.js | faucet",
     "docs": "groc src/*.js -o ./docs",
     "test:docs": "docco --output test_docs test/*.js",
     "clean": "rm -rf fn",
-    "build": "npm run clean && mkdir fn && npm run build:js && npm run docs && npm run dist",
+    "build": "BABEL_ENV=production npm run clean && mkdir fn && npm run build:js && npm run docs && npm run dist",
     "build:js": "gulp",
     "build:parser": "jison src/parser.jison -m commonjs -o src/parser.js",
     "dist": "npm run dist:cjs && npm run dist:umd",
@@ -46,9 +46,7 @@
     "rollup": "^0.26.2",
     "rollup-plugin-babel": "^2.7.1",
     "tape": "^4.5.1",
-    "uglify-js": "^3.1.10",
-    "uglify-loader": "^2.0.0",
-    "uglifyify": "^3.0.1"
+    "uglify-js": "^3.1.10"
   },
   "dependencies": {}
 }
