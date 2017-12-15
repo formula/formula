@@ -34,6 +34,7 @@ function and() {
   // Reduce criteria into boolean value.
   return (0, _reduce2.default)(criteria, function (acc, item) {
 
+    // Once an error, always an error.
     if ((0, _iserror2.default)(acc)) return acc;
 
     // Once `false` or #error! is found always return previously value.
@@ -43,12 +44,12 @@ function and() {
     var val = (0, _isfunction2.default)(item) ? item() : item;
 
     // return `#VALUE!` if not true, false, 1 or 0.
-    if (val !== true && val !== false && val !== 1 && val !== 0) {
+    if (!(val === true || val === false || val === 1 || val === 0)) {
       return _error2.default.value;
     }
 
     // Return true when value is true or 1.
     return val === true || val === 1;
-  });
+  }, undefined);
 }
 module.exports = exports['default'];

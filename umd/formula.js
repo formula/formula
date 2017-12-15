@@ -1180,6 +1180,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     // Reduce criteria into boolean value.
     return reduce(criteria, function (acc, item) {
 
+      // Once an error, always an error.
       if (iserror(acc)) return acc;
 
       // Once `false` or #error! is found always return previously value.
@@ -1189,13 +1190,13 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       var val = isfunction(item) ? item() : item;
 
       // return `#VALUE!` if not true, false, 1 or 0.
-      if (val !== true && val !== false && val !== 1 && val !== 0) {
+      if (!(val === true || val === false || val === 1 || val === 0)) {
         return error$2.value;
       }
 
       // Return true when value is true or 1.
       return val === true || val === 1;
-    });
+    }, undefined);
   }
 
   // Returns true when any of the criteria are true or 1, defaults to false.

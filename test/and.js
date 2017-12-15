@@ -3,7 +3,7 @@ import error from '../fn/error'
 import and from '../fn/and'
 
 test('and', (t) => {
-  t.plan(14)
+  t.plan(16)
 
   // literal values
   t.equal( and(true, true), true)
@@ -22,5 +22,7 @@ test('and', (t) => {
   // deferred values
   t.equal( and(() => true, () => true), true)
   t.equal( and(() => true, () => false), false)
+  t.equal( and(() => false, () => true), false)
+  t.equal( and(() => false, () => false), false)
 
 });
