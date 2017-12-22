@@ -3,8 +3,24 @@ var run = require('../fn/run')
 
 test('run: basic tests', function(t) {
 
-  t.plan(8)
+  // run exp "2=2" 1000 times.
+  var start = new Date();
+  for (var i = 0; i<1000; i++) {
+    run('2=2')
+  }
+
+  console.log('ms', new Date() - start)
+
+  var timeTest = new Date() - start;
+
+  t.plan(10)
+
+  // running the same expression 1000x should be fast (<20ms)
+  t.equal( timeTest < 20, true )
   t.equal( run('2=2'), true )
+  // second time should return cached function.
+  t.equal( run('2=2'), true )
+
   t.equal( run('2<>2'), false )
   t.equal( run('a=a', { a: 1 }), true )
   t.equal( run('a=b', { a: 1, b: 1 }), true )

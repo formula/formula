@@ -935,11 +935,77 @@ function assign(initial, ...list) {
   return func(initial, ...list)
 }
 
+// Copyright 2015 JC Fisher
+
+// ISTEXT returns true when the value is a string.
+function istext(value) {
+    return 'string' === typeof(value);
+};
+
+// Copyright 2015 JC Fisher
+
+// List of errors in the spreadsheet system
+
+function FFError(message, name) {
+    this.name = name || "NotImplementedError";
+    this.message = (message || "");
+}
+
+FFError.prototype = Error.prototype;
+FFError.prototype.toString = function() { return this.message }
+
+let nil = new FFError('#NULL!', "Null reference");
+let div0 = new FFError('#DIV/0!', "Divide by zero");
+let value = new FFError('#VALUE!', "Invalid value");
+let ref = new FFError('#REF!', "Invalid reference");
+let name = new FFError('#NAME?', "Invalid name");
+let num = new FFError('#NUM!', "Invalid number");
+let na = new FFError('#N/A!', "Not applicable");
+let error$1 = new FFError('#ERROR!', "Error");
+let data = new FFError('#GETTING_DATA!', "Error getting data");
+let missing = new FFError('#MISSING!', "Missing");
+let unknown = new FFError('#UNKNOWN!', "Unknown error");
+var error$2 = {
+  nil,
+  div0,
+  value,
+  ref,
+  name,
+  num,
+  na,
+  error: error$1,
+  data,
+  missing,
+  unknown
+}
+
+// m is a cache of compiled expressions.
+let m = {}
+
+
 // Execute a formula expression
 function run(exp, params={}) {
-  var compiled = isfunction(exp) ? exp : compile(exp);
 
-  let funcs = functions
+  let funcs = functions;
+
+  // if the exp is a function then return it immediately.
+  if (isfunction(exp)) return exp;
+
+  if (!istext(exp)) return error$2.na;
+
+  // check cached and shortcut if appropriate.
+  if (m.hasOwnProperty(exp)){
+    // reload the compiled function.
+    compiled = m[exp]
+  } else {
+    // compile the expression.
+    var compiled = compile(exp);
+
+    // cache the compiled function.
+    m[exp] = compiled;
+  }
+
+
   let locals = assign({}, params)
 
   // Default get for plain object.
@@ -950,7 +1016,8 @@ function run(exp, params={}) {
     }
   }
 
-  return compiled(locals, funcs)
+
+  return compiled(locals, funcs);
 }
 
 // Copyright 2015 JC Fisher
@@ -1022,43 +1089,6 @@ function branch(...cases) {
 
   }, undefined)
 
-}
-
-// Copyright 2015 JC Fisher
-
-// List of errors in the spreadsheet system
-
-function FFError(message, name) {
-    this.name = name || "NotImplementedError";
-    this.message = (message || "");
-}
-
-FFError.prototype = Error.prototype;
-FFError.prototype.toString = function() { return this.message }
-
-let nil = new FFError('#NULL!', "Null reference");
-let div0 = new FFError('#DIV/0!', "Divide by zero");
-let value = new FFError('#VALUE!', "Invalid value");
-let ref = new FFError('#REF!', "Invalid reference");
-let name = new FFError('#NAME?', "Invalid name");
-let num = new FFError('#NUM!', "Invalid number");
-let na = new FFError('#N/A!', "Not applicable");
-let error$1 = new FFError('#ERROR!', "Error");
-let data = new FFError('#GETTING_DATA!', "Error getting data");
-let missing = new FFError('#MISSING!', "Missing");
-let unknown = new FFError('#UNKNOWN!', "Unknown error");
-var error$2 = {
-  nil,
-  div0,
-  value,
-  ref,
-  name,
-  num,
-  na,
-  error: error$1,
-  data,
-  missing,
-  unknown
 }
 
 // CHOOSE accepts an index and a list of items. It returns the item that corresponds to the index.
@@ -1255,13 +1285,6 @@ function lte(a,b) {
 function ifblank(value, value_if_blank) {
     return isblank(value) ? value_if_blank : value;
 }
-
-// Copyright 2015 JC Fisher
-
-// ISTEXT returns true when the value is a string.
-function istext(value) {
-    return 'string' === typeof(value);
-};
 
 // ISEMPTY returns true when the value is blank, is an empty array or when it
 // is an empty string.

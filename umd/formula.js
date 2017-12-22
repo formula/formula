@@ -1013,13 +1013,78 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     return func.apply(undefined, [initial].concat(list));
   }
 
+  // Copyright 2015 JC Fisher
+
+  // ISTEXT returns true when the value is a string.
+  function istext(value) {
+    return 'string' === typeof value;
+  };
+
+  // Copyright 2015 JC Fisher
+
+  // List of errors in the spreadsheet system
+
+  function FFError(message, name) {
+    this.name = name || "NotImplementedError";
+    this.message = message || "";
+  }
+
+  FFError.prototype = Error.prototype;
+  FFError.prototype.toString = function () {
+    return this.message;
+  };
+
+  var nil = new FFError('#NULL!', "Null reference");
+  var div0 = new FFError('#DIV/0!', "Divide by zero");
+  var value = new FFError('#VALUE!', "Invalid value");
+  var ref = new FFError('#REF!', "Invalid reference");
+  var name = new FFError('#NAME?', "Invalid name");
+  var num = new FFError('#NUM!', "Invalid number");
+  var na = new FFError('#N/A!', "Not applicable");
+  var error$1 = new FFError('#ERROR!', "Error");
+  var data = new FFError('#GETTING_DATA!', "Error getting data");
+  var missing = new FFError('#MISSING!', "Missing");
+  var unknown = new FFError('#UNKNOWN!', "Unknown error");
+  var error$2 = {
+    nil: nil,
+    div0: div0,
+    value: value,
+    ref: ref,
+    name: name,
+    num: num,
+    na: na,
+    error: error$1,
+    data: data,
+    missing: missing,
+    unknown: unknown
+
+    // m is a cache of compiled expressions.
+  };var m = {};
+
   // Execute a formula expression
   function run(exp) {
     var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-    var compiled = isfunction(exp) ? exp : compile(exp);
 
     var funcs = functions;
+
+    // if the exp is a function then return it immediately.
+    if (isfunction(exp)) return exp;
+
+    if (!istext(exp)) return error$2.na;
+
+    // check cached and shortcut if appropriate.
+    if (m.hasOwnProperty(exp)) {
+      // reload the compiled function.
+      compiled = m[exp];
+    } else {
+      // compile the expression.
+      var compiled = compile(exp);
+
+      // cache the compiled function.
+      m[exp] = compiled;
+    }
+
     var locals = assign({}, params);
 
     // Default get for plain object.
@@ -1100,46 +1165,8 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     }, undefined);
   }
 
-  // Copyright 2015 JC Fisher
-
-  // List of errors in the spreadsheet system
-
-  function FFError(message, name) {
-    this.name = name || "NotImplementedError";
-    this.message = message || "";
-  }
-
-  FFError.prototype = Error.prototype;
-  FFError.prototype.toString = function () {
-    return this.message;
-  };
-
-  var nil = new FFError('#NULL!', "Null reference");
-  var div0 = new FFError('#DIV/0!', "Divide by zero");
-  var value = new FFError('#VALUE!', "Invalid value");
-  var ref = new FFError('#REF!', "Invalid reference");
-  var name = new FFError('#NAME?', "Invalid name");
-  var num = new FFError('#NUM!', "Invalid number");
-  var na = new FFError('#N/A!', "Not applicable");
-  var error$1 = new FFError('#ERROR!', "Error");
-  var data = new FFError('#GETTING_DATA!', "Error getting data");
-  var missing = new FFError('#MISSING!', "Missing");
-  var unknown = new FFError('#UNKNOWN!', "Unknown error");
-  var error$2 = {
-    nil: nil,
-    div0: div0,
-    value: value,
-    ref: ref,
-    name: name,
-    num: num,
-    na: na,
-    error: error$1,
-    data: data,
-    missing: missing,
-    unknown: unknown
-
-    // CHOOSE accepts an index and a list of items. It returns the item that corresponds to the index.
-  };function choose(index) {
+  // CHOOSE accepts an index and a list of items. It returns the item that corresponds to the index.
+  function choose(index) {
 
     // Return `#NA!` if index or items are not provided.
     if (!index || (arguments.length <= 1 ? 0 : arguments.length - 1) === 0) {
@@ -1340,13 +1367,6 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
   function ifblank(value, value_if_blank) {
     return isblank(value) ? value_if_blank : value;
   }
-
-  // Copyright 2015 JC Fisher
-
-  // ISTEXT returns true when the value is a string.
-  function istext(value) {
-    return 'string' === typeof value;
-  };
 
   // ISEMPTY returns true when the value is blank, is an empty array or when it
   // is an empty string.
