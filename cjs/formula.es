@@ -982,7 +982,6 @@ var error$2 = {
 // m is a cache of compiled expressions.
 let m = {}
 
-
 // Execute a formula expression
 function run(exp, params={}) {
 
@@ -1012,7 +1011,7 @@ function run(exp, params={}) {
   if (locals.get !== 'function') {
     locals.get = (name, scope) => {
       if (typeof scope !== 'undefined') return locals[scope] ? locals[scope][name] : undefined
-      return locals[name]
+      return locals[name];
     }
   }
 

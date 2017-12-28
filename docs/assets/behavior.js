@@ -3104,6 +3104,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
+            "sourcePath": "/home/jcfisher007/formula/src/unflatten.js",
+            "projectPath": "src/unflatten.js",
+            "targetPath": "src/unflatten",
+            "pageTitle": "src/unflatten",
+            "title": "unflatten"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
             "sourcePath": "/home/jcfisher007/formula/src/unique.js",
             "projectPath": "src/unique.js",
             "targetPath": "src/unique",
