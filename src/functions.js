@@ -305,6 +305,10 @@ import trunc from './trunc'
 // `char` returns a character given an ASCII code.
 import char from './char'
 
+// #### [camelcase](./camelcase)
+// `camelcase` returns text converted to camel case.
+import camelcase from './camelcase'
+
 // #### [code](./code)
 // `code` returns the ASCII code for a given character.
 import code from './code'
@@ -377,6 +381,10 @@ import rept from './rept'
 // #### [search](./search)
 // `search` returns the index of a value inside a string with wildcard support for single characters (?) and multiple characters (*).
 import search from './search'
+
+// #### [snakecase](./snakecase)
+// `snakecase` returns text converted to snake case.
+import snakecase from './snakecase'
 
 // #### [substitute](./substitute)
 // `substitute` returns a new string with every instance of value replaced.
@@ -730,6 +738,7 @@ export default {
   base,
   bin2dec,
   branch,
+  camelcase,
   ceiling,
   cellIndex,
   cellindex,
@@ -882,6 +891,7 @@ export default {
   select,
   serial,
   sin,
+  snakecase,
   some,
   sort,
   split,

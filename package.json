@@ -1,9 +1,10 @@
 {
   "name": "formula",
-  "version": "2.2.9",
+  "version": "2.3.0",
   "description": "Formula compiler and function library",
   "main": "index.js",
   "scripts": {
+    "all": "npm run build && npm test",
     "test": "BABEL_ENV=test babel-tape-runner test/*.js | faucet",
     "docs": "groc src/*.js -o ./docs",
     "test:docs": "docco --output test_docs test/*.js",

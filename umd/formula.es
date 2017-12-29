@@ -1828,6 +1828,22 @@ return (${compiled});
       return String.fromCharCode(number);
     }
 
+    // convert snakecase to camelcase.
+    function camelcase(value) {
+
+      // Return `#VALUE!` if not text input.
+      if (!istext(value)) {
+        return error$2.value;
+      }
+
+      // converts -c into C and _c in C for every matched character.
+      return value.replace(/-+(.)?/g, function(match, chr) {
+        return chr ? chr.toUpperCase() : '';
+      }).replace(/_+(.)?/g, function(match, chr) {
+        return chr ? chr.toUpperCase() : '';
+      });
+    }
+
     // CODE accepts text and optionally index (default 1) returning the character code.
     function code(text='', index=1) {
       if (index < 1) return error$2.na
@@ -2121,6 +2137,22 @@ return (${compiled});
 
         if (position) { return position.index + 1 }
         return error$2.value;
+    }
+
+    // convert camelcase to snakecase.
+    function snakecase(value) {
+
+      // Return `#VALUE!` if not text input.
+      if (!istext(value)) {
+        return error$2.value;
+      }
+
+      // credit: prototype.js
+      return value.replace(/::/g, '/')
+        .replace(/([A-Z]+)([A-Z][a-z])/g, '$1_$2')
+        .replace(/([a-z\d])([A-Z])/g, '$1_$2')
+        .replace(/-/g, '_')
+        .toLowerCase();
     }
 
     // Copyright 2015 JC Fisher
@@ -4615,6 +4647,7 @@ return (${compiled});
       base,
       bin2dec,
       branch,
+      camelcase,
       ceiling,
       cellIndex,
       cellindex,
@@ -4767,6 +4800,7 @@ return (${compiled});
       select,
       serial,
       sin,
+      snakecase,
       some,
       sort,
       split,

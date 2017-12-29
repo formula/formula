@@ -260,6 +260,10 @@ var _char = require('./char');
 
 var _char2 = _interopRequireDefault(_char);
 
+var _camelcase = require('./camelcase');
+
+var _camelcase2 = _interopRequireDefault(_camelcase);
+
 var _code = require('./code');
 
 var _code2 = _interopRequireDefault(_code);
@@ -327,6 +331,10 @@ var _rept2 = _interopRequireDefault(_rept);
 var _search = require('./search');
 
 var _search2 = _interopRequireDefault(_search);
+
+var _snakecase = require('./snakecase');
+
+var _snakecase2 = _interopRequireDefault(_snakecase);
 
 var _substitute = require('./substitute');
 
@@ -941,6 +949,10 @@ var isInteger = _iswholenumber2.default;
 // `char` returns a character given an ASCII code.
 
 
+// #### [camelcase](./camelcase)
+// `camelcase` returns text converted to camel case.
+
+
 // #### [code](./code)
 // `code` returns the ASCII code for a given character.
 
@@ -1012,6 +1024,10 @@ var parseQuery = _parsequery2.default;
 
 // #### [search](./search)
 // `search` returns the index of a value inside a string with wildcard support for single characters (?) and multiple characters (*).
+
+
+// #### [snakecase](./snakecase)
+// `snakecase` returns text converted to snake case.
 
 
 // #### [substitute](./substitute)
@@ -1364,6 +1380,7 @@ exports.default = {
   base: _base2.default,
   bin2dec: _bin2dec2.default,
   branch: _branch2.default,
+  camelcase: _camelcase2.default,
   ceiling: _ceiling2.default,
   cellIndex: cellIndex,
   cellindex: _cellindex2.default,
@@ -1516,6 +1533,7 @@ exports.default = {
   select: _select2.default,
   serial: _serial2.default,
   sin: _sin2.default,
+  snakecase: _snakecase2.default,
   some: _some2.default,
   sort: _sort2.default,
   split: _split2.default,

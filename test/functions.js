@@ -3,7 +3,7 @@ import * as ff from '../fn/functions'
 
 test('lower case functions should be there', function(t) {
 
-  t.plan( 147 )
+  t.plan( 149 )
   t.ok( ff.abs, 'abs should be there')
   t.ok( ff.accrint, 'accrint should be there')
   t.ok( ff.acos, 'acos should be there')
@@ -20,6 +20,7 @@ test('lower case functions should be there', function(t) {
   t.ok( ff.base, 'base should be there')
   t.ok( ff.bin2dec, 'bin2dec should be there')
   t.ok( ff.branch, 'branch should be there')
+  t.ok( ff.camelcase, 'camelcase should be there')
   t.ok( ff.ceiling, 'ceiling should be there')
   t.ok( ff.cellindex, 'cellindex should be there')
   t.ok( ff.char, 'char should be there')
@@ -127,6 +128,7 @@ test('lower case functions should be there', function(t) {
   t.ok( ff.search, 'search should be there')
   t.ok( ff.second, 'second should be there')
   t.ok( ff.select, 'select should be there')
+  t.ok( ff.snakecase, 'snakecase should be there')
   t.ok( ff.split, 'split should be there')
   t.ok( ff.sin, 'sin should be there')
   t.ok( ff.some, 'some should be there')
