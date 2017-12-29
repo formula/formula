@@ -4151,17 +4151,21 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       return error$2.value;
     }
 
-    // use a reduction algorithm to 
+    // use a reduction algorithm to convert data.
     return reduce(ref, function (p, v, i) {
 
+      // The first iteration and every nth iteration.
       if (i === 0 || i % len === 0) {
         p = p.concat([[]]);
       }
 
+      // determine last index in collected value (e.g. p).
       var lastIndex = p.length - 1;
 
+      // add the value to the last available spot.
       p[lastIndex] = p[lastIndex].concat(v);
 
+      // return the new collected value.
       return p;
     }, []);
   }

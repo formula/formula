@@ -3,16 +3,8 @@
 <span class="hljs-keyword">import</span> isArray <span class="hljs-keyword">from</span> <span class="hljs-string">'./isarray'</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>convert array into nested array.
 example: unflatten([1,2,3,4]) -&gt; [[1,2], [3, 4]]</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">unflatten</span>(<span class="hljs-params">ref, len=2</span>)</span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>if the reference data is not an array then stop.</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">if</span> (!isArray(ref)) {
     <span class="hljs-keyword">return</span> error.value;
-  }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>use a reduction algorithm to </p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">return</span> reduce( ref, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">p, v, i</span>) </span>{
-
-    <span class="hljs-keyword">if</span> ( i === <span class="hljs-number">0</span> || i % len === <span class="hljs-number">0</span>) {
+  }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>use a reduction algorithm to convert data.</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">return</span> reduce( ref, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">p, v, i</span>) </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The first iteration and every nth iteration.</p></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">if</span> ( i === <span class="hljs-number">0</span> || i % len === <span class="hljs-number">0</span>) {
       p = p.concat([[]])
-    }
-
-    <span class="hljs-keyword">var</span> lastIndex = p.length-<span class="hljs-number">1</span>;
-
-    p[lastIndex] = p[lastIndex].concat(v)
-
-    <span class="hljs-keyword">return</span> p;
+    }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>determine last index in collected value (e.g. p).</p></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">var</span> lastIndex = p.length-<span class="hljs-number">1</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>add the value to the last available spot.</p></div></div><div class="code"><div class="wrapper">    p[lastIndex] = p[lastIndex].concat(v)</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>return the new collected value.</p></div></div><div class="code"><div class="wrapper">    <span class="hljs-keyword">return</span> p;
   }, []);
 }</div></div></div></div></body></html>
