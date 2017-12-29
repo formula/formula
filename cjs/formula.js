@@ -4156,6 +4156,30 @@ function sort(ref) {
   return error$2.na;
 }
 
+// FLATTEN converts a nested array into a flattened array. It only supports one
+// level of nesting.
+function unflatten(ref) {
+  var len = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
+
+
+  if (!isarray(ref)) {
+    return error$2.value;
+  }
+
+  return reduce(ref, function (p, v, i) {
+
+    if (i === 0 || i % len === 0) {
+      p = p.concat([[]]);
+    }
+
+    var lastIndex = p.length - 1;
+
+    p[lastIndex] = p[lastIndex].concat(v);
+
+    return p;
+  }, []);
+}
+
 // UNIQUE reduces an `array` into an array without duplicate values.
 function unique(array) {
   return reduce(array, function (p, c) {
@@ -4926,6 +4950,7 @@ var functions = {
   today: today,
   trim: trim,
   trunc: trunc,
+  unflatten: unflatten,
   unique: unique,
   upper: upper,
   vlookup: vlookup,

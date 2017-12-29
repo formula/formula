@@ -596,6 +596,10 @@ import some from './some'
 // `sort` returns an array sorted by criteria.
 import sort from './sort'
 
+// #### [unflatten](./unflatten)
+// `unflatten` returns an array with values unflattened into arrays of arrays.
+import unflatten from './unflatten'
+
 // #### [unique](./unique)
 // `unique` returns the list of unique values from an array.
 import unique from './unique'
@@ -895,6 +899,7 @@ export default {
   today,
   trim,
   trunc,
+  unflatten,
   unique,
   upper,
   vlookup,

@@ -532,6 +532,10 @@ var _sort = require('./sort');
 
 var _sort2 = _interopRequireDefault(_sort);
 
+var _unflatten = require('./unflatten');
+
+var _unflatten2 = _interopRequireDefault(_unflatten);
+
 var _unique = require('./unique');
 
 var _unique2 = _interopRequireDefault(_unique);
@@ -1228,6 +1232,10 @@ var dateValue = _datevalue2.default;
 // `sort` returns an array sorted by criteria.
 
 
+// #### [unflatten](./unflatten)
+// `unflatten` returns an array with values unflattened into arrays of arrays.
+
+
 // #### [unique](./unique)
 // `unique` returns the list of unique values from an array.
 
@@ -1525,6 +1533,7 @@ exports.default = {
   today: _today2.default,
   trim: _trim2.default,
   trunc: _trunc2.default,
+  unflatten: _unflatten2.default,
   unique: _unique2.default,
   upper: _upper2.default,
   vlookup: _vlookup2.default,

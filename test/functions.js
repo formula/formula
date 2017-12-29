@@ -1,9 +1,9 @@
 import test from 'tape'
 import * as ff from '../fn/functions'
 
-test('index', function(t) {
+test('lower case functions should be there', function(t) {
 
-  t.plan( 146 )
+  t.plan( 147 )
   t.ok( ff.abs, 'abs should be there')
   t.ok( ff.accrint, 'accrint should be there')
   t.ok( ff.acos, 'acos should be there')
@@ -144,6 +144,7 @@ test('index', function(t) {
   t.ok( ff.timevalue, 'timevalue should be there')
   t.ok( ff.today, 'today should be there')
   t.ok( ff.trunc, 'trunc should be there')
+  t.ok( ff.unflatten, 'unflatten should be there')
   t.ok( ff.unique, 'unique should be there')
   t.ok( ff.upper, 'upper should be there')
   t.ok( ff.vlookup, 'vlookup should be there')
@@ -151,3 +152,6 @@ test('index', function(t) {
   t.ok( ff.year, 'year should be there')
   t.ok( ff.yearfrac, 'yearfrac should be there')
 })
+
+// test('camel case functions should be there', function(t) {
+// })
