@@ -2,14 +2,18 @@
 import reduce from './reduce'
 import error from './error'
 import isArray from './isarray'
-// FLATTEN converts a nested array into a flattened array. It only supports one
-// level of nesting.
+
+// convert array into nested array.
+// example: unflatten([1,2,3,4]) -> [[1,2], [3, 4]]
 export default function unflatten(ref, len=2){
 
+  // if the reference data is not an array then stop.
   if (!isArray(ref)) {
     return error.value;
   }
 
+
+  // use a reduction algorithm to 
   return reduce( ref, function(p, v, i) {
 
     if ( i === 0 || i % len === 0) {

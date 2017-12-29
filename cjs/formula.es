@@ -3982,14 +3982,17 @@ function sort(ref, ...criteria) {
 
 }
 
-// FLATTEN converts a nested array into a flattened array. It only supports one
-// level of nesting.
+// convert array into nested array.
+// example: unflatten([1,2,3,4]) -> [[1,2], [3, 4]]
 function unflatten(ref, len=2){
 
+  // if the reference data is not an array then stop.
   if (!isarray(ref)) {
     return error$2.value;
   }
 
+
+  // use a reduction algorithm to 
   return reduce( ref, function(p, v, i) {
 
     if ( i === 0 || i % len === 0) {
