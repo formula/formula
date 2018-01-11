@@ -1509,6 +1509,14 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     return year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
   }
 
+  // Copyright 2015 JC Fisher
+
+  // isobject returns true when `value` is an object or function.
+  function isobject(value) {
+    var type = typeof value === 'undefined' ? 'undefined' : _typeof(value);
+    return !!value && (type == 'object' || type == 'function');
+  };
+
   // ISNA returns true when the value is `#NA!`
   function isna(value) {
     return value === error$2.na;
@@ -3700,14 +3708,6 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     return range.filter(makefilter());
   }
 
-  // Copyright 2015 JC Fisher
-
-  // isobject returns true when `value` is an object or function.
-  function isobject(value) {
-    var type = typeof value === 'undefined' ? 'undefined' : _typeof(value);
-    return !!value && (type == 'object' || type == 'function');
-  };
-
   // Functions for each operator.
   var filterTypes = {
 
@@ -4734,6 +4734,8 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
   var isLeapYear = isleapyear;
 
+  var isObject = isobject;
+
   var isNA = isna;
 
   var isNaN$1 = isnan;
@@ -4873,6 +4875,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     isFunction: isFunction,
     isInteger: isInteger,
     isLeapYear: isLeapYear,
+    isObject: isObject,
     isNA: isNA,
     isNumber: isNumber,
     isOdd: isOdd,
@@ -4891,6 +4894,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     isfalsy: isfalsy,
     isfunction: isfunction,
     isleapyear: isleapyear,
+    isobject: isobject,
     isna: isna,
     isnan: isnan,
     isnumber: isnumber,

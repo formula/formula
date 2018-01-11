@@ -1,646 +1,650 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _compile = require('./compile');
+var _compile = require("./compile");
 
 var _compile2 = _interopRequireDefault(_compile);
 
-var _run = require('./run');
+var _run = require("./run");
 
 var _run2 = _interopRequireDefault(_run);
 
-var _branch = require('./branch');
+var _branch = require("./branch");
 
 var _branch2 = _interopRequireDefault(_branch);
 
-var _choose = require('./choose');
+var _choose = require("./choose");
 
 var _choose2 = _interopRequireDefault(_choose);
 
-var _and = require('./and');
+var _and = require("./and");
 
 var _and2 = _interopRequireDefault(_and);
 
-var _or = require('./or');
+var _or = require("./or");
 
 var _or2 = _interopRequireDefault(_or);
 
-var _not = require('./not');
+var _not = require("./not");
 
 var _not2 = _interopRequireDefault(_not);
 
-var _eq = require('./eq');
+var _eq = require("./eq");
 
 var _eq2 = _interopRequireDefault(_eq);
 
-var _ne = require('./ne');
+var _ne = require("./ne");
 
 var _ne2 = _interopRequireDefault(_ne);
 
-var _gt = require('./gt');
+var _gt = require("./gt");
 
 var _gt2 = _interopRequireDefault(_gt);
 
-var _gte = require('./gte');
+var _gte = require("./gte");
 
 var _gte2 = _interopRequireDefault(_gte);
 
-var _lt = require('./lt');
+var _lt = require("./lt");
 
 var _lt2 = _interopRequireDefault(_lt);
 
-var _lte = require('./lte');
+var _lte = require("./lte");
 
 var _lte2 = _interopRequireDefault(_lte);
 
-var _ifblank = require('./ifblank');
+var _ifblank = require("./ifblank");
 
 var _ifblank2 = _interopRequireDefault(_ifblank);
 
-var _ifempty = require('./ifempty');
+var _ifempty = require("./ifempty");
 
 var _ifempty2 = _interopRequireDefault(_ifempty);
 
-var _iferror = require('./iferror');
+var _iferror = require("./iferror");
 
 var _iferror2 = _interopRequireDefault(_iferror);
 
-var _ifna = require('./ifna');
+var _ifna = require("./ifna");
 
 var _ifna2 = _interopRequireDefault(_ifna);
 
-var _isarray = require('./isarray');
+var _isarray = require("./isarray");
 
 var _isarray2 = _interopRequireDefault(_isarray);
 
-var _isblank = require('./isblank');
+var _isblank = require("./isblank");
 
 var _isblank2 = _interopRequireDefault(_isblank);
 
-var _isboolean = require('./isboolean');
+var _isboolean = require("./isboolean");
 
 var _isboolean2 = _interopRequireDefault(_isboolean);
 
-var _isdate = require('./isdate');
+var _isdate = require("./isdate");
 
 var _isdate2 = _interopRequireDefault(_isdate);
 
-var _isemail = require('./isemail');
+var _isemail = require("./isemail");
 
 var _isemail2 = _interopRequireDefault(_isemail);
 
-var _isempty = require('./isempty');
+var _isempty = require("./isempty");
 
 var _isempty2 = _interopRequireDefault(_isempty);
 
-var _iserror = require('./iserror');
+var _iserror = require("./iserror");
 
 var _iserror2 = _interopRequireDefault(_iserror);
 
-var _iseven = require('./iseven');
+var _iseven = require("./iseven");
 
 var _iseven2 = _interopRequireDefault(_iseven);
 
-var _isfalsy = require('./isfalsy');
+var _isfalsy = require("./isfalsy");
 
 var _isfalsy2 = _interopRequireDefault(_isfalsy);
 
-var _isfunction = require('./isfunction');
+var _isfunction = require("./isfunction");
 
 var _isfunction2 = _interopRequireDefault(_isfunction);
 
-var _isleapyear = require('./isleapyear');
+var _isleapyear = require("./isleapyear");
 
 var _isleapyear2 = _interopRequireDefault(_isleapyear);
 
-var _isna = require('./isna');
+var _isobject = require("./isobject");
+
+var _isobject2 = _interopRequireDefault(_isobject);
+
+var _isna = require("./isna");
 
 var _isna2 = _interopRequireDefault(_isna);
 
-var _isnan = require('./isnan');
+var _isnan = require("./isnan");
 
 var _isnan2 = _interopRequireDefault(_isnan);
 
-var _isnumber = require('./isnumber');
+var _isnumber = require("./isnumber");
 
 var _isnumber2 = _interopRequireDefault(_isnumber);
 
-var _isodd = require('./isodd');
+var _isodd = require("./isodd");
 
 var _isodd2 = _interopRequireDefault(_isodd);
 
-var _isoweeknum = require('./isoweeknum');
+var _isoweeknum = require("./isoweeknum");
 
 var _isoweeknum2 = _interopRequireDefault(_isoweeknum);
 
-var _isref = require('./isref');
+var _isref = require("./isref");
 
 var _isref2 = _interopRequireDefault(_isref);
 
-var _istext = require('./istext');
+var _istext = require("./istext");
 
 var _istext2 = _interopRequireDefault(_istext);
 
-var _istruthy = require('./istruthy');
+var _istruthy = require("./istruthy");
 
 var _istruthy2 = _interopRequireDefault(_istruthy);
 
-var _isurl = require('./isurl');
+var _isurl = require("./isurl");
 
 var _isurl2 = _interopRequireDefault(_isurl);
 
-var _iswholenumber = require('./iswholenumber');
+var _iswholenumber = require("./iswholenumber");
 
 var _iswholenumber2 = _interopRequireDefault(_iswholenumber);
 
-var _xor = require('./xor');
+var _xor = require("./xor");
 
 var _xor2 = _interopRequireDefault(_xor);
 
-var _add = require('./add');
+var _add = require("./add");
 
 var _add2 = _interopRequireDefault(_add);
 
-var _subtract = require('./subtract');
+var _subtract = require("./subtract");
 
 var _subtract2 = _interopRequireDefault(_subtract);
 
-var _multiply = require('./multiply');
+var _multiply = require("./multiply");
 
 var _multiply2 = _interopRequireDefault(_multiply);
 
-var _divide = require('./divide');
+var _divide = require("./divide");
 
 var _divide2 = _interopRequireDefault(_divide);
 
-var _abs = require('./abs');
+var _abs = require("./abs");
 
 var _abs2 = _interopRequireDefault(_abs);
 
-var _acos = require('./acos');
+var _acos = require("./acos");
 
 var _acos2 = _interopRequireDefault(_acos);
 
-var _acosh = require('./acosh');
+var _acosh = require("./acosh");
 
 var _acosh2 = _interopRequireDefault(_acosh);
 
-var _acot = require('./acot');
+var _acot = require("./acot");
 
 var _acot2 = _interopRequireDefault(_acot);
 
-var _acoth = require('./acoth');
+var _acoth = require("./acoth");
 
 var _acoth2 = _interopRequireDefault(_acoth);
 
-var _asin = require('./asin');
+var _asin = require("./asin");
 
 var _asin2 = _interopRequireDefault(_asin);
 
-var _asinh = require('./asinh');
+var _asinh = require("./asinh");
 
 var _asinh2 = _interopRequireDefault(_asinh);
 
-var _atan = require('./atan');
+var _atan = require("./atan");
 
 var _atan2 = _interopRequireDefault(_atan);
 
-var _atan3 = require('./atan2');
+var _atan3 = require("./atan2");
 
 var _atan4 = _interopRequireDefault(_atan3);
 
-var _atanh = require('./atanh');
+var _atanh = require("./atanh");
 
 var _atanh2 = _interopRequireDefault(_atanh);
 
-var _cos = require('./cos');
+var _cos = require("./cos");
 
 var _cos2 = _interopRequireDefault(_cos);
 
-var _degrees = require('./degrees');
+var _degrees = require("./degrees");
 
 var _degrees2 = _interopRequireDefault(_degrees);
 
-var _pi = require('./pi');
+var _pi = require("./pi");
 
 var _pi2 = _interopRequireDefault(_pi);
 
-var _power = require('./power');
+var _power = require("./power");
 
 var _power2 = _interopRequireDefault(_power);
 
-var _round = require('./round');
+var _round = require("./round");
 
 var _round2 = _interopRequireDefault(_round);
 
-var _roundup = require('./roundup');
+var _roundup = require("./roundup");
 
 var _roundup2 = _interopRequireDefault(_roundup);
 
-var _sin = require('./sin');
+var _sin = require("./sin");
 
 var _sin2 = _interopRequireDefault(_sin);
 
-var _tan = require('./tan');
+var _tan = require("./tan");
 
 var _tan2 = _interopRequireDefault(_tan);
 
-var _tau = require('./tau');
+var _tau = require("./tau");
 
 var _tau2 = _interopRequireDefault(_tau);
 
-var _trunc = require('./trunc');
+var _trunc = require("./trunc");
 
 var _trunc2 = _interopRequireDefault(_trunc);
 
-var _char = require('./char');
+var _char = require("./char");
 
 var _char2 = _interopRequireDefault(_char);
 
-var _camelcase = require('./camelcase');
+var _camelcase = require("./camelcase");
 
 var _camelcase2 = _interopRequireDefault(_camelcase);
 
-var _code = require('./code');
+var _code = require("./code");
 
 var _code2 = _interopRequireDefault(_code);
 
-var _concatenate = require('./concatenate');
+var _concatenate = require("./concatenate");
 
 var _concatenate2 = _interopRequireDefault(_concatenate);
 
-var _exact = require('./exact');
+var _exact = require("./exact");
 
 var _exact2 = _interopRequireDefault(_exact);
 
-var _find = require('./find');
+var _find = require("./find");
 
 var _find2 = _interopRequireDefault(_find);
 
-var _join = require('./join');
+var _join = require("./join");
 
 var _join2 = _interopRequireDefault(_join);
 
-var _left = require('./left');
+var _left = require("./left");
 
 var _left2 = _interopRequireDefault(_left);
 
-var _len = require('./len');
+var _len = require("./len");
 
 var _len2 = _interopRequireDefault(_len);
 
-var _lower = require('./lower');
+var _lower = require("./lower");
 
 var _lower2 = _interopRequireDefault(_lower);
 
-var _numbervalue = require('./numbervalue');
+var _numbervalue = require("./numbervalue");
 
 var _numbervalue2 = _interopRequireDefault(_numbervalue);
 
-var _parsebool = require('./parsebool');
+var _parsebool = require("./parsebool");
 
 var _parsebool2 = _interopRequireDefault(_parsebool);
 
-var _parsedate = require('./parsedate');
+var _parsedate = require("./parsedate");
 
 var _parsedate2 = _interopRequireDefault(_parsedate);
 
-var _parsequery = require('./parsequery');
+var _parsequery = require("./parsequery");
 
 var _parsequery2 = _interopRequireDefault(_parsequery);
 
-var _proper = require('./proper');
+var _proper = require("./proper");
 
 var _proper2 = _interopRequireDefault(_proper);
 
-var _replace = require('./replace');
+var _replace = require("./replace");
 
 var _replace2 = _interopRequireDefault(_replace);
 
-var _right = require('./right');
+var _right = require("./right");
 
 var _right2 = _interopRequireDefault(_right);
 
-var _rept = require('./rept');
+var _rept = require("./rept");
 
 var _rept2 = _interopRequireDefault(_rept);
 
-var _search = require('./search');
+var _search = require("./search");
 
 var _search2 = _interopRequireDefault(_search);
 
-var _snakecase = require('./snakecase');
+var _snakecase = require("./snakecase");
 
 var _snakecase2 = _interopRequireDefault(_snakecase);
 
-var _substitute = require('./substitute');
+var _substitute = require("./substitute");
 
 var _substitute2 = _interopRequireDefault(_substitute);
 
-var _substituteAll = require('./substituteAll');
+var _substituteAll = require("./substituteAll");
 
 var _substituteAll2 = _interopRequireDefault(_substituteAll);
 
-var _surroundKeys = require('./surroundKeys');
+var _surroundKeys = require("./surroundKeys");
 
 var _surroundKeys2 = _interopRequireDefault(_surroundKeys);
 
-var _split = require('./split');
+var _split = require("./split");
 
 var _split2 = _interopRequireDefault(_split);
 
-var _text = require('./text');
+var _text = require("./text");
 
 var _text2 = _interopRequireDefault(_text);
 
-var _trim = require('./trim');
+var _trim = require("./trim");
 
 var _trim2 = _interopRequireDefault(_trim);
 
-var _upper = require('./upper');
+var _upper = require("./upper");
 
 var _upper2 = _interopRequireDefault(_upper);
 
-var _hlookup = require('./hlookup');
+var _hlookup = require("./hlookup");
 
 var _hlookup2 = _interopRequireDefault(_hlookup);
 
-var _includes = require('./includes');
+var _includes = require("./includes");
 
 var _includes2 = _interopRequireDefault(_includes);
 
-var _index = require('./index');
+var _index = require("./index");
 
 var _index2 = _interopRequireDefault(_index);
 
-var _lookup = require('./lookup');
+var _lookup = require("./lookup");
 
 var _lookup2 = _interopRequireDefault(_lookup);
 
-var _match = require('./match');
+var _match = require("./match");
 
 var _match2 = _interopRequireDefault(_match);
 
-var _vlookup = require('./vlookup');
+var _vlookup = require("./vlookup");
 
 var _vlookup2 = _interopRequireDefault(_vlookup);
 
-var _date = require('./date');
+var _date = require("./date");
 
 var _date2 = _interopRequireDefault(_date);
 
-var _datevalue = require('./datevalue');
+var _datevalue = require("./datevalue");
 
 var _datevalue2 = _interopRequireDefault(_datevalue);
 
-var _datedif = require('./datedif');
+var _datedif = require("./datedif");
 
 var _datedif2 = _interopRequireDefault(_datedif);
 
-var _day = require('./day');
+var _day = require("./day");
 
 var _day2 = _interopRequireDefault(_day);
 
-var _days = require('./days360');
+var _days = require("./days360");
 
 var _days2 = _interopRequireDefault(_days);
 
-var _edate = require('./edate');
+var _edate = require("./edate");
 
 var _edate2 = _interopRequireDefault(_edate);
 
-var _eomonth = require('./eomonth');
+var _eomonth = require("./eomonth");
 
 var _eomonth2 = _interopRequireDefault(_eomonth);
 
-var _hour = require('./hour');
+var _hour = require("./hour");
 
 var _hour2 = _interopRequireDefault(_hour);
 
-var _minute = require('./minute');
+var _minute = require("./minute");
 
 var _minute2 = _interopRequireDefault(_minute);
 
-var _month = require('./month');
+var _month = require("./month");
 
 var _month2 = _interopRequireDefault(_month);
 
-var _now = require('./now');
+var _now = require("./now");
 
 var _now2 = _interopRequireDefault(_now);
 
-var _second = require('./second');
+var _second = require("./second");
 
 var _second2 = _interopRequireDefault(_second);
 
-var _today = require('./today');
+var _today = require("./today");
 
 var _today2 = _interopRequireDefault(_today);
 
-var _time = require('./time');
+var _time = require("./time");
 
 var _time2 = _interopRequireDefault(_time);
 
-var _timevalue = require('./timevalue');
+var _timevalue = require("./timevalue");
 
 var _timevalue2 = _interopRequireDefault(_timevalue);
 
-var _year = require('./year');
+var _year = require("./year");
 
 var _year2 = _interopRequireDefault(_year);
 
-var _yearfrac = require('./yearfrac');
+var _yearfrac = require("./yearfrac");
 
 var _yearfrac2 = _interopRequireDefault(_yearfrac);
 
-var _average = require('./average');
+var _average = require("./average");
 
 var _average2 = _interopRequireDefault(_average);
 
-var _min = require('./min');
+var _min = require("./min");
 
 var _min2 = _interopRequireDefault(_min);
 
-var _max = require('./max');
+var _max = require("./max");
 
 var _max2 = _interopRequireDefault(_max);
 
-var _query = require('./query');
+var _query = require("./query");
 
 var _query2 = _interopRequireDefault(_query);
 
-var _sum = require('./sum');
+var _sum = require("./sum");
 
 var _sum2 = _interopRequireDefault(_sum);
 
-var _accrint = require('./accrint');
+var _accrint = require("./accrint");
 
 var _accrint2 = _interopRequireDefault(_accrint);
 
-var _fv = require('./fv');
+var _fv = require("./fv");
 
 var _fv2 = _interopRequireDefault(_fv);
 
-var _nper = require('./nper');
+var _nper = require("./nper");
 
 var _nper2 = _interopRequireDefault(_nper);
 
-var _npv = require('./npv');
+var _npv = require("./npv");
 
 var _npv2 = _interopRequireDefault(_npv);
 
-var _pmt = require('./pmt');
+var _pmt = require("./pmt");
 
 var _pmt2 = _interopRequireDefault(_pmt);
 
-var _pv = require('./pv');
+var _pv = require("./pv");
 
 var _pv2 = _interopRequireDefault(_pv);
 
-var _bin2dec = require('./bin2dec');
+var _bin2dec = require("./bin2dec");
 
 var _bin2dec2 = _interopRequireDefault(_bin2dec);
 
-var _dec2bin = require('./dec2bin');
+var _dec2bin = require("./dec2bin");
 
 var _dec2bin2 = _interopRequireDefault(_dec2bin);
 
-var _oct2dec = require('./oct2dec');
+var _oct2dec = require("./oct2dec");
 
 var _oct2dec2 = _interopRequireDefault(_oct2dec);
 
-var _filter = require('./filter');
+var _filter = require("./filter");
 
 var _filter2 = _interopRequireDefault(_filter);
 
-var _flatten = require('./flatten');
+var _flatten = require("./flatten");
 
 var _flatten2 = _interopRequireDefault(_flatten);
 
-var _map = require('./map');
+var _map = require("./map");
 
 var _map2 = _interopRequireDefault(_map);
 
-var _pluck = require('./pluck');
+var _pluck = require("./pluck");
 
 var _pluck2 = _interopRequireDefault(_pluck);
 
-var _reduce = require('./reduce');
+var _reduce = require("./reduce");
 
 var _reduce2 = _interopRequireDefault(_reduce);
 
-var _some = require('./some');
+var _some = require("./some");
 
 var _some2 = _interopRequireDefault(_some);
 
-var _sort = require('./sort');
+var _sort = require("./sort");
 
 var _sort2 = _interopRequireDefault(_sort);
 
-var _unflatten = require('./unflatten');
+var _unflatten = require("./unflatten");
 
 var _unflatten2 = _interopRequireDefault(_unflatten);
 
-var _unique = require('./unique');
+var _unique = require("./unique");
 
 var _unique2 = _interopRequireDefault(_unique);
 
-var _changed = require('./changed');
+var _changed = require("./changed");
 
 var _changed2 = _interopRequireDefault(_changed);
 
-var _diff = require('./diff');
+var _diff = require("./diff");
 
 var _diff2 = _interopRequireDefault(_diff);
 
-var _clean = require('./clean');
+var _clean = require("./clean");
 
 var _clean2 = _interopRequireDefault(_clean);
 
-var _get = require('./get');
+var _get = require("./get");
 
 var _get2 = _interopRequireDefault(_get);
 
-var _select = require('./select');
+var _select = require("./select");
 
 var _select2 = _interopRequireDefault(_select);
 
-var _base = require('./base');
+var _base = require("./base");
 
 var _base2 = _interopRequireDefault(_base);
 
-var _cellindex = require('./cellindex');
+var _cellindex = require("./cellindex");
 
 var _cellindex2 = _interopRequireDefault(_cellindex);
 
-var _ceiling = require('./ceiling');
+var _ceiling = require("./ceiling");
 
 var _ceiling2 = _interopRequireDefault(_ceiling);
 
-var _column = require('./column');
+var _column = require("./column");
 
 var _column2 = _interopRequireDefault(_column);
 
-var _columnletter = require('./columnletter');
+var _columnletter = require("./columnletter");
 
 var _columnletter2 = _interopRequireDefault(_columnletter);
 
-var _columnnumber = require('./columnnumber');
+var _columnnumber = require("./columnnumber");
 
 var _columnnumber2 = _interopRequireDefault(_columnnumber);
 
-var _decodebase = require('./decodebase64');
+var _decodebase = require("./decodebase64");
 
 var _decodebase2 = _interopRequireDefault(_decodebase);
 
-var _decodejwt = require('./decodejwt');
+var _decodejwt = require("./decodejwt");
 
 var _decodejwt2 = _interopRequireDefault(_decodejwt);
 
-var _even = require('./even');
+var _even = require("./even");
 
 var _even2 = _interopRequireDefault(_even);
 
-var _floor = require('./floor');
+var _floor = require("./floor");
 
 var _floor2 = _interopRequireDefault(_floor);
 
-var _group = require('./group');
+var _group = require("./group");
 
 var _group2 = _interopRequireDefault(_group);
 
-var _guid = require('./guid');
+var _guid = require("./guid");
 
 var _guid2 = _interopRequireDefault(_guid);
 
-var _int = require('./int');
+var _int = require("./int");
 
 var _int2 = _interopRequireDefault(_int);
 
-var _index2col = require('./index2col');
+var _index2col = require("./index2col");
 
 var _index2col2 = _interopRequireDefault(_index2col);
 
-var _index2row = require('./index2row');
+var _index2row = require("./index2row");
 
 var _index2row2 = _interopRequireDefault(_index2row);
 
-var _n = require('./n');
+var _n = require("./n");
 
 var _n2 = _interopRequireDefault(_n);
 
-var _numbers = require('./numbers');
+var _numbers = require("./numbers");
 
 var _numbers2 = _interopRequireDefault(_numbers);
 
-var _ref = require('./ref');
+var _ref = require("./ref");
 
 var _ref2 = _interopRequireDefault(_ref);
 
-var _serial = require('./serial');
+var _serial = require("./serial");
 
 var _serial2 = _interopRequireDefault(_serial);
 
@@ -789,6 +793,11 @@ var isFunction = _isfunction2.default;
 // `isfunction` returns true when the value is a leap year.
 
 var isLeapYear = _isleapyear2.default;
+
+// #### [isobject](./isobject)
+// `isobject` return true when object exists and is object or function.
+
+var isObject = _isobject2.default;
 
 // #### [isna](./isna)
 // `isna` returns true when the value is #NA!.
@@ -1454,6 +1463,7 @@ exports.default = {
   isFunction: isFunction,
   isInteger: isInteger,
   isLeapYear: isLeapYear,
+  isObject: isObject,
   isNA: isNA,
   isNumber: isNumber,
   isOdd: isOdd,
@@ -1472,6 +1482,7 @@ exports.default = {
   isfalsy: _isfalsy2.default,
   isfunction: _isfunction2.default,
   isleapyear: _isleapyear2.default,
+  isobject: _isobject2.default,
   isna: _isna2.default,
   isnan: _isnan2.default,
   isnumber: _isnumber2.default,
@@ -1559,4 +1570,4 @@ exports.default = {
   year: _year2.default,
   yearfrac: _yearfrac2.default
 };
-module.exports = exports['default'];
+module.exports = exports["default"];

@@ -1515,6 +1515,14 @@ function isleapyear(val) {
   return year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
 }
 
+// Copyright 2015 JC Fisher
+
+// isobject returns true when `value` is an object or function.
+function isobject(value) {
+  var type = typeof value === "undefined" ? "undefined" : _typeof(value);
+  return !!value && (type == 'object' || type == 'function');
+};
+
 // ISNA returns true when the value is `#NA!`
 function isna(value) {
   return value === error$2.na;
@@ -3716,14 +3724,6 @@ function filter(range) {
   return range.filter(makefilter());
 }
 
-// Copyright 2015 JC Fisher
-
-// isobject returns true when `value` is an object or function.
-function isobject(value) {
-  var type = typeof value === "undefined" ? "undefined" : _typeof(value);
-  return !!value && (type == 'object' || type == 'function');
-};
-
 // Functions for each operator.
 var filterTypes = {
 
@@ -4750,6 +4750,8 @@ var isFunction = isfunction;
 
 var isLeapYear = isleapyear;
 
+var isObject = isobject;
+
 var isNA = isna;
 
 var isNaN$1 = isnan;
@@ -4889,6 +4891,7 @@ var functions = {
   isFunction: isFunction,
   isInteger: isInteger,
   isLeapYear: isLeapYear,
+  isObject: isObject,
   isNA: isNA,
   isNumber: isNumber,
   isOdd: isOdd,
@@ -4907,6 +4910,7 @@ var functions = {
   isfalsy: isfalsy,
   isfunction: isfunction,
   isleapyear: isleapyear,
+  isobject: isobject,
   isna: isna,
   isnan: isnan,
   isnumber: isnumber,

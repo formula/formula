@@ -2,14 +2,11 @@
 
 Formula expressions and functions for JavaScript.
 
-## Install with npm
+## Install
 
 ```sh
 # install with npm
 npm install --save formula
-
-# install with yarn
-yarn add formula
 ```
 
 ## General Usage
@@ -22,7 +19,7 @@ import { run } from 'formula'
 var { and, eq, len, gt, lt, isnumber, isText, isEmail, isEmpty, lower, proper, text, date}
 = require('formula')
 
-run("a + b", { a: 2, b: 2})
+run("sum(a, b, c) = 6", { a: 1, b: 2, c: 3})
 isnumber(1),
 isText('this is'),
 isEmail('me@gmail.com'),

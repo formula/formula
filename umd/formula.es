@@ -1440,6 +1440,14 @@ return (${compiled});
                 (year % 400 === 0));
     }
 
+    // Copyright 2015 JC Fisher
+
+    // isobject returns true when `value` is an object or function.
+    function isobject(value) {
+      var type = typeof value;
+      return !!value && (type == 'object' || type == 'function');
+    };
+
     // ISNA returns true when the value is `#NA!`
     function isna(value) {
       return value === error$2.na;
@@ -3619,14 +3627,6 @@ return (${compiled});
 
     }
 
-    // Copyright 2015 JC Fisher
-
-    // isobject returns true when `value` is an object or function.
-    function isobject(value) {
-      var type = typeof value;
-      return !!value && (type == 'object' || type == 'function');
-    };
-
     // Functions for each operator.
     let filterTypes = {
 
@@ -4545,86 +4545,88 @@ return (${compiled});
     }
 
     // define `cond` alias for branch
-    const cond = branch
+    const cond = branch;
 
     // define `ifs` alias for branch
-    const ifs = branch
+    const ifs = branch;
 
-    const ifBlank = ifblank
+    const ifBlank = ifblank;
 
-    const ifEmpty = ifempty
+    const ifEmpty = ifempty;
 
-    const ifError = iferror
+    const ifError = iferror;
 
-    const ifNA = ifna
+    const ifNA = ifna;
 
-    const isArray = isarray
+    const isArray = isarray;
 
-    const isBlank = isblank
+    const isBlank = isblank;
 
-    const isbool = isboolean
-    const isBoolean = isboolean
-    const isBool = isboolean
+    const isbool = isboolean;
+    const isBoolean = isboolean;
+    const isBool = isboolean;
 
-    const isDate = isdate
+    const isDate = isdate;
 
-    const isEmail = isemail
+    const isEmail = isemail;
 
-    const isEmpty = isempty
+    const isEmpty = isempty;
 
-    const isError = iserror
+    const isError = iserror;
 
-    const isEven = iseven
+    const isEven = iseven;
 
-    const isFalsy = isfalsy
+    const isFalsy = isfalsy;
 
-    const isFunction = isfunction
+    const isFunction = isfunction;
 
-    const isLeapYear = isleapyear
+    const isLeapYear = isleapyear;
 
-    const isNA = isna
+    const isObject = isobject;
 
-    const isNaN$1 = isnan
+    const isNA = isna;
 
-    const isNumber = isnumber
+    const isNaN$1 = isnan;
 
-    const isOdd = isodd
+    const isNumber = isnumber;
 
-    const isoWeekNum = isoweeknum
+    const isOdd = isodd;
 
-    const isRef = isref
+    const isoWeekNum = isoweeknum;
 
-    const isText = istext
+    const isRef = isref;
 
-    const isTruthy = istruthy
+    const isText = istext;
 
-    const isURL = isurl
+    const isTruthy = istruthy;
 
-    const isWholeNumber = iswholenumber
-    const isInteger = iswholenumber
+    const isURL = isurl;
 
-    const concat = concatenate
+    const isWholeNumber = iswholenumber;
+    const isInteger = iswholenumber;
 
-    const numberValue = numbervalue
+    const concat = concatenate;
 
-    const parseBool = parsebool
+    const numberValue = numbervalue;
 
-    const parseDate = parsedate
+    const parseBool = parsebool;
 
-    const parseQuery = parsequery
+    const parseDate = parsedate;
 
-    const template = substituteAll
+    const parseQuery = parsequery;
 
-    const dateValue = datevalue
+    const template = substituteAll;
 
-    const cellIndex = cellindex
+    const dateValue = datevalue;
 
-    const columnLetter = columnletter
+    const cellIndex = cellindex;
 
-    const decodeBase64 = decodebase64
-    const atob = decodebase64
+    const columnLetter = columnletter;
 
-    const decodeJWT = decodejwt
+    const decodeBase64 = decodebase64;
+    const atob = decodebase64;
+
+    const decodeJWT = decodejwt;
 
     var functions = {
       run,
@@ -4721,6 +4723,7 @@ return (${compiled});
       isFunction,
       isInteger,
       isLeapYear,
+      isObject,
       isNA,
       isNumber,
       isOdd,
@@ -4739,6 +4742,7 @@ return (${compiled});
       isfalsy,
       isfunction,
       isleapyear,
+      isobject,
       isna,
       isnan,
       isnumber,
@@ -4824,8 +4828,8 @@ return (${compiled});
       vlookup,
       xor,
       year,
-      yearfrac,
-    }
+      yearfrac
+    };
 
     return functions;
 
