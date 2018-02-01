@@ -5,10 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = sort;
 
-var _isref = require('./isref');
-
-var _isref2 = _interopRequireDefault(_isref);
-
 var _isarray = require('./isarray');
 
 var _isarray2 = _interopRequireDefault(_isarray);
@@ -19,18 +15,15 @@ var _error2 = _interopRequireDefault(_error);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// SORT a reference or an array.
-//
-// The criteria may use 1 of several forms:
+// SORT an array of objects.
 //
 // sort(reference(reference: Array, ...criteria : List<string>)
-// sort(reference(reference: Range, ...criteria : List<string>)
-//
-// The List<function> will be reduced into a single function.
 //
 // The list<string> will also be reduced into a single function which
 // interprets the strings as pairs. The odd items are fields and the
 // even ones are direction (ASC|DESC).
+// Copyright 2015 JC Fisher
+
 function sort(ref) {
   for (var _len = arguments.length, criteria = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
     criteria[_key - 1] = arguments[_key];
@@ -40,14 +33,18 @@ function sort(ref) {
   var makeComparer = function makeComparer() {
     return function (a, b) {
       var result = 0;
-      for (var i = 0; i < criteria.length; i + 2) {
+      for (var i = 0; i < criteria.length; i = i + 2) {
+        if (result !== 0) continue;
+
         var field = typeof criteria[i] === 'string' ? criteria[i] : criteria[i] - 1,
             order = criteria[i + 1];
 
         if (a[field] < b[field]) {
-          return order ? -1 : 1;
-        } else {
-          return order ? 1 : -1;
+          result = order ? -1 : 1;
+        }
+
+        if (a[field] > b[field]) {
+          result = order ? 1 : -1;
         }
       }
 
@@ -55,11 +52,10 @@ function sort(ref) {
     };
   };
 
-  if ((0, _isref2.default)(ref) || (0, _isarray2.default)(ref)) {
-    return ref.sort(makeComparer());
+  if (!(0, _isarray2.default)(ref)) {
+    return _error2.default.na;
   }
 
-  return _error2.default.na;
-} // Copyright 2015 JC Fisher
-
+  return ref.sort(makeComparer());
+}
 module.exports = exports['default'];

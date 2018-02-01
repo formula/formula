@@ -4125,14 +4125,9 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     });
   }
 
-  // SORT a reference or an array.
-  //
-  // The criteria may use 1 of several forms:
+  // SORT an array of objects.
   //
   // sort(reference(reference: Array, ...criteria : List<string>)
-  // sort(reference(reference: Range, ...criteria : List<string>)
-  //
-  // The List<function> will be reduced into a single function.
   //
   // The list<string> will also be reduced into a single function which
   // interprets the strings as pairs. The odd items are fields and the
@@ -4146,14 +4141,18 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     var makeComparer = function makeComparer() {
       return function (a, b) {
         var result = 0;
-        for (var i = 0; i < criteria.length; i + 2) {
+        for (var i = 0; i < criteria.length; i = i + 2) {
+          if (result !== 0) continue;
+
           var field = typeof criteria[i] === 'string' ? criteria[i] : criteria[i] - 1,
               order = criteria[i + 1];
 
           if (a[field] < b[field]) {
-            return order ? -1 : 1;
-          } else {
-            return order ? 1 : -1;
+            result = order ? -1 : 1;
+          }
+
+          if (a[field] > b[field]) {
+            result = order ? 1 : -1;
           }
         }
 
@@ -4161,11 +4160,11 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       };
     };
 
-    if (isref(ref) || isarray(ref)) {
-      return ref.sort(makeComparer());
+    if (!isarray(ref)) {
+      return error$2.na;
     }
 
-    return error$2.na;
+    return ref.sort(makeComparer());
   }
 
   // convert array into nested array.
