@@ -1,0 +1,10 @@
+<!DOCTYPE html><html lang="en"><head><title>test/eomonth</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="test/eomonth"><meta name="groc-project-path" content="test/eomonth.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">test/eomonth.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">'tape'</span>
+<span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'../fn/error'</span>
+<span class="hljs-keyword">import</span> parsedate <span class="hljs-keyword">from</span> <span class="hljs-string">'../fn/parsedate'</span>
+<span class="hljs-keyword">import</span> eomonth <span class="hljs-keyword">from</span> <span class="hljs-string">'../fn/eomonth'</span>
+
+test(<span class="hljs-string">'eomonth'</span>, (t) =&gt; {
+  t.plan(2)
+  t.deepEqual( eomonth( <span class="hljs-string">'1/11/2011'</span>, 0), parsedate(<span class="hljs-string">'1/31/2011'</span>))
+  t.deepEqual( eomonth( <span class="hljs-string">'1/11/2011'</span>, 1), parsedate(<span class="hljs-string">'2/28/2011'</span>))
+})</div></div></div></div></body></html>
