@@ -6,7 +6,7 @@
   "scripts": {
     "all": "npm run build && npm test",
     "test": "BABEL_ENV=test babel-tape-runner test/*.js | faucet",
-    "docs": "groc src/*.js -o ./docs",
+    "docs": "groc test/*.js -o ./docs; groc src/*.js -o ./docs",
     "test:docs": "docco --output test_docs test/*.js",
     "clean": "rm -rf fn",
     "build": "BABEL_ENV=production npm run clean && mkdir fn && npm run build:js && npm run docs && npm run dist",

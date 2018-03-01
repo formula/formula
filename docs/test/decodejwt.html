@@ -1,0 +1,10 @@
+<!DOCTYPE html><html lang="en"><head><title>test/decodejwt</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="test/decodejwt"><meta name="groc-project-path" content="test/decodejwt.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">test/decodejwt.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">'tape'</span>
+<span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'../fn/error'</span>
+<span class="hljs-keyword">import</span> decodejwt <span class="hljs-keyword">from</span> <span class="hljs-string">'../fn/decodejwt'</span>
+
+const token = <span class="hljs-string">'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTc3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.9NcYjGtFLdiCWZPxx_P8r2a3ZSFteWx6hloXjHwZ2PY'</span>
+
+test(<span class="hljs-string">'decodejwt'</span>, (t) =&gt; {
+  t.plan(1)
+  t.deepEqual( decodejwt( token ), { sub: <span class="hljs-string">'1234577890'</span>, name: <span class="hljs-string">'John Doe'</span>, admin: true })
+})</div></div></div></div></body></html>

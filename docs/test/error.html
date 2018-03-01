@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="en"><head><title>test/error</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="test/error"><meta name="groc-project-path" content="test/error.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">test/error.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">'tape'</span>
+<span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">'../fn/error'</span>
+
+test(<span class="hljs-string">'error'</span>, (t) =&gt; {
+  t.plan(11)
+  t.equal( error.nil.toString(), <span class="hljs-string">'#NULL!'</span>)
+  t.equal( error.div0.toString(), <span class="hljs-string">'#DIV/0!'</span>)
+  t.equal( error.value.toString(), <span class="hljs-string">'#VALUE!'</span>)
+  t.equal( error.ref.toString(), <span class="hljs-string">'#REF!'</span>)
+  t.equal( error.name.toString(), <span class="hljs-string">'#NAME?'</span>)
+  t.equal( error.num.toString(), <span class="hljs-string">'#NUM!'</span>)
+  t.equal( error.na.toString(), <span class="hljs-string">'#N/A!'</span>)
+  t.equal( error.error.toString(), <span class="hljs-string">'#ERROR!'</span>)
+  t.equal( error.data.toString(), <span class="hljs-string">'#GETTING_DATA!'</span>)
+  t.equal( error.missing.toString(), <span class="hljs-string">'#MISSING!'</span>)
+  t.equal( error.unknown.toString(), <span class="hljs-string">'#UNKNOWN!'</span>)
+})</div></div></div></div></body></html>
