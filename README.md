@@ -46,3 +46,6 @@ var proper = require('formula/fn/proper')
 ## Browser ready build
 
 There is a browser ready build in the dist folder. You can include with a <script> tag. It uses `formula` as the namespace.
+
+
+Sponsored by <a href="https://formbucket.com">FormBucket</a>

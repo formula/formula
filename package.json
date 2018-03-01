@@ -1,6 +1,6 @@
 {
   "name": "formula",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "Formula compiler and function library",
   "main": "index.js",
   "scripts": {
