@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = group;
 
-var _reduce = require('./reduce');
+var _reduce = require("./reduce");
 
 var _reduce2 = _interopRequireDefault(_reduce);
 
@@ -19,28 +19,30 @@ function group(list) {
 
   // Reduce the list into an object.
   return (0, _reduce2.default)(list, function (acc, item) {
-
     var parent = undefined,
         key = void 0;
 
     // Walk through each field and update the accumulator.
     fields.forEach(function (currentField, index) {
-
       // The key is the value of the current item.
       key = item[currentField];
 
       // Handle the last field used to group.
       if (index === fields.length - 1) {
-
         if (!parent) {
-          acc[key] = (acc[key] || []).concat(item);
+          if (!acc[key]) {
+            acc[key] = [];
+          }
+          acc[key].push(item);
         } else {
-          parent[key] = (parent[key] || []).concat(item);
+          if (!parent[key]) {
+            parent[key] = [];
+          }
+          parent[key].push(item);
         }
 
         // Handle the first k fields before the last field
       } else {
-
         if (!parent) {
           acc[key] = acc[key] || {};
           parent = acc[key];
@@ -54,4 +56,4 @@ function group(list) {
     return acc;
   }, {});
 }
-module.exports = exports['default'];
+module.exports = exports["default"];
