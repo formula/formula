@@ -79,6 +79,24 @@ Object.defineProperty(exports, "OR", {
   }
 });
 
+var _nor = require("./nor");
+
+Object.defineProperty(exports, "NOR", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_nor).default;
+  }
+});
+
+var _xor = require("./xor");
+
+Object.defineProperty(exports, "XOR", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_xor).default;
+  }
+});
+
 var _not = require("./not");
 
 Object.defineProperty(exports, "NOT", {
@@ -373,15 +391,6 @@ Object.defineProperty(exports, "ISWHOLENUMBER", {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_iswholenumber).default;
-  }
-});
-
-var _xor = require("./xor");
-
-Object.defineProperty(exports, "XOR", {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_xor).default;
   }
 });
 

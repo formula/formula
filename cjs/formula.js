@@ -1285,6 +1285,44 @@ function not(value) {
   return value !== true && value !== false && value !== 1 && value !== 0 ? error$2.value : !value;
 }
 
+function nor() {
+  return not(or.apply(undefined, arguments));
+}
+
+// Copyright 2015 JC Fisher
+
+// ISARRAY returns true when the value is an aray.
+function isarray(value) {
+  return Object.prototype.toString.call(value) === '[object Array]';
+}
+
+// FLATTEN converts a nested array into a flattened array. It only supports one
+// level of nesting.
+function flatten(ref) {
+
+  if (!isarray(ref)) {
+    return error$2.value;
+  }
+
+  return reduce(ref, function (a, b) {
+    return a.concat(b);
+  }, []);
+}
+
+// XOR computes the exclusive or for a given set of `values`.
+function xor() {
+  for (var _len7 = arguments.length, values = Array(_len7), _key7 = 0; _key7 < _len7; _key7++) {
+    values[_key7] = arguments[_key7];
+  }
+
+  return !!(reduce(flatten(values), function (a, b) {
+    if (b) {
+      return a + 1;
+    }
+    return a;
+  }, 0) & 1);
+}
+
 // Copyright 2015 JC Fisher
 
 // EQ compares two values and returns a boolean value.
@@ -1302,13 +1340,6 @@ function eq(a, b) {
 // NE returns true when a is not equal to b.
 function ne(a, b) {
   return !eq(a, b);
-}
-
-// Copyright 2015 JC Fisher
-
-// ISARRAY returns true when the value is an aray.
-function isarray(value) {
-  return Object.prototype.toString.call(value) === '[object Array]';
 }
 
 // Copyright 2015 JC Fisher
@@ -1601,33 +1632,6 @@ function isurl(str) {
 // Returns true when the value is a whole number
 function iswholenumber(value) {
   return isnumber(value) && value % 1 === 0;
-}
-
-// FLATTEN converts a nested array into a flattened array. It only supports one
-// level of nesting.
-function flatten(ref) {
-
-  if (!isarray(ref)) {
-    return error$2.value;
-  }
-
-  return reduce(ref, function (a, b) {
-    return a.concat(b);
-  }, []);
-}
-
-// XOR computes the exclusive or for a given set of `values`.
-function xor() {
-  for (var _len7 = arguments.length, values = Array(_len7), _key7 = 0; _key7 < _len7; _key7++) {
-    values[_key7] = arguments[_key7];
-  }
-
-  return !!(reduce(flatten(values), function (a, b) {
-    if (b) {
-      return a + 1;
-    }
-    return a;
-  }, 0) & 1);
 }
 
 // ADD calculates the sum of two numbers.
@@ -4839,6 +4843,8 @@ var funcs = Object.freeze({
   SWITCH: SWITCH,
   AND: and,
   OR: or,
+  NOR: nor,
+  XOR: xor,
   NOT: not,
   EQ: eq,
   NE: ne,
@@ -4872,7 +4878,6 @@ var funcs = Object.freeze({
   ISTRUTHY: istruthy,
   ISURL: isurl,
   ISWHOLENUMBER: iswholenumber,
-  XOR: xor,
   ADD: add,
   SUBTRACT: subtract,
   MULTIPLY: multiply,
@@ -5008,6 +5013,8 @@ exports.CHOOSE = choose;
 exports.SWITCH = SWITCH;
 exports.AND = and;
 exports.OR = or;
+exports.NOR = nor;
+exports.XOR = xor;
 exports.NOT = not;
 exports.EQ = eq;
 exports.NE = ne;
@@ -5041,7 +5048,6 @@ exports.ISTEXT = istext;
 exports.ISTRUTHY = istruthy;
 exports.ISURL = isurl;
 exports.ISWHOLENUMBER = iswholenumber;
-exports.XOR = xor;
 exports.ADD = add;
 exports.SUBTRACT = subtract;
 exports.MULTIPLY = multiply;

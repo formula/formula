@@ -1219,6 +1219,40 @@ return (${compiled});
       !value
     }
 
+    function nor(...args) {
+      return not(or(...args));
+    }
+
+    // Copyright 2015 JC Fisher
+
+    // ISARRAY returns true when the value is an aray.
+    function isarray(value) {
+      return Object.prototype.toString.call( value ) === '[object Array]'
+    }
+
+    // FLATTEN converts a nested array into a flattened array. It only supports one
+    // level of nesting.
+    function flatten(ref){
+
+      if (!isarray(ref)) {
+        return error$2.value;
+      }
+
+      return reduce( ref, function(a, b) {
+        return a.concat(b);
+      }, []);
+    }
+
+    // XOR computes the exclusive or for a given set of `values`.
+    function xor(...values) {
+        return !!( reduce( flatten(values), (a,b) => {
+          if (b) {
+            return a+1
+          }
+          return a
+        }, 0) & 1)
+    }
+
     // Copyright 2015 JC Fisher
 
     // EQ compares two values and returns a boolean value.
@@ -1236,13 +1270,6 @@ return (${compiled});
     // NE returns true when a is not equal to b.
     function ne(a,b) {
       return !eq(a, b)
-    }
-
-    // Copyright 2015 JC Fisher
-
-    // ISARRAY returns true when the value is an aray.
-    function isarray(value) {
-      return Object.prototype.toString.call( value ) === '[object Array]'
     }
 
     // Copyright 2015 JC Fisher
@@ -1529,29 +1556,6 @@ return (${compiled});
     // Returns true when the value is a whole number
     function iswholenumber(value) {
         return isnumber(value) && (value % 1 === 0);
-    }
-
-    // FLATTEN converts a nested array into a flattened array. It only supports one
-    // level of nesting.
-    function flatten(ref){
-
-      if (!isarray(ref)) {
-        return error$2.value;
-      }
-
-      return reduce( ref, function(a, b) {
-        return a.concat(b);
-      }, []);
-    }
-
-    // XOR computes the exclusive or for a given set of `values`.
-    function xor(...values) {
-        return !!( reduce( flatten(values), (a,b) => {
-          if (b) {
-            return a+1
-          }
-          return a
-        }, 0) & 1)
     }
 
     // ADD calculates the sum of two numbers.
@@ -4674,6 +4678,8 @@ return (${compiled});
     	SWITCH: SWITCH,
     	AND: and,
     	OR: or,
+    	NOR: nor,
+    	XOR: xor,
     	NOT: not,
     	EQ: eq,
     	NE: ne,
@@ -4707,7 +4713,6 @@ return (${compiled});
     	ISTRUTHY: istruthy,
     	ISURL: isurl,
     	ISWHOLENUMBER: iswholenumber,
-    	XOR: xor,
     	ADD: add,
     	SUBTRACT: subtract,
     	MULTIPLY: multiply,
@@ -4843,6 +4848,8 @@ return (${compiled});
     exports.SWITCH = SWITCH;
     exports.AND = and;
     exports.OR = or;
+    exports.NOR = nor;
+    exports.XOR = xor;
     exports.NOT = not;
     exports.EQ = eq;
     exports.NE = ne;
@@ -4876,7 +4883,6 @@ return (${compiled});
     exports.ISTRUTHY = istruthy;
     exports.ISURL = isurl;
     exports.ISWHOLENUMBER = iswholenumber;
-    exports.XOR = xor;
     exports.ADD = add;
     exports.SUBTRACT = subtract;
     exports.MULTIPLY = multiply;

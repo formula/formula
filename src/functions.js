@@ -39,6 +39,14 @@ export { default as AND } from "./and";
 // `or` returns true when any argument is true or evaluates to true.
 export { default as OR } from "./or";
 
+// #### [nor](./nor)
+// `nor` returns false when any argument is true or evaluates to true.
+export { default as NOR } from "./nor";
+
+// #### [xor](./xor)
+// `xor` returns the logical exclusive Or of all arguments.
+export { default as XOR } from "./xor";
+
 // #### [not](./not)
 // `not` returns the inverse.
 export { default as NOT } from "./not";
@@ -170,10 +178,6 @@ export { default as ISURL } from "./isurl";
 // #### [iswholenumber](./iswholenumber)
 // `iswholenumber` returns true when value is an integer.
 export { default as ISWHOLENUMBER } from "./iswholenumber";
-
-// #### [xor](./xor)
-// `xor` returns the logical exclusive Or of all arguments.
-export { default as XOR } from "./xor";
 
 // ### Math functions
 
