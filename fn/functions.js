@@ -504,6 +504,10 @@ var _pmt = require("./pmt");
 
 var _pmt2 = _interopRequireDefault(_pmt);
 
+var _cumipmt = require("./cumipmt");
+
+var _cumipmt2 = _interopRequireDefault(_cumipmt);
+
 var _pv = require("./pv");
 
 var _pv2 = _interopRequireDefault(_pv);
@@ -1220,6 +1224,10 @@ var dateValue = _datevalue2.default;
 // `pmt` returns the amortized payment for a loan.
 
 
+// #### [cumipmt](./cumipmt)
+// `cumipmt` returns the cumulative interest on a loan between start and end period.
+
+
 // #### [pv](./pv)
 // `pv` returns the present value of an investment.
 
@@ -1417,6 +1425,7 @@ exports.default = {
   concatenate: _concatenate2.default,
   cond: cond,
   cos: _cos2.default,
+  cumipmt: _cumipmt2.default,
   date: _date2.default,
   dateValue: dateValue,
   datedif: _datedif2.default,

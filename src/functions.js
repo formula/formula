@@ -432,8 +432,8 @@ const In = includes;
 // #### [notincludes](./notincludes)
 // `notincludes` searches an array and returns the true or false for exact matches.
 import notincludes from "./notincludes";
-const notIncludes = notincludes
-const nIn = includes
+const notIncludes = notincludes;
+const nIn = includes;
 
 // #### [index](./index)
 // `index` returns the value for a given row and column.
@@ -565,6 +565,10 @@ import npv from "./npv";
 // #### [pmt](./pmt)
 // `pmt` returns the amortized payment for a loan.
 import pmt from "./pmt";
+
+// #### [cumipmt](./cumipmt)
+// `cumipmt` returns the cumulative interest on a loan between start and end period.
+import cumipmt from "./cumipmt";
 
 // #### [pv](./pv)
 // `pv` returns the present value of an investment.
@@ -765,6 +769,7 @@ export default {
   concatenate,
   cond,
   cos,
+  cumipmt,
   date,
   dateValue,
   datedif,

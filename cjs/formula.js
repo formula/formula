@@ -3994,6 +3994,57 @@ function pmt(rate, periods, present) {
   }
 };
 
+function cumipmt(rate, periods, value, start, end, type) {
+  // Credits: algorithm inspired by Apache OpenOffice
+  // Credits: Hannes Stiebitzhofer for the translations of function and variable names
+  rate = numbervalue(rate);
+  periods = numbervalue(periods);
+  value = numbervalue(value);
+
+  // check if any inputs are errors.
+  if (iserror(rate) || iserror(periods) || iserror(value)) {
+    return error$2.value;
+  }
+
+  // Return error if either rate, periods, or value are lower than or equal to zero
+  if (rate <= 0 || periods <= 0 || value <= 0) {
+    return error$2.num;
+  }
+
+  // Return error if start < 1, end < 1, or start > end
+  if (start < 1 || end < 1 || start > end) {
+    return error$2.num;
+  }
+
+  // Return error if type is neither 0 nor 1
+  if (type !== 0 && type !== 1) {
+    return error$2.num;
+  }
+
+  // Compute cumulative interest
+  var payment = pmt(rate, periods, value, 0, type);
+  var interest = 0;
+
+  if (start === 1) {
+    if (type === 0) {
+      interest = -value;
+      start++;
+    }
+  }
+
+  for (var i = start; i <= end; i++) {
+    if (type === 1) {
+      interest += fv(rate, i - 2, payment, value, 1) - payment;
+    } else {
+      interest += fv(rate, i - 1, payment, value, 0);
+    }
+  }
+  interest *= rate;
+
+  // Return cumulative interest
+  return interest;
+}
+
 function pv(rate, periods, payment) {
   var future = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 0;
   var type = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 0;
@@ -4845,6 +4896,7 @@ var functions = {
   concatenate: concatenate,
   cond: cond,
   cos: cos,
+  cumipmt: cumipmt,
   date: date,
   dateValue: dateValue,
   datedif: datedif,
