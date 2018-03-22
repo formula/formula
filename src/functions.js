@@ -9,937 +9,682 @@
 
 // #### [compile](./compile)
 // `compile` converts a formula into a function.
-import compile from "./compile";
+export { default as COMPILE } from "./compile";
 
 // #### [run](./run)
 // `run` execute a formula once.
-import run from "./run";
+export { default as RUN } from "./run";
 
 // ### Logical
 
 // #### [branch](./branch)
 // `branch` is equivalent to `if-elseif-else`.
-import branch from "./branch";
-
-// define `cond` alias for branch
-const cond = branch;
-
-// define `ifs` alias for branch
-const ifs = branch;
+export { default as BRANCH } from "./branch";
+export { default as IF } from "./branch";
+export { default as IFS } from "./branch";
 
 // #### [choose](./choose)
-// `choose` is equivalent to `switch case`.
-import choose from "./choose";
+// `choose` returns value from index_value from argument list.
+export { default as CHOOSE } from "./choose";
+
+// #### [Switch](./switch)
+// `switch` is equivalent to `switch case`.
+export { default as SWITCH } from "./switch";
 
 // #### [and](./and)
 // `and` returns true when all arguments are true or evaluates to true.
-import and from "./and";
+export { default as AND } from "./and";
 
 // #### [or](./or)
 // `or` returns true when any argument is true or evaluates to true.
-import or from "./or";
+export { default as OR } from "./or";
 
 // #### [not](./not)
 // `not` returns the inverse.
-import not from "./not";
+export { default as NOT } from "./not";
 
 // #### [eq](./eq)
 // `eq` returns true when the first and second arguments are equivalent. String comparision is _case insensitive_.
-import eq from "./eq";
+export { default as EQ } from "./eq";
 
 // #### [ne](./ne)
 // `ne` returns true when the first and second arguments are not equivalent. String comparision is _case insensitive_.
-import ne from "./ne";
+export { default as NE } from "./ne";
 
 // #### [gt](./gt)
 // `gt` returns true when first argument is greater than the second.
-import gt from "./gt";
+export { default as GT } from "./gt";
 
 // #### [gte](./gte)
 // `gte` returns true when first argument is greater than or equal to the second.
-import gte from "./gte";
+export { default as GTE } from "./gte";
 
 // #### [lt](./lt)
 // `lt` returns true when first argument is less than the second.
-import lt from "./lt";
+export { default as LT } from "./lt";
 
 // #### [lte](./lte)
 // `lte` returns true when first argument is less than or equal to the second.
-import lte from "./lte";
+export { default as LTE } from "./lte";
 
 // #### [ifblank](./ifblank)
 // `ifempty` returns the second argument when the first argument is blank or the third argument
-import ifblank from "./ifblank";
-const ifBlank = ifblank;
+export { default as IFBLANK } from "./ifblank";
 
 // #### [ifempty](./ifempty)
 // `ifempty` returns the second argument when the first argument is empty or the third argument
-import ifempty from "./ifempty";
-const ifEmpty = ifempty;
+export { default as IFEMPTY } from "./ifempty";
 
 // #### [iferror](./iferror)
 // `ifempty` returns the second argument when the first argument is an error or the third argument
-import iferror from "./iferror";
-const ifError = iferror;
+export { default as IFERROR } from "./iferror";
 
 // #### [ifna](./ifna)
 // `ifempty` returns the second argument when the first argument is #NA! or the third argument
-import ifna from "./ifna";
-const ifNA = ifna;
+export { default as IFNA } from "./ifna";
 
 // #### [isarray](./isarray)
 // `isarray` returns true when the value is an array.
-import isarray from "./isarray";
-const isArray = isarray;
+export { default as ISARRAY } from "./isarray";
 
 // #### [isblank](./isblank)
 // `isblank` returns true when the value is undefined or null.
-import isblank from "./isblank";
-const isBlank = isblank;
+export { default as ISBLANK } from "./isblank";
 
 // #### [isboolean](./isboolean)
 // `isboolean` returns true when the value is true or false.
-import isboolean from "./isboolean";
-const isbool = isboolean;
-const isBoolean = isboolean;
-const isBool = isboolean;
+export { default as ISBOOLEAN } from "./isboolean";
 
 // #### [isdate](./isdate)
 // `isdate` returns true when the value is a JavaScript Date object.
-import isdate from "./isdate";
-const isDate = isdate;
+export { default as ISDATE } from "./isdate";
 
 // #### [isemail](./isemail)
 // `isdate` returns true when the value matches the pattern for a valid email address.
-import isemail from "./isemail";
-const isEmail = isemail;
+export { default as ISEMAIL } from "./isemail";
 
 // #### [isempty](./isempty)
 // `isempty` returns true when the value is blank or empty string.
-import isempty from "./isempty";
-const isEmpty = isempty;
+export { default as ISEMPTY } from "./isempty";
 
 // #### [iserror](./iserror)
 // `iserror` returns true when the value is an error value.
-import iserror from "./iserror";
-const isError = iserror;
+export { default as ISERROR } from "./iserror";
 
 // #### [iseven](./iseven)
 // `iseven` returns true when the value is an even number.
-import iseven from "./iseven";
-const isEven = iseven;
+export { default as ISEVEN } from "./iseven";
 
 // #### [isfalsy](./isfalsy)
 // `isfalsy` returns true when value is a string.
-import isfalsy from "./isfalsy";
-const isFalsy = isfalsy;
+export { default as ISFALSY } from "./isfalsy";
 
 // #### [isfunction](./isfunction)
 // `isfunction` returns true when the value is a JavaScript function.
-import isfunction from "./isfunction";
-const isFunction = isfunction;
+export { default as ISFUNCTION } from "./isfunction";
 
 // #### [isleapyear](./isleapyear)
 // `isfunction` returns true when the value is a leap year.
-import isleapyear from "./isleapyear";
-const isLeapYear = isleapyear;
+export { default as ISLEAPYEAR } from "./isleapyear";
 
 // #### [isobject](./isobject)
 // `isobject` return true when object exists and is object or function.
-import isobject from "./isobject";
-const isObject = isobject;
+export { default as ISOBJECT } from "./isobject";
 
 // #### [isna](./isna)
 // `isna` returns true when the value is #NA!.
-import isna from "./isna";
-const isNA = isna;
+export { default as ISNA } from "./isna";
 
 // #### [isnan](./isnan)
 // `isnan` returns true when the value is NaN.
-import isnan from "./isnan";
-const isNaN = isnan;
+export { default as ISNAN } from "./isnan";
 
 // #### [isnumber](./isnumber)
 // `isnumber` returns true when the value is JavaScript number type and not NaN and not infinite.
-import isnumber from "./isnumber";
-const isNumber = isnumber;
+export { default as ISNUMBER } from "./isnumber";
 
 // #### [isodd](./isodd)
 // `isodd` returns true when the value is an odd number.
-import isodd from "./isodd";
-const isOdd = isodd;
+export { default as ISODD } from "./isodd";
 
 // #### [isoweeknum](./isoweeknum)
 // `isoweeknum` returns number of the ISO week number of the year for a given date.
-import isoweeknum from "./isoweeknum";
-const isoWeekNum = isoweeknum;
+export { default as ISOWEEKNUM } from "./isoweeknum";
 
 // #### [isref](./isref)
 // `isref` returns true when value is a ref object.
-import isref from "./isref";
-const isRef = isref;
+export { default as ISREF } from "./isref";
 
 // #### [istext](./istext)
 // `istext` returns true when value is a string.
-import istext from "./istext";
-const isText = istext;
+export { default as ISTEXT } from "./istext";
 
 // #### [istruthy](./istruthy)
 // `istruthy` returns true when value is a string.
-import istruthy from "./istruthy";
-const isTruthy = istruthy;
+export { default as ISTRUTHY } from "./istruthy";
 
 // #### [isurl](./isurl)
 // `isurl` returns true when value matches a url pattern.
-import isurl from "./isurl";
-const isURL = isurl;
+export { default as ISURL } from "./isurl";
 
 // #### [iswholenumber](./iswholenumber)
 // `iswholenumber` returns true when value is an integer.
-import iswholenumber from "./iswholenumber";
-const isWholeNumber = iswholenumber;
-const isInteger = iswholenumber;
+export { default as ISWHOLENUMBER } from "./iswholenumber";
 
 // #### [xor](./xor)
 // `xor` returns the logical exclusive Or of all arguments.
-import xor from "./xor";
+export { default as XOR } from "./xor";
 
 // ### Math functions
 
 // #### [add](./add)
 // `add` sums the first and second arguments.
-import add from "./add";
+export { default as ADD } from "./add";
 
 // #### [subtract](./subtract)
 // `subtract` returns the difference between the first and second arguments.
-import subtract from "./subtract";
+export { default as SUBTRACT } from "./subtract";
 
 // #### [multiply](./multiply)
 // `multiply` returns the product of the first and second arguments.
-import multiply from "./multiply";
+export { default as MULTIPLY } from "./multiply";
 
 // #### [divide](./divide)
 // `divide` returns the result of the first argument divided by the second.
-import divide from "./divide";
+export { default as DIVIDE } from "./divide";
 
 // #### [abs](./abs)
 // `abs` returns the absolute value of the first argument.
-import abs from "./abs";
+export { default as ABS } from "./abs";
 
 // #### [acos](./acos)
 // `acos` returns the inverse cosine of a number.
-import acos from "./acos";
+export { default as ACOS } from "./acos";
 
 // #### [acosh](./acosh)
 // `acosh` returns the hyperbolic inverse cosine of a number.
-import acosh from "./acosh";
+export { default as ACOSH } from "./acosh";
 
 // #### [acot](./acot)
 /// `acot` returns the arccotangent of a given number.
-import acot from "./acot";
+export { default as ACOT } from "./acot";
 
 // #### [acoth](./acoth)
 /// `acot` returns the hyperbolic arccotangent of a given number.
-import acoth from "./acoth";
+export { default as ACOTH } from "./acoth";
 
 // #### [asin](./asin)
 /// `asin` returns the arccosin of a given number.
-import asin from "./asin";
+export { default as ASIN } from "./asin";
 
 // #### [asinh](./asinh)
 /// `asinh` returns the hyperbolic arccosin of a given number.
-import asinh from "./asinh";
+export { default as ASINH } from "./asinh";
 
 // #### [atan](./atan)
 /// `atan` returns the arctangent of a given number.
-import atan from "./atan";
+export { default as ATAN } from "./atan";
 
 // #### [atan2](./atan2)
 /// `atan2` returns the arctangent, or inverse tangent, of the specified x- and y-coordinates.
-import atan2 from "./atan2";
+export { default as ATAN2 } from "./atan2";
 
 // #### [atanh](./atanh)
 /// `atanh` returns the arctangent (in radians) of the given number.
-import atanh from "./atanh";
+export { default as ATANH } from "./atanh";
 
 // #### [cos](./cos)
 /// `cos` returns the cosine of a number
-import cos from "./cos";
+export { default as COS } from "./cos";
 
 // #### [degrees](./degrees)
 /// `degrees` returns radians converted to degrees.
-import degrees from "./degrees";
+export { default as DEGREES } from "./degrees";
 
 // #### [pi](./pi)
-/// `pi` returns the circle constant 3.14...
-import pi from "./pi";
+export { default as PI } from "./pi";
 
 // #### [power](./power)
 // `power` returns the nth power of a number.
-import power from "./power";
+export { default as POWER } from "./power";
 
 // #### [round](./round)
 // `round` returns a number rounded to a precision.
-import round from "./round";
+export { default as ROUND } from "./round";
 
 // #### [roundup](./roundup)
 // `roundup` returns a number rounded up to a precision.
-import roundup from "./roundup";
+export { default as ROUNDUP } from "./roundup";
 
 // #### [sin](./sin)
 // `sin` return the sinine of a number.
-import sin from "./sin";
+export { default as SIN } from "./sin";
 
 // #### [tan](./tan)
 // `tan` returns the tangent of a number.
-import tan from "./tan";
+export { default as TAN } from "./tan";
 
 // #### [tau](./tau)
-// `tau` returns the circle constant 6.28...
-import tau from "./tau";
+export { default as TAU } from "./tau";
 
 // #### [trunc](./trunc)
 // `trunc` returns a number truncated to a given precision.
-import trunc from "./trunc";
+export { default as TRUNC } from "./trunc";
 
 // ### Text
 
 // #### [char](./char)
 // `char` returns a character given an ASCII code.
-import char from "./char";
+export { default as CHAR } from "./char";
 
 // #### [camelcase](./camelcase)
 // `camelcase` returns text converted to camel case.
-import camelcase from "./camelcase";
+export { default as CAMELCASE } from "./camelcase";
 
 // #### [code](./code)
 // `code` returns the ASCII code for a given character.
-import code from "./code";
+export { default as CODE } from "./code";
 
 // #### [concatenate](./concatenate)
 // `concatenate` combines multiple values into a string.
-import concatenate from "./concatenate";
-const concat = concatenate;
+export { default as CONCATENATE } from "./concatenate";
 
 // #### [exact](./exact)
 // `exact` compares two values for strict equivalence.
-import exact from "./exact";
+export { default as EXACT } from "./exact";
 
 // #### [find](./find)
 // `find` searches a string for a value and returns the index.
-import find from "./find";
+export { default as FIND } from "./find";
 
 // #### [join](./join)
 // `join` combines an array of values into a string with a given delimiter.
-import join from "./join";
+export { default as JOIN } from "./join";
 
 // #### [left](./left)
 // `left` returns a given number of characters from the left side of a string.
-import left from "./left";
+export { default as LEFT } from "./left";
 
 // #### [len](./len)
 // `len` returns the size of a string of array.
-import len from "./len";
+export { default as LEN } from "./len";
 
 // #### [lower](./lower)
 // `lower` converts text to lower case.
-import lower from "./lower";
+export { default as LOWER } from "./lower";
 
 // #### [numbervalue](./numbervalue)
 // `numbervalue` converts text into a number.
-import numbervalue from "./numbervalue";
-const numberValue = numbervalue;
+export { default as NUMBERVALUE } from "./numbervalue";
 
 // #### [parsebool](./parsebool)
 // `parsebool` converts text into a boolean value.
-import parsebool from "./parsebool";
-const parseBool = parsebool;
+export { default as PARSEBOOL } from "./parsebool";
 
 // #### [parsedate](./parsedate)
 // `parsedate` converts text into a JavaScript date object
-import parsedate from "./parsedate";
-const parseDate = parsedate;
+export { default as PARSEDATE } from "./parsedate";
 
 // #### [parsequery](./parsequery)
 // `parsequery` returns a JSObject for a URL query string.
-import parsequery from "./parsequery";
-const parseQuery = parsequery;
+export { default as PARSEQUERY } from "./parsequery";
 
 // #### [proper](./proper)
 // `proper` returns a string as a proper name.
-import proper from "./proper";
+export { default as PROPER } from "./proper";
 
 // #### [replace](./replace)
 // `replace` returns a string where one value is replaced with a new value.
-import replace from "./replace";
+export { default as REPLACE } from "./replace";
 
 // #### [right](./right)
 // `right` returns a given number of characters from the right of a string.
-import right from "./right";
+export { default as RIGHT } from "./right";
 
 // #### [rept](./rept)
 // `rept` returns a string with a given value repeated `n` times.
-import rept from "./rept";
+export { default as REPT } from "./rept";
 
 // #### [search](./search)
 // `search` returns the index of a value inside a string with wildcard support for single characters (?) and multiple characters (*).
-import search from "./search";
+export { default as SEARCH } from "./search";
 
 // #### [snakecase](./snakecase)
 // `snakecase` returns text converted to snake case.
-import snakecase from "./snakecase";
+export { default as SNAKECASE } from "./snakecase";
 
 // #### [substitute](./substitute)
 // `substitute` returns a new string with every instance of value replaced.
-import substitute from "./substitute";
+export { default as SUBSTITUTE } from "./substitute";
 
 // #### [substituteAll](./substituteAll)
 // `substituteAll` returns a new string with every instance of set of values replaced.
-import substituteAll from "./substituteAll";
-const template = substituteAll;
+export { default as SUBSTITUTEALL } from "./substituteAll";
 
 // #### [surroundKeys](./surroundKeys)
 // `surroundKeys` returns a new object where the keys have been wrapped with start and end strings.
-import surroundKeys from "./surroundKeys";
+export { default as SURROUNDKEYS } from "./surroundKeys";
 
 // #### [split](./split)
 // `split` returns an array of strings from a given string separated by a delimiter.
-import split from "./split";
+export { default as SPLIT } from "./split";
 
 // #### [text](./text)
 // `text` formats numbers and dates using a format code.
-import text from "./text";
+export { default as TEXT } from "./text";
 
 // #### [trim](./trim)
 // `trim` returns a value with the whitespace removed from the left and right.
-import trim from "./trim";
+export { default as TRIM } from "./trim";
 
 // #### [upper](./upper)
 // `upper` returns a value in all upper case.
-import upper from "./upper";
+export { default as UPPER } from "./upper";
 
 // ### Lookup and reference
 
 // #### [hlookup](./hlookup)
 // `hlookup` searches the first row and returns the value from the found column at a given row.
-import hlookup from "./hlookup";
+export { default as HLOOKUP } from "./hlookup";
 
 // #### [includes](./includes)
 // `includes` searches an array and returns the true or false for exact matches.
-import includes from "./includes";
-const In = includes;
+export { default as INCLUDES } from "./includes";
 
 // #### [notincludes](./notincludes)
 // `notincludes` searches an array and returns the true or false for exact matches.
-import notincludes from "./notincludes";
-const notIncludes = notincludes;
-const nIn = includes;
+export { default as NOTINCLUDES } from "./notincludes";
 
 // #### [index](./index)
 // `index` returns the value for a given row and column.
-import index from "./index";
+export { default as INDEX } from "./index";
 
 // #### [lookup](./lookup)
 // `lookup` searches an array and returns the value found or (optionally) the value at the same index in a second array.
-import lookup from "./lookup";
+export { default as LOOKUP } from "./lookup";
 
 // #### [match](./match)
 // `match` searches an array and returns the found index with support for wildcard and range queries.
-import match from "./match";
+export { default as MATCH } from "./match";
 
 // #### [vlookup](./vlookup)
 // `vlookup` searches the first column and returns the value from the found row at a given column.
-import vlookup from "./vlookup";
+export { default as VLOOKUP } from "./vlookup";
 
 // ### Date manipulation
 
 // #### [date](./date)
 // `date` returns a serial number for a given year, month and day.
-import date from "./date";
+export { default as DATE } from "./date";
 
 // #### [datevalue](./datevalue)
 // `datevalue` returns a serial number for a given date string.
-import datevalue from "./datevalue";
-const dateValue = datevalue;
+export { default as DATEVALUE } from "./datevalue";
 
 // #### [datedif](./datedif)
 // `datedif` returns the difference between two dates with support for multiple units.
-import datedif from "./datedif";
+export { default as DATEDIF } from "./datedif";
 
 // #### [day](./day)
 // `day` returns the day part from a date or date string.
-import day from "./day";
+export { default as DAY } from "./day";
 
 // #### [days360](./days360)
 // `days360` returns the days behind two dates using a 360 day year.
-import days360 from "./days360";
+export { default as DAYS360 } from "./days360";
 
 // #### [edate](./edate)
 // `edate` returns the serial number for a date that is a given number of months before or after a given date.
-import edate from "./edate";
+export { default as EDATE } from "./edate";
 
 // #### [eomonth](./eomonth)
 // `eomonth` returns the last day of the month in future or past months.
-import eomonth from "./eomonth";
+export { default as EOMONTH } from "./eomonth";
 
 // #### [hour](./hour)
 // `hour` returns the hour part of a time fraction value.
-import hour from "./hour";
+export { default as HOUR } from "./hour";
 
 // #### [minute](./minute)
 // `minute` returns the minute part of a time fraction value.
-import minute from "./minute";
+export { default as MINUTE } from "./minute";
 
 // #### [month](./month)
 // `month` returns the month for a given date.
-import month from "./month";
+export { default as MONTH } from "./month";
 
 // #### [now](./now)
 // `now` returns the current date time in a serial number and time fraction.
-import now from "./now";
+export { default as NOW } from "./now";
 
 // #### [second](./second)
 // `second` return the second part of a time fraction
-import second from "./second";
+export { default as SECOND } from "./second";
 
 // #### [today](./today)
 // `today` returns a serial number for the current date.
-import today from "./today";
+export { default as TODAY } from "./today";
 
 // #### [time](./time)
 // `time` returns a time fraction for an hour, minute and second.
-import time from "./time";
+export { default as TIME } from "./time";
 
 // #### [timevalue](./timevalue)
 // `timevalue` returns a time fraction given a text value.
-import timevalue from "./timevalue";
+export { default as TIMEVALUE } from "./timevalue";
 
 // #### [year](./year)
 // `year` return the year for a given date.
-import year from "./year";
+export { default as YEAR } from "./year";
 
 // #### [yearfrac](./yearfrac)
 // `yearfrac` calculates the fraction of a year between two dates.
-import yearfrac from "./yearfrac";
+export { default as YEARFRAC } from "./yearfrac";
 
 // ### Aggregation
 
 // #### [average](./average)
 // `average` returns the sum divided by the number of items.
-import average from "./average";
+export { default as AVERAGE } from "./average";
 
 // #### [min](./min)
 // `min` returns the smallest value in an array.
-import min from "./min";
+export { default as MIN } from "./min";
 
 // #### [max](./max)
 // `min` returns the largest value in an array.
-import max from "./max";
+export { default as MAX } from "./max";
 
 // #### [query](./query)
 // `min` returns the largest value in an array.
-import query from "./query";
+export { default as QUERY } from "./query";
 
 // #### [sum](./sum)
 // `sum` returns the value of all items in an array added together.
-import sum from "./sum";
+export { default as SUM } from "./sum";
 
 // ### Finance
 
 // #### [accrint](./accrint)
 // `accrint` teturns the accrued interest for a security that pays periodic interest.
-import accrint from "./accrint";
+export { default as ACCRINT } from "./accrint";
 
 // #### [fv](./fv)
 // `fv` returns the future value of an investment.
-import fv from "./fv";
+export { default as FV } from "./fv";
 
 // #### [nper](./nper)
 // `nper` returns the number of periods for an investment.
-import nper from "./nper";
+export { default as NPER } from "./nper";
 
 // #### [npv](./npv)
 // `npv` returns the net present value of an investment.
-import npv from "./npv";
+export { default as NPV } from "./npv";
 
 // #### [pmt](./pmt)
 // `pmt` returns the amortized payment for a loan.
-import pmt from "./pmt";
+export { default as PMT } from "./pmt";
 
 // #### [cumipmt](./cumipmt)
 // `cumipmt` returns the cumulative interest on a loan between start and end period.
-import cumipmt from "./cumipmt";
+export { default as CUMIPMT } from "./cumipmt";
 
 // #### [ipmt](./ipmt)
 // `ipmt` returns the portion of the periodic payment which is interest for a fixed rate loan or annuity.
-import ipmt from "./ipmt";
+export { default as IPMT } from "./ipmt";
 
 // #### [pv](./pv)
 // `pv` returns the present value of an investment.
-import pv from "./pv";
+export { default as PV } from "./pv";
 
 // ### Engineering
 
 // #### [bin2dec](./bin2dec)
 // `bin2dec` converts a binary number into a decimal value.
-import bin2dec from "./bin2dec";
+export { default as BIN2DEC } from "./bin2dec";
 
 // #### [dec2bin](./dec2bin)
 // `dec2bin` converts a decimal value to a binary string.
-import dec2bin from "./dec2bin";
+export { default as DEC2BIN } from "./dec2bin";
 
 // #### [oct2dec](./oct2dec)
 // `oct2dec` converts an octal string to a decimal value.
-import oct2dec from "./oct2dec";
+export { default as OCT2DEC } from "./oct2dec";
 
 // ### Arrays
 
 // #### [filter](./filter)
 // `filter` limits a range based on arrays of true/false values.
-import filter from "./filter";
+export { default as FILTER } from "./filter";
 
 // #### [flatten](./flatten)
 // `flatten` returns an array with values flatten into a single dimension.
-import flatten from "./flatten";
+export { default as FLATTEN } from "./flatten";
 
 // #### [map](./map)
 // `map` returns an array mapped to new values with a given function.
-import map from "./map";
+export { default as MAP } from "./map";
 
 // #### [pluck](./pluck)
 // `pluck` returns an array with a property plucked from an array of objects.
-import pluck from "./pluck";
+export { default as PLUCK } from "./pluck";
 
 // #### [reduce](./reduce)
 // `reduce` converts an array into a value.
-import reduce from "./reduce";
+export { default as REDUCE } from "./reduce";
 
 // #### [some](./some)
 // `some` returns true if some of the values in an array match the criteria.
-import some from "./some";
+export { default as SOME } from "./some";
 
 // #### [sort](./sort)
 // `sort` returns an array sorted by criteria.
-import sort from "./sort";
+export { default as SORT } from "./sort";
 
 // #### [unflatten](./unflatten)
 // `unflatten` returns an array with values unflattened into arrays of arrays.
-import unflatten from "./unflatten";
+export { default as UNFLATTEN } from "./unflatten";
 
 // #### [unique](./unique)
 // `unique` returns the list of unique values from an array.
-import unique from "./unique";
+export { default as UNIQUE } from "./unique";
 
 // ### Objects
 
 // #### [changed](./changed)
 // `changed` computes the list of keys that are different between two objects.
-import changed from "./changed";
+export { default as CHANGED } from "./changed";
 
 // #### [diff](./diff)
 // `diff` computes the unique left, unique right and changed properties of two objects.
-import diff from "./diff";
+export { default as DIFF } from "./diff";
 
 // #### [clean](./clean)
 // `clean` returns an object skipping properties with empty values.
-import clean from "./clean";
+export { default as CLEAN } from "./clean";
 
 // #### [get](./get)
 // `get` returns the value of a property from an object.
-import get from "./get";
+export { default as GET } from "./get";
 
 // #### [select](./select)
 // `select` returns an object with keys limited to a given set.
-import select from "./select";
+export { default as SELECT } from "./select";
 
 // ### Utility
 
 // #### [base](./base)
 // `base` returns a number into a text representation with the given radix.
-import base from "./base";
+export { default as BASE } from "./base";
 
 // #### [cellindex](./cellindex)
 // `cellindex` computes the index of a row/column in a fixed size 1 dimensional space.
-import cellindex from "./cellindex";
-const cellIndex = cellindex;
+export { default as CELLINDEX } from "./cellindex";
 
 // #### [ceiling](./ceiling)
 // `ceiling` returns a number rounded up to a specified multiple.
-import ceiling from "./ceiling";
+export { default as CEILING } from "./ceiling";
 
 // #### [column](./column)
 // `column` returns the column index from a cell index.
-import column from "./column";
+export { default as COLUMN } from "./column";
 
 // #### [columnletter](./columnletter)
 // `column` returns the column letter from a cell index.
-import columnletter from "./columnletter";
-const columnLetter = columnletter;
+export { default as COLUMNLETTER } from "./columnletter";
 
 // #### [columnnumber](./columnnumber)
 // `columnnumber` converts a column letter into a number.
-import columnnumber from "./columnnumber";
+export { default as COLUMNNUMBER } from "./columnnumber";
 
 // #### [decodebase64](./decodebase64)
 // `decodeBase64` decodes the base 64 binary into string
-import decodebase64 from "./decodebase64";
-const decodeBase64 = decodebase64;
-const atob = decodebase64;
+export { default as DECODEBASE64 } from "./decodebase64";
 
 // #### [decodejwt](./decodejwt)
 // `decodeJWT` decodes the payload from a JSON Web Token
-import decodejwt from "./decodejwt";
-const decodeJWT = decodejwt;
+export { default as DECODEJWT } from "./decodejwt";
 
 // #### [even](./even)
 // `even` returns a number rounded up the nearest even integer.
-import even from "./even";
+export { default as EVEN } from "./even";
 
 // #### [floor](./floor)
 // `floor` returns a number rounded down to a specified multiple.
-import floor from "./floor";
+export { default as FLOOR } from "./floor";
 
 // #### [group](./group)
 // `group` returns data group by one or more fields.
-import group from "./group";
+export { default as GROUP } from "./group";
 
 // #### [guid](./guid)
 // `guid` returns a new globally unique identifier (version 4).
-import guid from "./guid";
+export { default as GUID } from "./guid";
 
 // #### [int](./int)
 // `int` return the floor of a number.
-import int from "./int";
+export { default as INT } from "./int";
 
 // #### [index2col](./index2col)
 // `index2col` computes the column given a cell index.
-import index2col from "./index2col";
+export { default as INDEX2COL } from "./index2col";
 
 // #### [index2row](./index2row)
 // `index2row` computes the row given a cell index.
-import index2row from "./index2row";
+export { default as INDEX2ROW } from "./index2row";
 
 // #### [n](./n)
 // `n` converts a `value` to a number. It supports numbers, true, false and dates.
-import n from "./n";
+export { default as N } from "./n";
 
 // #### [numbers](./numbers)
 // `numbers` returns the numbers from an array.
-import numbers from "./numbers";
+export { default as NUMBERS } from "./numbers";
 
 // #### [ref](./ref)
 // `ref` returns a ref object that represents a range.
-import ref from "./ref";
+export { default as REF } from "./ref";
 
 // #### [serial](./serial)
 // `serial` converts a JS date into the number of days from 1/1/1900.
-import serial from "./serial";
-
-export default {
-  run,
-  compile,
-  abs,
-  accrint,
-  acos,
-  acosh,
-  acot,
-  acoth,
-  asin,
-  asinh,
-  atan,
-  atan2,
-  atanh,
-  add,
-  and,
-  atob,
-  average,
-  base,
-  bin2dec,
-  branch,
-  camelcase,
-  ceiling,
-  cellIndex,
-  cellindex,
-  changed,
-  char,
-  choose,
-  clean,
-  code,
-  column,
-  columnLetter,
-  columnletter,
-  columnnumber,
-  concat,
-  concatenate,
-  cond,
-  cos,
-  cumipmt,
-  date,
-  dateValue,
-  datedif,
-  datevalue,
-  day,
-  days360,
-  dec2bin,
-  decodeBase64,
-  decodeJWT,
-  decodebase64,
-  decodejwt,
-  degrees,
-  diff,
-  divide,
-  edate,
-  eomonth,
-  eq,
-  even,
-  exact,
-  filter,
-  find,
-  flatten,
-  floor,
-  fv,
-  get,
-  group,
-  gt,
-  gte,
-  guid,
-  hlookup,
-  hour,
-  ifBlank,
-  ifEmpty,
-  ifError,
-  ifNA,
-  ifblank,
-  ifempty,
-  iferror,
-  ifna,
-  ifs,
-  includes,
-  In,
-  index,
-  index2col,
-  index2row,
-  int,
-  ipmt,
-  isArray,
-  isBlank,
-  isBool,
-  isBoolean,
-  isDate,
-  isEmail,
-  isEmpty,
-  isError,
-  isEven,
-  isFunction,
-  isInteger,
-  isLeapYear,
-  isObject,
-  isNA,
-  isNumber,
-  isOdd,
-  isRef,
-  isText,
-  isWholeNumber,
-  isarray,
-  isblank,
-  isbool,
-  isboolean,
-  isdate,
-  isemail,
-  isempty,
-  iserror,
-  iseven,
-  isfalsy,
-  isfunction,
-  isleapyear,
-  isobject,
-  isna,
-  isnan,
-  isnumber,
-  isoWeekNum,
-  isodd,
-  isoweeknum,
-  isref,
-  istext,
-  istruthy,
-  isurl,
-  iswholenumber,
-  join,
-  left,
-  len,
-  lookup,
-  lower,
-  lt,
-  lte,
-  map,
-  match,
-  max,
-  min,
-  minute,
-  month,
-  multiply,
-  n,
-  ne,
-  not,
-  notincludes,
-  notIncludes,
-  nIn,
-  now,
-  nper,
-  npv,
-  numberValue,
-  numbers,
-  numbervalue,
-  oct2dec,
-  or,
-  parseBool,
-  parseDate,
-  parseQuery,
-  parsebool,
-  parsedate,
-  parsequery,
-  pi,
-  pluck,
-  pmt,
-  power,
-  proper,
-  pv,
-  query,
-  reduce,
-  ref,
-  replace,
-  rept,
-  right,
-  round,
-  roundup,
-  search,
-  second,
-  select,
-  serial,
-  sin,
-  snakecase,
-  some,
-  sort,
-  split,
-  substitute,
-  substituteAll,
-  subtract,
-  sum,
-  surroundKeys,
-  tan,
-  tau,
-  template,
-  text,
-  time,
-  timevalue,
-  today,
-  trim,
-  trunc,
-  unflatten,
-  unique,
-  upper,
-  vlookup,
-  xor,
-  year,
-  yearfrac
-};
+export { default as SERIAL } from "./serial";

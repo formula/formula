@@ -1,38 +1,38 @@
 <!DOCTYPE html><html lang="en"><head><title>test/compile</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="test/compile"><meta name="groc-project-path" content="test/compile.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">test/compile.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">var</span> test = <span class="hljs-built_in">require</span>(<span class="hljs-string">'tape'</span>)
-<span class="hljs-keyword">var</span> compile = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../fn/compile'</span>)
+<span class="hljs-keyword">import</span> compile <span class="hljs-keyword">from</span> <span class="hljs-string">'../fn/compile'</span>
 
-test(<span class="hljs-string">'compiler should pass basic tests'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
+test(<span class="hljs-string">'compiler should pass basic tests'</span>, function(t) {
 
-  t.plan(<span class="hljs-number">15</span>)
+  t.plan(15)
 
-  t.equal(compile(<span class="hljs-string">'2=2'</span>).code, <span class="hljs-string">"funcs.eq(2, 2)"</span>)
-  t.equal(compile(<span class="hljs-string">'-2'</span>).code, <span class="hljs-string">"-funcs.numbervalue(2)"</span>)
-  t.equal(compile(<span class="hljs-string">'2 = 2'</span>).code, <span class="hljs-string">"funcs.eq(2, 2)"</span>)
-  t.equal(compile(<span class="hljs-string">'2&lt;&gt;2'</span>).code, <span class="hljs-string">"funcs.ne(2, 2)"</span>)
-  t.equal(compile(<span class="hljs-string">'2 &gt; 2'</span>).code, <span class="hljs-string">"funcs.gt(2, 2)"</span>)
-  t.equal(compile(<span class="hljs-string">'2&gt;=2'</span>).code, <span class="hljs-string">"funcs.gte(2, 2)"</span>)
-  t.equal(compile(<span class="hljs-string">'2  &lt; 2'</span>).code, <span class="hljs-string">"funcs.lt(2, 2)"</span>)
-  t.equal(compile(<span class="hljs-string">'2 &lt;=   2'</span>).code, <span class="hljs-string">"funcs.lte(2, 2)"</span>)
-  t.equal(compile(<span class="hljs-string">'2+   2'</span>).code, <span class="hljs-string">"funcs.add(2, 2)"</span>)
-  t.equal(compile(<span class="hljs-string">'2   -2'</span>).code, <span class="hljs-string">"funcs.subtract(2, 2)"</span>)
-  t.equal(compile(<span class="hljs-string">'2     *2'</span>).code, <span class="hljs-string">"funcs.multiply(2, 2)"</span>)
-  t.equal(compile(<span class="hljs-string">'2/2'</span>).code, <span class="hljs-string">"funcs.divide(2, 2)"</span>)
-  t.equal(compile(<span class="hljs-string">'2^2'</span>).code, <span class="hljs-string">"funcs.power(2, 2)"</span>)
-  t.equal(compile(<span class="hljs-string">'"a" &amp; "b"'</span>).code, <span class="hljs-string">"funcs.concatenate('a', 'b')"</span>)
+  t.equal(compile(<span class="hljs-string">'2=2'</span>).code, <span class="hljs-string">"funcs.EQ(2, 2)"</span>)
+  t.equal(compile(<span class="hljs-string">'-2'</span>).code, <span class="hljs-string">"-funcs.NUMBERVALUE(2)"</span>)
+  t.equal(compile(<span class="hljs-string">'2 = 2'</span>).code, <span class="hljs-string">"funcs.EQ(2, 2)"</span>)
+  t.equal(compile(<span class="hljs-string">'2&lt;&gt;2'</span>).code, <span class="hljs-string">"funcs.NE(2, 2)"</span>)
+  t.equal(compile(<span class="hljs-string">'2 &gt; 2'</span>).code, <span class="hljs-string">"funcs.GT(2, 2)"</span>)
+  t.equal(compile(<span class="hljs-string">'2&gt;=2'</span>).code, <span class="hljs-string">"funcs.GTE(2, 2)"</span>)
+  t.equal(compile(<span class="hljs-string">'2  &lt; 2'</span>).code, <span class="hljs-string">"funcs.LT(2, 2)"</span>)
+  t.equal(compile(<span class="hljs-string">'2 &lt;=   2'</span>).code, <span class="hljs-string">"funcs.LTE(2, 2)"</span>)
+  t.equal(compile(<span class="hljs-string">'2+   2'</span>).code, <span class="hljs-string">"funcs.ADD(2, 2)"</span>)
+  t.equal(compile(<span class="hljs-string">'2   -2'</span>).code, <span class="hljs-string">"funcs.SUBTRACT(2, 2)"</span>)
+  t.equal(compile(<span class="hljs-string">'2     *2'</span>).code, <span class="hljs-string">"funcs.MULTIPLY(2, 2)"</span>)
+  t.equal(compile(<span class="hljs-string">'2/2'</span>).code, <span class="hljs-string">"funcs.DIVIDE(2, 2)"</span>)
+  t.equal(compile(<span class="hljs-string">'2^2'</span>).code, <span class="hljs-string">"funcs.POWER(2, 2)"</span>)
+  t.equal(compile(<span class="hljs-string">'"a" &amp; "b"'</span>).code, <span class="hljs-string">"funcs.CONCATENATE('a', 'b')"</span>)
   t.equal(compile(<span class="hljs-string">'@foo1'</span>).code, <span class="hljs-string">'context.get("@foo1")'</span>)
 
 })
 
-test(<span class="hljs-string">'compiler complex nesting should work'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
-  t.plan(<span class="hljs-number">1</span>)
+test(<span class="hljs-string">'compiler complex nesting should work'</span>, function(t) {
+  t.plan(1)
 
   t.equal(compile(<span class="hljs-string">'2+2=((2-2+2)+(3-1))'</span>).code,
-  <span class="hljs-string">"funcs.eq(funcs.add(2, 2), (funcs.add((funcs.add(funcs.subtract(2, 2), 2)), (funcs.subtract(3, 1)))))"</span>)
+  <span class="hljs-string">"funcs.EQ(funcs.ADD(2, 2), (funcs.ADD((funcs.ADD(funcs.SUBTRACT(2, 2), 2)), (funcs.SUBTRACT(3, 1)))))"</span>)
 
 })
 
-test(<span class="hljs-string">'compiler should eat array for breakfast'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
-  t.plan(<span class="hljs-number">2</span>)
+test(<span class="hljs-string">'compiler should eat array for breakfast'</span>, function(t) {
+  t.plan(2)
 
   t.equal( compile(<span class="hljs-string">'{2,2}'</span>).code, <span class="hljs-string">"[2, 2]"</span>)
   t.equal( compile(<span class="hljs-string">'{2;2}'</span>).code, <span class="hljs-string">"[[2], [2]]"</span>)

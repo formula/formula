@@ -6,1601 +6,1499 @@ Object.defineProperty(exports, "__esModule", {
 
 var _compile = require("./compile");
 
-var _compile2 = _interopRequireDefault(_compile);
+Object.defineProperty(exports, "COMPILE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_compile).default;
+  }
+});
 
 var _run = require("./run");
 
-var _run2 = _interopRequireDefault(_run);
+Object.defineProperty(exports, "RUN", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_run).default;
+  }
+});
 
 var _branch = require("./branch");
 
-var _branch2 = _interopRequireDefault(_branch);
+Object.defineProperty(exports, "BRANCH", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_branch).default;
+  }
+});
+Object.defineProperty(exports, "IF", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_branch).default;
+  }
+});
+Object.defineProperty(exports, "IFS", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_branch).default;
+  }
+});
 
 var _choose = require("./choose");
 
-var _choose2 = _interopRequireDefault(_choose);
+Object.defineProperty(exports, "CHOOSE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_choose).default;
+  }
+});
+
+var _switch = require("./switch");
+
+Object.defineProperty(exports, "SWITCH", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_switch).default;
+  }
+});
 
 var _and = require("./and");
 
-var _and2 = _interopRequireDefault(_and);
+Object.defineProperty(exports, "AND", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_and).default;
+  }
+});
 
 var _or = require("./or");
 
-var _or2 = _interopRequireDefault(_or);
+Object.defineProperty(exports, "OR", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_or).default;
+  }
+});
 
 var _not = require("./not");
 
-var _not2 = _interopRequireDefault(_not);
+Object.defineProperty(exports, "NOT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_not).default;
+  }
+});
 
 var _eq = require("./eq");
 
-var _eq2 = _interopRequireDefault(_eq);
+Object.defineProperty(exports, "EQ", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_eq).default;
+  }
+});
 
 var _ne = require("./ne");
 
-var _ne2 = _interopRequireDefault(_ne);
+Object.defineProperty(exports, "NE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_ne).default;
+  }
+});
 
 var _gt = require("./gt");
 
-var _gt2 = _interopRequireDefault(_gt);
+Object.defineProperty(exports, "GT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_gt).default;
+  }
+});
 
 var _gte = require("./gte");
 
-var _gte2 = _interopRequireDefault(_gte);
+Object.defineProperty(exports, "GTE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_gte).default;
+  }
+});
 
 var _lt = require("./lt");
 
-var _lt2 = _interopRequireDefault(_lt);
+Object.defineProperty(exports, "LT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_lt).default;
+  }
+});
 
 var _lte = require("./lte");
 
-var _lte2 = _interopRequireDefault(_lte);
+Object.defineProperty(exports, "LTE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_lte).default;
+  }
+});
 
 var _ifblank = require("./ifblank");
 
-var _ifblank2 = _interopRequireDefault(_ifblank);
+Object.defineProperty(exports, "IFBLANK", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_ifblank).default;
+  }
+});
 
 var _ifempty = require("./ifempty");
 
-var _ifempty2 = _interopRequireDefault(_ifempty);
+Object.defineProperty(exports, "IFEMPTY", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_ifempty).default;
+  }
+});
 
 var _iferror = require("./iferror");
 
-var _iferror2 = _interopRequireDefault(_iferror);
+Object.defineProperty(exports, "IFERROR", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_iferror).default;
+  }
+});
 
 var _ifna = require("./ifna");
 
-var _ifna2 = _interopRequireDefault(_ifna);
+Object.defineProperty(exports, "IFNA", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_ifna).default;
+  }
+});
 
 var _isarray = require("./isarray");
 
-var _isarray2 = _interopRequireDefault(_isarray);
+Object.defineProperty(exports, "ISARRAY", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isarray).default;
+  }
+});
 
 var _isblank = require("./isblank");
 
-var _isblank2 = _interopRequireDefault(_isblank);
+Object.defineProperty(exports, "ISBLANK", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isblank).default;
+  }
+});
 
 var _isboolean = require("./isboolean");
 
-var _isboolean2 = _interopRequireDefault(_isboolean);
+Object.defineProperty(exports, "ISBOOLEAN", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isboolean).default;
+  }
+});
 
 var _isdate = require("./isdate");
 
-var _isdate2 = _interopRequireDefault(_isdate);
+Object.defineProperty(exports, "ISDATE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isdate).default;
+  }
+});
 
 var _isemail = require("./isemail");
 
-var _isemail2 = _interopRequireDefault(_isemail);
+Object.defineProperty(exports, "ISEMAIL", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isemail).default;
+  }
+});
 
 var _isempty = require("./isempty");
 
-var _isempty2 = _interopRequireDefault(_isempty);
+Object.defineProperty(exports, "ISEMPTY", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isempty).default;
+  }
+});
 
 var _iserror = require("./iserror");
 
-var _iserror2 = _interopRequireDefault(_iserror);
+Object.defineProperty(exports, "ISERROR", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_iserror).default;
+  }
+});
 
 var _iseven = require("./iseven");
 
-var _iseven2 = _interopRequireDefault(_iseven);
+Object.defineProperty(exports, "ISEVEN", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_iseven).default;
+  }
+});
 
 var _isfalsy = require("./isfalsy");
 
-var _isfalsy2 = _interopRequireDefault(_isfalsy);
+Object.defineProperty(exports, "ISFALSY", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isfalsy).default;
+  }
+});
 
 var _isfunction = require("./isfunction");
 
-var _isfunction2 = _interopRequireDefault(_isfunction);
+Object.defineProperty(exports, "ISFUNCTION", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isfunction).default;
+  }
+});
 
 var _isleapyear = require("./isleapyear");
 
-var _isleapyear2 = _interopRequireDefault(_isleapyear);
+Object.defineProperty(exports, "ISLEAPYEAR", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isleapyear).default;
+  }
+});
 
 var _isobject = require("./isobject");
 
-var _isobject2 = _interopRequireDefault(_isobject);
+Object.defineProperty(exports, "ISOBJECT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isobject).default;
+  }
+});
 
 var _isna = require("./isna");
 
-var _isna2 = _interopRequireDefault(_isna);
+Object.defineProperty(exports, "ISNA", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isna).default;
+  }
+});
 
 var _isnan = require("./isnan");
 
-var _isnan2 = _interopRequireDefault(_isnan);
+Object.defineProperty(exports, "ISNAN", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isnan).default;
+  }
+});
 
 var _isnumber = require("./isnumber");
 
-var _isnumber2 = _interopRequireDefault(_isnumber);
+Object.defineProperty(exports, "ISNUMBER", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isnumber).default;
+  }
+});
 
 var _isodd = require("./isodd");
 
-var _isodd2 = _interopRequireDefault(_isodd);
+Object.defineProperty(exports, "ISODD", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isodd).default;
+  }
+});
 
 var _isoweeknum = require("./isoweeknum");
 
-var _isoweeknum2 = _interopRequireDefault(_isoweeknum);
+Object.defineProperty(exports, "ISOWEEKNUM", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isoweeknum).default;
+  }
+});
 
 var _isref = require("./isref");
 
-var _isref2 = _interopRequireDefault(_isref);
+Object.defineProperty(exports, "ISREF", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isref).default;
+  }
+});
 
 var _istext = require("./istext");
 
-var _istext2 = _interopRequireDefault(_istext);
+Object.defineProperty(exports, "ISTEXT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_istext).default;
+  }
+});
 
 var _istruthy = require("./istruthy");
 
-var _istruthy2 = _interopRequireDefault(_istruthy);
+Object.defineProperty(exports, "ISTRUTHY", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_istruthy).default;
+  }
+});
 
 var _isurl = require("./isurl");
 
-var _isurl2 = _interopRequireDefault(_isurl);
+Object.defineProperty(exports, "ISURL", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isurl).default;
+  }
+});
 
 var _iswholenumber = require("./iswholenumber");
 
-var _iswholenumber2 = _interopRequireDefault(_iswholenumber);
+Object.defineProperty(exports, "ISWHOLENUMBER", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_iswholenumber).default;
+  }
+});
 
 var _xor = require("./xor");
 
-var _xor2 = _interopRequireDefault(_xor);
+Object.defineProperty(exports, "XOR", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_xor).default;
+  }
+});
 
 var _add = require("./add");
 
-var _add2 = _interopRequireDefault(_add);
+Object.defineProperty(exports, "ADD", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_add).default;
+  }
+});
 
 var _subtract = require("./subtract");
 
-var _subtract2 = _interopRequireDefault(_subtract);
+Object.defineProperty(exports, "SUBTRACT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_subtract).default;
+  }
+});
 
 var _multiply = require("./multiply");
 
-var _multiply2 = _interopRequireDefault(_multiply);
+Object.defineProperty(exports, "MULTIPLY", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_multiply).default;
+  }
+});
 
 var _divide = require("./divide");
 
-var _divide2 = _interopRequireDefault(_divide);
+Object.defineProperty(exports, "DIVIDE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_divide).default;
+  }
+});
 
 var _abs = require("./abs");
 
-var _abs2 = _interopRequireDefault(_abs);
+Object.defineProperty(exports, "ABS", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_abs).default;
+  }
+});
 
 var _acos = require("./acos");
 
-var _acos2 = _interopRequireDefault(_acos);
+Object.defineProperty(exports, "ACOS", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_acos).default;
+  }
+});
 
 var _acosh = require("./acosh");
 
-var _acosh2 = _interopRequireDefault(_acosh);
+Object.defineProperty(exports, "ACOSH", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_acosh).default;
+  }
+});
 
 var _acot = require("./acot");
 
-var _acot2 = _interopRequireDefault(_acot);
+Object.defineProperty(exports, "ACOT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_acot).default;
+  }
+});
 
 var _acoth = require("./acoth");
 
-var _acoth2 = _interopRequireDefault(_acoth);
+Object.defineProperty(exports, "ACOTH", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_acoth).default;
+  }
+});
 
 var _asin = require("./asin");
 
-var _asin2 = _interopRequireDefault(_asin);
+Object.defineProperty(exports, "ASIN", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_asin).default;
+  }
+});
 
 var _asinh = require("./asinh");
 
-var _asinh2 = _interopRequireDefault(_asinh);
+Object.defineProperty(exports, "ASINH", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_asinh).default;
+  }
+});
 
 var _atan = require("./atan");
 
-var _atan2 = _interopRequireDefault(_atan);
+Object.defineProperty(exports, "ATAN", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_atan).default;
+  }
+});
 
-var _atan3 = require("./atan2");
+var _atan2 = require("./atan2");
 
-var _atan4 = _interopRequireDefault(_atan3);
+Object.defineProperty(exports, "ATAN2", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_atan2).default;
+  }
+});
 
 var _atanh = require("./atanh");
 
-var _atanh2 = _interopRequireDefault(_atanh);
+Object.defineProperty(exports, "ATANH", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_atanh).default;
+  }
+});
 
 var _cos = require("./cos");
 
-var _cos2 = _interopRequireDefault(_cos);
+Object.defineProperty(exports, "COS", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_cos).default;
+  }
+});
 
 var _degrees = require("./degrees");
 
-var _degrees2 = _interopRequireDefault(_degrees);
+Object.defineProperty(exports, "DEGREES", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_degrees).default;
+  }
+});
 
 var _pi = require("./pi");
 
-var _pi2 = _interopRequireDefault(_pi);
+Object.defineProperty(exports, "PI", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_pi).default;
+  }
+});
 
 var _power = require("./power");
 
-var _power2 = _interopRequireDefault(_power);
+Object.defineProperty(exports, "POWER", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_power).default;
+  }
+});
 
 var _round = require("./round");
 
-var _round2 = _interopRequireDefault(_round);
+Object.defineProperty(exports, "ROUND", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_round).default;
+  }
+});
 
 var _roundup = require("./roundup");
 
-var _roundup2 = _interopRequireDefault(_roundup);
+Object.defineProperty(exports, "ROUNDUP", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_roundup).default;
+  }
+});
 
 var _sin = require("./sin");
 
-var _sin2 = _interopRequireDefault(_sin);
+Object.defineProperty(exports, "SIN", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_sin).default;
+  }
+});
 
 var _tan = require("./tan");
 
-var _tan2 = _interopRequireDefault(_tan);
+Object.defineProperty(exports, "TAN", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_tan).default;
+  }
+});
 
 var _tau = require("./tau");
 
-var _tau2 = _interopRequireDefault(_tau);
+Object.defineProperty(exports, "TAU", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_tau).default;
+  }
+});
 
 var _trunc = require("./trunc");
 
-var _trunc2 = _interopRequireDefault(_trunc);
+Object.defineProperty(exports, "TRUNC", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_trunc).default;
+  }
+});
 
 var _char = require("./char");
 
-var _char2 = _interopRequireDefault(_char);
+Object.defineProperty(exports, "CHAR", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_char).default;
+  }
+});
 
 var _camelcase = require("./camelcase");
 
-var _camelcase2 = _interopRequireDefault(_camelcase);
+Object.defineProperty(exports, "CAMELCASE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_camelcase).default;
+  }
+});
 
 var _code = require("./code");
 
-var _code2 = _interopRequireDefault(_code);
+Object.defineProperty(exports, "CODE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_code).default;
+  }
+});
 
 var _concatenate = require("./concatenate");
 
-var _concatenate2 = _interopRequireDefault(_concatenate);
+Object.defineProperty(exports, "CONCATENATE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_concatenate).default;
+  }
+});
 
 var _exact = require("./exact");
 
-var _exact2 = _interopRequireDefault(_exact);
+Object.defineProperty(exports, "EXACT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_exact).default;
+  }
+});
 
 var _find = require("./find");
 
-var _find2 = _interopRequireDefault(_find);
+Object.defineProperty(exports, "FIND", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_find).default;
+  }
+});
 
 var _join = require("./join");
 
-var _join2 = _interopRequireDefault(_join);
+Object.defineProperty(exports, "JOIN", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_join).default;
+  }
+});
 
 var _left = require("./left");
 
-var _left2 = _interopRequireDefault(_left);
+Object.defineProperty(exports, "LEFT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_left).default;
+  }
+});
 
 var _len = require("./len");
 
-var _len2 = _interopRequireDefault(_len);
+Object.defineProperty(exports, "LEN", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_len).default;
+  }
+});
 
 var _lower = require("./lower");
 
-var _lower2 = _interopRequireDefault(_lower);
+Object.defineProperty(exports, "LOWER", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_lower).default;
+  }
+});
 
 var _numbervalue = require("./numbervalue");
 
-var _numbervalue2 = _interopRequireDefault(_numbervalue);
+Object.defineProperty(exports, "NUMBERVALUE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_numbervalue).default;
+  }
+});
 
 var _parsebool = require("./parsebool");
 
-var _parsebool2 = _interopRequireDefault(_parsebool);
+Object.defineProperty(exports, "PARSEBOOL", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_parsebool).default;
+  }
+});
 
 var _parsedate = require("./parsedate");
 
-var _parsedate2 = _interopRequireDefault(_parsedate);
+Object.defineProperty(exports, "PARSEDATE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_parsedate).default;
+  }
+});
 
 var _parsequery = require("./parsequery");
 
-var _parsequery2 = _interopRequireDefault(_parsequery);
+Object.defineProperty(exports, "PARSEQUERY", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_parsequery).default;
+  }
+});
 
 var _proper = require("./proper");
 
-var _proper2 = _interopRequireDefault(_proper);
+Object.defineProperty(exports, "PROPER", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_proper).default;
+  }
+});
 
 var _replace = require("./replace");
 
-var _replace2 = _interopRequireDefault(_replace);
+Object.defineProperty(exports, "REPLACE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_replace).default;
+  }
+});
 
 var _right = require("./right");
 
-var _right2 = _interopRequireDefault(_right);
+Object.defineProperty(exports, "RIGHT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_right).default;
+  }
+});
 
 var _rept = require("./rept");
 
-var _rept2 = _interopRequireDefault(_rept);
+Object.defineProperty(exports, "REPT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_rept).default;
+  }
+});
 
 var _search = require("./search");
 
-var _search2 = _interopRequireDefault(_search);
+Object.defineProperty(exports, "SEARCH", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_search).default;
+  }
+});
 
 var _snakecase = require("./snakecase");
 
-var _snakecase2 = _interopRequireDefault(_snakecase);
+Object.defineProperty(exports, "SNAKECASE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_snakecase).default;
+  }
+});
 
 var _substitute = require("./substitute");
 
-var _substitute2 = _interopRequireDefault(_substitute);
+Object.defineProperty(exports, "SUBSTITUTE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_substitute).default;
+  }
+});
 
 var _substituteAll = require("./substituteAll");
 
-var _substituteAll2 = _interopRequireDefault(_substituteAll);
+Object.defineProperty(exports, "SUBSTITUTEALL", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_substituteAll).default;
+  }
+});
 
 var _surroundKeys = require("./surroundKeys");
 
-var _surroundKeys2 = _interopRequireDefault(_surroundKeys);
+Object.defineProperty(exports, "SURROUNDKEYS", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_surroundKeys).default;
+  }
+});
 
 var _split = require("./split");
 
-var _split2 = _interopRequireDefault(_split);
+Object.defineProperty(exports, "SPLIT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_split).default;
+  }
+});
 
 var _text = require("./text");
 
-var _text2 = _interopRequireDefault(_text);
+Object.defineProperty(exports, "TEXT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_text).default;
+  }
+});
 
 var _trim = require("./trim");
 
-var _trim2 = _interopRequireDefault(_trim);
+Object.defineProperty(exports, "TRIM", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_trim).default;
+  }
+});
 
 var _upper = require("./upper");
 
-var _upper2 = _interopRequireDefault(_upper);
+Object.defineProperty(exports, "UPPER", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_upper).default;
+  }
+});
 
 var _hlookup = require("./hlookup");
 
-var _hlookup2 = _interopRequireDefault(_hlookup);
+Object.defineProperty(exports, "HLOOKUP", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_hlookup).default;
+  }
+});
 
 var _includes = require("./includes");
 
-var _includes2 = _interopRequireDefault(_includes);
+Object.defineProperty(exports, "INCLUDES", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_includes).default;
+  }
+});
 
 var _notincludes = require("./notincludes");
 
-var _notincludes2 = _interopRequireDefault(_notincludes);
+Object.defineProperty(exports, "NOTINCLUDES", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_notincludes).default;
+  }
+});
 
 var _index = require("./index");
 
-var _index2 = _interopRequireDefault(_index);
+Object.defineProperty(exports, "INDEX", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_index).default;
+  }
+});
 
 var _lookup = require("./lookup");
 
-var _lookup2 = _interopRequireDefault(_lookup);
+Object.defineProperty(exports, "LOOKUP", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_lookup).default;
+  }
+});
 
 var _match = require("./match");
 
-var _match2 = _interopRequireDefault(_match);
+Object.defineProperty(exports, "MATCH", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_match).default;
+  }
+});
 
 var _vlookup = require("./vlookup");
 
-var _vlookup2 = _interopRequireDefault(_vlookup);
+Object.defineProperty(exports, "VLOOKUP", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_vlookup).default;
+  }
+});
 
 var _date = require("./date");
 
-var _date2 = _interopRequireDefault(_date);
+Object.defineProperty(exports, "DATE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_date).default;
+  }
+});
 
 var _datevalue = require("./datevalue");
 
-var _datevalue2 = _interopRequireDefault(_datevalue);
+Object.defineProperty(exports, "DATEVALUE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_datevalue).default;
+  }
+});
 
 var _datedif = require("./datedif");
 
-var _datedif2 = _interopRequireDefault(_datedif);
+Object.defineProperty(exports, "DATEDIF", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_datedif).default;
+  }
+});
 
 var _day = require("./day");
 
-var _day2 = _interopRequireDefault(_day);
+Object.defineProperty(exports, "DAY", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_day).default;
+  }
+});
 
 var _days = require("./days360");
 
-var _days2 = _interopRequireDefault(_days);
+Object.defineProperty(exports, "DAYS360", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_days).default;
+  }
+});
 
 var _edate = require("./edate");
 
-var _edate2 = _interopRequireDefault(_edate);
+Object.defineProperty(exports, "EDATE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_edate).default;
+  }
+});
 
 var _eomonth = require("./eomonth");
 
-var _eomonth2 = _interopRequireDefault(_eomonth);
+Object.defineProperty(exports, "EOMONTH", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_eomonth).default;
+  }
+});
 
 var _hour = require("./hour");
 
-var _hour2 = _interopRequireDefault(_hour);
+Object.defineProperty(exports, "HOUR", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_hour).default;
+  }
+});
 
 var _minute = require("./minute");
 
-var _minute2 = _interopRequireDefault(_minute);
+Object.defineProperty(exports, "MINUTE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_minute).default;
+  }
+});
 
 var _month = require("./month");
 
-var _month2 = _interopRequireDefault(_month);
+Object.defineProperty(exports, "MONTH", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_month).default;
+  }
+});
 
 var _now = require("./now");
 
-var _now2 = _interopRequireDefault(_now);
+Object.defineProperty(exports, "NOW", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_now).default;
+  }
+});
 
 var _second = require("./second");
 
-var _second2 = _interopRequireDefault(_second);
+Object.defineProperty(exports, "SECOND", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_second).default;
+  }
+});
 
 var _today = require("./today");
 
-var _today2 = _interopRequireDefault(_today);
+Object.defineProperty(exports, "TODAY", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_today).default;
+  }
+});
 
 var _time = require("./time");
 
-var _time2 = _interopRequireDefault(_time);
+Object.defineProperty(exports, "TIME", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_time).default;
+  }
+});
 
 var _timevalue = require("./timevalue");
 
-var _timevalue2 = _interopRequireDefault(_timevalue);
+Object.defineProperty(exports, "TIMEVALUE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_timevalue).default;
+  }
+});
 
 var _year = require("./year");
 
-var _year2 = _interopRequireDefault(_year);
+Object.defineProperty(exports, "YEAR", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_year).default;
+  }
+});
 
 var _yearfrac = require("./yearfrac");
 
-var _yearfrac2 = _interopRequireDefault(_yearfrac);
+Object.defineProperty(exports, "YEARFRAC", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_yearfrac).default;
+  }
+});
 
 var _average = require("./average");
 
-var _average2 = _interopRequireDefault(_average);
+Object.defineProperty(exports, "AVERAGE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_average).default;
+  }
+});
 
 var _min = require("./min");
 
-var _min2 = _interopRequireDefault(_min);
+Object.defineProperty(exports, "MIN", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_min).default;
+  }
+});
 
 var _max = require("./max");
 
-var _max2 = _interopRequireDefault(_max);
+Object.defineProperty(exports, "MAX", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_max).default;
+  }
+});
 
 var _query = require("./query");
 
-var _query2 = _interopRequireDefault(_query);
+Object.defineProperty(exports, "QUERY", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_query).default;
+  }
+});
 
 var _sum = require("./sum");
 
-var _sum2 = _interopRequireDefault(_sum);
+Object.defineProperty(exports, "SUM", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_sum).default;
+  }
+});
 
 var _accrint = require("./accrint");
 
-var _accrint2 = _interopRequireDefault(_accrint);
+Object.defineProperty(exports, "ACCRINT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_accrint).default;
+  }
+});
 
 var _fv = require("./fv");
 
-var _fv2 = _interopRequireDefault(_fv);
+Object.defineProperty(exports, "FV", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_fv).default;
+  }
+});
 
 var _nper = require("./nper");
 
-var _nper2 = _interopRequireDefault(_nper);
+Object.defineProperty(exports, "NPER", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_nper).default;
+  }
+});
 
 var _npv = require("./npv");
 
-var _npv2 = _interopRequireDefault(_npv);
+Object.defineProperty(exports, "NPV", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_npv).default;
+  }
+});
 
 var _pmt = require("./pmt");
 
-var _pmt2 = _interopRequireDefault(_pmt);
+Object.defineProperty(exports, "PMT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_pmt).default;
+  }
+});
 
 var _cumipmt = require("./cumipmt");
 
-var _cumipmt2 = _interopRequireDefault(_cumipmt);
+Object.defineProperty(exports, "CUMIPMT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_cumipmt).default;
+  }
+});
 
 var _ipmt = require("./ipmt");
 
-var _ipmt2 = _interopRequireDefault(_ipmt);
+Object.defineProperty(exports, "IPMT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_ipmt).default;
+  }
+});
 
 var _pv = require("./pv");
 
-var _pv2 = _interopRequireDefault(_pv);
+Object.defineProperty(exports, "PV", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_pv).default;
+  }
+});
 
 var _bin2dec = require("./bin2dec");
 
-var _bin2dec2 = _interopRequireDefault(_bin2dec);
+Object.defineProperty(exports, "BIN2DEC", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_bin2dec).default;
+  }
+});
 
 var _dec2bin = require("./dec2bin");
 
-var _dec2bin2 = _interopRequireDefault(_dec2bin);
+Object.defineProperty(exports, "DEC2BIN", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_dec2bin).default;
+  }
+});
 
 var _oct2dec = require("./oct2dec");
 
-var _oct2dec2 = _interopRequireDefault(_oct2dec);
+Object.defineProperty(exports, "OCT2DEC", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_oct2dec).default;
+  }
+});
 
 var _filter = require("./filter");
 
-var _filter2 = _interopRequireDefault(_filter);
+Object.defineProperty(exports, "FILTER", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_filter).default;
+  }
+});
 
 var _flatten = require("./flatten");
 
-var _flatten2 = _interopRequireDefault(_flatten);
+Object.defineProperty(exports, "FLATTEN", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_flatten).default;
+  }
+});
 
 var _map = require("./map");
 
-var _map2 = _interopRequireDefault(_map);
+Object.defineProperty(exports, "MAP", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_map).default;
+  }
+});
 
 var _pluck = require("./pluck");
 
-var _pluck2 = _interopRequireDefault(_pluck);
+Object.defineProperty(exports, "PLUCK", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_pluck).default;
+  }
+});
 
 var _reduce = require("./reduce");
 
-var _reduce2 = _interopRequireDefault(_reduce);
+Object.defineProperty(exports, "REDUCE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_reduce).default;
+  }
+});
 
 var _some = require("./some");
 
-var _some2 = _interopRequireDefault(_some);
+Object.defineProperty(exports, "SOME", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_some).default;
+  }
+});
 
 var _sort = require("./sort");
 
-var _sort2 = _interopRequireDefault(_sort);
+Object.defineProperty(exports, "SORT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_sort).default;
+  }
+});
 
 var _unflatten = require("./unflatten");
 
-var _unflatten2 = _interopRequireDefault(_unflatten);
+Object.defineProperty(exports, "UNFLATTEN", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_unflatten).default;
+  }
+});
 
 var _unique = require("./unique");
 
-var _unique2 = _interopRequireDefault(_unique);
+Object.defineProperty(exports, "UNIQUE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_unique).default;
+  }
+});
 
 var _changed = require("./changed");
 
-var _changed2 = _interopRequireDefault(_changed);
+Object.defineProperty(exports, "CHANGED", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_changed).default;
+  }
+});
 
 var _diff = require("./diff");
 
-var _diff2 = _interopRequireDefault(_diff);
+Object.defineProperty(exports, "DIFF", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_diff).default;
+  }
+});
 
 var _clean = require("./clean");
 
-var _clean2 = _interopRequireDefault(_clean);
+Object.defineProperty(exports, "CLEAN", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_clean).default;
+  }
+});
 
 var _get = require("./get");
 
-var _get2 = _interopRequireDefault(_get);
+Object.defineProperty(exports, "GET", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_get).default;
+  }
+});
 
 var _select = require("./select");
 
-var _select2 = _interopRequireDefault(_select);
+Object.defineProperty(exports, "SELECT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_select).default;
+  }
+});
 
 var _base = require("./base");
 
-var _base2 = _interopRequireDefault(_base);
+Object.defineProperty(exports, "BASE", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_base).default;
+  }
+});
 
 var _cellindex = require("./cellindex");
 
-var _cellindex2 = _interopRequireDefault(_cellindex);
+Object.defineProperty(exports, "CELLINDEX", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_cellindex).default;
+  }
+});
 
 var _ceiling = require("./ceiling");
 
-var _ceiling2 = _interopRequireDefault(_ceiling);
+Object.defineProperty(exports, "CEILING", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_ceiling).default;
+  }
+});
 
 var _column = require("./column");
 
-var _column2 = _interopRequireDefault(_column);
+Object.defineProperty(exports, "COLUMN", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_column).default;
+  }
+});
 
 var _columnletter = require("./columnletter");
 
-var _columnletter2 = _interopRequireDefault(_columnletter);
+Object.defineProperty(exports, "COLUMNLETTER", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_columnletter).default;
+  }
+});
 
 var _columnnumber = require("./columnnumber");
 
-var _columnnumber2 = _interopRequireDefault(_columnnumber);
+Object.defineProperty(exports, "COLUMNNUMBER", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_columnnumber).default;
+  }
+});
 
 var _decodebase = require("./decodebase64");
 
-var _decodebase2 = _interopRequireDefault(_decodebase);
+Object.defineProperty(exports, "DECODEBASE64", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_decodebase).default;
+  }
+});
 
 var _decodejwt = require("./decodejwt");
 
-var _decodejwt2 = _interopRequireDefault(_decodejwt);
+Object.defineProperty(exports, "DECODEJWT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_decodejwt).default;
+  }
+});
 
 var _even = require("./even");
 
-var _even2 = _interopRequireDefault(_even);
+Object.defineProperty(exports, "EVEN", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_even).default;
+  }
+});
 
 var _floor = require("./floor");
 
-var _floor2 = _interopRequireDefault(_floor);
+Object.defineProperty(exports, "FLOOR", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_floor).default;
+  }
+});
 
 var _group = require("./group");
 
-var _group2 = _interopRequireDefault(_group);
+Object.defineProperty(exports, "GROUP", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_group).default;
+  }
+});
 
 var _guid = require("./guid");
 
-var _guid2 = _interopRequireDefault(_guid);
+Object.defineProperty(exports, "GUID", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_guid).default;
+  }
+});
 
 var _int = require("./int");
 
-var _int2 = _interopRequireDefault(_int);
+Object.defineProperty(exports, "INT", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_int).default;
+  }
+});
 
 var _index2col = require("./index2col");
 
-var _index2col2 = _interopRequireDefault(_index2col);
+Object.defineProperty(exports, "INDEX2COL", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_index2col).default;
+  }
+});
 
 var _index2row = require("./index2row");
 
-var _index2row2 = _interopRequireDefault(_index2row);
+Object.defineProperty(exports, "INDEX2ROW", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_index2row).default;
+  }
+});
 
 var _n = require("./n");
 
-var _n2 = _interopRequireDefault(_n);
+Object.defineProperty(exports, "N", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_n).default;
+  }
+});
 
 var _numbers = require("./numbers");
 
-var _numbers2 = _interopRequireDefault(_numbers);
+Object.defineProperty(exports, "NUMBERS", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_numbers).default;
+  }
+});
 
 var _ref = require("./ref");
 
-var _ref2 = _interopRequireDefault(_ref);
+Object.defineProperty(exports, "REF", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_ref).default;
+  }
+});
 
 var _serial = require("./serial");
 
-var _serial2 = _interopRequireDefault(_serial);
+Object.defineProperty(exports, "SERIAL", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_serial).default;
+  }
+});
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// define `cond` alias for branch
-
-
-// #### [run](./run)
-// `run` execute a formula once.
-var cond = _branch2.default;
-
-// define `ifs` alias for branch
-
-
-// ### Logical
-
-// #### [branch](./branch)
-// `branch` is equivalent to `if-elseif-else`.
-// Copyright @ 2015-2016 JC Fisher
-
-// # Formula's Functions
-
-// ## Functions
-// The library includes functions for logic, math, text, lookup, date/time, aggregation, arrays, objects, finance, statistics and other utilities.
-
-// ### Formula
-
-// #### [compile](./compile)
-// `compile` converts a formula into a function.
-var ifs = _branch2.default;
-
-// #### [choose](./choose)
-// `choose` is equivalent to `switch case`.
-
-
-// #### [and](./and)
-// `and` returns true when all arguments are true or evaluates to true.
-
-
-// #### [or](./or)
-// `or` returns true when any argument is true or evaluates to true.
-
-
-// #### [not](./not)
-// `not` returns the inverse.
-
-
-// #### [eq](./eq)
-// `eq` returns true when the first and second arguments are equivalent. String comparision is _case insensitive_.
-
-
-// #### [ne](./ne)
-// `ne` returns true when the first and second arguments are not equivalent. String comparision is _case insensitive_.
-
-
-// #### [gt](./gt)
-// `gt` returns true when first argument is greater than the second.
-
-
-// #### [gte](./gte)
-// `gte` returns true when first argument is greater than or equal to the second.
-
-
-// #### [lt](./lt)
-// `lt` returns true when first argument is less than the second.
-
-
-// #### [lte](./lte)
-// `lte` returns true when first argument is less than or equal to the second.
-
-
-// #### [ifblank](./ifblank)
-// `ifempty` returns the second argument when the first argument is blank or the third argument
-
-var ifBlank = _ifblank2.default;
-
-// #### [ifempty](./ifempty)
-// `ifempty` returns the second argument when the first argument is empty or the third argument
-
-var ifEmpty = _ifempty2.default;
-
-// #### [iferror](./iferror)
-// `ifempty` returns the second argument when the first argument is an error or the third argument
-
-var ifError = _iferror2.default;
-
-// #### [ifna](./ifna)
-// `ifempty` returns the second argument when the first argument is #NA! or the third argument
-
-var ifNA = _ifna2.default;
-
-// #### [isarray](./isarray)
-// `isarray` returns true when the value is an array.
-
-var isArray = _isarray2.default;
-
-// #### [isblank](./isblank)
-// `isblank` returns true when the value is undefined or null.
-
-var isBlank = _isblank2.default;
-
-// #### [isboolean](./isboolean)
-// `isboolean` returns true when the value is true or false.
-
-var isbool = _isboolean2.default;
-var isBoolean = _isboolean2.default;
-var isBool = _isboolean2.default;
-
-// #### [isdate](./isdate)
-// `isdate` returns true when the value is a JavaScript Date object.
-
-var isDate = _isdate2.default;
-
-// #### [isemail](./isemail)
-// `isdate` returns true when the value matches the pattern for a valid email address.
-
-var isEmail = _isemail2.default;
-
-// #### [isempty](./isempty)
-// `isempty` returns true when the value is blank or empty string.
-
-var isEmpty = _isempty2.default;
-
-// #### [iserror](./iserror)
-// `iserror` returns true when the value is an error value.
-
-var isError = _iserror2.default;
-
-// #### [iseven](./iseven)
-// `iseven` returns true when the value is an even number.
-
-var isEven = _iseven2.default;
-
-// #### [isfalsy](./isfalsy)
-// `isfalsy` returns true when value is a string.
-
-var isFalsy = _isfalsy2.default;
-
-// #### [isfunction](./isfunction)
-// `isfunction` returns true when the value is a JavaScript function.
-
-var isFunction = _isfunction2.default;
-
-// #### [isleapyear](./isleapyear)
-// `isfunction` returns true when the value is a leap year.
-
-var isLeapYear = _isleapyear2.default;
-
-// #### [isobject](./isobject)
-// `isobject` return true when object exists and is object or function.
-
-var isObject = _isobject2.default;
-
-// #### [isna](./isna)
-// `isna` returns true when the value is #NA!.
-
-var isNA = _isna2.default;
-
-// #### [isnan](./isnan)
-// `isnan` returns true when the value is NaN.
-
-var isNaN = _isnan2.default;
-
-// #### [isnumber](./isnumber)
-// `isnumber` returns true when the value is JavaScript number type and not NaN and not infinite.
-
-var isNumber = _isnumber2.default;
-
-// #### [isodd](./isodd)
-// `isodd` returns true when the value is an odd number.
-
-var isOdd = _isodd2.default;
-
-// #### [isoweeknum](./isoweeknum)
-// `isoweeknum` returns number of the ISO week number of the year for a given date.
-
-var isoWeekNum = _isoweeknum2.default;
-
-// #### [isref](./isref)
-// `isref` returns true when value is a ref object.
-
-var isRef = _isref2.default;
-
-// #### [istext](./istext)
-// `istext` returns true when value is a string.
-
-var isText = _istext2.default;
-
-// #### [istruthy](./istruthy)
-// `istruthy` returns true when value is a string.
-
-var isTruthy = _istruthy2.default;
-
-// #### [isurl](./isurl)
-// `isurl` returns true when value matches a url pattern.
-
-var isURL = _isurl2.default;
-
-// #### [iswholenumber](./iswholenumber)
-// `iswholenumber` returns true when value is an integer.
-
-var isWholeNumber = _iswholenumber2.default;
-var isInteger = _iswholenumber2.default;
-
-// #### [xor](./xor)
-// `xor` returns the logical exclusive Or of all arguments.
-
-
-// ### Math functions
-
-// #### [add](./add)
-// `add` sums the first and second arguments.
-
-
-// #### [subtract](./subtract)
-// `subtract` returns the difference between the first and second arguments.
-
-
-// #### [multiply](./multiply)
-// `multiply` returns the product of the first and second arguments.
-
-
-// #### [divide](./divide)
-// `divide` returns the result of the first argument divided by the second.
-
-
-// #### [abs](./abs)
-// `abs` returns the absolute value of the first argument.
-
-
-// #### [acos](./acos)
-// `acos` returns the inverse cosine of a number.
-
-
-// #### [acosh](./acosh)
-// `acosh` returns the hyperbolic inverse cosine of a number.
-
-
-// #### [acot](./acot)
-/// `acot` returns the arccotangent of a given number.
-
-
-// #### [acoth](./acoth)
-/// `acot` returns the hyperbolic arccotangent of a given number.
-
-
-// #### [asin](./asin)
-/// `asin` returns the arccosin of a given number.
-
-
-// #### [asinh](./asinh)
-/// `asinh` returns the hyperbolic arccosin of a given number.
-
-
-// #### [atan](./atan)
-/// `atan` returns the arctangent of a given number.
-
-
-// #### [atan2](./atan2)
-/// `atan2` returns the arctangent, or inverse tangent, of the specified x- and y-coordinates.
-
-
-// #### [atanh](./atanh)
-/// `atanh` returns the arctangent (in radians) of the given number.
-
-
-// #### [cos](./cos)
-/// `cos` returns the cosine of a number
-
-
-// #### [degrees](./degrees)
-/// `degrees` returns radians converted to degrees.
-
-
-// #### [pi](./pi)
-/// `pi` returns the circle constant 3.14...
-
-
-// #### [power](./power)
-// `power` returns the nth power of a number.
-
-
-// #### [round](./round)
-// `round` returns a number rounded to a precision.
-
-
-// #### [roundup](./roundup)
-// `roundup` returns a number rounded up to a precision.
-
-
-// #### [sin](./sin)
-// `sin` return the sinine of a number.
-
-
-// #### [tan](./tan)
-// `tan` returns the tangent of a number.
-
-
-// #### [tau](./tau)
-// `tau` returns the circle constant 6.28...
-
-
-// #### [trunc](./trunc)
-// `trunc` returns a number truncated to a given precision.
-
-
-// ### Text
-
-// #### [char](./char)
-// `char` returns a character given an ASCII code.
-
-
-// #### [camelcase](./camelcase)
-// `camelcase` returns text converted to camel case.
-
-
-// #### [code](./code)
-// `code` returns the ASCII code for a given character.
-
-
-// #### [concatenate](./concatenate)
-// `concatenate` combines multiple values into a string.
-
-var concat = _concatenate2.default;
-
-// #### [exact](./exact)
-// `exact` compares two values for strict equivalence.
-
-
-// #### [find](./find)
-// `find` searches a string for a value and returns the index.
-
-
-// #### [join](./join)
-// `join` combines an array of values into a string with a given delimiter.
-
-
-// #### [left](./left)
-// `left` returns a given number of characters from the left side of a string.
-
-
-// #### [len](./len)
-// `len` returns the size of a string of array.
-
-
-// #### [lower](./lower)
-// `lower` converts text to lower case.
-
-
-// #### [numbervalue](./numbervalue)
-// `numbervalue` converts text into a number.
-
-var numberValue = _numbervalue2.default;
-
-// #### [parsebool](./parsebool)
-// `parsebool` converts text into a boolean value.
-
-var parseBool = _parsebool2.default;
-
-// #### [parsedate](./parsedate)
-// `parsedate` converts text into a JavaScript date object
-
-var parseDate = _parsedate2.default;
-
-// #### [parsequery](./parsequery)
-// `parsequery` returns a JSObject for a URL query string.
-
-var parseQuery = _parsequery2.default;
-
-// #### [proper](./proper)
-// `proper` returns a string as a proper name.
-
-
-// #### [replace](./replace)
-// `replace` returns a string where one value is replaced with a new value.
-
-
-// #### [right](./right)
-// `right` returns a given number of characters from the right of a string.
-
-
-// #### [rept](./rept)
-// `rept` returns a string with a given value repeated `n` times.
-
-
-// #### [search](./search)
-// `search` returns the index of a value inside a string with wildcard support for single characters (?) and multiple characters (*).
-
-
-// #### [snakecase](./snakecase)
-// `snakecase` returns text converted to snake case.
-
-
-// #### [substitute](./substitute)
-// `substitute` returns a new string with every instance of value replaced.
-
-
-// #### [substituteAll](./substituteAll)
-// `substituteAll` returns a new string with every instance of set of values replaced.
-
-var template = _substituteAll2.default;
-
-// #### [surroundKeys](./surroundKeys)
-// `surroundKeys` returns a new object where the keys have been wrapped with start and end strings.
-
-
-// #### [split](./split)
-// `split` returns an array of strings from a given string separated by a delimiter.
-
-
-// #### [text](./text)
-// `text` formats numbers and dates using a format code.
-
-
-// #### [trim](./trim)
-// `trim` returns a value with the whitespace removed from the left and right.
-
-
-// #### [upper](./upper)
-// `upper` returns a value in all upper case.
-
-
-// ### Lookup and reference
-
-// #### [hlookup](./hlookup)
-// `hlookup` searches the first row and returns the value from the found column at a given row.
-
-
-// #### [includes](./includes)
-// `includes` searches an array and returns the true or false for exact matches.
-
-var In = _includes2.default;
-
-// #### [notincludes](./notincludes)
-// `notincludes` searches an array and returns the true or false for exact matches.
-
-var notIncludes = _notincludes2.default;
-var nIn = _includes2.default;
-
-// #### [index](./index)
-// `index` returns the value for a given row and column.
-
-
-// #### [lookup](./lookup)
-// `lookup` searches an array and returns the value found or (optionally) the value at the same index in a second array.
-
-
-// #### [match](./match)
-// `match` searches an array and returns the found index with support for wildcard and range queries.
-
-
-// #### [vlookup](./vlookup)
-// `vlookup` searches the first column and returns the value from the found row at a given column.
-
-
-// ### Date manipulation
-
-// #### [date](./date)
-// `date` returns a serial number for a given year, month and day.
-
-
-// #### [datevalue](./datevalue)
-// `datevalue` returns a serial number for a given date string.
-
-var dateValue = _datevalue2.default;
-
-// #### [datedif](./datedif)
-// `datedif` returns the difference between two dates with support for multiple units.
-
-
-// #### [day](./day)
-// `day` returns the day part from a date or date string.
-
-
-// #### [days360](./days360)
-// `days360` returns the days behind two dates using a 360 day year.
-
-
-// #### [edate](./edate)
-// `edate` returns the serial number for a date that is a given number of months before or after a given date.
-
-
-// #### [eomonth](./eomonth)
-// `eomonth` returns the last day of the month in future or past months.
-
-
-// #### [hour](./hour)
-// `hour` returns the hour part of a time fraction value.
-
-
-// #### [minute](./minute)
-// `minute` returns the minute part of a time fraction value.
-
-
-// #### [month](./month)
-// `month` returns the month for a given date.
-
-
-// #### [now](./now)
-// `now` returns the current date time in a serial number and time fraction.
-
-
-// #### [second](./second)
-// `second` return the second part of a time fraction
-
-
-// #### [today](./today)
-// `today` returns a serial number for the current date.
-
-
-// #### [time](./time)
-// `time` returns a time fraction for an hour, minute and second.
-
-
-// #### [timevalue](./timevalue)
-// `timevalue` returns a time fraction given a text value.
-
-
-// #### [year](./year)
-// `year` return the year for a given date.
-
-
-// #### [yearfrac](./yearfrac)
-// `yearfrac` calculates the fraction of a year between two dates.
-
-
-// ### Aggregation
-
-// #### [average](./average)
-// `average` returns the sum divided by the number of items.
-
-
-// #### [min](./min)
-// `min` returns the smallest value in an array.
-
-
-// #### [max](./max)
-// `min` returns the largest value in an array.
-
-
-// #### [query](./query)
-// `min` returns the largest value in an array.
-
-
-// #### [sum](./sum)
-// `sum` returns the value of all items in an array added together.
-
-
-// ### Finance
-
-// #### [accrint](./accrint)
-// `accrint` teturns the accrued interest for a security that pays periodic interest.
-
-
-// #### [fv](./fv)
-// `fv` returns the future value of an investment.
-
-
-// #### [nper](./nper)
-// `nper` returns the number of periods for an investment.
-
-
-// #### [npv](./npv)
-// `npv` returns the net present value of an investment.
-
-
-// #### [pmt](./pmt)
-// `pmt` returns the amortized payment for a loan.
-
-
-// #### [cumipmt](./cumipmt)
-// `cumipmt` returns the cumulative interest on a loan between start and end period.
-
-
-// #### [ipmt](./ipmt)
-// `ipmt` returns the portion of the periodic payment which is interest for a fixed rate loan or annuity.
-
-
-// #### [pv](./pv)
-// `pv` returns the present value of an investment.
-
-
-// ### Engineering
-
-// #### [bin2dec](./bin2dec)
-// `bin2dec` converts a binary number into a decimal value.
-
-
-// #### [dec2bin](./dec2bin)
-// `dec2bin` converts a decimal value to a binary string.
-
-
-// #### [oct2dec](./oct2dec)
-// `oct2dec` converts an octal string to a decimal value.
-
-
-// ### Arrays
-
-// #### [filter](./filter)
-// `filter` limits a range based on arrays of true/false values.
-
-
-// #### [flatten](./flatten)
-// `flatten` returns an array with values flatten into a single dimension.
-
-
-// #### [map](./map)
-// `map` returns an array mapped to new values with a given function.
-
-
-// #### [pluck](./pluck)
-// `pluck` returns an array with a property plucked from an array of objects.
-
-
-// #### [reduce](./reduce)
-// `reduce` converts an array into a value.
-
-
-// #### [some](./some)
-// `some` returns true if some of the values in an array match the criteria.
-
-
-// #### [sort](./sort)
-// `sort` returns an array sorted by criteria.
-
-
-// #### [unflatten](./unflatten)
-// `unflatten` returns an array with values unflattened into arrays of arrays.
-
-
-// #### [unique](./unique)
-// `unique` returns the list of unique values from an array.
-
-
-// ### Objects
-
-// #### [changed](./changed)
-// `changed` computes the list of keys that are different between two objects.
-
-
-// #### [diff](./diff)
-// `diff` computes the unique left, unique right and changed properties of two objects.
-
-
-// #### [clean](./clean)
-// `clean` returns an object skipping properties with empty values.
-
-
-// #### [get](./get)
-// `get` returns the value of a property from an object.
-
-
-// #### [select](./select)
-// `select` returns an object with keys limited to a given set.
-
-
-// ### Utility
-
-// #### [base](./base)
-// `base` returns a number into a text representation with the given radix.
-
-
-// #### [cellindex](./cellindex)
-// `cellindex` computes the index of a row/column in a fixed size 1 dimensional space.
-
-var cellIndex = _cellindex2.default;
-
-// #### [ceiling](./ceiling)
-// `ceiling` returns a number rounded up to a specified multiple.
-
-
-// #### [column](./column)
-// `column` returns the column index from a cell index.
-
-
-// #### [columnletter](./columnletter)
-// `column` returns the column letter from a cell index.
-
-var columnLetter = _columnletter2.default;
-
-// #### [columnnumber](./columnnumber)
-// `columnnumber` converts a column letter into a number.
-
-
-// #### [decodebase64](./decodebase64)
-// `decodeBase64` decodes the base 64 binary into string
-
-var decodeBase64 = _decodebase2.default;
-var atob = _decodebase2.default;
-
-// #### [decodejwt](./decodejwt)
-// `decodeJWT` decodes the payload from a JSON Web Token
-
-var decodeJWT = _decodejwt2.default;
-
-// #### [even](./even)
-// `even` returns a number rounded up the nearest even integer.
-
-
-// #### [floor](./floor)
-// `floor` returns a number rounded down to a specified multiple.
-
-
-// #### [group](./group)
-// `group` returns data group by one or more fields.
-
-
-// #### [guid](./guid)
-// `guid` returns a new globally unique identifier (version 4).
-
-
-// #### [int](./int)
-// `int` return the floor of a number.
-
-
-// #### [index2col](./index2col)
-// `index2col` computes the column given a cell index.
-
-
-// #### [index2row](./index2row)
-// `index2row` computes the row given a cell index.
-
-
-// #### [n](./n)
-// `n` converts a `value` to a number. It supports numbers, true, false and dates.
-
-
-// #### [numbers](./numbers)
-// `numbers` returns the numbers from an array.
-
-
-// #### [ref](./ref)
-// `ref` returns a ref object that represents a range.
-
-
-// #### [serial](./serial)
-// `serial` converts a JS date into the number of days from 1/1/1900.
-exports.default = {
-  run: _run2.default,
-  compile: _compile2.default,
-  abs: _abs2.default,
-  accrint: _accrint2.default,
-  acos: _acos2.default,
-  acosh: _acosh2.default,
-  acot: _acot2.default,
-  acoth: _acoth2.default,
-  asin: _asin2.default,
-  asinh: _asinh2.default,
-  atan: _atan2.default,
-  atan2: _atan4.default,
-  atanh: _atanh2.default,
-  add: _add2.default,
-  and: _and2.default,
-  atob: atob,
-  average: _average2.default,
-  base: _base2.default,
-  bin2dec: _bin2dec2.default,
-  branch: _branch2.default,
-  camelcase: _camelcase2.default,
-  ceiling: _ceiling2.default,
-  cellIndex: cellIndex,
-  cellindex: _cellindex2.default,
-  changed: _changed2.default,
-  char: _char2.default,
-  choose: _choose2.default,
-  clean: _clean2.default,
-  code: _code2.default,
-  column: _column2.default,
-  columnLetter: columnLetter,
-  columnletter: _columnletter2.default,
-  columnnumber: _columnnumber2.default,
-  concat: concat,
-  concatenate: _concatenate2.default,
-  cond: cond,
-  cos: _cos2.default,
-  cumipmt: _cumipmt2.default,
-  date: _date2.default,
-  dateValue: dateValue,
-  datedif: _datedif2.default,
-  datevalue: _datevalue2.default,
-  day: _day2.default,
-  days360: _days2.default,
-  dec2bin: _dec2bin2.default,
-  decodeBase64: decodeBase64,
-  decodeJWT: decodeJWT,
-  decodebase64: _decodebase2.default,
-  decodejwt: _decodejwt2.default,
-  degrees: _degrees2.default,
-  diff: _diff2.default,
-  divide: _divide2.default,
-  edate: _edate2.default,
-  eomonth: _eomonth2.default,
-  eq: _eq2.default,
-  even: _even2.default,
-  exact: _exact2.default,
-  filter: _filter2.default,
-  find: _find2.default,
-  flatten: _flatten2.default,
-  floor: _floor2.default,
-  fv: _fv2.default,
-  get: _get2.default,
-  group: _group2.default,
-  gt: _gt2.default,
-  gte: _gte2.default,
-  guid: _guid2.default,
-  hlookup: _hlookup2.default,
-  hour: _hour2.default,
-  ifBlank: ifBlank,
-  ifEmpty: ifEmpty,
-  ifError: ifError,
-  ifNA: ifNA,
-  ifblank: _ifblank2.default,
-  ifempty: _ifempty2.default,
-  iferror: _iferror2.default,
-  ifna: _ifna2.default,
-  ifs: ifs,
-  includes: _includes2.default,
-  In: In,
-  index: _index2.default,
-  index2col: _index2col2.default,
-  index2row: _index2row2.default,
-  int: _int2.default,
-  ipmt: _ipmt2.default,
-  isArray: isArray,
-  isBlank: isBlank,
-  isBool: isBool,
-  isBoolean: isBoolean,
-  isDate: isDate,
-  isEmail: isEmail,
-  isEmpty: isEmpty,
-  isError: isError,
-  isEven: isEven,
-  isFunction: isFunction,
-  isInteger: isInteger,
-  isLeapYear: isLeapYear,
-  isObject: isObject,
-  isNA: isNA,
-  isNumber: isNumber,
-  isOdd: isOdd,
-  isRef: isRef,
-  isText: isText,
-  isWholeNumber: isWholeNumber,
-  isarray: _isarray2.default,
-  isblank: _isblank2.default,
-  isbool: isbool,
-  isboolean: _isboolean2.default,
-  isdate: _isdate2.default,
-  isemail: _isemail2.default,
-  isempty: _isempty2.default,
-  iserror: _iserror2.default,
-  iseven: _iseven2.default,
-  isfalsy: _isfalsy2.default,
-  isfunction: _isfunction2.default,
-  isleapyear: _isleapyear2.default,
-  isobject: _isobject2.default,
-  isna: _isna2.default,
-  isnan: _isnan2.default,
-  isnumber: _isnumber2.default,
-  isoWeekNum: isoWeekNum,
-  isodd: _isodd2.default,
-  isoweeknum: _isoweeknum2.default,
-  isref: _isref2.default,
-  istext: _istext2.default,
-  istruthy: _istruthy2.default,
-  isurl: _isurl2.default,
-  iswholenumber: _iswholenumber2.default,
-  join: _join2.default,
-  left: _left2.default,
-  len: _len2.default,
-  lookup: _lookup2.default,
-  lower: _lower2.default,
-  lt: _lt2.default,
-  lte: _lte2.default,
-  map: _map2.default,
-  match: _match2.default,
-  max: _max2.default,
-  min: _min2.default,
-  minute: _minute2.default,
-  month: _month2.default,
-  multiply: _multiply2.default,
-  n: _n2.default,
-  ne: _ne2.default,
-  not: _not2.default,
-  notincludes: _notincludes2.default,
-  notIncludes: notIncludes,
-  nIn: nIn,
-  now: _now2.default,
-  nper: _nper2.default,
-  npv: _npv2.default,
-  numberValue: numberValue,
-  numbers: _numbers2.default,
-  numbervalue: _numbervalue2.default,
-  oct2dec: _oct2dec2.default,
-  or: _or2.default,
-  parseBool: parseBool,
-  parseDate: parseDate,
-  parseQuery: parseQuery,
-  parsebool: _parsebool2.default,
-  parsedate: _parsedate2.default,
-  parsequery: _parsequery2.default,
-  pi: _pi2.default,
-  pluck: _pluck2.default,
-  pmt: _pmt2.default,
-  power: _power2.default,
-  proper: _proper2.default,
-  pv: _pv2.default,
-  query: _query2.default,
-  reduce: _reduce2.default,
-  ref: _ref2.default,
-  replace: _replace2.default,
-  rept: _rept2.default,
-  right: _right2.default,
-  round: _round2.default,
-  roundup: _roundup2.default,
-  search: _search2.default,
-  second: _second2.default,
-  select: _select2.default,
-  serial: _serial2.default,
-  sin: _sin2.default,
-  snakecase: _snakecase2.default,
-  some: _some2.default,
-  sort: _sort2.default,
-  split: _split2.default,
-  substitute: _substitute2.default,
-  substituteAll: _substituteAll2.default,
-  subtract: _subtract2.default,
-  sum: _sum2.default,
-  surroundKeys: _surroundKeys2.default,
-  tan: _tan2.default,
-  tau: _tau2.default,
-  template: template,
-  text: _text2.default,
-  time: _time2.default,
-  timevalue: _timevalue2.default,
-  today: _today2.default,
-  trim: _trim2.default,
-  trunc: _trunc2.default,
-  unflatten: _unflatten2.default,
-  unique: _unique2.default,
-  upper: _upper2.default,
-  vlookup: _vlookup2.default,
-  xor: _xor2.default,
-  year: _year2.default,
-  yearfrac: _yearfrac2.default
-};
-module.exports = exports["default"];
