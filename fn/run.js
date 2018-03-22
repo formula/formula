@@ -7,7 +7,7 @@ exports.default = run;
 
 var _functions = require('./functions');
 
-var functions = _interopRequireWildcard(_functions);
+var funcs = _interopRequireWildcard(_functions);
 
 var _compile = require('./compile');
 
@@ -40,8 +40,6 @@ var m = {};
 function run(exp) {
   var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-
-  var funcs = functions.default;
 
   // if the exp is a function then return it immediately.
   if ((0, _isfunction2.default)(exp)) return exp;

@@ -1,4 +1,4 @@
-[![Circle CI](https://circleci.com/gh/formula/formula.svg?style=svg)](https://circleci.com/gh/formula/formula)
+[![Circle CI](https://circleci.com/gh/FormBucket/formula.svg?style=svg)](https://circleci.com/gh/FormBucket/formula)
 
 Formula expressions and functions for JavaScript.
 

@@ -1,4 +1,4 @@
-import * as functions from './functions'
+import * as funcs from './functions'
 import compile from './compile'
 import isFunction from './isfunction'
 import assign from './assign'
@@ -10,8 +10,6 @@ let m = {}
 
 // Execute a formula expression
 export default function run(exp, params={}) {
-
-  let funcs = functions.default;
 
   // if the exp is a function then return it immediately.
   if (isFunction(exp)) return exp;
