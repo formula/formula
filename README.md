@@ -5,47 +5,33 @@ Formula expressions and functions for JavaScript.
 ## Install
 
 ```sh
-# install with npm
 npm install --save formula
 ```
 
 ## General Usage
 
 ```js
-// ES6 import statements
-import { run } from 'formula'
+import { RUN } from 'formula'
+RUN("sum(a, b, c) = 1+2+3", { a: 1, b: 2, c: 3})
+```
 
-// CommonJS
-var { and, eq, len, gt, lt, isnumber, isText, isEmail, isEmpty, lower, proper, text, date}
-= require('formula')
+## Browser ready
 
-run("sum(a, b, c) = 6", { a: 1, b: 2, c: 3})
-isnumber(1),
-isText('this is'),
-isEmail('me@gmail.com'),
-isEmpty(''),
-gt(2, 1),
-lt(1, 2),
-and(true, false, true),
-eq(len('foo'), 3),
-eq(lower('HAPPY'), 'happy'),
-eq(proper('happy'), 'Happy'),
-eq(text(4200.00, "$#,###.00"), '$4,200.00'),
-eq(text(date(2000, 2, 1), "m-d-yyyy"), '2-1-2000')
+Add to your browser with:
+
+```html
+<script type="text/javascript" src="https://unpkg.com/formula@3.0.0/umd/formula.min.js"
 ```
 
 ## Reduce bundle sizes
 
-Require specific functions to reduce bundle size with tools like webpack.
+Require specific functions to reduce bundle size.
 
 ```js
 var isNumber = require('formula/fn/isnumber')
 var proper = require('formula/fn/proper')
 ```
 
-## Browser ready build
+## About this project
 
-There is a browser ready build in the dist folder. You can include with a <script> tag. It uses `formula` as the namespace.
-
-
-Sponsored by <a href="https://formbucket.com">FormBucket</a>
+Project by <a href="https://formbucket.com">FormBucket</a>
