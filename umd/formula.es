@@ -950,25 +950,27 @@ return (${compiled});
 
     // List of errors in the spreadsheet system
 
-    function FFError(message, name) {
-        this.name = name || "NotImplementedError";
-        this.message = (message || "");
+    function FormulaError(name, message) {
+      this.name = name || "NotImplementedError";
+      this.message = message || "";
     }
 
-    FFError.prototype = Error.prototype;
-    FFError.prototype.toString = function() { return this.message }
+    FormulaError.prototype = Error.prototype;
+    FormulaError.prototype.toString = function() {
+      return this.name;
+    };
 
-    let nil = new FFError('#NULL!', "Null reference");
-    let div0 = new FFError('#DIV/0!', "Divide by zero");
-    let value = new FFError('#VALUE!', "Invalid value");
-    let ref = new FFError('#REF!', "Invalid reference");
-    let name = new FFError('#NAME?', "Invalid name");
-    let num = new FFError('#NUM!', "Invalid number");
-    let na = new FFError('#N/A!', "Not applicable");
-    let error$1 = new FFError('#ERROR!', "Error");
-    let data = new FFError('#GETTING_DATA!', "Error getting data");
-    let missing = new FFError('#MISSING!', "Missing");
-    let unknown = new FFError('#UNKNOWN!', "Unknown error");
+    let nil = new FormulaError("#NULL!", "Null reference");
+    let div0 = new FormulaError("#DIV/0!", "Divide by zero");
+    let value = new FormulaError("#VALUE!", "Invalid value");
+    let ref = new FormulaError("#REF!", "Invalid reference");
+    let name = new FormulaError("#NAME?", "Invalid name");
+    let num = new FormulaError("#NUM!", "Invalid number");
+    let na = new FormulaError("#N/A!", "Not applicable");
+    let error$1 = new FormulaError("#ERROR!", "Error");
+    let data = new FormulaError("#GETTING_DATA!", "Error getting data");
+    let missing = new FormulaError("#MISSING!", "Missing");
+    let unknown = new FormulaError("#UNKNOWN!", "Unknown error");
     var error$2 = {
       nil,
       div0,
@@ -981,7 +983,7 @@ return (${compiled});
       data,
       missing,
       unknown
-    }
+    };
 
     // m is a cache of compiled expressions.
     let m = {}
@@ -1116,25 +1118,13 @@ return (${compiled});
       return items[index-1];
     }
 
-    // ISERR returns true when the value is an error (except `#NA!`) or when then
-    // value is a number which is NaN or [-]Infinity.
-    function iserr(value) {
-      return (
-        (
-          value &&
-          value !== error$2.na &&
-          value.constructor && value.constructor.name === 'Error'
-        ) || (
-          typeof value === 'number' && (
-            isnan(value) || !isFinite(value)
-          )
-        )
+    // ISERROR returns true when any of the values is an error.
+    function iserror(...values) {
+      return reduce(
+        values,
+        (p, v) => (p === true ? true : v instanceof Error),
+        false
       );
-    }
-
-    // ISERROR returns true when the value is an error.
-    function iserror(value) {
-        return iserr(value) || value === error$2.na;
     }
 
     // AND reduces list of truthy values into true or false value.
@@ -3884,6 +3874,42 @@ return (${compiled});
       return interest;
     }
 
+    function ipmt(rate, period, periods, present, future = 0, type = 0) {
+      // parse numbers from input.
+      rate = numbervalue(rate);
+      period = numbervalue(period);
+      periods = numbervalue(periods);
+      present = numbervalue(present);
+      future = numbervalue(future);
+      type = numbervalue(type);
+
+      if (iserror(rate, period, periods, present, future, type)) {
+        return error$2.value;
+      }
+
+      // Compute payment
+      var payment = pmt(rate, periods, present, future, type);
+
+      // Compute interest
+      var interest;
+      if (period === 1) {
+        if (type === 1) {
+          interest = 0;
+        } else {
+          interest = -present;
+        }
+      } else {
+        if (type === 1) {
+          interest = fv(rate, period - 2, payment, present, 1) - payment;
+        } else {
+          interest = fv(rate, period - 1, payment, present, 0);
+        }
+      }
+
+      // Return interest
+      return interest * rate;
+    }
+
     function pv(rate, periods, payment, future=0, type=0) {
 
       // is this error code correct?
@@ -4776,6 +4802,7 @@ return (${compiled});
       index2col,
       index2row,
       int,
+      ipmt,
       isArray,
       isBlank,
       isBool,

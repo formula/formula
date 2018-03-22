@@ -508,6 +508,10 @@ var _cumipmt = require("./cumipmt");
 
 var _cumipmt2 = _interopRequireDefault(_cumipmt);
 
+var _ipmt = require("./ipmt");
+
+var _ipmt2 = _interopRequireDefault(_ipmt);
+
 var _pv = require("./pv");
 
 var _pv2 = _interopRequireDefault(_pv);
@@ -1228,6 +1232,10 @@ var dateValue = _datevalue2.default;
 // `cumipmt` returns the cumulative interest on a loan between start and end period.
 
 
+// #### [ipmt](./ipmt)
+// `ipmt` returns the portion of the periodic payment which is interest for a fixed rate loan or annuity.
+
+
 // #### [pv](./pv)
 // `pv` returns the present value of an investment.
 
@@ -1472,6 +1480,7 @@ exports.default = {
   index2col: _index2col2.default,
   index2row: _index2row2.default,
   int: _int2.default,
+  ipmt: _ipmt2.default,
   isArray: isArray,
   isBlank: isBlank,
   isBool: isBool,

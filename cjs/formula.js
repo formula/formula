@@ -1030,27 +1030,27 @@ function istext(value) {
 
 // List of errors in the spreadsheet system
 
-function FFError(message, name) {
+function FormulaError(name, message) {
   this.name = name || "NotImplementedError";
   this.message = message || "";
 }
 
-FFError.prototype = Error.prototype;
-FFError.prototype.toString = function () {
-  return this.message;
+FormulaError.prototype = Error.prototype;
+FormulaError.prototype.toString = function () {
+  return this.name;
 };
 
-var nil = new FFError('#NULL!', "Null reference");
-var div0 = new FFError('#DIV/0!', "Divide by zero");
-var value = new FFError('#VALUE!', "Invalid value");
-var ref = new FFError('#REF!', "Invalid reference");
-var name = new FFError('#NAME?', "Invalid name");
-var num = new FFError('#NUM!', "Invalid number");
-var na = new FFError('#N/A!', "Not applicable");
-var error$1 = new FFError('#ERROR!', "Error");
-var data = new FFError('#GETTING_DATA!', "Error getting data");
-var missing = new FFError('#MISSING!', "Missing");
-var unknown = new FFError('#UNKNOWN!', "Unknown error");
+var nil = new FormulaError("#NULL!", "Null reference");
+var div0 = new FormulaError("#DIV/0!", "Divide by zero");
+var value = new FormulaError("#VALUE!", "Invalid value");
+var ref = new FormulaError("#REF!", "Invalid reference");
+var name = new FormulaError("#NAME?", "Invalid name");
+var num = new FormulaError("#NUM!", "Invalid number");
+var na = new FormulaError("#N/A!", "Not applicable");
+var error$1 = new FormulaError("#ERROR!", "Error");
+var data = new FormulaError("#GETTING_DATA!", "Error getting data");
+var missing = new FormulaError("#MISSING!", "Missing");
+var unknown = new FormulaError("#UNKNOWN!", "Unknown error");
 var error$2 = {
   nil: nil,
   div0: div0,
@@ -1063,9 +1063,10 @@ var error$2 = {
   data: data,
   missing: missing,
   unknown: unknown
+};
 
-  // m is a cache of compiled expressions.
-};var m = {};
+// m is a cache of compiled expressions.
+var m = {};
 
 // Execute a formula expression
 function run(exp) {
@@ -1193,21 +1194,21 @@ function choose(index) {
   return arguments.length <= index - 1 + 1 ? undefined : arguments[index - 1 + 1];
 }
 
-// ISERR returns true when the value is an error (except `#NA!`) or when then
-// value is a number which is NaN or [-]Infinity.
-function iserr(value) {
-  return value && value !== error$2.na && value.constructor && value.constructor.name === 'Error' || typeof value === 'number' && (isnan(value) || !isFinite(value));
-}
+// ISERROR returns true when any of the values is an error.
+function iserror() {
+  for (var _len4 = arguments.length, values = Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+    values[_key4] = arguments[_key4];
+  }
 
-// ISERROR returns true when the value is an error.
-function iserror(value) {
-  return iserr(value) || value === error$2.na;
+  return reduce(values, function (p, v) {
+    return p === true ? true : v instanceof Error;
+  }, false);
 }
 
 // AND reduces list of truthy values into true or false value.
 function and() {
-  for (var _len4 = arguments.length, criteria = Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
-    criteria[_key4] = arguments[_key4];
+  for (var _len5 = arguments.length, criteria = Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
+    criteria[_key5] = arguments[_key5];
   }
 
   // Reduce criteria into boolean value.
@@ -1234,8 +1235,8 @@ function and() {
 
 // Returns true when any of the criteria are true or 1, defaults to false.
 function or() {
-  for (var _len5 = arguments.length, criteria = Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
-    criteria[_key5] = arguments[_key5];
+  for (var _len6 = arguments.length, criteria = Array(_len6), _key6 = 0; _key6 < _len6; _key6++) {
+    criteria[_key6] = arguments[_key6];
   }
 
   return reduce(criteria, function (acc, item) {
@@ -1589,8 +1590,8 @@ function flatten(ref) {
 
 // XOR computes the exclusive or for a given set of `values`.
 function xor() {
-  for (var _len6 = arguments.length, values = Array(_len6), _key6 = 0; _key6 < _len6; _key6++) {
-    values[_key6] = arguments[_key6];
+  for (var _len7 = arguments.length, values = Array(_len7), _key7 = 0; _key7 < _len7; _key7++) {
+    values[_key7] = arguments[_key7];
   }
 
   return !!(reduce(flatten(values), function (a, b) {
@@ -1603,8 +1604,8 @@ function xor() {
 
 // ADD calculates the sum of two numbers.
 function add() {
-  for (var _len7 = arguments.length, values = Array(_len7), _key7 = 0; _key7 < _len7; _key7++) {
-    values[_key7] = arguments[_key7];
+  for (var _len8 = arguments.length, values = Array(_len8), _key8 = 0; _key8 < _len8; _key8++) {
+    values[_key8] = arguments[_key8];
   }
 
   // Return `#NA!` if 2 arguments are not provided.
@@ -1628,8 +1629,8 @@ function add() {
 
 // SUBTRACT calculates the difference of two numbers.
 function subtract() {
-  for (var _len8 = arguments.length, values = Array(_len8), _key8 = 0; _key8 < _len8; _key8++) {
-    values[_key8] = arguments[_key8];
+  for (var _len9 = arguments.length, values = Array(_len9), _key9 = 0; _key9 < _len9; _key9++) {
+    values[_key9] = arguments[_key9];
   }
 
   // Return `#NA!` if 2 arguments are not provided.
@@ -1653,8 +1654,8 @@ function subtract() {
 
 // MULTIPLY calculates the product of two numbers.
 function multiply() {
-  for (var _len9 = arguments.length, values = Array(_len9), _key9 = 0; _key9 < _len9; _key9++) {
-    values[_key9] = arguments[_key9];
+  for (var _len10 = arguments.length, values = Array(_len10), _key10 = 0; _key10 < _len10; _key10++) {
+    values[_key10] = arguments[_key10];
   }
 
   // Return `#NA!` if 2 arguments are not provided.
@@ -1678,8 +1679,8 @@ function multiply() {
 
 // DIVIDE calculates the product of two numbers.
 function divide() {
-  for (var _len10 = arguments.length, values = Array(_len10), _key10 = 0; _key10 < _len10; _key10++) {
-    values[_key10] = arguments[_key10];
+  for (var _len11 = arguments.length, values = Array(_len11), _key11 = 0; _key11 < _len11; _key11++) {
+    values[_key11] = arguments[_key11];
   }
 
   // Return `#NA!` if 2 arguments are not provided.
@@ -1854,8 +1855,8 @@ function pi$1() {
 
 // POWER computes the power of a value and nth degree.
 function power() {
-  for (var _len11 = arguments.length, values = Array(_len11), _key11 = 0; _key11 < _len11; _key11++) {
-    values[_key11] = arguments[_key11];
+  for (var _len12 = arguments.length, values = Array(_len12), _key12 = 0; _key12 < _len12; _key12++) {
+    values[_key12] = arguments[_key12];
   }
 
   // Return `#NA!` if 2 arguments are not provided.
@@ -1964,8 +1965,8 @@ function code() {
 
 // CONCATENATE reduces a list of values into a single string.
 function concatenate() {
-  for (var _len12 = arguments.length, values = Array(_len12), _key12 = 0; _key12 < _len12; _key12++) {
-    values[_key12] = arguments[_key12];
+  for (var _len13 = arguments.length, values = Array(_len13), _key13 = 0; _key13 < _len13; _key13++) {
+    values[_key13] = arguments[_key13];
   }
 
   // Combine into a single string value
@@ -3645,8 +3646,8 @@ function yearfrac(start_date, end_date, basis) {
 
 // SUM a given list of `numbers`
 function sum() {
-  for (var _len13 = arguments.length, numbers = Array(_len13), _key13 = 0; _key13 < _len13; _key13++) {
-    numbers[_key13] = arguments[_key13];
+  for (var _len14 = arguments.length, numbers = Array(_len14), _key14 = 0; _key14 < _len14; _key14++) {
+    numbers[_key14] = arguments[_key14];
   }
 
   return reduce(flatten(flatten(numbers)), function (a, b) {
@@ -3674,8 +3675,8 @@ function average() {
 
 // MIN returns the smallest number from a `list`.
 function min() {
-  for (var _len14 = arguments.length, list = Array(_len14), _key14 = 0; _key14 < _len14; _key14++) {
-    list[_key14] = arguments[_key14];
+  for (var _len15 = arguments.length, list = Array(_len15), _key15 = 0; _key15 < _len15; _key15++) {
+    list[_key15] = arguments[_key15];
   }
 
   var values = flatten(list);
@@ -3687,8 +3688,8 @@ function min() {
 
 // MAX returns the largest number from a `list`.
 function max() {
-  for (var _len15 = arguments.length, list = Array(_len15), _key15 = 0; _key15 < _len15; _key15++) {
-    list[_key15] = arguments[_key15];
+  for (var _len16 = arguments.length, list = Array(_len16), _key16 = 0; _key16 < _len16; _key16++) {
+    list[_key16] = arguments[_key16];
   }
 
   var values = flatten(list);
@@ -3700,8 +3701,8 @@ function max() {
 
 // FILTER limits a range based on arrays of boolean values.
 function filter(range) {
-  for (var _len16 = arguments.length, filters = Array(_len16 > 1 ? _len16 - 1 : 0), _key16 = 1; _key16 < _len16; _key16++) {
-    filters[_key16 - 1] = arguments[_key16];
+  for (var _len17 = arguments.length, filters = Array(_len17 > 1 ? _len17 - 1 : 0), _key17 = 1; _key17 < _len17; _key17++) {
+    filters[_key17 - 1] = arguments[_key17];
   }
 
   // A filter is an array of true/false values.
@@ -3960,8 +3961,8 @@ function npv(rate) {
   var factor = 1,
       sum = 0;
 
-  for (var _len17 = arguments.length, values = Array(_len17 > 1 ? _len17 - 1 : 0), _key17 = 1; _key17 < _len17; _key17++) {
-    values[_key17 - 1] = arguments[_key17];
+  for (var _len18 = arguments.length, values = Array(_len18 > 1 ? _len18 - 1 : 0), _key18 = 1; _key18 < _len18; _key18++) {
+    values[_key18 - 1] = arguments[_key18];
   }
 
   for (var i = 0; i < values.length; i++) {
@@ -4043,6 +4044,45 @@ function cumipmt(rate, periods, value, start, end, type) {
 
   // Return cumulative interest
   return interest;
+}
+
+function ipmt(rate, period, periods, present) {
+  var future = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 0;
+  var type = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 0;
+
+  // parse numbers from input.
+  rate = numbervalue(rate);
+  period = numbervalue(period);
+  periods = numbervalue(periods);
+  present = numbervalue(present);
+  future = numbervalue(future);
+  type = numbervalue(type);
+
+  if (iserror(rate, period, periods, present, future, type)) {
+    return error$2.value;
+  }
+
+  // Compute payment
+  var payment = pmt(rate, periods, present, future, type);
+
+  // Compute interest
+  var interest;
+  if (period === 1) {
+    if (type === 1) {
+      interest = 0;
+    } else {
+      interest = -present;
+    }
+  } else {
+    if (type === 1) {
+      interest = fv(rate, period - 2, payment, present, 1) - payment;
+    } else {
+      interest = fv(rate, period - 1, payment, present, 0);
+    }
+  }
+
+  // Return interest
+  return interest * rate;
 }
 
 function pv(rate, periods, payment) {
@@ -4205,8 +4245,8 @@ function some(needle, list) {
 // interprets the strings as pairs. The odd items are fields and the
 // even ones are direction (ASC|DESC).
 function sort(ref) {
-  for (var _len18 = arguments.length, criteria = Array(_len18 > 1 ? _len18 - 1 : 0), _key18 = 1; _key18 < _len18; _key18++) {
-    criteria[_key18 - 1] = arguments[_key18];
+  for (var _len19 = arguments.length, criteria = Array(_len19 > 1 ? _len19 - 1 : 0), _key19 = 1; _key19 < _len19; _key19++) {
+    criteria[_key19 - 1] = arguments[_key19];
   }
 
   // reduce the criteria array into a function
@@ -4579,8 +4619,8 @@ function floor(value, significance) {
 
 // Group a list of objects by one or more fields.
 function group(list) {
-  for (var _len19 = arguments.length, fields = Array(_len19 > 1 ? _len19 - 1 : 0), _key19 = 1; _key19 < _len19; _key19++) {
-    fields[_key19 - 1] = arguments[_key19];
+  for (var _len20 = arguments.length, fields = Array(_len20 > 1 ? _len20 - 1 : 0), _key20 = 1; _key20 < _len20; _key20++) {
+    fields[_key20 - 1] = arguments[_key20];
   }
 
   // Reduce the list into an object.
@@ -4655,8 +4695,8 @@ function index2col(index) {
 }
 
 function numbers() {
-  for (var _len20 = arguments.length, values = Array(_len20), _key20 = 0; _key20 < _len20; _key20++) {
-    values[_key20] = arguments[_key20];
+  for (var _len21 = arguments.length, values = Array(_len21), _key21 = 0; _key21 < _len21; _key21++) {
+    values[_key21] = arguments[_key21];
   }
 
   return reduce(values, function (p, v) {
@@ -4943,6 +4983,7 @@ var functions = {
   index2col: index2col,
   index2row: index2row,
   int: int,
+  ipmt: ipmt,
   isArray: isArray,
   isBlank: isBlank,
   isBool: isBool,

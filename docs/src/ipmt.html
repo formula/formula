@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="en"><head><title>src/ipmt</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/ipmt"><meta name="groc-project-path" content="src/ipmt.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/ipmt.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> isError <span class="hljs-keyword">from</span> <span class="hljs-string">"./iserror"</span>;
+<span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">"./error"</span>;
+<span class="hljs-keyword">import</span> parseNumber <span class="hljs-keyword">from</span> <span class="hljs-string">"./numbervalue"</span>;
+<span class="hljs-keyword">import</span> PMT <span class="hljs-keyword">from</span> <span class="hljs-string">"./pmt"</span>;
+<span class="hljs-keyword">import</span> FV <span class="hljs-keyword">from</span> <span class="hljs-string">"./fv"</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ipmt</span>(<span class="hljs-params">rate, period, periods, present, future = 0, type = 0</span>) </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>parse numbers from input.</p></div></div><div class="code"><div class="wrapper">  rate = parseNumber(rate);
+  period = parseNumber(period);
+  periods = parseNumber(periods);
+  present = parseNumber(present);
+  future = parseNumber(future);
+  type = parseNumber(type);
+
+  <span class="hljs-keyword">if</span> (isError(rate, period, periods, present, future, type)) {
+    <span class="hljs-keyword">return</span> error.value;
+  }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Compute payment</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">var</span> payment = PMT(rate, periods, present, future, type);</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Compute interest</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">var</span> interest;
+  <span class="hljs-keyword">if</span> (period === <span class="hljs-number">1</span>) {
+    <span class="hljs-keyword">if</span> (type === <span class="hljs-number">1</span>) {
+      interest = <span class="hljs-number">0</span>;
+    } <span class="hljs-keyword">else</span> {
+      interest = -present;
+    }
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">if</span> (type === <span class="hljs-number">1</span>) {
+      interest = FV(rate, period - <span class="hljs-number">2</span>, payment, present, <span class="hljs-number">1</span>) - payment;
+    } <span class="hljs-keyword">else</span> {
+      interest = FV(rate, period - <span class="hljs-number">1</span>, payment, present, <span class="hljs-number">0</span>);
+    }
+  }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Return interest</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">return</span> interest * rate;
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> ipmt;</div></div></div></div></body></html>

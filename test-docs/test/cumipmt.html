@@ -2,7 +2,7 @@
 <span class="hljs-keyword">import</span> cumipmt <span class="hljs-keyword">from</span> <span class="hljs-string">"../fn/cumipmt"</span>;
 <span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">"../fn/error"</span>;
 
-test(<span class="hljs-string">"pmt"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
+test(<span class="hljs-string">"cumipmt"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
   t.plan(<span class="hljs-number">2</span>);
   t.equal(<span class="hljs-keyword">typeof</span> cumipmt, <span class="hljs-string">"function"</span>);
   t.equal(cumipmt(<span class="hljs-number">0.09</span> / <span class="hljs-number">12</span>, <span class="hljs-number">30</span> * <span class="hljs-number">12</span>, <span class="hljs-number">125000</span>, <span class="hljs-number">13</span>, <span class="hljs-number">24</span>, <span class="hljs-number">0</span>), -<span class="hljs-number">11135.232130750843</span>);

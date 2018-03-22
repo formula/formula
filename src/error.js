@@ -2,25 +2,27 @@
 
 // List of errors in the spreadsheet system
 
-function FFError(message, name) {
-    this.name = name || "NotImplementedError";
-    this.message = (message || "");
+function FormulaError(name, message) {
+  this.name = name || "NotImplementedError";
+  this.message = message || "";
 }
 
-FFError.prototype = Error.prototype;
-FFError.prototype.toString = function() { return this.message }
+FormulaError.prototype = Error.prototype;
+FormulaError.prototype.toString = function() {
+  return this.name;
+};
 
-let nil = new FFError('#NULL!', "Null reference"),
-    div0 = new FFError('#DIV/0!', "Divide by zero"),
-    value = new FFError('#VALUE!', "Invalid value"),
-    ref = new FFError('#REF!', "Invalid reference"),
-    name = new FFError('#NAME?', "Invalid name"),
-    num = new FFError('#NUM!', "Invalid number"),
-    na = new FFError('#N/A!', "Not applicable"),
-    error = new FFError('#ERROR!', "Error"),
-    data = new FFError('#GETTING_DATA!', "Error getting data"),
-    missing = new FFError('#MISSING!', "Missing"),
-    unknown = new FFError('#UNKNOWN!', "Unknown error");
+let nil = new FormulaError("#NULL!", "Null reference"),
+  div0 = new FormulaError("#DIV/0!", "Divide by zero"),
+  value = new FormulaError("#VALUE!", "Invalid value"),
+  ref = new FormulaError("#REF!", "Invalid reference"),
+  name = new FormulaError("#NAME?", "Invalid name"),
+  num = new FormulaError("#NUM!", "Invalid number"),
+  na = new FormulaError("#N/A!", "Not applicable"),
+  error = new FormulaError("#ERROR!", "Error"),
+  data = new FormulaError("#GETTING_DATA!", "Error getting data"),
+  missing = new FormulaError("#MISSING!", "Missing"),
+  unknown = new FormulaError("#UNKNOWN!", "Unknown error");
 
 export default {
   nil,
@@ -34,4 +36,4 @@ export default {
   data,
   missing,
   unknown
-}
+};

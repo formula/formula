@@ -570,6 +570,10 @@ import pmt from "./pmt";
 // `cumipmt` returns the cumulative interest on a loan between start and end period.
 import cumipmt from "./cumipmt";
 
+// #### [ipmt](./ipmt)
+// `ipmt` returns the portion of the periodic payment which is interest for a fixed rate loan or annuity.
+import ipmt from "./ipmt";
+
 // #### [pv](./pv)
 // `pv` returns the present value of an investment.
 import pv from "./pv";
@@ -816,6 +820,7 @@ export default {
   index2col,
   index2row,
   int,
+  ipmt,
   isArray,
   isBlank,
   isBool,
