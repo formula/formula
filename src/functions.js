@@ -427,6 +427,13 @@ import hlookup from "./hlookup";
 // #### [includes](./includes)
 // `includes` searches an array and returns the true or false for exact matches.
 import includes from "./includes";
+const In = includes;
+
+// #### [notincludes](./notincludes)
+// `notincludes` searches an array and returns the true or false for exact matches.
+import notincludes from "./notincludes";
+const notIncludes = notincludes
+const nIn = includes
 
 // #### [index](./index)
 // `index` returns the value for a given row and column.
@@ -799,6 +806,7 @@ export default {
   ifna,
   ifs,
   includes,
+  In,
   index,
   index2col,
   index2row,
@@ -863,6 +871,9 @@ export default {
   n,
   ne,
   not,
+  notincludes,
+  notIncludes,
+  nIn,
   now,
   nper,
   npv,

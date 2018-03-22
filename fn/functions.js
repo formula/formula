@@ -376,6 +376,10 @@ var _includes = require("./includes");
 
 var _includes2 = _interopRequireDefault(_includes);
 
+var _notincludes = require("./notincludes");
+
+var _notincludes2 = _interopRequireDefault(_notincludes);
+
 var _index = require("./index");
 
 var _index2 = _interopRequireDefault(_index);
@@ -1077,6 +1081,13 @@ var template = _substituteAll2.default;
 // #### [includes](./includes)
 // `includes` searches an array and returns the true or false for exact matches.
 
+var In = _includes2.default;
+
+// #### [notincludes](./notincludes)
+// `notincludes` searches an array and returns the true or false for exact matches.
+
+var notIncludes = _notincludes2.default;
+var nIn = _includes2.default;
 
 // #### [index](./index)
 // `index` returns the value for a given row and column.
@@ -1447,6 +1458,7 @@ exports.default = {
   ifna: _ifna2.default,
   ifs: ifs,
   includes: _includes2.default,
+  In: In,
   index: _index2.default,
   index2col: _index2col2.default,
   index2row: _index2row2.default,
@@ -1511,6 +1523,9 @@ exports.default = {
   n: _n2.default,
   ne: _ne2.default,
   not: _not2.default,
+  notincludes: _notincludes2.default,
+  notIncludes: notIncludes,
+  nIn: nIn,
   now: _now2.default,
   nper: _nper2.default,
   npv: _npv2.default,

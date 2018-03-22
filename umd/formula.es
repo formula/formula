@@ -3138,6 +3138,11 @@ return (${compiled});
       return false;
     }
 
+    // notincludes returns true when the searchElement is not found in the searchList.
+    function notincludes(searchElement, searchList, fromIndex) {
+      return !includes(searchElement, searchList, fromIndex);
+    }
+
     // index returns the value in a row and column from a 2d array
     function index(reference, row_num, column_num=1) {
       var row;
@@ -4619,6 +4624,11 @@ return (${compiled});
 
     const template = substituteAll;
 
+    const In = includes;
+
+    const notIncludes = notincludes
+    const nIn = includes
+
     const dateValue = datevalue;
 
     const cellIndex = cellindex;
@@ -4709,6 +4719,7 @@ return (${compiled});
       ifna,
       ifs,
       includes,
+      In,
       index,
       index2col,
       index2row,
@@ -4773,6 +4784,9 @@ return (${compiled});
       n,
       ne,
       not,
+      notincludes,
+      notIncludes,
+      nIn,
       now,
       nper,
       npv,

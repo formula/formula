@@ -3134,6 +3134,11 @@ function includes(searchElement, searchList, fromIndex) {
   return false;
 }
 
+// notincludes returns true when the searchElement is not found in the searchList.
+function notincludes(searchElement, searchList, fromIndex) {
+  return !includes(searchElement, searchList, fromIndex);
+}
+
 // index returns the value in a row and column from a 2d array
 function index(reference, row_num, column_num=1) {
   var row;
@@ -4615,6 +4620,11 @@ const parseQuery = parsequery;
 
 const template = substituteAll;
 
+const In = includes;
+
+const notIncludes = notincludes
+const nIn = includes
+
 const dateValue = datevalue;
 
 const cellIndex = cellindex;
@@ -4705,6 +4715,7 @@ var functions = {
   ifna,
   ifs,
   includes,
+  In,
   index,
   index2col,
   index2row,
@@ -4769,6 +4780,9 @@ var functions = {
   n,
   ne,
   not,
+  notincludes,
+  notIncludes,
+  nIn,
   now,
   nper,
   npv,
