@@ -70,6 +70,15 @@ Object.defineProperty(exports, "AND", {
   }
 });
 
+var _nand = require("./nand");
+
+Object.defineProperty(exports, "NAND", {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_nand).default;
+  }
+});
+
 var _or = require("./or");
 
 Object.defineProperty(exports, "OR", {

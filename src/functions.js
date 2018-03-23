@@ -35,12 +35,16 @@ export { default as SWITCH } from "./switch";
 // `and` returns true when all arguments are true or evaluates to true.
 export { default as AND } from "./and";
 
+// #### [nand](./nand)
+// `nand` returns composition `not(and(...))`
+export { default as NAND } from "./nand";
+
 // #### [or](./or)
 // `or` returns true when any argument is true or evaluates to true.
 export { default as OR } from "./or";
 
 // #### [nor](./nor)
-// `nor` returns false when any argument is true or evaluates to true.
+// `nor` returns composition `not(or(...))`
 export { default as NOR } from "./nor";
 
 // #### [xor](./xor)

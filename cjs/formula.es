@@ -1194,6 +1194,18 @@ function and(...criteria) {
     }, undefined);
 }
 
+// NOT negates a `value`
+function not(value) {
+  return (value !== true && value !== false && value !== 1 && value !== 0) ? 
+  error$2.value :
+  !value
+}
+
+// Returns the composition of NOT(AND(...))
+function nor(...args) {
+  return not(and(...args));
+}
+
 // Returns true when any of the criteria are true or 1, defaults to false.
 function or(...criteria) {
   return reduce( criteria, (acc, item) => {
@@ -1210,14 +1222,7 @@ function or(...criteria) {
   }, false)
 }
 
-// NOT negates a `value`
-function not(value) {
-  return (value !== true && value !== false && value !== 1 && value !== 0) ? 
-  error$2.value :
-  !value
-}
-
-function nor(...args) {
+function nor$1(...args) {
   return not(or(...args));
 }
 
@@ -4675,8 +4680,9 @@ var funcs = Object.freeze({
 	CHOOSE: choose,
 	SWITCH: SWITCH,
 	AND: and,
+	NAND: nor,
 	OR: or,
-	NOR: nor,
+	NOR: nor$1,
 	XOR: xor,
 	NOT: not,
 	EQ: eq,
@@ -4845,8 +4851,9 @@ exports.IFS = branch;
 exports.CHOOSE = choose;
 exports.SWITCH = SWITCH;
 exports.AND = and;
+exports.NAND = nor;
 exports.OR = or;
-exports.NOR = nor;
+exports.NOR = nor$1;
 exports.XOR = xor;
 exports.NOT = not;
 exports.EQ = eq;
