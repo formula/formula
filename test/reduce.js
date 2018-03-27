@@ -1,6 +1,6 @@
 // FIXME: Write tests for MATCH
 import test from 'tape';
-import reduce from '../fn/reduce';
+import reduce from '../src/reduce';
 
 test('reduce', function(t) {
   t.plan(1);

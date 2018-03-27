@@ -1,6 +1,6 @@
-import camelcase from '../fn/camelcase';
+import camelcase from '../src/camelcase';
 import test from 'tape';
-import error from '../fn/error';
+import { ERRORTYPES as error } from '../src/error';
 
 test('camelcase', function(t) {
   t.plan(3)

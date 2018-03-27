@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../fn/error'
-import isbinary from '../fn/isbinary'
+import { ERRORTYPES as error } from '../src/error'
+import isbinary from '../src/isbinary'
 
 test('isbinary', (t) => {
   t.plan(5)

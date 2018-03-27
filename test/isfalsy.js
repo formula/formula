@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../fn/error'
-import isfalsy from '../fn/isfalsy'
+import { ERRORTYPES as error } from '../src/error'
+import isfalsy from '../src/isfalsy'
 
 test('isfalsy', (t) => {
   t.plan(17)

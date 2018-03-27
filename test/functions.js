@@ -1,8 +1,8 @@
 import test from "tape";
-import * as ff from "../fn/functions";
+import * as ff from "../src/functions";
 
 test("lower case functions should be there", function(t) {
-  t.plan(155);
+  t.plan(156);
   t.ok(ff.ABS, "abs should be there");
   t.ok(ff.ACCRINT, "accrint should be there");
   t.ok(ff.ACOS, "acos should be there");
@@ -11,6 +11,7 @@ test("lower case functions should be there", function(t) {
   t.ok(ff.ACOTH, "acoth should be there");
   t.ok(ff.ASIN, "asin should be there");
   t.ok(ff.ASINH, "asinh should be there");
+  t.ok(ff.ASSIGN, "assign should be there");
   t.ok(ff.ATAN, "atan should be there");
   t.ok(ff.ATAN2, "atan2 should be there");
   t.ok(ff.ADD, "add should be there");

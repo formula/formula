@@ -1,5 +1,5 @@
 import test from 'tape'
-import ne from '../fn/ne'
+import ne from '../src/ne'
 
 test('ne', function(t) {
   t.plan(3);

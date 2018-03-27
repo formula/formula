@@ -1,4 +1,4 @@
-import left from '../fn/left';
+import left from '../src/left';
 import test from 'tape';
 
 test('left', function(t) {

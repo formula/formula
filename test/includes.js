@@ -1,6 +1,6 @@
 import test from 'tape';
-import includes from '../fn/includes';
-import error from '../fn/error';
+import includes from '../src/includes';
+import { ERRORTYPES as error } from '../src/error';
 
 test('includes', function(t) {
   t.plan(6);

@@ -1,5 +1,5 @@
-import index2col from '../fn/index2col';
-import error from '../fn/error';
+import index2col from '../src/index2col';
+import { ERRORTYPES as error } from '../src/error';
 import test from 'tape';
 
 test('index2col', function(t) {

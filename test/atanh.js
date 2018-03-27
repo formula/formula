@@ -1,6 +1,6 @@
 import atanh from '../src/atanh';
 import round from '../src/round';
-import error from '../src/error';
+import { ERRORTYPES as error } from '../src/error';
 import test from 'tape';
 
 test('atanh', function(t) {

@@ -1,5 +1,5 @@
 import test from 'tape'
-import isboolean from '../fn/isboolean'
+import isboolean from '../src/isboolean'
 
 test('isboolean', (t) => {
   t.plan(3)

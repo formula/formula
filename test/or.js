@@ -1,5 +1,5 @@
 import test from 'tape';
-import or from '../fn/or';
+import or from '../src/or';
 
 test('or', function(t) {
   t.plan(10);

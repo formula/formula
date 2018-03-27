@@ -1,5 +1,5 @@
 import test from 'tape';
-import group from '../fn/group';
+import group from '../src/group';
 
 test('group', function(t) {
 

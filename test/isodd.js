@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../fn/error'
-import isodd from '../fn/isodd'
+import { ERRORTYPES as error } from '../src/error'
+import isodd from '../src/isodd'
 
 test('isodd', (t) => {
   t.plan(5)

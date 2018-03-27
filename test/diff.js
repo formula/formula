@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../fn/error'
-import diff from '../fn/diff'
+import { ERRORTYPES as error } from '../src/error'
+import diff from '../src/diff'
 
 test('diff', (t) => {
   t.plan(1)

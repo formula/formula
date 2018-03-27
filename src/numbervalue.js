@@ -4,7 +4,7 @@ import reduce from './reduce'
 import isempty from './isempty';
 import iserror from './iserror';
 import isnumber from './isnumber';
-import error from './error'
+import { ERRORTYPES as error } from './error'
 import split from './split'
 import code from './code'
 

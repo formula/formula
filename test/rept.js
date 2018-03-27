@@ -1,4 +1,4 @@
-import rept from '../fn/rept';
+import rept from '../src/rept';
 import test from 'tape';
 
 test('rept', function(t) {

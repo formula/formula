@@ -1,7 +1,7 @@
 // Copyright 2015 JC Fisher
 
 import isnumber from './isnumber';
-import error from './error';
+import { ERRORTYPES as error } from './error';
 
 // ABS computes absolute value of a number
 export default function abs(value) {

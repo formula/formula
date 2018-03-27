@@ -1,7 +1,7 @@
 // Copyright 2015 JC Fisher
 
 import istext from './istext';
-import error from './error';
+import { ERRORTYPES as error } from './error';
 
 // convert snakecase to camelcase.
 export default function camelcase(value) {

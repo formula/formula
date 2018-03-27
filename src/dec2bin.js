@@ -1,7 +1,7 @@
 // Copyright 2015 JC Fisher
 
 import rept from './rept';
-import error from './error';
+import { ERRORTYPES as error } from './error';
 import isNaN from './isnan'
 
 // based on https://github.com/sutoiku/formula.js/blob/mast../src/engineering.js

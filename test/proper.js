@@ -1,5 +1,5 @@
 import test from 'tape';
-import proper from '../fn/proper';
+import proper from '../src/proper';
 
 test('proper', function(t) {
   t.plan(3);

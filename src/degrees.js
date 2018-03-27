@@ -1,5 +1,5 @@
 import isnumber from './isnumber'
-import error from './error'
+import { ERRORTYPES as error } from './error'
 
 // Converts radians into degrees.
 export default function degrees(number) {

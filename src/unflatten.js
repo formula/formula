@@ -1,6 +1,6 @@
 // Copyright 2015 JC Fisher
 import reduce from './reduce'
-import error from './error'
+import { ERRORTYPES as error } from './error'
 import isArray from './isarray'
 
 // convert array into nested array.

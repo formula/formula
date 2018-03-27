@@ -1,6 +1,6 @@
 import test from "tape";
-import error from "../fn/error";
-import nand from "../fn/nand";
+import { ERRORTYPES as error } from '../src/error';
+import nand from "../src/nand";
 
 test("nand", t => {
   t.plan(16);

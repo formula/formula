@@ -1,5 +1,5 @@
 var test = require('tape')
-import compile from '../fn/compile'
+import compile from '../src/compile'
 
 test('compiler should pass basic tests', function(t) {
 

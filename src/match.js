@@ -1,7 +1,7 @@
 // Copyright 2015 JC Fisher
 
 import isarray from './isarray'
-import error from './error'
+import { ERRORTYPES as error } from './error'
 
 // MATCH returns an index in `array_reference` by searching for `lookup_reference`.
 export default function match(lookup_reference, array_reference, matchType) {

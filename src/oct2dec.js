@@ -1,6 +1,6 @@
 // Copyright 2015 JC Fisher
 
-import error from './error';
+import { ERRORTYPES as error } from './error';
 
 // OCT2DEC converts a octal value into a decimal value.
 export default function oct2dec(octalNumber) {

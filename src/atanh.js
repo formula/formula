@@ -1,5 +1,5 @@
 import isnumber from './isnumber'
-import error from './error'
+import { ERRORTYPES as error } from './error'
 
 // Return the arctangent (in radians) of the given number
 export default function atan(x) {

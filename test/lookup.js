@@ -1,6 +1,6 @@
 import test from 'tape'
-import error from '../fn/error'
-import lookup from '../fn/lookup'
+import { ERRORTYPES as error } from '../src/error'
+import lookup from '../src/lookup'
 
 test('lookup', (t) => {
   t.plan(3)

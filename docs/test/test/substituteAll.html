@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="en"><head><title>test/substituteAll</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="test/substituteAll"><meta name="groc-project-path" content="test/substituteAll.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">test/substituteAll.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">'tape'</span>;
+<span class="hljs-keyword">import</span> substituteAll <span class="hljs-keyword">from</span> <span class="hljs-string">'../src/substituteAll'</span>;
+
+test(<span class="hljs-string">'substituteAll'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
+  t.plan(<span class="hljs-number">4</span>);
+
+  t.equal(
+    substituteAll(<span class="hljs-string">"Hello, -first- -last-. Is your first name really -first-?"</span>, { <span class="hljs-string">"first"</span>: <span class="hljs-string">"Tom"</span>, <span class="hljs-string">'last'</span>: <span class="hljs-string">"Jones"</span> }),
+    <span class="hljs-string">"Hello, Tom Jones. Is your first name really Tom?"</span>
+  )
+
+  t.equal(
+    substituteAll(<span class="hljs-string">"Hello, {{first}} {{last name}}. Is your first name really {{first}}?"</span>, { <span class="hljs-string">"first"</span>: <span class="hljs-string">"Tom"</span>, <span class="hljs-string">'last name'</span>: <span class="hljs-string">"Jones"</span> }, <span class="hljs-string">'{{'</span>, <span class="hljs-string">'}}'</span>),
+    <span class="hljs-string">"Hello, Tom Jones. Is your first name really Tom?"</span>
+  )
+
+  t.equal(
+    substituteAll(<span class="hljs-string">"Hello, -first name- %last name%. Is your first name really -first name-?"</span>, { <span class="hljs-string">"-first name-"</span>: <span class="hljs-string">"Tom"</span>, <span class="hljs-string">'%last name%'</span>: <span class="hljs-string">"Jones"</span> }, <span class="hljs-string">''</span>),
+    <span class="hljs-string">"Hello, Tom Jones. Is your first name really Tom?"</span>
+  )
+
+  t.equal(
+    substituteAll(<span class="hljs-string">"/foo/:bar/with.:format"</span>, { <span class="hljs-string">"bar"</span>: <span class="hljs-string">"abc"</span>, <span class="hljs-string">'format'</span>: <span class="hljs-string">"json"</span> }, <span class="hljs-string">':'</span>, <span class="hljs-string">''</span>),
+    <span class="hljs-string">"/foo/abc/with.json"</span>
+  )
+})</div></div></div></div></body></html>

@@ -1,7 +1,7 @@
 // Copyright 2015 JC Fisher
 
 import flatten from './flatten'
-import error from './error'
+import { ERRORTYPES as error } from './error'
 import reduce from './reduce'
 
 // SUM a given list of `numbers`

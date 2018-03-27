@@ -24,16 +24,33 @@ let nil = new FormulaError("#NULL!", "Null reference"),
   missing = new FormulaError("#MISSING!", "Missing"),
   unknown = new FormulaError("#UNKNOWN!", "Unknown error");
 
-export default {
+export let ERRORTYPES = {
   nil,
+  "#NULL!": nil,
   div0,
+  "#DIV/0!": div0,
   value,
+  "#VALUE!": value,
   ref,
+  "#REF!": ref,
   name,
+  "#NAME?": name,
   num,
+  "#NUM!": num,
   na,
+  "#N/A!": na,
   error,
+  "#ERROR!": error,
   data,
+  "#GETTING_DATA!": data,
   missing,
-  unknown
-};
+  "#MISSING!": missing,
+  unknown,
+  "#UNKNOWN!": unknown
+};missing
+
+function _error(type) {
+  return ERRORTYPES[type] || error;
+}
+
+export default _error;

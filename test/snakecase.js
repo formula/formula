@@ -1,6 +1,6 @@
-import snakecase from '../fn/snakecase';
+import snakecase from '../src/snakecase';
 import test from 'tape';
-import error from '../fn/error';
+import { ERRORTYPES as error } from '../src/error';
 
 test('snakecase', function(t) {
   t.plan(2)

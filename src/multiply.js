@@ -1,7 +1,7 @@
 // Copyright 2015 JC Fisher
 
 import isnumber from './isnumber';
-import error from './error'
+import { ERRORTYPES as error } from './error'
 
 // MULTIPLY calculates the product of two numbers.
 export default function multiply(...values) {

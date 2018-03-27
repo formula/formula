@@ -1,5 +1,5 @@
 var test = require("tape");
-import run from "../fn/run";
+import run from "../src/run";
 
 test("run: basic tests", function(t) {
   // run exp "2=2" 1000 times.
@@ -8,7 +8,7 @@ test("run: basic tests", function(t) {
     run("2=2");
   }
 
-  console.log("ms", new Date() - start);
+  // console.log("ms", new Date() - start);
 
   var timeTest = new Date() - start;
 

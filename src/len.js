@@ -1,6 +1,6 @@
 // Copyright 2015 JC Fisher
 
-import error from './error'
+import { ERRORTYPES as error } from './error'
 
 // LEN returns the size of a string or array.
 export default function len(text) {

@@ -1,5 +1,5 @@
 import isnumber from './isnumber'
-import error from './error'
+import { ERRORTYPES as error } from './error'
 import numbervalue from './numbervalue'
 
 // Return a number into a text representation with the given radix

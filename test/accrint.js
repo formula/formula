@@ -1,6 +1,6 @@
 import accrint from '../src/accrint';
 import date from '../src/date';
-import error from '../src/error';
+import { ERRORTYPES as error } from '../src/error';
 import test from 'tape';
 
 test('accrint', function(t) {

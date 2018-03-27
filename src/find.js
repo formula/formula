@@ -1,6 +1,6 @@
 // Copyright 2015 JC Fisher
 
-import error from './error';
+import { ERRORTYPES as error } from './error';
 
 // FIND searches for text within a string
 export default function find(find_text, within_text='', position=1) {

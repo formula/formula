@@ -1,6 +1,6 @@
 // Copyright 2015 JC Fisher
 
-import error from './error'
+import { ERRORTYPES as error } from './error'
 
 // TRIMS returns a string without whitespace at the beginning or end.
 export default function trim(text) {

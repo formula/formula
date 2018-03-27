@@ -1,7 +1,7 @@
 // Copyright 2015 JC Fisher
 
 import isnumber from './isnumber';
-import error from './error';
+import { ERRORTYPES as error } from './error';
 
 // PMT returns a loan payment
 export default function pmt(rate, periods, present, future = 0, type = 0) {

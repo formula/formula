@@ -1,10 +1,11 @@
 // Copyright 2015 JC Fisher
+import { ERRORTYPES as error } from './error'
 
 // assign from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
 function assign(target, varArgs) { // .length of function is 2
   'use strict';
-  if (target == null) { // TypeError if undefined or null
-    throw new TypeError('Cannot convert undefined or null to object');
+  if (target == null) {
+    return error.nil;
   }
 
   var to = Object(target);
@@ -27,5 +28,5 @@ function assign(target, varArgs) { // .length of function is 2
 // Ponyfill or Object.assign
 export default function assign(initial, ...list) {
   let func = Object.assign || assign;
-  return func(initial, ...list)
+  return func({}, initial, ...list)
 }

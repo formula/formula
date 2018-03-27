@@ -1,6 +1,6 @@
 import test from 'tape';
-import notincludes from '../fn/notincludes';
-import error from '../fn/error';
+import notincludes from '../src/notincludes';
+import { ERRORTYPES as error } from '../src/error';
 
 test('notincludes', function(t) {
   t.plan(6);

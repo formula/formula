@@ -1,6 +1,6 @@
-import error from '../fn/error';
+import { ERRORTYPES as error } from '../src/error';
 import test from 'tape';
-import choose from '../fn/choose';
+import choose from '../src/choose';
 
 test('choose', function (t) {
   t.plan(5)

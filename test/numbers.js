@@ -1,4 +1,4 @@
-import numbers from '../fn/numbers';
+import numbers from '../src/numbers';
 import test from 'tape';
 
 test('numbers', function(t) {

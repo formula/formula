@@ -7,6 +7,9 @@
 
 // ### Formula
 
+export { default as ERROR } from "./error";
+export { ERRORTYPES } from "./error";
+
 // #### [compile](./compile)
 // `compile` converts a formula into a function.
 export { default as COMPILE } from "./compile";
@@ -620,6 +623,10 @@ export { default as GET } from "./get";
 export { default as SELECT } from "./select";
 
 // ### Utility
+
+// #### [assign](./assign)
+// `assign` returns the result of merging two or more objects.
+export { default as ASSIGN } from "./assign";
 
 // #### [base](./base)
 // `base` returns a number into a text representation with the given radix.

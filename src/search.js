@@ -1,6 +1,6 @@
 // Copyright 2015 JC Fisher
 
-import error from './error'
+import { ERRORTYPES as error } from './error'
 
 // SEARCH finds text using wildcards ?, *, ~?, and ~*.
 export default function search(find_text, within_text, position) {

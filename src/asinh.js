@@ -1,5 +1,5 @@
 import isnumber from './isnumber'
-import error from './error'
+import { ERRORTYPES as error } from './error'
 
 // Return the inverse hyperbolic sin of a given number
 export default function asinh(number) {

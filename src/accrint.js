@@ -2,7 +2,7 @@ import parsedate from './parsedate';
 import isdate from './isdate';
 import isnumber from './isnumber';
 import yearfrac from './yearfrac';
-import error from './error';
+import { ERRORTYPES as error } from './error';
 
 // Returns the accrued interest for a security that pays periodic interest.
 export default function accrint(issue, first, settlement, rate, par, frequency, basis=0) {

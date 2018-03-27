@@ -1,6 +1,6 @@
 // Copyright 2015 JC Fisher
 
-import error from './error'
+import { ERRORTYPES as error } from './error'
 import isnumber from './isnumber'
 
 // Convert index to letter (e.g 0 -> A)

@@ -2,7 +2,7 @@
 
 import isarray from './isarray';
 import isref from './isref';
-import error from './error';
+import { ERRORTYPES as error } from './error';
 import map from './map';
 
 export default function gt(a,b) {

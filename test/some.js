@@ -1,5 +1,5 @@
 import test from 'tape';
-import some from '../fn/some';
+import some from '../src/some';
 
 test('some', function(t) {
   t.plan(3)

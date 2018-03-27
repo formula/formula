@@ -1,5 +1,5 @@
 import test from 'tape';
-import min from '../fn/min';
+import min from '../src/min';
 
 test('min', function(t) {
   t.plan(7);

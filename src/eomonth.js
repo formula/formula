@@ -1,7 +1,7 @@
 // Copyright 2015 JC Fisher
 
 import parsedate from './parsedate';
-import error from './error'
+import { ERRORTYPES as error } from './error'
  
 export default function eomonth(start_date, months) {
   start_date = parsedate(start_date);

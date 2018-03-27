@@ -1,6 +1,6 @@
 // Copyright 2015 JC Fisher
 
-import error from './error'
+import { ERRORTYPES as error } from './error'
 import istext from './istext'
 
 // Convert letter to number (e.g A -> 0)

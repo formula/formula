@@ -1,0 +1,9 @@
+<!DOCTYPE html><html lang="en"><head><title>test/isarray</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="test/isarray"><meta name="groc-project-path" content="test/isarray.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">test/isarray.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">'tape'</span>
+<span class="hljs-keyword">import</span> isarray <span class="hljs-keyword">from</span> <span class="hljs-string">'../src/isarray'</span>
+
+test( <span class="hljs-string">'isarray'</span>, (t) =&gt; {
+  t.plan(3)
+  t.equal( isarray( [] ), true )
+  t.equal( isarray( {} ), false )
+  t.equal( isarray( <span class="hljs-string">'string'</span> ), false )
+})</div></div></div></div></body></html>

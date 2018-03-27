@@ -1,5 +1,5 @@
-import cellindex from '../fn/cellindex';
-import error from '../fn/error';
+import cellindex from '../src/cellindex';
+import { ERRORTYPES as error } from '../src/error';
 import test from 'tape';
 
 test('cellindex', function(t) {

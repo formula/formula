@@ -1,6 +1,6 @@
 // Copyright 2015 JC Fisher
 
-import error from './error';
+import { ERRORTYPES as error } from './error';
 
 // BIN2DEC converts binary string into decimal value
 export default function bin2dec(value) {

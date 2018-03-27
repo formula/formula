@@ -1,7 +1,7 @@
 // Copyright 2015 JC Fisher
 
 import isblank from './isblank';
-import error from './error';
+import { ERRORTYPES as error } from './error';
 
 // Find a needle in a table searching horizontally.
 export default function hlookup(needle, table, index=1, exactmatch) {
