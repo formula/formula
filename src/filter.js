@@ -1,5 +1,5 @@
 // Copyright 2015 JC Fisher
-import error from './error'
+import { ERRORTYPES as error } from './error'
 import branch from './branch'
 import reduce from './reduce'
 import isarray from './isarray'

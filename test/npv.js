@@ -1,5 +1,5 @@
 import test from 'tape'
-import npv from '../fn/npv'
+import npv from '../src/npv'
 
 test('npv', (t) => {
   t.plan(1)

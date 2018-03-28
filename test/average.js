@@ -1,6 +1,6 @@
 import test from 'tape';
-import average from '../fn/average';
-import error from '../fn/error'
+import average from '../src/average';
+import { ERRORTYPES as error } from '../src/error'
 
 test('average', function(t) {
 

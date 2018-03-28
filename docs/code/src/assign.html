@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="en"><head><title>src/assign</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/assign"><meta name="groc-project-path" content="src/assign.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/assign.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>Copyright 2015 JC Fisher</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> { ERRORTYPES <span class="hljs-keyword">as</span> error } <span class="hljs-keyword">from</span> <span class="hljs-string">'./error'</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>assign from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign</a></p></div></div><div class="code"><div class="wrapper"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">assign</span>(<span class="hljs-params">target, varArgs</span>) </span>{ <span class="hljs-comment">// .length of function is 2</span>
+<span class="hljs-pi">  'use strict'</span>;
+  <span class="hljs-keyword">if</span> (target == <span class="hljs-literal">null</span>) {
+    <span class="hljs-keyword">return</span> error.nil;
+  }
+
+  <span class="hljs-keyword">var</span> to = <span class="hljs-built_in">Object</span>(target);
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> index = <span class="hljs-number">1</span>; index &lt; <span class="hljs-built_in">arguments</span>.length; index++) {
+    <span class="hljs-keyword">var</span> nextSource = <span class="hljs-built_in">arguments</span>[index];
+
+    <span class="hljs-keyword">if</span> (nextSource != <span class="hljs-literal">null</span>) { <span class="hljs-comment">// Skip over if undefined or null</span>
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> nextKey <span class="hljs-keyword">in</span> nextSource) {</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Avoid bugs when hasOwnProperty is shadowed</p></div></div><div class="code"><div class="wrapper">        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Object</span>.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+          to[nextKey] = nextSource[nextKey];
+        }
+      }
+    }
+  }
+  <span class="hljs-keyword">return</span> to;
+};</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Ponyfill or Object.assign</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">assign</span>(<span class="hljs-params">initial, ...list</span>) </span>{
+  <span class="hljs-keyword">let</span> func = <span class="hljs-built_in">Object</span>.assign || assign;
+  <span class="hljs-keyword">return</span> func({}, initial, ...list)
+}</div></div></div></div></body></html>

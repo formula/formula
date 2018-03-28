@@ -1,4 +1,4 @@
-import isblank from '../fn/isblank';
+import isblank from '../src/isblank';
 import test from 'tape';
 
 test('isblank', function(t) {

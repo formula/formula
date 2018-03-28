@@ -2,7 +2,7 @@
 
 import isblank from './isblank'
 import n from './n'
-import error from './error'
+import { ERRORTYPES as error } from './error'
 
 // RIGHT pulls a given number of character from the right side of `text`.
 export default function right(text, number) {

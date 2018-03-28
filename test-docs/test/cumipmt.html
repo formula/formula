@@ -1,9 +1,0 @@
-<!DOCTYPE html><html lang="en"><head><title>test/cumipmt</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="test/cumipmt"><meta name="groc-project-path" content="test/cumipmt.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">test/cumipmt.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">"tape"</span>;
-<span class="hljs-keyword">import</span> cumipmt <span class="hljs-keyword">from</span> <span class="hljs-string">"../fn/cumipmt"</span>;
-<span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">"../fn/error"</span>;
-
-test(<span class="hljs-string">"cumipmt"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
-  t.plan(<span class="hljs-number">2</span>);
-  t.equal(<span class="hljs-keyword">typeof</span> cumipmt, <span class="hljs-string">"function"</span>);
-  t.equal(cumipmt(<span class="hljs-number">0.09</span> / <span class="hljs-number">12</span>, <span class="hljs-number">30</span> * <span class="hljs-number">12</span>, <span class="hljs-number">125000</span>, <span class="hljs-number">13</span>, <span class="hljs-number">24</span>, <span class="hljs-number">0</span>), -<span class="hljs-number">11135.232130750843</span>);
-});</div></div></div></div></body></html>

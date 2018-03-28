@@ -1,5 +1,5 @@
 import test from 'tape'
-import isarray from '../fn/isarray'
+import isarray from '../src/isarray'
 
 test( 'isarray', (t) => {
   t.plan(3)

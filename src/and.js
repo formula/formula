@@ -1,7 +1,7 @@
 // Copyright 2015 JC Fisher
 
 import iserror from './iserror';
-import error from './error';
+import { ERRORTYPES as error } from './error';
 import isfunction from './isfunction';
 import reduce from './reduce';
 

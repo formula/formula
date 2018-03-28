@@ -1,6 +1,6 @@
 // Copyright 2015 JC Fisher
 
-import error from './error';
+import { ERRORTYPES as error } from './error';
 
 // CHOOSE accepts an index and a list of items. It returns the item that corresponds to the index.
 export default function choose(index, ...items) {

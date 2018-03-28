@@ -1,6 +1,6 @@
 // Copyright 2015 JC Fisher
 
-import error from './error'
+import { ERRORTYPES as error } from './error'
 
 // combine a array of strings/numbers into a single string
 export default function join(list, delim=', ') {

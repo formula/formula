@@ -1,5 +1,5 @@
 import test from 'tape';
-import unflatten from '../fn/unflatten';
+import unflatten from '../src/unflatten';
 
 test('unflatten', (t) => {
   t.plan(2)

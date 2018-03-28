@@ -1,6 +1,6 @@
-import abs from '../fn/abs';
+import abs from '../src/abs';
 import test from 'tape';
-import error from '../fn/error';
+import { ERRORTYPES as error } from '../src/error';
 
 test('abs', function(t) {
   t.plan(6)

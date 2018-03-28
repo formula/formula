@@ -1,5 +1,5 @@
 import isnumber from './isnumber'
-import error from './error'
+import { ERRORTYPES as error } from './error'
 
 // Returns the hyperbolic inverser cosine of a value.
 export default function acosh(value) {

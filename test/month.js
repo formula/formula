@@ -1,6 +1,6 @@
 import test from 'tape'
-import month from '../fn/month'
-import error from '../fn/error'
+import month from '../src/month'
+import { ERRORTYPES as error } from '../src/error'
 
 test('month', (t) => {
   t.plan(3)

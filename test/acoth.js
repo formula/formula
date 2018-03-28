@@ -1,6 +1,6 @@
 import acoth from '../src/acoth';
 import round from '../src/round';
-import error from '../src/error';
+import { ERRORTYPES as error } from '../src/error';
 import test from 'tape';
 
 test('acoth', function(t) {

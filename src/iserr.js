@@ -1,6 +1,6 @@
 // Copyright 2015 JC Fisher
 
-import error from './error';
+import { ERRORTYPES as error } from './error';
 import isNaN from './isnan'
 
 // ISERR returns true when the value is an error (except `#NA!`) or when then

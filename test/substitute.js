@@ -1,5 +1,5 @@
 import test from 'tape';
-import substitute from '../fn/substitute';
+import substitute from '../src/substitute';
 
 test('substitute', function(t) {
   t.plan(3);

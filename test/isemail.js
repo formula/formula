@@ -1,4 +1,4 @@
-import isemail from '../fn/isemail';
+import isemail from '../src/isemail';
 import test from 'tape';
 
 test('isemail', function(t) {

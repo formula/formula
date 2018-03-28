@@ -17,19 +17,10 @@ RUN("sum(a, b, c) = 1+2+3", { a: 1, b: 2, c: 3})
 
 ## Browser ready
 
-Add to your browser with:
+Add to the browser with:
 
 ```html
-<script type="text/javascript" src="https://unpkg.com/formula@3.0.0/umd/formula.min.js"
-```
-
-## Reduce bundle sizes
-
-Require specific functions to reduce bundle size.
-
-```js
-var isNumber = require('formula/fn/isnumber')
-var proper = require('formula/fn/proper')
+<script type="text/javascript" src="https://unpkg.com/formula@3.3.0/lib/formula.min.js"
 ```
 
 ## About this project

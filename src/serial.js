@@ -2,7 +2,7 @@
 
 import {d1900, MilliSecondsInDay} from './constants'
 import isdate from './isdate'
-import error from './error';
+import { ERRORTYPES as error } from './error';
 
 // SERIAL convert a date object into a serial number.
 export default function serial(date) {

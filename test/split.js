@@ -1,5 +1,5 @@
 import test from 'tape';
-import split from '../fn/split';
+import split from '../src/split';
 
 test('split', function(t) {
   t.plan(1);

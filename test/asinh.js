@@ -1,5 +1,5 @@
 import asinh from '../src/asinh';
-import error from '../src/error';
+import { ERRORTYPES as error } from '../src/error';
 import test from 'tape';
 
 test('asinh', function(t) {

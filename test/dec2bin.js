@@ -1,6 +1,6 @@
 import test from 'tape';
-import dec2bin from '../fn/dec2bin';
-import error from '../fn/error';
+import dec2bin from '../src/dec2bin';
+import { ERRORTYPES as error } from '../src/error';
 
 test('dec2bin', function(t) {
   t.plan(7)

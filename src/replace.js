@@ -1,7 +1,7 @@
 // Copyright 2015 JC Fisher
 
 import iserror from './iserror'
-import error from './error'
+import { ERRORTYPES as error } from './error'
 
 // REPLACE returns a new string after replacing with `new_text`.
 export default function replace(text, position, length, new_text) {

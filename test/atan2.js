@@ -1,5 +1,5 @@
 import atan2 from '../src/atan2';
-import error from '../src/error';
+import { ERRORTYPES as error } from '../src/error';
 import test from 'tape';
 
 test('atan2', function(t) {

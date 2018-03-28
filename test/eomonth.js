@@ -1,7 +1,7 @@
 import test from 'tape'
-import error from '../fn/error'
-import parsedate from '../fn/parsedate'
-import eomonth from '../fn/eomonth'
+import { ERRORTYPES as error } from '../src/error'
+import parsedate from '../src/parsedate'
+import eomonth from '../src/eomonth'
 
 test('eomonth', (t) => {
   t.plan(2)

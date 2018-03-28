@@ -1,7 +1,7 @@
 // Copyright 2015 JC Fisher
 
 import {JulianOffset} from './constants'
-import error from './error'
+import { ERRORTYPES as error } from './error'
 import isNaN from './isnan'
 
 // PARSEDATE converts a value into a Date object.

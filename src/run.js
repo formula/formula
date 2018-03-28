@@ -3,7 +3,7 @@ import compile from './compile'
 import isFunction from './isfunction'
 import assign from './assign'
 import isText from './istext'
-import error from './error'
+import { ERRORTYPES as error } from './error'
 
 // m is a cache of compiled expressions.
 let m = {}

@@ -7,7 +7,7 @@ import index2col from './index2col'
 import index2row from './index2row'
 import unique from './unique'
 import columnletter from './columnletter'
-import error from './error'
+import { ERRORTYPES as error } from './error'
 
 // REF accepts top and bottom and returns a reference object. It encapsulates a cell or a range.
 export default function ref(top, bottom) {

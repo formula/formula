@@ -1,20 +1,17 @@
 {
   "name": "formula",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "Formula compiler and function library",
   "main": "index.js",
   "scripts": {
     "all": "npm run build && npm test",
-    "test": "BABEL_ENV=test babel-tape-runner test/*.js | faucet",
-    "docs": "groc src/*.js -o ./docs; groc test/*.js -o ./test-docs",
-    "test:docs": "docco --output test_docs test/*.js",
-    "clean": "rm -rf fn",
-    "build": "BABEL_ENV=production npm run clean && mkdir fn && npm run build:js && npm run docs && npm run dist",
-    "build:js": "gulp",
+    "test": "buble-tape-runner test/*.js | faucet",
+    "docs": "groc src/*.js -o ./docs/code; groc test/*.js -o ./docs/test",
+    "clean": "rm -rf lib;",
+    "build": "BABEL_ENV=production npm run build:umd && npm run build:min && npm run docs",
     "build:parser": "jison src/parser.jison -m commonjs -o src/parser.js",
-    "dist": "npm run dist:cjs && npm run dist:umd",
-    "dist:cjs": "rm -rf cjs; mkdir cjs; rollup -f=cjs src/functions.js > cjs/formula.es; babel cjs/formula.es > cjs/formula.js; uglifyjs cjs/formula.js > cjs/formula.min.js",
-    "dist:umd": "rm -rf umd; mkdir umd; rollup -f=umd -n=Formula src/functions.js > umd/formula.es; babel umd/formula.es > umd/formula.js; uglifyjs umd/formula.js > umd/formula.min.js"
+    "build:umd": "rm -rf lib; mkdir lib; rollup -f=umd -n=Formula src/functions.js > lib/formula.mjs.js; buble lib/formula.mjs.js > lib/formula.js",
+    "build:min": "uglifyjs lib/formula.js > lib/formula.min.js"
   },
   "repository": {
     "type": "git",
@@ -31,23 +28,15 @@
   },
   "homepage": "https://github.com/FormBucket/formula#readme",
   "devDependencies": {
-    "babel-cli": "^6.8.0",
-    "babel-core": "^6.8.0",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-tape-runner": "^2.0.1",
+    "buble": "^0.19.3",
+    "buble-tape-runner": "^1.0.4",
     "docco": "^0.7.0",
     "eslint": "^1.8.0",
     "faucet": "0.0.1",
     "groc": "^0.8.0",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
     "jison": "^0.4.18",
     "rollup": "^0.26.2",
-    "rollup-plugin-babel": "^2.7.1",
     "tape": "^4.5.1",
-    "uglify-js": "^3.1.10"
-  },
-  "dependencies": {}
+    "uglify-js": "^3.3.16"
+  }
 }

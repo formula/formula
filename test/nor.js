@@ -1,5 +1,5 @@
 import test from "tape";
-import nor from "../fn/nor";
+import nor from "../src/nor";
 
 test("nor", function(t) {
   t.plan(10);

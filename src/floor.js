@@ -1,4 +1,4 @@
-import error from './error';
+import { ERRORTYPES as error } from './error';
 
 export default function floor(value, significance) {
   significance = significance || 1;

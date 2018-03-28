@@ -1,5 +1,5 @@
-import index2row from '../fn/index2row';
-import error from '../fn/error';
+import index2row from '../src/index2row';
+import { ERRORTYPES as error } from '../src/error';
 import test from 'tape';
 
 test('index2row', function(t) {

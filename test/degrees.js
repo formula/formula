@@ -1,5 +1,5 @@
 import test from 'tape'
-import error from '../src/error'
+import { ERRORTYPES as error } from '../src/error'
 import { pi } from '../src/constants'
 import degrees from '../src/degrees'
 import round from '../src/round'

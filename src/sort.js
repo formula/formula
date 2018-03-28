@@ -1,7 +1,7 @@
 // Copyright 2015 JC Fisher
 
 import isarray from './isarray';
-import error from './error';
+import { ERRORTYPES as error } from './error';
 
 // SORT an array of objects.
 //

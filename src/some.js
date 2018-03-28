@@ -3,7 +3,7 @@
 import isblank from './isblank'
 import isarray from './isarray'
 import eq from './eq'
-import error from './error'
+import { ERRORTYPES as error } from './error'
 
 // INT returns true when a needle is found in a list.
 export default function some(needle, list) {

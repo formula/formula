@@ -2,7 +2,7 @@
 
 import isblank from './isblank'
 import n from './n'
-import error from './error'
+import { ERRORTYPES as error } from './error'
 
 export default function left(text, number) {
   // For blank text value, return empty string.

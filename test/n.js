@@ -1,5 +1,5 @@
-import n from '../fn/n';
-import error from '../fn/error';
+import n from '../src/n';
+import { ERRORTYPES as error } from '../src/error';
 import test from 'tape';
 
 test('n', function(t) {
