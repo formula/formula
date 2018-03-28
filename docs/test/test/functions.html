@@ -2,7 +2,7 @@
 <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> ff <span class="hljs-keyword">from</span> <span class="hljs-string">"../src/functions"</span>;
 
 test(<span class="hljs-string">"lower case functions should be there"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
-  t.plan(<span class="hljs-number">156</span>);
+  t.plan(<span class="hljs-number">161</span>);
   t.ok(ff.ABS, <span class="hljs-string">"abs should be there"</span>);
   t.ok(ff.ACCRINT, <span class="hljs-string">"accrint should be there"</span>);
   t.ok(ff.ACOS, <span class="hljs-string">"acos should be there"</span>);
@@ -117,6 +117,7 @@ test(<span class="hljs-string">"lower case functions should be there"</span>, <s
   t.ok(ff.NPER, <span class="hljs-string">"nper should be there"</span>);
   t.ok(ff.OCT2DEC, <span class="hljs-string">"oct2dec should be there"</span>);
   t.ok(ff.OR, <span class="hljs-string">"or should be there"</span>);
+  t.ok(ff.PARSE, <span class="hljs-string">"parse should be there"</span>);
   t.ok(ff.PARSEBOOL, <span class="hljs-string">"parsebool should be there"</span>);
   t.ok(ff.PARSEDATE, <span class="hljs-string">"parsedate should be there"</span>);
   t.ok(ff.PARSEQUERY, <span class="hljs-string">"parsequery should be there"</span>);
@@ -156,6 +157,10 @@ test(<span class="hljs-string">"lower case functions should be there"</span>, <s
   t.ok(ff.UNIQUE, <span class="hljs-string">"unique should be there"</span>);
   t.ok(ff.UPPER, <span class="hljs-string">"upper should be there"</span>);
   t.ok(ff.VLOOKUP, <span class="hljs-string">"vlookup should be there"</span>);
+  t.ok(ff.WALKER, <span class="hljs-string">"walker should be there"</span>);
+  t.ok(ff.WALKERCONFIGDEFAULT, <span class="hljs-string">"walker default config should be there"</span>);
+  t.ok(ff.WALKERCONFIGFP, <span class="hljs-string">"walker fp config should be there"</span>);
+  t.ok(ff.WALKERCONFIGJS, <span class="hljs-string">"walker js config should be there"</span>);
   t.ok(ff.XOR, <span class="hljs-string">"xor should be there"</span>);
   t.ok(ff.YEAR, <span class="hljs-string">"year should be there"</span>);
   t.ok(ff.YEARFRAC, <span class="hljs-string">"yearfrac should be there"</span>);

@@ -10,8 +10,19 @@
 export { default as ERROR } from "./error";
 export { ERRORTYPES } from "./error";
 
+// #### [parser](./parser)
+// `walker` converts an AST into a function.
+export { default as PARSE } from "./parser";
+
+// #### [walker](./walker)
+// `walker` converts an AST by walking and applying the config.
+export { default as WALKER } from "./walker";
+export { defaultConfig as WALKERCONFIGDEFAULT } from "./walker";
+export { fpConfig as WALKERCONFIGFP } from "./walker";
+export { jsConfig as WALKERCONFIGJS } from "./walker";
+
 // #### [compile](./compile)
-// `compile` converts a formula into a function.
+// `compile` converts a formula expression into a runnable JavaScript function.
 export { default as COMPILE } from "./compile";
 
 // #### [run](./run)

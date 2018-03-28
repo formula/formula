@@ -2,7 +2,7 @@ import test from "tape";
 import * as ff from "../src/functions";
 
 test("lower case functions should be there", function(t) {
-  t.plan(156);
+  t.plan(161);
   t.ok(ff.ABS, "abs should be there");
   t.ok(ff.ACCRINT, "accrint should be there");
   t.ok(ff.ACOS, "acos should be there");
@@ -117,6 +117,7 @@ test("lower case functions should be there", function(t) {
   t.ok(ff.NPER, "nper should be there");
   t.ok(ff.OCT2DEC, "oct2dec should be there");
   t.ok(ff.OR, "or should be there");
+  t.ok(ff.PARSE, "parse should be there");
   t.ok(ff.PARSEBOOL, "parsebool should be there");
   t.ok(ff.PARSEDATE, "parsedate should be there");
   t.ok(ff.PARSEQUERY, "parsequery should be there");
@@ -156,6 +157,10 @@ test("lower case functions should be there", function(t) {
   t.ok(ff.UNIQUE, "unique should be there");
   t.ok(ff.UPPER, "upper should be there");
   t.ok(ff.VLOOKUP, "vlookup should be there");
+  t.ok(ff.WALKER, "walker should be there");
+  t.ok(ff.WALKERCONFIGDEFAULT, "walker default config should be there");
+  t.ok(ff.WALKERCONFIGFP, "walker fp config should be there");
+  t.ok(ff.WALKERCONFIGJS, "walker js config should be there");
   t.ok(ff.XOR, "xor should be there");
   t.ok(ff.YEAR, "year should be there");
   t.ok(ff.YEARFRAC, "yearfrac should be there");
