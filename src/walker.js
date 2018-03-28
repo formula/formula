@@ -92,26 +92,25 @@ export let defaultConfig = {
     )}${walk(config, bottomRight, depth)}`,
   renderVariable: (config, { scope, name }, depth) =>
     `${scope ? scope + "!" : ""}${name}`,
+  renderString: value => `"${value}"`,
+  renderNumber: value => value.toString(),
+  renderBoolean: value => (value ? "TRUE" : "FALSE"),
   renderValue: (config, { subtype, items, value }, depth) => {
     return branch(
       subtype === "string",
-      () => `"${value}"`,
+      () => config.renderString(value),
       subtype === "number",
-      () => `${value}`,
+      () => config.renderNumber(value),
       subtype === "boolean",
-      () => (value ? "TRUE" : "FALSE"),
+      () => config.renderBoolean(value),
       subtype === "array",
-      () => `{${config.renderArray(config, { items }, depth)}}`
+      () => `${config.renderArray(config, { items }, depth)}`
     );
   },
   renderArray: (config, { items }, depth) =>
-    branch(
-      and(...items.map(d => d.type === "value" && d.subtype !== "array")),
-      () => items.map(d => d.value).join(","),
-      some(items, d => isArray),
-      () => items.map(d => config.renderArray(config, d, depth + 1)).join(";"),
-      items.join(",")
-    )
+    "{" +
+    items.map(d => config.renderValue(config, d, depth + 1)).join(",") +
+    "}"
 };
 
 function runFunc(name, config, { operands, subtype }, depth) {

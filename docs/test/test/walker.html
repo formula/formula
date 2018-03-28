@@ -4,7 +4,7 @@
 <span class="hljs-keyword">import</span> { fpConfig } <span class="hljs-keyword">from</span> <span class="hljs-string">"../src/walker"</span>;
 
 test(<span class="hljs-string">"walker should pass default config tests"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
-  t.plan(<span class="hljs-number">20</span>);
+  t.plan(<span class="hljs-number">21</span>);
 
   <span class="hljs-keyword">let</span> walk = walker();
 
@@ -25,16 +25,15 @@ test(<span class="hljs-string">"walker should pass default config tests"</span>,
   t.equal(walk(<span class="hljs-string">"@foo1"</span>), <span class="hljs-string">"@foo1"</span>);
 
   t.equal(walk(<span class="hljs-string">"{2,2}"</span>), <span class="hljs-string">"{2,2}"</span>);
-  t.equal(walk(<span class="hljs-string">"{2;2}"</span>), <span class="hljs-string">"{2;2}"</span>);
-  t.equal(walk(<span class="hljs-string">"{1;2;3;4;5;6}"</span>), <span class="hljs-string">"{1;2;3;4;5;6}"</span>);
-
-  t.equal(walk(<span class="hljs-string">"{1,2,3;4,5,6}"</span>), <span class="hljs-string">"{1,2,3;4,5,6}"</span>);
-
+  t.equal(walk(<span class="hljs-string">"{2;2}"</span>), <span class="hljs-string">"{{2},{2}}"</span>);
+  t.equal(walk(<span class="hljs-string">"{{2},{2}}"</span>), <span class="hljs-string">"{{2},{2}}"</span>);
+  t.equal(walk(<span class="hljs-string">"{1;2;3;4;5;6}"</span>), <span class="hljs-string">"{{1},{2},{3},{4},{5},{6}}"</span>);
+  t.equal(walk(<span class="hljs-string">"{1,2,3;4,5,6}"</span>), <span class="hljs-string">"{{1,2,3},{4,5,6}}"</span>);
   t.equal(walk(<span class="hljs-string">"and(true,false,true)"</span>), <span class="hljs-string">"AND(TRUE, FALSE, TRUE)"</span>);
 });
 
 test(<span class="hljs-string">"walker should pass fp config tests"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
-  t.plan(<span class="hljs-number">20</span>);
+  t.plan(<span class="hljs-number">22</span>);
 
   <span class="hljs-keyword">let</span> walk = walker(fpConfig);
   t.equal(walk(<span class="hljs-string">"(2=2)"</span>), <span class="hljs-string">"(EQ(2, 2))"</span>);
@@ -54,10 +53,12 @@ test(<span class="hljs-string">"walker should pass fp config tests"</span>, <spa
   t.equal(walk(<span class="hljs-string">"@foo1"</span>), <span class="hljs-string">"@foo1"</span>);
 
   t.equal(walk(<span class="hljs-string">"{2,2}"</span>), <span class="hljs-string">"{2,2}"</span>);
-  t.equal(walk(<span class="hljs-string">"{2;2}"</span>), <span class="hljs-string">"{2;2}"</span>);
-  t.equal(walk(<span class="hljs-string">"{1;2;3;4;5;6}"</span>), <span class="hljs-string">"{1;2;3;4;5;6}"</span>);
+  t.equal(walk(<span class="hljs-string">"{2;2}"</span>), <span class="hljs-string">"{{2},{2}}"</span>);
+  t.equal(walk(<span class="hljs-string">"{1;2;3;4;5;6}"</span>), <span class="hljs-string">"{{1},{2},{3},{4},{5},{6}}"</span>);
+  t.equal(walk(walk(<span class="hljs-string">"{{1},{2},{3},{4},{5},{6}}"</span>)), <span class="hljs-string">"{{1},{2},{3},{4},{5},{6}}"</span>);
 
-  t.equal(walk(<span class="hljs-string">"{1,2,3;4,5,6}"</span>), <span class="hljs-string">"{1,2,3;4,5,6}"</span>);
+  t.equal(walk(<span class="hljs-string">"{1,2,3;4,5,6}"</span>), <span class="hljs-string">"{{1,2,3},{4,5,6}}"</span>);
+  t.equal(walk(<span class="hljs-string">"{{1,2,3},{4,5,6}}"</span>), <span class="hljs-string">"{{1,2,3},{4,5,6}}"</span>);
 
   t.equal(
     walk(walk(walk(<span class="hljs-string">"and(or(status=1),false,true)"</span>))), <span class="hljs-comment">// should produce same output each call</span>
@@ -103,7 +104,6 @@ test(<span class="hljs-string">"walker should pass custom config tests"</span>, 
   t.equal(walk(<span class="hljs-string">"sum({2,2})"</span>), <span class="hljs-string">"SUM([2,2])"</span>);
   t.equal(walk(<span class="hljs-string">"sum({2;2})"</span>), <span class="hljs-string">"SUM([[2],[2]])"</span>);
   t.equal(walk(<span class="hljs-string">"{1;2;3;4;5;6}"</span>), <span class="hljs-string">"[[1],[2],[3],[4],[5],[6]]"</span>);
-
   t.equal(walk(<span class="hljs-string">"{1,2,3;4,5,6}"</span>), <span class="hljs-string">"[[1,2,3],[4,5,6]]"</span>);
 
   t.equal(

@@ -92,26 +92,25 @@
     )}<span class="hljs-subst">${walk(config, bottomRight, depth)}</span>`</span>,
   renderVariable: (config, { scope, name }, depth) =&gt;
     <span class="hljs-string">`<span class="hljs-subst">${scope ? scope + "!" : ""}</span><span class="hljs-subst">${name}</span>`</span>,
+  renderString: value =&gt; <span class="hljs-string">`"<span class="hljs-subst">${value}</span>"`</span>,
+  renderNumber: value =&gt; value.toString(),
+  renderBoolean: value =&gt; (value ? <span class="hljs-string">"TRUE"</span> : <span class="hljs-string">"FALSE"</span>),
   renderValue: (config, { subtype, items, value }, depth) =&gt; {
     <span class="hljs-keyword">return</span> branch(
       subtype === <span class="hljs-string">"string"</span>,
-      () =&gt; <span class="hljs-string">`"<span class="hljs-subst">${value}</span>"`</span>,
+      () =&gt; config.renderString(value),
       subtype === <span class="hljs-string">"number"</span>,
-      () =&gt; <span class="hljs-string">`<span class="hljs-subst">${value}</span>`</span>,
+      () =&gt; config.renderNumber(value),
       subtype === <span class="hljs-string">"boolean"</span>,
-      () =&gt; (value ? <span class="hljs-string">"TRUE"</span> : <span class="hljs-string">"FALSE"</span>),
+      () =&gt; config.renderBoolean(value),
       subtype === <span class="hljs-string">"array"</span>,
-      () =&gt; <span class="hljs-string">`{<span class="hljs-subst">${config.renderArray(config, { items }</span>, depth)}}`</span>
+      () =&gt; <span class="hljs-string">`<span class="hljs-subst">${config.renderArray(config, { items }</span>, depth)}`</span>
     );
   },
   renderArray: (config, { items }, depth) =&gt;
-    branch(
-      and(...items.map(d =&gt; d.type === <span class="hljs-string">"value"</span> &amp;&amp; d.subtype !== <span class="hljs-string">"array"</span>)),
-      () =&gt; items.map(d =&gt; d.value).join(<span class="hljs-string">","</span>),
-      some(items, d =&gt; isArray),
-      () =&gt; items.map(d =&gt; config.renderArray(config, d, depth + <span class="hljs-number">1</span>)).join(<span class="hljs-string">";"</span>),
-      items.join(<span class="hljs-string">","</span>)
-    )
+    <span class="hljs-string">"{"</span> +
+    items.map(d =&gt; config.renderValue(config, d, depth + <span class="hljs-number">1</span>)).join(<span class="hljs-string">","</span>) +
+    <span class="hljs-string">"}"</span>
 };
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">runFunc</span>(<span class="hljs-params">name, config, { operands, subtype }, depth</span>) </span>{

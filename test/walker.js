@@ -4,7 +4,7 @@ import walker from "../src/walker";
 import { fpConfig } from "../src/walker";
 
 test("walker should pass default config tests", function(t) {
-  t.plan(20);
+  t.plan(21);
 
   let walk = walker();
 
@@ -25,16 +25,15 @@ test("walker should pass default config tests", function(t) {
   t.equal(walk("@foo1"), "@foo1");
 
   t.equal(walk("{2,2}"), "{2,2}");
-  t.equal(walk("{2;2}"), "{2;2}");
-  t.equal(walk("{1;2;3;4;5;6}"), "{1;2;3;4;5;6}");
-
-  t.equal(walk("{1,2,3;4,5,6}"), "{1,2,3;4,5,6}");
-
+  t.equal(walk("{2;2}"), "{{2},{2}}");
+  t.equal(walk("{{2},{2}}"), "{{2},{2}}");
+  t.equal(walk("{1;2;3;4;5;6}"), "{{1},{2},{3},{4},{5},{6}}");
+  t.equal(walk("{1,2,3;4,5,6}"), "{{1,2,3},{4,5,6}}");
   t.equal(walk("and(true,false,true)"), "AND(TRUE, FALSE, TRUE)");
 });
 
 test("walker should pass fp config tests", function(t) {
-  t.plan(20);
+  t.plan(22);
 
   let walk = walker(fpConfig);
   t.equal(walk("(2=2)"), "(EQ(2, 2))");
@@ -54,10 +53,12 @@ test("walker should pass fp config tests", function(t) {
   t.equal(walk("@foo1"), "@foo1");
 
   t.equal(walk("{2,2}"), "{2,2}");
-  t.equal(walk("{2;2}"), "{2;2}");
-  t.equal(walk("{1;2;3;4;5;6}"), "{1;2;3;4;5;6}");
+  t.equal(walk("{2;2}"), "{{2},{2}}");
+  t.equal(walk("{1;2;3;4;5;6}"), "{{1},{2},{3},{4},{5},{6}}");
+  t.equal(walk(walk("{{1},{2},{3},{4},{5},{6}}")), "{{1},{2},{3},{4},{5},{6}}");
 
-  t.equal(walk("{1,2,3;4,5,6}"), "{1,2,3;4,5,6}");
+  t.equal(walk("{1,2,3;4,5,6}"), "{{1,2,3},{4,5,6}}");
+  t.equal(walk("{{1,2,3},{4,5,6}}"), "{{1,2,3},{4,5,6}}");
 
   t.equal(
     walk(walk(walk("and(or(status=1),false,true)"))), // should produce same output each call
@@ -103,7 +104,6 @@ test("walker should pass custom config tests", function(t) {
   t.equal(walk("sum({2,2})"), "SUM([2,2])");
   t.equal(walk("sum({2;2})"), "SUM([[2],[2]])");
   t.equal(walk("{1;2;3;4;5;6}"), "[[1],[2],[3],[4],[5],[6]]");
-
   t.equal(walk("{1,2,3;4,5,6}"), "[[1,2,3],[4,5,6]]");
 
   t.equal(
