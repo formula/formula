@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="en"><head><title>test/walker</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="test/walker"><meta name="groc-project-path" content="test/walker.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">test/walker.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">var</span> test = <span class="hljs-built_in">require</span>(<span class="hljs-string">"tape"</span>);
+<span class="hljs-keyword">import</span> branch <span class="hljs-keyword">from</span> <span class="hljs-string">"../src/branch"</span>;
+<span class="hljs-keyword">import</span> walker <span class="hljs-keyword">from</span> <span class="hljs-string">"../src/walker"</span>;
+<span class="hljs-keyword">import</span> { fpConfig } <span class="hljs-keyword">from</span> <span class="hljs-string">"../src/walker"</span>;
+
+test(<span class="hljs-string">"walker should pass default config tests"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
+  t.plan(<span class="hljs-number">20</span>);
+
+  <span class="hljs-keyword">let</span> walk = walker();
+
+  t.equal(walk(<span class="hljs-string">"(2=2)"</span>), <span class="hljs-string">"(2 = 2)"</span>);
+  t.equal(walk(<span class="hljs-string">"-2"</span>), <span class="hljs-string">"-2"</span>);
+  t.equal(walk(<span class="hljs-string">"2 = 2"</span>), <span class="hljs-string">"2 = 2"</span>);
+  t.equal(walk(<span class="hljs-string">"2&lt;&gt;2"</span>), <span class="hljs-string">"2 &lt;&gt; 2"</span>);
+  t.equal(walk(<span class="hljs-string">"2&gt;2"</span>), <span class="hljs-string">"2 &gt; 2"</span>);
+  t.equal(walk(<span class="hljs-string">"2&gt;=2"</span>), <span class="hljs-string">"2 &gt;= 2"</span>);
+  t.equal(walk(<span class="hljs-string">"2  &lt; 2"</span>), <span class="hljs-string">"2 &lt; 2"</span>);
+  t.equal(walk(<span class="hljs-string">"2 &lt;=   2"</span>), <span class="hljs-string">"2 &lt;= 2"</span>);
+  t.equal(walk(<span class="hljs-string">"2+   2"</span>), <span class="hljs-string">"2 + 2"</span>);
+  t.equal(walk(<span class="hljs-string">"2   -2"</span>), <span class="hljs-string">"2 - 2"</span>);
+  t.equal(walk(<span class="hljs-string">"2     *2"</span>), <span class="hljs-string">"2 * 2"</span>);
+  t.equal(walk(<span class="hljs-string">"2/2"</span>), <span class="hljs-string">"2 / 2"</span>);
+  t.equal(walk(<span class="hljs-string">"2^2"</span>), <span class="hljs-string">"2 ^ 2"</span>);
+  t.equal(walk(<span class="hljs-string">'"a" &amp; "b"'</span>), <span class="hljs-string">'"a" &amp; "b"'</span>);
+  t.equal(walk(<span class="hljs-string">"@foo1"</span>), <span class="hljs-string">"@foo1"</span>);
+
+  t.equal(walk(<span class="hljs-string">"{2,2}"</span>), <span class="hljs-string">"{2,2}"</span>);
+  t.equal(walk(<span class="hljs-string">"{2;2}"</span>), <span class="hljs-string">"{2;2}"</span>);
+  t.equal(walk(<span class="hljs-string">"{1;2;3;4;5;6}"</span>), <span class="hljs-string">"{1;2;3;4;5;6}"</span>);
+
+  t.equal(walk(<span class="hljs-string">"{1,2,3;4,5,6}"</span>), <span class="hljs-string">"{1,2,3;4,5,6}"</span>);
+
+  t.equal(walk(<span class="hljs-string">"and(true,false,true)"</span>), <span class="hljs-string">"AND(TRUE, FALSE, TRUE)"</span>);
+});
+
+test(<span class="hljs-string">"walker should pass fp config tests"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
+  t.plan(<span class="hljs-number">20</span>);
+
+  <span class="hljs-keyword">let</span> walk = walker(fpConfig);
+  t.equal(walk(<span class="hljs-string">"(2=2)"</span>), <span class="hljs-string">"(EQ(2, 2))"</span>);
+  t.equal(walk(<span class="hljs-string">"-2"</span>), <span class="hljs-string">"MINUS(2)"</span>);
+  t.equal(walk(<span class="hljs-string">"2 = 1"</span>), <span class="hljs-string">"EQ(2, 1)"</span>);
+  t.equal(walk(<span class="hljs-string">"2&lt;&gt;1"</span>), <span class="hljs-string">"NE(2, 1)"</span>);
+  t.equal(walk(<span class="hljs-string">"2&gt;1"</span>), <span class="hljs-string">"GT(2, 1)"</span>);
+  t.equal(walk(<span class="hljs-string">"2&gt;=1"</span>), <span class="hljs-string">"GTE(2, 1)"</span>);
+  t.equal(walk(<span class="hljs-string">"2  &lt; 2"</span>), <span class="hljs-string">"LT(2, 2)"</span>);
+  t.equal(walk(<span class="hljs-string">"2 &lt;=   2"</span>), <span class="hljs-string">"LTE(2, 2)"</span>);
+  t.equal(walk(<span class="hljs-string">"2+   2"</span>), <span class="hljs-string">"ADD(2, 2)"</span>);
+  t.equal(walk(<span class="hljs-string">"2   -2"</span>), <span class="hljs-string">"SUBTRACT(2, 2)"</span>);
+  t.equal(walk(<span class="hljs-string">"2     *2"</span>), <span class="hljs-string">"MULTIPLY(2, 2)"</span>);
+  t.equal(walk(<span class="hljs-string">"2/2"</span>), <span class="hljs-string">"DIVIDE(2, 2)"</span>);
+  t.equal(walk(<span class="hljs-string">"2^2"</span>), <span class="hljs-string">"POWER(2, 2)"</span>);
+  t.equal(walk(<span class="hljs-string">'"a" &amp; "b"'</span>), <span class="hljs-string">'CONCATENATE("a", "b")'</span>);
+  t.equal(walk(<span class="hljs-string">"@foo1"</span>), <span class="hljs-string">"@foo1"</span>);
+
+  t.equal(walk(<span class="hljs-string">"{2,2}"</span>), <span class="hljs-string">"{2,2}"</span>);
+  t.equal(walk(<span class="hljs-string">"{2;2}"</span>), <span class="hljs-string">"{2;2}"</span>);
+  t.equal(walk(<span class="hljs-string">"{1;2;3;4;5;6}"</span>), <span class="hljs-string">"{1;2;3;4;5;6}"</span>);
+
+  t.equal(walk(<span class="hljs-string">"{1,2,3;4,5,6}"</span>), <span class="hljs-string">"{1,2,3;4,5,6}"</span>);
+
+  t.equal(
+    walk(walk(walk(<span class="hljs-string">"and(or(status=1),false,true)"</span>))), <span class="hljs-comment">// should produce same output each call</span>
+    <span class="hljs-string">"AND(OR(EQ(status, 1)), FALSE, TRUE)"</span>
+  );
+});
+
+test(<span class="hljs-string">"walker should pass custom config tests"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
+  t.plan(<span class="hljs-number">20</span>);
+
+  <span class="hljs-keyword">let</span> config = <span class="hljs-built_in">Object</span>.assign({}, fpConfig, {
+    renderArray: items =&gt; <span class="hljs-string">"["</span> + items.map(walk) + <span class="hljs-string">"]"</span>,
+    renderValue: (config, { subtype, items, value }, depth) =&gt; {
+      <span class="hljs-keyword">return</span> branch(
+        subtype === <span class="hljs-string">"string"</span>,
+        () =&gt; <span class="hljs-string">`"<span class="hljs-subst">${value}</span>"`</span>,
+        subtype === <span class="hljs-string">"number"</span>,
+        () =&gt; <span class="hljs-string">`<span class="hljs-subst">${value}</span>`</span>,
+        subtype === <span class="hljs-string">"boolean"</span>,
+        () =&gt; (value ? <span class="hljs-string">"true"</span> : <span class="hljs-string">"false"</span>),
+        subtype === <span class="hljs-string">"array"</span>,
+        () =&gt; config.renderArray(items)
+      );
+    }
+  });
+  <span class="hljs-keyword">let</span> walk = walker(config);
+  t.equal(walk(<span class="hljs-string">"(2=2)"</span>), <span class="hljs-string">"(EQ(2, 2))"</span>);
+  t.equal(walk(<span class="hljs-string">"-2"</span>), <span class="hljs-string">"MINUS(2)"</span>);
+  t.equal(walk(<span class="hljs-string">"2 = 1"</span>), <span class="hljs-string">"EQ(2, 1)"</span>);
+  t.equal(walk(<span class="hljs-string">"2&lt;&gt;1"</span>), <span class="hljs-string">"NE(2, 1)"</span>);
+  t.equal(walk(<span class="hljs-string">"2&gt;1"</span>), <span class="hljs-string">"GT(2, 1)"</span>);
+  t.equal(walk(<span class="hljs-string">"2&gt;=1"</span>), <span class="hljs-string">"GTE(2, 1)"</span>);
+  t.equal(walk(<span class="hljs-string">"2  &lt; 2"</span>), <span class="hljs-string">"LT(2, 2)"</span>);
+  t.equal(walk(<span class="hljs-string">"2 &lt;=   2"</span>), <span class="hljs-string">"LTE(2, 2)"</span>);
+  t.equal(walk(<span class="hljs-string">"2+   2"</span>), <span class="hljs-string">"ADD(2, 2)"</span>);
+  t.equal(walk(<span class="hljs-string">"2   -2"</span>), <span class="hljs-string">"SUBTRACT(2, 2)"</span>);
+  t.equal(walk(<span class="hljs-string">"2     *2"</span>), <span class="hljs-string">"MULTIPLY(2, 2)"</span>);
+  t.equal(walk(<span class="hljs-string">"2/2"</span>), <span class="hljs-string">"DIVIDE(2, 2)"</span>);
+  t.equal(walk(<span class="hljs-string">"2^2"</span>), <span class="hljs-string">"POWER(2, 2)"</span>);
+  t.equal(walk(<span class="hljs-string">'"a" &amp; "b"'</span>), <span class="hljs-string">'CONCATENATE("a", "b")'</span>);
+  t.equal(walk(<span class="hljs-string">"@foo1"</span>), <span class="hljs-string">"@foo1"</span>);
+
+  t.equal(walk(<span class="hljs-string">"sum({2,2})"</span>), <span class="hljs-string">"SUM([2,2])"</span>);
+  t.equal(walk(<span class="hljs-string">"sum({2;2})"</span>), <span class="hljs-string">"SUM([[2],[2]])"</span>);
+  t.equal(walk(<span class="hljs-string">"{1;2;3;4;5;6}"</span>), <span class="hljs-string">"[[1],[2],[3],[4],[5],[6]]"</span>);
+
+  t.equal(walk(<span class="hljs-string">"{1,2,3;4,5,6}"</span>), <span class="hljs-string">"[[1,2,3],[4,5,6]]"</span>);
+
+  t.equal(
+    walk(walk(walk(<span class="hljs-string">"and(or(status=1),false,true)"</span>))), <span class="hljs-comment">// should produce same output each call</span>
+    <span class="hljs-string">"AND(OR(EQ(status, 1)), false, true)"</span>
+  );
+});</div></div></div></div></body></html>

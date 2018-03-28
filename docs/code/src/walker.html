@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="en"><head><title>src/walker</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/walker"><meta name="groc-project-path" content="src/walker.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/walker.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> and <span class="hljs-keyword">from</span> <span class="hljs-string">"./and"</span>;
+<span class="hljs-keyword">import</span> branch <span class="hljs-keyword">from</span> <span class="hljs-string">"./branch"</span>;
+<span class="hljs-keyword">import</span> isText <span class="hljs-keyword">from</span> <span class="hljs-string">"./istext"</span>;
+<span class="hljs-keyword">import</span> parse <span class="hljs-keyword">from</span> <span class="hljs-string">"./parser"</span>;
+<span class="hljs-keyword">import</span> some <span class="hljs-keyword">from</span> <span class="hljs-string">"./some"</span>;
+<span class="hljs-keyword">import</span> assign <span class="hljs-keyword">from</span> <span class="hljs-string">"./assign"</span>;
+<span class="hljs-keyword">import</span> isArray <span class="hljs-keyword">from</span> <span class="hljs-string">"./isarray"</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> defaultConfig = {
+  upCase: <span class="hljs-literal">true</span>,
+  visit: () =&gt; <span class="hljs-literal">undefined</span>,
+  labelEQ: <span class="hljs-string">"="</span>,
+  labelNE: <span class="hljs-string">"&lt;&gt;"</span>,
+  labelGT: <span class="hljs-string">"&lt;"</span>,
+  labelGTE: <span class="hljs-string">"&lt;="</span>,
+  labelLT: <span class="hljs-string">"&gt;"</span>,
+  renderMINUS: () =&gt; <span class="hljs-string">"-"</span>,
+  renderPLUS: () =&gt; <span class="hljs-string">"+"</span>,
+  renderEQ: () =&gt; <span class="hljs-string">" = "</span>,
+  renderNE: () =&gt; <span class="hljs-string">" &lt;&gt; "</span>,
+  renderGT: () =&gt; <span class="hljs-string">" &gt; "</span>,
+  renderGTE: () =&gt; <span class="hljs-string">" &gt;= "</span>,
+  renderLT: () =&gt; <span class="hljs-string">" &lt; "</span>,
+  renderLTE: () =&gt; <span class="hljs-string">" &lt;= "</span>,
+  renderADD: () =&gt; <span class="hljs-string">" + "</span>,
+  renderSUBTRACT: () =&gt; <span class="hljs-string">" - "</span>,
+  renderMULTIPLY: () =&gt; <span class="hljs-string">" * "</span>,
+  renderDIVIDE: () =&gt; <span class="hljs-string">" / "</span>,
+  renderPOWER: () =&gt; <span class="hljs-string">" ^ "</span>,
+  renderCONCAT: () =&gt; <span class="hljs-string">" &amp; "</span>,
+  renderGroupBefore: () =&gt; <span class="hljs-string">"("</span>,
+  renderGroupAfter: () =&gt; <span class="hljs-string">")"</span>,
+  renderGroup: (config, g, depth) =&gt; {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${config.renderGroupBefore(config, g, depth)}</span><span class="hljs-subst">${walk(
+      config,
+      g.exp,
+      depth + 1
+    )}</span><span class="hljs-subst">${config.renderGroupAfter(config, g, depth)}</span>`</span>;
+  },
+  renderFunctionBefore: (config, f, depth) =&gt;
+    config.upCase ? f.name.toUpperCase() : f.name,
+  renderFunctionAfter: (config, f, depth) =&gt; <span class="hljs-string">")"</span>,
+  renderFunction: (config, f, depth) =&gt;
+    <span class="hljs-string">`<span class="hljs-subst">${config.renderFunctionBefore(config, f, depth)}</span>(<span class="hljs-subst">${f.args
+      .map(d =&gt; walk(config, d, depth + 1))
+      .join(", ")}</span><span class="hljs-subst">${config.renderFunctionAfter(config, f, depth)}</span>`</span>,
+  renderOperator: (config, { subtype, operands }, depth) =&gt;
+    branch(
+      operands.length == <span class="hljs-number">1</span>,
+      () =&gt;
+        <span class="hljs-string">`<span class="hljs-subst">${branch(
+          subtype == "prefix-minus",
+          config.renderMINUS(config, depth),
+          subtype == "prefix-plus",
+          config.renderPLUS(config, depth)
+        )}</span><span class="hljs-subst">${walk(config, operands[0], depth + 1)}</span>`</span>,
+      operands.length === <span class="hljs-number">2</span>,
+      () =&gt;
+        <span class="hljs-string">`<span class="hljs-subst">${walk(config, operands[0], depth + 1)}</span><span class="hljs-subst">${branch(
+          subtype == "infix-eq",
+          config.renderEQ(config, { operands }</span>, depth),
+          subtype == "infix-ne",
+          config.renderNE(config, { operands }, depth),
+          subtype == "infix-gt",
+          config.renderGT(config, { operands }, depth),
+          subtype == "infix-gte",
+          config.renderGTE(config, { operands }, depth),
+          subtype == "infix-lt",
+          config.renderLT(config, { operands }, depth),
+          subtype == "infix-lte",
+          config.renderLTE(config, { operands }, depth),
+          subtype == "infix-add",
+          config.renderADD(config, { operands }, depth),
+          subtype == "infix-subtract",
+          config.renderSUBTRACT(config, { operands }, depth),
+          subtype == "infix-multiply",
+          config.renderMULTIPLY(config, { operands }, depth),
+          subtype == "infix-divide",
+          config.renderDIVIDE(config, { operands }, depth),
+          subtype == "infix-power",
+          config.renderPOWER(config, { operands }, depth),
+          subtype == "infix-concat",
+          config.renderCONCAT(config, { operands }, depth)
+        )}<span class="hljs-subst">${walk(config, operands[1], depth + 1)}</span>`</span>
+    ),
+  renderRangeBetween: () =&gt; <span class="hljs-string">":"</span>,
+  renderRange: (config, { topLeft, bottomRight }, depth) =&gt;
+    <span class="hljs-string">`<span class="hljs-subst">${walk(config, topLeft, depth)}</span><span class="hljs-subst">${config.renderRangeBetween(
+      config,
+      { topLeft, bottomRight }</span>,
+      depth
+    )}<span class="hljs-subst">${walk(config, bottomRight, depth)}</span>`</span>,
+  renderVariable: (config, { scope, name }, depth) =&gt;
+    <span class="hljs-string">`<span class="hljs-subst">${scope ? scope + "!" : ""}</span><span class="hljs-subst">${name}</span>`</span>,
+  renderValue: (config, { subtype, items, value }, depth) =&gt; {
+    <span class="hljs-keyword">return</span> branch(
+      subtype === <span class="hljs-string">"string"</span>,
+      () =&gt; <span class="hljs-string">`"<span class="hljs-subst">${value}</span>"`</span>,
+      subtype === <span class="hljs-string">"number"</span>,
+      () =&gt; <span class="hljs-string">`<span class="hljs-subst">${value}</span>`</span>,
+      subtype === <span class="hljs-string">"boolean"</span>,
+      () =&gt; (value ? <span class="hljs-string">"TRUE"</span> : <span class="hljs-string">"FALSE"</span>),
+      subtype === <span class="hljs-string">"array"</span>,
+      () =&gt; <span class="hljs-string">`{<span class="hljs-subst">${config.renderArray(config, { items }</span>, depth)}}`</span>
+    );
+  },
+  renderArray: (config, { items }, depth) =&gt;
+    branch(
+      and(...items.map(d =&gt; d.type === <span class="hljs-string">"value"</span> &amp;&amp; d.subtype !== <span class="hljs-string">"array"</span>)),
+      () =&gt; items.map(d =&gt; d.value).join(<span class="hljs-string">","</span>),
+      some(items, d =&gt; isArray),
+      () =&gt; items.map(d =&gt; config.renderArray(config, d, depth + <span class="hljs-number">1</span>)).join(<span class="hljs-string">";"</span>),
+      items.join(<span class="hljs-string">","</span>)
+    )
+};
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">runFunc</span>(<span class="hljs-params">name, config, { operands, subtype }, depth</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${name}</span>(<span class="hljs-subst">${walk(config, operands[0], depth + 1)}</span>, <span class="hljs-subst">${walk(
+    config,
+    operands[1],
+    depth + 1
+  )}</span>)`</span>;
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> fpConfig = assign(defaultConfig, {
+  renderOperator: (config, { subtype, operands }, depth) =&gt;
+    branch(
+      subtype == <span class="hljs-string">"prefix-minus"</span>,
+      <span class="hljs-string">`MINUS(<span class="hljs-subst">${walk(config, operands[0], depth + 1)}</span>)`</span>,
+      subtype == <span class="hljs-string">"prefix-plus"</span>,
+      <span class="hljs-string">`PLUS(<span class="hljs-subst">${walk(config, operands[0], depth + 1)}</span>)`</span>,
+      subtype == <span class="hljs-string">"infix-eq"</span>,
+      runFunc(<span class="hljs-string">"EQ"</span>, config, { operands, subtype }, depth),
+      subtype == <span class="hljs-string">"infix-ne"</span>,
+      runFunc(<span class="hljs-string">"NE"</span>, config, { operands, subtype }, depth),
+      subtype == <span class="hljs-string">"infix-gt"</span>,
+      runFunc(<span class="hljs-string">"GT"</span>, config, { operands, subtype }, depth),
+      subtype == <span class="hljs-string">"infix-gte"</span>,
+      runFunc(<span class="hljs-string">"GTE"</span>, config, { operands, subtype }, depth),
+      subtype == <span class="hljs-string">"infix-lt"</span>,
+      runFunc(<span class="hljs-string">"LT"</span>, config, { operands, subtype }, depth),
+      subtype == <span class="hljs-string">"infix-lte"</span>,
+      runFunc(<span class="hljs-string">"LTE"</span>, config, { operands, subtype }, depth),
+      subtype == <span class="hljs-string">"infix-add"</span>,
+      runFunc(<span class="hljs-string">"ADD"</span>, config, { operands, subtype }, depth),
+      subtype == <span class="hljs-string">"infix-subtract"</span>,
+      runFunc(<span class="hljs-string">"SUBTRACT"</span>, config, { operands, subtype }, depth),
+      subtype == <span class="hljs-string">"infix-multiply"</span>,
+      runFunc(<span class="hljs-string">"MULTIPLY"</span>, config, { operands, subtype }, depth),
+      subtype == <span class="hljs-string">"infix-divide"</span>,
+      runFunc(<span class="hljs-string">"DIVIDE"</span>, config, { operands, subtype }, depth),
+      subtype == <span class="hljs-string">"infix-power"</span>,
+      runFunc(<span class="hljs-string">"POWER"</span>, config, { operands, subtype }, depth),
+      subtype == <span class="hljs-string">"infix-concat"</span>,
+      runFunc(<span class="hljs-string">"CONCATENATE"</span>, config, { operands, subtype }, depth)
+    )
+});
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> jsConfig = assign(fpConfig, {
+  renderVariable: (config, v, depth) =&gt; {
+    <span class="hljs-keyword">return</span> v.scope
+      ? <span class="hljs-string">`context.get("<span class="hljs-subst">${v.name}</span>", "<span class="hljs-subst">${v.scope}</span>")`</span>
+      : <span class="hljs-string">`context.get("<span class="hljs-subst">${v.name}</span>")`</span>;
+  },
+  renderFunctionBefore: (config, f) =&gt;
+    <span class="hljs-string">`Formula.<span class="hljs-subst">${fpConfig.renderFunctionBefore(config, f)}</span>`</span>,
+  renderArray: (config, items, depth) =&gt;
+    <span class="hljs-string">"["</span> + items.map(d =&gt; config.walk(config, d, depth + <span class="hljs-number">1</span>)) + <span class="hljs-string">"]"</span>,
+  renderValue: (config, { subtype, items, value }, depth) =&gt; {
+    <span class="hljs-keyword">return</span> branch(
+      subtype === <span class="hljs-string">"string"</span>,
+      () =&gt; <span class="hljs-string">`"<span class="hljs-subst">${value}</span>"`</span>,
+      subtype === <span class="hljs-string">"number"</span>,
+      () =&gt; <span class="hljs-string">`<span class="hljs-subst">${value}</span>`</span>,
+      subtype === <span class="hljs-string">"boolean"</span>,
+      () =&gt; (value ? <span class="hljs-string">"true"</span> : <span class="hljs-string">"false"</span>),
+      subtype === <span class="hljs-string">"array"</span>,
+      () =&gt; config.renderArray(config, items, depth)
+    );
+  }
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">walk</span>(<span class="hljs-params">config, astOrExp, depth = 0</span>) </span>{
+  <span class="hljs-keyword">let</span> ast = astOrExp;
+
+  <span class="hljs-keyword">if</span> (!ast) {
+    <span class="hljs-keyword">return</span>;
+  }
+  <span class="hljs-keyword">if</span> (isText(astOrExp)) {
+    ast = parse(astOrExp);
+  }
+
+  <span class="hljs-keyword">let</span> { type } = ast;
+  <span class="hljs-keyword">let</span> {
+    renderGroup,
+    renderFunction,
+    renderOperator,
+    renderVariable,
+    renderValue
+  } = config;
+
+  config.visit(config, ast, depth);
+  config.walk = walk;
+
+  <span class="hljs-keyword">return</span> branch(
+    type === <span class="hljs-string">"group"</span>,
+    () =&gt; renderGroup(config, ast, depth),
+    type === <span class="hljs-string">"function"</span>,
+    () =&gt; renderFunction(config, ast, depth),
+    type === <span class="hljs-string">"operator"</span>,
+    () =&gt; renderOperator(config, ast, depth),
+    type === <span class="hljs-string">"variable"</span>,
+    () =&gt; renderVariable(config, ast, depth),
+    type === <span class="hljs-string">"value"</span>,
+    () =&gt; renderValue(config, ast, config, depth),
+    type === <span class="hljs-string">"range"</span>,
+    () =&gt; renderRange(config, ast, config, depth)
+  );
+}</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>return builder</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> (config = defaultConfig) =&gt; ast =&gt; walk(config, ast);</div></div></div></div></body></html>

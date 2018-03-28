@@ -1,25 +1,24 @@
-import * as funcs from './functions'
-import compile from './compile'
-import isFunction from './isfunction'
-import assign from './assign'
-import isText from './istext'
-import { ERRORTYPES as error } from './error'
+import * as funcs from "./functions";
+import compile from "./compile";
+import isFunction from "./isfunction";
+import assign from "./assign";
+import isText from "./istext";
+import { ERRORTYPES as error } from "./error";
 
 // m is a cache of compiled expressions.
-let m = {}
+let m = {};
 
 // Execute a formula expression
-export default function run(exp, params={}) {
-
+export default function run(exp, params = {}) {
   // if the exp is a function then return it immediately.
   if (isFunction(exp)) return exp;
 
   if (!isText(exp)) return error.na;
 
   // check cached and shortcut if appropriate.
-  if (m.hasOwnProperty(exp)){
+  if (m.hasOwnProperty(exp)) {
     // reload the compiled function.
-    compiled = m[exp]
+    compiled = m[exp];
   } else {
     // compile the expression.
     var compiled = compile(exp);
@@ -28,17 +27,17 @@ export default function run(exp, params={}) {
     m[exp] = compiled;
   }
 
-
-  let locals = assign({}, params)
+  let locals = assign({}, params);
 
   // Default get for plain object.
-  if (locals.get !== 'function') {
+  if (locals.get !== "function") {
     locals.get = (name, scope) => {
-      if (typeof scope !== 'undefined') return locals[scope] ? locals[scope][name] : undefined
+      if (isText(scope)) {
+        return locals[scope] ? locals[scope][name] : undefined;
+      }
       return locals[name];
-    }
+    };
   }
-
 
   return compiled(locals, funcs);
 }
