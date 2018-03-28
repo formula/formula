@@ -25,8 +25,8 @@ test("run: basic tests", function(t) {
   t.equal(run("a=b", { a: 1, b: 1 }), true);
   t.equal(run("a<>b", { a: 1, b: 1 }), false);
   t.equal(run("a!b1<>b", { a: { b1: 1 }, b: 1 }), false);
-  t.equal(run("Tran55Fee<>b", { Tran55Fee: 1, b: 1 }), false);
-  t.equal(run("@Tran55Fee<>b", { "@Tran55Fee": 1, b: 1 }), false);
+  t.equal(run("Fee<>b", { Fee: 1, b: 1 }), false);
+  t.equal(run("@Fee<>b", { "@Fee": 1, b: 1 }), false);
 });
 
 test("run: functions should work", function(t) {

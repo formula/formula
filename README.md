@@ -20,9 +20,5 @@ RUN("sum(a, b, c) = 1+2+3", { a: 1, b: 2, c: 3})
 Add to the browser with:
 
 ```html
-<script type="text/javascript" src="https://unpkg.com/formula@3.3.0/lib/formula.min.js"
+<script type="text/javascript" src="https://unpkg.com/formula@3.4.0/lib/formula.min.js"
 ```
-
-## About this project
-
-Project by <a href="https://formbucket.com">FormBucket</a>

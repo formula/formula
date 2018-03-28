@@ -14,8 +14,8 @@ test(<span class="hljs-string">"run: basic tests"</span>, <span class="hljs-func
   t.equal(run(<span class="hljs-string">"a=b"</span>, { a: <span class="hljs-number">1</span>, b: <span class="hljs-number">1</span> }), <span class="hljs-literal">true</span>);
   t.equal(run(<span class="hljs-string">"a&lt;&gt;b"</span>, { a: <span class="hljs-number">1</span>, b: <span class="hljs-number">1</span> }), <span class="hljs-literal">false</span>);
   t.equal(run(<span class="hljs-string">"a!b1&lt;&gt;b"</span>, { a: { b1: <span class="hljs-number">1</span> }, b: <span class="hljs-number">1</span> }), <span class="hljs-literal">false</span>);
-  t.equal(run(<span class="hljs-string">"Tran55Fee&lt;&gt;b"</span>, { Tran55Fee: <span class="hljs-number">1</span>, b: <span class="hljs-number">1</span> }), <span class="hljs-literal">false</span>);
-  t.equal(run(<span class="hljs-string">"@Tran55Fee&lt;&gt;b"</span>, { <span class="hljs-string">"@Tran55Fee"</span>: <span class="hljs-number">1</span>, b: <span class="hljs-number">1</span> }), <span class="hljs-literal">false</span>);
+  t.equal(run(<span class="hljs-string">"Fee&lt;&gt;b"</span>, { Fee: <span class="hljs-number">1</span>, b: <span class="hljs-number">1</span> }), <span class="hljs-literal">false</span>);
+  t.equal(run(<span class="hljs-string">"@Fee&lt;&gt;b"</span>, { <span class="hljs-string">"@Fee"</span>: <span class="hljs-number">1</span>, b: <span class="hljs-number">1</span> }), <span class="hljs-literal">false</span>);
 });
 
 test(<span class="hljs-string">"run: functions should work"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
