@@ -110,7 +110,36 @@
   renderArray: (config, { items }, depth) =&gt;
     <span class="hljs-string">"{"</span> +
     items.map(d =&gt; config.renderValue(config, d, depth + <span class="hljs-number">1</span>)).join(<span class="hljs-string">","</span>) +
-    <span class="hljs-string">"}"</span>
+    <span class="hljs-string">"}"</span>,
+  renderRule: (config, ast, depth = <span class="hljs-number">0</span>) =&gt; {
+    <span class="hljs-keyword">let</span> { type } = ast;
+
+    <span class="hljs-keyword">let</span> {
+      renderGroup,
+      renderFunction,
+      renderOperator,
+      renderVariable,
+      renderValue
+    } = config;
+
+    config.visit(config, ast, depth);
+    config.walk = walk;
+
+    <span class="hljs-keyword">return</span> branch(
+      type === <span class="hljs-string">"group"</span>,
+      () =&gt; renderGroup(config, ast, depth),
+      type === <span class="hljs-string">"function"</span>,
+      () =&gt; renderFunction(config, ast, depth),
+      type === <span class="hljs-string">"operator"</span>,
+      () =&gt; renderOperator(config, ast, depth),
+      type === <span class="hljs-string">"variable"</span>,
+      () =&gt; renderVariable(config, ast, depth),
+      type === <span class="hljs-string">"value"</span>,
+      () =&gt; renderValue(config, ast, config, depth),
+      type === <span class="hljs-string">"range"</span>,
+      () =&gt; renderRange(config, ast, config, depth)
+    );
+  }
 };
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">runFunc</span>(<span class="hljs-params">name, config, { operands, subtype }, depth</span>) </span>{
@@ -178,36 +207,6 @@
   }
 });
 
-<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderRule</span>(<span class="hljs-params">config, ast, depth = 0</span>) </span>{
-  <span class="hljs-keyword">let</span> { type } = ast;
-
-  <span class="hljs-keyword">let</span> {
-    renderGroup,
-    renderFunction,
-    renderOperator,
-    renderVariable,
-    renderValue
-  } = config;
-
-  config.visit(config, ast, depth);
-  config.walk = walk;
-
-  <span class="hljs-keyword">return</span> branch(
-    type === <span class="hljs-string">"group"</span>,
-    () =&gt; renderGroup(config, ast, depth),
-    type === <span class="hljs-string">"function"</span>,
-    () =&gt; renderFunction(config, ast, depth),
-    type === <span class="hljs-string">"operator"</span>,
-    () =&gt; renderOperator(config, ast, depth),
-    type === <span class="hljs-string">"variable"</span>,
-    () =&gt; renderVariable(config, ast, depth),
-    type === <span class="hljs-string">"value"</span>,
-    () =&gt; renderValue(config, ast, config, depth),
-    type === <span class="hljs-string">"range"</span>,
-    () =&gt; renderRange(config, ast, config, depth)
-  );
-}
-
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">walk</span>(<span class="hljs-params">config, astOrExp, depth = 0</span>) </span>{
   <span class="hljs-keyword">let</span> ast = astOrExp;
 
@@ -218,5 +217,5 @@
     ast = parse(astOrExp);
   }
 
-  <span class="hljs-keyword">return</span> renderRule(config, ast, depth);
+  <span class="hljs-keyword">return</span> config.renderRule(config, ast, depth);
 }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>return builder</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> (config = defaultConfig) =&gt; ast =&gt; walk(config, ast);</div></div></div></div></body></html>

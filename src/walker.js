@@ -110,7 +110,36 @@ export let defaultConfig = {
   renderArray: (config, { items }, depth) =>
     "{" +
     items.map(d => config.renderValue(config, d, depth + 1)).join(",") +
-    "}"
+    "}",
+  renderRule: (config, ast, depth = 0) => {
+    let { type } = ast;
+
+    let {
+      renderGroup,
+      renderFunction,
+      renderOperator,
+      renderVariable,
+      renderValue
+    } = config;
+
+    config.visit(config, ast, depth);
+    config.walk = walk;
+
+    return branch(
+      type === "group",
+      () => renderGroup(config, ast, depth),
+      type === "function",
+      () => renderFunction(config, ast, depth),
+      type === "operator",
+      () => renderOperator(config, ast, depth),
+      type === "variable",
+      () => renderVariable(config, ast, depth),
+      type === "value",
+      () => renderValue(config, ast, config, depth),
+      type === "range",
+      () => renderRange(config, ast, config, depth)
+    );
+  }
 };
 
 function runFunc(name, config, { operands, subtype }, depth) {
@@ -178,36 +207,6 @@ export let jsConfig = assign(fpConfig, {
   }
 });
 
-export function renderRule(config, ast, depth = 0) {
-  let { type } = ast;
-
-  let {
-    renderGroup,
-    renderFunction,
-    renderOperator,
-    renderVariable,
-    renderValue
-  } = config;
-
-  config.visit(config, ast, depth);
-  config.walk = walk;
-
-  return branch(
-    type === "group",
-    () => renderGroup(config, ast, depth),
-    type === "function",
-    () => renderFunction(config, ast, depth),
-    type === "operator",
-    () => renderOperator(config, ast, depth),
-    type === "variable",
-    () => renderVariable(config, ast, depth),
-    type === "value",
-    () => renderValue(config, ast, config, depth),
-    type === "range",
-    () => renderRange(config, ast, config, depth)
-  );
-}
-
 function walk(config, astOrExp, depth = 0) {
   let ast = astOrExp;
 
@@ -218,7 +217,7 @@ function walk(config, astOrExp, depth = 0) {
     ast = parse(astOrExp);
   }
 
-  return renderRule(config, ast, depth);
+  return config.renderRule(config, ast, depth);
 }
 
 // return builder
