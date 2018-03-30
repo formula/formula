@@ -28,22 +28,22 @@ export let defaultConfig = {
   renderDIVIDE: () => " / ",
   renderPOWER: () => " ^ ",
   renderCONCAT: () => " & ",
-  renderGroupBefore: () => "(",
-  renderGroupAfter: () => ")",
+  renderGroupBegin: () => "(",
+  renderGroupEnd: () => ")",
   renderGroup: (config, g, depth) => {
-    return `${config.renderGroupBefore(config, g, depth)}${walk(
+    return `${config.renderGroupBegin(config, g, depth)}${walk(
       config,
       g.exp,
       depth + 1
-    )}${config.renderGroupAfter(config, g, depth)}`;
+    )}${config.renderGroupEnd(config, g, depth)}`;
   },
-  renderFunctionBefore: (config, f, depth) =>
+  renderFunctionBegin: (config, f, depth) =>
     config.upCase ? f.name.toUpperCase() : f.name,
-  renderFunctionAfter: (config, f, depth) => ")",
+  renderFunctionEnd: (config, f, depth) => ")",
   renderFunction: (config, f, depth) =>
-    `${config.renderFunctionBefore(config, f, depth)}(${f.args
+    `${config.renderFunctionBegin(config, f, depth)}(${f.args
       .map(d => walk(config, d, depth + 1))
-      .join(", ")}${config.renderFunctionAfter(config, f, depth)}`,
+      .join(", ")}${config.renderFunctionEnd(config, f, depth)}`,
   renderOperator: (config, { subtype, operands }, depth) =>
     branch(
       operands.length == 1,
@@ -189,8 +189,8 @@ export let jsConfig = assign(fpConfig, {
       ? `context.get("${v.name}", "${v.scope}")`
       : `context.get("${v.name}")`;
   },
-  renderFunctionBefore: (config, f) =>
-    `Formula.${fpConfig.renderFunctionBefore(config, f)}`,
+  renderFunctionBegin: (config, f) =>
+    `Formula.${fpConfig.renderFunctionBegin(config, f)}`,
   renderArray: (config, items, depth) =>
     "[" + items.map(d => config.walk(config, d, depth + 1)) + "]",
   renderValue: (config, { subtype, items, value }, depth) => {

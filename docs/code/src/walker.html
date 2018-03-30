@@ -28,22 +28,22 @@
   renderDIVIDE: () =&gt; <span class="hljs-string">" / "</span>,
   renderPOWER: () =&gt; <span class="hljs-string">" ^ "</span>,
   renderCONCAT: () =&gt; <span class="hljs-string">" &amp; "</span>,
-  renderGroupBefore: () =&gt; <span class="hljs-string">"("</span>,
-  renderGroupAfter: () =&gt; <span class="hljs-string">")"</span>,
+  renderGroupBegin: () =&gt; <span class="hljs-string">"("</span>,
+  renderGroupEnd: () =&gt; <span class="hljs-string">")"</span>,
   renderGroup: (config, g, depth) =&gt; {
-    <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${config.renderGroupBefore(config, g, depth)}</span><span class="hljs-subst">${walk(
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${config.renderGroupBegin(config, g, depth)}</span><span class="hljs-subst">${walk(
       config,
       g.exp,
       depth + 1
-    )}</span><span class="hljs-subst">${config.renderGroupAfter(config, g, depth)}</span>`</span>;
+    )}</span><span class="hljs-subst">${config.renderGroupEnd(config, g, depth)}</span>`</span>;
   },
-  renderFunctionBefore: (config, f, depth) =&gt;
+  renderFunctionBegin: (config, f, depth) =&gt;
     config.upCase ? f.name.toUpperCase() : f.name,
-  renderFunctionAfter: (config, f, depth) =&gt; <span class="hljs-string">")"</span>,
+  renderFunctionEnd: (config, f, depth) =&gt; <span class="hljs-string">")"</span>,
   renderFunction: (config, f, depth) =&gt;
-    <span class="hljs-string">`<span class="hljs-subst">${config.renderFunctionBefore(config, f, depth)}</span>(<span class="hljs-subst">${f.args
+    <span class="hljs-string">`<span class="hljs-subst">${config.renderFunctionBegin(config, f, depth)}</span>(<span class="hljs-subst">${f.args
       .map(d =&gt; walk(config, d, depth + 1))
-      .join(", ")}</span><span class="hljs-subst">${config.renderFunctionAfter(config, f, depth)}</span>`</span>,
+      .join(", ")}</span><span class="hljs-subst">${config.renderFunctionEnd(config, f, depth)}</span>`</span>,
   renderOperator: (config, { subtype, operands }, depth) =&gt;
     branch(
       operands.length == <span class="hljs-number">1</span>,
@@ -189,8 +189,8 @@
       ? <span class="hljs-string">`context.get("<span class="hljs-subst">${v.name}</span>", "<span class="hljs-subst">${v.scope}</span>")`</span>
       : <span class="hljs-string">`context.get("<span class="hljs-subst">${v.name}</span>")`</span>;
   },
-  renderFunctionBefore: (config, f) =&gt;
-    <span class="hljs-string">`Formula.<span class="hljs-subst">${fpConfig.renderFunctionBefore(config, f)}</span>`</span>,
+  renderFunctionBegin: (config, f) =&gt;
+    <span class="hljs-string">`Formula.<span class="hljs-subst">${fpConfig.renderFunctionBegin(config, f)}</span>`</span>,
   renderArray: (config, items, depth) =&gt;
     <span class="hljs-string">"["</span> + items.map(d =&gt; config.walk(config, d, depth + <span class="hljs-number">1</span>)) + <span class="hljs-string">"]"</span>,
   renderValue: (config, { subtype, items, value }, depth) =&gt; {
