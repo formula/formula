@@ -178,17 +178,9 @@ export let jsConfig = assign(fpConfig, {
   }
 });
 
-function walk(config, astOrExp, depth = 0) {
-  let ast = astOrExp;
-
-  if (!ast) {
-    return;
-  }
-  if (isText(astOrExp)) {
-    ast = parse(astOrExp);
-  }
-
+export function renderRule(config, ast, depth = 0) {
   let { type } = ast;
+
   let {
     renderGroup,
     renderFunction,
@@ -214,6 +206,19 @@ function walk(config, astOrExp, depth = 0) {
     type === "range",
     () => renderRange(config, ast, config, depth)
   );
+}
+
+function walk(config, astOrExp, depth = 0) {
+  let ast = astOrExp;
+
+  if (!ast) {
+    return;
+  }
+  if (isText(astOrExp)) {
+    ast = parse(astOrExp);
+  }
+
+  return renderRule(config, ast, depth);
 }
 
 // return builder
