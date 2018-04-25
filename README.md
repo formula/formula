@@ -12,7 +12,7 @@ npm install --save formula
 
 ```js
 import { RUN } from 'formula'
-RUN("sum(a, b, c) = 1+2+3", { a: 1, b: 2, c: 3})
+RUN("sum(a, b, c) = 1+2+3", { a: 1, b: 2, c: 3}) // returns true
 ```
 
 ## Browser ready
@@ -20,5 +20,5 @@ RUN("sum(a, b, c) = 1+2+3", { a: 1, b: 2, c: 3})
 Add to the browser with:
 
 ```html
-<script type="text/javascript" src="https://unpkg.com/formula@3.4.0/lib/formula.min.js"
+<script type="text/javascript" src="https://unpkg.com/formula@3.5.0/lib/formula.min.js"
 ```
