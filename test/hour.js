@@ -8,6 +8,6 @@ test("hour", t => {
   t.equal(hour(0.5555), 13);
   t.equal(hour(0.8181), 19);
 
-  var d = new Date("Fri Apr 20 2018 04:04:20 GMT-0700 (PDT)");
+  var d = new Date("Fri Apr 20 2018 04:04:20");
   t.equal(hour(d), 4);
 });
