@@ -1209,8 +1209,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "pageTitle": "test/hour",
             "title": "hour"
           },
-          "depth": 2,
-          "outline": []
+          "depth": 2
         }, {
           "type": "file",
           "data": {
@@ -1660,6 +1659,25 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
+            "sourcePath": "/home/jcfisher007/formula/test/islowercase.js",
+            "projectPath": "test/islowercase.js",
+            "targetPath": "test/islowercase",
+            "pageTitle": "test/islowercase",
+            "title": "islowercase"
+          },
+          "depth": 2
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
             "sourcePath": "/home/jcfisher007/formula/test/isna.js",
             "projectPath": "test/isna.js",
             "targetPath": "test/isna",
@@ -1798,6 +1816,25 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "targetPath": "test/istruthy",
             "pageTitle": "test/istruthy",
             "title": "istruthy"
+          },
+          "depth": 2
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/home/jcfisher007/formula/test/isuppercase.js",
+            "projectPath": "test/isuppercase.js",
+            "targetPath": "test/isuppercase",
+            "pageTitle": "test/isuppercase",
+            "title": "isuppercase"
           },
           "depth": 2
         }, {
@@ -2084,8 +2121,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "pageTitle": "test/minute",
             "title": "minute"
           },
-          "depth": 2,
-          "outline": []
+          "depth": 2
         }, {
           "type": "file",
           "data": {
@@ -2769,8 +2805,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "pageTitle": "test/second",
             "title": "second"
           },
-          "depth": 2,
-          "outline": []
+          "depth": 2
         }, {
           "type": "file",
           "data": {

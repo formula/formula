@@ -1247,8 +1247,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "pageTitle": "src/hour",
             "title": "hour"
           },
-          "depth": 2,
-          "outline": []
+          "depth": 2
         }, {
           "type": "file",
           "data": {
@@ -1698,6 +1697,25 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
+            "sourcePath": "/home/jcfisher007/formula/src/islowercase.js",
+            "projectPath": "src/islowercase.js",
+            "targetPath": "src/islowercase",
+            "pageTitle": "src/islowercase",
+            "title": "islowercase"
+          },
+          "depth": 2
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
             "sourcePath": "/home/jcfisher007/formula/src/isna.js",
             "projectPath": "src/isna.js",
             "targetPath": "src/isna",
@@ -1855,6 +1873,25 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "targetPath": "src/istruthy",
             "pageTitle": "src/istruthy",
             "title": "istruthy"
+          },
+          "depth": 2
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/home/jcfisher007/formula/src/isuppercase.js",
+            "projectPath": "src/isuppercase.js",
+            "targetPath": "src/isuppercase",
+            "pageTitle": "src/isuppercase",
+            "title": "isuppercase"
           },
           "depth": 2
         }, {
@@ -2179,8 +2216,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "pageTitle": "src/minute",
             "title": "minute"
           },
-          "depth": 2,
-          "outline": []
+          "depth": 2
         }, {
           "type": "file",
           "data": {
@@ -2883,8 +2919,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "pageTitle": "src/second",
             "title": "second"
           },
-          "depth": 2,
-          "outline": []
+          "depth": 2
         }, {
           "type": "file",
           "data": {
