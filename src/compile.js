@@ -1,4 +1,4 @@
-// Copyright 2015 Peter W Moresi
+// Copyright 2015-2018 FormBucket LLC
 
 import branch from "./branch";
 import map from "./map";

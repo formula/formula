@@ -1,49 +1,61 @@
-<!DOCTYPE html><html lang="en"><head><title>test/query</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="test/query"><meta name="groc-project-path" content="test/query.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">test/query.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>FILTER a dataset by reduction</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">'tape'</span>;
-<span class="hljs-keyword">import</span> query <span class="hljs-keyword">from</span> <span class="hljs-string">'../src/query'</span>
+<!DOCTYPE html><html lang="en"><head><title>test/query</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="test/query"><meta name="groc-project-path" content="test/query.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">test/query.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>FILTER a dataset by reduction</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">"tape"</span>;
+<span class="hljs-keyword">import</span> query <span class="hljs-keyword">from</span> <span class="hljs-string">"../src/query"</span>;
 
-test(<span class="hljs-string">'query'</span>, function(t) {
-  t.plan(22)
+test(<span class="hljs-string">"query"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
+  t.plan(<span class="hljs-number">22</span>);
 
-  let table = [
-    { id: 1 },
-    { id: 2 },
-    { id: <span class="hljs-string">'abc'</span> }
-  ]
+  <span class="hljs-keyword">let</span> table = [{ id: <span class="hljs-number">1</span> }, { id: <span class="hljs-number">2</span> }, { id: <span class="hljs-string">"abc"</span> }];
 
-  let table2 = [
-    { foo: <span class="hljs-string">'a'</span> },
-    { foo: <span class="hljs-string">'b'</span> },
-    { foo: <span class="hljs-string">'b'</span> }
-  ]
+  <span class="hljs-keyword">let</span> table2 = [{ foo: <span class="hljs-string">"a"</span> }, { foo: <span class="hljs-string">"b"</span> }, { foo: <span class="hljs-string">"b"</span> }];
 
+  t.deepEqual(query(table, {}), table);
+  t.deepEqual(query(table, { id: <span class="hljs-number">1</span> }), [{ id: <span class="hljs-number">1</span> }]);
+  t.deepEqual(query(table, { id: <span class="hljs-string">"abc"</span> }), [{ id: <span class="hljs-string">"abc"</span> }]);
+  t.deepEqual(query(table, { id: <span class="hljs-string">"Abc"</span> }), [{ id: <span class="hljs-string">"abc"</span> }]);
+  t.deepEqual(query(table, { id: { $eq: <span class="hljs-number">1</span> } }), [{ id: <span class="hljs-number">1</span> }]);
+  t.deepEqual(query(table, { id: { $ne: <span class="hljs-number">2</span> } }), [{ id: <span class="hljs-number">1</span> }, { id: <span class="hljs-string">"abc"</span> }]);
+  t.deepEqual(query(table, { id: { $gt: <span class="hljs-number">0</span>, $lt: <span class="hljs-number">3</span> } }), [{ id: <span class="hljs-number">1</span> }, { id: <span class="hljs-number">2</span> }]);
+  t.deepEqual(query(table, { id: { $gte: <span class="hljs-number">1</span>, $lte: <span class="hljs-number">2</span> } }), [
+    { id: <span class="hljs-number">1</span> },
+    { id: <span class="hljs-number">2</span> }
+  ]);
+  t.deepEqual(query(table, { id: { $text: <span class="hljs-string">"ab?"</span> } }), [{ id: <span class="hljs-string">"abc"</span> }]);
+  t.deepEqual(query(table, { id: { $<span class="hljs-keyword">in</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>] } }), [{ id: <span class="hljs-number">1</span> }, { id: <span class="hljs-number">2</span> }]);
+  t.deepEqual(query(table, { id: { $nin: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>] } }), [{ id: <span class="hljs-string">"abc"</span> }]);
 
-  t.deepEqual( query( table, { } ), table )
-  t.deepEqual( query( table, { id: 1 } ), [{ id: 1 }] )
-  t.deepEqual( query( table, { id: <span class="hljs-string">'abc'</span> } ), [{ id: <span class="hljs-string">'abc'</span> }] )
-  t.deepEqual( query( table, { id: <span class="hljs-string">'Abc'</span> } ), [{ id: <span class="hljs-string">'abc'</span> }] )
-  t.deepEqual( query( table, { id: { $eq: <span class="hljs-number">1</span> } } ), [{ id: <span class="hljs-number">1</span> }] )
-  t.deepEqual( query( table, { id: { $ne: <span class="hljs-number">2</span> } } ), [{ id: <span class="hljs-number">1</span> }, { id: <span class="hljs-string">'abc'</span> }] )
-  t.deepEqual( query( table, { id: { $gt: <span class="hljs-number">0</span>, $lt: <span class="hljs-number">3</span> } } ), [{ id: <span class="hljs-number">1</span> }, { id: <span class="hljs-number">2</span> }] )
-  t.deepEqual( query( table, { id: { $gte: <span class="hljs-number">1</span>, $lte: <span class="hljs-number">2</span> } } ), [{ id: <span class="hljs-number">1</span> }, { id: <span class="hljs-number">2</span> }] )
-  t.deepEqual( query( table, { id: { $text: <span class="hljs-string">'ab?'</span> } } ), [{ id: <span class="hljs-string">'abc'</span> }] )
-  t.deepEqual( query( table, { id: { $<span class="hljs-keyword">in</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>] } } ), [{ id: <span class="hljs-number">1</span> }, { id: <span class="hljs-number">2</span> }] )
-  t.deepEqual( query( table, { id: { $nin: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>] } } ), [{ id: <span class="hljs-string">'abc'</span> }] )
+  t.deepEqual(
+    query(table2, { foo: { $<span class="hljs-keyword">in</span>: [<span class="hljs-string">"a"</span>] } }),
+    table2.filter(d =&gt; d.foo == <span class="hljs-string">"a"</span>)
+  );
+  t.deepEqual(
+    query(table2, { foo: { $<span class="hljs-keyword">in</span>: [<span class="hljs-string">"b"</span>] } }),
+    table2.filter(d =&gt; d.foo == <span class="hljs-string">"b"</span>)
+  );
+  t.deepEqual(query(table2, { foo: { $<span class="hljs-keyword">in</span>: [<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>] } }), table2);
 
+  t.deepEqual(query(table, { $and: [{ id: <span class="hljs-number">1</span> }, { id: { $ne: <span class="hljs-string">"abc"</span> } }] }), [
+    { id: <span class="hljs-number">1</span> }
+  ]);
+  t.deepEqual(query(table, { $or: [{ id: <span class="hljs-number">1</span> }, { id: <span class="hljs-number">2</span> }] }), [
+    { id: <span class="hljs-number">1</span> },
+    { id: <span class="hljs-number">2</span> }
+  ]);
 
-  t.deepEqual( query( table2, { foo: { $<span class="hljs-keyword">in</span>: [<span class="hljs-string">'a'</span>] } } ), table2.filter( d =&gt; d.foo == <span class="hljs-string">'a'</span> ) )
-  t.deepEqual( query( table2, { foo: { $<span class="hljs-keyword">in</span>: [<span class="hljs-string">'b'</span>] } } ), table2.filter( d =&gt; d.foo == <span class="hljs-string">'b'</span> ) )
-  t.deepEqual( query( table2, { foo: { $<span class="hljs-keyword">in</span>: [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>] } } ), table2 )
+  t.deepEqual(query(table, { id: { $exists: <span class="hljs-literal">true</span> } }), table);
+  t.deepEqual(query(table, { id: { $exists: <span class="hljs-literal">false</span> } }), []);
 
-
-  t.deepEqual( query( table, { $and: [{ id: <span class="hljs-number">1</span>}, { id: { $ne: <span class="hljs-string">'abc'</span> }}] } ), [{ id: <span class="hljs-number">1</span>}] )
-  t.deepEqual( query( table, { $or: [{ id: <span class="hljs-number">1</span>}, { id: <span class="hljs-number">2</span>}] } ), [{ id: <span class="hljs-number">1</span> }, { id: <span class="hljs-number">2</span> }] )
-
-  t.deepEqual( query( table, { id: { $exists: <span class="hljs-literal">true</span> } } ), table )
-  t.deepEqual( query( table, { id: { $exists: <span class="hljs-literal">false</span> } } ), [] )
-
-  t.deepEqual( query( [{ id: <span class="hljs-number">1</span> }, { foo: <span class="hljs-number">1</span>}], { $or: [{ id: { $exists: <span class="hljs-literal">true</span> } }, { foo: <span class="hljs-number">1</span> }] } ), [{ id: <span class="hljs-number">1</span> }, { foo: <span class="hljs-number">1</span>}] )
-  t.deepEqual( query( [{ id: <span class="hljs-number">1</span>, foo: <span class="hljs-number">1</span> }, { foo: <span class="hljs-number">1</span>}], { $and: [{ id: { $exists: <span class="hljs-literal">true</span> } }, { foo: <span class="hljs-number">1</span> }] } ), [{ id: <span class="hljs-number">1</span>, foo: <span class="hljs-number">1</span> }] )
-  t.throws( () =&gt; query( [{}], { $and: { foo: <span class="hljs-string">'bar'</span> } } ), <span class="hljs-string">'$and expects array! '</span> )
-  t.throws( () =&gt; query( [{}], { $or: { foo: <span class="hljs-string">'bar'</span> } } ), <span class="hljs-string">'$or expects array! '</span> )
-
+  t.deepEqual(
+    query([{ id: <span class="hljs-number">1</span> }, { foo: <span class="hljs-number">1</span> }], {
+      $or: [{ id: { $exists: <span class="hljs-literal">true</span> } }, { foo: <span class="hljs-number">1</span> }]
+    }),
+    [{ id: <span class="hljs-number">1</span> }, { foo: <span class="hljs-number">1</span> }]
+  );
+  t.deepEqual(
+    query([{ id: <span class="hljs-number">1</span>, foo: <span class="hljs-number">1</span> }, { foo: <span class="hljs-number">1</span> }], {
+      $and: [{ id: { $exists: <span class="hljs-literal">true</span> } }, { foo: <span class="hljs-number">1</span> }]
+    }),
+    [{ id: <span class="hljs-number">1</span>, foo: <span class="hljs-number">1</span> }]
+  );
+  t.throws(() =&gt; query([{}], { $and: { foo: <span class="hljs-string">"bar"</span> } }), <span class="hljs-string">"$and expects array! "</span>);
+  t.throws(() =&gt; query([{}], { $or: { foo: <span class="hljs-string">"bar"</span> } }), <span class="hljs-string">"$or expects array! "</span>);
 });</div></div></div></div></body></html>

@@ -1,72 +1,63 @@
-<!DOCTYPE html><html lang="en"><head><title>src/ref</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/ref"><meta name="groc-project-path" content="src/ref.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/ref.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>Copyright 2015 JC Fisher</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> isblank <span class="hljs-keyword">from</span> <span class="hljs-string">'./isblank'</span>
-<span class="hljs-keyword">import</span> isfunction <span class="hljs-keyword">from</span> <span class="hljs-string">'./isfunction'</span>
-<span class="hljs-keyword">import</span> isnumber <span class="hljs-keyword">from</span> <span class="hljs-string">'./isnumber'</span>
-<span class="hljs-keyword">import</span> index2col <span class="hljs-keyword">from</span> <span class="hljs-string">'./index2col'</span>
-<span class="hljs-keyword">import</span> index2row <span class="hljs-keyword">from</span> <span class="hljs-string">'./index2row'</span>
-<span class="hljs-keyword">import</span> unique <span class="hljs-keyword">from</span> <span class="hljs-string">'./unique'</span>
-<span class="hljs-keyword">import</span> columnletter <span class="hljs-keyword">from</span> <span class="hljs-string">'./columnletter'</span>
-<span class="hljs-keyword">import</span> { ERRORTYPES <span class="hljs-keyword">as</span> error } <span class="hljs-keyword">from</span> <span class="hljs-string">'./error'</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>REF accepts top and bottom and returns a reference object. It encapsulates a cell or a range.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ref</span>(<span class="hljs-params">top, bottom</span>) </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The index must be a number</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">if</span> (!isnumber(top) &amp;&amp; !isfunction(top)) {
-    <span class="hljs-keyword">return</span> error.value
+<!DOCTYPE html><html lang="en"><head><title>src/ref</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/ref"><meta name="groc-project-path" content="src/ref.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/ref.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>Copyright 2015-2018 FormBucket LLC</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> isblank <span class="hljs-keyword">from</span> <span class="hljs-string">"./isblank"</span>;
+<span class="hljs-keyword">import</span> isfunction <span class="hljs-keyword">from</span> <span class="hljs-string">"./isfunction"</span>;
+<span class="hljs-keyword">import</span> isnumber <span class="hljs-keyword">from</span> <span class="hljs-string">"./isnumber"</span>;
+<span class="hljs-keyword">import</span> index2col <span class="hljs-keyword">from</span> <span class="hljs-string">"./index2col"</span>;
+<span class="hljs-keyword">import</span> index2row <span class="hljs-keyword">from</span> <span class="hljs-string">"./index2row"</span>;
+<span class="hljs-keyword">import</span> unique <span class="hljs-keyword">from</span> <span class="hljs-string">"./unique"</span>;
+<span class="hljs-keyword">import</span> columnletter <span class="hljs-keyword">from</span> <span class="hljs-string">"./columnletter"</span>;
+<span class="hljs-keyword">import</span> { ERRORTYPES <span class="hljs-keyword">as</span> error } <span class="hljs-keyword">from</span> <span class="hljs-string">"./error"</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>REF accepts top and bottom and returns a reference object. It encapsulates a cell or a range.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ref</span>(<span class="hljs-params">top, bottom</span>) </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The index must be a number</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">if</span> (!isnumber(top) &amp;&amp; !isfunction(top)) {
+    <span class="hljs-keyword">return</span> error.value;
   }
 
   <span class="hljs-keyword">if</span> (isblank(bottom)) {
-    bottom = top
+    bottom = top;
   }
 
-  <span class="hljs-keyword">var</span> getTop = () =&gt; isfunction(top) ? top() : top
-  <span class="hljs-keyword">var</span> getBottom = () =&gt; isfunction(bottom) ? bottom() : bottom
+  <span class="hljs-keyword">var</span> getTop = () =&gt; (isfunction(top) ? top() : top);
+  <span class="hljs-keyword">var</span> getBottom = () =&gt; (isfunction(bottom) ? bottom() : bottom);
 
   <span class="hljs-keyword">return</span> {
-
-    get _isref(){
-      <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+    get _isref() {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
     },
 
     get top() {
-      <span class="hljs-keyword">return</span> getTop()
+      <span class="hljs-keyword">return</span> getTop();
     },
 
     get bottom() {
-      <span class="hljs-keyword">return</span> getBottom()
+      <span class="hljs-keyword">return</span> getBottom();
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Returns row (rowIndex plus 1)</p></div></div><div class="code"><div class="wrapper">    get row() {
-      <span class="hljs-keyword">return</span> index2row( getTop() ) + <span class="hljs-number">1</span>;
+      <span class="hljs-keyword">return</span> index2row(getTop()) + <span class="hljs-number">1</span>;
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Returns rowIndex (base 0)</p></div></div><div class="code"><div class="wrapper">    get rowIndex() {
-      <span class="hljs-keyword">return</span> index2row( getTop() )
+      <span class="hljs-keyword">return</span> index2row(getTop());
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Returns column letter</p></div></div><div class="code"><div class="wrapper">    get column() {
-      <span class="hljs-keyword">return</span> columnletter( index2col( getTop() ) )
+      <span class="hljs-keyword">return</span> columnletter(index2col(getTop()));
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Returns column index</p></div></div><div class="code"><div class="wrapper">    get columnIndex() {
-      <span class="hljs-keyword">return</span> index2col( getTop() )
+      <span class="hljs-keyword">return</span> index2col(getTop());
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Returns row (rowIndex plus 1)</p></div></div><div class="code"><div class="wrapper">    get bottomRow() {
-      <span class="hljs-keyword">return</span> index2row( getBottom() ) + <span class="hljs-number">1</span>;
+      <span class="hljs-keyword">return</span> index2row(getBottom()) + <span class="hljs-number">1</span>;
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Returns rowIndex (base 0)</p></div></div><div class="code"><div class="wrapper">    get bottomRowIndex() {
-      <span class="hljs-keyword">return</span> index2row( getBottom() )
+      <span class="hljs-keyword">return</span> index2row(getBottom());
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Returns column letter</p></div></div><div class="code"><div class="wrapper">    get bottomColumn() {
-      <span class="hljs-keyword">return</span> columnletter( index2col( getBottom() ) )
+      <span class="hljs-keyword">return</span> columnletter(index2col(getBottom()));
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Returns column index</p></div></div><div class="code"><div class="wrapper">    get bottomColumnIndex() {
-      <span class="hljs-keyword">return</span> index2col( getBottom() )
-    },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The cell id puts the whole table into a single dimension. It simply needs to be between the topLeft and the bottomRight to qualify.</p></div></div><div class="code"><div class="wrapper">    hit(index) {</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Return <code>#NA!</code> when index is negative.</p></div></div><div class="code"><div class="wrapper">      <span class="hljs-keyword">if</span> (index &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> error.na</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Check if value is inside range from top to bottom, inclusive.</p></div></div><div class="code"><div class="wrapper">      <span class="hljs-keyword">return</span> (
-        ( index &gt;= getTop() ) &amp;&amp;
-        ( index &lt;= getBottom() )
-      );
+      <span class="hljs-keyword">return</span> index2col(getBottom());
+    },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The cell id puts the whole table into a single dimension. It simply needs to be between the topLeft and the bottomRight to qualify.</p></div></div><div class="code"><div class="wrapper">    hit(index) {</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Return <code>#NA!</code> when index is negative.</p></div></div><div class="code"><div class="wrapper">      <span class="hljs-keyword">if</span> (index &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> error.na;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Check if value is inside range from top to bottom, inclusive.</p></div></div><div class="code"><div class="wrapper">      <span class="hljs-keyword">return</span> index &gt;= getTop() &amp;&amp; index &lt;= getBottom();
     },
 
     get size() {
-      <span class="hljs-keyword">return</span> <span class="hljs-number">1</span> + (getBottom() - getTop())
+      <span class="hljs-keyword">return</span> <span class="hljs-number">1</span> + (getBottom() - getTop());
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Return array with every cell index</p></div></div><div class="code"><div class="wrapper">    get cells() {
-      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Array</span>.apply(
-        getTop(),
-        <span class="hljs-built_in">Array</span>( <span class="hljs-number">1</span> + (getBottom() - getTop()) )
-      )
-      .map( (x, y) =&gt; y + getTop())
+      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Array</span>.apply(getTop(), <span class="hljs-built_in">Array</span>(<span class="hljs-number">1</span> + (getBottom() - getTop()))).map(
+        (x, y) =&gt; y + getTop()
+      );
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Return array with every row</p></div></div><div class="code"><div class="wrapper">    get rows() {
       <span class="hljs-keyword">return</span> unique(
-        <span class="hljs-built_in">Array</span>.apply(
-          getTop(),
-          <span class="hljs-built_in">Array</span>( <span class="hljs-number">1</span> + (getBottom() - getTop()) )
+        <span class="hljs-built_in">Array</span>.apply(getTop(), <span class="hljs-built_in">Array</span>(<span class="hljs-number">1</span> + (getBottom() - getTop()))).map((x, y) =&gt;
+          index2row(y + getTop())
         )
-        .map( (x, y) =&gt; index2row(y + getTop()))
-      )
+      );
     }
-
-  }
+  };
 }</div></div></div></div></body></html>

@@ -1,15 +1,14 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import isblank from './isblank'
-import isarray from './isarray'
-import eq from './eq'
-import { ERRORTYPES as error } from './error'
+import isblank from "./isblank";
+import isarray from "./isarray";
+import eq from "./eq";
+import { ERRORTYPES as error } from "./error";
 
-// INT returns true when a needle is found in a list.
+// some returns true when a needle is found in a list.
 export default function some(needle, list) {
-
   // Return `#NA!` when the needle and list are blank.
-  if ( isblank(needle) && isblank(list) ) {
+  if (isblank(needle) && isblank(list)) {
     return error.na;
   }
 
@@ -19,5 +18,5 @@ export default function some(needle, list) {
   }
 
   // Return true when some of the values match the needle.
-  return list.some(n => eq(n, needle) )
+  return list.some(n => eq(n, needle));
 }

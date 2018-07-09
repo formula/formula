@@ -1,9 +1,9 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import {MaxCols} from './constants'
+import { MaxCols } from "./constants";
 
-// CELLINDEX computes the index for row and column in a 2 dimensional array.
+// Computes the index for row and column in a 2 dimensional array.
 export default function cellindex(row, col) {
   // Multiple row by maximum columns plus the col.
-  return Math.floor( (row * MaxCols) + col );
+  return Math.floor(row * MaxCols + col);
 }

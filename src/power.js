@@ -1,22 +1,18 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import isnumber from './isnumber';
-import { ERRORTYPES as error } from './error'
+import isnumber from "./isnumber";
+import { ERRORTYPES as error } from "./error";
 
 // POWER computes the power of a value and nth degree.
-export default function power(...values) {
-
+export default function power(val, nth) {
   // Return `#NA!` if 2 arguments are not provided.
-  if (values.length !== 2) {
+  if (arguments.length !== 2) {
     return error.na;
   }
 
-  // decompose values into a and b.
-  var [val, nth] = values
-
   // Return `#VALUE!` if either a or b is not a number.
   if (!isnumber(val) || !isnumber(nth)) {
-    return error.value
+    return error.value;
   }
 
   // Compute the power of val to the nth.

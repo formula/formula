@@ -1,3 +1,5 @@
+// Copyright 2015-2018 FormBucket LLC
+
 import isError from "./iserror";
 import error from "./error";
 import parseNumber from "./numbervalue";

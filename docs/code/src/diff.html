@@ -1,22 +1,26 @@
-<!DOCTYPE html><html lang="en"><head><title>src/diff</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/diff"><meta name="groc-project-path" content="src/diff.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/diff.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>Copyright 2015 JC Fisher</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> reduce <span class="hljs-keyword">from</span> <span class="hljs-string">'./reduce'</span>
-<span class="hljs-keyword">import</span> keys <span class="hljs-keyword">from</span> <span class="hljs-string">'./keys'</span>
-<span class="hljs-keyword">import</span> assign <span class="hljs-keyword">from</span> <span class="hljs-string">'./assign'</span>
+<!DOCTYPE html><html lang="en"><head><title>src/diff</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/diff"><meta name="groc-project-path" content="src/diff.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/diff.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>Copyright 2015-2018 FormBucket LLC</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> reduce <span class="hljs-keyword">from</span> <span class="hljs-string">"./reduce"</span>;
+<span class="hljs-keyword">import</span> keys <span class="hljs-keyword">from</span> <span class="hljs-string">"./keys"</span>;
+<span class="hljs-keyword">import</span> assign <span class="hljs-keyword">from</span> <span class="hljs-string">"./assign"</span>;
 
-export default function diff(a, b) {
-  let keysA = keys(a),
-  keysB = keys(b),
-  InA = keysB.filter(n =&gt; keysA.indexOf(n) &gt; -1),
-  NotInA = keysB.filter(n =&gt; keysA.indexOf(n) === -1),
-  NotInB = keysA.filter(n =&gt; keysB.indexOf(n) === -1),
-  Diff = InA.filter( n =&gt; a[n] !== b[n])
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">diff</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">let</span> keysA = keys(a),
+    keysB = keys(b),
+    InA = keysB.filter(n =&gt; keysA.indexOf(n) &gt; -<span class="hljs-number">1</span>),
+    NotInA = keysB.filter(n =&gt; keysA.indexOf(n) === -<span class="hljs-number">1</span>),
+    NotInB = keysA.filter(n =&gt; keysB.indexOf(n) === -<span class="hljs-number">1</span>),
+    Diff = InA.filter(n =&gt; a[n] !== b[n]);
 
-  return {
+  <span class="hljs-keyword">return</span> {
     unique_left: NotInA,
     unique_right: NotInB,
-    diff: reduce( Diff, (x, y) =&gt; {
-      var diff = { }
-      diff[y] = { left: a[y], right: b[y]}
-      return assign({}, x, diff)
-    }, {})
-  }
+    diff: reduce(
+      Diff,
+      (x, y) =&gt; {
+        <span class="hljs-keyword">var</span> diff = {};
+        diff[y] = { left: a[y], right: b[y] };
+        <span class="hljs-keyword">return</span> assign({}, x, diff);
+      },
+      {}
+    )
+  };
 }</div></div></div></div></body></html>

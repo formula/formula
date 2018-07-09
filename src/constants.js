@@ -1,4 +1,4 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
 // Shared constants
 export let d1900 = new Date(1900, 0, 1),
@@ -10,24 +10,55 @@ export let d1900 = new Date(1900, 0, 1),
   SecondsInDay = 86400,
   DaysInYear = 365.25,
   MilliSecondsInDay = 86400000,
-  AllowedDates = {H: "h]", M: "m]", MM: "mm]", S: "s]", SS: "ss]"},
-  DayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+  AllowedDates = { H: "h]", M: "m]", MM: "mm]", S: "s]", SS: "ss]" },
+  DayNames = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ],
   DayNames3 = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-  MonthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-  MonthNames3 = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  MonthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ],
+  MonthNames3 = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ],
   AM = "AM",
   AM1 = "A",
   PM = "PM",
   PM1 = "P",
-
   // Circle Constants
   τ = 6.28318530717958, // http://tauday.com/tau-manifesto
   pi = 3.14159265358979,
-
   // Address System Constants
-  MaxCols = 16384,    // 14 bits, 2^14
-  MaxRows = 1048576,  // 20 bits, 2^20
-
+  MaxCols = 16384, // 14 bits, 2^14
+  MaxRows = 1048576, // 20 bits, 2^20
   // Formatting Constants
   SeparatorChar = ",",
   DecimalChar = ".",

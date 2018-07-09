@@ -1,13 +1,12 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import { ERRORTYPES as error } from './error'
-import isnumber from './isnumber'
+import { ERRORTYPES as error } from "./error";
+import isnumber from "./isnumber";
 
 // Convert index to letter (e.g 0 -> A)
-export default function columnletter( index ) {
-
+export default function columnletter(index) {
   if (!isnumber(index)) {
-    return error.value
+    return error.value;
   }
 
   // The column is determined by applying a modified Hexavigesimal algorithm.
@@ -23,10 +22,10 @@ export default function columnletter( index ) {
   // For the second to nth significant digit
   // A..Z is 1..26
 
-  var converted = ""
-  ,secondPass = false
-  ,remainder
-  ,value = Math.abs(index);
+  var converted = "",
+    secondPass = false,
+    remainder,
+    value = Math.abs(index);
 
   do {
     remainder = value % 26;
@@ -35,12 +34,11 @@ export default function columnletter( index ) {
       remainder--;
     }
 
-    converted = String.fromCharCode((remainder + 'A'.charCodeAt(0))) + converted;
+    converted = String.fromCharCode(remainder + "A".charCodeAt(0)) + converted;
     value = Math.floor((value - remainder) / 26);
 
     secondPass = true;
   } while (value > 0);
 
   return converted;
-
 }

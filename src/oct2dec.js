@@ -1,8 +1,8 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import { ERRORTYPES as error } from './error';
+import { ERRORTYPES as error } from "./error";
 
-// OCT2DEC converts a octal value into a decimal value.
+// OCT2DEC converts an octal value into a decimal value.
 export default function oct2dec(octalNumber) {
   // Credits: Based on implementation found in https://gist.github.com/ghalimi/4525876#file-oct2dec-js
   // Return error.when number passed in is not octal or has more than 10 digits
@@ -28,5 +28,7 @@ export default function oct2dec(octalNumber) {
   // Case 2: Non-Negative Range
   //   Range: [0, 2^N-1 - 1] = [0, 536870911]
 
-  return (nonNegativeDecimalNumber >= 536870912) ? nonNegativeDecimalNumber - 1073741824 : nonNegativeDecimalNumber;
+  return nonNegativeDecimalNumber >= 536870912
+    ? nonNegativeDecimalNumber - 1073741824
+    : nonNegativeDecimalNumber;
 }

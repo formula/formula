@@ -1,9 +1,10 @@
-import isnumber from './isnumber'
-import { ERRORTYPES as error } from './error'
+// Copyright 2015-2018 FormBucket LLC
 
-// Return the inverse hyperbolic sin of a given number
+import isnumber from "./isnumber";
+import { ERRORTYPES as error } from "./error";
+
+// Compute the inverse hyperbolic sin of a given number.
 export default function asinh(number) {
-
   // Ensure value is a number
   if (!isnumber(number)) {
     return error.value;

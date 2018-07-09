@@ -1,12 +1,11 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import rept from './rept';
-import { ERRORTYPES as error } from './error';
-import isNaN from './isnan'
+import rept from "./rept";
+import { ERRORTYPES as error } from "./error";
+import isNaN from "./isnan";
 
 // based on https://github.com/sutoiku/formula.js/blob/mast../src/engineering.js
 export default function dec2bin(input, places) {
-
   // exit if input is an error
   if (input instanceof Error) {
     return number;
@@ -26,14 +25,18 @@ export default function dec2bin(input, places) {
 
   // Ignore places and return a 10-character binary number if number is negative
   if (number < 0) {
-    return '1' + rept('0', 9 - (512 + number).toString(2).length) + (512 + number).toString(2);
+    return (
+      "1" +
+      rept("0", 9 - (512 + number).toString(2).length) +
+      (512 + number).toString(2)
+    );
   }
 
   // Convert decimal number to binary
   var result = parseInt(number, 10).toString(2);
 
   // Return binary number using the minimum number of characters necessary if places is undefined
-  if (typeof places === 'undefined') {
+  if (typeof places === "undefined") {
     return result;
   } else {
     // Return error.if places is nonnumeric
@@ -50,6 +53,8 @@ export default function dec2bin(input, places) {
     places = Math.floor(places);
 
     // Pad return value with leading 0s (zeros) if necessary (using Underscore.string)
-    return (places >= result.length) ? rept('0', places - result.length) + result : error.num;
+    return places >= result.length
+      ? rept("0", places - result.length) + result
+      : error.num;
   }
 }

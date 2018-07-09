@@ -1,18 +1,21 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import {SecondsInHour, SecondsInMinute, SecondsInDay} from './constants'
+import { SecondsInHour, SecondsInMinute, SecondsInDay } from "./constants";
 
 export default function timevalue(time_text) {
-    // The JavaScript new Date() does not accept only time.
-    // To workaround the issue we put 1/1/1900 at the front.
+  // The JavaScript new Date() does not accept only time.
+  // To workaround the issue we put 1/1/1900 at the front.
 
-    var date = new Date("1/1/1900 " + time_text);
+  var date = new Date("1/1/1900 " + time_text);
 
-    if (date instanceof Error) {
-        return date;
-    }
+  if (date instanceof Error) {
+    return date;
+  }
 
-    return (SecondsInHour * date.getHours() +
-            SecondsInMinute * date.getMinutes() +
-            date.getSeconds()) / SecondsInDay;
-};
+  return (
+    (SecondsInHour * date.getHours() +
+      SecondsInMinute * date.getMinutes() +
+      date.getSeconds()) /
+    SecondsInDay
+  );
+}

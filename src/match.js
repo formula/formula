@@ -1,11 +1,10 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import isarray from './isarray'
-import { ERRORTYPES as error } from './error'
+import isarray from "./isarray";
+import { ERRORTYPES as error } from "./error";
 
-// MATCH returns an index in `array_reference` by searching for `lookup_reference`.
-export default function match(lookup_reference, array_reference, matchType) {
-
+// MATCH returns an index in `lookup_array` by searching for `lookup_reference`.
+export default function match(lookup_value, lookup_array, matchType) {
   var lookupArray, lookupValue, index, indexValue;
 
   // Gotta have only 2 arguments folks!
@@ -14,12 +13,11 @@ export default function match(lookup_reference, array_reference, matchType) {
   }
 
   // Find the lookup value inside a worksheet cell, if needed.
-  lookupValue = lookup_reference;
-
+  lookupValue = lookup_value;
 
   // Find the array inside a worksheet range, if needed.
-  if (isarray(array_reference)) {
-    lookupArray = array_reference;
+  if (isarray(lookup_array)) {
+    lookupArray = lookup_array;
   } else {
     return error.na;
   }
@@ -48,20 +46,34 @@ export default function match(lookup_reference, array_reference, matchType) {
         }
       }
     } else if (matchType === 0) {
-      if (typeof lookupValue === 'string') {
+      if (typeof lookupValue === "string") {
         // '?' is mapped to the regex '.'
         // '*' is mapped to the regex '.*'
         // '~' is mapped to the regex '\?'
         if (idx === 0) {
-          lookupValue = "^" + lookupValue.replace(/\?/g, '.').replace(/\*/g, '.*').replace(/~/g, '\\?') + "$";
+          lookupValue =
+            "^" +
+            lookupValue
+              .replace(/\?/g, ".")
+              .replace(/\*/g, ".*")
+              .replace(/~/g, "\\?") +
+            "$";
         }
         if (typeof lookupArray[idx] !== "undefined") {
-          if (String(lookupArray[idx]).toLowerCase().match(String(lookupValue).toLowerCase())) {
+          if (
+            String(lookupArray[idx])
+              .toLowerCase()
+              .match(String(lookupValue).toLowerCase())
+          ) {
             return idx + 1;
           }
         }
       } else {
-        if (typeof lookupArray[idx] !== "undefined" && lookupArray[idx] !== null && lookupArray[idx].valueOf() === lookupValue) {
+        if (
+          typeof lookupArray[idx] !== "undefined" &&
+          lookupArray[idx] !== null &&
+          lookupArray[idx].valueOf() === lookupValue
+        ) {
           return idx + 1;
         }
       }
@@ -81,5 +93,4 @@ export default function match(lookup_reference, array_reference, matchType) {
   }
 
   return index ? index : error.na;
-
-};
+}

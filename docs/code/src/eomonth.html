@@ -1,7 +1,7 @@
-<!DOCTYPE html><html lang="en"><head><title>src/eomonth</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/eomonth"><meta name="groc-project-path" content="src/eomonth.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/eomonth.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>Copyright 2015 JC Fisher</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> parsedate <span class="hljs-keyword">from</span> <span class="hljs-string">'./parsedate'</span>;
-<span class="hljs-keyword">import</span> { ERRORTYPES <span class="hljs-keyword">as</span> error } <span class="hljs-keyword">from</span> <span class="hljs-string">'./error'</span>
- 
-export default function eomonth(start_date, months) {
+<!DOCTYPE html><html lang="en"><head><title>src/eomonth</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/eomonth"><meta name="groc-project-path" content="src/eomonth.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/eomonth.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>Copyright 2015-2018 FormBucket LLC</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> parsedate <span class="hljs-keyword">from</span> <span class="hljs-string">"./parsedate"</span>;
+<span class="hljs-keyword">import</span> { ERRORTYPES <span class="hljs-keyword">as</span> error } <span class="hljs-keyword">from</span> <span class="hljs-string">"./error"</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">eomonth</span>(<span class="hljs-params">start_date, months</span>) </span>{
   start_date = parsedate(start_date);
 
   <span class="hljs-keyword">if</span> (start_date <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Error</span>) {
@@ -11,5 +11,9 @@ export default function eomonth(start_date, months) {
     <span class="hljs-keyword">return</span> error.value;
   }
   months = <span class="hljs-built_in">parseInt</span>(months, <span class="hljs-number">10</span>);
-  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(start_date.getFullYear(), start_date.getMonth() + months + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>);
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(
+    start_date.getFullYear(),
+    start_date.getMonth() + months + <span class="hljs-number">1</span>,
+    <span class="hljs-number">0</span>
+  );
 }</div></div></div></div></body></html>

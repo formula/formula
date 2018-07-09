@@ -1,8 +1,8 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import parsedate from './parsedate';
-import { ERRORTYPES as error } from './error'
- 
+import parsedate from "./parsedate";
+import { ERRORTYPES as error } from "./error";
+
 export default function eomonth(start_date, months) {
   start_date = parsedate(start_date);
 
@@ -13,5 +13,9 @@ export default function eomonth(start_date, months) {
     return error.value;
   }
   months = parseInt(months, 10);
-  return new Date(start_date.getFullYear(), start_date.getMonth() + months + 1, 0);
+  return new Date(
+    start_date.getFullYear(),
+    start_date.getMonth() + months + 1,
+    0
+  );
 }

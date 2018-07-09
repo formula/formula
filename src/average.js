@@ -1,13 +1,12 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import sum from './sum';
-import iserror from './iserror';
+import sum from "./sum";
+import iserror from "./iserror";
 
 // AVERAGE computes sum of items divided by number of items
 export default function average(...items) {
-
   // compute sum all of the items.
-  var v = sum(...items)
+  var v = sum(...items);
 
   // return sum when computed error.
   if (iserror(v)) {
@@ -15,5 +14,5 @@ export default function average(...items) {
   }
 
   // return sum divided by item count
-  return  v / items.length;
+  return v / items.length;
 }

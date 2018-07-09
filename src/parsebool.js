@@ -1,20 +1,19 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import { ERRORTYPES as error } from './error'
+import { ERRORTYPES as error } from "./error";
 
 // PARSEBOOL converts a truthy value into a boolean value.
 export default function parsebool(val) {
-
   if (val instanceof Error) {
     return val;
-  } else if (typeof val === 'boolean') {
+  } else if (typeof val === "boolean") {
     return val;
-  } else if (typeof val === 'number') {
+  } else if (typeof val === "number") {
     return val !== 0;
-  } else if (typeof val === 'string') {
+  } else if (typeof val === "string") {
     var up = val.toUpperCase();
-    if (up === 'TRUE' || up === 'FALSE') {
-      return up === 'TRUE';
+    if (up === "TRUE" || up === "FALSE") {
+      return up === "TRUE";
     }
   }
 

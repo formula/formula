@@ -1,8 +1,8 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
+
 import { ERRORTYPES as error } from "./error";
 
 export default function decodebase64(str) {
-  
   function atob(input) {
     var str = String(input).replace(/=+$/, "");
     if (str.length % 4 == 1) {

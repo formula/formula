@@ -1,5 +1,5 @@
 import iserror from "../src/iserror";
-import { ERRORTYPES as error } from '../src/error';
+import { ERRORTYPES as error } from "../src/error";
 import test from "tape";
 
 test("iserror", function(t) {

@@ -1,13 +1,12 @@
-<!DOCTYPE html><html lang="en"><head><title>test/gte</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="test/gte"><meta name="groc-project-path" content="test/gte.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">test/gte.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">'tape'</span>;
-<span class="hljs-keyword">import</span> gte <span class="hljs-keyword">from</span> <span class="hljs-string">'../src/gte'</span>;
+<!DOCTYPE html><html lang="en"><head><title>test/gte</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="test/gte"><meta name="groc-project-path" content="test/gte.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">test/gte.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">"tape"</span>;
+<span class="hljs-keyword">import</span> gte <span class="hljs-keyword">from</span> <span class="hljs-string">"../src/gte"</span>;
 
-test(<span class="hljs-string">'gte'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
-
-  t.plan(<span class="hljs-number">4</span>)
-  t.equal( gte(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>), <span class="hljs-literal">false</span> );
-  t.equal( gte(<span class="hljs-number">200</span>, <span class="hljs-number">800</span>), <span class="hljs-literal">false</span> );
-  t.equal( gte(<span class="hljs-number">20000000</span>, <span class="hljs-number">40000000</span>), <span class="hljs-literal">false</span> );
-  t.deepEqual( gte( [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>], <span class="hljs-number">5</span> ), [
+test(<span class="hljs-string">"gte"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
+  t.plan(<span class="hljs-number">4</span>);
+  t.equal(gte(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>), <span class="hljs-literal">false</span>);
+  t.equal(gte(<span class="hljs-number">200</span>, <span class="hljs-number">800</span>), <span class="hljs-literal">false</span>);
+  t.equal(gte(<span class="hljs-number">20000000</span>, <span class="hljs-number">40000000</span>), <span class="hljs-literal">false</span>);
+  t.deepEqual(gte([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>], <span class="hljs-number">5</span>), [
     <span class="hljs-literal">false</span>,
     <span class="hljs-literal">false</span>,
     <span class="hljs-literal">false</span>,
@@ -15,7 +14,6 @@ test(<span class="hljs-string">'gte'</span>, <span class="hljs-function"><span c
     <span class="hljs-literal">false</span>,
     <span class="hljs-literal">true</span>,
     <span class="hljs-literal">true</span>,
-    <span class="hljs-literal">true</span> ]
-  );
-
-})</div></div></div></div></body></html>
+    <span class="hljs-literal">true</span>
+  ]);
+});</div></div></div></div></body></html>

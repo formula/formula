@@ -1,6 +1,6 @@
 import test from "tape";
 import ipmt from "../src/ipmt";
-import { ERRORTYPES as error } from '../src/error';
+import { ERRORTYPES as error } from "../src/error";
 
 test("ipmt", function(t) {
   t.plan(2);

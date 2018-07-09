@@ -11,8 +11,8 @@ npm install --save formula
 ## General Usage
 
 ```js
-import { RUN } from 'formula'
-RUN("sum(a, b, c) = 1+2+3", { a: 1, b: 2, c: 3}) // returns true
+import { run } from "formula";
+run("sum(a, b, c) = 1+2+3", { a: 1, b: 2, c: 3 });
 ```
 
 ## Browser ready

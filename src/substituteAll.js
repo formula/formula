@@ -1,7 +1,7 @@
-// Copyright 2015 JC Fisher
-import substitute from './substitute'
-import keys from './keys'
-import reduce from './reduce'
+// Copyright 2015-2018 FormBucket LLC
+import substitute from "./substitute";
+import keys from "./keys";
+import reduce from "./reduce";
 
 // substituteAll is a lightweight "substitution tags" engine that implement a global substitute for multiple items.
 //
@@ -14,7 +14,16 @@ import reduce from './reduce'
 // locals = { '-first-': 'Joe', '-last-': 'Smith' }
 // substitute( substitute("-first- -last", '-first-',  locals), '-last-', 'Smith', locals)
 // ```
-export default function substituteAll(content, locals, start='-', end=start) {
+export default function substituteAll(
+  content,
+  locals,
+  start = "-",
+  end = start
+) {
   if (!locals) return content;
-  return reduce( keys(locals), (p, v) => substitute(p, `${start}${v}${end}`, locals[v]), content)
+  return reduce(
+    keys(locals),
+    (p, v) => substitute(p, `${start}${v}${end}`, locals[v]),
+    content
+  );
 }

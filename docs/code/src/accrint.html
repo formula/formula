@@ -1,12 +1,25 @@
-<!DOCTYPE html><html lang="en"><head><title>src/accrint</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/accrint"><meta name="groc-project-path" content="src/accrint.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/accrint.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> parsedate <span class="hljs-keyword">from</span> <span class="hljs-string">'./parsedate'</span>;
-<span class="hljs-keyword">import</span> isdate <span class="hljs-keyword">from</span> <span class="hljs-string">'./isdate'</span>;
-<span class="hljs-keyword">import</span> isnumber <span class="hljs-keyword">from</span> <span class="hljs-string">'./isnumber'</span>;
-<span class="hljs-keyword">import</span> yearfrac <span class="hljs-keyword">from</span> <span class="hljs-string">'./yearfrac'</span>;
-<span class="hljs-keyword">import</span> { ERRORTYPES <span class="hljs-keyword">as</span> error } <span class="hljs-keyword">from</span> <span class="hljs-string">'./error'</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Returns the accrued interest for a security that pays periodic interest.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">accrint</span>(<span class="hljs-params">issue, first, settlement, rate, par, frequency, basis=0</span>) </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Return error if either date is invalid</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">var</span> issueDate      = parsedate(issue);
-  <span class="hljs-keyword">var</span> firstDate      = parsedate(first);
+<!DOCTYPE html><html lang="en"><head><title>src/accrint</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/accrint"><meta name="groc-project-path" content="src/accrint.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/accrint.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>Copyright 2015-2018 FormBucket LLC</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> parsedate <span class="hljs-keyword">from</span> <span class="hljs-string">"./parsedate"</span>;
+<span class="hljs-keyword">import</span> isdate <span class="hljs-keyword">from</span> <span class="hljs-string">"./isdate"</span>;
+<span class="hljs-keyword">import</span> isnumber <span class="hljs-keyword">from</span> <span class="hljs-string">"./isnumber"</span>;
+<span class="hljs-keyword">import</span> yearfrac <span class="hljs-keyword">from</span> <span class="hljs-string">"./yearfrac"</span>;
+<span class="hljs-keyword">import</span> { ERRORTYPES <span class="hljs-keyword">as</span> error } <span class="hljs-keyword">from</span> <span class="hljs-string">"./error"</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Returns the accrued interest for a security that pays periodic interest.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">accrint</span>(<span class="hljs-params">
+  issue,
+  first,
+  settlement,
+  rate,
+  par,
+  frequency,
+  basis = 0
+</span>) </span>{</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Return error if either date is invalid</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">var</span> issueDate = parsedate(issue);
+  <span class="hljs-keyword">var</span> firstDate = parsedate(first);
   <span class="hljs-keyword">var</span> settlementDate = parsedate(settlement);
 
-  <span class="hljs-keyword">if</span> (!isdate(issueDate) || !isdate(firstDate) || !isdate(settlementDate) || !isnumber(par)) {
+  <span class="hljs-keyword">if</span> (
+    !isdate(issueDate) ||
+    !isdate(firstDate) ||
+    !isdate(settlementDate) ||
+    !isnumber(par)
+  ) {
     <span class="hljs-keyword">return</span> error.value;
   }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Return error if either rate or par are lower than or equal to zero</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">if</span> (rate &lt;= <span class="hljs-number">0</span> || par &lt;= <span class="hljs-number">0</span>) {
     <span class="hljs-keyword">return</span> error.num;
@@ -17,5 +30,4 @@
   }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Return error if settlement is before or equal to issue</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">if</span> (settlementDate &lt;= issueDate) {
     <span class="hljs-keyword">return</span> error.num;
   }</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Compute accrued interest</p></div></div><div class="code"><div class="wrapper">  <span class="hljs-keyword">return</span> par * rate * yearfrac(issue, settlement, basis);
-
-};</div></div></div></div></body></html>
+}</div></div></div></div></body></html>

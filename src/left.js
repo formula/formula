@@ -1,19 +1,18 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import isblank from './isblank'
-import n from './n'
-import { ERRORTYPES as error } from './error'
+import isblank from "./isblank";
+import n from "./n";
+import { ERRORTYPES as error } from "./error";
 
 export default function left(text, number) {
   // For blank text value, return empty string.
   if (isblank(text)) {
-    return ''
+    return "";
   }
   // When number is invalid, return original value.
   if (!n(+number)) {
-    return text
+    return text;
   }
   // Return truncated string value.
-  return text.substring( 0, number )
-
+  return text.substring(0, number);
 }

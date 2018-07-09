@@ -1,9 +1,9 @@
-import test from 'tape'
-import int from '../src/int'
+import test from "tape";
+import int from "../src/int";
 
-test( 'int', (t) => {
-  t.plan(3)
-  t.equal( int( 1.2 ), 1 )
-  t.equal( int( 1.9 ), 1 )
-  t.equal( int( -1.9 ), -2 )
-})
+test("int", t => {
+  t.plan(3);
+  t.equal(int(1.2), 1);
+  t.equal(int(1.9), 1);
+  t.equal(int(-1.9), -2);
+});

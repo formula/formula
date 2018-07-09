@@ -1,13 +1,13 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
 import isnumber from "./isnumber";
 import { ERRORTYPES as error } from "./error";
-import numVal from "./numbervalue";
+import nv from "./numbervalue";
 
-// ADD calculates the sum of two numbers.
-export default function minus(value) {
+// Convert a value into a number.
+export default function plus(value) {
   // type casting.
-  let val = numVal(value);
+  let val = nv(value);
 
   // Return `#VALUE!` if either val is not a number.
   if (!isnumber(val)) {

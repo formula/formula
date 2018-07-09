@@ -1,29 +1,31 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import isblank from './isblank';
-import { ERRORTYPES as error } from './error';
+import isblank from "./isblank";
+import { ERRORTYPES as error } from "./error";
 
 // Find a needle in a table searching horizontally.
-export default function hlookup(needle, table, index=1, exactmatch) {
-    if (typeof needle === "undefined" || isblank(needle)) {
-        return null;
-    }
+export default function hlookup(needle, table, index = 1, exactmatch = false) {
+  if (typeof needle === "undefined" || isblank(needle)) {
+    return null;
+  }
 
-    if (index > table.length) {
-      return error.ref
-    }
+  if (index > table.length) {
+    return error.ref;
+  }
 
-    var needleLower = (needle + '').toLowerCase(),
+  var needleLower = (needle + "").toLowerCase(),
     row = table[0];
 
-    for (var i = 0; i < row.length; i++){
-
-      if ((exactmatch && row[i]===needle) ||
-          ((row[i] == needle) ||
-           (typeof row[i] === "string" && row[i].toLowerCase().indexOf(needleLower) != -1) )) {
-            return table[index-1][i];
-        }
+  for (var i = 0; i < row.length; i++) {
+    if (
+      (exactmatch && row[i] === needle) ||
+      (row[i] == needle ||
+        (typeof row[i] === "string" &&
+          row[i].toLowerCase().indexOf(needleLower) != -1))
+    ) {
+      return table[index - 1][i];
     }
+  }
 
-    return error.na;
+  return error.na;
 }

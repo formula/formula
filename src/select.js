@@ -1,33 +1,41 @@
-// Copyright 2015 JC Fisher
-import isarray from './isarray'
-import reduce from './reduce'
+// Copyright 2015-2018 FormBucket LLC
+import isarray from "./isarray";
+import reduce from "./reduce";
 
-// SELECT fields from object
-export default function select(fields, body) {
+// SELECT fields from o
+export default function select(fields, o) {
   // non-json
-  if (!body || 'object' != typeof body) return;
+  if (!o || "object" != typeof o) return;
 
   // check for fields
   if (!fields) return;
 
   // split
-  if ('string' == typeof fields) fields = fields.split(/ *, */);
+  if ("string" == typeof fields) fields = fields.split(/ *, */);
 
   // fields array
-  if (isarray(body)) {
-    return body.map(function(obj){
-      return reduce( fields, function(ret, key){
-        ret[key] = obj[key];
-        return ret;
-      }, {});
+  if (isarray(o)) {
+    return o.map(function(obj) {
+      return reduce(
+        fields,
+        function(ret, key) {
+          ret[key] = obj[key];
+          return ret;
+        },
+        {}
+      );
     });
 
     return;
   }
 
-  // fields object
-  return reduce( fields, function(ret, key){
-    ret[key] = body[key];
-    return ret;
-  }, {});
+  // fields o
+  return reduce(
+    fields,
+    function(ret, key) {
+      ret[key] = o[key];
+      return ret;
+    },
+    {}
+  );
 }

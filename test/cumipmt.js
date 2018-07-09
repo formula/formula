@@ -1,6 +1,6 @@
 import test from "tape";
 import cumipmt from "../src/cumipmt";
-import { ERRORTYPES as error } from '../src/error';
+import { ERRORTYPES as error } from "../src/error";
 
 test("cumipmt", function(t) {
   t.plan(2);

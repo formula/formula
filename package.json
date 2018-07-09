@@ -1,8 +1,9 @@
 {
   "name": "formula",
-  "version": "3.6.0",
+  "version": "3.7.0",
   "description": "Formula compiler and function library",
   "main": "index.js",
+  "types": "index.d.js",
   "scripts": {
     "all": "npm run build && npm test",
     "test": "buble-tape-runner test/*.js | faucet",
@@ -21,7 +22,7 @@
     "Spreadsheets",
     "JavaScript"
   ],
-  "author": "JC Fisher",
+  "author": "FormBucket LLC",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/FormBucket/formula/issues"

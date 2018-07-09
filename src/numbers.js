@@ -1,12 +1,8 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import isnumber from './isnumber'
-import reduce from './reduce'
+import isnumber from "./isnumber";
 
+// Filters non-numeric values from `values`.
 export default function numbers(...values) {
-  return reduce(
-    values,
-    (p, v) => isnumber(v) ? p.concat(v) : p,
-    []
-  )
+  return values.filter(isnumber);
 }

@@ -1,3 +1,5 @@
+// Copyright 2015-2018 FormBucket LLC
+
 import and from "./and";
 import branch from "./branch";
 import isText from "./istext";
