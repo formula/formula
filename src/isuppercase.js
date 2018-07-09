@@ -1,4 +1,4 @@
-// Copyright 2015-2018 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
 const ACode = 65;
 const ZCode = 90;

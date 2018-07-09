@@ -1,4 +1,4 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
 import trunc from "./trunc";
 import isDate from "./isdate";

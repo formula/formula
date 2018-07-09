@@ -1,30 +1,30 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import { ERRORTYPES as error } from './error';
-import isarray from './isarray';
-import isblank from './isblank';
+import { ERRORTYPES as error } from "./error";
+import isarray from "./isarray";
+import isblank from "./isblank";
 
 // index returns the value in a row and column from a 2d array
-export default function index(reference, row_num, column_num=1) {
+export default function index(reference, row_num, column_num = 1) {
   var row;
 
   if (!isarray(reference) || isblank(row_num)) {
-    return error.value
+    return error.value;
   }
 
   if (reference.length < row_num) {
-    return error.ref
+    return error.ref;
   }
 
-  row = reference[row_num-1];
+  row = reference[row_num - 1];
 
   if (!isarray(row)) {
-    return error.value
+    return error.value;
   }
 
   if (row.length < column_num) {
-    return error.ref
+    return error.ref;
   }
 
-  return row[column_num-1];
+  return row[column_num - 1];
 }

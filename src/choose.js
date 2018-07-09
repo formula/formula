@@ -1,10 +1,9 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import { ERRORTYPES as error } from './error';
+import { ERRORTYPES as error } from "./error";
 
 // CHOOSE accepts an index and a list of items. It returns the item that corresponds to the index.
 export default function choose(index, ...items) {
-
   // Return `#NA!` if index or items are not provided.
   if (!index || items.length === 0) {
     return error.na;
@@ -21,5 +20,5 @@ export default function choose(index, ...items) {
   }
 
   // Return the item.
-  return items[index-1];
+  return items[index - 1];
 }

@@ -1,14 +1,13 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import { ERRORTYPES as error } from './error'
-import isblank from './isblank'
+import { ERRORTYPES as error } from "./error";
+import isblank from "./isblank";
 
-export default function fv(rate, periods, payment, value=0, type=0) {
-
+export default function fv(rate, periods, payment, value = 0, type = 0) {
   // is this error code correct?
-  if (isblank(rate)) return error.na
-  if (isblank(periods)) return error.na
-  if (isblank(payment)) return error.na
+  if (isblank(rate)) return error.na;
+  if (isblank(periods)) return error.na;
+  if (isblank(payment)) return error.na;
 
   var fv;
   if (rate === 0) {
@@ -22,4 +21,4 @@ export default function fv(rate, periods, payment, value=0, type=0) {
     }
   }
   return -fv;
-};
+}

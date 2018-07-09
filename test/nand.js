@@ -1,5 +1,5 @@
 import test from "tape";
-import { ERRORTYPES as error } from '../src/error';
+import { ERRORTYPES as error } from "../src/error";
 import nand from "../src/nand";
 
 test("nand", t => {

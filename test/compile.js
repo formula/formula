@@ -2,10 +2,11 @@ var test = require("tape");
 import compile from "../src/compile";
 
 test("compiler should pass basic tests", function(t) {
-  t.plan(15);
+  t.plan(16);
 
   t.equal(compile("2=2").code, "Formula.EQ(2, 2)");
   t.equal(compile("-2").code, "Formula.MINUS(2)");
+  t.equal(compile("+2").code, "Formula.PLUS(2)");
   t.equal(compile("2 = 2").code, "Formula.EQ(2, 2)");
   t.equal(compile("2<>2").code, "Formula.NE(2, 2)");
   t.equal(compile("2 > 2").code, "Formula.GT(2, 2)");

@@ -1,4 +1,4 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 import { ERRORTYPES as error } from "./error";
 
 // assign from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign

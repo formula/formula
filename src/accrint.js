@@ -1,18 +1,32 @@
-import parsedate from './parsedate';
-import isdate from './isdate';
-import isnumber from './isnumber';
-import yearfrac from './yearfrac';
-import { ERRORTYPES as error } from './error';
+// Copyright 2015-2018 FormBucket LLC
+
+import parsedate from "./parsedate";
+import isdate from "./isdate";
+import isnumber from "./isnumber";
+import yearfrac from "./yearfrac";
+import { ERRORTYPES as error } from "./error";
 
 // Returns the accrued interest for a security that pays periodic interest.
-export default function accrint(issue, first, settlement, rate, par, frequency, basis=0) {
-
+export default function accrint(
+  issue,
+  first,
+  settlement,
+  rate,
+  par,
+  frequency,
+  basis = 0
+) {
   // Return error if either date is invalid
-  var issueDate      = parsedate(issue);
-  var firstDate      = parsedate(first);
+  var issueDate = parsedate(issue);
+  var firstDate = parsedate(first);
   var settlementDate = parsedate(settlement);
 
-  if (!isdate(issueDate) || !isdate(firstDate) || !isdate(settlementDate) || !isnumber(par)) {
+  if (
+    !isdate(issueDate) ||
+    !isdate(firstDate) ||
+    !isdate(settlementDate) ||
+    !isnumber(par)
+  ) {
     return error.value;
   }
 
@@ -38,5 +52,4 @@ export default function accrint(issue, first, settlement, rate, par, frequency, 
 
   // Compute accrued interest
   return par * rate * yearfrac(issue, settlement, basis);
-
-};
+}

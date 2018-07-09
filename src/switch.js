@@ -1,31 +1,23 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import error from "./error";
+import { ERRORTYPES as error } from "./error";
+import eq from "./eq";
 
-// CHOOSE accepts an index and a list of items. It returns the item that corresponds to the index.
-export default function SWITCH() {
+// Search the odd args and return even value when odd arg equals targetValue.
+export default function SWITCH(targetValue, ...args) {
   var result;
-  if (arguments.length > 0) {
-    var targetValue = arguments[0];
-    var argc = arguments.length - 1;
-    var switchCount = Math.floor(argc / 2);
-    var switchSatisfied = false;
-    var defaultClause = argc % 2 === 0 ? null : arguments[arguments.length - 1];
+  var argc = args.length;
+  var switchCount = Math.floor(argc / 2);
+  var defaultClause = argc % 2 === 0 ? null : args[args.length - 1];
 
-    if (switchCount) {
-      for (var index = 0; index < switchCount; index++) {
-        if (targetValue === arguments[index * 2 + 1]) {
-          result = arguments[index * 2 + 2];
-          switchSatisfied = true;
-          break;
-        }
+  if (switchCount) {
+    for (var index = 0; index < switchCount; index++) {
+      if (eq(targetValue, args[index * 2])) {
+        result = args[index * 2 + 1];
+        return result;
       }
-    }
-
-    if (!switchSatisfied && defaultClause) {
-      result = defaultClause;
     }
   }
 
-  return result;
+  return defaultClause || error.na;
 }

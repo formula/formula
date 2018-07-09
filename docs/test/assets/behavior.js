@@ -1906,6 +1906,25 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
+            "sourcePath": "/home/jcfisher007/formula/test/keys.js",
+            "projectPath": "test/keys.js",
+            "targetPath": "test/keys",
+            "pageTitle": "test/keys",
+            "title": "keys"
+          },
+          "depth": 2
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
             "sourcePath": "/home/jcfisher007/formula/test/left.js",
             "projectPath": "test/left.js",
             "targetPath": "test/left",
@@ -3032,6 +3051,25 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "targetPath": "test/surroundKeys",
             "pageTitle": "test/surroundKeys",
             "title": "surroundKeys"
+          },
+          "depth": 2
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/home/jcfisher007/formula/test/switch.js",
+            "projectPath": "test/switch.js",
+            "targetPath": "test/switch",
+            "pageTitle": "test/switch",
+            "title": "switch"
           },
           "depth": 2
         }, {

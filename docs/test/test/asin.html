@@ -1,11 +1,11 @@
-<!DOCTYPE html><html lang="en"><head><title>test/asin</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="test/asin"><meta name="groc-project-path" content="test/asin.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">test/asin.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> asin <span class="hljs-keyword">from</span> <span class="hljs-string">'../src/asin'</span>;
-<span class="hljs-keyword">import</span> { ERRORTYPES <span class="hljs-keyword">as</span> error } <span class="hljs-keyword">from</span> <span class="hljs-string">'../src/error'</span>;
-<span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">'tape'</span>;
+<!DOCTYPE html><html lang="en"><head><title>test/asin</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="test/asin"><meta name="groc-project-path" content="test/asin.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">test/asin.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> asin <span class="hljs-keyword">from</span> <span class="hljs-string">"../src/asin"</span>;
+<span class="hljs-keyword">import</span> { ERRORTYPES <span class="hljs-keyword">as</span> error } <span class="hljs-keyword">from</span> <span class="hljs-string">"../src/error"</span>;
+<span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">"tape"</span>;
 
-test(<span class="hljs-string">'asin'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
-  t.plan(<span class="hljs-number">4</span>)
-  t.equal( asin(<span class="hljs-number">0.5</span>), <span class="hljs-number">0.5235987755982989</span> );
-  t.equal( asin(-<span class="hljs-number">1</span>),  -<span class="hljs-number">1.5707963267948966</span> );
-  t.equal( asin(<span class="hljs-literal">NaN</span>), error.value );
-  t.equal( asin(<span class="hljs-string">'invalid'</span>), error.value );
-})</div></div></div></div></body></html>
+test(<span class="hljs-string">"asin"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
+  t.plan(<span class="hljs-number">4</span>);
+  t.equal(asin(<span class="hljs-number">0.5</span>), <span class="hljs-number">0.5235987755982989</span>);
+  t.equal(asin(-<span class="hljs-number">1</span>), -<span class="hljs-number">1.5707963267948966</span>);
+  t.equal(asin(<span class="hljs-literal">NaN</span>), error.value);
+  t.equal(asin(<span class="hljs-string">"invalid"</span>), error.value);
+});</div></div></div></div></body></html>

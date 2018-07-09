@@ -2,10 +2,11 @@
 <span class="hljs-keyword">import</span> compile <span class="hljs-keyword">from</span> <span class="hljs-string">"../src/compile"</span>;
 
 test(<span class="hljs-string">"compiler should pass basic tests"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
-  t.plan(<span class="hljs-number">15</span>);
+  t.plan(<span class="hljs-number">16</span>);
 
   t.equal(compile(<span class="hljs-string">"2=2"</span>).code, <span class="hljs-string">"Formula.EQ(2, 2)"</span>);
   t.equal(compile(<span class="hljs-string">"-2"</span>).code, <span class="hljs-string">"Formula.MINUS(2)"</span>);
+  t.equal(compile(<span class="hljs-string">"+2"</span>).code, <span class="hljs-string">"Formula.PLUS(2)"</span>);
   t.equal(compile(<span class="hljs-string">"2 = 2"</span>).code, <span class="hljs-string">"Formula.EQ(2, 2)"</span>);
   t.equal(compile(<span class="hljs-string">"2&lt;&gt;2"</span>).code, <span class="hljs-string">"Formula.NE(2, 2)"</span>);
   t.equal(compile(<span class="hljs-string">"2 &gt; 2"</span>).code, <span class="hljs-string">"Formula.GT(2, 2)"</span>);

@@ -1,20 +1,20 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import { ERRORTYPES as error } from './error'
+import { ERRORTYPES as error } from "./error";
 
 // LEN returns the size of a string or array.
-export default function len(text) {
+export default function len(value) {
   if (arguments.length === 0) {
     return error.error;
   }
 
-  if (typeof text === 'string') {
-    return text.length;
+  if (typeof value === "string") {
+    return value.length;
   }
 
-  if (text.length) {
-    return text.length;
+  if (value.length) {
+    return value.length;
   }
 
   return error.value;
-};
+}

@@ -1,3 +1,5 @@
+// Copyright 2015-2018 FormBucket LLC
+
 import reduce from "./reduce";
 
 // Group a list of objects by one or more fields.
@@ -6,6 +8,7 @@ export default function group(list, ...fields) {
   return reduce(
     list,
     (acc, item) => {
+      // Copyright @ 2015-2016 JC Fisher
       let parent = undefined,
         key;
 

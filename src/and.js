@@ -1,18 +1,16 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import iserror from './iserror';
-import { ERRORTYPES as error } from './error';
-import isfunction from './isfunction';
-import reduce from './reduce';
+import iserror from "./iserror";
+import { ERRORTYPES as error } from "./error";
+import isfunction from "./isfunction";
+import reduce from "./reduce";
 
 // AND reduces list of truthy values into true or false value.
 export default function and(...criteria) {
-
   // Reduce criteria into boolean value.
   return reduce(
     criteria,
     (acc, item) => {
-
       // Once an error, always an error.
       if (iserror(acc)) return acc;
 
@@ -29,5 +27,7 @@ export default function and(...criteria) {
 
       // Return true when value is true or 1.
       return val === true || val === 1;
-    }, undefined);
+    },
+    undefined
+  );
 }

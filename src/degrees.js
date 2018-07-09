@@ -1,14 +1,15 @@
-import isnumber from './isnumber'
-import { ERRORTYPES as error } from './error'
+// Copyright 2015-2018 FormBucket LLC
+
+import isnumber from "./isnumber";
+import { ERRORTYPES as error } from "./error";
 
 // Converts radians into degrees.
-export default function degrees(number) {
-
-  // Ensure value is a number
-  if (!isnumber(number)) {
+export default function degrees(radians) {
+  // Ensure value is a radians
+  if (!isnumber(radians)) {
     return error.value;
   }
 
   // Compute value
-  return number * 180 / Math.PI;
+  return radians * 180 / Math.PI;
 }

@@ -1,4 +1,4 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
 // List of errors in the spreadsheet system
 
@@ -47,7 +47,8 @@ export let ERRORTYPES = {
   "#MISSING!": missing,
   unknown,
   "#UNKNOWN!": unknown
-};missing
+};
+missing;
 
 function _error(type) {
   return ERRORTYPES[type] || error;

@@ -1,9 +1,8 @@
-<!DOCTYPE html><html lang="en"><head><title>src/ceiling</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/ceiling"><meta name="groc-project-path" content="src/ceiling.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/ceiling.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> isnumber <span class="hljs-keyword">from</span> <span class="hljs-string">'./isnumber'</span>
-<span class="hljs-keyword">import</span> { ERRORTYPES <span class="hljs-keyword">as</span> error } <span class="hljs-keyword">from</span> <span class="hljs-string">'./error'</span>
-<span class="hljs-keyword">import</span> numbervalue <span class="hljs-keyword">from</span> <span class="hljs-string">'./numbervalue'</span>
-<span class="hljs-keyword">import</span> round <span class="hljs-keyword">from</span> <span class="hljs-string">'./round'</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Returns number rounded up, away from zero, to the nearest multiple of significance.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ceiling</span>(<span class="hljs-params">number, significance, mode</span>) </span>{
-
-  significance = (significance === <span class="hljs-literal">undefined</span>) ? <span class="hljs-number">1</span> : <span class="hljs-built_in">Math</span>.abs(significance);
+<!DOCTYPE html><html lang="en"><head><title>src/ceiling</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/ceiling"><meta name="groc-project-path" content="src/ceiling.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/ceiling.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>Copyright 2015-2018 FormBucket LLC</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> isnumber <span class="hljs-keyword">from</span> <span class="hljs-string">"./isnumber"</span>;
+<span class="hljs-keyword">import</span> { ERRORTYPES <span class="hljs-keyword">as</span> error } <span class="hljs-keyword">from</span> <span class="hljs-string">"./error"</span>;
+<span class="hljs-keyword">import</span> numbervalue <span class="hljs-keyword">from</span> <span class="hljs-string">"./numbervalue"</span>;
+<span class="hljs-keyword">import</span> round <span class="hljs-keyword">from</span> <span class="hljs-string">"./round"</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Returns number rounded up, away from zero, to the nearest multiple of significance.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ceiling</span>(<span class="hljs-params">number, significance, mode</span>) </span>{
+  significance = significance === <span class="hljs-literal">undefined</span> ? <span class="hljs-number">1</span> : <span class="hljs-built_in">Math</span>.abs(significance);
   mode = mode || <span class="hljs-number">0</span>;
 
   number = numbervalue(number);
@@ -21,10 +20,15 @@
     <span class="hljs-keyword">return</span> round(<span class="hljs-built_in">Math</span>.ceil(number / significance) * significance, precision);
   } <span class="hljs-keyword">else</span> {
     <span class="hljs-keyword">if</span> (mode === <span class="hljs-number">0</span>) {
-      <span class="hljs-keyword">return</span> -round(<span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.abs(number) / significance) * significance, precision);
+      <span class="hljs-keyword">return</span> -round(
+        <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.abs(number) / significance) * significance,
+        precision
+      );
     } <span class="hljs-keyword">else</span> {
-      <span class="hljs-keyword">return</span> -round(<span class="hljs-built_in">Math</span>.ceil(<span class="hljs-built_in">Math</span>.abs(number) / significance) * significance, precision);
+      <span class="hljs-keyword">return</span> -round(
+        <span class="hljs-built_in">Math</span>.ceil(<span class="hljs-built_in">Math</span>.abs(number) / significance) * significance,
+        precision
+      );
     }
   }
-
 }</div></div></div></div></body></html>

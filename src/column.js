@@ -1,13 +1,12 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import { ERRORTYPES as error } from './error'
-import istext from './istext'
-import isref from './isref'
-import columnnumber from './columnnumber'
+import { ERRORTYPES as error } from "./error";
+import istext from "./istext";
+import isref from "./isref";
+import columnnumber from "./columnnumber";
 
 // COLUMN return the column number that corresponds to the reference.
 export default function column(value) {
-
   // Return `#VALUE!` when the value is not a reference.
   if (!isref(value)) {
     return error.value;

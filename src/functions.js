@@ -1,4 +1,4 @@
-// Copyright @ 2015-2016 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
 // # Formula's Functions
 
@@ -13,6 +13,7 @@ export { ERRORTYPES } from "./error";
 // #### [parser](./parser)
 // `walker` converts an AST into a function.
 export { default as PARSE } from "./parser";
+export { default as parse } from "./parser";
 
 // #### [walker](./walker)
 // `walker` converts an AST by walking and applying the config.
@@ -279,6 +280,16 @@ export { default as isWholeNumber } from "./iswholenumber";
 export { default as iswholenumber } from "./iswholenumber";
 
 // ### Math functions
+
+// #### [minus](./minus)
+// `minus` negates a value.
+export { default as MINUS } from "./minus";
+export { default as minus } from "./minus";
+
+// #### [plus](./plus)
+// `plus` converts value to number.
+export { default as PLUS } from "./plus";
+export { default as plus } from "./plus";
 
 // #### [add](./add)
 // `add` sums the first and second arguments.
@@ -830,7 +841,17 @@ export { default as get } from "./get";
 export { default as SELECT } from "./select";
 export { default as select } from "./select";
 
+// #### [keys](./keys)
+// `keys` returns the list of properties in an object.
+export { default as KEYS } from "./keys";
+export { default as keys } from "./keys";
+
 // ### Utility
+
+// #### [address](./address)
+// `address` returns a row/column reference.
+export { default as ADDRESS } from "./address";
+export { default as address } from "./address";
 
 // #### [assign](./assign)
 // `assign` returns the result of merging two or more objects.

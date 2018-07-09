@@ -1,10 +1,10 @@
-<!DOCTYPE html><html lang="en"><head><title>test/datevalue</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="test/datevalue"><meta name="groc-project-path" content="test/datevalue.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">test/datevalue.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> datevalue <span class="hljs-keyword">from</span> <span class="hljs-string">'../src/datevalue'</span>
-<span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">'tape'</span>
-<span class="hljs-keyword">import</span> { ERRORTYPES <span class="hljs-keyword">as</span> error } <span class="hljs-keyword">from</span> <span class="hljs-string">'../src/error'</span>
+<!DOCTYPE html><html lang="en"><head><title>test/datevalue</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="test/datevalue"><meta name="groc-project-path" content="test/datevalue.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">test/datevalue.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> datevalue <span class="hljs-keyword">from</span> <span class="hljs-string">"../src/datevalue"</span>;
+<span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">"tape"</span>;
+<span class="hljs-keyword">import</span> { ERRORTYPES <span class="hljs-keyword">as</span> error } <span class="hljs-keyword">from</span> <span class="hljs-string">"../src/error"</span>;
 
-test(<span class="hljs-string">'datevalue'</span>, function(t) {
-  t.plan(3)
-  t.equal( datevalue(<span class="hljs-string">"1/1/2008"</span>), 39448 );
-  t.equal( datevalue(<span class="hljs-number">39448</span>), <span class="hljs-number">39448</span> );
-  t.equal( datevalue(<span class="hljs-string">"foo"</span>), error.na );
+test(<span class="hljs-string">"datevalue"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
+  t.plan(<span class="hljs-number">3</span>);
+  t.equal(datevalue(<span class="hljs-string">"1/1/2008"</span>), <span class="hljs-number">39448</span>);
+  t.equal(datevalue(<span class="hljs-number">39448</span>), <span class="hljs-number">39448</span>);
+  t.equal(datevalue(<span class="hljs-string">"foo"</span>), error.na);
 });</div></div></div></div></body></html>

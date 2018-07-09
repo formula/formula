@@ -1,11 +1,10 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
-import isnumber from './isnumber';
-import { ERRORTYPES as error } from './error';
+import isnumber from "./isnumber";
+import { ERRORTYPES as error } from "./error";
 
 // PMT returns a loan payment
 export default function pmt(rate, periods, present, future = 0, type = 0) {
-
   if (!isnumber(rate) || !isnumber(periods)) {
     return error.value;
   }
@@ -15,10 +14,12 @@ export default function pmt(rate, periods, present, future = 0, type = 0) {
   } else {
     var term = Math.pow(1 + rate, periods);
     if (type === 1) {
-      return -((future * rate / (term - 1) + present * rate / (1 - 1 / term)) / (1 + rate));
+      return -(
+        (future * rate / (term - 1) + present * rate / (1 - 1 / term)) /
+        (1 + rate)
+      );
     } else {
       return -(future * rate / (term - 1) + present * rate / (1 - 1 / term));
     }
   }
-
-};
+}

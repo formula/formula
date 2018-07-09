@@ -1,10 +1,10 @@
-// Copyright 2015 JC Fisher
+// Copyright 2015-2018 FormBucket LLC
 
 import isnumber from "./isnumber";
 import { ERRORTYPES as error } from "./error";
 import numVal from "./numbervalue";
 
-// ADD calculates the sum of two numbers.
+// Invert a value.
 export default function minus(value) {
   // type casting.
   let val = numVal(value);

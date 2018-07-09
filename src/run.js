@@ -1,3 +1,5 @@
+// Copyright 2015-2018 FormBucket LLC
+
 import * as funcs from "./functions";
 import compile from "./compile";
 import isFunction from "./isfunction";
