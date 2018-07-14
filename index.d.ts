@@ -473,6 +473,9 @@ export function minus(value: number): number;
 /** Compute the minutes from a value between 0 and 1; or from a date. */
 export function minute(value: number | Date): number;
 
+/** Compute the remainder of division. */
+export function mod(number: number, divisor: number): number;
+
 /** Compute the month of a `date`. */
 export function month(date: number | string | Date): number;
 

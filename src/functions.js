@@ -371,6 +371,10 @@ export { default as cos } from "./cos";
 export { default as DEGREES } from "./degrees";
 export { default as degrees } from "./degrees";
 
+// #### [mod](./mod)
+export { default as MOD } from "./mod";
+export { default as mod } from "./mod";
+
 // #### [pi](./pi)
 export { default as PI } from "./pi";
 export { default as pi } from "./pi";
