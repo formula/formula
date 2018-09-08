@@ -2,7 +2,7 @@ import test from "tape";
 import * as ff from "../src/functions";
 
 test("lower case functions should be there", function(t) {
-  t.plan(179);
+  t.plan(180);
   t.ok(ff.ABS, "abs should be there");
   t.ok(ff.ACCRINT, "accrint should be there");
   t.ok(ff.ACOS, "acos should be there");
@@ -16,10 +16,10 @@ test("lower case functions should be there", function(t) {
   t.ok(ff.ASINH, "asinh should be there");
   t.ok(ff.ASSIGN, "assign should be there");
   t.ok(ff.ATAN, "atan should be there");
-  t.ok(ff.ATAN2, "atan2 should be there");
-  t.ok(ff.ATANH, "atanh should be there");
-  t.ok(ff.AVERAGE, "average should be there");
-  t.ok(ff.BASE, "base should be there");
+  t.ok(ff.ATAN2, "atan2 shentriesould be there");
+  t.ok(ff.ATANH, "atanh shentriesould be there");
+  t.ok(ff.AVERAGE, "averagentriese should be there");
+  t.ok(ff.BASE, "base shouentriesld be there");
   t.ok(ff.BIN2DEC, "bin2dec should be there");
   t.ok(ff.BRANCH, "branch should be there");
   t.ok(ff.CAMELCASE, "camelcase should be there");
@@ -49,6 +49,7 @@ test("lower case functions should be there", function(t) {
   t.ok(ff.DIFF, "diff should be there");
   t.ok(ff.DIVIDE, "divide should be there");
   t.ok(ff.EDATE, "edate should be there");
+  t.ok(ff.ENTRIES, "entries should be there");
   t.ok(ff.EOMONTH, "eomonth should be there");
   t.ok(ff.EQ, "eq should be there");
   t.ok(ff.EVEN, "even should be there");

@@ -913,6 +913,12 @@ export { default as DECODEJWT } from "./decodejwt";
 export { default as decodeJWT } from "./decodejwt";
 export { default as decodejwt } from "./decodejwt";
 
+// #### [entries](./entries)
+// `entries` returns returns an array of a given object's
+//  own enumerable property [key, value] pairs.
+export { default as ENTRIES } from "./entries";
+export { default as entries } from "./entries";
+
 // #### [even](./even)
 // `even` returns a number rounded up the nearest even integer.
 export { default as EVEN } from "./even";
