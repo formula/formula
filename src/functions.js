@@ -143,6 +143,12 @@ export { default as ISARRAY } from "./isarray";
 export { default as isArray } from "./isarray";
 export { default as isarray } from "./isarray";
 
+// #### [isasyncfunction](./isasyncfunction)
+// `isasyncfunction` returns true when the value is a async function.
+export { default as ISASYNCFUNCTION } from "./isasyncfunction";
+export { default as isAsyncFunction } from "./isasyncfunction";
+export { default as isasyncfunction } from "./isasyncfunction";
+
 // #### [isblank](./isblank)
 // `isblank` returns true when the value is undefined or null.
 export { default as ISBLANK } from "./isblank";
@@ -192,7 +198,7 @@ export { default as isFalsy } from "./isfalsy";
 export { default as isfalsy } from "./isfalsy";
 
 // #### [isfunction](./isfunction)
-// `isfunction` returns true when the value is a JavaScript function.
+// `isfunction` returns true when the value is a function or async function.
 export { default as ISFUNCTION } from "./isfunction";
 export { default as isFunction } from "./isfunction";
 export { default as isfunction } from "./isfunction";
