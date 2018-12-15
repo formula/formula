@@ -1,6 +1,6 @@
 {
   "name": "formula",
-  "version": "3.8.3",
+  "version": "3.8.4",
   "description": "Formula compiler and function library",
   "main": "index.js",
   "types": "index.d.js",
