@@ -1,17 +1,17 @@
 {
   "name": "formula",
-  "version": "3.8.2",
+  "version": "3.9.0",
   "description": "Formula compiler and function library",
   "main": "index.js",
   "types": "index.d.js",
   "scripts": {
     "all": "npm run build && npm test",
-    "test": "buble-tape-runner test/*.js | faucet",
+    "test": "babel-tape-runner test/*.js | faucet",
     "docs": "groc src/*.js -o ./docs/code; groc test/*.js -o ./docs/test",
-    "clean": "rm -rf lib;",
-    "build": "BABEL_ENV=production npm run build:umd && npm run build:min && npm run docs",
+    "clean": "rm -rf lib; mkdir lib;",
+    "build": "BABEL_ENV=production make && npm run build:umd && npm run build:min && npm run docs",
     "build:parser": "jison src/parser.jison -m commonjs -o src/parser.js",
-    "build:umd": "rm -rf lib; mkdir lib; rollup -f=umd -n=Formula src/functions.js > lib/formula.mjs.js; buble lib/formula.mjs.js > lib/formula.js",
+    "build:umd": "rollup -f=umd -n=Formula src/functions.js > lib/formula.esm; babel lib/formula.esm > lib/formula.js",
     "build:min": "uglifyjs lib/formula.js > lib/formula.min.js"
   },
   "repository": {
@@ -29,8 +29,10 @@
   },
   "homepage": "https://github.com/FormBucket/formula#readme",
   "devDependencies": {
-    "buble": "^0.19.3",
-    "buble-tape-runner": "^1.0.4",
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "babel-tape-runner": "^3.0.0",
     "docco": "^0.7.0",
     "eslint": "^1.8.0",
     "faucet": "0.0.1",
