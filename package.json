@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FormBucket/formula.git"
+    "url": "git+https://github.com/formula/formula.git"
   },
   "keywords": [
     "Spreadsheets",
@@ -25,9 +25,9 @@
   "author": "FormBucket LLC",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FormBucket/formula/issues"
+    "url": "https://github.com/formula/formula/issues"
   },
-  "homepage": "https://github.com/FormBucket/formula#readme",
+  "homepage": "https://github.com/formula/formula#readme",
   "devDependencies": {
     "buble": "^0.19.3",
     "buble-tape-runner": "^1.0.4",
