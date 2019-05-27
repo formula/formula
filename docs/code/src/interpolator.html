@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="en"><head><title>src/interpolator</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/interpolator"><meta name="groc-project-path" content="src/interpolator.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/interpolator.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> isdate <span class="hljs-keyword">from</span> <span class="hljs-string">"./isdate"</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Functor to create a function that runs the percentage between two values;
+Usage: interpolator(0, 100)(0.5) == 50
+Credit: <a href="https://github.com/sveltejs/svelte/blob/master/src/motion/tweened.ts">https://github.com/sveltejs/svelte/blob/master/src/motion/tweened.ts</a></p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">interpolator</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">if</span> (a === b || a !== a) <span class="hljs-keyword">return</span> () =&gt; a;
+
+  <span class="hljs-keyword">const</span> type = <span class="hljs-keyword">typeof</span> a;
+
+  <span class="hljs-keyword">if</span> (type !== <span class="hljs-keyword">typeof</span> b || <span class="hljs-built_in">Array</span>.isArray(a) !== <span class="hljs-built_in">Array</span>.isArray(b)) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"Cannot interpolate values of different type"</span>);
+  }
+
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Array</span>.isArray(a)) {
+    <span class="hljs-keyword">const</span> arr = b.map((bi, i) =&gt; {
+      <span class="hljs-keyword">return</span> interpolator(a[i], bi);
+    });
+
+    <span class="hljs-keyword">return</span> t =&gt; arr.map(fn =&gt; fn(t));
+  }
+
+  <span class="hljs-keyword">if</span> (type === <span class="hljs-string">"object"</span>) {
+    <span class="hljs-keyword">if</span> (!a || !b) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"Object cannot be null"</span>);
+
+    <span class="hljs-keyword">if</span> (isdate(a) &amp;&amp; isdate(b)) {
+      a = a.getTime();
+      b = b.getTime();
+      <span class="hljs-keyword">const</span> delta = b - a;
+      <span class="hljs-keyword">return</span> t =&gt; <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(a + t * delta);
+    }
+
+    <span class="hljs-keyword">const</span> keys = <span class="hljs-built_in">Object</span>.keys(b);
+    <span class="hljs-keyword">const</span> interpolators = {};
+
+    keys.forEach(key =&gt; {
+      interpolators[key] = interpolator(a[key], b[key]);
+    });
+
+    <span class="hljs-keyword">return</span> t =&gt; {
+      <span class="hljs-keyword">const</span> result = {};
+      keys.forEach(key =&gt; {
+        result[key] = interpolators[key](t);
+      });
+      <span class="hljs-keyword">return</span> result;
+    };
+  }
+
+  <span class="hljs-keyword">if</span> (type === <span class="hljs-string">"number"</span>) {
+    <span class="hljs-keyword">const</span> delta = b - a;
+    <span class="hljs-keyword">return</span> t =&gt; a + t * delta;
+  }
+
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Cannot interpolate <span class="hljs-subst">${type}</span> values`</span>);
+}</div></div></div></div></body></html>

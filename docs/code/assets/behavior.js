@@ -25,13 +25,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/abs.js",
+            "sourcePath": "/home/ops/formula/src/abs.js",
             "projectPath": "src/abs.js",
             "targetPath": "src/abs",
             "pageTitle": "src/abs",
             "title": "abs"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -44,13 +45,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/accrint.js",
+            "sourcePath": "/home/ops/formula/src/accrint.js",
             "projectPath": "src/accrint.js",
             "targetPath": "src/accrint",
             "pageTitle": "src/accrint",
             "title": "accrint"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -63,13 +65,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/acos.js",
+            "sourcePath": "/home/ops/formula/src/acos.js",
             "projectPath": "src/acos.js",
             "targetPath": "src/acos",
             "pageTitle": "src/acos",
             "title": "acos"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -82,13 +85,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/acosh.js",
+            "sourcePath": "/home/ops/formula/src/acosh.js",
             "projectPath": "src/acosh.js",
             "targetPath": "src/acosh",
             "pageTitle": "src/acosh",
             "title": "acosh"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -101,13 +105,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/acot.js",
+            "sourcePath": "/home/ops/formula/src/acot.js",
             "projectPath": "src/acot.js",
             "targetPath": "src/acot",
             "pageTitle": "src/acot",
             "title": "acot"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -120,13 +125,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/acoth.js",
+            "sourcePath": "/home/ops/formula/src/acoth.js",
             "projectPath": "src/acoth.js",
             "targetPath": "src/acoth",
             "pageTitle": "src/acoth",
             "title": "acoth"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -139,13 +145,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/add.js",
+            "sourcePath": "/home/ops/formula/src/add.js",
             "projectPath": "src/add.js",
             "targetPath": "src/add",
             "pageTitle": "src/add",
             "title": "add"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -158,13 +165,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/address.js",
+            "sourcePath": "/home/ops/formula/src/address.js",
             "projectPath": "src/address.js",
             "targetPath": "src/address",
             "pageTitle": "src/address",
             "title": "address"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -177,13 +185,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/and.js",
+            "sourcePath": "/home/ops/formula/src/and.js",
             "projectPath": "src/and.js",
             "targetPath": "src/and",
             "pageTitle": "src/and",
             "title": "and"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -196,13 +205,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/asin.js",
+            "sourcePath": "/home/ops/formula/src/asin.js",
             "projectPath": "src/asin.js",
             "targetPath": "src/asin",
             "pageTitle": "src/asin",
             "title": "asin"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -215,13 +225,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/asinh.js",
+            "sourcePath": "/home/ops/formula/src/asinh.js",
             "projectPath": "src/asinh.js",
             "targetPath": "src/asinh",
             "pageTitle": "src/asinh",
             "title": "asinh"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -234,13 +245,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/assign.js",
+            "sourcePath": "/home/ops/formula/src/assign.js",
             "projectPath": "src/assign.js",
             "targetPath": "src/assign",
             "pageTitle": "src/assign",
             "title": "assign"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -253,13 +265,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/atan.js",
+            "sourcePath": "/home/ops/formula/src/atan.js",
             "projectPath": "src/atan.js",
             "targetPath": "src/atan",
             "pageTitle": "src/atan",
             "title": "atan"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -272,13 +285,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/atan2.js",
+            "sourcePath": "/home/ops/formula/src/atan2.js",
             "projectPath": "src/atan2.js",
             "targetPath": "src/atan2",
             "pageTitle": "src/atan2",
             "title": "atan2"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -291,13 +305,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/atanh.js",
+            "sourcePath": "/home/ops/formula/src/atanh.js",
             "projectPath": "src/atanh.js",
             "targetPath": "src/atanh",
             "pageTitle": "src/atanh",
             "title": "atanh"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -310,13 +325,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/average.js",
+            "sourcePath": "/home/ops/formula/src/average.js",
             "projectPath": "src/average.js",
             "targetPath": "src/average",
             "pageTitle": "src/average",
             "title": "average"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -329,13 +345,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/base.js",
+            "sourcePath": "/home/ops/formula/src/base.js",
             "projectPath": "src/base.js",
             "targetPath": "src/base",
             "pageTitle": "src/base",
             "title": "base"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -348,13 +365,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/bin2dec.js",
+            "sourcePath": "/home/ops/formula/src/bin2dec.js",
             "projectPath": "src/bin2dec.js",
             "targetPath": "src/bin2dec",
             "pageTitle": "src/bin2dec",
             "title": "bin2dec"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -367,13 +385,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/branch.js",
+            "sourcePath": "/home/ops/formula/src/branch.js",
             "projectPath": "src/branch.js",
             "targetPath": "src/branch",
             "pageTitle": "src/branch",
             "title": "branch"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -386,13 +405,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/camelcase.js",
+            "sourcePath": "/home/ops/formula/src/camelcase.js",
             "projectPath": "src/camelcase.js",
             "targetPath": "src/camelcase",
             "pageTitle": "src/camelcase",
             "title": "camelcase"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -405,13 +425,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/ceiling.js",
+            "sourcePath": "/home/ops/formula/src/ceiling.js",
             "projectPath": "src/ceiling.js",
             "targetPath": "src/ceiling",
             "pageTitle": "src/ceiling",
             "title": "ceiling"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -424,13 +445,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/cellindex.js",
+            "sourcePath": "/home/ops/formula/src/cellindex.js",
             "projectPath": "src/cellindex.js",
             "targetPath": "src/cellindex",
             "pageTitle": "src/cellindex",
             "title": "cellindex"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -443,13 +465,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/changed.js",
+            "sourcePath": "/home/ops/formula/src/changed.js",
             "projectPath": "src/changed.js",
             "targetPath": "src/changed",
             "pageTitle": "src/changed",
             "title": "changed"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -462,13 +485,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/char.js",
+            "sourcePath": "/home/ops/formula/src/char.js",
             "projectPath": "src/char.js",
             "targetPath": "src/char",
             "pageTitle": "src/char",
             "title": "char"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -481,13 +505,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/choose.js",
+            "sourcePath": "/home/ops/formula/src/choose.js",
             "projectPath": "src/choose.js",
             "targetPath": "src/choose",
             "pageTitle": "src/choose",
             "title": "choose"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -500,13 +525,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/clean.js",
+            "sourcePath": "/home/ops/formula/src/clean.js",
             "projectPath": "src/clean.js",
             "targetPath": "src/clean",
             "pageTitle": "src/clean",
             "title": "clean"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -519,13 +545,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/code.js",
+            "sourcePath": "/home/ops/formula/src/code.js",
             "projectPath": "src/code.js",
             "targetPath": "src/code",
             "pageTitle": "src/code",
             "title": "code"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -538,13 +565,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/column.js",
+            "sourcePath": "/home/ops/formula/src/column.js",
             "projectPath": "src/column.js",
             "targetPath": "src/column",
             "pageTitle": "src/column",
             "title": "column"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -557,13 +585,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/columnletter.js",
+            "sourcePath": "/home/ops/formula/src/columnletter.js",
             "projectPath": "src/columnletter.js",
             "targetPath": "src/columnletter",
             "pageTitle": "src/columnletter",
             "title": "columnletter"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -576,13 +605,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/columnnumber.js",
+            "sourcePath": "/home/ops/formula/src/columnnumber.js",
             "projectPath": "src/columnnumber.js",
             "targetPath": "src/columnnumber",
             "pageTitle": "src/columnnumber",
             "title": "columnnumber"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -595,13 +625,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/compile.js",
+            "sourcePath": "/home/ops/formula/src/compile.js",
             "projectPath": "src/compile.js",
             "targetPath": "src/compile",
             "pageTitle": "src/compile",
             "title": "compile"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -614,13 +645,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/concatenate.js",
+            "sourcePath": "/home/ops/formula/src/concatenate.js",
             "projectPath": "src/concatenate.js",
             "targetPath": "src/concatenate",
             "pageTitle": "src/concatenate",
             "title": "concatenate"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -633,13 +665,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/constants.js",
+            "sourcePath": "/home/ops/formula/src/constants.js",
             "projectPath": "src/constants.js",
             "targetPath": "src/constants",
             "pageTitle": "src/constants",
             "title": "constants"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -652,13 +685,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/cos.js",
+            "sourcePath": "/home/ops/formula/src/cos.js",
             "projectPath": "src/cos.js",
             "targetPath": "src/cos",
             "pageTitle": "src/cos",
             "title": "cos"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -671,13 +705,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/cumipmt.js",
+            "sourcePath": "/home/ops/formula/src/cumipmt.js",
             "projectPath": "src/cumipmt.js",
             "targetPath": "src/cumipmt",
             "pageTitle": "src/cumipmt",
             "title": "cumipmt"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -690,13 +725,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/date.js",
+            "sourcePath": "/home/ops/formula/src/date.js",
             "projectPath": "src/date.js",
             "targetPath": "src/date",
             "pageTitle": "src/date",
             "title": "date"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -709,13 +745,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/datedif.js",
+            "sourcePath": "/home/ops/formula/src/datedif.js",
             "projectPath": "src/datedif.js",
             "targetPath": "src/datedif",
             "pageTitle": "src/datedif",
             "title": "datedif"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -728,13 +765,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/datevalue.js",
+            "sourcePath": "/home/ops/formula/src/datevalue.js",
             "projectPath": "src/datevalue.js",
             "targetPath": "src/datevalue",
             "pageTitle": "src/datevalue",
             "title": "datevalue"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -747,13 +785,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/day.js",
+            "sourcePath": "/home/ops/formula/src/day.js",
             "projectPath": "src/day.js",
             "targetPath": "src/day",
             "pageTitle": "src/day",
             "title": "day"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -766,13 +805,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/days360.js",
+            "sourcePath": "/home/ops/formula/src/days360.js",
             "projectPath": "src/days360.js",
             "targetPath": "src/days360",
             "pageTitle": "src/days360",
             "title": "days360"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -785,13 +825,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/dec2bin.js",
+            "sourcePath": "/home/ops/formula/src/dec2bin.js",
             "projectPath": "src/dec2bin.js",
             "targetPath": "src/dec2bin",
             "pageTitle": "src/dec2bin",
             "title": "dec2bin"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -804,13 +845,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/decodebase64.js",
+            "sourcePath": "/home/ops/formula/src/decodebase64.js",
             "projectPath": "src/decodebase64.js",
             "targetPath": "src/decodebase64",
             "pageTitle": "src/decodebase64",
             "title": "decodebase64"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -823,13 +865,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/decodejwt.js",
+            "sourcePath": "/home/ops/formula/src/decodejwt.js",
             "projectPath": "src/decodejwt.js",
             "targetPath": "src/decodejwt",
             "pageTitle": "src/decodejwt",
             "title": "decodejwt"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -842,13 +885,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/degrees.js",
+            "sourcePath": "/home/ops/formula/src/degrees.js",
             "projectPath": "src/degrees.js",
             "targetPath": "src/degrees",
             "pageTitle": "src/degrees",
             "title": "degrees"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -861,13 +905,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/diff.js",
+            "sourcePath": "/home/ops/formula/src/diff.js",
             "projectPath": "src/diff.js",
             "targetPath": "src/diff",
             "pageTitle": "src/diff",
             "title": "diff"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -880,13 +925,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/divide.js",
+            "sourcePath": "/home/ops/formula/src/divide.js",
             "projectPath": "src/divide.js",
             "targetPath": "src/divide",
             "pageTitle": "src/divide",
             "title": "divide"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -899,13 +945,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/edate.js",
+            "sourcePath": "/home/ops/formula/src/edate.js",
             "projectPath": "src/edate.js",
             "targetPath": "src/edate",
             "pageTitle": "src/edate",
             "title": "edate"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -918,13 +965,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/entries.js",
+            "sourcePath": "/home/ops/formula/src/entries.js",
             "projectPath": "src/entries.js",
             "targetPath": "src/entries",
             "pageTitle": "src/entries",
             "title": "entries"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -937,13 +985,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/eomonth.js",
+            "sourcePath": "/home/ops/formula/src/eomonth.js",
             "projectPath": "src/eomonth.js",
             "targetPath": "src/eomonth",
             "pageTitle": "src/eomonth",
             "title": "eomonth"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -956,13 +1005,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/eq.js",
+            "sourcePath": "/home/ops/formula/src/eq.js",
             "projectPath": "src/eq.js",
             "targetPath": "src/eq",
             "pageTitle": "src/eq",
             "title": "eq"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -975,13 +1025,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/error.js",
+            "sourcePath": "/home/ops/formula/src/error.js",
             "projectPath": "src/error.js",
             "targetPath": "src/error",
             "pageTitle": "src/error",
             "title": "error"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -994,13 +1045,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/even.js",
+            "sourcePath": "/home/ops/formula/src/even.js",
             "projectPath": "src/even.js",
             "targetPath": "src/even",
             "pageTitle": "src/even",
             "title": "even"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1013,13 +1065,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/exact.js",
+            "sourcePath": "/home/ops/formula/src/exact.js",
             "projectPath": "src/exact.js",
             "targetPath": "src/exact",
             "pageTitle": "src/exact",
             "title": "exact"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1032,13 +1085,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/filter.js",
+            "sourcePath": "/home/ops/formula/src/filter.js",
             "projectPath": "src/filter.js",
             "targetPath": "src/filter",
             "pageTitle": "src/filter",
             "title": "filter"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1051,13 +1105,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/find.js",
+            "sourcePath": "/home/ops/formula/src/find.js",
             "projectPath": "src/find.js",
             "targetPath": "src/find",
             "pageTitle": "src/find",
             "title": "find"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1070,13 +1125,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/flatten.js",
+            "sourcePath": "/home/ops/formula/src/flatten.js",
             "projectPath": "src/flatten.js",
             "targetPath": "src/flatten",
             "pageTitle": "src/flatten",
             "title": "flatten"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1089,13 +1145,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/floor.js",
+            "sourcePath": "/home/ops/formula/src/floor.js",
             "projectPath": "src/floor.js",
             "targetPath": "src/floor",
             "pageTitle": "src/floor",
             "title": "floor"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1108,13 +1165,134 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/functions.js",
+            "sourcePath": "/home/ops/formula/src/functions.js",
             "projectPath": "src/functions.js",
             "targetPath": "src/functions",
             "pageTitle": "src/functions",
             "title": "functions"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": [
+            {
+              "type": "heading",
+              "data": {
+                "level": 1,
+                "title": "Formula&#39;s Functions",
+                "slug": "formula39s-functions"
+              },
+              "depth": 1,
+              "children": [
+                {
+                  "type": "heading",
+                  "data": {
+                    "level": 2,
+                    "title": "Functions",
+                    "slug": "functions"
+                  },
+                  "depth": 2,
+                  "children": [
+                    {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Formula",
+                        "slug": "formula"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "LogicalRUN",
+                        "slug": "logicalrun"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Math functions",
+                        "slug": "math-functions"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Text",
+                        "slug": "text"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Lookup and reference",
+                        "slug": "lookup-and-reference"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Date manipulation",
+                        "slug": "date-manipulation"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Aggregation",
+                        "slug": "aggregation"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Finance",
+                        "slug": "finance"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Engineering",
+                        "slug": "engineering"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Arrays",
+                        "slug": "arrays"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Objects",
+                        "slug": "objects"
+                      },
+                      "depth": 3
+                    }, {
+                      "type": "heading",
+                      "data": {
+                        "level": 3,
+                        "title": "Utility",
+                        "slug": "utility"
+                      },
+                      "depth": 3
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }, {
           "type": "file",
           "data": {
@@ -1127,13 +1305,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/fv.js",
+            "sourcePath": "/home/ops/formula/src/fv.js",
             "projectPath": "src/fv.js",
             "targetPath": "src/fv",
             "pageTitle": "src/fv",
             "title": "fv"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1146,13 +1325,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/get.js",
+            "sourcePath": "/home/ops/formula/src/get.js",
             "projectPath": "src/get.js",
             "targetPath": "src/get",
             "pageTitle": "src/get",
             "title": "get"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1165,13 +1345,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/group.js",
+            "sourcePath": "/home/ops/formula/src/group.js",
             "projectPath": "src/group.js",
             "targetPath": "src/group",
             "pageTitle": "src/group",
             "title": "group"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1184,13 +1365,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/gt.js",
+            "sourcePath": "/home/ops/formula/src/gt.js",
             "projectPath": "src/gt.js",
             "targetPath": "src/gt",
             "pageTitle": "src/gt",
             "title": "gt"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1203,13 +1385,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/gte.js",
+            "sourcePath": "/home/ops/formula/src/gte.js",
             "projectPath": "src/gte.js",
             "targetPath": "src/gte",
             "pageTitle": "src/gte",
             "title": "gte"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1222,13 +1405,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/guid.js",
+            "sourcePath": "/home/ops/formula/src/guid.js",
             "projectPath": "src/guid.js",
             "targetPath": "src/guid",
             "pageTitle": "src/guid",
             "title": "guid"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1241,13 +1425,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/hlookup.js",
+            "sourcePath": "/home/ops/formula/src/hlookup.js",
             "projectPath": "src/hlookup.js",
             "targetPath": "src/hlookup",
             "pageTitle": "src/hlookup",
             "title": "hlookup"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1260,13 +1445,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/hour.js",
+            "sourcePath": "/home/ops/formula/src/hour.js",
             "projectPath": "src/hour.js",
             "targetPath": "src/hour",
             "pageTitle": "src/hour",
             "title": "hour"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1279,13 +1465,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/ifblank.js",
+            "sourcePath": "/home/ops/formula/src/ifblank.js",
             "projectPath": "src/ifblank.js",
             "targetPath": "src/ifblank",
             "pageTitle": "src/ifblank",
             "title": "ifblank"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1298,13 +1485,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/ifempty.js",
+            "sourcePath": "/home/ops/formula/src/ifempty.js",
             "projectPath": "src/ifempty.js",
             "targetPath": "src/ifempty",
             "pageTitle": "src/ifempty",
             "title": "ifempty"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1317,13 +1505,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/iferror.js",
+            "sourcePath": "/home/ops/formula/src/iferror.js",
             "projectPath": "src/iferror.js",
             "targetPath": "src/iferror",
             "pageTitle": "src/iferror",
             "title": "iferror"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1336,13 +1525,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/ifna.js",
+            "sourcePath": "/home/ops/formula/src/ifna.js",
             "projectPath": "src/ifna.js",
             "targetPath": "src/ifna",
             "pageTitle": "src/ifna",
             "title": "ifna"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1355,13 +1545,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/includes.js",
+            "sourcePath": "/home/ops/formula/src/includes.js",
             "projectPath": "src/includes.js",
             "targetPath": "src/includes",
             "pageTitle": "src/includes",
             "title": "includes"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1374,13 +1565,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/index.js",
+            "sourcePath": "/home/ops/formula/src/index.js",
             "projectPath": "src/index.js",
             "targetPath": "src/index",
             "pageTitle": "src/index",
             "title": "index"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1393,13 +1585,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/index2col.js",
+            "sourcePath": "/home/ops/formula/src/index2col.js",
             "projectPath": "src/index2col.js",
             "targetPath": "src/index2col",
             "pageTitle": "src/index2col",
             "title": "index2col"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1412,13 +1605,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/index2row.js",
+            "sourcePath": "/home/ops/formula/src/index2row.js",
             "projectPath": "src/index2row.js",
             "targetPath": "src/index2row",
             "pageTitle": "src/index2row",
             "title": "index2row"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1431,13 +1625,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/int.js",
+            "sourcePath": "/home/ops/formula/src/int.js",
             "projectPath": "src/int.js",
             "targetPath": "src/int",
             "pageTitle": "src/int",
             "title": "int"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1450,13 +1645,54 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/ipmt.js",
+            "sourcePath": "/home/ops/formula/src/interpolate.js",
+            "projectPath": "src/interpolate.js",
+            "targetPath": "src/interpolate",
+            "pageTitle": "src/interpolate",
+            "title": "interpolate"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/home/ops/formula/src/interpolator.js",
+            "projectPath": "src/interpolator.js",
+            "targetPath": "src/interpolator",
+            "pageTitle": "src/interpolator",
+            "title": "interpolator"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/home/ops/formula/src/ipmt.js",
             "projectPath": "src/ipmt.js",
             "targetPath": "src/ipmt",
             "pageTitle": "src/ipmt",
             "title": "ipmt"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1469,13 +1705,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/isarray.js",
+            "sourcePath": "/home/ops/formula/src/isarray.js",
             "projectPath": "src/isarray.js",
             "targetPath": "src/isarray",
             "pageTitle": "src/isarray",
             "title": "isarray"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1488,13 +1725,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/isasyncfunction.js",
+            "sourcePath": "/home/ops/formula/src/isasyncfunction.js",
             "projectPath": "src/isasyncfunction.js",
             "targetPath": "src/isasyncfunction",
             "pageTitle": "src/isasyncfunction",
             "title": "isasyncfunction"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1507,13 +1745,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/isbinary.js",
+            "sourcePath": "/home/ops/formula/src/isbinary.js",
             "projectPath": "src/isbinary.js",
             "targetPath": "src/isbinary",
             "pageTitle": "src/isbinary",
             "title": "isbinary"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1526,13 +1765,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/isblank.js",
+            "sourcePath": "/home/ops/formula/src/isblank.js",
             "projectPath": "src/isblank.js",
             "targetPath": "src/isblank",
             "pageTitle": "src/isblank",
             "title": "isblank"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1545,13 +1785,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/isboolean.js",
+            "sourcePath": "/home/ops/formula/src/isboolean.js",
             "projectPath": "src/isboolean.js",
             "targetPath": "src/isboolean",
             "pageTitle": "src/isboolean",
             "title": "isboolean"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1564,13 +1805,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/isdate.js",
+            "sourcePath": "/home/ops/formula/src/isdate.js",
             "projectPath": "src/isdate.js",
             "targetPath": "src/isdate",
             "pageTitle": "src/isdate",
             "title": "isdate"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1583,13 +1825,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/isemail.js",
+            "sourcePath": "/home/ops/formula/src/isemail.js",
             "projectPath": "src/isemail.js",
             "targetPath": "src/isemail",
             "pageTitle": "src/isemail",
             "title": "isemail"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1602,13 +1845,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/isempty.js",
+            "sourcePath": "/home/ops/formula/src/isempty.js",
             "projectPath": "src/isempty.js",
             "targetPath": "src/isempty",
             "pageTitle": "src/isempty",
             "title": "isempty"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1621,13 +1865,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/iserr.js",
+            "sourcePath": "/home/ops/formula/src/iserr.js",
             "projectPath": "src/iserr.js",
             "targetPath": "src/iserr",
             "pageTitle": "src/iserr",
             "title": "iserr"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1640,13 +1885,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/iserror.js",
+            "sourcePath": "/home/ops/formula/src/iserror.js",
             "projectPath": "src/iserror.js",
             "targetPath": "src/iserror",
             "pageTitle": "src/iserror",
             "title": "iserror"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1659,13 +1905,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/iseven.js",
+            "sourcePath": "/home/ops/formula/src/iseven.js",
             "projectPath": "src/iseven.js",
             "targetPath": "src/iseven",
             "pageTitle": "src/iseven",
             "title": "iseven"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1678,13 +1925,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/isfalsy.js",
+            "sourcePath": "/home/ops/formula/src/isfalsy.js",
             "projectPath": "src/isfalsy.js",
             "targetPath": "src/isfalsy",
             "pageTitle": "src/isfalsy",
             "title": "isfalsy"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1697,13 +1945,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/isfunction.js",
+            "sourcePath": "/home/ops/formula/src/isfunction.js",
             "projectPath": "src/isfunction.js",
             "targetPath": "src/isfunction",
             "pageTitle": "src/isfunction",
             "title": "isfunction"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1716,13 +1965,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/isleapyear.js",
+            "sourcePath": "/home/ops/formula/src/isleapyear.js",
             "projectPath": "src/isleapyear.js",
             "targetPath": "src/isleapyear",
             "pageTitle": "src/isleapyear",
             "title": "isleapyear"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1735,13 +1985,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/islowercase.js",
+            "sourcePath": "/home/ops/formula/src/islowercase.js",
             "projectPath": "src/islowercase.js",
             "targetPath": "src/islowercase",
             "pageTitle": "src/islowercase",
             "title": "islowercase"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1754,13 +2005,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/isna.js",
+            "sourcePath": "/home/ops/formula/src/isna.js",
             "projectPath": "src/isna.js",
             "targetPath": "src/isna",
             "pageTitle": "src/isna",
             "title": "isna"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1773,13 +2025,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/isnan.js",
+            "sourcePath": "/home/ops/formula/src/isnan.js",
             "projectPath": "src/isnan.js",
             "targetPath": "src/isnan",
             "pageTitle": "src/isnan",
             "title": "isnan"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1792,13 +2045,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/isnumber.js",
+            "sourcePath": "/home/ops/formula/src/isnumber.js",
             "projectPath": "src/isnumber.js",
             "targetPath": "src/isnumber",
             "pageTitle": "src/isnumber",
             "title": "isnumber"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1811,13 +2065,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/isobject.js",
+            "sourcePath": "/home/ops/formula/src/isobject.js",
             "projectPath": "src/isobject.js",
             "targetPath": "src/isobject",
             "pageTitle": "src/isobject",
             "title": "isobject"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1830,13 +2085,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/isodd.js",
+            "sourcePath": "/home/ops/formula/src/isodd.js",
             "projectPath": "src/isodd.js",
             "targetPath": "src/isodd",
             "pageTitle": "src/isodd",
             "title": "isodd"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1849,13 +2105,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/isoweeknum.js",
+            "sourcePath": "/home/ops/formula/src/isoweeknum.js",
             "projectPath": "src/isoweeknum.js",
             "targetPath": "src/isoweeknum",
             "pageTitle": "src/isoweeknum",
             "title": "isoweeknum"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1868,13 +2125,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/isref.js",
+            "sourcePath": "/home/ops/formula/src/isref.js",
             "projectPath": "src/isref.js",
             "targetPath": "src/isref",
             "pageTitle": "src/isref",
             "title": "isref"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1887,13 +2145,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/istext.js",
+            "sourcePath": "/home/ops/formula/src/istext.js",
             "projectPath": "src/istext.js",
             "targetPath": "src/istext",
             "pageTitle": "src/istext",
             "title": "istext"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1906,13 +2165,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/istruthy.js",
+            "sourcePath": "/home/ops/formula/src/istruthy.js",
             "projectPath": "src/istruthy.js",
             "targetPath": "src/istruthy",
             "pageTitle": "src/istruthy",
             "title": "istruthy"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1925,13 +2185,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/isuppercase.js",
+            "sourcePath": "/home/ops/formula/src/isuppercase.js",
             "projectPath": "src/isuppercase.js",
             "targetPath": "src/isuppercase",
             "pageTitle": "src/isuppercase",
             "title": "isuppercase"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1944,13 +2205,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/isurl.js",
+            "sourcePath": "/home/ops/formula/src/isurl.js",
             "projectPath": "src/isurl.js",
             "targetPath": "src/isurl",
             "pageTitle": "src/isurl",
             "title": "isurl"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1963,13 +2225,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/iswholenumber.js",
+            "sourcePath": "/home/ops/formula/src/iswholenumber.js",
             "projectPath": "src/iswholenumber.js",
             "targetPath": "src/iswholenumber",
             "pageTitle": "src/iswholenumber",
             "title": "iswholenumber"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -1982,13 +2245,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/join.js",
+            "sourcePath": "/home/ops/formula/src/join.js",
             "projectPath": "src/join.js",
             "targetPath": "src/join",
             "pageTitle": "src/join",
             "title": "join"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2001,13 +2265,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/keys.js",
+            "sourcePath": "/home/ops/formula/src/keys.js",
             "projectPath": "src/keys.js",
             "targetPath": "src/keys",
             "pageTitle": "src/keys",
             "title": "keys"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2020,13 +2285,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/left.js",
+            "sourcePath": "/home/ops/formula/src/left.js",
             "projectPath": "src/left.js",
             "targetPath": "src/left",
             "pageTitle": "src/left",
             "title": "left"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2039,13 +2305,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/len.js",
+            "sourcePath": "/home/ops/formula/src/len.js",
             "projectPath": "src/len.js",
             "targetPath": "src/len",
             "pageTitle": "src/len",
             "title": "len"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2058,13 +2325,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/lookup.js",
+            "sourcePath": "/home/ops/formula/src/lookup.js",
             "projectPath": "src/lookup.js",
             "targetPath": "src/lookup",
             "pageTitle": "src/lookup",
             "title": "lookup"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2077,13 +2345,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/lower.js",
+            "sourcePath": "/home/ops/formula/src/lower.js",
             "projectPath": "src/lower.js",
             "targetPath": "src/lower",
             "pageTitle": "src/lower",
             "title": "lower"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2096,13 +2365,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/lt.js",
+            "sourcePath": "/home/ops/formula/src/lt.js",
             "projectPath": "src/lt.js",
             "targetPath": "src/lt",
             "pageTitle": "src/lt",
             "title": "lt"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2115,13 +2385,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/lte.js",
+            "sourcePath": "/home/ops/formula/src/lte.js",
             "projectPath": "src/lte.js",
             "targetPath": "src/lte",
             "pageTitle": "src/lte",
             "title": "lte"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2134,13 +2405,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/map.js",
+            "sourcePath": "/home/ops/formula/src/map.js",
             "projectPath": "src/map.js",
             "targetPath": "src/map",
             "pageTitle": "src/map",
             "title": "map"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2153,13 +2425,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/match.js",
+            "sourcePath": "/home/ops/formula/src/match.js",
             "projectPath": "src/match.js",
             "targetPath": "src/match",
             "pageTitle": "src/match",
             "title": "match"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2172,13 +2445,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/max.js",
+            "sourcePath": "/home/ops/formula/src/max.js",
             "projectPath": "src/max.js",
             "targetPath": "src/max",
             "pageTitle": "src/max",
             "title": "max"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2191,13 +2465,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/merge.js",
+            "sourcePath": "/home/ops/formula/src/merge.js",
             "projectPath": "src/merge.js",
             "targetPath": "src/merge",
             "pageTitle": "src/merge",
             "title": "merge"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2210,13 +2485,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/min.js",
+            "sourcePath": "/home/ops/formula/src/min.js",
             "projectPath": "src/min.js",
             "targetPath": "src/min",
             "pageTitle": "src/min",
             "title": "min"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2229,13 +2505,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/minus.js",
+            "sourcePath": "/home/ops/formula/src/minus.js",
             "projectPath": "src/minus.js",
             "targetPath": "src/minus",
             "pageTitle": "src/minus",
             "title": "minus"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2248,13 +2525,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/minute.js",
+            "sourcePath": "/home/ops/formula/src/minute.js",
             "projectPath": "src/minute.js",
             "targetPath": "src/minute",
             "pageTitle": "src/minute",
             "title": "minute"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2267,13 +2545,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/mod.js",
+            "sourcePath": "/home/ops/formula/src/mod.js",
             "projectPath": "src/mod.js",
             "targetPath": "src/mod",
             "pageTitle": "src/mod",
             "title": "mod"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2286,13 +2565,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/month.js",
+            "sourcePath": "/home/ops/formula/src/month.js",
             "projectPath": "src/month.js",
             "targetPath": "src/month",
             "pageTitle": "src/month",
             "title": "month"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2305,13 +2585,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/multiply.js",
+            "sourcePath": "/home/ops/formula/src/multiply.js",
             "projectPath": "src/multiply.js",
             "targetPath": "src/multiply",
             "pageTitle": "src/multiply",
             "title": "multiply"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2324,13 +2605,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/n.js",
+            "sourcePath": "/home/ops/formula/src/n.js",
             "projectPath": "src/n.js",
             "targetPath": "src/n",
             "pageTitle": "src/n",
             "title": "n"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2343,13 +2625,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/nand.js",
+            "sourcePath": "/home/ops/formula/src/nand.js",
             "projectPath": "src/nand.js",
             "targetPath": "src/nand",
             "pageTitle": "src/nand",
             "title": "nand"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2362,13 +2645,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/ne.js",
+            "sourcePath": "/home/ops/formula/src/ne.js",
             "projectPath": "src/ne.js",
             "targetPath": "src/ne",
             "pageTitle": "src/ne",
             "title": "ne"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2381,13 +2665,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/nor.js",
+            "sourcePath": "/home/ops/formula/src/nor.js",
             "projectPath": "src/nor.js",
             "targetPath": "src/nor",
             "pageTitle": "src/nor",
             "title": "nor"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2400,13 +2685,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/not.js",
+            "sourcePath": "/home/ops/formula/src/not.js",
             "projectPath": "src/not.js",
             "targetPath": "src/not",
             "pageTitle": "src/not",
             "title": "not"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2419,13 +2705,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/notincludes.js",
+            "sourcePath": "/home/ops/formula/src/notincludes.js",
             "projectPath": "src/notincludes.js",
             "targetPath": "src/notincludes",
             "pageTitle": "src/notincludes",
             "title": "notincludes"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2438,13 +2725,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/now.js",
+            "sourcePath": "/home/ops/formula/src/now.js",
             "projectPath": "src/now.js",
             "targetPath": "src/now",
             "pageTitle": "src/now",
             "title": "now"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2457,13 +2745,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/nper.js",
+            "sourcePath": "/home/ops/formula/src/nper.js",
             "projectPath": "src/nper.js",
             "targetPath": "src/nper",
             "pageTitle": "src/nper",
             "title": "nper"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2476,13 +2765,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/npv.js",
+            "sourcePath": "/home/ops/formula/src/npv.js",
             "projectPath": "src/npv.js",
             "targetPath": "src/npv",
             "pageTitle": "src/npv",
             "title": "npv"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2495,13 +2785,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/numbers.js",
+            "sourcePath": "/home/ops/formula/src/numbers.js",
             "projectPath": "src/numbers.js",
             "targetPath": "src/numbers",
             "pageTitle": "src/numbers",
             "title": "numbers"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2514,13 +2805,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/numbervalue.js",
+            "sourcePath": "/home/ops/formula/src/numbervalue.js",
             "projectPath": "src/numbervalue.js",
             "targetPath": "src/numbervalue",
             "pageTitle": "src/numbervalue",
             "title": "numbervalue"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2533,13 +2825,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/oct2dec.js",
+            "sourcePath": "/home/ops/formula/src/oct2dec.js",
             "projectPath": "src/oct2dec.js",
             "targetPath": "src/oct2dec",
             "pageTitle": "src/oct2dec",
             "title": "oct2dec"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2552,13 +2845,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/or.js",
+            "sourcePath": "/home/ops/formula/src/or.js",
             "projectPath": "src/or.js",
             "targetPath": "src/or",
             "pageTitle": "src/or",
             "title": "or"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2571,13 +2865,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/parsebool.js",
+            "sourcePath": "/home/ops/formula/src/parsebool.js",
             "projectPath": "src/parsebool.js",
             "targetPath": "src/parsebool",
             "pageTitle": "src/parsebool",
             "title": "parsebool"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2590,13 +2885,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/parsedate.js",
+            "sourcePath": "/home/ops/formula/src/parsedate.js",
             "projectPath": "src/parsedate.js",
             "targetPath": "src/parsedate",
             "pageTitle": "src/parsedate",
             "title": "parsedate"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2609,13 +2905,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/parsequery.js",
+            "sourcePath": "/home/ops/formula/src/parsequery.js",
             "projectPath": "src/parsequery.js",
             "targetPath": "src/parsequery",
             "pageTitle": "src/parsequery",
             "title": "parsequery"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2628,13 +2925,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/parser.js",
+            "sourcePath": "/home/ops/formula/src/parser.js",
             "projectPath": "src/parser.js",
             "targetPath": "src/parser",
             "pageTitle": "src/parser",
             "title": "parser"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2647,13 +2945,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/pi.js",
+            "sourcePath": "/home/ops/formula/src/pi.js",
             "projectPath": "src/pi.js",
             "targetPath": "src/pi",
             "pageTitle": "src/pi",
             "title": "pi"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2666,13 +2965,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/pluck.js",
+            "sourcePath": "/home/ops/formula/src/pluck.js",
             "projectPath": "src/pluck.js",
             "targetPath": "src/pluck",
             "pageTitle": "src/pluck",
             "title": "pluck"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2685,13 +2985,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/plus.js",
+            "sourcePath": "/home/ops/formula/src/plus.js",
             "projectPath": "src/plus.js",
             "targetPath": "src/plus",
             "pageTitle": "src/plus",
             "title": "plus"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2704,13 +3005,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/pmt.js",
+            "sourcePath": "/home/ops/formula/src/pmt.js",
             "projectPath": "src/pmt.js",
             "targetPath": "src/pmt",
             "pageTitle": "src/pmt",
             "title": "pmt"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2723,13 +3025,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/power.js",
+            "sourcePath": "/home/ops/formula/src/power.js",
             "projectPath": "src/power.js",
             "targetPath": "src/power",
             "pageTitle": "src/power",
             "title": "power"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2742,13 +3045,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/proper.js",
+            "sourcePath": "/home/ops/formula/src/proper.js",
             "projectPath": "src/proper.js",
             "targetPath": "src/proper",
             "pageTitle": "src/proper",
             "title": "proper"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2761,13 +3065,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/pv.js",
+            "sourcePath": "/home/ops/formula/src/pv.js",
             "projectPath": "src/pv.js",
             "targetPath": "src/pv",
             "pageTitle": "src/pv",
             "title": "pv"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2780,13 +3085,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/query.js",
+            "sourcePath": "/home/ops/formula/src/query.js",
             "projectPath": "src/query.js",
             "targetPath": "src/query",
             "pageTitle": "src/query",
             "title": "query"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2799,13 +3105,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/reduce.js",
+            "sourcePath": "/home/ops/formula/src/reduce.js",
             "projectPath": "src/reduce.js",
             "targetPath": "src/reduce",
             "pageTitle": "src/reduce",
             "title": "reduce"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2818,13 +3125,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/ref.js",
+            "sourcePath": "/home/ops/formula/src/ref.js",
             "projectPath": "src/ref.js",
             "targetPath": "src/ref",
             "pageTitle": "src/ref",
             "title": "ref"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2837,13 +3145,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/replace.js",
+            "sourcePath": "/home/ops/formula/src/replace.js",
             "projectPath": "src/replace.js",
             "targetPath": "src/replace",
             "pageTitle": "src/replace",
             "title": "replace"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2856,13 +3165,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/rept.js",
+            "sourcePath": "/home/ops/formula/src/rept.js",
             "projectPath": "src/rept.js",
             "targetPath": "src/rept",
             "pageTitle": "src/rept",
             "title": "rept"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2875,13 +3185,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/right.js",
+            "sourcePath": "/home/ops/formula/src/right.js",
             "projectPath": "src/right.js",
             "targetPath": "src/right",
             "pageTitle": "src/right",
             "title": "right"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2894,13 +3205,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/round.js",
+            "sourcePath": "/home/ops/formula/src/round.js",
             "projectPath": "src/round.js",
             "targetPath": "src/round",
             "pageTitle": "src/round",
             "title": "round"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2913,13 +3225,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/roundup.js",
+            "sourcePath": "/home/ops/formula/src/roundup.js",
             "projectPath": "src/roundup.js",
             "targetPath": "src/roundup",
             "pageTitle": "src/roundup",
             "title": "roundup"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2932,13 +3245,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/run.js",
+            "sourcePath": "/home/ops/formula/src/run.js",
             "projectPath": "src/run.js",
             "targetPath": "src/run",
             "pageTitle": "src/run",
             "title": "run"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2951,13 +3265,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/search.js",
+            "sourcePath": "/home/ops/formula/src/search.js",
             "projectPath": "src/search.js",
             "targetPath": "src/search",
             "pageTitle": "src/search",
             "title": "search"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2970,13 +3285,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/second.js",
+            "sourcePath": "/home/ops/formula/src/second.js",
             "projectPath": "src/second.js",
             "targetPath": "src/second",
             "pageTitle": "src/second",
             "title": "second"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -2989,13 +3305,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/select.js",
+            "sourcePath": "/home/ops/formula/src/select.js",
             "projectPath": "src/select.js",
             "targetPath": "src/select",
             "pageTitle": "src/select",
             "title": "select"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3008,13 +3325,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/serial.js",
+            "sourcePath": "/home/ops/formula/src/serial.js",
             "projectPath": "src/serial.js",
             "targetPath": "src/serial",
             "pageTitle": "src/serial",
             "title": "serial"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3027,13 +3345,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/sin.js",
+            "sourcePath": "/home/ops/formula/src/sin.js",
             "projectPath": "src/sin.js",
             "targetPath": "src/sin",
             "pageTitle": "src/sin",
             "title": "sin"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3046,13 +3365,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/snakecase.js",
+            "sourcePath": "/home/ops/formula/src/snakecase.js",
             "projectPath": "src/snakecase.js",
             "targetPath": "src/snakecase",
             "pageTitle": "src/snakecase",
             "title": "snakecase"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3065,13 +3385,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/some.js",
+            "sourcePath": "/home/ops/formula/src/some.js",
             "projectPath": "src/some.js",
             "targetPath": "src/some",
             "pageTitle": "src/some",
             "title": "some"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3084,13 +3405,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/sort.js",
+            "sourcePath": "/home/ops/formula/src/sort.js",
             "projectPath": "src/sort.js",
             "targetPath": "src/sort",
             "pageTitle": "src/sort",
             "title": "sort"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3103,13 +3425,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/split.js",
+            "sourcePath": "/home/ops/formula/src/split.js",
             "projectPath": "src/split.js",
             "targetPath": "src/split",
             "pageTitle": "src/split",
             "title": "split"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3122,13 +3445,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/substitute.js",
+            "sourcePath": "/home/ops/formula/src/substitute.js",
             "projectPath": "src/substitute.js",
             "targetPath": "src/substitute",
             "pageTitle": "src/substitute",
             "title": "substitute"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3141,13 +3465,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/substituteAll.js",
+            "sourcePath": "/home/ops/formula/src/substituteAll.js",
             "projectPath": "src/substituteAll.js",
             "targetPath": "src/substituteAll",
             "pageTitle": "src/substituteAll",
             "title": "substituteAll"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3160,13 +3485,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/subtract.js",
+            "sourcePath": "/home/ops/formula/src/subtract.js",
             "projectPath": "src/subtract.js",
             "targetPath": "src/subtract",
             "pageTitle": "src/subtract",
             "title": "subtract"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3179,13 +3505,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/sum.js",
+            "sourcePath": "/home/ops/formula/src/sum.js",
             "projectPath": "src/sum.js",
             "targetPath": "src/sum",
             "pageTitle": "src/sum",
             "title": "sum"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3198,13 +3525,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/surroundKeys.js",
+            "sourcePath": "/home/ops/formula/src/surroundKeys.js",
             "projectPath": "src/surroundKeys.js",
             "targetPath": "src/surroundKeys",
             "pageTitle": "src/surroundKeys",
             "title": "surroundKeys"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3217,13 +3545,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/switch.js",
+            "sourcePath": "/home/ops/formula/src/switch.js",
             "projectPath": "src/switch.js",
             "targetPath": "src/switch",
             "pageTitle": "src/switch",
             "title": "switch"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3236,13 +3565,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/tan.js",
+            "sourcePath": "/home/ops/formula/src/tan.js",
             "projectPath": "src/tan.js",
             "targetPath": "src/tan",
             "pageTitle": "src/tan",
             "title": "tan"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3255,13 +3585,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/tau.js",
+            "sourcePath": "/home/ops/formula/src/tau.js",
             "projectPath": "src/tau.js",
             "targetPath": "src/tau",
             "pageTitle": "src/tau",
             "title": "tau"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3274,13 +3605,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/text.js",
+            "sourcePath": "/home/ops/formula/src/text.js",
             "projectPath": "src/text.js",
             "targetPath": "src/text",
             "pageTitle": "src/text",
             "title": "text"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3293,13 +3625,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/time.js",
+            "sourcePath": "/home/ops/formula/src/time.js",
             "projectPath": "src/time.js",
             "targetPath": "src/time",
             "pageTitle": "src/time",
             "title": "time"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3312,13 +3645,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/timevalue.js",
+            "sourcePath": "/home/ops/formula/src/timevalue.js",
             "projectPath": "src/timevalue.js",
             "targetPath": "src/timevalue",
             "pageTitle": "src/timevalue",
             "title": "timevalue"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3331,13 +3665,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/today.js",
+            "sourcePath": "/home/ops/formula/src/today.js",
             "projectPath": "src/today.js",
             "targetPath": "src/today",
             "pageTitle": "src/today",
             "title": "today"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3350,13 +3685,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/trim.js",
+            "sourcePath": "/home/ops/formula/src/trim.js",
             "projectPath": "src/trim.js",
             "targetPath": "src/trim",
             "pageTitle": "src/trim",
             "title": "trim"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3369,13 +3705,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/trunc.js",
+            "sourcePath": "/home/ops/formula/src/trunc.js",
             "projectPath": "src/trunc.js",
             "targetPath": "src/trunc",
             "pageTitle": "src/trunc",
             "title": "trunc"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3388,13 +3725,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/unflatten.js",
+            "sourcePath": "/home/ops/formula/src/unflatten.js",
             "projectPath": "src/unflatten.js",
             "targetPath": "src/unflatten",
             "pageTitle": "src/unflatten",
             "title": "unflatten"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3407,13 +3745,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/unique.js",
+            "sourcePath": "/home/ops/formula/src/unique.js",
             "projectPath": "src/unique.js",
             "targetPath": "src/unique",
             "pageTitle": "src/unique",
             "title": "unique"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3426,13 +3765,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/upper.js",
+            "sourcePath": "/home/ops/formula/src/upper.js",
             "projectPath": "src/upper.js",
             "targetPath": "src/upper",
             "pageTitle": "src/upper",
             "title": "upper"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3445,13 +3785,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/vlookup.js",
+            "sourcePath": "/home/ops/formula/src/vlookup.js",
             "projectPath": "src/vlookup.js",
             "targetPath": "src/vlookup",
             "pageTitle": "src/vlookup",
             "title": "vlookup"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3464,13 +3805,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/walker.js",
+            "sourcePath": "/home/ops/formula/src/walker.js",
             "projectPath": "src/walker.js",
             "targetPath": "src/walker",
             "pageTitle": "src/walker",
             "title": "walker"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3483,13 +3825,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/xor.js",
+            "sourcePath": "/home/ops/formula/src/xor.js",
             "projectPath": "src/xor.js",
             "targetPath": "src/xor",
             "pageTitle": "src/xor",
             "title": "xor"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3502,13 +3845,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/year.js",
+            "sourcePath": "/home/ops/formula/src/year.js",
             "projectPath": "src/year.js",
             "targetPath": "src/year",
             "pageTitle": "src/year",
             "title": "year"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -3521,13 +3865,14 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/jcfisher007/formula/src/yearfrac.js",
+            "sourcePath": "/home/ops/formula/src/yearfrac.js",
             "projectPath": "src/yearfrac.js",
             "targetPath": "src/yearfrac",
             "pageTitle": "src/yearfrac",
             "title": "yearfrac"
           },
-          "depth": 2
+          "depth": 2,
+          "outline": []
         }
       ]
     }
