@@ -1,6 +1,9 @@
 import isdate from './isdate';
 
-function interpolator(a, b) {
+// Functor to create a function that runs the percentage between two values;
+// Usage: interpolator(0, 100)(0.5) == 50
+// Credit: https://github.com/sveltejs/svelte/blob/master/src/motion/tweened.ts
+export default function interpolator(a, b) {
 	if (a === b || a !== a) return () => a;
 
 	const type = typeof a;
@@ -31,7 +34,7 @@ function interpolator(a, b) {
 		const interpolators = {};
 
 		keys.forEach(key => {
-			interpolators[key] = get_interpolator(a[key], b[key]);
+			interpolators[key] = interpolator(a[key], b[key]);
 		});
 
 		return t => {
