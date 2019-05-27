@@ -956,6 +956,16 @@ export { default as INDEX2ROW } from "./index2row";
 export { default as index2Row } from "./index2row";
 export { default as index2row } from "./index2row";
 
+// #### [interpolate](./interpolate)
+// `interpolate` computes a number a percentage distance between a and b.
+export { default as INTERPOLATE } from "./interpolate";
+export { default as interpolate } from "./interpolate";
+
+// #### [interpolator](./interpolator)
+// `interpolator` creates a function that accepts a percentage distance between a and b, used by interpolate.
+export { default as INTERPOLATOR } from "./interpolator";
+export { default as interpolator } from "./interpolator";
+
 // #### [n](./n)
 // `n` converts a `value` to a number. It supports numbers, true, false and dates.
 export { default as N } from "./n";
