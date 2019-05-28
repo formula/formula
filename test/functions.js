@@ -2,7 +2,7 @@ import test from "tape";
 import * as ff from "../src/functions";
 
 test("lower case functions should be there", function(t) {
-  t.plan(186);
+  t.plan(188);
   t.ok(ff.ABS, "abs should be there");
   t.ok(ff.ACCRINT, "accrint should be there");
   t.ok(ff.ACOS, "acos should be there");
@@ -135,6 +135,7 @@ test("lower case functions should be there", function(t) {
   t.ok(ff.NPV, "npv should be there");
   t.ok(ff.NPER, "nper should be there");
   t.ok(ff.OCT2DEC, "oct2dec should be there");
+  t.ok(ff.OVERLAP, "overlap should be there");
   t.ok(ff.OR, "or should be there");
   t.ok(ff.PARSE, "parse should be there");
   t.ok(ff.PARSEBOOL, "parsebool should be there");

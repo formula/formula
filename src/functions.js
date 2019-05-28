@@ -1003,6 +1003,11 @@ export { default as n } from "./n";
 export { default as NUMBERS } from "./numbers";
 export { default as numbers } from "./numbers";
 
+// #### [overlap](./overlap)
+// `overlap` returns true if two rectangles overlap.
+export { default as OVERLAP } from "./overlap";
+export { default as overlap } from "./overlap";
+
 // #### [ref](./ref)
 // `ref` returns a ref object that represents a range.
 export { default as REF } from "./ref";
