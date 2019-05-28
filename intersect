@@ -1,0 +1,8 @@
+ // Computes true or false if two rectangles intersect.
+ // A rect is defined as having left, right, top and bottom.
+ function intersect(a, b) {
+    return (
+      Math.max(a.left, b.left) < Math.min(a.right, b.right) &&
+      Math.max(a.top, b.top) < Math.min(a.bottom, b.bottom)
+    );
+  }
