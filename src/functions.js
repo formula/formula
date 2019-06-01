@@ -939,6 +939,11 @@ export { default as group } from "./group";
 export { default as GUID } from "./guid";
 export { default as guid } from "./guid";
 
+// #### [hash](./hash)
+// `hash` returns a new globally unique identifier (version 4).
+export { default as HASH } from "./hash";
+export { default as hash } from "./hash";
+
 // #### [int](./int)
 // `int` return the floor of a number.
 export { default as INT } from "./int";
