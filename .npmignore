@@ -6,3 +6,4 @@ src
 yarn.lock
 .editorconfig
 index.html
+.nojekyll
