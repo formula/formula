@@ -2,3 +2,7 @@ scripts
 node_modules
 test
 docs
+src
+yarn.lock
+.editorconfig
+index.html

@@ -1,6 +1,6 @@
 {
   "name": "formula",
-  "version": "3.11.0",
+  "version": "3.11.1",
   "description": "Formula compiler and function library",
   "main": "index.js",
   "types": "index.d.js",
@@ -9,7 +9,7 @@
     "test": "buble-tape-runner test/*.js | faucet",
     "docs": "groc src/*.js -o ./docs/code; groc test/*.js -o ./docs/test",
     "clean": "rm -rf lib;",
-    "build": "BABEL_ENV=production npm run build:umd && npm run build:min && npm run docs",
+    "build": "BABEL_ENV=production npm run build:umd && npm run build:min && npm run docs; rm lib/formula.mjs.js; rm lib/formula.js",
     "build:parser": "jison src/parser.jison -m commonjs -o src/parser.js",
     "build:umd": "rm -rf lib; mkdir lib; rollup -f=umd -n=Formula src/functions.js > lib/formula.mjs.js; buble lib/formula.mjs.js > lib/formula.js",
     "build:min": "uglifyjs lib/formula.js > lib/formula.min.js"
