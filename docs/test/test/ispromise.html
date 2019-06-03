@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="en"><head><title>test/ispromise</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="test/ispromise"><meta name="groc-project-path" content="test/ispromise.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">test/ispromise.js</div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">"tape"</span>;
+<span class="hljs-keyword">import</span> ispromise <span class="hljs-keyword">from</span> <span class="hljs-string">"../src/ispromise"</span>;
+
+test(<span class="hljs-string">"ispromise"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
+  t.plan(<span class="hljs-number">6</span>);
+  t.equal(ispromise(setInterval), <span class="hljs-literal">false</span>);
+  t.equal(ispromise(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{}), <span class="hljs-literal">false</span>);
+  t.equal(ispromise(<span class="hljs-number">5</span>), <span class="hljs-literal">false</span>);
+  t.equal(ispromise(<span class="hljs-string">"invalid"</span>), <span class="hljs-literal">false</span>);
+  t.equal(ispromise(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()), <span class="hljs-literal">false</span>);
+  t.equal(ispromise(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(r =&gt; r(<span class="hljs-number">1</span>))), <span class="hljs-literal">true</span>);</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>TBD: Dev tooling not ready for this test case. Manual tests pass.
+t.equal(ispromise(async function() {}), true);</p></div></div><div class="code"><div class="wrapper">});</div></div></div></div></body></html>

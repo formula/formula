@@ -113,6 +113,11 @@ export { default as lt } from "./lt";
 export { default as LTE } from "./lte";
 export { default as lte } from "./lte";
 
+// #### [identity](./identity)
+// `identity` returns the first argument.
+export { default as IDENTITY } from "./identity";
+export { default as identity } from "./identity";
+
 // #### [ifblank](./ifblank)
 // `ifempty` returns the second argument when the first argument is blank or the third argument
 export { default as IFBLANK } from "./ifblank";
@@ -249,6 +254,12 @@ export { default as isodd } from "./isodd";
 export { default as ISOWEEKNUM } from "./isoweeknum";
 export { default as ISOWeekNum } from "./isoweeknum";
 export { default as isoweeknum } from "./isoweeknum";
+
+// #### [ispromise](./ispromise)
+// `ispromise` returns true when value is a ref object.
+export { default as ISPROMISE } from "./ispromise";
+export { default as isPromise } from "./ispromise";
+export { default as ispromise } from "./ispromise";
 
 // #### [isref](./isref)
 // `isref` returns true when value is a ref object.

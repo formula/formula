@@ -2,7 +2,7 @@
 <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> ff <span class="hljs-keyword">from</span> <span class="hljs-string">"../src/functions"</span>;
 
 test(<span class="hljs-string">"lower case functions should be there"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
-  t.plan(<span class="hljs-number">183</span>);
+  t.plan(<span class="hljs-number">185</span>);
   t.ok(ff.ABS, <span class="hljs-string">"abs should be there"</span>);
   t.ok(ff.ACCRINT, <span class="hljs-string">"accrint should be there"</span>);
   t.ok(ff.ACOS, <span class="hljs-string">"acos should be there"</span>);
@@ -67,6 +67,7 @@ test(<span class="hljs-string">"lower case functions should be there"</span>, <s
   t.ok(ff.HASH, <span class="hljs-string">"hash should be there"</span>);
   t.ok(ff.HLOOKUP, <span class="hljs-string">"hlookup should be there"</span>);
   t.ok(ff.HOUR, <span class="hljs-string">"hour should be there"</span>);
+  t.ok(ff.IDENTITY, <span class="hljs-string">"identity should be there"</span>);
   t.ok(ff.IF, <span class="hljs-string">"if should be there"</span>);
   t.ok(ff.IFNA, <span class="hljs-string">"ifna should be there"</span>);
   t.ok(ff.IFBLANK, <span class="hljs-string">"ifblank should be there"</span>);
@@ -97,6 +98,7 @@ test(<span class="hljs-string">"lower case functions should be there"</span>, <s
   t.ok(ff.ISNAN, <span class="hljs-string">"isnan should be there"</span>);
   t.ok(ff.ISNUMBER, <span class="hljs-string">"isnumber should be there"</span>);
   t.ok(ff.ISODD, <span class="hljs-string">"isodd should be there"</span>);
+  t.ok(ff.ISPROMISE, <span class="hljs-string">"ispromise should be there"</span>);
   t.ok(ff.ISREF, <span class="hljs-string">"isref should be there"</span>);
   t.ok(ff.ISTEXT, <span class="hljs-string">"istext should be there"</span>);
   t.ok(ff.ISTRUTHY, <span class="hljs-string">"istruthy should be there"</span>);

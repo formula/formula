@@ -13,21 +13,6 @@ let m = {};
 // Execute a formula expression
 export default function run(exp, params = {}) {
   // if the exp is a function then return it immediately.
-  if (isFunction(exp)) return exp;
-
-  if (!isText(exp)) return error.na;
-
-  // check cached and shortcut if appropriate.
-  if (m.hasOwnProperty(exp)) {
-    // reload the compiled function.
-    compiled = m[exp];
-  } else {
-    // compile the expression.
-    var compiled = compile(exp);
-
-    // cache the compiled function.
-    m[exp] = compiled;
-  }
 
   let locals = assign({}, params);
 
@@ -39,6 +24,21 @@ export default function run(exp, params = {}) {
       }
       return locals[name];
     };
+  }
+
+  if (isFunction(exp)) return exp(locals, funcs);
+  else if (!isText(exp)) return error.na;
+
+  // check cached and shortcut if appropriate.
+  if (m.hasOwnProperty(exp)) {
+    // reload the compiled function.
+    compiled = m[exp];
+  } else {
+    // compile the expression.
+    var compiled = compile(exp);
+
+    // cache the compiled function.
+    m[exp] = compiled;
   }
 
   return compiled(locals, funcs);

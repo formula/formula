@@ -12,7 +12,7 @@ test("run: basic tests", function(t) {
 
   var timeTest = new Date() - start;
 
-  t.plan(10);
+  t.plan(12);
 
   // running the same expression 1000x should be fast (<20ms)
   t.equal(timeTest < 20, true);
@@ -27,6 +27,13 @@ test("run: basic tests", function(t) {
   t.equal(run("a!b1<>b", { a: { b1: 1 }, b: 1 }), false);
   t.equal(run("Fee<>b", { Fee: 1, b: 1 }), false);
   t.equal(run("@Fee<>b", { "@Fee": 1, b: 1 }), false);
+
+  // functions should work too and will send over the context.
+  t.equal(
+    run(context => context.get("a") === context.get("b"), { a: 1, b: 1 }),
+    true
+  );
+  t.equal(run(({ a, b }) => a === b, { a: 1, b: 1 }), true);
 });
 
 test("run: functions should work", function(t) {
