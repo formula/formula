@@ -2,7 +2,7 @@ import test from "tape";
 import * as ff from "../src/functions";
 
 test("lower case functions should be there", function(t) {
-  t.plan(185);
+  t.plan(186);
   t.ok(ff.ABS, "abs should be there");
   t.ok(ff.ACCRINT, "accrint should be there");
   t.ok(ff.ACOS, "acos should be there");
@@ -185,6 +185,7 @@ test("lower case functions should be there", function(t) {
   t.ok(ff.WALKERCONFIGDEFAULT, "walker default config should be there");
   t.ok(ff.WALKERCONFIGFP, "walker fp config should be there");
   t.ok(ff.WALKERCONFIGJS, "walker js config should be there");
+  t.ok(ff.WITHIN, "within should be there");
   t.ok(ff.XOR, "xor should be there");
   t.ok(ff.YEAR, "year should be there");
   t.ok(ff.YEARFRAC, "yearfrac should be there");

@@ -431,6 +431,12 @@ export { default as tau } from "./tau";
 export { default as TRUNC } from "./trunc";
 export { default as trunc } from "./trunc";
 
+// #### [within](./within)
+// `within(value, lower, upper)` returns true when value is between lower and upper.
+export { default as WITHIN } from "./within";
+export { default as withIn } from "./within";
+export { default as within } from "./within";
+
 // ### Text
 
 // #### [char](./char)
