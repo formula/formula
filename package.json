@@ -1,6 +1,6 @@
 {
   "name": "formula",
-  "version": "3.11.2",
+  "version": "3.12.0",
   "description": "Formula compiler and function library",
   "main": "index.js",
   "types": "index.d.js",
@@ -29,13 +29,13 @@
   },
   "homepage": "https://github.com/formula/formula#readme",
   "devDependencies": {
-    "buble": "^0.19.3",
+    "buble": "^0.19.7",
     "buble-tape-runner": "^1.0.4",
-    "faucet": "0.0.1",
-    "groc": "^0.8.0",
+    "faucet": "^0.0.1",
+    "groc": "https://github.com/FormBucketSupport/groc.git",
     "jison": "^0.4.18",
-    "rollup": "^0.26.2",
-    "tape": "^4.5.1",
-    "uglify-js": "^3.3.16"
+    "rollup": "^1.14.2",
+    "tape": "^4.10.2",
+    "uglify-js": "^3.6.0"
   }
 }

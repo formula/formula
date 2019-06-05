@@ -28,7 +28,7 @@ function assign(target, varArgs) {
 }
 
 // Ponyfill or Object.assign with empty initial object.
-export default function assign(initial, ...list) {
+export default function(initial, ...list) {
   let func = Object.assign || assign;
   return func({}, initial, ...list);
 }
