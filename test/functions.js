@@ -78,6 +78,7 @@ test("lower case functions should be there", function(t) {
   t.ok(ff.INDEX, "index should be there");
   t.ok(ff.INDEX2COL, "index2col should be there");
   t.ok(ff.INDEX2ROW, "index2row should be there");
+  t.ok(ff.INTERSECT, "intersect should be there");
   t.ok(ff.INTERPOLATE, "interpolate should be there");
   t.ok(ff.INTERPOLATOR, "interpolator should be there");
   t.ok(ff.IPMT, "ipmt should be there");

@@ -978,6 +978,11 @@ export { default as INDEX2ROW } from "./index2row";
 export { default as index2Row } from "./index2row";
 export { default as index2row } from "./index2row";
 
+// #### [intersect](./intersect)
+// `intersect` returns true if two rectangles intersect.
+export { default as INTERSECT } from "./intersect";
+export { default as intersect } from "./intersect";
+
 // #### [interpolate](./interpolate)
 // `interpolate` computes a number a percentage distance between a and b.
 export { default as INTERPOLATE } from "./interpolate";
