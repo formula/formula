@@ -1,0 +1,13 @@
+<!DOCTYPE html><html lang="en"><head><title>src/intersect</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/intersect"><meta name="groc-project-path" content="src/intersect.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/intersect.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>Computes true or false if two rectangles intersect.
+A rect is defined as having left, right, top and bottom.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> isObject <span class="hljs-keyword">from</span> <span class="hljs-string">"./isobject"</span>;
+<span class="hljs-keyword">import</span> error <span class="hljs-keyword">from</span> <span class="hljs-string">"./error"</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">intersect</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">if</span> (!isObject(a)) <span class="hljs-keyword">return</span> error.na;
+  <span class="hljs-keyword">if</span> (!isObject(b)) <span class="hljs-keyword">return</span> error.na;
+
+  <span class="hljs-keyword">return</span> (
+    <span class="hljs-built_in">Math</span>.max(a.left, b.left) &lt; <span class="hljs-built_in">Math</span>.min(a.right, b.right) &amp;&amp;
+    <span class="hljs-built_in">Math</span>.max(a.top, b.top) &lt; <span class="hljs-built_in">Math</span>.min(a.bottom, b.bottom)
+  );
+}</div></div></div></div></body></html>
