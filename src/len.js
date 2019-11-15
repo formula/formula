@@ -12,7 +12,7 @@ export default function len(value) {
     return value.length;
   }
 
-  if (value.length) {
+  if (value.length !== undefined) {
     return value.length;
   }
 

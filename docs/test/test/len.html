@@ -3,9 +3,10 @@
 <span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">"tape"</span>;
 
 test(<span class="hljs-string">"len"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
-  t.plan(<span class="hljs-number">4</span>);
+  t.plan(<span class="hljs-number">5</span>);
   t.equal(len(<span class="hljs-string">"12345"</span>), <span class="hljs-number">5</span>);
   t.equal(len([<span class="hljs-string">"12345"</span>]), <span class="hljs-number">1</span>);
+  t.equal(len([]), <span class="hljs-number">0</span>);
   t.equal(len(), error.error);
   t.equal(len(<span class="hljs-literal">NaN</span>), error.value);
 });</div></div></div></div></body></html>
