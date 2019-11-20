@@ -25,7 +25,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/abs.js",
+            "sourcePath": "/Users/jcfisher/formula/src/abs.js",
             "projectPath": "src/abs.js",
             "targetPath": "src/abs",
             "pageTitle": "src/abs",
@@ -44,7 +44,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/accrint.js",
+            "sourcePath": "/Users/jcfisher/formula/src/accrint.js",
             "projectPath": "src/accrint.js",
             "targetPath": "src/accrint",
             "pageTitle": "src/accrint",
@@ -63,7 +63,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/acos.js",
+            "sourcePath": "/Users/jcfisher/formula/src/acos.js",
             "projectPath": "src/acos.js",
             "targetPath": "src/acos",
             "pageTitle": "src/acos",
@@ -82,7 +82,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/acosh.js",
+            "sourcePath": "/Users/jcfisher/formula/src/acosh.js",
             "projectPath": "src/acosh.js",
             "targetPath": "src/acosh",
             "pageTitle": "src/acosh",
@@ -101,7 +101,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/acot.js",
+            "sourcePath": "/Users/jcfisher/formula/src/acot.js",
             "projectPath": "src/acot.js",
             "targetPath": "src/acot",
             "pageTitle": "src/acot",
@@ -120,7 +120,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/acoth.js",
+            "sourcePath": "/Users/jcfisher/formula/src/acoth.js",
             "projectPath": "src/acoth.js",
             "targetPath": "src/acoth",
             "pageTitle": "src/acoth",
@@ -139,7 +139,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/add.js",
+            "sourcePath": "/Users/jcfisher/formula/src/add.js",
             "projectPath": "src/add.js",
             "targetPath": "src/add",
             "pageTitle": "src/add",
@@ -158,7 +158,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/address.js",
+            "sourcePath": "/Users/jcfisher/formula/src/address.js",
             "projectPath": "src/address.js",
             "targetPath": "src/address",
             "pageTitle": "src/address",
@@ -177,7 +177,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/and.js",
+            "sourcePath": "/Users/jcfisher/formula/src/and.js",
             "projectPath": "src/and.js",
             "targetPath": "src/and",
             "pageTitle": "src/and",
@@ -196,7 +196,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/asin.js",
+            "sourcePath": "/Users/jcfisher/formula/src/asin.js",
             "projectPath": "src/asin.js",
             "targetPath": "src/asin",
             "pageTitle": "src/asin",
@@ -215,7 +215,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/asinh.js",
+            "sourcePath": "/Users/jcfisher/formula/src/asinh.js",
             "projectPath": "src/asinh.js",
             "targetPath": "src/asinh",
             "pageTitle": "src/asinh",
@@ -234,7 +234,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/assign.js",
+            "sourcePath": "/Users/jcfisher/formula/src/assign.js",
             "projectPath": "src/assign.js",
             "targetPath": "src/assign",
             "pageTitle": "src/assign",
@@ -253,7 +253,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/atan.js",
+            "sourcePath": "/Users/jcfisher/formula/src/atan.js",
             "projectPath": "src/atan.js",
             "targetPath": "src/atan",
             "pageTitle": "src/atan",
@@ -272,7 +272,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/atan2.js",
+            "sourcePath": "/Users/jcfisher/formula/src/atan2.js",
             "projectPath": "src/atan2.js",
             "targetPath": "src/atan2",
             "pageTitle": "src/atan2",
@@ -291,7 +291,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/atanh.js",
+            "sourcePath": "/Users/jcfisher/formula/src/atanh.js",
             "projectPath": "src/atanh.js",
             "targetPath": "src/atanh",
             "pageTitle": "src/atanh",
@@ -310,7 +310,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/average.js",
+            "sourcePath": "/Users/jcfisher/formula/src/average.js",
             "projectPath": "src/average.js",
             "targetPath": "src/average",
             "pageTitle": "src/average",
@@ -329,7 +329,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/base.js",
+            "sourcePath": "/Users/jcfisher/formula/src/base.js",
             "projectPath": "src/base.js",
             "targetPath": "src/base",
             "pageTitle": "src/base",
@@ -348,7 +348,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/bin2dec.js",
+            "sourcePath": "/Users/jcfisher/formula/src/bin2dec.js",
             "projectPath": "src/bin2dec.js",
             "targetPath": "src/bin2dec",
             "pageTitle": "src/bin2dec",
@@ -367,7 +367,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/branch.js",
+            "sourcePath": "/Users/jcfisher/formula/src/branch.js",
             "projectPath": "src/branch.js",
             "targetPath": "src/branch",
             "pageTitle": "src/branch",
@@ -386,7 +386,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/camelcase.js",
+            "sourcePath": "/Users/jcfisher/formula/src/camelcase.js",
             "projectPath": "src/camelcase.js",
             "targetPath": "src/camelcase",
             "pageTitle": "src/camelcase",
@@ -405,7 +405,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/ceiling.js",
+            "sourcePath": "/Users/jcfisher/formula/src/ceiling.js",
             "projectPath": "src/ceiling.js",
             "targetPath": "src/ceiling",
             "pageTitle": "src/ceiling",
@@ -424,7 +424,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/cellindex.js",
+            "sourcePath": "/Users/jcfisher/formula/src/cellindex.js",
             "projectPath": "src/cellindex.js",
             "targetPath": "src/cellindex",
             "pageTitle": "src/cellindex",
@@ -443,7 +443,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/changed.js",
+            "sourcePath": "/Users/jcfisher/formula/src/changed.js",
             "projectPath": "src/changed.js",
             "targetPath": "src/changed",
             "pageTitle": "src/changed",
@@ -462,7 +462,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/char.js",
+            "sourcePath": "/Users/jcfisher/formula/src/char.js",
             "projectPath": "src/char.js",
             "targetPath": "src/char",
             "pageTitle": "src/char",
@@ -481,7 +481,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/choose.js",
+            "sourcePath": "/Users/jcfisher/formula/src/choose.js",
             "projectPath": "src/choose.js",
             "targetPath": "src/choose",
             "pageTitle": "src/choose",
@@ -500,7 +500,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/clean.js",
+            "sourcePath": "/Users/jcfisher/formula/src/clean.js",
             "projectPath": "src/clean.js",
             "targetPath": "src/clean",
             "pageTitle": "src/clean",
@@ -519,7 +519,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/code.js",
+            "sourcePath": "/Users/jcfisher/formula/src/code.js",
             "projectPath": "src/code.js",
             "targetPath": "src/code",
             "pageTitle": "src/code",
@@ -538,7 +538,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/column.js",
+            "sourcePath": "/Users/jcfisher/formula/src/column.js",
             "projectPath": "src/column.js",
             "targetPath": "src/column",
             "pageTitle": "src/column",
@@ -557,7 +557,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/columnletter.js",
+            "sourcePath": "/Users/jcfisher/formula/src/columnletter.js",
             "projectPath": "src/columnletter.js",
             "targetPath": "src/columnletter",
             "pageTitle": "src/columnletter",
@@ -576,7 +576,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/columnnumber.js",
+            "sourcePath": "/Users/jcfisher/formula/src/columnnumber.js",
             "projectPath": "src/columnnumber.js",
             "targetPath": "src/columnnumber",
             "pageTitle": "src/columnnumber",
@@ -595,7 +595,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/compile.js",
+            "sourcePath": "/Users/jcfisher/formula/src/compile.js",
             "projectPath": "src/compile.js",
             "targetPath": "src/compile",
             "pageTitle": "src/compile",
@@ -614,7 +614,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/concatenate.js",
+            "sourcePath": "/Users/jcfisher/formula/src/concatenate.js",
             "projectPath": "src/concatenate.js",
             "targetPath": "src/concatenate",
             "pageTitle": "src/concatenate",
@@ -633,7 +633,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/constants.js",
+            "sourcePath": "/Users/jcfisher/formula/src/constants.js",
             "projectPath": "src/constants.js",
             "targetPath": "src/constants",
             "pageTitle": "src/constants",
@@ -652,7 +652,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/cos.js",
+            "sourcePath": "/Users/jcfisher/formula/src/cos.js",
             "projectPath": "src/cos.js",
             "targetPath": "src/cos",
             "pageTitle": "src/cos",
@@ -671,7 +671,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/cumipmt.js",
+            "sourcePath": "/Users/jcfisher/formula/src/cumipmt.js",
             "projectPath": "src/cumipmt.js",
             "targetPath": "src/cumipmt",
             "pageTitle": "src/cumipmt",
@@ -690,7 +690,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/date.js",
+            "sourcePath": "/Users/jcfisher/formula/src/date.js",
             "projectPath": "src/date.js",
             "targetPath": "src/date",
             "pageTitle": "src/date",
@@ -709,7 +709,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/datedif.js",
+            "sourcePath": "/Users/jcfisher/formula/src/datedif.js",
             "projectPath": "src/datedif.js",
             "targetPath": "src/datedif",
             "pageTitle": "src/datedif",
@@ -728,7 +728,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/datevalue.js",
+            "sourcePath": "/Users/jcfisher/formula/src/datevalue.js",
             "projectPath": "src/datevalue.js",
             "targetPath": "src/datevalue",
             "pageTitle": "src/datevalue",
@@ -747,7 +747,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/day.js",
+            "sourcePath": "/Users/jcfisher/formula/src/day.js",
             "projectPath": "src/day.js",
             "targetPath": "src/day",
             "pageTitle": "src/day",
@@ -766,7 +766,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/days360.js",
+            "sourcePath": "/Users/jcfisher/formula/src/days360.js",
             "projectPath": "src/days360.js",
             "targetPath": "src/days360",
             "pageTitle": "src/days360",
@@ -785,7 +785,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/dec2bin.js",
+            "sourcePath": "/Users/jcfisher/formula/src/dec2bin.js",
             "projectPath": "src/dec2bin.js",
             "targetPath": "src/dec2bin",
             "pageTitle": "src/dec2bin",
@@ -804,7 +804,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/decodebase64.js",
+            "sourcePath": "/Users/jcfisher/formula/src/decodebase64.js",
             "projectPath": "src/decodebase64.js",
             "targetPath": "src/decodebase64",
             "pageTitle": "src/decodebase64",
@@ -823,7 +823,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/decodejwt.js",
+            "sourcePath": "/Users/jcfisher/formula/src/decodejwt.js",
             "projectPath": "src/decodejwt.js",
             "targetPath": "src/decodejwt",
             "pageTitle": "src/decodejwt",
@@ -842,7 +842,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/degrees.js",
+            "sourcePath": "/Users/jcfisher/formula/src/degrees.js",
             "projectPath": "src/degrees.js",
             "targetPath": "src/degrees",
             "pageTitle": "src/degrees",
@@ -861,7 +861,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/diff.js",
+            "sourcePath": "/Users/jcfisher/formula/src/diff.js",
             "projectPath": "src/diff.js",
             "targetPath": "src/diff",
             "pageTitle": "src/diff",
@@ -880,7 +880,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/divide.js",
+            "sourcePath": "/Users/jcfisher/formula/src/divide.js",
             "projectPath": "src/divide.js",
             "targetPath": "src/divide",
             "pageTitle": "src/divide",
@@ -899,7 +899,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/edate.js",
+            "sourcePath": "/Users/jcfisher/formula/src/edate.js",
             "projectPath": "src/edate.js",
             "targetPath": "src/edate",
             "pageTitle": "src/edate",
@@ -918,7 +918,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/entries.js",
+            "sourcePath": "/Users/jcfisher/formula/src/entries.js",
             "projectPath": "src/entries.js",
             "targetPath": "src/entries",
             "pageTitle": "src/entries",
@@ -937,7 +937,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/eomonth.js",
+            "sourcePath": "/Users/jcfisher/formula/src/eomonth.js",
             "projectPath": "src/eomonth.js",
             "targetPath": "src/eomonth",
             "pageTitle": "src/eomonth",
@@ -956,7 +956,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/eq.js",
+            "sourcePath": "/Users/jcfisher/formula/src/eq.js",
             "projectPath": "src/eq.js",
             "targetPath": "src/eq",
             "pageTitle": "src/eq",
@@ -975,7 +975,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/error.js",
+            "sourcePath": "/Users/jcfisher/formula/src/error.js",
             "projectPath": "src/error.js",
             "targetPath": "src/error",
             "pageTitle": "src/error",
@@ -994,7 +994,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/even.js",
+            "sourcePath": "/Users/jcfisher/formula/src/even.js",
             "projectPath": "src/even.js",
             "targetPath": "src/even",
             "pageTitle": "src/even",
@@ -1013,7 +1013,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/exact.js",
+            "sourcePath": "/Users/jcfisher/formula/src/exact.js",
             "projectPath": "src/exact.js",
             "targetPath": "src/exact",
             "pageTitle": "src/exact",
@@ -1032,7 +1032,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/filter.js",
+            "sourcePath": "/Users/jcfisher/formula/src/filter.js",
             "projectPath": "src/filter.js",
             "targetPath": "src/filter",
             "pageTitle": "src/filter",
@@ -1051,7 +1051,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/find.js",
+            "sourcePath": "/Users/jcfisher/formula/src/find.js",
             "projectPath": "src/find.js",
             "targetPath": "src/find",
             "pageTitle": "src/find",
@@ -1070,7 +1070,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/flatten.js",
+            "sourcePath": "/Users/jcfisher/formula/src/flatten.js",
             "projectPath": "src/flatten.js",
             "targetPath": "src/flatten",
             "pageTitle": "src/flatten",
@@ -1089,7 +1089,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/floor.js",
+            "sourcePath": "/Users/jcfisher/formula/src/floor.js",
             "projectPath": "src/floor.js",
             "targetPath": "src/floor",
             "pageTitle": "src/floor",
@@ -1108,7 +1108,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/functions.js",
+            "sourcePath": "/Users/jcfisher/formula/src/functions.js",
             "projectPath": "src/functions.js",
             "targetPath": "src/functions",
             "pageTitle": "src/functions",
@@ -1127,7 +1127,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/fv.js",
+            "sourcePath": "/Users/jcfisher/formula/src/fv.js",
             "projectPath": "src/fv.js",
             "targetPath": "src/fv",
             "pageTitle": "src/fv",
@@ -1146,7 +1146,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/get.js",
+            "sourcePath": "/Users/jcfisher/formula/src/get.js",
             "projectPath": "src/get.js",
             "targetPath": "src/get",
             "pageTitle": "src/get",
@@ -1165,7 +1165,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/group.js",
+            "sourcePath": "/Users/jcfisher/formula/src/group.js",
             "projectPath": "src/group.js",
             "targetPath": "src/group",
             "pageTitle": "src/group",
@@ -1184,7 +1184,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/gt.js",
+            "sourcePath": "/Users/jcfisher/formula/src/gt.js",
             "projectPath": "src/gt.js",
             "targetPath": "src/gt",
             "pageTitle": "src/gt",
@@ -1203,7 +1203,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/gte.js",
+            "sourcePath": "/Users/jcfisher/formula/src/gte.js",
             "projectPath": "src/gte.js",
             "targetPath": "src/gte",
             "pageTitle": "src/gte",
@@ -1222,7 +1222,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/guid.js",
+            "sourcePath": "/Users/jcfisher/formula/src/guid.js",
             "projectPath": "src/guid.js",
             "targetPath": "src/guid",
             "pageTitle": "src/guid",
@@ -1241,7 +1241,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/hash.js",
+            "sourcePath": "/Users/jcfisher/formula/src/hash.js",
             "projectPath": "src/hash.js",
             "targetPath": "src/hash",
             "pageTitle": "src/hash",
@@ -1260,7 +1260,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/hlookup.js",
+            "sourcePath": "/Users/jcfisher/formula/src/hlookup.js",
             "projectPath": "src/hlookup.js",
             "targetPath": "src/hlookup",
             "pageTitle": "src/hlookup",
@@ -1279,7 +1279,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/hour.js",
+            "sourcePath": "/Users/jcfisher/formula/src/hour.js",
             "projectPath": "src/hour.js",
             "targetPath": "src/hour",
             "pageTitle": "src/hour",
@@ -1298,7 +1298,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/identity.js",
+            "sourcePath": "/Users/jcfisher/formula/src/identity.js",
             "projectPath": "src/identity.js",
             "targetPath": "src/identity",
             "pageTitle": "src/identity",
@@ -1317,7 +1317,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/ifblank.js",
+            "sourcePath": "/Users/jcfisher/formula/src/ifblank.js",
             "projectPath": "src/ifblank.js",
             "targetPath": "src/ifblank",
             "pageTitle": "src/ifblank",
@@ -1336,7 +1336,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/ifempty.js",
+            "sourcePath": "/Users/jcfisher/formula/src/ifempty.js",
             "projectPath": "src/ifempty.js",
             "targetPath": "src/ifempty",
             "pageTitle": "src/ifempty",
@@ -1355,7 +1355,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/iferror.js",
+            "sourcePath": "/Users/jcfisher/formula/src/iferror.js",
             "projectPath": "src/iferror.js",
             "targetPath": "src/iferror",
             "pageTitle": "src/iferror",
@@ -1374,7 +1374,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/ifna.js",
+            "sourcePath": "/Users/jcfisher/formula/src/ifna.js",
             "projectPath": "src/ifna.js",
             "targetPath": "src/ifna",
             "pageTitle": "src/ifna",
@@ -1393,7 +1393,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/includes.js",
+            "sourcePath": "/Users/jcfisher/formula/src/includes.js",
             "projectPath": "src/includes.js",
             "targetPath": "src/includes",
             "pageTitle": "src/includes",
@@ -1412,7 +1412,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/index.js",
+            "sourcePath": "/Users/jcfisher/formula/src/index.js",
             "projectPath": "src/index.js",
             "targetPath": "src/index",
             "pageTitle": "src/index",
@@ -1431,7 +1431,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/index2col.js",
+            "sourcePath": "/Users/jcfisher/formula/src/index2col.js",
             "projectPath": "src/index2col.js",
             "targetPath": "src/index2col",
             "pageTitle": "src/index2col",
@@ -1450,7 +1450,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/index2row.js",
+            "sourcePath": "/Users/jcfisher/formula/src/index2row.js",
             "projectPath": "src/index2row.js",
             "targetPath": "src/index2row",
             "pageTitle": "src/index2row",
@@ -1469,7 +1469,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/int.js",
+            "sourcePath": "/Users/jcfisher/formula/src/int.js",
             "projectPath": "src/int.js",
             "targetPath": "src/int",
             "pageTitle": "src/int",
@@ -1488,7 +1488,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/interpolate.js",
+            "sourcePath": "/Users/jcfisher/formula/src/interpolate.js",
             "projectPath": "src/interpolate.js",
             "targetPath": "src/interpolate",
             "pageTitle": "src/interpolate",
@@ -1507,7 +1507,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/interpolator.js",
+            "sourcePath": "/Users/jcfisher/formula/src/interpolator.js",
             "projectPath": "src/interpolator.js",
             "targetPath": "src/interpolator",
             "pageTitle": "src/interpolator",
@@ -1526,7 +1526,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/intersect.js",
+            "sourcePath": "/Users/jcfisher/formula/src/intersect.js",
             "projectPath": "src/intersect.js",
             "targetPath": "src/intersect",
             "pageTitle": "src/intersect",
@@ -1545,7 +1545,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/ipmt.js",
+            "sourcePath": "/Users/jcfisher/formula/src/ipmt.js",
             "projectPath": "src/ipmt.js",
             "targetPath": "src/ipmt",
             "pageTitle": "src/ipmt",
@@ -1564,7 +1564,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/isarray.js",
+            "sourcePath": "/Users/jcfisher/formula/src/isarray.js",
             "projectPath": "src/isarray.js",
             "targetPath": "src/isarray",
             "pageTitle": "src/isarray",
@@ -1583,7 +1583,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/isasyncfunction.js",
+            "sourcePath": "/Users/jcfisher/formula/src/isasyncfunction.js",
             "projectPath": "src/isasyncfunction.js",
             "targetPath": "src/isasyncfunction",
             "pageTitle": "src/isasyncfunction",
@@ -1602,7 +1602,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/isbinary.js",
+            "sourcePath": "/Users/jcfisher/formula/src/isbinary.js",
             "projectPath": "src/isbinary.js",
             "targetPath": "src/isbinary",
             "pageTitle": "src/isbinary",
@@ -1621,7 +1621,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/isblank.js",
+            "sourcePath": "/Users/jcfisher/formula/src/isblank.js",
             "projectPath": "src/isblank.js",
             "targetPath": "src/isblank",
             "pageTitle": "src/isblank",
@@ -1640,7 +1640,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/isboolean.js",
+            "sourcePath": "/Users/jcfisher/formula/src/isboolean.js",
             "projectPath": "src/isboolean.js",
             "targetPath": "src/isboolean",
             "pageTitle": "src/isboolean",
@@ -1659,7 +1659,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/isdate.js",
+            "sourcePath": "/Users/jcfisher/formula/src/isdate.js",
             "projectPath": "src/isdate.js",
             "targetPath": "src/isdate",
             "pageTitle": "src/isdate",
@@ -1678,7 +1678,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/isemail.js",
+            "sourcePath": "/Users/jcfisher/formula/src/isemail.js",
             "projectPath": "src/isemail.js",
             "targetPath": "src/isemail",
             "pageTitle": "src/isemail",
@@ -1697,7 +1697,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/isempty.js",
+            "sourcePath": "/Users/jcfisher/formula/src/isempty.js",
             "projectPath": "src/isempty.js",
             "targetPath": "src/isempty",
             "pageTitle": "src/isempty",
@@ -1716,7 +1716,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/iserr.js",
+            "sourcePath": "/Users/jcfisher/formula/src/iserr.js",
             "projectPath": "src/iserr.js",
             "targetPath": "src/iserr",
             "pageTitle": "src/iserr",
@@ -1735,7 +1735,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/iserror.js",
+            "sourcePath": "/Users/jcfisher/formula/src/iserror.js",
             "projectPath": "src/iserror.js",
             "targetPath": "src/iserror",
             "pageTitle": "src/iserror",
@@ -1754,7 +1754,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/iseven.js",
+            "sourcePath": "/Users/jcfisher/formula/src/iseven.js",
             "projectPath": "src/iseven.js",
             "targetPath": "src/iseven",
             "pageTitle": "src/iseven",
@@ -1773,7 +1773,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/isfalsy.js",
+            "sourcePath": "/Users/jcfisher/formula/src/isfalsy.js",
             "projectPath": "src/isfalsy.js",
             "targetPath": "src/isfalsy",
             "pageTitle": "src/isfalsy",
@@ -1792,7 +1792,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/isfunction.js",
+            "sourcePath": "/Users/jcfisher/formula/src/isfunction.js",
             "projectPath": "src/isfunction.js",
             "targetPath": "src/isfunction",
             "pageTitle": "src/isfunction",
@@ -1811,7 +1811,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/isleapyear.js",
+            "sourcePath": "/Users/jcfisher/formula/src/isleapyear.js",
             "projectPath": "src/isleapyear.js",
             "targetPath": "src/isleapyear",
             "pageTitle": "src/isleapyear",
@@ -1830,7 +1830,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/islowercase.js",
+            "sourcePath": "/Users/jcfisher/formula/src/islowercase.js",
             "projectPath": "src/islowercase.js",
             "targetPath": "src/islowercase",
             "pageTitle": "src/islowercase",
@@ -1849,7 +1849,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/isna.js",
+            "sourcePath": "/Users/jcfisher/formula/src/isna.js",
             "projectPath": "src/isna.js",
             "targetPath": "src/isna",
             "pageTitle": "src/isna",
@@ -1868,7 +1868,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/isnan.js",
+            "sourcePath": "/Users/jcfisher/formula/src/isnan.js",
             "projectPath": "src/isnan.js",
             "targetPath": "src/isnan",
             "pageTitle": "src/isnan",
@@ -1887,7 +1887,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/isnumber.js",
+            "sourcePath": "/Users/jcfisher/formula/src/isnumber.js",
             "projectPath": "src/isnumber.js",
             "targetPath": "src/isnumber",
             "pageTitle": "src/isnumber",
@@ -1906,7 +1906,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/isobject.js",
+            "sourcePath": "/Users/jcfisher/formula/src/isobject.js",
             "projectPath": "src/isobject.js",
             "targetPath": "src/isobject",
             "pageTitle": "src/isobject",
@@ -1925,7 +1925,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/isodd.js",
+            "sourcePath": "/Users/jcfisher/formula/src/isodd.js",
             "projectPath": "src/isodd.js",
             "targetPath": "src/isodd",
             "pageTitle": "src/isodd",
@@ -1944,7 +1944,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/isoweeknum.js",
+            "sourcePath": "/Users/jcfisher/formula/src/isoweeknum.js",
             "projectPath": "src/isoweeknum.js",
             "targetPath": "src/isoweeknum",
             "pageTitle": "src/isoweeknum",
@@ -1963,7 +1963,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/ispromise.js",
+            "sourcePath": "/Users/jcfisher/formula/src/ispromise.js",
             "projectPath": "src/ispromise.js",
             "targetPath": "src/ispromise",
             "pageTitle": "src/ispromise",
@@ -1982,7 +1982,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/isref.js",
+            "sourcePath": "/Users/jcfisher/formula/src/isref.js",
             "projectPath": "src/isref.js",
             "targetPath": "src/isref",
             "pageTitle": "src/isref",
@@ -2001,7 +2001,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/istext.js",
+            "sourcePath": "/Users/jcfisher/formula/src/istext.js",
             "projectPath": "src/istext.js",
             "targetPath": "src/istext",
             "pageTitle": "src/istext",
@@ -2020,7 +2020,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/istruthy.js",
+            "sourcePath": "/Users/jcfisher/formula/src/istruthy.js",
             "projectPath": "src/istruthy.js",
             "targetPath": "src/istruthy",
             "pageTitle": "src/istruthy",
@@ -2039,7 +2039,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/isuppercase.js",
+            "sourcePath": "/Users/jcfisher/formula/src/isuppercase.js",
             "projectPath": "src/isuppercase.js",
             "targetPath": "src/isuppercase",
             "pageTitle": "src/isuppercase",
@@ -2058,7 +2058,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/isurl.js",
+            "sourcePath": "/Users/jcfisher/formula/src/isurl.js",
             "projectPath": "src/isurl.js",
             "targetPath": "src/isurl",
             "pageTitle": "src/isurl",
@@ -2077,7 +2077,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/iswholenumber.js",
+            "sourcePath": "/Users/jcfisher/formula/src/iswholenumber.js",
             "projectPath": "src/iswholenumber.js",
             "targetPath": "src/iswholenumber",
             "pageTitle": "src/iswholenumber",
@@ -2096,7 +2096,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/join.js",
+            "sourcePath": "/Users/jcfisher/formula/src/join.js",
             "projectPath": "src/join.js",
             "targetPath": "src/join",
             "pageTitle": "src/join",
@@ -2115,7 +2115,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/keys.js",
+            "sourcePath": "/Users/jcfisher/formula/src/keys.js",
             "projectPath": "src/keys.js",
             "targetPath": "src/keys",
             "pageTitle": "src/keys",
@@ -2134,7 +2134,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/left.js",
+            "sourcePath": "/Users/jcfisher/formula/src/left.js",
             "projectPath": "src/left.js",
             "targetPath": "src/left",
             "pageTitle": "src/left",
@@ -2153,7 +2153,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/len.js",
+            "sourcePath": "/Users/jcfisher/formula/src/len.js",
             "projectPath": "src/len.js",
             "targetPath": "src/len",
             "pageTitle": "src/len",
@@ -2172,7 +2172,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/lookup.js",
+            "sourcePath": "/Users/jcfisher/formula/src/lookup.js",
             "projectPath": "src/lookup.js",
             "targetPath": "src/lookup",
             "pageTitle": "src/lookup",
@@ -2191,7 +2191,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/lower.js",
+            "sourcePath": "/Users/jcfisher/formula/src/lower.js",
             "projectPath": "src/lower.js",
             "targetPath": "src/lower",
             "pageTitle": "src/lower",
@@ -2210,7 +2210,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/lt.js",
+            "sourcePath": "/Users/jcfisher/formula/src/lt.js",
             "projectPath": "src/lt.js",
             "targetPath": "src/lt",
             "pageTitle": "src/lt",
@@ -2229,7 +2229,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/lte.js",
+            "sourcePath": "/Users/jcfisher/formula/src/lte.js",
             "projectPath": "src/lte.js",
             "targetPath": "src/lte",
             "pageTitle": "src/lte",
@@ -2248,7 +2248,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/map.js",
+            "sourcePath": "/Users/jcfisher/formula/src/map.js",
             "projectPath": "src/map.js",
             "targetPath": "src/map",
             "pageTitle": "src/map",
@@ -2267,7 +2267,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/match.js",
+            "sourcePath": "/Users/jcfisher/formula/src/match.js",
             "projectPath": "src/match.js",
             "targetPath": "src/match",
             "pageTitle": "src/match",
@@ -2286,7 +2286,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/max.js",
+            "sourcePath": "/Users/jcfisher/formula/src/max.js",
             "projectPath": "src/max.js",
             "targetPath": "src/max",
             "pageTitle": "src/max",
@@ -2305,7 +2305,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/merge.js",
+            "sourcePath": "/Users/jcfisher/formula/src/merge.js",
             "projectPath": "src/merge.js",
             "targetPath": "src/merge",
             "pageTitle": "src/merge",
@@ -2324,7 +2324,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/min.js",
+            "sourcePath": "/Users/jcfisher/formula/src/min.js",
             "projectPath": "src/min.js",
             "targetPath": "src/min",
             "pageTitle": "src/min",
@@ -2343,7 +2343,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/minus.js",
+            "sourcePath": "/Users/jcfisher/formula/src/minus.js",
             "projectPath": "src/minus.js",
             "targetPath": "src/minus",
             "pageTitle": "src/minus",
@@ -2362,7 +2362,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/minute.js",
+            "sourcePath": "/Users/jcfisher/formula/src/minute.js",
             "projectPath": "src/minute.js",
             "targetPath": "src/minute",
             "pageTitle": "src/minute",
@@ -2381,7 +2381,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/mod.js",
+            "sourcePath": "/Users/jcfisher/formula/src/mod.js",
             "projectPath": "src/mod.js",
             "targetPath": "src/mod",
             "pageTitle": "src/mod",
@@ -2400,7 +2400,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/month.js",
+            "sourcePath": "/Users/jcfisher/formula/src/month.js",
             "projectPath": "src/month.js",
             "targetPath": "src/month",
             "pageTitle": "src/month",
@@ -2419,7 +2419,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/multiply.js",
+            "sourcePath": "/Users/jcfisher/formula/src/multiply.js",
             "projectPath": "src/multiply.js",
             "targetPath": "src/multiply",
             "pageTitle": "src/multiply",
@@ -2438,7 +2438,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/n.js",
+            "sourcePath": "/Users/jcfisher/formula/src/n.js",
             "projectPath": "src/n.js",
             "targetPath": "src/n",
             "pageTitle": "src/n",
@@ -2457,7 +2457,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/nand.js",
+            "sourcePath": "/Users/jcfisher/formula/src/nand.js",
             "projectPath": "src/nand.js",
             "targetPath": "src/nand",
             "pageTitle": "src/nand",
@@ -2476,7 +2476,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/ne.js",
+            "sourcePath": "/Users/jcfisher/formula/src/ne.js",
             "projectPath": "src/ne.js",
             "targetPath": "src/ne",
             "pageTitle": "src/ne",
@@ -2495,7 +2495,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/nor.js",
+            "sourcePath": "/Users/jcfisher/formula/src/nor.js",
             "projectPath": "src/nor.js",
             "targetPath": "src/nor",
             "pageTitle": "src/nor",
@@ -2514,7 +2514,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/not.js",
+            "sourcePath": "/Users/jcfisher/formula/src/not.js",
             "projectPath": "src/not.js",
             "targetPath": "src/not",
             "pageTitle": "src/not",
@@ -2533,7 +2533,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/notincludes.js",
+            "sourcePath": "/Users/jcfisher/formula/src/notincludes.js",
             "projectPath": "src/notincludes.js",
             "targetPath": "src/notincludes",
             "pageTitle": "src/notincludes",
@@ -2552,7 +2552,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/now.js",
+            "sourcePath": "/Users/jcfisher/formula/src/now.js",
             "projectPath": "src/now.js",
             "targetPath": "src/now",
             "pageTitle": "src/now",
@@ -2571,7 +2571,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/nper.js",
+            "sourcePath": "/Users/jcfisher/formula/src/nper.js",
             "projectPath": "src/nper.js",
             "targetPath": "src/nper",
             "pageTitle": "src/nper",
@@ -2590,7 +2590,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/npv.js",
+            "sourcePath": "/Users/jcfisher/formula/src/npv.js",
             "projectPath": "src/npv.js",
             "targetPath": "src/npv",
             "pageTitle": "src/npv",
@@ -2609,7 +2609,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/numbers.js",
+            "sourcePath": "/Users/jcfisher/formula/src/numbers.js",
             "projectPath": "src/numbers.js",
             "targetPath": "src/numbers",
             "pageTitle": "src/numbers",
@@ -2628,7 +2628,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/numbervalue.js",
+            "sourcePath": "/Users/jcfisher/formula/src/numbervalue.js",
             "projectPath": "src/numbervalue.js",
             "targetPath": "src/numbervalue",
             "pageTitle": "src/numbervalue",
@@ -2647,7 +2647,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/oct2dec.js",
+            "sourcePath": "/Users/jcfisher/formula/src/oct2dec.js",
             "projectPath": "src/oct2dec.js",
             "targetPath": "src/oct2dec",
             "pageTitle": "src/oct2dec",
@@ -2666,7 +2666,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/or.js",
+            "sourcePath": "/Users/jcfisher/formula/src/or.js",
             "projectPath": "src/or.js",
             "targetPath": "src/or",
             "pageTitle": "src/or",
@@ -2685,7 +2685,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/overlap.js",
+            "sourcePath": "/Users/jcfisher/formula/src/overlap.js",
             "projectPath": "src/overlap.js",
             "targetPath": "src/overlap",
             "pageTitle": "src/overlap",
@@ -2704,7 +2704,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/parsebool.js",
+            "sourcePath": "/Users/jcfisher/formula/src/parsebool.js",
             "projectPath": "src/parsebool.js",
             "targetPath": "src/parsebool",
             "pageTitle": "src/parsebool",
@@ -2723,7 +2723,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/parsedate.js",
+            "sourcePath": "/Users/jcfisher/formula/src/parsedate.js",
             "projectPath": "src/parsedate.js",
             "targetPath": "src/parsedate",
             "pageTitle": "src/parsedate",
@@ -2742,7 +2742,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/parsequery.js",
+            "sourcePath": "/Users/jcfisher/formula/src/parsequery.js",
             "projectPath": "src/parsequery.js",
             "targetPath": "src/parsequery",
             "pageTitle": "src/parsequery",
@@ -2761,7 +2761,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/parser.js",
+            "sourcePath": "/Users/jcfisher/formula/src/parser.js",
             "projectPath": "src/parser.js",
             "targetPath": "src/parser",
             "pageTitle": "src/parser",
@@ -2780,7 +2780,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/pi.js",
+            "sourcePath": "/Users/jcfisher/formula/src/pi.js",
             "projectPath": "src/pi.js",
             "targetPath": "src/pi",
             "pageTitle": "src/pi",
@@ -2799,7 +2799,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/pluck.js",
+            "sourcePath": "/Users/jcfisher/formula/src/pluck.js",
             "projectPath": "src/pluck.js",
             "targetPath": "src/pluck",
             "pageTitle": "src/pluck",
@@ -2818,7 +2818,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/plus.js",
+            "sourcePath": "/Users/jcfisher/formula/src/plus.js",
             "projectPath": "src/plus.js",
             "targetPath": "src/plus",
             "pageTitle": "src/plus",
@@ -2837,7 +2837,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/pmt.js",
+            "sourcePath": "/Users/jcfisher/formula/src/pmt.js",
             "projectPath": "src/pmt.js",
             "targetPath": "src/pmt",
             "pageTitle": "src/pmt",
@@ -2856,7 +2856,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/power.js",
+            "sourcePath": "/Users/jcfisher/formula/src/power.js",
             "projectPath": "src/power.js",
             "targetPath": "src/power",
             "pageTitle": "src/power",
@@ -2875,7 +2875,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/proper.js",
+            "sourcePath": "/Users/jcfisher/formula/src/proper.js",
             "projectPath": "src/proper.js",
             "targetPath": "src/proper",
             "pageTitle": "src/proper",
@@ -2894,7 +2894,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/pv.js",
+            "sourcePath": "/Users/jcfisher/formula/src/pv.js",
             "projectPath": "src/pv.js",
             "targetPath": "src/pv",
             "pageTitle": "src/pv",
@@ -2913,7 +2913,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/query.js",
+            "sourcePath": "/Users/jcfisher/formula/src/query.js",
             "projectPath": "src/query.js",
             "targetPath": "src/query",
             "pageTitle": "src/query",
@@ -2932,7 +2932,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/reduce.js",
+            "sourcePath": "/Users/jcfisher/formula/src/reduce.js",
             "projectPath": "src/reduce.js",
             "targetPath": "src/reduce",
             "pageTitle": "src/reduce",
@@ -2951,7 +2951,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/ref.js",
+            "sourcePath": "/Users/jcfisher/formula/src/ref.js",
             "projectPath": "src/ref.js",
             "targetPath": "src/ref",
             "pageTitle": "src/ref",
@@ -2970,7 +2970,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/replace.js",
+            "sourcePath": "/Users/jcfisher/formula/src/replace.js",
             "projectPath": "src/replace.js",
             "targetPath": "src/replace",
             "pageTitle": "src/replace",
@@ -2989,7 +2989,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/rept.js",
+            "sourcePath": "/Users/jcfisher/formula/src/rept.js",
             "projectPath": "src/rept.js",
             "targetPath": "src/rept",
             "pageTitle": "src/rept",
@@ -3008,7 +3008,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/right.js",
+            "sourcePath": "/Users/jcfisher/formula/src/right.js",
             "projectPath": "src/right.js",
             "targetPath": "src/right",
             "pageTitle": "src/right",
@@ -3027,7 +3027,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/round.js",
+            "sourcePath": "/Users/jcfisher/formula/src/round.js",
             "projectPath": "src/round.js",
             "targetPath": "src/round",
             "pageTitle": "src/round",
@@ -3046,7 +3046,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/roundup.js",
+            "sourcePath": "/Users/jcfisher/formula/src/roundup.js",
             "projectPath": "src/roundup.js",
             "targetPath": "src/roundup",
             "pageTitle": "src/roundup",
@@ -3065,14 +3065,13 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/run.js",
+            "sourcePath": "/Users/jcfisher/formula/src/run.js",
             "projectPath": "src/run.js",
             "targetPath": "src/run",
             "pageTitle": "src/run",
             "title": "run"
           },
-          "depth": 2,
-          "outline": []
+          "depth": 2
         }, {
           "type": "file",
           "data": {
@@ -3085,7 +3084,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/search.js",
+            "sourcePath": "/Users/jcfisher/formula/src/search.js",
             "projectPath": "src/search.js",
             "targetPath": "src/search",
             "pageTitle": "src/search",
@@ -3104,7 +3103,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/second.js",
+            "sourcePath": "/Users/jcfisher/formula/src/second.js",
             "projectPath": "src/second.js",
             "targetPath": "src/second",
             "pageTitle": "src/second",
@@ -3123,7 +3122,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/select.js",
+            "sourcePath": "/Users/jcfisher/formula/src/select.js",
             "projectPath": "src/select.js",
             "targetPath": "src/select",
             "pageTitle": "src/select",
@@ -3142,7 +3141,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/serial.js",
+            "sourcePath": "/Users/jcfisher/formula/src/serial.js",
             "projectPath": "src/serial.js",
             "targetPath": "src/serial",
             "pageTitle": "src/serial",
@@ -3161,7 +3160,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/sin.js",
+            "sourcePath": "/Users/jcfisher/formula/src/sin.js",
             "projectPath": "src/sin.js",
             "targetPath": "src/sin",
             "pageTitle": "src/sin",
@@ -3180,7 +3179,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/snakecase.js",
+            "sourcePath": "/Users/jcfisher/formula/src/snakecase.js",
             "projectPath": "src/snakecase.js",
             "targetPath": "src/snakecase",
             "pageTitle": "src/snakecase",
@@ -3199,7 +3198,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/some.js",
+            "sourcePath": "/Users/jcfisher/formula/src/some.js",
             "projectPath": "src/some.js",
             "targetPath": "src/some",
             "pageTitle": "src/some",
@@ -3218,7 +3217,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/sort.js",
+            "sourcePath": "/Users/jcfisher/formula/src/sort.js",
             "projectPath": "src/sort.js",
             "targetPath": "src/sort",
             "pageTitle": "src/sort",
@@ -3237,7 +3236,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/split.js",
+            "sourcePath": "/Users/jcfisher/formula/src/split.js",
             "projectPath": "src/split.js",
             "targetPath": "src/split",
             "pageTitle": "src/split",
@@ -3256,7 +3255,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/substitute.js",
+            "sourcePath": "/Users/jcfisher/formula/src/substitute.js",
             "projectPath": "src/substitute.js",
             "targetPath": "src/substitute",
             "pageTitle": "src/substitute",
@@ -3275,7 +3274,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/substituteAll.js",
+            "sourcePath": "/Users/jcfisher/formula/src/substituteAll.js",
             "projectPath": "src/substituteAll.js",
             "targetPath": "src/substituteAll",
             "pageTitle": "src/substituteAll",
@@ -3294,7 +3293,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/subtract.js",
+            "sourcePath": "/Users/jcfisher/formula/src/subtract.js",
             "projectPath": "src/subtract.js",
             "targetPath": "src/subtract",
             "pageTitle": "src/subtract",
@@ -3313,7 +3312,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/sum.js",
+            "sourcePath": "/Users/jcfisher/formula/src/sum.js",
             "projectPath": "src/sum.js",
             "targetPath": "src/sum",
             "pageTitle": "src/sum",
@@ -3332,7 +3331,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/surroundKeys.js",
+            "sourcePath": "/Users/jcfisher/formula/src/surroundKeys.js",
             "projectPath": "src/surroundKeys.js",
             "targetPath": "src/surroundKeys",
             "pageTitle": "src/surroundKeys",
@@ -3351,7 +3350,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/switch.js",
+            "sourcePath": "/Users/jcfisher/formula/src/switch.js",
             "projectPath": "src/switch.js",
             "targetPath": "src/switch",
             "pageTitle": "src/switch",
@@ -3370,7 +3369,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/tan.js",
+            "sourcePath": "/Users/jcfisher/formula/src/tan.js",
             "projectPath": "src/tan.js",
             "targetPath": "src/tan",
             "pageTitle": "src/tan",
@@ -3389,7 +3388,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/tau.js",
+            "sourcePath": "/Users/jcfisher/formula/src/tau.js",
             "projectPath": "src/tau.js",
             "targetPath": "src/tau",
             "pageTitle": "src/tau",
@@ -3408,7 +3407,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/text.js",
+            "sourcePath": "/Users/jcfisher/formula/src/text.js",
             "projectPath": "src/text.js",
             "targetPath": "src/text",
             "pageTitle": "src/text",
@@ -3427,7 +3426,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/time.js",
+            "sourcePath": "/Users/jcfisher/formula/src/time.js",
             "projectPath": "src/time.js",
             "targetPath": "src/time",
             "pageTitle": "src/time",
@@ -3446,7 +3445,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/timevalue.js",
+            "sourcePath": "/Users/jcfisher/formula/src/timevalue.js",
             "projectPath": "src/timevalue.js",
             "targetPath": "src/timevalue",
             "pageTitle": "src/timevalue",
@@ -3465,7 +3464,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/today.js",
+            "sourcePath": "/Users/jcfisher/formula/src/today.js",
             "projectPath": "src/today.js",
             "targetPath": "src/today",
             "pageTitle": "src/today",
@@ -3484,7 +3483,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/trim.js",
+            "sourcePath": "/Users/jcfisher/formula/src/trim.js",
             "projectPath": "src/trim.js",
             "targetPath": "src/trim",
             "pageTitle": "src/trim",
@@ -3503,7 +3502,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/trunc.js",
+            "sourcePath": "/Users/jcfisher/formula/src/trunc.js",
             "projectPath": "src/trunc.js",
             "targetPath": "src/trunc",
             "pageTitle": "src/trunc",
@@ -3522,7 +3521,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/unflatten.js",
+            "sourcePath": "/Users/jcfisher/formula/src/unflatten.js",
             "projectPath": "src/unflatten.js",
             "targetPath": "src/unflatten",
             "pageTitle": "src/unflatten",
@@ -3541,7 +3540,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/unique.js",
+            "sourcePath": "/Users/jcfisher/formula/src/unique.js",
             "projectPath": "src/unique.js",
             "targetPath": "src/unique",
             "pageTitle": "src/unique",
@@ -3560,7 +3559,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/upper.js",
+            "sourcePath": "/Users/jcfisher/formula/src/upper.js",
             "projectPath": "src/upper.js",
             "targetPath": "src/upper",
             "pageTitle": "src/upper",
@@ -3579,7 +3578,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/vlookup.js",
+            "sourcePath": "/Users/jcfisher/formula/src/vlookup.js",
             "projectPath": "src/vlookup.js",
             "targetPath": "src/vlookup",
             "pageTitle": "src/vlookup",
@@ -3598,7 +3597,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/walker.js",
+            "sourcePath": "/Users/jcfisher/formula/src/walker.js",
             "projectPath": "src/walker.js",
             "targetPath": "src/walker",
             "pageTitle": "src/walker",
@@ -3617,7 +3616,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/within.js",
+            "sourcePath": "/Users/jcfisher/formula/src/within.js",
             "projectPath": "src/within.js",
             "targetPath": "src/within",
             "pageTitle": "src/within",
@@ -3636,7 +3635,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/xor.js",
+            "sourcePath": "/Users/jcfisher/formula/src/xor.js",
             "projectPath": "src/xor.js",
             "targetPath": "src/xor",
             "pageTitle": "src/xor",
@@ -3655,7 +3654,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/year.js",
+            "sourcePath": "/Users/jcfisher/formula/src/year.js",
             "projectPath": "src/year.js",
             "targetPath": "src/year",
             "pageTitle": "src/year",
@@ -3674,7 +3673,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/home/ops/formula/src/yearfrac.js",
+            "sourcePath": "/Users/jcfisher/formula/src/yearfrac.js",
             "projectPath": "src/yearfrac.js",
             "targetPath": "src/yearfrac",
             "pageTitle": "src/yearfrac",
