@@ -28,7 +28,7 @@ test("run: basic tests", function(t) {
   t.equal(run("Fee<>b", { Fee: 1, b: 1 }), false);
   t.equal(run("@Fee<>b", { "@Fee": 1, b: 1 }), false);
 
-  t.equal(run(`="""Hello, World""!"`), {}, '"Hello, World"!')
+  t.equal(run(`="""Hello, World""!"`), '"Hello, World"!')
 
   // functions should work too and will send over the context.
   t.equal(
