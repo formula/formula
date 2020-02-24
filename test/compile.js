@@ -2,7 +2,7 @@ var test = require("tape");
 import compile from "../src/compile";
 
 test("compiler should pass basic tests", function(t) {
-  t.plan(16);
+  t.plan(17);
 
   t.equal(compile("2=2").code, "Formula.EQ(2, 2)");
   t.equal(compile("-2").code, "Formula.MINUS(2)");
@@ -20,6 +20,8 @@ test("compiler should pass basic tests", function(t) {
   t.equal(compile("2^2").code, "Formula.POWER(2, 2)");
   t.equal(compile('"a" & "b"').code, `Formula.CONCATENATE("a", "b")`);
   t.equal(compile("@foo1").code, 'context.get("@foo1")');
+  t.equal(compile(`"""Hello, World""!"`), '"Hello, World"!')
+
 });
 
 test("compiler complex nesting should work", function(t) {
