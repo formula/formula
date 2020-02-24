@@ -2,7 +2,7 @@
 <span class="hljs-keyword">import</span> compile <span class="hljs-keyword">from</span> <span class="hljs-string">"../src/compile"</span>;
 
 test(<span class="hljs-string">"compiler should pass basic tests"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
-  t.plan(<span class="hljs-number">16</span>);
+  t.plan(<span class="hljs-number">17</span>);
 
   t.equal(compile(<span class="hljs-string">"2=2"</span>).code, <span class="hljs-string">"Formula.EQ(2, 2)"</span>);
   t.equal(compile(<span class="hljs-string">"-2"</span>).code, <span class="hljs-string">"Formula.MINUS(2)"</span>);
@@ -20,6 +20,8 @@ test(<span class="hljs-string">"compiler should pass basic tests"</span>, <span 
   t.equal(compile(<span class="hljs-string">"2^2"</span>).code, <span class="hljs-string">"Formula.POWER(2, 2)"</span>);
   t.equal(compile(<span class="hljs-string">'"a" &amp; "b"'</span>).code, <span class="hljs-string">`Formula.CONCATENATE("a", "b")`</span>);
   t.equal(compile(<span class="hljs-string">"@foo1"</span>).code, <span class="hljs-string">'context.get("@foo1")'</span>);
+  t.equal(compile(<span class="hljs-string">`"""Hello, World""!"`</span>).code, <span class="hljs-string">'"\\"Hello, World\\"!"'</span>)
+
 });
 
 test(<span class="hljs-string">"compiler complex nesting should work"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{

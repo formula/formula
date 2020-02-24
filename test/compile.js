@@ -20,7 +20,7 @@ test("compiler should pass basic tests", function(t) {
   t.equal(compile("2^2").code, "Formula.POWER(2, 2)");
   t.equal(compile('"a" & "b"').code, `Formula.CONCATENATE("a", "b")`);
   t.equal(compile("@foo1").code, 'context.get("@foo1")');
-  t.equal(compile(`"""Hello, World""!"`), '"Hello, World"!')
+  t.equal(compile(`"""Hello, World""!"`).code, '"\\"Hello, World\\"!"')
 
 });
 

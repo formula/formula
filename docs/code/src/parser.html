@@ -6,10 +6,10 @@
 <p>  Parser.prototype: {
     yy: {},
     trace: function(),
-    symbols<em>: {associative list: name ==&gt; number},
-    terminals</em>: {associative list: number ==&gt; name},
-    productions<em>: [...],
-    performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, </em>$),
+    symbols_: {associative list: name ==&gt; number},
+    terminals_: {associative list: number ==&gt; name},
+    productions_: [...],
+    performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$),
     table: [...],
     defaultActions: {...},
     parseError: function(str, hash),
@@ -43,8 +43,7 @@
     performAction: function(yy, yy_, $avoiding_name_collisions, YY_START),
     rules: [...],
     conditions: {associative list: name ==&gt; set},
-}</code></pre>
-<p>  }</p>
+}</code></pre><p>  }</p>
 <p>  token location info (@$, _$, etc.): {
     first_line: n,
     last_line: n,

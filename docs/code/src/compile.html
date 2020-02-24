@@ -37,7 +37,7 @@
 
   precedents = unique(precedents.map(<span class="hljs-built_in">JSON</span>.stringify)).map(<span class="hljs-built_in">JSON</span>.parse);
   requires = unique(requires.map(<span class="hljs-built_in">JSON</span>.stringify)).map(<span class="hljs-built_in">JSON</span>.parse);
-
+  
   f = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(
     <span class="hljs-string">"context"</span>,
     <span class="hljs-string">"Formula"</span>,

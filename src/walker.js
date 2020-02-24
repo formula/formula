@@ -95,7 +95,7 @@ export let defaultConfig = {
     )}${walk(config, bottomRight, depth)}`,
   renderVariable: (config, { scope, name }, depth) =>
     `${scope ? scope + "!" : ""}${name}`,
-  renderString: value => `"${value}"`,
+  renderString: value => `"${value.replace(/\"/g, '""')}"`,
   renderNumber: value => value.toString(),
   renderBoolean: value => (value ? "TRUE" : "FALSE"),
   renderValue: (config, { subtype, items, value }, depth) => {
@@ -199,7 +199,7 @@ export let jsConfig = assign(fpConfig, {
   renderValue: (config, { subtype, items, value }, depth) => {
     return branch(
       subtype === "string",
-      () => `"${value}"`,
+      () =>  '"' + (value.replace(/\"/g, '\\"')) + '"',
       subtype === "number",
       () => `${value}`,
       subtype === "boolean",

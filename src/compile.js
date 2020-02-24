@@ -47,7 +47,7 @@ export default function compile(exp) {
 
   precedents = unique(precedents.map(JSON.stringify)).map(JSON.parse);
   requires = unique(requires.map(JSON.stringify)).map(JSON.parse);
-
+  
   f = new Function(
     "context",
     "Formula",

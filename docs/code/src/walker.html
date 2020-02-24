@@ -93,7 +93,7 @@
     )}<span class="hljs-subst">${walk(config, bottomRight, depth)}</span>`</span>,
   renderVariable: (config, { scope, name }, depth) =&gt;
     <span class="hljs-string">`<span class="hljs-subst">${scope ? scope + "!" : ""}</span><span class="hljs-subst">${name}</span>`</span>,
-  renderString: value =&gt; <span class="hljs-string">`"<span class="hljs-subst">${value}</span>"`</span>,
+  renderString: value =&gt; <span class="hljs-string">`"<span class="hljs-subst">${value.replace(/\"/g, '""')}</span>"`</span>,
   renderNumber: value =&gt; value.toString(),
   renderBoolean: value =&gt; (value ? <span class="hljs-string">"TRUE"</span> : <span class="hljs-string">"FALSE"</span>),
   renderValue: (config, { subtype, items, value }, depth) =&gt; {
@@ -197,7 +197,7 @@
   renderValue: (config, { subtype, items, value }, depth) =&gt; {
     <span class="hljs-keyword">return</span> branch(
       subtype === <span class="hljs-string">"string"</span>,
-      () =&gt; <span class="hljs-string">`"<span class="hljs-subst">${value}</span>"`</span>,
+      () =&gt;  <span class="hljs-string">'"'</span> + (value.replace(<span class="hljs-regexp">/\"/g</span>, <span class="hljs-string">'\\"'</span>)) + <span class="hljs-string">'"'</span>,
       subtype === <span class="hljs-string">"number"</span>,
       () =&gt; <span class="hljs-string">`<span class="hljs-subst">${value}</span>`</span>,
       subtype === <span class="hljs-string">"boolean"</span>,
