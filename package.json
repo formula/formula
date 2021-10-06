@@ -7,7 +7,7 @@
   "scripts": {
     "all": "npm run build && npm test",
     "test": "buble-tape-runner test/*.js | faucet",
-    "docs": "groc src/*.js -o ./docs/code; groc test/*.js -o ./docs/test",
+    "docs": "docco src/*.js -o ./docs/code; docco test/*.js -o ./docs/test",
     "clean": "rm -rf lib;",
     "build": "BABEL_ENV=production npm run build:umd && npm run build:min && npm run docs; rm lib/formula.mjs.js; rm lib/formula.js",
     "build:parser": "jison src/parser.jison -m commonjs -o src/parser.js",
@@ -31,8 +31,8 @@
   "devDependencies": {
     "buble": "^0.19.7",
     "buble-tape-runner": "^1.0.4",
+    "docco-es": "^1.3.1",
     "faucet": "^0.0.1",
-    "groc": "git+https://github.com/FormBucketSupport/groc.git",
     "jison": "^0.4.18",
     "rollup": "^1.14.2",
     "tape": "^4.10.2",

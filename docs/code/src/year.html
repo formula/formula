@@ -1,3 +1,1058 @@
-<!DOCTYPE html><html lang="en"><head><title>src/year</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="src/year"><meta name="groc-project-path" content="src/year.js"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path">src/year.js</div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>Copyright 2015-2021 JC Fisher</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">import</span> parsedate <span class="hljs-keyword">from</span> <span class="hljs-string">"./parsedate"</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>YEAR parses a date value and returns the year of the year.</p></div></div><div class="code"><div class="wrapper"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">year</span>(<span class="hljs-params">d</span>) </span>{
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>year.js</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" media="all" href="../docco.css" />
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+
+	<div id="jump_to">
+		<a class="large" href="javascript:void(0);">Other source files&hellip;</a>
+		<div id="jump_contents">
+			
+				<input type="search" id="jump_search" placeholder="search for source file">
+			
+			<ul id="jump_list">
+				
+					
+					<li data-source="src/abs.js" class="list_source">
+						<a class="source" href="abs.html">src/abs.js</a>
+					</li>
+				
+					
+					<li data-source="src/accrint.js" class="list_source">
+						<a class="source" href="accrint.html">src/accrint.js</a>
+					</li>
+				
+					
+					<li data-source="src/acos.js" class="list_source">
+						<a class="source" href="acos.html">src/acos.js</a>
+					</li>
+				
+					
+					<li data-source="src/acosh.js" class="list_source">
+						<a class="source" href="acosh.html">src/acosh.js</a>
+					</li>
+				
+					
+					<li data-source="src/acot.js" class="list_source">
+						<a class="source" href="acot.html">src/acot.js</a>
+					</li>
+				
+					
+					<li data-source="src/acoth.js" class="list_source">
+						<a class="source" href="acoth.html">src/acoth.js</a>
+					</li>
+				
+					
+					<li data-source="src/add.js" class="list_source">
+						<a class="source" href="add.html">src/add.js</a>
+					</li>
+				
+					
+					<li data-source="src/address.js" class="list_source">
+						<a class="source" href="address.html">src/address.js</a>
+					</li>
+				
+					
+					<li data-source="src/and.js" class="list_source">
+						<a class="source" href="and.html">src/and.js</a>
+					</li>
+				
+					
+					<li data-source="src/asin.js" class="list_source">
+						<a class="source" href="asin.html">src/asin.js</a>
+					</li>
+				
+					
+					<li data-source="src/asinh.js" class="list_source">
+						<a class="source" href="asinh.html">src/asinh.js</a>
+					</li>
+				
+					
+					<li data-source="src/assign.js" class="list_source">
+						<a class="source" href="assign.html">src/assign.js</a>
+					</li>
+				
+					
+					<li data-source="src/atan.js" class="list_source">
+						<a class="source" href="atan.html">src/atan.js</a>
+					</li>
+				
+					
+					<li data-source="src/atan2.js" class="list_source">
+						<a class="source" href="atan2.html">src/atan2.js</a>
+					</li>
+				
+					
+					<li data-source="src/atanh.js" class="list_source">
+						<a class="source" href="atanh.html">src/atanh.js</a>
+					</li>
+				
+					
+					<li data-source="src/average.js" class="list_source">
+						<a class="source" href="average.html">src/average.js</a>
+					</li>
+				
+					
+					<li data-source="src/base.js" class="list_source">
+						<a class="source" href="base.html">src/base.js</a>
+					</li>
+				
+					
+					<li data-source="src/bin2dec.js" class="list_source">
+						<a class="source" href="bin2dec.html">src/bin2dec.js</a>
+					</li>
+				
+					
+					<li data-source="src/branch.js" class="list_source">
+						<a class="source" href="branch.html">src/branch.js</a>
+					</li>
+				
+					
+					<li data-source="src/camelcase.js" class="list_source">
+						<a class="source" href="camelcase.html">src/camelcase.js</a>
+					</li>
+				
+					
+					<li data-source="src/ceiling.js" class="list_source">
+						<a class="source" href="ceiling.html">src/ceiling.js</a>
+					</li>
+				
+					
+					<li data-source="src/cellindex.js" class="list_source">
+						<a class="source" href="cellindex.html">src/cellindex.js</a>
+					</li>
+				
+					
+					<li data-source="src/changed.js" class="list_source">
+						<a class="source" href="changed.html">src/changed.js</a>
+					</li>
+				
+					
+					<li data-source="src/char.js" class="list_source">
+						<a class="source" href="char.html">src/char.js</a>
+					</li>
+				
+					
+					<li data-source="src/choose.js" class="list_source">
+						<a class="source" href="choose.html">src/choose.js</a>
+					</li>
+				
+					
+					<li data-source="src/clean.js" class="list_source">
+						<a class="source" href="clean.html">src/clean.js</a>
+					</li>
+				
+					
+					<li data-source="src/code.js" class="list_source">
+						<a class="source" href="code.html">src/code.js</a>
+					</li>
+				
+					
+					<li data-source="src/column.js" class="list_source">
+						<a class="source" href="column.html">src/column.js</a>
+					</li>
+				
+					
+					<li data-source="src/columnletter.js" class="list_source">
+						<a class="source" href="columnletter.html">src/columnletter.js</a>
+					</li>
+				
+					
+					<li data-source="src/columnnumber.js" class="list_source">
+						<a class="source" href="columnnumber.html">src/columnnumber.js</a>
+					</li>
+				
+					
+					<li data-source="src/compile.js" class="list_source">
+						<a class="source" href="compile.html">src/compile.js</a>
+					</li>
+				
+					
+					<li data-source="src/concatenate.js" class="list_source">
+						<a class="source" href="concatenate.html">src/concatenate.js</a>
+					</li>
+				
+					
+					<li data-source="src/constants.js" class="list_source">
+						<a class="source" href="constants.html">src/constants.js</a>
+					</li>
+				
+					
+					<li data-source="src/cos.js" class="list_source">
+						<a class="source" href="cos.html">src/cos.js</a>
+					</li>
+				
+					
+					<li data-source="src/cumipmt.js" class="list_source">
+						<a class="source" href="cumipmt.html">src/cumipmt.js</a>
+					</li>
+				
+					
+					<li data-source="src/date.js" class="list_source">
+						<a class="source" href="date.html">src/date.js</a>
+					</li>
+				
+					
+					<li data-source="src/datedif.js" class="list_source">
+						<a class="source" href="datedif.html">src/datedif.js</a>
+					</li>
+				
+					
+					<li data-source="src/datevalue.js" class="list_source">
+						<a class="source" href="datevalue.html">src/datevalue.js</a>
+					</li>
+				
+					
+					<li data-source="src/day.js" class="list_source">
+						<a class="source" href="day.html">src/day.js</a>
+					</li>
+				
+					
+					<li data-source="src/days360.js" class="list_source">
+						<a class="source" href="days360.html">src/days360.js</a>
+					</li>
+				
+					
+					<li data-source="src/dec2bin.js" class="list_source">
+						<a class="source" href="dec2bin.html">src/dec2bin.js</a>
+					</li>
+				
+					
+					<li data-source="src/decodebase64.js" class="list_source">
+						<a class="source" href="decodebase64.html">src/decodebase64.js</a>
+					</li>
+				
+					
+					<li data-source="src/decodejwt.js" class="list_source">
+						<a class="source" href="decodejwt.html">src/decodejwt.js</a>
+					</li>
+				
+					
+					<li data-source="src/degrees.js" class="list_source">
+						<a class="source" href="degrees.html">src/degrees.js</a>
+					</li>
+				
+					
+					<li data-source="src/diff.js" class="list_source">
+						<a class="source" href="diff.html">src/diff.js</a>
+					</li>
+				
+					
+					<li data-source="src/divide.js" class="list_source">
+						<a class="source" href="divide.html">src/divide.js</a>
+					</li>
+				
+					
+					<li data-source="src/edate.js" class="list_source">
+						<a class="source" href="edate.html">src/edate.js</a>
+					</li>
+				
+					
+					<li data-source="src/entries.js" class="list_source">
+						<a class="source" href="entries.html">src/entries.js</a>
+					</li>
+				
+					
+					<li data-source="src/eomonth.js" class="list_source">
+						<a class="source" href="eomonth.html">src/eomonth.js</a>
+					</li>
+				
+					
+					<li data-source="src/eq.js" class="list_source">
+						<a class="source" href="eq.html">src/eq.js</a>
+					</li>
+				
+					
+					<li data-source="src/error.js" class="list_source">
+						<a class="source" href="error.html">src/error.js</a>
+					</li>
+				
+					
+					<li data-source="src/even.js" class="list_source">
+						<a class="source" href="even.html">src/even.js</a>
+					</li>
+				
+					
+					<li data-source="src/exact.js" class="list_source">
+						<a class="source" href="exact.html">src/exact.js</a>
+					</li>
+				
+					
+					<li data-source="src/filter.js" class="list_source">
+						<a class="source" href="filter.html">src/filter.js</a>
+					</li>
+				
+					
+					<li data-source="src/find.js" class="list_source">
+						<a class="source" href="find.html">src/find.js</a>
+					</li>
+				
+					
+					<li data-source="src/flatten.js" class="list_source">
+						<a class="source" href="flatten.html">src/flatten.js</a>
+					</li>
+				
+					
+					<li data-source="src/floor.js" class="list_source">
+						<a class="source" href="floor.html">src/floor.js</a>
+					</li>
+				
+					
+					<li data-source="src/functions.js" class="list_source">
+						<a class="source" href="functions.html">src/functions.js</a>
+					</li>
+				
+					
+					<li data-source="src/fv.js" class="list_source">
+						<a class="source" href="fv.html">src/fv.js</a>
+					</li>
+				
+					
+					<li data-source="src/get.js" class="list_source">
+						<a class="source" href="get.html">src/get.js</a>
+					</li>
+				
+					
+					<li data-source="src/group.js" class="list_source">
+						<a class="source" href="group.html">src/group.js</a>
+					</li>
+				
+					
+					<li data-source="src/gt.js" class="list_source">
+						<a class="source" href="gt.html">src/gt.js</a>
+					</li>
+				
+					
+					<li data-source="src/gte.js" class="list_source">
+						<a class="source" href="gte.html">src/gte.js</a>
+					</li>
+				
+					
+					<li data-source="src/guid.js" class="list_source">
+						<a class="source" href="guid.html">src/guid.js</a>
+					</li>
+				
+					
+					<li data-source="src/hash.js" class="list_source">
+						<a class="source" href="hash.html">src/hash.js</a>
+					</li>
+				
+					
+					<li data-source="src/hlookup.js" class="list_source">
+						<a class="source" href="hlookup.html">src/hlookup.js</a>
+					</li>
+				
+					
+					<li data-source="src/hour.js" class="list_source">
+						<a class="source" href="hour.html">src/hour.js</a>
+					</li>
+				
+					
+					<li data-source="src/identity.js" class="list_source">
+						<a class="source" href="identity.html">src/identity.js</a>
+					</li>
+				
+					
+					<li data-source="src/ifblank.js" class="list_source">
+						<a class="source" href="ifblank.html">src/ifblank.js</a>
+					</li>
+				
+					
+					<li data-source="src/ifempty.js" class="list_source">
+						<a class="source" href="ifempty.html">src/ifempty.js</a>
+					</li>
+				
+					
+					<li data-source="src/iferror.js" class="list_source">
+						<a class="source" href="iferror.html">src/iferror.js</a>
+					</li>
+				
+					
+					<li data-source="src/ifna.js" class="list_source">
+						<a class="source" href="ifna.html">src/ifna.js</a>
+					</li>
+				
+					
+					<li data-source="src/includes.js" class="list_source">
+						<a class="source" href="includes.html">src/includes.js</a>
+					</li>
+				
+					
+					<li data-source="src/index.js" class="list_source">
+						<a class="source" href="index.html">src/index.js</a>
+					</li>
+				
+					
+					<li data-source="src/index2col.js" class="list_source">
+						<a class="source" href="index2col.html">src/index2col.js</a>
+					</li>
+				
+					
+					<li data-source="src/index2row.js" class="list_source">
+						<a class="source" href="index2row.html">src/index2row.js</a>
+					</li>
+				
+					
+					<li data-source="src/int.js" class="list_source">
+						<a class="source" href="int.html">src/int.js</a>
+					</li>
+				
+					
+					<li data-source="src/interpolate.js" class="list_source">
+						<a class="source" href="interpolate.html">src/interpolate.js</a>
+					</li>
+				
+					
+					<li data-source="src/interpolator.js" class="list_source">
+						<a class="source" href="interpolator.html">src/interpolator.js</a>
+					</li>
+				
+					
+					<li data-source="src/intersect.js" class="list_source">
+						<a class="source" href="intersect.html">src/intersect.js</a>
+					</li>
+				
+					
+					<li data-source="src/ipmt.js" class="list_source">
+						<a class="source" href="ipmt.html">src/ipmt.js</a>
+					</li>
+				
+					
+					<li data-source="src/isarray.js" class="list_source">
+						<a class="source" href="isarray.html">src/isarray.js</a>
+					</li>
+				
+					
+					<li data-source="src/isasyncfunction.js" class="list_source">
+						<a class="source" href="isasyncfunction.html">src/isasyncfunction.js</a>
+					</li>
+				
+					
+					<li data-source="src/isbinary.js" class="list_source">
+						<a class="source" href="isbinary.html">src/isbinary.js</a>
+					</li>
+				
+					
+					<li data-source="src/isblank.js" class="list_source">
+						<a class="source" href="isblank.html">src/isblank.js</a>
+					</li>
+				
+					
+					<li data-source="src/isboolean.js" class="list_source">
+						<a class="source" href="isboolean.html">src/isboolean.js</a>
+					</li>
+				
+					
+					<li data-source="src/isdate.js" class="list_source">
+						<a class="source" href="isdate.html">src/isdate.js</a>
+					</li>
+				
+					
+					<li data-source="src/isemail.js" class="list_source">
+						<a class="source" href="isemail.html">src/isemail.js</a>
+					</li>
+				
+					
+					<li data-source="src/isempty.js" class="list_source">
+						<a class="source" href="isempty.html">src/isempty.js</a>
+					</li>
+				
+					
+					<li data-source="src/iserr.js" class="list_source">
+						<a class="source" href="iserr.html">src/iserr.js</a>
+					</li>
+				
+					
+					<li data-source="src/iserror.js" class="list_source">
+						<a class="source" href="iserror.html">src/iserror.js</a>
+					</li>
+				
+					
+					<li data-source="src/iseven.js" class="list_source">
+						<a class="source" href="iseven.html">src/iseven.js</a>
+					</li>
+				
+					
+					<li data-source="src/isfalsy.js" class="list_source">
+						<a class="source" href="isfalsy.html">src/isfalsy.js</a>
+					</li>
+				
+					
+					<li data-source="src/isfunction.js" class="list_source">
+						<a class="source" href="isfunction.html">src/isfunction.js</a>
+					</li>
+				
+					
+					<li data-source="src/isleapyear.js" class="list_source">
+						<a class="source" href="isleapyear.html">src/isleapyear.js</a>
+					</li>
+				
+					
+					<li data-source="src/islowercase.js" class="list_source">
+						<a class="source" href="islowercase.html">src/islowercase.js</a>
+					</li>
+				
+					
+					<li data-source="src/isna.js" class="list_source">
+						<a class="source" href="isna.html">src/isna.js</a>
+					</li>
+				
+					
+					<li data-source="src/isnan.js" class="list_source">
+						<a class="source" href="isnan.html">src/isnan.js</a>
+					</li>
+				
+					
+					<li data-source="src/isnumber.js" class="list_source">
+						<a class="source" href="isnumber.html">src/isnumber.js</a>
+					</li>
+				
+					
+					<li data-source="src/isobject.js" class="list_source">
+						<a class="source" href="isobject.html">src/isobject.js</a>
+					</li>
+				
+					
+					<li data-source="src/isodd.js" class="list_source">
+						<a class="source" href="isodd.html">src/isodd.js</a>
+					</li>
+				
+					
+					<li data-source="src/isoweeknum.js" class="list_source">
+						<a class="source" href="isoweeknum.html">src/isoweeknum.js</a>
+					</li>
+				
+					
+					<li data-source="src/ispromise.js" class="list_source">
+						<a class="source" href="ispromise.html">src/ispromise.js</a>
+					</li>
+				
+					
+					<li data-source="src/isref.js" class="list_source">
+						<a class="source" href="isref.html">src/isref.js</a>
+					</li>
+				
+					
+					<li data-source="src/istext.js" class="list_source">
+						<a class="source" href="istext.html">src/istext.js</a>
+					</li>
+				
+					
+					<li data-source="src/istruthy.js" class="list_source">
+						<a class="source" href="istruthy.html">src/istruthy.js</a>
+					</li>
+				
+					
+					<li data-source="src/isuppercase.js" class="list_source">
+						<a class="source" href="isuppercase.html">src/isuppercase.js</a>
+					</li>
+				
+					
+					<li data-source="src/isurl.js" class="list_source">
+						<a class="source" href="isurl.html">src/isurl.js</a>
+					</li>
+				
+					
+					<li data-source="src/iswholenumber.js" class="list_source">
+						<a class="source" href="iswholenumber.html">src/iswholenumber.js</a>
+					</li>
+				
+					
+					<li data-source="src/join.js" class="list_source">
+						<a class="source" href="join.html">src/join.js</a>
+					</li>
+				
+					
+					<li data-source="src/keys.js" class="list_source">
+						<a class="source" href="keys.html">src/keys.js</a>
+					</li>
+				
+					
+					<li data-source="src/left.js" class="list_source">
+						<a class="source" href="left.html">src/left.js</a>
+					</li>
+				
+					
+					<li data-source="src/len.js" class="list_source">
+						<a class="source" href="len.html">src/len.js</a>
+					</li>
+				
+					
+					<li data-source="src/lookup.js" class="list_source">
+						<a class="source" href="lookup.html">src/lookup.js</a>
+					</li>
+				
+					
+					<li data-source="src/lower.js" class="list_source">
+						<a class="source" href="lower.html">src/lower.js</a>
+					</li>
+				
+					
+					<li data-source="src/lt.js" class="list_source">
+						<a class="source" href="lt.html">src/lt.js</a>
+					</li>
+				
+					
+					<li data-source="src/lte.js" class="list_source">
+						<a class="source" href="lte.html">src/lte.js</a>
+					</li>
+				
+					
+					<li data-source="src/map.js" class="list_source">
+						<a class="source" href="map.html">src/map.js</a>
+					</li>
+				
+					
+					<li data-source="src/match.js" class="list_source">
+						<a class="source" href="match.html">src/match.js</a>
+					</li>
+				
+					
+					<li data-source="src/max.js" class="list_source">
+						<a class="source" href="max.html">src/max.js</a>
+					</li>
+				
+					
+					<li data-source="src/merge.js" class="list_source">
+						<a class="source" href="merge.html">src/merge.js</a>
+					</li>
+				
+					
+					<li data-source="src/min.js" class="list_source">
+						<a class="source" href="min.html">src/min.js</a>
+					</li>
+				
+					
+					<li data-source="src/minus.js" class="list_source">
+						<a class="source" href="minus.html">src/minus.js</a>
+					</li>
+				
+					
+					<li data-source="src/minute.js" class="list_source">
+						<a class="source" href="minute.html">src/minute.js</a>
+					</li>
+				
+					
+					<li data-source="src/mod.js" class="list_source">
+						<a class="source" href="mod.html">src/mod.js</a>
+					</li>
+				
+					
+					<li data-source="src/month.js" class="list_source">
+						<a class="source" href="month.html">src/month.js</a>
+					</li>
+				
+					
+					<li data-source="src/multiply.js" class="list_source">
+						<a class="source" href="multiply.html">src/multiply.js</a>
+					</li>
+				
+					
+					<li data-source="src/n.js" class="list_source">
+						<a class="source" href="n.html">src/n.js</a>
+					</li>
+				
+					
+					<li data-source="src/nand.js" class="list_source">
+						<a class="source" href="nand.html">src/nand.js</a>
+					</li>
+				
+					
+					<li data-source="src/ne.js" class="list_source">
+						<a class="source" href="ne.html">src/ne.js</a>
+					</li>
+				
+					
+					<li data-source="src/nor.js" class="list_source">
+						<a class="source" href="nor.html">src/nor.js</a>
+					</li>
+				
+					
+					<li data-source="src/not.js" class="list_source">
+						<a class="source" href="not.html">src/not.js</a>
+					</li>
+				
+					
+					<li data-source="src/notincludes.js" class="list_source">
+						<a class="source" href="notincludes.html">src/notincludes.js</a>
+					</li>
+				
+					
+					<li data-source="src/now.js" class="list_source">
+						<a class="source" href="now.html">src/now.js</a>
+					</li>
+				
+					
+					<li data-source="src/nper.js" class="list_source">
+						<a class="source" href="nper.html">src/nper.js</a>
+					</li>
+				
+					
+					<li data-source="src/npv.js" class="list_source">
+						<a class="source" href="npv.html">src/npv.js</a>
+					</li>
+				
+					
+					<li data-source="src/numbers.js" class="list_source">
+						<a class="source" href="numbers.html">src/numbers.js</a>
+					</li>
+				
+					
+					<li data-source="src/numbervalue.js" class="list_source">
+						<a class="source" href="numbervalue.html">src/numbervalue.js</a>
+					</li>
+				
+					
+					<li data-source="src/oct2dec.js" class="list_source">
+						<a class="source" href="oct2dec.html">src/oct2dec.js</a>
+					</li>
+				
+					
+					<li data-source="src/or.js" class="list_source">
+						<a class="source" href="or.html">src/or.js</a>
+					</li>
+				
+					
+					<li data-source="src/overlap.js" class="list_source">
+						<a class="source" href="overlap.html">src/overlap.js</a>
+					</li>
+				
+					
+					<li data-source="src/parsebool.js" class="list_source">
+						<a class="source" href="parsebool.html">src/parsebool.js</a>
+					</li>
+				
+					
+					<li data-source="src/parsedate.js" class="list_source">
+						<a class="source" href="parsedate.html">src/parsedate.js</a>
+					</li>
+				
+					
+					<li data-source="src/parsequery.js" class="list_source">
+						<a class="source" href="parsequery.html">src/parsequery.js</a>
+					</li>
+				
+					
+					<li data-source="src/parser.js" class="list_source">
+						<a class="source" href="parser.html">src/parser.js</a>
+					</li>
+				
+					
+					<li data-source="src/pi.js" class="list_source">
+						<a class="source" href="pi.html">src/pi.js</a>
+					</li>
+				
+					
+					<li data-source="src/pluck.js" class="list_source">
+						<a class="source" href="pluck.html">src/pluck.js</a>
+					</li>
+				
+					
+					<li data-source="src/plus.js" class="list_source">
+						<a class="source" href="plus.html">src/plus.js</a>
+					</li>
+				
+					
+					<li data-source="src/pmt.js" class="list_source">
+						<a class="source" href="pmt.html">src/pmt.js</a>
+					</li>
+				
+					
+					<li data-source="src/power.js" class="list_source">
+						<a class="source" href="power.html">src/power.js</a>
+					</li>
+				
+					
+					<li data-source="src/proper.js" class="list_source">
+						<a class="source" href="proper.html">src/proper.js</a>
+					</li>
+				
+					
+					<li data-source="src/pv.js" class="list_source">
+						<a class="source" href="pv.html">src/pv.js</a>
+					</li>
+				
+					
+					<li data-source="src/query.js" class="list_source">
+						<a class="source" href="query.html">src/query.js</a>
+					</li>
+				
+					
+					<li data-source="src/reduce.js" class="list_source">
+						<a class="source" href="reduce.html">src/reduce.js</a>
+					</li>
+				
+					
+					<li data-source="src/ref.js" class="list_source">
+						<a class="source" href="ref.html">src/ref.js</a>
+					</li>
+				
+					
+					<li data-source="src/replace.js" class="list_source">
+						<a class="source" href="replace.html">src/replace.js</a>
+					</li>
+				
+					
+					<li data-source="src/rept.js" class="list_source">
+						<a class="source" href="rept.html">src/rept.js</a>
+					</li>
+				
+					
+					<li data-source="src/right.js" class="list_source">
+						<a class="source" href="right.html">src/right.js</a>
+					</li>
+				
+					
+					<li data-source="src/round.js" class="list_source">
+						<a class="source" href="round.html">src/round.js</a>
+					</li>
+				
+					
+					<li data-source="src/roundup.js" class="list_source">
+						<a class="source" href="roundup.html">src/roundup.js</a>
+					</li>
+				
+					
+					<li data-source="src/run.js" class="list_source">
+						<a class="source" href="run.html">src/run.js</a>
+					</li>
+				
+					
+					<li data-source="src/search.js" class="list_source">
+						<a class="source" href="search.html">src/search.js</a>
+					</li>
+				
+					
+					<li data-source="src/second.js" class="list_source">
+						<a class="source" href="second.html">src/second.js</a>
+					</li>
+				
+					
+					<li data-source="src/select.js" class="list_source">
+						<a class="source" href="select.html">src/select.js</a>
+					</li>
+				
+					
+					<li data-source="src/serial.js" class="list_source">
+						<a class="source" href="serial.html">src/serial.js</a>
+					</li>
+				
+					
+					<li data-source="src/sin.js" class="list_source">
+						<a class="source" href="sin.html">src/sin.js</a>
+					</li>
+				
+					
+					<li data-source="src/snakecase.js" class="list_source">
+						<a class="source" href="snakecase.html">src/snakecase.js</a>
+					</li>
+				
+					
+					<li data-source="src/some.js" class="list_source">
+						<a class="source" href="some.html">src/some.js</a>
+					</li>
+				
+					
+					<li data-source="src/sort.js" class="list_source">
+						<a class="source" href="sort.html">src/sort.js</a>
+					</li>
+				
+					
+					<li data-source="src/split.js" class="list_source">
+						<a class="source" href="split.html">src/split.js</a>
+					</li>
+				
+					
+					<li data-source="src/substitute.js" class="list_source">
+						<a class="source" href="substitute.html">src/substitute.js</a>
+					</li>
+				
+					
+					<li data-source="src/substituteAll.js" class="list_source">
+						<a class="source" href="substituteAll.html">src/substituteAll.js</a>
+					</li>
+				
+					
+					<li data-source="src/subtract.js" class="list_source">
+						<a class="source" href="subtract.html">src/subtract.js</a>
+					</li>
+				
+					
+					<li data-source="src/sum.js" class="list_source">
+						<a class="source" href="sum.html">src/sum.js</a>
+					</li>
+				
+					
+					<li data-source="src/surroundKeys.js" class="list_source">
+						<a class="source" href="surroundKeys.html">src/surroundKeys.js</a>
+					</li>
+				
+					
+					<li data-source="src/switch.js" class="list_source">
+						<a class="source" href="switch.html">src/switch.js</a>
+					</li>
+				
+					
+					<li data-source="src/tan.js" class="list_source">
+						<a class="source" href="tan.html">src/tan.js</a>
+					</li>
+				
+					
+					<li data-source="src/tau.js" class="list_source">
+						<a class="source" href="tau.html">src/tau.js</a>
+					</li>
+				
+					
+					<li data-source="src/text.js" class="list_source">
+						<a class="source" href="text.html">src/text.js</a>
+					</li>
+				
+					
+					<li data-source="src/time.js" class="list_source">
+						<a class="source" href="time.html">src/time.js</a>
+					</li>
+				
+					
+					<li data-source="src/timevalue.js" class="list_source">
+						<a class="source" href="timevalue.html">src/timevalue.js</a>
+					</li>
+				
+					
+					<li data-source="src/today.js" class="list_source">
+						<a class="source" href="today.html">src/today.js</a>
+					</li>
+				
+					
+					<li data-source="src/trim.js" class="list_source">
+						<a class="source" href="trim.html">src/trim.js</a>
+					</li>
+				
+					
+					<li data-source="src/trunc.js" class="list_source">
+						<a class="source" href="trunc.html">src/trunc.js</a>
+					</li>
+				
+					
+					<li data-source="src/unflatten.js" class="list_source">
+						<a class="source" href="unflatten.html">src/unflatten.js</a>
+					</li>
+				
+					
+					<li data-source="src/unique.js" class="list_source">
+						<a class="source" href="unique.html">src/unique.js</a>
+					</li>
+				
+					
+					<li data-source="src/upper.js" class="list_source">
+						<a class="source" href="upper.html">src/upper.js</a>
+					</li>
+				
+					
+					<li data-source="src/vlookup.js" class="list_source">
+						<a class="source" href="vlookup.html">src/vlookup.js</a>
+					</li>
+				
+					
+					<li data-source="src/walker.js" class="list_source">
+						<a class="source" href="walker.html">src/walker.js</a>
+					</li>
+				
+					
+					<li data-source="src/within.js" class="list_source">
+						<a class="source" href="within.html">src/within.js</a>
+					</li>
+				
+					
+					<li data-source="src/xor.js" class="list_source">
+						<a class="source" href="xor.html">src/xor.js</a>
+					</li>
+				
+					
+					<li data-source="src/year.js" class="list_source">
+						<a class="source" href="year.html">src/year.js</a>
+					</li>
+				
+					
+					<li data-source="src/yearfrac.js" class="list_source">
+						<a class="source" href="yearfrac.html">src/yearfrac.js</a>
+					</li>
+				
+			</ul>
+		</div>
+	</div>
+
+	<div id="container">
+		<div id="background"></div>
+		<ul class="sections">
+				
+					<li id="title">
+							<div class="annotation">
+									<h1>year.js</h1>
+							</div>
+					</li>
+				
+				
+				
+				<li id="section-1">
+						<div class="annotation">
+							
+							<div class="pilwrap ">
+								<a class="pilcrow" href="#section-1">&#182;</a>
+							</div>
+							<p>Copyright 2015-2021 JC Fisher</p>
+
+						</div>
+						
+						<div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">import</span> parsedate <span class="hljs-keyword">from</span> <span class="hljs-string">"./parsedate"</span>;</pre></div></div>
+						
+				</li>
+				
+				
+				<li id="section-2">
+						<div class="annotation">
+							
+							<div class="pilwrap ">
+								<a class="pilcrow" href="#section-2">&#182;</a>
+							</div>
+							<p>YEAR parses a date value and returns the year of the year.</p>
+
+						</div>
+						
+						<div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">year</span>(<span class="hljs-params">d</span>) </span>{
   <span class="hljs-keyword">return</span> parsedate(d).getFullYear();
-}</div></div></div></div></body></html>
+}</pre></div></div>
+						
+				</li>
+				
+		</ul>
+	</div>
+<script>
+const search = document.querySelector("#jump_search");
+	const list = document.querySelector("#jump_list");
+	const items = list.querySelectorAll("li");
+	if (search) {
+		search.onkeyup = (e) => {
+			const value = e.target.value;
+			[].map.call(items, elem => elem.classList.remove("found"));
+			if (value) {
+				const search = "li.list_source[data-source*=\"" + value + "\"]";
+				const matches = list.querySelectorAll(search);
+				[].map.call(matches, elem => elem.classList.add("found"));
+				list.classList.add("searching");
+			} else {
+				list.classList.remove("searching");
+			}
+		};
+	}
+</script>
+</body>
+</html>
