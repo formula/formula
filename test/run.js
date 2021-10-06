@@ -65,3 +65,13 @@ test("run: scope/sheet names should be supported", function(t) {
   t.equal(run("abc_def!xyz", { abc_def: { xyz: 1 } }), 1);
   t.equal(run("'abc_def'!xyz", { abc_def: { xyz: 1 } }), 1);
 });
+
+test("run: supports json", function(t) {
+  t.plan(1);
+  t.equal(run("a = 1", '{ "a": 1 }'), true);
+});
+
+test("run: supports jsonpath", function(t) {
+  t.plan(1);
+  t.equal(run("$.a.b = 1", '{ "a": { "b": 1 } }'), true);
+});

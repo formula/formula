@@ -1,7 +1,7 @@
 [![Circle CI](https://circleci.com/gh/formula/formula.svg?style=svg)](https://circleci.com/gh/formula/formula)
 [![npm version](https://badge.fury.io/js/formula.svg)](https://badge.fury.io/js/formula)
 
-Formula expressions and functions for JavaScript.
+Best function and expression library for JSON.
 
 ## Install
 
@@ -13,6 +13,11 @@ npm install --save formula
 
 ```js
 import { run } from "formula";
+
+// jsonpath + spreadsheet-like expression system eats json for lunch.
+run("$.a.b = 1", '{ "a": { "b": 1 } }')
+
+// sum, vlookup, hlookup and friends.
 run("sum(a, b, c) = 1+2+3", { a: 1, b: 2, c: 3 });
 ```
 
@@ -21,5 +26,5 @@ run("sum(a, b, c) = 1+2+3", { a: 1, b: 2, c: 3 });
 Add to the browser with:
 
 ```html
-<script type="text/javascript" src="https://unpkg.com/formula@3.8.1/lib/formula.min.js"
+<script type="text/javascript" src="https://unpkg.com/formula@3.16.0/lib/formula.min.js"
 ```

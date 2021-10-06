@@ -1,6 +1,6 @@
 {
   "name": "formula",
-  "version": "3.16.0",
+  "version": "3.17.0",
   "description": "Formula compiler and function library",
   "main": "index.js",
   "types": "index.d.js",
@@ -37,5 +37,8 @@
     "rollup": "^1.14.2",
     "tape": "^4.10.2",
     "uglify-js": "^3.6.0"
+  },
+  "dependencies": {
+    "jsonpath": "^1.1.1"
   }
 }

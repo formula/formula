@@ -2,10 +2,11 @@
 
 import * as funcs from "./functions";
 import compile from "./compile";
+import isText from "./istext"
 import isFunction from "./isfunction";
 import assign from "./assign";
-import isText from "./istext";
 import { ERRORTYPES as error } from "./error";
+import jsonpath from "jsonpath";
 
 // m is a cache of compiled expressions.
 let m = {};
@@ -14,12 +15,22 @@ let m = {};
 export default function run(exp, params = {}) {
   // if the exp is a function then return it immediately.
 
+  let isJSON = false;
+
+  if (isText(params)){
+    isJSON = true;
+    params = JSON.parse(params)
+  }
+
   let locals = assign({}, params);
 
   // Default get for plain object.
   if (locals.get !== "function") {
     locals.get = (name, scope) => {
-      if (isText(scope)) {
+
+      if (isJSON){
+        return jsonpath.value(locals, name)
+      } else if (isText(scope)) {
         return locals[scope] ? locals[scope][name] : undefined;
       }
       return locals[name];

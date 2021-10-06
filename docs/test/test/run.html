@@ -1120,6 +1120,16 @@ test(<span class="hljs-string">"run: scope/sheet names should be supported"</spa
   t.equal(run(<span class="hljs-string">"abc!xyz"</span>, { <span class="hljs-attr">abc</span>: { <span class="hljs-attr">xyz</span>: <span class="hljs-number">1</span> } }), <span class="hljs-number">1</span>);
   t.equal(run(<span class="hljs-string">"abc_def!xyz"</span>, { <span class="hljs-attr">abc_def</span>: { <span class="hljs-attr">xyz</span>: <span class="hljs-number">1</span> } }), <span class="hljs-number">1</span>);
   t.equal(run(<span class="hljs-string">"'abc_def'!xyz"</span>, { <span class="hljs-attr">abc_def</span>: { <span class="hljs-attr">xyz</span>: <span class="hljs-number">1</span> } }), <span class="hljs-number">1</span>);
+});
+
+test(<span class="hljs-string">"run: supports json"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
+  t.plan(<span class="hljs-number">1</span>);
+  t.equal(run(<span class="hljs-string">"a = 1"</span>, <span class="hljs-string">'{ "a": 1 }'</span>), <span class="hljs-literal">true</span>);
+});
+
+test(<span class="hljs-string">"run: supports jsonpath"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) </span>{
+  t.plan(<span class="hljs-number">1</span>);
+  t.equal(run(<span class="hljs-string">"$.a.b = 1"</span>, <span class="hljs-string">'{ "a": { "b": 1 } }'</span>), <span class="hljs-literal">true</span>);
 });</pre></div></div>
 						
 				</li>
