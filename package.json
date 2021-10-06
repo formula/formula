@@ -11,7 +11,7 @@
     "clean": "rm -rf lib;",
     "build": "BABEL_ENV=production npm run build:umd && npm run build:min && npm run docs; rm lib/formula.mjs.js; rm lib/formula.js",
     "build:parser": "jison src/parser.jison -m commonjs -o src/parser.js",
-    "build:umd": "rm -rf lib; mkdir lib; rollup -e=jsonpath -f=umd -n=Formula src/functions.js > lib/formula.mjs.js; buble lib/formula.mjs.js > lib/formula.js",
+    "build:umd": "rm -rf lib; mkdir lib; rollup --config rollup.config.js -f=umd -n=Formula src/functions.js; mv output/functions.js lib/formula.mjs.js; buble lib/formula.mjs.js > lib/formula.js",
     "build:min": "uglifyjs lib/formula.js > lib/formula.min.js"
   },
   "repository": {
@@ -29,10 +29,11 @@
   },
   "homepage": "https://github.com/formula/formula#readme",
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.0.5",
     "buble": "^0.19.7",
     "buble-tape-runner": "^1.0.4",
     "docco-es": "^1.3.1",
-    "faucet": "^0.0.1",
+    "faucet": "0.0.1",
     "jison": "^0.4.18",
     "rollup": "^1.14.2",
     "tape": "^4.10.2",
