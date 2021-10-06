@@ -1,4 +1,4 @@
-// Copyright 2015-2018 FormBucket LLC
+// Copyright 2015-2021 JC Fisher
 
 // SUBSTITUTE `old_text` with `new_text`, optionally only a selected occurence.
 export default function substitute(text, old_text, new_text, occurrence) {

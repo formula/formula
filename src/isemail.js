@@ -1,4 +1,4 @@
-// Copyright 2015-2018 FormBucket LLC
+// Copyright 2015-2021 JC Fisher
 
 // ISEMAIL returns true when the `value` matches the regex.
 export default function isemail(value) {

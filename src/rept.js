@@ -1,4 +1,4 @@
-// Copyright 2015-2018 FormBucket LLC
+// Copyright 2015-2021 JC Fisher
 
 // REPT creates string by repeating text a given number of times.
 export default function rept(text, number) {

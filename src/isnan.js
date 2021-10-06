@@ -1,4 +1,4 @@
-// Copyright 2015-2018 FormBucket LLC
+// Copyright 2015-2021 JC Fisher
 
 // ISNA returns true when the value is `#NA!`
 export default function isnan(value) {

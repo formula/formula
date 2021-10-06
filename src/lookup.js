@@ -1,4 +1,4 @@
-// Copyright 2015-2018 FormBucket LLC
+// Copyright 2015-2021 JC Fisher
 
 // LOOKUP find a value in an array.
 export default function lookup() {

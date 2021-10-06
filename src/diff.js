@@ -1,4 +1,4 @@
-// Copyright 2015-2018 FormBucket LLC
+// Copyright 2015-2021 JC Fisher
 import reduce from "./reduce";
 import keys from "./keys";
 import assign from "./assign";

@@ -1,4 +1,4 @@
-// Copyright 2015-2018 FormBucket LLC
+// Copyright 2015-2021 JC Fisher
 
 // SPLIT `text` given a `delimiter`.
 export default function split(text, delimiter) {

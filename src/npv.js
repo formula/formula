@@ -1,4 +1,4 @@
-// Copyright 2015-2018 FormBucket LLC
+// Copyright 2015-2021 JC Fisher
 import reduce from "./reduce";
 
 // `npv` returns the net present value of an investment.

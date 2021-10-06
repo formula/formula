@@ -1,4 +1,4 @@
-// Copyright 2015-2018 FormBucket LLC
+// Copyright 2015-2021 JC Fisher
 
 // ISURL returns true when the value matches the regex for a uniform resource locator.
 export default function isurl(str) {

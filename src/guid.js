@@ -1,4 +1,4 @@
-// Copyright 2015-2018 FormBucket LLC
+// Copyright 2015-2021 JC Fisher
 
 // credit to http://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
 // rfc4122 version 4 compliant solution

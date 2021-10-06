@@ -1,4 +1,4 @@
-// Copyright 2015-2018 FormBucket LLC
+// Copyright 2015-2021 JC Fisher
 import isnan from "./isnan";
 // Returns true when the value is a falsy value.
 // https://developer.mozilla.org/en-US/docs/Glossary/Falsy

@@ -1,4 +1,4 @@
-// Copyright 2015-2018 FormBucket LLC
+// Copyright 2015-2021 JC Fisher
 
 import { ERRORTYPES as error } from "./error";
 // CODE accepts text and optionally index (default 1) returning the character code.

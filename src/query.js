@@ -1,4 +1,4 @@
-// Copyright 2015-2018 FormBucket LLC
+// Copyright 2015-2021 JC Fisher
 //
 // A minimal query engine with a mongodb like syntax.
 //

@@ -1,4 +1,4 @@
-// Copyright 2015-2018 FormBucket LLC
+// Copyright 2015-2021 JC Fisher
 
 // ROUNDUP converts a number to a fixed precision by rounding up.
 export default function roundup(number, precision) {

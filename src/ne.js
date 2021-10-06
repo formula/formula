@@ -1,4 +1,4 @@
-// Copyright 2015-2018 FormBucket LLC
+// Copyright 2015-2021 JC Fisher
 
 import eq from "./eq";
 // NE returns true when a is not equal to b.

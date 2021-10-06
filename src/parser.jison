@@ -1,4 +1,4 @@
-/* Copyright 2015-2018 FormBucket LLC */
+/* Copyright 2015-2018 JC Fisher */
 
 /* description: Parses end executes spreadSCOPE formula expressions. */
 

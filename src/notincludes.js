@@ -1,4 +1,4 @@
-// Copyright 2015-2018 FormBucket LLC
+// Copyright 2015-2021 JC Fisher
 import includes from "./includes";
 
 // notincludes returns true when the searchElement is not found in the searchList.

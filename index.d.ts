@@ -1,11 +1,11 @@
-// Copyright 2015-2018 FormBucket LLC
+// Copyright 2015-2021 JC Fisher
 
 // Contains type definitions for typescript users.
 export declare enum basisOptions {
   US = 0,
   Actual,
   Actual360,
-  // Copyright 2015-2018 FormBucket LLC
+  // Copyright 2015-2021 JC Fisher
   Actual365,
   European
 }
