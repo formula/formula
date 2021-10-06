@@ -1018,7 +1018,7 @@
 <span class="hljs-keyword">import</span> isFunction <span class="hljs-keyword">from</span> <span class="hljs-string">"./isfunction"</span>;
 <span class="hljs-keyword">import</span> assign <span class="hljs-keyword">from</span> <span class="hljs-string">"./assign"</span>;
 <span class="hljs-keyword">import</span> { ERRORTYPES <span class="hljs-keyword">as</span> error } <span class="hljs-keyword">from</span> <span class="hljs-string">"./error"</span>;
-<span class="hljs-keyword">import</span> jsonpath <span class="hljs-keyword">from</span> <span class="hljs-string">"jsonpath"</span>;</pre></div></div>
+<span class="hljs-keyword">import</span> {JSONPath} <span class="hljs-keyword">from</span> <span class="hljs-string">'jsonpath-plus'</span>;</pre></div></div>
 						
 				</li>
 				
@@ -1090,7 +1090,8 @@
     locals.get = <span class="hljs-function">(<span class="hljs-params">name, scope</span>) =&gt;</span> {
 
       <span class="hljs-keyword">if</span> (isJSON){
-        <span class="hljs-keyword">return</span> jsonpath.value(locals, name)
+        <span class="hljs-keyword">let</span> result = JSONPath({<span class="hljs-attr">path</span>: name, <span class="hljs-attr">json</span>: locals});
+        <span class="hljs-keyword">return</span> result[<span class="hljs-number">0</span>];
       } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (isText(scope)) {
         <span class="hljs-keyword">return</span> locals[scope] ? locals[scope][name] : <span class="hljs-literal">undefined</span>;
       }

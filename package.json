@@ -11,7 +11,7 @@
     "clean": "rm -rf lib;",
     "build": "BABEL_ENV=production npm run build:umd && npm run build:min && npm run docs; rm lib/formula.mjs.js; rm lib/formula.js",
     "build:parser": "jison src/parser.jison -m commonjs -o src/parser.js",
-    "build:umd": "rm -rf lib; mkdir lib; rollup -f=umd -n=Formula src/functions.js > lib/formula.mjs.js; buble lib/formula.mjs.js > lib/formula.js",
+    "build:umd": "rm -rf lib; mkdir lib; rollup -e=jsonpath -f=umd -n=Formula src/functions.js > lib/formula.mjs.js; buble lib/formula.mjs.js > lib/formula.js",
     "build:min": "uglifyjs lib/formula.js > lib/formula.min.js"
   },
   "repository": {
@@ -39,6 +39,6 @@
     "uglify-js": "^3.6.0"
   },
   "dependencies": {
-    "jsonpath": "^1.1.1"
+    "jsonpath-plus": "^6.0.1"
   }
 }

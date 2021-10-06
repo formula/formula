@@ -6,7 +6,7 @@ import isText from "./istext"
 import isFunction from "./isfunction";
 import assign from "./assign";
 import { ERRORTYPES as error } from "./error";
-import jsonpath from "jsonpath";
+import {JSONPath} from 'jsonpath-plus';
 
 // m is a cache of compiled expressions.
 let m = {};
@@ -29,7 +29,8 @@ export default function run(exp, params = {}) {
     locals.get = (name, scope) => {
 
       if (isJSON){
-        return jsonpath.value(locals, name)
+        let result = JSONPath({path: name, json: locals});
+        return result[0];
       } else if (isText(scope)) {
         return locals[scope] ? locals[scope][name] : undefined;
       }

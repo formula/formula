@@ -72,6 +72,9 @@ test("run: supports json", function(t) {
 });
 
 test("run: supports jsonpath", function(t) {
-  t.plan(1);
+  t.plan(4);
+  t.equal(run("$.a = 1", '{ "a": 1 }'), true);
+  t.equal(run("$.ab = null", '{ "a": 1 }'), true);
   t.equal(run("$.a.b = 1", '{ "a": { "b": 1 } }'), true);
+  t.equal(run("sum($.a.b) = 6", '{ "a": { "b": [1,2,3] } }'), true);
 });
